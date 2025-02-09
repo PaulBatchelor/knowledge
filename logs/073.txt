@@ -1,0 +1,100 @@
+@2024-07-31 Day 73. Uploaded Trio to the Web. Balloon-ing in poke.
+9 days left of batch.
+---
+I stayed up too late again. I am tired. I did
+try sleeping in a little bit though. Going to have to pace
+myself.
+---
+I have just signed up for a presentation slot.
+So, I gotta enough working for that today.
+
+@08:34 Morning Triage
+
+@09:00 Hoping to improve chord selection today #demo-trio-chord-improvements
+It chooses chords too quickly (when the lead changes),
+and should only think about changing chords when
+the lower/upper notes happen. I had a concept of
+"committing" to a chord. A faster thing might be to
+just move the chord changes to when the lower note
+triggers rather than the lead.
+---
+Also, I want tonic bias. Every 4 non-tonic chords or so,
+there should be a switch that puts tonic as priority,
+it if it is available as a candidate.
+
+@09:25 Publish
+
+@09:27 Attempts to get better chords working. #demo-trio-chord-improvements
+
+@09:48 The quick fix makes things sound MUCH better now. #demo-trio-chord-improvements #timelog:00:18:34
+I've just been noodling on this thing for the past
+15 minutes.
+
+@09:52 Tweaked the tract lengths too #demo-trio
+
+@09:55 revisit mobile, add smoothing, and other things. publish #demo-trio #timelog:01:15:28
+
+@10:02 shoot I am having too much fun with this thing it's working it's really working #demo-trio
+That's how I know this is close.
+
+@10:04 Okay for real, smoothing. #demo-trio
+
+@10:18 My phone is almost definitely running at a higher sampling rate #demo-trio
+I want to see if I can get the webaudio API to request
+a sampling rate (44.1kHz) because the voices are just
+going to sound better.
+---
+I am now coming to understand why gnuspeech decided to
+go the route of resampling from 16kHz to the host sampling
+rate. It's just going to sound better that way. The changes
+sound too weird.
+
+@10:46 Getting caught up in tweaking the "ooo" vocal shape #demo-trio
+I'm finding it's very hard to find in my interface, because
+the sliders end up being very close to zero. I almost
+feel the urge to have a min/max slider too to be able
+to "zoom in".
+
+@11:04 Reqeusted sample rate of 44.khz. Sounds better now #demo-trio
+
+@11:08 Time to upload this thing. #demo-trio
+
+@11:14 Uploaded. #demo-trio
+
+@12:55 Safari troubleshooting. #demo-trio #timelog:00:11:13
+
+@13:30 Talking about chords and practice apps with RN
+
+@14:31 Balloon! Initial port attempt. #voxbox-balloon #timelog:00:51:52
+
+@14:42 I'm confused. I thought balloon took an input. #voxbox-balloon
+---
+Oh wait, I made presure the input, which you would vary
+with an envelope. That's amazing. Good idea, past me.
+
+@15:01 Test out this balloon. In chatter example? #voxbox-balloon
+
+@15:25 Attempts to hook up balloon to poke #poke-evolving-sounds #timelog:00:32:52
+
+@15:42 Our little guy keeps rising, but not falling. Balloon issue? #poke-evolving-sound
+
+@15:59 Okay some evolving sounds now. #poke-evolving-sound
+
+@16:28 listening do guinea pig noises on freesound for inspiration #poke-laughter-chitter
+
+@16:49 I'm not hearing much of a difference for poke #poke-evolving-sound
+I think it's time to move on.
+---
+It takes way too much time to try out sounds in the
+webaudio workflow I have. Having to recompile the wasm,
+go to the web browser, refresh the page, and have it
+maybe not reload because browsers can sometimes be
+weird about WASM stuff specifically, was  apain.
+---
+If I were to do this again,
+I'd build a native version before getting it working
+on the web.
+
+@16:57 Picking up where I left off. #resume-follow-up #timelog:00:51:09
+I am putting it in google docs and fitting it manually
+into the resume template. it is slow.

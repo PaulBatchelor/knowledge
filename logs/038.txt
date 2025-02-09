@@ -1,0 +1,101 @@
+@2024-06-26 Day 38. Thinkpad arrival. Space Jam.
+45 days left of batch.
+---
+My social battery is pretty drained, to be honest. It was
+a difficult day/night for me yesterday. Didn't sleep well.
+It's important to me that I push myself to keep showing up
+and interacting with people. I'm realizing that "working at
+the edge of your abilities" doesn't necessarily mean
+technical abilities.
+---
+Prev: codestudy, planning, lots of hub activities.
+---
+Next:
+
+|| @!(taskref "provision-thinkpad")!@: my laptop came yesterday!
+Going to pick it up and provision it today.
+
+|| @!(taskref "htmlize-codestudy-files")!@: still need more time
+on this.
+
+|| @!(taskref "what-now-week6")!@: commit some brainstorms
+to tasks.
+
+@09:14 Morning Triage
+
+@09:25 Prototyping the initial game using p5 is probably a good move #bucket-initial-scoping
+Other than the sound engine working, getting the drawing
+pipeline working feels like it'll be the most time consuming
+thing. I don't know if I want to spend my time doing that.
+
+@09:35 Writing out zulip check-in.
+
+@09:47 Trying out mini-wasm-renderer
+See @!(dzref "webdev/wasm/mini_wasm_renderer")!@.
+---
+It works!
+
+@09:54 Attempt to pick up my thinkpad laptop #provision-thinkpad
+
+@10:07 Laptop turns on. Good. Now to get Alpine image downloaded and installed #provision-thinkpad
+
+@12:04 I have a decent enough system now
+
+@12:18 Working on getting nmcli configured
+Using the alpine wiki
+
+@12:26 networkmanager service stops when I try to list wifi networks
+I need to figure out how to troubleshoot this
+---
+It's in /var/log/messages I think, tailing now.
+---
+I can get more verbose output with =service networkmanager start -v=
+
+@12:35 rebooting
+
+@12:37 Okay nmcli can list devices now, attempting to connect
+I get an "not authorized to control networking message",
+which is a known thing in the Alpine wiki. There is
+a config file I make:
+
+===
+#+BEGIN_SRC ini
+[main]
+auth-polkit=false
+#+END_SRC
+===
+
+@12:42 we have a connection!
+
+@12:43 Going to run over to the hub and try to connect this thing to their WiFi
+I will feel pretty much accomplished by then.
+
+@13:30 (approx.) Extended Lunch
+
+@15:19 OLED black figured out, back and forth
+
+@15:45 Re-acquainting myself with last progress. Final remaining bits with any luck #htmlize-codestudy-files #timelog:00:23:06
+
+@16:05 The CSS works, now the links need to be hooked up into the HTMLized output #htmlize-codestudy-files #timelog:00:15:43
+
+@16:22 Test it out on website. #htmlize-codestudy-files #timelog:00:18:43
+
+@16:32 Why are nodes missing in "potential" codestudy? #bug-missing-nodes
+For example nodes like "cpp" and "magsign_cpp" are missing.
+---
+It's not being added to the data.
+===
+#+BEGIN_SRC shell
+jq .nodes[] | .name data/codestudy/potential/index.json | grep magsign_cpp
+#+END_SRC
+===
+It *is* showing up in the SQLite table. So the problem is
+in =generate_graph_data.lua=.
+===
+#+BEGIN_SRC sqlite
+SELECT name FROM dz_nodes WHERE name like "%cpp"
+#+END_SRC
+
+@18:34 React Reading #react-adding-interactivity #timelog:00:18:40
+
+@20:00 SPACE JAM.

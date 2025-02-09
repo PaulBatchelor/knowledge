@@ -1,0 +1,162 @@
+@2024-07-28 Day 70: Trio Chord Selection Heuristics.
+12 days left of batch.
+---
+@11:00 Implement upper/lower voice finder. #demo-trio-chords #timelog:00:09:43
+
+@11:11 Plan out how to insert chords #demo-trio-chords #timelog:00:34:42
+
+@11:41 I have built an initial "Chord Manager" #demo-trio-chords
+I believe I have identified the entry points for
+the chord manager in the existing code, and I have
+built an initial dummy interface for it. There is
+a failing test now with the methods.
+---
+If I can implement this interface, I think it'll be
+ready for actual integration.
+
+@11:47 Implementing chord manager #demo-trio-chords #timelog:00:49:00
+
+@11:49 Populating the chord table. #demo-trio-chords
+
+@12:22 Upper/lower movement could be different #demo-trio-chords
+Upper/lower voice selection is based on minimal distance
+from lead voice. This could also change to be based on
+the minimal distance from the voice it is currently at
+while also being above/below the lead.
+---
+Writing this down, I'm realizing there's potential for
+chaos (an upper voice that somehow keeps drifting upwards,
+for instance). Could be a cool thing though.
+
+@12:36 tests seem to pass for the initial chord manager #demo-trio-chords
+
+@12:37 Let's see if I can make this work #demo-trio-chords #timelog:00:17:39
+
+@12:56 I want a minor VI in there #demo-trio-chords #timelog:00:20:00
+
+@13:03 Harmonic continuinity is coming through, but better voice leading needed #demo-trio-chords
+Also running into a bug with chord harmonies. I get
+wrong chords. If I keep tapping on Do, I'll land on
+sustained chords, which aren't correct.
+
+@13:07 Oh right, I think I need to make sure duplicates are ignored #demo-trio-chords
+Still not fixing the bug I described above.
+The lower note is incorrectly holding onto the note of
+the previous chord for some reason.
+
+@13:16 Pulling myself away. #demo-trio-chords
+
+@14:49 Fixing the weird initial chord bug #demo-trio-chords #timelog:00:07:32
+Retriggering the lowest note causes it to alternate
+between a major chord (correct) and a sustained chord (incorrect)
+The upper note is correct, while the lower note is incorrect.
+
+@14:59 It never chooses anything but the top 2 right now #demo-trio-chords
+
+@15:06 Minimal movement, and better choices #demo-trio-chords #timelog:00:19:50
+The state transitions aren't shuffling through the
+states as well as I'd like. Also, there's too much unnecessary
+voice movement.
+---
+How can the system choose interesting chords and also minimize
+movement?
+---
+Specifically: I want the system to be introduced to the minor
+4 (without resorting to randomness), and I want the voices
+to resolve in an expected way.
+---
+It is a constraint problem. Each voice has different behavior.
+---
+Upper voice should move as little as possible while still
+being above the lead voice.
+---
+Lower voice should move the minimum number of steps
+required to complete the chord, based on what the current
+upper and lead pitches are.
+---
+New heuristic idea: of the candidates, choose the least
+used chord so far. Probably keep a running heat map. This
+solves the chord selection problem, but not the voice
+leading issue
+---
+Another heuristic for chord selection is to find
+a candidate chord that requires the least amount
+of movement, given the current upper/lower pitches.
+This would require storing the current pitches of upper/lower,
+calculating the upper/lower pitches for each chord, and
+getting the combined step change for each chord.
+The one with the lowest score wins.
+---
+These are two different heuristics for selection, and
+I can imagine there would be a way to choose one over
+the other.
+
+@15:27 Implement the "least used chord" heuristic #demo-trio-chords #timelog:00:58:01
+
+@16:24 Heuristic implemented in tests, now to try it out #demo-trio-chords #timelog:00:09:35
+
+@16:36 Least Movement Heuristic thoughts, test building #demo-trio-chords
+Least movement: for each candidates, get the working
+upper and lower notes of those chords given the current
+lead pitch. Get the absolute differences between those
+and the current lower/upper. The one with the lowest
+score wins.
+---
+A good hybrid could be something called "Lazy Least Used".
+Go for the least used, but only if the movement required
+is under a certain score. Otherwise, choose the one with
+least movement
+
+@16:42 Working out a least movement test. #demo-trio-chords #timelog:00:18:34
+Firstly, make sure the low-level chord measurement mechanics
+are in place and working properly. Then, simulate a chord change.
+
+@16:57 Implement measure movement core logic #demo-trio-chords #timelog:00:04:33
+
+@17:02 Work out least movement heuristic test #demo-trio-chords #timelog:00:23:06
+
+@17:10 Staggered voices complicate things #demo-trio-chords
+You need to store what the pitch actually is
+somewhat reliably. There isn't currently a caching
+mechanism in place for this.
+---
+The entry points for this happen when a pitch is actually
+scheduled.
+
+@17:20 What happens if you schedule a note that is the same? #demo-trio-chords
+Minimal movement means lots of situations where a note
+stays the same.
+---
+Shouldn't really matter, for now. It'll cause more complication
+if a check is introduced (for example, handle what happens
+if there is no previous note).
+
+@17:26 Implement least movement heuristic #demo-trio-chords #timelog:00:23:20
+
+@17:50 Hook it up into the system #demo-trio-chords #timelog:00:19:03
+
+@18:05 why is it crashing now? #demo-trio-chords
+
+@18:21 It works! Next steps #demo-trio-chords
+Lazy Least Frequent Heuristic, Y-axis expression.
+---
+Nice thing to have: some way to go from staggered to
+instantaneous behavior.
+
+@18:26 LeastMovement crashes due to unwrap still #demo-trio-chords #timelog:00:06:33
+Fixed.
+
+@18:35 packing up. time for dinner.
+
+@19:47 Attemping the Lazy Least Frequent Heuristic #demo-trio-chords #timelog:00:14:43
+This one seems difficult to make a test for. I am tempted
+to just implemented it without tests, as the amount of
+effort it would take to find the perfect test situation
+wouldn't be worth it.
+
+@20:03 It appears to be working. #demo-trio-chords
+This is a good stopping point for my chords engine.
+
+@20:04 More reverb, predelay too. #demo-trio #timelog:00:14:42
+
+@21:02 Some expression control #demo-trio #timelog:00:43:36

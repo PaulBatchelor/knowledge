@@ -1,0 +1,147 @@
+ns companies/fused
+nn references
+ns +references
+
+nn virtual_datasets
+hl https://docs.h5py.org/en/stable/vds.html#what-are-virtual-datasets
+co $ ..
+ln Virtual datasets allow a number of real datasets to be
+ln mapped together into a single, sliceable dataset via an
+ln interface layer.
+
+nn parquet
+hl https://en.wikipedia.org/wiki/Apache_Parquet
+co $ ..
+ln Apache Parquet is a free and open-source
+ln column-oriented data storage format in the Apache
+ln Hadoop ecosystem. It is similar to RCFile and
+ln ORC, the other columnar-storage file formats in
+ln Hadoop, and is compatible with most of the data
+ln processing frameworks around Hadoop. It provides
+ln efficient data compression and encoding schemes
+ln with enhanced performance to handle complex data
+ln in bulk.
+rm pronounced "par-kay"
+
+nn geoJSON
+hl https://en.wikipedia.org/wiki/GeoJSON
+co $ ..
+ln GeoJSON is an open standard format designed
+ln for representing simple geographical features,
+ln along with their non-spatial attributes. It is
+ln based on the JSON format.
+
+nn shapely_geometry
+hl https://shapely.readthedocs.io/en/2.0.4/geometry.html
+co $ ..
+
+nn xarray
+hl https://docs.xarray.dev/en/stable/index.html#
+co $ ..
+
+nn xarray/DataSet
+hl https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html
+co $ ..
+
+nn xarray/DataArray
+hl https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html
+co $ ..
+
+nn stlite
+hl https://github.com/whitphx/stlite
+co $ ..
+ln Serverless Streamlit Running Entirely in Your
+ln Browser
+
+nn streamlit
+hl https://streamlit.io/
+co $ ..
+co $ ../stlite
+ln Streamlit turns data scripts into shareable
+ln web apps in minutes.  All in pure Python. No
+ln front‑end experience required.
+
+nn pyodide
+hl https://pyodide.org/en/stable/
+co $ ..
+co $ ../stlite
+cr This project is to make it run completely on
+cr web browsers with the power of Pyodide, WebAssembly
+cr (Wasm)-ported Python.
+
+nn micropip
+hl https://pypi.org/project/micropip/
+co $ ..
+
+nn pydeck
+hl https://deckgl.readthedocs.io/en/latest/index.html
+co $ ..
+ln High-scale spatial rendering in Python, powered
+ln by deck.gl.
+co deckgl $
+
+nn pydeck/TileLayer
+hl https://deckgl.readthedocs.io/en/latest/layer.html
+co $ ..
+
+nn deckgl
+hl https://deck.gl/
+co $ ..
+ln deck.gl is a GPU-powered framework for visual
+ln exploratory data analysis of large datasets.
+
+nn streamlit_folium
+hl https://folium.streamlit.app/
+co $ ..
+ln streamlit-folium integrates two great open-source
+ln projects in the Python ecosystem: Streamlit
+ln and Folium!
+co streamlit $
+co folium $
+
+nn folium
+hl https://python-visualization.github.io/folium/latest/
+co $ ..
+ln Folium builds on the data wrangling strengths of
+ln the Python ecosystem and the mapping strengths
+ln of the Leaflet.js library. Manipulate your data
+ln in Python, then visualize it in a Leaflet map
+ln via Folium.
+co leaflet $
+
+nn leaflet
+hl https://leafletjs.com/
+co $ ..
+ln an open-source JavaScript library for
+ln mobile-friendly interactive maps
+
+nn data_ingestion
+hl https://www.ibm.com/think/topics/data-ingestion
+co $ ..
+ln Data ingestion is the process of collecting and
+ln importing data files from various sources into a
+ln database for storage, processing and analysis.
+
+nn GeoParquet
+hl https://geoparquet.org/
+co $ ..
+ln GeoParquet is an encoding for how to store
+ln geospatial vector data (point, lines, polygons) in
+ln Apache Parquet, a popular columnar storage format
+ln for tabular data.
+
+nn what_is_cloud_optimized_geotiff
+hl https://guide.cloudnativegeo.org/cloud-optimized-geotiffs/intro.html
+co $ ..
+ln What is a Cloud-Optimized GeoTIFF?
+hl https://cogeo.org/
+co cloud_optimized_geotiff $
+
+nn cloud_optimized_geotiff
+co $ ..
+ln Cloud-Optimized GeoTIFFs
+hl https://cogeo.org/
+
+nn time_magic_command
+hl https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time
+co $ ..

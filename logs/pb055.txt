@@ -1,0 +1,26 @@
+@2024-12-07 Saturday, December 7th
+
+@09:02 2390 Removing Stars From a String #LC75-review #timelog:00:20:00
+
+@09:23 735 Asteroid Collision #LC75-review #timelog:00:45:00
+
+@10:16 394 decode string #LC75-review #timelog:01:00:00
+
+@12:20 System design notes #read-system-design-interview #timelog:01:07:01
+
+@16:16 Chapter 6 keyword skimming #read-DDIA #timelog:00:49:08
+
+@19:11 At one point I made timeline comments work #dz:dagzet/timeline_comments
+I don't think it works anymore, so I am trying it again.
+I think comments will be particularly useful for things
+like code dives and studies.
+
+@20:08 Making another comment here #dz:dagzet/timeline_comments
+
+@20:09 Here is another comment #dz:dagzet/timeline_comments
+
+@21:00 It looks like I had wikizet comments at one point? #dz:dagzet/timeline_comments
+Wild. I can't imagine doing that to myself anymore.
+That whole system was so fragile.
+
+@21:22 Attempting to re-org my codestudy

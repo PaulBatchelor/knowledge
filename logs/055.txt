@@ -1,0 +1,238 @@
+@2024-07-13 Day 55. A sine in tic80. Finally.
+27 days left of batch.
+---
+Prev:
+
+some zettelkastens /
+directed acyclic graphs, /
+bytebeats, and trios
+
+---
+
+Next:
+
+|| @!(taskref "tic80-sine-tone")!@: didn't
+get to this yesterday, first thing on my TODO
+today.
+
+|| @!(taskref "add-day-titles")!@: A good day
+to think about meaningful titles for my previous
+logs.
+
+|| @!(taskref "dagzet-rust")!@: More dagzet
+porting.
+
+@12:02 Noon Triage
+Meant to do a weekly re-cap end of day, but I got
+caught up in an ad-hoc bytebeat coding session.
+
+@12:35 finished up summarizing week 8
+I still need to write up yesterday though...
+
+@13:51 Sidetracked: Learned about a new dumpling place
+Looks good. Gotta go back there and actually get something.
+Also got caught up in conversation with JM.
+
+@13:54 I gotta finish this triage up lol.
+I am here to be interrupted.
+
+@14:09 Let's try to get back to this tic80 things #tic80-sine-tone #timelog:01:34:09
+
+@14:11 I need to better understand the timing relationships #tic80-sine-tone
+I'm not entirely convinced that DSP works at
+a constant samplerate, because I think the timing
+is controlled from the drawing function.
+---
+My belief
+right now is that the audio callback works by taking
+any samples produced since the last time it was
+set, and then stretching it out to fit the required
+number of samples needed for the host audio callback.
+
+@14:19 "opaqueness" these pointers are very opaque #tic80-sine-tone
+I was trying to describe my issue with this codebase.
+What makes this impenetrable is that is that
+the use of macros makes it very opaque. I can't
+simply grep or use ctags to find definitions in
+the codebase.
+---
+Take, for instance, this line (breaks and indentation
+my own):
+===
+#+BEGIN_SRC c
+blip_read_samples(core->blip.left,
+    product->samples.buffer,
+    core->samplerate / TIC80_FRAMERATE,
+    TIC80_SAMPLE_CHANNELS);
+#+END_SRC
+
+Things like "core" and "product" aren't
+actually structs I can go to and look at to study.
+They are somehow dynamically populated in a way
+I don't understand. This is partially what makes
+things slow.
+---
+Anyways, =blip_read_samples= is the call that
+does some kind of resampling called =blip_buf=.
+It is feasible to look up the function prototype
+for this.
+---
+This code is reading from blip instance called
+=left=, and writes to an output of at most
+=samplerate / TIC80_FRAMERATE= samples
+to a =samples.buffer=. I don't understand why
+=TIC80_SAMPLE_CHANNELS= was specifically used
+as that last argument, but I think the desired
+effect of it is that it makes the output
+written to =samples.buffer= as stereo interleaved
+files.
+
+@14:36 printf-ing some constants #tic80-sine-tone
+The output of =blip_read_samples= is reading
+a pretty constant 735 samples at a time, which
+is the number of samples read at 60fps. So it is
+actually working at the host audio rate. My
+timing theory is feeling a little shaky.
+---
+=TIC80_FRAMERATE= is hard coded to be 60,
+so it's filling the max amount. Based on
+the READMEs, I think it doesn't have to be?
+It seems like the =blip_buf= library is
+designed to discretize sound chips
+that don't necessarily have a clock. You
+just note the times when amplitude changes,
+and then it turns that into a buffer of
+audio samples.
+
+@14:53 =blip_end_frame= is weird. #tic80-sine-tone
+For starters: there is no =blip_start_frame=.
+A call to =blip_end_frame= implicitly begins
+a new frame.
+---
+When it is called, a constant called =END_TIME=
+is used.
+---
+The =END_TIME= is defined
+as =CLOCKRATE / TIC80_FRAMERATE=. The framerate
+I already knows being hardcoded as 60. What is
+=CLOCKRATE=, and where is it defined?
+---
+=CLOCKRATE= is defined as =(255<<13)= in =core.h=,
+or 2088960. I do not understand the signifigance
+of this value. Going to try to look up that number,
+as well as the hex version of =0x1fe000=.
+---
+I put it into chatGPT, this is what it said:
+
+===
+#+BEGIN_SRC gpt
+The value 2088960 is significant in the context 
+of computer science and engineering because it 
+represents the clock frequency of the original 
+IBM PC's Real-Time Clock (RTC). In the IBM PC and 
+compatible systems, the RTC is responsible for 
+keeping track of the date and time even when the 
+computer is powered off.
+#+END_SRC
+---
+Okay, that's just bullshit. I don't use GPT
+all well.
+---
+I just don't know what the units are here.
+---
+@15:18 =ENDTIME=, how is it used in =sound.c=? #tic80-sine-tone
+It's used in =runPcm=, there's some math done
+so that the loop works on a fixed PCM buffer size
+of =TIC_PCM_SIZE=, which is 128, but the incrementor
+is in these "clock units", not sample units.
+
+@15:27 tic80 audio is weird because =blip-buf= is weird #tic80-sine-tone
+
+@15:34 When/where is =update_amp= called? #tic80-sine-tone
+Whenever this is called, a new delta is added to
+the blip buffer (delta-encoding). This seems to
+basically mean, "add a sample to the resampling
+buffer".
+---
+called in =runPcm=. It seems to be writing
+PCM data (128 samples) to the blip buffer.
+---
+called in =runEnvelope= and =runNoise=. There's a similar
+pattern to both of these, where a "period"
+is determined from some frequency value.
+
+@16:28 Another attempt. #tic80-sine-tone #timelog:02:07:33
+
+@16:29 Let's isolate where those opening blips are coming from #tic80-sine-tone
+In the =sfx= callback, which is in =tic_core_sound_tick_start=.
+
+@16:38 runPcm isn't doing anything. #tic80-sine-tone
+when I comment the call =runPcm=, sound still works.
+This must some way to get PCM data in like sample
+playback stuff.
+
+@16:41 Making test noise now. #tic80-sine-tone
+If my intuition is understanding this correctly,
+I think this program takes in a pile of delta time
+values, and turns that into a workable buffer?
+I have two optional things to try. One could be:
+write new deltas directly to the blip. Another
+could be, write to the existing PCM channel.
+---
+I got noise working! But, It's stereo noise, and
+I was expecting mono noise. I forgot that
+stereo synthesize is called twice, once for
+each channel.
+---
+Noise is working! It is being written to the
+ringbuf PCM data before calls to =stereo_synthesize=
+are made. I'm noticing gaps in the noise when
+I go between the editor and the console.
+
+@17:03 now, to make it a square. #tic80-sine-tone
+I get the sense that I might not be handling the
+data type correctly. It might be short (16-bit)
+ints, not 8-bit ones. A pitched square will
+for sure be able to figure it out.
+---
+The pitch is wrong. I'm assuming a 44.1 samplerate
+in the square calculation.
+But the blip-buf might be targetting another
+samplerate like 8kHz or something.
+
+@17:18 trying to understand how blip initialization works #tic80-sine-tone
+So the function =blip_set_rates= is definitely being
+set to be the host sample rate of 44.1kHz,
+however, the blip buffer gets initialized to be
+only a 10th of that size, making it effectively 
+~4khz max. Right? And that's assuming 1 channel.
+There are 4 channels that need to share that
+buffer, so that's like 1kHz?
+
+@17:26 Trying the square the blip-buf way. #tic80-sine-tone
+Okay. I'm fighting blip-buf itself somehow? I
+don't want to waste any more time trying
+to figure that out.
+
+@17:44 Writing a square after blip-buf #tic80-sine-tone
+
+@17:59 Finally found the tic80 struct? #tic80-sine-tone
+It wasn't opaque, I just wasn't looking in
+the top level directory. It's in =include/tic80.h=.
+Wow. That's embarassing.
+
+@18:14 What could be causing the crackling? #tic80-sine-tone
+My square shouldn't be crackling. I refuse to
+believe that it's buffer xrun. Sure does sound
+like it though.
+
+@18:17 zeroing out the buffer should have caused the blip to be off #tic80-sine-tone
+This is a clue.
+
+@18:25 Good lord we have a square now. #tic80-sine-tone
+I just messed up the logic for filling up interleaved
+audio.
+
+@18:26 Getting ready to make my damn sine. #tic80-sine-tone
+
+@18:30 sine tone created. it is done now. #tic80-sine-tone

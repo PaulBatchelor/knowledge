@@ -1,0 +1,117 @@
+@2024-08-03 Day 76. c2rust, XM Players in Rust, More Coax
+6 days left of batch.
+@10:40 Late morning triage.
+@11:05 Publishing
+@11:10 Taking a fresh look at this thing. #blob-coax #timelog:00:13:04
+It really should aim to choose the closest pellet.
+---
+The only sound I have in mind right now are the
+sounds of placing pellets. One of those bubble
+popping sounds. Like the sounds on the switch.
+---
+The "consume and become larger" mechanic was
+an interesting ad-hoc idea. But it's Katamari
+Damacy. I should look into that game. They
+have a crazy soundtrack from what I remember.
+---
+I want to play with better colors here. Manic
+Japanese pastel colors. Think Kirby and Mario.
+---
+I think this game soundtrack should feel very
+tactile.
+
+@11:21 Doing some code cleanup. #blob-coax
+
+@11:22 I still want cheezy bossa nova somehow. #blob-coax
+Maybe try to get this working in a tracker?
+
+@11:23 compiling c2rust #investigate-c2rust
+Looks like you can just do "cargo install c2rust",
+which is pretty awesome if it just works.
+---
+LLVM issues. Installed llvm-dev, trying again
+---
+another error: libLLVMDemangle.a does not exist
+
+@11:30 Ugh. maybe a dead end. #investigate-c2rust
+
+@11:34 oooh. there's an llvm17-static #investigate-c2rust
+Let's see if this works.
+---
+Restarting, then trying again. The library *does*
+seem to be there.
+
+@11:42 libLLVMTestingAnnotations.a missing now
+I found an arch page that has it in LLVM18. I installed
+LLVM17. Let's see if that does anything.
+
+@11:52 Same deal. Giving up. #investigate-c2rust
+The most promising command so far:
+---
+#+BEGIN_SRC c
+LLVM_CONFIG_PATH=llvm-config-18 cargo install c2rust
+#+END_SRC
+
+@13:51 I don't need c2rust afterall! #investigate-c2rust
+Someone already made it. See @!(dzref "rust/crates/xmrsplayer")!@.
+
+@13:55 Testing xmrsplayer #investigate-xmrsplayer
+See: @!(dzref "rust/crates/xmrsplayer")!@.
+---
+Well it builds, but once again I run into the usual
+snags with CPal and ALSA.
+---
+People, add a fallback offline wav writer. Jeez.
+
+@14:03 There's a "bufferedsource" example #investigate-xmrsplayer
+Wonder how hard it would be to work that into a
+my monwav voxbox writer.
+
+@14:07 Create a new xmplayer project in my scratch #investigate-xmrsplayer #timelog:01:07:06
+Did not know you coul do the thing with
+"cargo add xmrsplayer". That was so easy.
+---
+But ah yes, now the infamous build time.
+
+@14:20 sidetracked: nectarine in mplayer?
+It works!
+
+@14:27 back to it now. #investigate-xmrsplayer
+
+@14:58 Some sound, but it's very faint. #investigate-xmrsplayer
+
+@15:05 Clicks. Clicks in the output. #investigate-xmrsplayer
+I am not getting a warm feeling about this one.
+
+@15:07 Trying another XM file (acid-jazzed evening) #investigate-xmrsplayer
+No clicks, but this one is out of tune. Also very soft
+gain.
+
+@15:11 Nevermind. #investigate-xmrsplayer
+Not worth the time investment here.
+
+@15:36 Playing my thingy while listening to bossa-nova music #blob-coax #timelog:00:20:05
+wii music: good vibe. something about the timing
+---
+getz/gilberto girl from ipanema: there's something
+more playful about this pairing. I think it's cuz
+there's a bit more of film cliche happening.
+---
+Severance OST Theodire Shapiro "Labor of Love":
+The triangle makes this very funny. It's definitely
+a matter of tempo.
+---
+wii shop: ~170 BPM, ipanema: ~140 BPM, severance: ~125BPM.a
+---
+Desafinado Gilberto/Jobim/Getz ~140 BPM. This one
+also is very playful juxtaposition.
+
+@15:56 rework blob to go over closest #blob-coax #timelog:00:08:38
+
+@16:41 Got sidetracked trying to build Bun on alpine. #blob-coax
+Didn't actually get anything done. Heading out.
+
+@19:37 Back to trying to get "eat closest" working #blob-coax #timelog:00:33:01
+Had a nice high-level chat with RB about a possible
+implementation. He called it an "object pool", which is
+pretty much exactly what I'm going after.

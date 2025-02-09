@@ -1,0 +1,37 @@
+@2024-12-19 Thursday December 19th
+@10:41 Even more 2462 #LC75-review #timelog:00:18:00
+
+@10:45 Grokking intuition for initial filling of queues #dz:leetcode/problems/2462_total_cost_hire_k_workers
+I've been struggling with a bit of logic here in the
+editorial solution. It has to do with how to initially
+fill up the two queues.
+This is the thing that was tripping me up. There are two
+queues to pop from: the head and the tail.
+---
+The head fills up the first =candidates=, but the tail
+uses =max(candidates, len(costs) - candidates)=. This is
+used to prevent overlap, but my brain is having a hard time
+being convinced of this.
+---
+Most of the time, the starting position of the tail will
+be =len(costs) - candidates)=. The end position of
+the head will *always* be at the
+position =candidates - 1=. To prevent overlap, the start
+of the tail needs to be at least at index =candidates=,
+so if =len(costs) - candidates= is smaller than that,
+go with candidates.
+
+@11:04 374 Guess number lower or higher #LC75-review #timelog:00:12:00
+I feel so dyslexic with binary search.
+
+@11:21 2300 Successful Pairs of Spells and Potions #LC75-review #timelog:00:20:00
+
+@11:47 2300 review #LC75-review #timelog:00:19:00
+
+@14:01 162 find peak element #LC75-review
+
+@14:38 162 review #LC75-review #timelog:00:12:00
+
+@14:53 875 Koko eating bananas #LC75-review #timelog:00:19:00
+
+@15:18 216 combination sum iii #LC75-review #timelog:00:11:00

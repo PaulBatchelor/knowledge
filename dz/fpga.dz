@@ -1,0 +1,36 @@
+ns FPGA
+
+nn openfpga_pong
+ln FPGA pong implementation for the analogue pocket
+hl https://github.com/agg23/openfpga-pong
+tg gamedev fpga
+
+nn another_world_5k
+ln another world on an FPGA (UP5K FPGA)
+hl https://github.com/sylefeb/a5k
+tg gamedev fpga
+
+
+nn spirtualized_gb_gbc
+ln Spirtualized GB/GBC
+hl https://github.com/spiritualized1997/openFPGA-GB-GBC
+
+nn wikipedia
+hl https://en.wikipedia.org/wiki/Field-programmable_gate_array
+ln FPGA wikipedia page
+
+nn yosys_oss_cad_suite
+ln Yosys OSS CAD Suite
+hl https://github.com/YosysHQ/oss-cad-suite-build
+
+nn fomu
+ln fomu: an FPGA in your USB port
+hl https://tomu.im/fomu.html
+
+nn ULX3S
+ln ULX3S: A powerful, open hardware ECP5 FPGA dev board
+hl https://www.crowdsupply.com/radiona/ulx3s
+
+nn memmap_fpga_stm32
+ln Memory mapping an FPGA from an STM32
+hl https://serd.es/2024/07/24/Memory-mapping-an-FPGA-from-a-STM32.html

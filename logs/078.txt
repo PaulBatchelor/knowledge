@@ -1,0 +1,29 @@
+@2024-08-05 Day 78. Initial IT parser attempt.
+4 days left of batch.
+---
+Friday will be the 0th day, because there are no
+days left after that.
+@08:38 Morning triage.
+
+@09:15 Want to see how hard this is to do #itparser-rust
+I think I know enough Rust where the "it's in Rust"
+part isn't all that challenging anymore. There
+is one definitive spec file for IT.
+
+@09:26 Publish.
+
+@09:33 taking a look at ITTECH.TXT #itparser-rust #timelog:01:08:43
+
+@09:48 browsing IT files #itparser-rust
+
+@10:25 Found an interesting IT file. adding. #itparser-rust
+
+@10:29 Baby's first IT file. #itparser-rust
+Just some sine pulses.
+
+@11:04 Okay. that was kinda fun. #itparser-rust
+
+@14:52 Attempts at an IT parser #itparser-rust #timelog:00:12:08
+Didn't get far at all.
+
+@19:37 Another attempt? Another attempt. #itparser-rust #timelog:00:27:02

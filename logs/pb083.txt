@@ -1,0 +1,23 @@
+@2025-01-15
+@14:34 Settling in at the hub
+
+@14:37 Attempt to isolate this weird template bug, maybe fix it #timelog:00:40:00
+Bug is fixed. Off by one error. IDs in dagzet are 1-indexed,
+not 0-indexed.
+
+@15:19 Back to mapping backtracking (now recursion 2) #timelog:00:14:38
+
+@15:35 binary tree outlining #timelog:00:03:41
+#! dz leetcode/explore/binary_tree 
+
+@15:40 hack in some multiline support #dzbrowse-dzfiles-linebreak #timelog:00:08:22
+I added an explicit =+/.= syntax. It looks kinda goofy,
+and a little verbose compared to "\" that you
+typically see, but It's very clear. Plus, it only
+took me 8 minutes to make.
+
+@2025-01-18 A small window of hub time
+I'm going to use this time to: outline more of my ed reading.
+
+@15:33 Ed mastery #timelog:00:01:04
+#! dz ed/ed_mastery 

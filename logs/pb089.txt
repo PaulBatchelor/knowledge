@@ -1,0 +1,154 @@
+@2025-01-29
+@10:40 codestudy setup for sqlite
+
+@10:45 sqlite codestudy: openDatabase #timelog:00:57:43
+dz $ codestudy/sqlite/files/main.c/openDatabase
+
+@11:51 sqlite codestudy: openDatabse second pass #timelog:01:01:17
+dz $ codestudy/sqlite/files/main.c/openDatabase
+
+@12:53 exploring fzf-vim #explore-fzf-vim #timelog:00:30:00
+I need a way to more quickly navigate between files in vim.
+I've heard about people using this, and it makes sense.
+My tabbed-based approach really isn't feeling good. I think
+making better use of buffers and pushing/popping stuff
+in the jump list is going to prove to be more efficient.
+
+@12:59 fzf-vim seems to be an alpine package, how to use? #explore-fzf-vim
+
+@13:24 :FZF seems to be good enough for me from the alpine package #explore-fzf-vim
+
+@14:54 Tokio initial exploration #timelog:00:12:00 #tokio-tutorial
+
+@15:10 Tokio initial tutorial #timelog:02:07:52 #tokio-tutorial
+
+@18:09 ripgrep codestudy #timelog:00:07:23
+
+@2025-01-30 Ridgewood WFH.
+
+@13:50 Try to figure out better shorthand for connections #timelog:00:26:59
+The biggest bottleneck I think right now is getting local
+connections right using ".." syntax.
+
+@14:18 Initial work for '?' operator #dagzet-suffix-match #timelog:01:54:41
+The '?suf' operator will resolve a path with suffix 'suf'.
+It will find the first path that matches this.
+---
+Initially, I wanted this to find the closest match relative
+to the path, but it's going to be much simpler and easier
+to reason about if it just attempts to find the first
+match from the root.
+
+@14:34 learned about BTreeMap thank to claude #dagzet-suffix-match
+#! dz rust/std/collections/btreemap
+This seems to be the right data structure need to make
+this path search work correctly.
+
+@14:36 first match might not work, if path is ambiguous, it should crash #dagzet-suffix-match
+first match is tricky because it means it could silently
+make different connections when new nodes are added or the
+graph is introduced to a larger graph. If I have a node
+"a/b/c" with a match pattern of "?/b/c", and I introduce a new
+node "x/b/c", the node becomes ambiguous. Any nodes in
+the "x" namespace using "?b/c" could accidentally resolve
+to "a/b/c" in the larger graph.
+
+@14:58 I keep getting caught up with how to organize code in rust and it is so annoying #dagzet-suffix-match
+I just want to add a file to this project.
+
+@15:04 ah, main.rs is the entry point
+that's how I'm supposed to grok project structure. lib.rs
+if it's a library.
+
+@2025-01-31
+
+@12:02 Arrival at the hub
+Figuring out what to do now
+
+@12:04 continuing with suffix matching #dagzet-suffix-match #timelog:02:32:42
+
+@12:08 refreshing myself with how connections are made/checked #dagzet-suffix-match
+Suffix resolving is tricky, because it depends on knowing
+about the node ahead of time. In dagzet, the node creation 
+order does not matter.
+---
+My current thinking is that nodes using the suffix
+shorthand will get stored as-is, and then resolved later.
+The name resolution would update the connections table
+in-place, and happen right before checking for unknown nodes.
+
+@12:15 setting up tests #dagzet-suffix-match
+Okay, really just one test to get started.
+
+@12:24 making sure '?' is being recognized. #dagzet-suffix-match
+If it is seen, don't append the namespace.
+---
+I realize that this means that this will mean that
+no namespaces can start with '?' without funny things
+happening. I will deal with that... later.
+
+@12:32 More upcoming issues: checks for previous connections
+Resolving a connection at the very end also means there's
+a potential situation where multiple connections can
+sneak in.
+
+@12:43 startswith, useful for checking '?' with str? #dagzet-suffix-match
+#! dz rust/std/str/starts_with
+
+@12:45 Okay, moving forward #dagzet-suffix-match
+It now fails in a way that I expect (no namespace)
+
+@13:06 initial basic test works #dagzet-suffix-match
+Error handling isn't great, but I can get back to that
+
+@13:07 onto checking duplicate names #dagzet-suffix-match
+
+@13:40 running into borrow checker erros with duplicate name lookup #dagzet-suffix-match
+The way I was hoping to do it was that I'd resolve the connection,
+and then check and see if that connection already exists.
+But, this checker is complaining because I'm iterating through
+the connections *and* using those same connections to see
+if there is a connection yet.
+---
+Think I need to refactor "already_connected" to use an
+adjacency list.
+
+@13:49 Building out test adjacency list. #dagzet-suffix-match
+Quickly, I will see if this works by building this adjacency
+list on demand and seeing if the problem goes away.
+
+@14:13 adjacent list hack seems to work. #dagzet-suffix-match
+Now elaborating on tests.
+
+@14:21 going to try a quick refactoring for hashmap in 15 minutes, then pull out #dagzet-suffix-match
+Okay, this is not working. Leaving in the janky solution
+for now. Must move on.
+
+@14:41 hooked up notation to CLI #dagzet-suffix-match
+
+@18:40 checking out vis again #timelog:00:15:00
+
+@18:57 Jumping back into tokio #tokio-tutorial #timelog:01:49:47
+
+@19:36 std::sync::mutex vs tokio::sync::mutex?
+#! dz rust/tokio/tutorial/shared_state/initialize_hashmap
+I can't say I really understand the difference between
+a standard library mutex and a tokio mutex.
+---
+Docs state that a tokio thread "does not block", and
+designed to be "held across all .await points". I'm not
+sure how a mutex can't be blocking, and I don't know what
+the verb "hold" means.
+
+@19:44 slightly more clarification in article
+#! dz $
+" An async mutex is a mutex that is locked across calls to
+.await.".
+---
+So it locks (vs blocking?)
+
+@19:48 It seems like my understanding of blocking is vaguer than I thought
+#! dz rust/tokio/tutorial/references/blocking
+#! dz rust/tokio/tutorial/shared_state/initialize_hashmap
+A non-blocking mutex is puzzling to me. There's also the
+concept of a lock, that isn't a block.

@@ -1,0 +1,149 @@
+@2024-07-08 Day 50. Week 8. More TIC80  code exploration, unexpected Wacom Tablet, staggered voice algorithm
+32 days left of batch.
+---
+prev:
+
+TIC-80 Sound Code /
+Drawing tablets for music? /
+Planning next demo.
+
+---
+
+next:
+
+|| @!(taskref "LC75")!@: Begin leetcode today I guess?
+
+|| @!(taskref "investigate-tic80-audio")!@: Get
+a better sense how the audio callback works, then
+create follow-ups.
+
+|| @!(taskref "demo-react-UI")!@: continue getting
+WebAudio code ported to typescript.
+
+|| @!(taskref "resume-setup")!@: Finishing touches
+I swear.
+
+|| @!(taskref "consider-poke-follow-up")!@: Create
+some feasible tasks today.
+
+---
+Ears have been quite blocked this weekend. Still
+blocked today.
+
+@08:03 Morning triage
+
+@08:15 Leetcode task created. #LC75
+
+@08:17 Try to get project links working today #resume-setup
+Timebox it to about 30 minutes. Give it one last
+look, then send it to Jobs Chat.
+
+@08:18 Downgrading shape morphing #voxbox-shape-morphing
+The approach here isn't interactive enough, and I
+think I need to keep focusing on interaction. I'd
+rather have one mediocre vowel shape and interaction
+than several excellent vowel shapes and no interaction.
+
+@08:27 GOing to try to make some follow-up poke tasks today  #consider-poke-follow-up
+
+@08:29 Been thinking a lot about the mechanics of this over the last few days #concept-concerto
+Things involving Gesture mechanics. Specifically,
+the concept of getting some kind of "auto-accompaniment"
+to work with Gesture signal generator systems. Something
+something event scheduler. Might be good to write some
+things down.
+
+@08:32 Writing better error handling for gendb
+
+@09:01 Phew. Okay. Now, we can publish.
+
+@09:10 TIC-80 investigations part 2. #investigate-tic80-audio #timelog:01:017:34
+@09:19 8-bit audio. #investigate-tic80-audio
+I shouldn't be terribly surprised by this, but the
+output is 8-bit.
+
+@09:24 8khz 8-bit singing vocals don't sound too terrible
+Tested on my linear gesture demo using SoX.
+The darker sound actually works favorably for this
+synthesizer.
+---
+Converting to LPC10 (via sox), however, sucks.
+The pitch is wrong.
+
+@09:48 second-guessing myself on the 8-bit depth #investigate-tic80-audio
+It could be that that's just a raw byte format.
+The sound code here is fairly involved. I'm
+going to need to look at this more.
+
+
+@09:50 Unclear what is a buffer and what is a tick #investigate-tic80-audio
+It is unclear to me when things are computing a single
+sample of audio (tick), and when it's writing to
+a buffer.
+---
+For example, SOKOL seems to be writing shorts (16-bit).
+---
+What I do know is that samples eventually show up in
+something called "product->samples.buffer", but
+I cannot find that definition yet (there's a lot
+of macro magic in this repo). There is also a buffer
+count too. It appears that these could be interleaved
+samples.
+
+@10:20 So much is implicitly defined #investigate-tic80-audio
+As far as I can tell, =product.samples= is dynamically
+generated. It's not actually anywhere in a struct.
+The =tic80= stuct I have yet to actually find.
+Same goes for =product.samples.buffer= and
+=product.samples.count=. 
+---
+There are two top audio callbacks that tell tic80 to
+generate soud (how much sound not sure? but it's
+definitely multi-channel). I'm looking at
+the one sokol uses called =studio_sound=. This
+calls =tic_core_synth_sound()=, which I assume
+writes to =product.samples.buffer= somehow.
+If I can inject an effects processor right after
+the buffer is fully written, I think that can be
+enough for me.
+
+@10:30 =runPcm()= and =stereo_synthesize()= are things to look at #investigate-tic80-audio
+These calls seem to happen right before they
+are resampled.
+
+@11:00 Lunch
+
+@12:00 Talk with Chirag
+
+@13:00 C Creatures
+
+@14:38 Play with Carsten's drawing tablet #drawing-tablet-experiments
+Can it work on linux okay? I can I use libevdev with it?
+
+@14:40 It works out of the box #drawing-tablet-experiments
+
+@14:45 Oh wow, you can use this one as a touch pad too!
+It even does touch to click this is incredible.
+
+@14:51 Working through some evdev sample code I found online
+
+@15:13 Initial polling program working! #drawing-tablet-experiments
+X max: 21600, Y max: 13500, Physical units: 8.5 x 6 inches,
+---
+Along the Y-axis, this evenly comes too 2250 pixels/inch.
+The X axis is about 2541.1764. Huh.
+
+@15:24 How to turn off wacom touchpad (in sway)?
+
+@15:49 After some googling and JQ-ing, got both pen and finger disabled #timelog:01:09:42
+They still work in my test poller.
+
+@15:59 Quick attempt at project links #resume-setup #timelog:00:20:06
+I think I already have URL code in the TeX code?
+---
+oops maybe not
+
+@16:27 React Reading: Scaling up with Reducer and Context #react-managing-state #timelog:00:20:48
+This concludes the "managing state" chapter.
+
+@18:42 Some "staggered voice" system design planning #concept-concerto #timelog:00:32:48

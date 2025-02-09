@@ -1,0 +1,1268 @@
+ns DDIA
+gr Reading Notes: Designing Data-Intensive Applications
+
+nn toc
+ln Table of Contents
+
+ns DDIA/toc
+gr Table of Contents
+
+nn 1_foundations_of_data_systems
+ln Part 1: Foundatoins of Data Systems
+co $ ..
+
+nn 2_distributed_data
+ln Part 2: Distributed Data
+co $ ..
+
+nn 3_derived_data
+ln Part 3: Derived Data
+co $ ..
+
+ns DDIA/toc/1_foundations_of_data_systems
+
+nn 01_reliable_scalable_maintainable
+ln Chapter 1: reliable, scalable, and maintainable applications
+co $ ..
+
+nn 02_data_models_query_languages
+ln Chapter 2: data models and query languages
+co $ ..
+
+nn 03_storage_and_retrieval
+ln Chapter 3: storage and retrieval
+co $ ..
+co ../../../glossary/star_schema $
+co ../../../glossary/fact_table $
+
+nn 04_encoding_evolution
+ln Chapter 4: encoding and evolution
+co $ ..
+
+ns DDIA/toc/2_distributed_data
+
+nn 05_replication
+ln Chapter 5: Replication
+co $ ..
+
+nn 05_replication/reasons_for_replication
+ln Reasons for Replication
+co $ ..
+
+nn 05_replication/approaches_to_replication
+ln three main approaches to replication
+co $ ..
+ff What are the three main approaches to replication?
+fb Single-leader, Multi-leader, and leaderless
+
+nn 05_replication/consistency_models
+ln consistency models for deciding how an application
+ln should behave under replication lag
+
+nn 06_partitioning
+ln Chapter 6: partitioning
+co $ ..
+
+nn 06_partitioning/main_approaches
+ln Main approaches to partitioning
+co $ ..
+
+nn 06_partitioning/secondary_indexes
+ln Partioning Secondary Indexes
+co $ ..
+
+nn 07_transactions
+ln Chapter 7: transactions
+co $ ..
+
+nn 07_transactions/isolation_levels
+ln Isolation Levels
+co $ ..
+
+nn 07_transactions/race_conditions
+ln Race Conditions
+co $ ..
+
+nn 07_transactions/serializable_transactions
+ln Serializable Transactions
+co $ ..
+co $ ../race_conditions
+cr While weak isolation levels protect against
+cr some of the race condition anomalies, only
+cr serializable isolation protects against all of
+cr these issues.
+
+nn 07_transactions/meaning_of_ACID
+ln The meaning of ACID
+co $ ..
+ns +07_transactions/meaning_of_ACID
+
+nn atomicity
+co $ ..
+
+nn consistency
+co $ ..
+
+nn isolation
+co $ ..
+
+nn durability
+co $ ..
+co $ ../../../../../glossary/durable
+
+ns ../..
+
+nn 08_trouble_distributed_systems
+ln Chapter 8: the trouble with distribtued systems
+co $ ..
+
+ns +08_trouble_distributed_systems
+nn partial_failures
+ln partial failures
+co $ ..
+co $ ../../../../glossary/partial_failure
+
+ns +partial_failures
+nn lost_delayed_packet
+ln A lost or delayed packet sent over the network
+co $ ..
+
+nn clock_out_of_sync
+ln node's clock out of sync with other nodes
+co $ ..
+
+nn paused_process_considered_dead
+ln A process may pause for a significant amount
+ln of time, be declared dead by other nodes, then
+ln come back to life again
+co $ ..
+
+ns ..
+
+ns ..
+nn 09_consistency_consensus
+ln Chapter 9: Consistency and consensus
+co $ ..
+co $ ../../../glossary/consensus
+co $ ../../../glossary/consistency
+co $ ../../../glossary/linearizability
+co $ ../../../glossary/causal_consistency
+
+co $ ../../../tools/ZooKeeper
+cr Zookeeper plays an important part in providing
+cr an "outsourced" consesus, failure detection,
+cr and membership service that applicatoins can use.
+
+nn 09_consistency_consensus/equivalent_consensus_problems
+ln Consensus problems that are equivalent
+co $ ..
+
+ns +09_consistency_consensus/equivalent_consensus_problems
+
+nn linearizable_compare_and_set_registers
+ln Linearizable Compare-and-set registers
+co $ ..
+co $ ../../../../../glossary/shared_register
+co $ ../../../../../glossary/compare_and_swap
+
+nn atomic_transaction_commit
+ln Atomic transaction Commit
+co $ ..
+
+nn total_order_broadcast
+ln Total Order Broadcast
+co $ ..
+
+nn locks_and_leases
+ln locks and leases
+co $ ..
+
+nn membership_coordination_service
+ln membership/coordination service
+co $ ..
+
+nn uniqueness_constraint
+ln Uniqueness Constraint
+co $ ..
+
+ns ../..
+
+nn 09_consistency_consensus/if_leader_fails
+ln Actions to take if leader fails
+co $ ..
+
+ns +09_consistency_consensus/if_leader_fails
+
+nn wait_for_recovery
+ln Wait for leader to recover
+co $ ..
+co $ ../../../../../tools/XA_JTA_transaction
+cr Many XA/JTA coordinators choose this option
+
+nn manual_failover
+ln Manually fail over by getting humans to choose a
+ln new leader node and reconfigure the system to
+ln use it.
+co $ ..
+
+nn automatically_choose_new_leader
+ln Automatically choose a new leader
+co $ ..
+
+ns ../..
+
+ns DDIA/toc/3_derived_data
+co $ ../../../../../glossary/systems_of_record
+co $ ../../../../../glossary/derived_data_system
+
+nn 10_batch_processing
+ln Chapter 10: Batch Processing
+co $ ..
+
+co $ ../../../glossary/bounded
+cr input data to a distributed batch processing job is
+cr bounded
+ns +10_batch_processing
+co $ ../../../tools/MapReduce
+
+nn unix tools
+ln unix tools (awk, grep, sort, etc)
+co $ ..
+co $ ../../../../tools/MapReduce
+cr the design philosophy of unix tools carried over
+cr into MapReduce
+
+nn problems_solved
+ln Problems that distributed batch processing
+ln frameworks solve
+co $ ..
+
+nn problems_solved/partitioning
+ln Partitioning
+co $ ..
+co $ ../../../../../glossary/partitioning
+
+nn problems_solved/fault_tolerance
+ln fault tolerance
+co $ ..
+co $ ../../../../../glossary/fault_tolerant
+
+ns ..
+
+nn mapreduce_join_algos
+ln mapreduce join algorithms
+co $ ..
+co $ ../../../tools/MapReduce
+co $ ../../../glossary/join
+
+ns +mapreduce_join_algos
+
+nn sort_merge_joins
+ln sort-merge joins
+co $ ..
+
+nn broadcast_hash_joins
+ln broadcast hash joins
+co $ ..
+
+nn partitioned_hash_joins
+ln Partitioned hash joins
+co $ ..
+
+ns ..
+
+nn 11_stream_processing
+ln Chapter 11: Stream Processing
+co $ ..
+
+nn 12_future_data_systems
+ln Chapter 12: The future of Data Systems
+co $ ..
+
+ns DDIA
+
+nn glossary
+ln Glossary
+
+nn glossary/functional_requirements
+ln Functional requirements: what it should do, such as
+ln allowing data to be sored, retrieved, searched, and
+ln processed in various ways.
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/01_reliable_scalable_maintainable
+
+nn glossary/nonfunctional_requirements
+ln nonfunctional requirements: general properties like
+ln security, reliablity, compliance, scalability,
+ln compatability, maintainability
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/01_reliable_scalable_maintainable
+
+nn glossary/reliability
+ln Reliability: making systems work correctly, even when
+ln faults occur.
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/01_reliable_scalable_maintainable
+
+nn glossary/scalability
+ln Scalability: having strategies for keeping performance
+ln good, even when load increases.
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/01_reliable_scalable_maintainable
+
+nn glossary/maintainability
+ln Maintainability: making life better for engineering and
+ln operations teams who need to work with the system.
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/01_reliable_scalable_maintainable
+
+nn glossary/relational_database
+ln Relational Database: invented to solve "many-to-many" problem
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+
+nn glossary/nosql
+ln NoSQL Datastores
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+
+nn glossary/document_database
+co $ ../nosql
+ln Document Database: targets use cases where data comes in
+ln self contained documents and relationships between
+ln one document and another are rare.
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+
+nn glossary/graph_database
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+co $ ../nosql
+ln Graph Database: useful for cases where data where anything
+ln is potentially related to everything
+
+nn glossary/data_model
+ln Data Model
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+
+nn glossary/query_language
+ln Query Language
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+
+nn tools
+ln tools
+
+nn tools/SQL
+ln SQL
+co $ ../../glossary/query_language
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+
+nn tools/monogdb_aggregration_pipeline
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+co $ ../../glossary/query_language
+ln MongoDB aggregation pipeline
+
+nn tools/cypher
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+co $ ../../glossary/query_language
+ln Cypher
+
+nn tools/SPARQL
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+co $ ../../glossary/query_language
+ln SPARQL
+
+nn tools/datalog
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+co $ ../../glossary/query_language
+ln Datalog
+
+
+nn tools/CSS
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+co $ ../../glossary/query_language
+cr not a DB query language, but intersting parallel
+ln CSS
+
+nn tools/XSL_XPath
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+co $ ../../glossary/query_language
+cr not a DB query language, but intersting parallel
+ln XSL/XPath
+
+nn glossary/sequence_similarity_search
+ln Sequence Similarity Search: taking one long string (such
+ln as a DNA molecule), and matching it against a large
+ln database of strings that are similar, but not identical
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+
+nn glossary/full_text_search
+ln Full Text Search: arguably a kind of data model used
+ln alongside databases.
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+
+nn glossary/OLTP
+ln OLTP: Online Transaction Processing, optimized for
+ln transaction processing.
+ff What is an OLTP databse?
+fb Online transaction processing, optimized for transaction
+fb processing
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../storage_engine
+
+nn glossary/OLAP
+ln OLAP: Online analytical processing, optimized for analytical
+ln processing
+ff What is an OLAP database?
+fb Online analytical processing.
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../storage_engine
+
+nn glossary/storage_engine
+ln Storage Engine
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+
+nn glossary/data_warehouse
+ln Data Warehouse
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../OLAP
+
+nn glossary/log_structured
+ln Log-structured storage engine: only permits appending to
+ln files and deleting obsolete files, but never updates
+ln a file that has been written.
+co $ ../OLTP
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+
+nn tools/bitcask
+ln Bitcask
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../../glossary/log_structured
+
+nn glossary/SSTable
+ln SSTable: Sorted String Table
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../log_structured
+
+nn glossary/LSM_tree
+ln LSM_tree: Log-Structured Merge Tree
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../log_structured
+
+nn tools/levelDB
+ln LevelDB
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../../glossary/log_structured
+
+nn tools/cassandra
+ln Cassandra
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../../glossary/log_structured
+
+nn tools/hbase
+ln HBase
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../../glossary/log_structured
+
+nn tools/lucene
+ln lucene
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../../glossary/log_structured
+
+nn glossary/update_in_place
+ln Update-in-place storage engine: treats disk as set of
+ln fixed-size pages that can be overwritten
+co $ ../OLTP
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+
+nn glossary/btree
+ln B-Tree
+co $ ../update_in_place
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+
+nn glossary/column_oriented_storage
+ln column oriented storage: aims to encode data very
+ln compactly, and minimize amount of data query needs to
+ln read from disk
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/03_storage_and_retrieval
+co $ ../OLAP
+
+nn glossary/rolling_upgrade
+ln Rolling Upgrade: a new version of a service is gradually
+ln deployed to a few nodes at a time, rather
+ln than deploying to all nodes simultaneously.
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+
+nn glossary/evolvability
+ln Evolvability: the ease of making changes in an application
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+co ../rolling_upgrade $
+
+nn tools/JSON
+ln JSON
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+
+nn tools/XML
+ln XML
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+
+nn tools/CSV
+ln CSV
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+
+nn glossary/binary_schema
+ln binary schema driven formats
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+rm useful for documentation and code generation, but
+rm data needs to be decoded before it is human readable
+
+nn tools/thrift
+ln thrift
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+co $ ../../glossary/binary_schema
+
+nn tools/protocol_buffers
+ln protocol_buffers
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+co $ ../../glossary/binary_schema
+
+nn tools/avro
+ln avro
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+co $ ../../glossary/binary_schema
+
+nn glossary/REST
+ln REST API
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+
+nn glossary/RPC
+ln RPC API
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/04_encoding_evolution
+
+nn glossary/high_availability
+ln High Availability: keeping the system running,
+ln even one when machine (or several machines)
+ln goes down
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication
+co $ ../../toc/2_distributed_data/05_replication/reasons_for_replication
+
+nn glossary/disconnected_operation
+ln Disconnected Operation: Allowing an application
+ln to continue working when there is a network
+ln interruption
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication
+co $ ../../toc/2_distributed_data/05_replication/reasons_for_replication
+
+nn glossary/latency
+ln Latency
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication
+co $ ../../toc/2_distributed_data/05_replication/reasons_for_replication
+
+sn glossary/scalability
+co $ ../../toc/2_distributed_data/05_replication
+co $ ../../toc/2_distributed_data/05_replication/reasons_for_replication
+
+nn glossary/single_leader_replication
+ln Single-leader replication: Clients send all writes
+ln to a single node (the leader), which sends a stream
+ln of data change events to the other replicas (followers).
+ln Reads can be performed on any replica, but reads from
+ln followers might be stale.
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication/approaches_to_replication
+
+nn glossary/multi_leader_replication
+ln Multi-leader replication: clients send each write
+ln to one of several leader nodes, any of which can
+ln accept writes. The leaders send streams of data change
+ln events to each other and to any follower nodes.
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication/approaches_to_replication
+
+nn glossary/leaderless_replication
+ln Leaderless Replication: clients send each write to
+ln several nodes, and read from several nodes in parallel
+ln in order to detect and correct nodes with stale data.
+
+nn glossary/replication_lag
+ln Replication Lag: the delay between a write happening
+ln on the leader and being reflected on the follower
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication/consistency_models
+cr Consistency models are helpful for deciding how
+cr an application should behave under replication lag
+
+nn glossary/read_after_write_consistency
+ln Read-after-write consistency: users should always see
+ln data that they submitted themselves.
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication/consistency_models
+ff What is "Read After Write Consistency"?
+fb In replication, read-after-write consistency is the
+fb idea that users should always see data that they
+fb submitted themselves.
+
+nn glossary/monotonic_reads
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication/consistency_models
+ln Monotonic Reads: after users have seen the data at
+ln one point in time, they shouldn't later see the data
+ln from some earlier point in time
+ff What are "Monotonic Reads"?
+fb In replication, monotonic reads are the idea that
+fb if a user sees data from some point in time, they
+fb shouldn't later see the data from an earlier point
+fb in time (time monotonically increasing)
+
+nn glossary/consistent_prefix_reads
+ln Consistent prefix reads: users should see data in a
+ln state that makes causal sense: for example, seeing
+ln a question and its reply in the correct order.
+co $ ..
+co $ ../../toc/2_distributed_data/05_replication/consistency_models
+ff What are "consistent prefix reads"?
+fb In replication consistency models, consistent prefix
+fb reads state that users should see data in a state
+fb that makes causal sense (ex: question then answer).
+
+nn glossary/partitioning
+ln Partitioning: splitting up a large dataset or
+ln computation that is too big for a single machine
+ln into smaller parts and spreading them
+ln across several machines.
+co $ ..
+co $ ../../toc/2_distributed_data/06_partitioning
+ff What is partitioning?
+fb Partitioning is the act of splitting up a large
+fb dataset or computation for a single machine into smaller
+fb parts and spreading them.
+
+nn glossary/sharding
+ln Sharding
+co $ ..
+co $ ../partitioning
+cr AKA
+
+nn glossary/region_hbase
+ln Region: a term for a partition in HBase
+co $ ..
+co $ ../../tools/hbase
+cr A region is a partition in hbase
+co $ ../partitioning
+cr AKA
+
+nn glossary/tablet_bigtable
+ln tablet: in Bigtable, a name for a partition
+co $ ../../tools/bigtable
+co $ ../partitioning
+cr AKA
+
+nn glossary/vnode
+ln vnode: a term for "partition" in cassandra and riak
+co $ ..
+co $ ../partitioning
+cr AKA
+co $ ../../tools/cassandra
+co $ ../../tools/riak
+
+nn tools/bigtable
+hl https://en.wikipedia.org/wiki/Bigtable
+ln Bigtable is a fully managed wide-column and key-value
+ln NoSQL database service for large analytical and
+ln operational workloads as part of the Google Cloud
+ln portfolio.
+co $ ..
+
+nn glossary/wide_column_store
+ln wide-column store:
+ln A wide-column store is a type of NoSQL database that
+ln uses tables, rows, and columns but allows column names
+ln and formats to vary. It can be considered a
+ln two-dimensional key-value store. Google's Bigtable is
+ln a classic example of a wide-column store.
+co $ ..
+co $ ../../tools/bigtable
+cr Bigtable is a prototypical example of a wide-column
+cr store.
+
+nn tools/riak
+hl https://en.wikipedia.org/wiki/Riak
+ln Riak is a distributed NoSQL key-value data store that
+ln offers high availability, fault tolerance, simplicity,
+ln and scalability. It follows Amazon's Dynamo principles
+ln and has Erlang's fault-tolerant data replication and
+ln automatic distribution for performance and resilience.
+ln Riak moved to an open-source project in August 2017,
+ln with many Enterprise Edition features incorporated.
+co $  ..
+
+nn glossary/vbucket
+ln vbucket: term for a partition in Couchbase
+co $ ..
+co $ ../../tools/couchbase
+co $ ../partitioning
+cr AKA
+
+nn tools/couchbase
+hl https://en.wikipedia.org/wiki/Couchbase_Server
+ln Couchbase Server is a source-available, distributed
+ln NoSQL database software that optimizes interactive
+ln applications for multiple concurrent users. It
+ln provides easy scalability, low latency, and high
+ln throughput for key-value access, JSON document
+ln manipulation, and presentation. Designed to scale from
+ln a single machine to large-scale deployments, Couchbase
+ln Server supports clustering.
+co $ ..
+
+nn glossary/key_range_partitioning
+ln Key-range partitioning: involves sorting keys, with a
+ln partition owning all keys between a minimum and
+ln maximum value. This method enables efficient range
+ln queries, but it can lead to hotspots if the
+ln application frequently accesses keys near each other
+ln in the sorted order.
+co $ ..
+co $ ../../toc/2_distributed_data/06_partitioning/main_approaches
+ff What is key-range partitioning?
+fb Key-range partitioning involves sorting keys, with a
+fb partition owning all keys between a minimum and
+fb maximum value. This method enables efficient range
+fb queries, but it can lead to hotspots if the
+fb application frequently accesses keys near each other
+
+nn glossary/hash_partitioning
+co $ ..
+co $ ../../toc/2_distributed_data/06_partitioning/main_approaches
+ln Hash Partitioning: involves applying a hash function to
+ln each key, resulting in a partition owning a range of
+ln hashes. While this method can destroy the ordering of
+ln keys and make range queries inefficient, it can also
+ln help distribute load more evenly across the partitions.
+ff What is hash partitioning?
+fb Hash Partitioning: involves applying a hash function to
+fb each key, resulting in a partition owning a range of
+fb hashes.
+
+nn glossary/document_partitioned_indexes
+ln Document Partitioned Indexes (local indexes): involve
+ln storing secondary indexes in the same partition as the
+ln primary key and value. This approach reduces reduces
+ln updates to a single partition on write, but a read of the
+ln secondary index requires a scatter/gather across all
+ln partitions, increasing the overall operation's
+ln complexity.
+co $ ..
+co $ ../../toc/2_distributed_data/06_partitioning/secondary_indexes
+ff What are document partitioned indexes?
+fb Document Partitioned Indexes (local indexes) store
+fb secondary indexes in the same partition as the primary
+fb key and value, reducing the need to update partitions
+fb on write. However, reads of secondary indexes require
+fb a scatter/gather across all partitions.
+
+nn glossary/term_partitioned_indexes
+ln Term-partioned indexes: store secondary indexes
+ln separately, using the indexed value. An entry in the
+ln secondary index may include records from all
+ln partitions of the primary key. When a document is
+ln written, several partitions of the secondary index
+ln need to be updated, but a read can be served from a
+ln single partition.
+co $ ..
+co $ ../../toc/2_distributed_data/06_partitioning/secondary_indexes
+ff What is a term-partitioned index?
+fb Term-partioned indexes store secondary indexes in
+fb separate partitions, using the indexed value. An entry
+fb in the secondary index may include records from
+fb multiple partitions of the primary key, and updates to
+fb a document may require updating several partitions,
+fb while reads can be served from a single partition.
+
+nn glossary/secondary_index
+ln Secondary Index: A database index created on one or
+ln more columns that are not the primary key, designed to
+ln improve query performance by enabling faster data
+ln retrieval on non-primary key fields. Unlike the
+ln primary index, multiple secondary indexes can exist on
+ln a single table, allowing quick searches on various
+ln columns at the cost of slight overhead during data
+ln modifications.
+co $ ../../toc/2_distributed_data/06_partitioning/secondary_indexes
+
+nn tools/sqlite
+hl https://en.wikipedia.org/wiki/SQLite
+ln SQLite is an open-source database engine written in C
+ln that is not a standalone app, but rather a library
+ln embedded in software. It is widely used in various
+ln embedded systems and web browsers, mobile phones, and
+ln other devices. The SQLite library follows PostgreSQL
+ln syntax and does not enforce type checking by default,
+ln allowing for flexible data insertion.
+
+nn tools/sqlite/create_index
+hl https://www.sqlite.org/lang_createindex.html
+ln CREATE INDEX command
+co $ ..
+co $ ../../../glossary/secondary_index
+td experiment with CREATE INDEX in SQLite
+
+nn glossary/transaction
+ln Transaction: Grouping together several reads and
+ln writes into a logical unit, in order to simplify
+ln error handling and concurrency issues.
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions
+ff What is a transaction?
+fb A transaction groups together several reads and
+fb writes into a logical unit, in order to simplify
+fb error handling and concurrency issues.
+
+nn glossary/transaction_abort
+ln Transaction abort: occurs when a database transaction
+ln is interrupted or terminated prematurely. A large
+ln class of errors related to software and hardware
+ln can be reduced town to transaction aborts.
+co $ ../transaction
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions
+
+nn glossary/read_committed
+ln Read Committed
+td Elaborate on "Read Committed"
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions/isolation_levels
+
+nn glossary/snapshot_isolation
+ln Snapshot isolation
+td elaborated on snapshot isolation
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions/isolation_levels
+
+nn glossary/repeatable_read
+ln Repeatable Read
+co $ ..
+co $ ../snapshot_isolation
+cr AKA
+
+nn glossary/serializable_isolation
+ln Serializable Isolation
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions/isolation_levels
+
+nn glossary/dirty_reads
+ln Dirty Reads: One client reads another client's
+ln uncommitted writes before they have been committed.
+co $ ../read_committed
+cr The read-committed isolation level and stronger
+cr levels prevent dirty reads, ensuring that data is
+cr consistent and accurate.
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions/race_conditions
+ff What are dirty reads?
+fb Dirty reads are a race condition that occurs when
+fb one client reads another client's uncommitted writes
+fb before they have been committed.
+
+nn glossary/dirty_writes
+ln Dirty Writes: one client overwrites data that
+ln another client has written, but not yet committed.
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions/race_conditions
+co $ ../transaction
+cr Almost all transaction types prevent dirty writes.
+ff What are dirty writes?
+fb One client overwrites data that another client has
+fb written, but not yet comitted.
+
+nn glossary/read_skew
+ln Read Skew: a client sees different parts of the database
+ln at different points in time.
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions/race_conditions
+co $ ../snapshot_isolation
+cr Most commonly prevented with snapshot isolation, which
+cr allows a transaction to read froma consistent snapshot
+cr at one point in time.
+co $ ../MVCC
+cr snapshot isolation for fixing read skew is usually
+cr implemented using multi-version concurrency control
+
+nn glossary/MVCC
+ln MVCC: Multi-version concurrency control
+co $ ..
+
+nn glossary/non_repeatable_reads
+ln non-repeatable reads
+co $ ../read_skew
+cr AKA
+
+nn glossary/lost_updates
+ln Lost Update: two clients concurrenctly perform
+ln a read-modify-write-cycle. One overwrites the
+ln other's write without incorporating its changes,
+ln so data is lost.
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions/race_conditions
+co $ ../snapshot_isolation
+cr Some implemenations of snapshot isolation prevent
+cr this anomaly automatically, while others require
+cr a manual lock.
+
+nn glossary/write_skew
+ln Write Skew: A transaction reads something, makes a
+ln decision based on the value it saw, and writes the
+ln decision to the database. However, by the time the
+ln write is made, the premise of the decision is no
+ln longer true.
+co $ ..
+co $ ../../toc/2_distributed_data/07_transactions/race_conditions
+co $ ../serializable_isolation
+cr Only serializable isolation prevents write skew
+
+nn glossary/phantom_reads
+ln A transaction reads objects that match some search
+ln condition. Another client makes a write that affects
+ln the results of that search.
+co $ ../serializable_isolation
+cr Serializable isolation prevents only
+cr straightforward phantom reads
+co $ ../write_skew
+cr phantoms in the context of write skew require
+cr special treatment, such as index range locks
+
+nn glossary/index_range_lock
+ln Index Range Lock
+td Elaborate on "Index Range Lock"
+co $ ../phantom_reads
+cr Phantoms in the context of write skew require
+cr special treatment, such as index-range locks
+co $ ..
+
+nn glossary/two_phase_locking
+ln Two-phase locking
+co $ ../../toc/2_distributed_data/07_transactions/serializable_transactions
+cr for decades has been the standard way of implementing
+cr serializability, but many applications avoid using
+cr it because of its performance characteristifcs
+td elaborated on 2PL
+co $ ..
+
+nn glossary/serializable_snapshot_isolation
+ln Serializable Snapshot Isolation (SSI): a relatively
+ln new algorithm that avoids many of the drawbacks of
+ln previous approaches. It uses an optimistic approach,
+ln allowing transactions to proceed without blocking.
+ln When a transaction attempts to commit, it is checked,
+ln and if it is not serializable, it is aborted.
+co $ ../../toc/2_distributed_data/07_transactions/serializable_transactions
+co $ ..
+
+nn glossary/partial_failure
+ln Partial Failure: in a distributed system, parts of
+ln a system that are broken in some unpredictable way.
+co $ ..
+
+nn glossary/deterministic
+ln Deterministic: Describing a function that always
+ln produces the same output if you give it the
+ln the same input. This means it cannot depend on
+ln random numbers, the time of day, network
+ln communication, or other unpredictable things.
+co $ ..
+
+nn glossary/nondeterministic
+ln Nondetermistic: describing a function that
+ln produces unpredictable output on the same
+ln input.
+co $ ../partial_failure
+cr non-determinism in distributed systems is what makes
+cr distributed systems difficult
+
+nn glossary/consistency
+ln Consistency
+co $ ..
+
+nn glossary/consensus
+ln Consensus: a fundamental problem in distributed
+ln computing, concerning getting several nodes to
+ln agree on something (for example, which node should
+ln be the leader for a database cluster).
+co $ ..
+ff What is consensus?
+fb In distributed computing, consensus is the
+fb problem of getting nodes to agree on something.
+
+nn glossary/linearizability
+ln Linearizability: behaving as if there was only
+ln a single copy of data in the system, which is
+ln updated by atomic operations.
+co $ ../consistency
+cr A popular consistency model
+ff What is "linearizability"?
+fb Linearizabilty is a consistency model which behaves
+fb as if there was only a single copy of data in the
+fb system, updated by atomic operations.
+
+nn glossary/causal_consistency
+ln Causal Consistency: a consistency model that
+ln allows for things to be concurrent. This
+ln causes the timeline to contain branching and
+ln merging.
+co $ ../linearizability
+cr CC does not have the coordination overhead of
+cr linearizability, and is less sensitive to network
+cr problems. It is a weaker consitency model to
+cr linearizability
+co $ ../consistency
+
+nn glossary/shared_register
+hl https://en.wikipedia.org/wiki/Shared_register
+ln Shared Register: fundamental type of shared data
+ln structure in distributed systems with two operations:
+ln a read operation, and write operation. This is used
+ln to build shared-memory and message-passing systems.
+co $ ..
+ff What is a shared register?
+fb A fundamental shared data structure in distributed
+fb systems that allows a read/write operation.
+
+nn glossary/compare_and_swap
+hl https://en.wikipedia.org/wiki/Compare-and-swap
+ln Compare_and_swap:
+ln An atomic instruction used in multithreading to
+ln achieve synchronization. It compares the contents of a
+ln memory location with a given value and, only if they
+ln are the same, modifies the contents of that memory
+ln location to a new given value. This is done as a
+ln single atomic operation.
+ff What is compare-and-swap?
+fb An atomic instruction used in multithreading to
+fb achieve synchronization. It compares the contents
+fb of a memory location with a value, and will only
+fb modify the conents of that memory location if
+fb the value matches.
+co $ ../shared_register
+cr linearizable compare-and-swap register
+
+nn tools/XA_JTA_transaction
+hl https://en.wikipedia.org/wiki/Jakarta_Transactions
+ln Jakarta Transactions, formerly, Java Transactions API,
+ln enables distributed transactions to be done across
+ln multiple X/Open XA resources in a Java environment
+co $ ..
+
+nn tools/ZooKeeper
+hl https://en.wikipedia.org/wiki/Apache_ZooKeeper
+ln Apache ZooKeeper is an open-source server for
+ln coordinating distributed systems. It provides a
+ln hierarchical key-value store for distributed
+ln configuration, synchronization, and naming registry
+ln services. Originally part of the Hadoop project but
+ln now a top-level Apache project.
+td link to MIT distributed systems lecture notes on zookeeper
+co $ ..
+
+nn glossary/systems_of_record
+ln Systems Of Record: AKA source of truth, holds the
+ln authoritative version of your data. Each fact
+ln is represented exactly once.
+co $ ..
+ff What is are "systems of record"?
+fb Systems of record are systems where there
+fb is one source of truth.
+
+nn glossary/derived_data_system
+co $ ../systems_of_record
+cr vs
+co $ ..
+ln derived data system: system that takes some data
+ln from another system and transforms it in some way
+ff What is a "derived data system"?
+fb A derived data system is one that takes some data
+fb from another system and transforms it in some way.
+
+nn glossary/normalized
+ln normalized: structured in such a way that there is
+ln no redundancy or duplication. In a normalized
+ln database, when some piece of data changes, you
+ln only need to change it in once place, not many
+ln copies in many different places.
+co ../systems_of_record $
+cr systems of record represent each fact exactly once,
+cr meaning the data is usually normalized
+ff What does "normalized" mean in the context of a database?
+fb "Normalized" refers to data structured in a way
+fb that there is no duplication.
+
+nn references
+ln External references
+
+nn references/database_normalization
+hl https://en.wikipedia.org/wiki/Database_normalization
+ln Database Normalization
+co $ glossary/normalized
+co $ ..
+
+nn glossary/denormalize
+ln denormalize: to introduce some amount of redundancy
+ln or duplication in a normalized dataset, typically
+ln in the form of a cache or index, in order to speed
+ln up reads. A denormalized value is a kind of
+ln precomputed query result, similar to a materialized
+ln view.
+co $ ../normalized
+cr introduces some amount of redundancy in a normalized
+cr dataset.
+co $ ..
+ff What does it mean to "denormalize" in the context of data?
+fb To denormalize a dataset is to introduce some amount
+fb of redundancy or duplication in a normalized dataset.
+co $ ../derived_data_system
+cr derived data systems are typically denormalized
+
+nn tools/MapReduce
+ln MapReduce is a programming model for processing and
+ln generating big data sets, combining a map procedure
+ln that filters and sorts data with a reduce method that
+ln performs summaries, orchestrated by a framework for
+ln parallel and distributed processing on a cluster. It
+ln is inspired by functional programming concepts, but
+ln adapted for big data processing scalability and fault
+ln tolerance. MapReduce can be implemented in multiple
+ln programming languages with varying optimizations and
+ln is part of open-source systems like Apache Hadoop.
+hl https://en.wikipedia.org/wiki/MapReduce
+co $ ..
+co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
+co $ ../../glossary/query_language
+
+nn glossary/fault_tolerant
+ln Fault Tolerant: able to recover automatically
+ln if something goes wrong, such as a crash or network
+ln failure.
+co $ ..
+co $ ../reliability
+ff what does it mean to be "fault tolerant"?
+fb A system that is fault tolerant is able to recover
+fb automatically if something goes wrong.
+
+nn glossary/materialize
+ln Materialize: to perform a computation eagerly, and
+ln write out its result, as opposed to calculating
+ln it on demand when requested.
+co $ ..
+co $ ../denormalize
+cr a denormalized value is similar to a materialized view
+ff What does it mean to "materialize" something?
+fb To materialize is to perform a computation in advance
+fb and write the results. Materialization is the process
+fb used to build a materialized view.
+
+nn references/materialized_view
+hl https://en.wikipedia.org/wiki/Materialized_view
+co $ ../../glossary/materialize
+ln Materialized view: a database object that contains
+ln the results of a query.
+
+nn glossary/join
+ln Join: the
+ln process of combining rows of tables based on a common
+ln link or attribute between them. It is used to retrieve
+ln specific records that have a connection, such as a
+ln foreign key reference, and is commonly used in queries
+ln that need to retrieve related data.
+ff What is a join?
+fb A join operation brings together records that have
+fb something in common.
+co $ ..
+
+nn glossary/bounded
+ln Bounded: having some known upper limit or size.
+co $ ..
+
+nn glossary/durable
+ln Durable: storing data in such a way that you believe
+ln it will not be lost, even if various faults
+ln occur.
+co $ ..
+
+nn glossary/star_schema
+ln star schema: typical formulaic style for how data
+ln warehouses are used
+co $ ../data_warehouse
+
+nn glossary/fact_table
+ln fact table: records measurements or metrics for a
+ln specific event
+co $ ..
+co $ ../star_schema
+co $ ../systems_of_record
+cr fact table is a source of truth, and
+cr therefore a system of record (I think?)
+
+nn references/star_schema
+hl https://en.wikipedia.org/wiki/Star_schema
+ln star_chema (wikipedia)
+co $ ../../glossary/star_schema
+
+nn references/star_schema/fact_tables
+hl https://en.wikipedia.org/wiki/Star_schema#Fact_tables
+co $ ../../../glossary/fact_table
+co $ ..
+
+nn references/star_schema/dimension_tables
+hl https://en.wikipedia.org/wiki/Star_schema#Dimension_tables
+co $ ../fact_tables
+co $ ..
+co $ ../../../glossary/dimension_table
+
+nn glossary/dimension_table
+ln Dimension Table: Dimension tables usually have
+ln a relatively small number of records compared to fact
+ln tables, but each record may have a large number of
+ln attributes to describe the fact data
+co $ ../fact_table
+co $ ..
+co $ ../star_schema
+

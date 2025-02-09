@@ -1,0 +1,82 @@
+ns rust/tokio/tutorial
+
+nn references
+ns +references
+
+nn mini_redis
+hl https://github.com/tokio-rs/mini-redis
+co $ ..
+
+nn green_threads
+hl https://en.wikipedia.org/wiki/Green_thread
+co $ ..
+ln In computer programming, a green thread is a
+ln thread that is scheduled by a runtime library
+ln or virtual machine (VM) instead of natively by
+ln the underlying operating system (OS).
+
+nn async_await
+hl https://en.wikipedia.org/wiki/Async/await
+co $ ..
+ln In computer programming, the async/await pattern
+ln is a syntactic feature of many programming
+ln languages that allows an asynchronous,
+ln non-blocking function to be structured in a way
+ln similar to an ordinary synchronous function.
+
+nn rust_misconceptions_static
+hl https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md#2-if-t-static-then-t-must-be-valid-for-the-entire-program
+co $ ..
+
+nn send_and_sync
+hl https://doc.rust-lang.org/nomicon/send-and-sync.html
+co $ ..
+
+nn blocking
+hl https://en.wikipedia.org/wiki/Blocking_(computing)
+co $ ..
+ln In computing, a process that is blocked is
+ln waiting for some event, such as a resource
+ln becoming available or the completion of an I/O
+ln operation.[1]
+
+nn shared_mutable_state_rust
+hl https://draft.ryhl.io/blog/shared-mutable-state/
+co $ ..
+
+nn resource_contention
+hl https://en.wikipedia.org/wiki/Resource_contention
+co $ ..
+ln In computer science, resource contention is a
+ln conflict over access to a shared resource such as
+ln random access memory, disk storage, cache memory,
+ln internal buses or external network devices.
+co ?runtime/structs/builder/methods/new_current_thread $
+
+nn in_flight_request
+hl https://stackoverflow.com/questions/48524418/what-does-in-flight-request-mean-for-a-web-browser
+co $ ..
+ln An in-flight request is a request that has been
+ln started but not yet completed, a.k.a. a request
+ln in progress.
+
+nn pipelining
+hl https://redis.io/docs/latest/develop/use/pipelining/
+co $ ..
+ln Redis pipelining is a technique for improving
+ln performance by issuing multiple commands at
+ln once without waiting for the response to each
+ln individual command. Pipelining is supported by
+ln most Redis clients. This document describes the
+ln problem that pipelining is designed to solve
+ln and how pipelining works in Redis.
+
+nn tutorial_code
+hl https://github.com/tokio-rs/website/tree/master/tutorial-code
+co $ ..
+ln tutorial code on gh
+
+
+ns ..
+ns ../../..
+

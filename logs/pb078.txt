@@ -1,0 +1,72 @@
+@2025-01-09 Thursday, January 8th
+@09:06 Some links curation #timelog:00:17:08
+
+@09:24 Migrating some C links to their own subgraph #timelog:00:16:21
+
+@09:47 gah these missing links will be the death of me. tooling up #timelog:00:20:23
+tools/find_missing_nodes.sh created. it works well enough
+
+@10:41 This is actually vol 2, I have found vol 1 #read-system-design-interview
+I think I will have this task for both volumes.
+I can then add timelogs to specific volumes
+
+@10:43 Try to work out multiple timelogs per tag #timelog:00:04:27
+This might actually work already
+
+@10:49 Migrate system design interview to vol2 branch #timelog:00:15:00
+
+@11:07 Try to make better dzfiles importer #dzfiles-importer #timelog:01:47:19
+
+@11:48 Re-remembering subprocess in python #dzfiles-importer
+#! dz python/docs/stdlib/concurrency/subprocess/run
+Going to make the importer in python
+
+@11:48 bytes.decode() needed to convert to string from stdout in subprocess #dzfiles-importer
+#! dz python/docs/stdlib/concurrency/subprocess/run
+#! dz python/docs/stdtypes/bytes/decode 
+
+@12:01 considering optparse for a clear flag #dzfiles-importer
+#! dz python/docs/stdlib/cmdline/optparse
+For now, I think I will just clear by default.
+
+@12:10 drop-in replacement seems to work? now, I want something with directories #dzfiles-importer
+When a directory is found instead of a dz file, read the
+file from the dzfiles directory.
+
+@13:06 lots of path troubleshooting. #dzfiles-importer
+#! dz python/docs/stdlib/os_services/os/path
+#! dz python/docs/stdlib/os_services/os/path/dirname
+#! dz python/docs/stdlib/os_services/os/path/abspath
+#! dz python/docs/stdlib/os_services/os/path/isdir
+#! dz python/docs/stdlib/os_services/os/getcwd
+I ended up with a logic that validates and makes sure
+the file for a path exists. If it can't find it the first
+time, it attempts to use a generated prefix.
+The initial results seem to work out.
+
+@13:25 Import initial TOC for vol 1 #read-system-design-interview #timelog:00:07:30
+Only got to first three.
+
+@13:32 These first three chapters are what I was missing
+#! dz system_design_interview/1/toc 
+
+@14:37 Arrived at the hub. Setting up.
+
+@14:40 Clean up some unknown comment nodes #timelog:00:22:07
+Let's see how easy this is to do...
+---
+New script from sql script: =orphan_comment_nodes=.
+
+@15:03 More TOC mapping #read-system-design-interview #timelog:00:08:06
+#! dz system_design_interview/1/toc
+
+@15:20 Transfer to RM #read-system-design-interview #timelog:00:09:35
+#! dz system_design_interview/1
+
+@15:30 Reading chapter 1 #read-system-design-interview #timelog:00:14:20
+#! dz system_design_interview/1/toc/01_scale_zero_to_millions
+
+@17:02 Correspondences #timelog:00:15:27
+
+@17:19 More chapter 1 #read-system-design-interview #timelog:01:42:20
+#! dz system_design_interview/1/toc/01_scale_zero_to_millions

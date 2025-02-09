@@ -1,0 +1,157 @@
+@2025-01-08 Wednesday, January 8th
+@10:54 Planning #exep-proto #timelog:00:13:50
+@10:55 Got caught up in an idea #timelog:00:13:50
+#! dz scheme/stak
+#! dz scheme/stak/embedding_scheme_in_rust
+I was reading about scheme again today while
+learning about stak and it got me thinking
+again about the act of writing LISP code.
+LISP code is written in a text editor, and while
+it is technically text, I don't find it to be
+actually a text-based structure. Editors like
+emacs simply add enough tooling on top of
+a text editor to make in a reasonable editing
+experience. You really need a specialized
+editor to write LISP code. You couldn't say,
+write LISP code in ed.
+---
+LISP is not a "text editor friendly" language,
+but other languages are. Forth, TCL, APL come
+to mind. Pretty much any generic text editor
+will allow one to comfortably write code here.
+They make use of line breaks, it can be
+readable without indentation structure, etc.
+---
+This idea, "edexp", has me thinking about
+ways to write s-expressions in a more
+text editor friendly way. Basically, you describe
+the tree line-by-line, with one element per line.
+A line consists of an action, and the element.
+Basic actions can be: append to current tree, create
+new tree with item and go one level deep, or
+go up one level and insert new item.
+---
+More actions can be syntactic sugar, such as
+adding more than one item on a line, or making
+going up/down levels in multiple levels.
+---
+@11:11 Finish up prototype #edexp-proto #timelog:00:35:45
+I've already finish 
+
+@11:37 without a visualizer, this is tricky to debug #edexp-proto
+
+@11:50 Trying to add dagzet output #edexp-proto #timelog:01:43:27
+
+@12:18 I need to be able to work with logs #edexp-proto
+adjusting dzbrowse now
+
+@12:34 initial dagzet code seems to work, adding inline dagzet code now #edexp-proto
+
+@13:06 dz lines need a 1:1 correspondance with source files #edexp-proto
+I think this can be hacked in by adding line breaks
+
+@13:09 nevermind, dagzet doesn't have 1:1, use file ranges #edexp-proto
+
+@13:21 Working on adding doubledot structure to nn #edexp-proto
+This will be helpful for inline dagzet expressions
+edexp code, as it would enable creating new nodes with
+relative paths in between edexp code
+
+@14:01 Enough things work that I'm pleased #edexp-proto
+I can tangle to raw s-expressions, and also produce
+inline dagzet code for rich metadata and navigation.
+---
+This might be a very write-only language, and it's
+still weird having have the visual representation
+in one place, with the code in another place.
+
+@15:43 Attempts to implement my trie idea #timelog:00:56:42
+#! dz leetcode/problems/79_word_search
+
+@16:06 Works in tests, TLE on edge cases
+#! dz $
+
+@16:14 Finally getting around to adding "typing" to graph
+#! dz python/docs/stdlib/development/typing
+#! dz leetcode/problems/79_word_search
+I'm going to run this thing locally with the
+edge case, and you need to import typings explicitely.
+
+@16:18 The trie is blowing up in size
+#! dz $
+I wonder if there are duplicates here. I bet there are.
+---
+Yup. There are. Going to quickly turn it into a set.
+
+@16:20 Set unblocks the tree complexity, but that wasn't the bottleneck
+#! dz $
+
+@16:39 Time to stop fighting and look up the answer.
+#! dz $
+
+@16:40 The editorial does not implement trie
+#! dz $
+
+@16:41 This is the wrong problem
+#! dz $
+#! dz leetcode/problems/425_word_squares
+The problem is actually word squares. I looked up
+the wrong problem. This has been a tremendous waste
+of time.
+
+@16:49 Getting into word squares #timelog:01:14:14
+#! dz leetcode/problems/425_word_squares
+
+@16:59 DFS first, then Trie
+#! dz leetcode/problems/425_word_squares
+#! dz leetcode/explore/trie/4_practical_application_2
+The card mentions trying to solve with DFS, then
+to attempt it as a Trie problem. So, we will attempt
+to solve as a DFS problem.
+
+@18:01 Tests pass, edge case fixes, more edge cases
+#! dz leetcode/problems/425_word_squares
+
+@18:41 I have misread the instructions
+#! dz leetcode/problems/425_word_squares
+The key thing is that the kth row and column read
+the same string.
+---
+I looked at one of the "wrong" answers of mine, and it does
+work.
+---
+I'm going to pick this up tomorrow. Switching gears.
+
+@19:08 ripgrep #codestudy #timelog:01:06:17
+
+@21:34 How do I grok these? #read-system-design-interview #timelog:00:15:00
+I find that my ability to retain these is quite limited.
+
+@22:01 Review, attempt to find patterns #read-system-design-interview #timelog:01:21:21
+
+@22:12 I need to make it easier to copy links #read-system-design-interview
+I've decided I'm going to start looking at all the functional
+requirements of the first 5 chapters, and begin
+attempting to connect them to larger ideas. My hope
+is that things will converge.
+
+@23:06 I have created a "concepts" graph. concepts are emerging #read-system-design-interview
+#! dz system_design_interview/concepts
+#! dz system_design_interview/concepts/func_reqs
+#! dz system_design_interview/concepts/non_func_reqs
+In particular, I looked at functional and non-functional
+requirements for the first 5 chapters. I'm quite pleased
+that the verbs of many functional requirements can be
+boiled down to CRUD, or http verbs POST, GET, PUT, DELETE.
+Non-functional requirements seem to share many things
+in common, and are more straight forward than
+functional requirements.
+
+@23:21 I have decided that the outlines at the end of each chapter are actually crap #read-system-design-interview
+There's just a lot of inconsistency between what the text
+conveys, and what the outline shows. It doesn't summarize
+all that well. Compare this to DDIA: summaries and
+conclusions are fantastic well scoped.
+---
+Moving forward, I'm just going to read, outline as I go,
+and then review, tying into larger concepts.

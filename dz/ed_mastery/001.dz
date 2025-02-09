@@ -1,0 +1,50 @@
+ns +toc/001_essentials
+nn starting_ed
+co $ ..
+rm pg 5
+
+nn commands_and_modes
+co $ ..
+rm pg 6
+co ../../../commands/explain_error $
+co ../../../commands/toggle_verbose_errors $
+co ../../../commands/toggle_prompt $
+
+nn switching_modes
+co $ ..
+rm pg 9
+ns +switching_modes
+
+nn ways_to_insert_mode
+ln Ways to get into insert mode
+co $ ..
+
+ns +ways_to_insert_mode
+nn append
+co $ ..
+co ../../../../../commands/mode_append $
+
+nn insert
+ln Insert before current line
+co $ ..
+co ../../../../../commands/mode_insert $
+
+nn change
+ln Change current line
+co ../../../../../commands/mode_change $
+co $ ..
+
+zz -ways_to_insert_mode
+ns ..
+
+zz -switching_modes
+ns ..
+
+nn saving_exiting
+co $ ..
+rm pg 10
+co ../../../commands/quit $
+co ../../../commands/save $
+
+zz -toc/001_essentials
+ns ../..

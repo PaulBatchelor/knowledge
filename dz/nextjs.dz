@@ -1,0 +1,206 @@
+ns webdev/nextjs
+gr Things related to the next.js framework
+
+nn learn_dashboard_app
+hl https://nextjs.org/learn/dashboard-app
+ln Tutorial for how to make a full-stack web application with
+ln next.js
+
+nn react_foundations
+hl https://nextjs.org/learn/react-foundations
+ln React Foundations course
+co $ learn_dashboard_app
+cr suggested prereq course before dashboard app
+
+nn network_boundary
+hl https://nextjs.org/learn/react-foundations/server-and-client-components#network-boundary
+ln Network Boundary: a conceptual line that separates
+ln the server and client environments
+ff What is a network boundary?
+fb A conceptual line that separtes the server and client
+fb environments
+
+nn RSC_payload
+ln RSC Payload: The React Server Component Payload is a
+ln special data format that contains the rendered results
+ln of the server components, as well as placeholders where
+ln client components should be rendered and their
+ln javascript files. It is sent to the client.
+ff What is an RSC payload?
+fb The React Server Component (RSC) payload is a data format
+fb sent to the client in a NextJS setup. It represents the
+fb the rendered results of the server components, and has
+fb placeholders for the client components.
+
+nn fast_refresh
+ln fast refresh: React feature integrate into Next.js that
+ln allows you to live reload the browser page while
+ln maintaining temporary client-side state when you save
+ln changes to a file.
+hl https://nextjs.org/docs/architecture/fast-refresh
+
+nn typescript_plugin
+ln typescript plugin for nextjs
+hl https://nextjs.org/docs/app/building-your-application/configuring/typescript#typescript-plugin
+
+nn partial_rendering
+hl https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#4-partial-rendering
+ln partial rendering: only the route segments that change on
+ln navigation re-render on the client, and any shared segments
+ln are preserved.
+ff What is partial rendering?
+fb In NextJS, partial rendering occurs in the context of navigation.
+fb Only segments that change on navigation re-render on the client.
+fb Any shared segments are preserved.
+
+nn partial_rendering_ex
+ln Ex: when navigating between sibling routes that have
+ln a shared layout such as =/dashboard/settings= and
+ln =/dashboard/analytics=, only the individual pages will be
+ln rendered.
+co $ partial_rendering
+cr example
+co $ learn_dashboard_app
+cr mentioned in dashboard app tutorial
+
+nn root_layout
+ln root layout: required. placed at top-level of your app.
+ln must contain =<html>= and =<body>= tags.
+hl https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates#root-layout-required
+
+nn vercel_postgres
+hl https://vercel.com/docs/storage/vercel-postgres/sdk
+ln Vercel Postgres SDK
+
+nn route_handler
+hl https://nextjs.org/docs/app/building-your-application/routing/route-handlers
+ln Route Handlers: allow you to create custom request
+ln handlers for a given route using the Web Request
+ln and Response APIs
+ff What is a route handler?
+fb Route handlers in NextJS enable the creation of custom
+fb request handlers for a given route.
+
+nn create_next_app
+hl https://nextjs.org/docs/app/api-reference/cli/create-next-app
+ln create-next-app: CLI that allows you to create a new Next.JS
+ln application using the default template or an example from
+ln a public GH repository.
+
+nn redirect
+hl https://nextjs.org/docs/app/api-reference/functions/redirect
+ln redirect: allows you to redirect the user to another URL.
+ff What does redirect() do in NextJS?
+fb Redirect is a function that allows you to redirect the
+fb user to another URL.
+
+nn revalidate_path
+hl https://nextjs.org/docs/app/api-reference/functions/revalidatePath
+ln revalidatePath: allows you to purge cached data on-demand
+ln for a specific path
+ff What does revalidatePath() do in NextJS?
+fb revalidatePath() is a function that allows you to you to
+fb purge cached data on-demand for a specific path.
+
+nn dynamic_routes
+hl https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
+ln Dynamic Routes: when you don't know the exact segment names
+ln ahead of time, and want to create routes from dynamic
+ln data, you can use Dynamic Segments that are filled in at
+ln request time or prerendered at build time
+co $ routing
+
+nn routing
+hl https://nextjs.org/docs/app/building-your-application/routing
+ln Routing: Routes are the skeleton of a NextJS application. 
+ln Routes are related to URL routes, and correspond to a
+ln specific fire hierarchy in the project.
+
+nn routing_terminology
+hl https://nextjs.org/docs/app/building-your-application/routing#terminology
+ln Routing Terminology
+co $ routing
+
+nn URL_segment
+ln URL segment: The part of the URL path, delimited by slashes
+co $ routing_terminology
+co $ dynamic_routes
+cr Dynamic Segments of a route are filled in at request time
+ff What is a URL segment?
+fb A URL segment is the part of the URL path, delimited by
+fb slashes.
+
+nn URL_path 
+ln URL path: Part of the URL that comes after the domain (composed of segments)
+co $ routing_terminology
+
+nn tree
+ln tree: A convention for visualizing a hierarchical structure.
+ln For example, a component tree with parent and
+ln children components, a folder structure, etc.
+co $ routing_terminology
+
+nn subtree
+ln subtree: Part of a tree, starting at a new root (first) and ending at the leaves (last).
+co $ routing_terminology
+
+nn root
+ln Root: The first node in a tree or subtree, such as a root layout.
+co $ routing_terminology
+
+nn leaf
+ln Leaf: Nodes in a subtree that have no children, such as the last segment in a URL path.
+co $ routing_terminology
+
+nn dashboard_app_pass_id_server_action
+hl https://nextjs.org/learn/dashboard-app/mutating-data#4-pass-the-id-to-the-server-action
+ln In this part of the tutorial, a variable id is passed to
+ln the server action via bind.
+
+nn learn_dashboard_app/13_handling_errors
+ln Chapter 13: Handling Errors
+
+nn learn_dashboard_app/14_improving_accessibility
+ln Chapter 14: Improving Accessibility
+hl https://nextjs.org/learn/dashboard-app/improving-accessibility
+
+nn learn_dashboard_app/15_adding_authentication
+hl https://nextjs.org/learn/dashboard-app/adding-authentication
+ln Chapter 15: Adding authentication
+
+nn nextauthjs
+hl https://authjs.dev/reference/nextjs
+ln NextAuthJS
+co $ learn_dashboard_app/15_adding_authentication
+
+nn middleware
+hl https://nextjs.org/docs/app/building-your-application/routing/middleware
+ln Middleware allows you to run code before a request is 
+ln completed. Then, based on the incoming request, you 
+ln can modify the response by rewriting, redirecting, 
+ln modifying the request or response headers, or 
+ln responding directly.
+co $ learn_dashboard_app/15_adding_authentication
+cr In nextauthjs config, the "authorized" callback is used
+cr to verify if user is authorized to verify the request
+cr via nextjs middleware
+co $ nextauthjs
+cr authorized callback uses middleware in nextjs config
+
+nn matcher
+ln matcher: runs middleware on specific paths
+hl https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+co $ middleware
+
+nn nextauthjs/credentials_provider
+hl https://authjs.dev/getting-started/providers/credentials
+ln The Credentials provider allows you to handle signing 
+ln in with arbitrary credentials, such as a username and 
+ln password, domain, two factor authentication or 
+ln hardware device (e.g. YubiKey U2F / FIDO).
+co $ nextauthjs
+
+nn learn_dashboard_app/16_adding_metadata
+ln Chapter 16: adding metadata
+hl https://nextjs.org/learn/dashboard-app/adding-metadata
+co $ ..

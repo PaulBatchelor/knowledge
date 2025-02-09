@@ -1,0 +1,44 @@
+@2024-08-08 Day 81. Never Graduate.
+1 day left of batch.
+
+@09:22 Morning Triage.
+
+@09:26 Probably not going to finish this. #blob-coax
+But I have a working demo that I think I can
+post today.
+
+@09:27 I've read enough of this book #read-elem-compsys
+I think it'd be a good exercise at some point
+to go back and try working through the exercises.
+But, for now, I think I'm at a decent enough
+stopping point.
+
+@09:30 What's a good stopping point for this #itparser-rust
+I think it would be nice to work this out in such a way
+that it exports JSON data for the patterns. Probably
+just low-level row information for now (Serde?).
+Later that can data can be analyzed by other programs
+to do things like extract notes and durations and
+so on.
+
+@09:50 Publishing.
+
+@10:00 Piano-playing and chats.
+I'm trying to pick out some of "Scavenger's Reign", a
+show I just started watching. I really like this show!
+
+@10:51 start curating some ink #curate-ink #timelog:00:15:00
+@11:00 Lunch
+@13:30 More ink curation #curate-ink #timelog:00:52:26
+@14:23 Curated and uploaded. #curate-ink
+It's too bad there isn't a good way to display
+this right now. I'll have to get an ink dagzet
+working at somepoint. Maybe.
+
+@15:00 Back home. Watched TV.
+
+@16:00 Presentations. Never Graduate Ceremony.
+
+@17:00 Party
+
+@20:30 Go Home.

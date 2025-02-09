@@ -1,0 +1,185 @@
+nn commands
+ns +commands
+gr editing commands
+
+nn explain_error
+ln h: explain error
+co $ ..
+
+nn toggle_verbose_errors
+ln H: toggle verbose errors
+co $ ..
+
+nn toggle_prompt
+ln P: toggle prompt on/off
+co $ ..
+
+nn mode_append
+ln a: enter append mode. puts cursor at new line
+ln right after the current line.
+co $ ..
+
+nn mode_insert
+ln i: enter insert mode. inserts text before the
+ln current line.
+co $ ..
+
+nn mode_change
+ln c: choose an existing line, change it.
+
+nn save
+ln w: save file
+co $ ..
+
+nn write
+co $ ../save
+cr pneumonically easier to remember than "save"
+
+nn quit
+ln q: quit
+co $ ..
+
+nn print
+ln p: send contents of address to printer
+co $ ..
+
+nn forward_one_line
+ln +: advance address one line. +N forwards
+ln the address N times.
+co $ ..
+
+nn backward_one_line
+ln -: go backwards one line. -N goes backward
+ln N times.
+co $ ..
+
+nn print_address
+ln =: print address. it defaults to last address
+co $ ..
+
+nn current_address
+ln .: represents current address
+co $ ..
+
+nn print_current_address
+ln .=: print current address
+co $ ..
+co print_address $
+co current_address $
+
+nn last_line
+ln $: last line of file
+co $ ..
+
+nn whole_file
+ln , or %: represnts the whole file
+co $ ..
+
+nn current_to_end
+ln ;: represents current address to end of file
+co $ ..
+
+nn relative_address_range
+ln -x,+y: creates relative address range
+co $ ..
+
+nn print_line_at_address
+ln l: prints line at address
+co $ ..
+
+nn scroll
+ln z: scroll. print lines until it fills the terminal.
+ln optionally, add a number to limit how many lines.
+co $ ..
+
+nn print_line_with_address
+ln n: prints line prefixed with address
+co $ ..
+
+nn print_with_symbol_at_EOL
+ln nl: print with '$' symbol at end of line
+co $ ..
+
+nn bookmark_set
+ln ka: set bookmark 'a' to current address.
+co $ ..
+
+nn bookmark_return
+ln 'a: return to bookmark a
+co $ ..
+
+nn change_line
+co $ ..
+ln c: go into insert mode and change current line
+co $ ../mode_insert
+cr unlike insert, change overwrties the existing line
+
+nn print_buffer
+co $ ..
+ln ,n: print buffer
+
+nn move
+co $ ..
+ln [x]m[y]: move line at address/rangel x 
+ln to after address y
+
+nn delete
+ln [x]d: delete at address/range x
+co $ ..
+
+nn undo
+co $ ..
+ln u: undo last action. There is only one
+ln level of undo in ed.
+
+nn read_from_file
+ln [x]r [filename]: read from file and put it
+ln after address x
+co $ ..
+
+nn join
+ln [x]j: join a range x of lines
+co $ ..
+
+nn transfer
+ln [x]j[y]: transfer/copy range x to address y
+co $ ..
+
+nn append_to_file
+ln [x]W [filename]: append address range x to file
+ln filename.
+co $ ..
+
+nn set_filename
+co $ ..
+ln f [filename]: set filename
+
+nn edit
+co $ ..
+ln e [filename]: edit file filename
+
+nn edit_discard_modified
+co $ ..
+ln E [filename]: edit and discard the currently
+ln modified buffer
+co $ ../edit
+
+nn shell_escape
+ln ! [cmd]: trigger a shell escape and run cmd.
+co $ ..
+
+nn shell_escape_repeat
+ln !!: repeat last shell escape
+co $ ..
+co $ ../shell_escape
+
+nn regex_search_forward
+ln //: search forward in regex
+co $ ..
+
+nn regex_search_globally
+ln g/re/: seach globally with regex
+co $ ..
+
+ns ..
+

@@ -1,0 +1,105 @@
+@2024-07-14 Day 56. Week 9. Linear Gesture Builder for mnolth
+26 days left of batch.
+---
+Prev:
+
+A sine tone signal /
+writes itself to a buffer / 
+after many hours
+---
+Next:
+
+|| @!(taskref "add-day-titles")!@: First thing today.
+
+|| @!(taskref "linear-gesture-interface")!@: build
+some code that makes it easier to build out linear
+gestures using mnolth
+
+|| @!(taskref "dagzet-rust")!@: if there's time.
+
+@09:06 Morning triage
+
+@09:23 A couple notes on blip-buffer size #tic80-sine-tone
+This is going to bother me if I don't write it down.
+I made a mention that having a buffer size of (sr/10)
+would effectively downsample the buffer by 10x, and
+this is not true. It's not true because that buffer
+is not filling in a second of audio, it's 1/60th of
+a second of audio.
+---
+Let it be known that many incorrect assumptions and guesses
+were made here. I leave them intact for historical reasons.
+
+@09:33 Indulging myself a little bit here #linear-gesture-interface
+I've got a linear gesture interface that works pretty
+well in VoxBox, and I'd like to be able to use it
+with mnolth. I also want to be able to populate gesture
+from within lua. To do this, I'll need to build out
+an interface in rust, export a C interface, and
+write some mnolth glue code (mnodes).
+---
+mainly doing this so I can compose some of this audio
+telephone thing using mnolth. Frankly, the Uxn
+thing in GestVM is a bit cumbersome.... the setup
+time takes too long.
+
+@09:47 publishing
+
+@09:50 Let's add some titles to my logs. #add-day-titles #timelog:00:38:08
+
+@10:30 Clearly, I really do not want to do this. #LC75
+
+@10:52 Initial linear gesture interface work #linear-gesture-interface
+First, I'll build out the initial interface in Rust,
+which will wrap the existing linear gesture node with
+a self contained vector of paths. I'll then write
+some C-style functions that make it possible to
+do the following: initialize, append, tick, and destroy.
+I will make a quick example of this in Rust, which
+will be a good stopping point.
+---
+The next parts involve actually getting this inside
+of mnolth/mnodes, and creating the glue code there.
+
+@10:57 Initial scaffolding #linear-gesture-interface #timelog:00:26:58
+
+@11:20 Creating an int to behavior wrapper #linear-gesture-interface #timelog:00:35:38
+Using this as an opportunity to learn how
+to build a function with proper error handling
+and testing.
+I was going to do a more elaborte check validating
+each "okay" one, but it was less messy just to
+see it catch errors.
+
+@12:01 Build an initial example using interface. #linear-gesture-interface #timelog:01:16:06
+
+@12:11 Running into borrow-checker woes #linear-gesture-interface
+
+@12:18 More borrow-checker woes. I am thinking of this problem wrong #linear-gesture-interface
+Instead of building on the existing LinearGesture Generator,
+build a new gesture interface that owns a vector that
+can grow.
+
+@12:29 Things work now. That's enough for now. #linear-gesture-interface #timelog:00:27:52
+Going to work on the C interface next.
+
+@13:59 Attempting the C interface #linear-gesture-interface
+
+@14:47 Using C interface with Rust example. #linear-gesture-interface
+I think I can do that right?
+
+@14:50 We cannot make this both a crate and a library, but can we? #linear-gesture-interface
+I did a bit of a hack, which was to duplicate "src/lib.rs",
+make it "src/clib.rs", and then add an example in the
+Cargo toml file.
+
+@15:14 Time to get this in mnodes. #linear-gesture-interface
+
+@16:38 Sidetracked. This will have to wait. #linear-gesture-interface
+
+@18:44 Back on this... #linear-gesture-interface #timelog:00:53:38
+Most of the day has been wasted away. Going to try to
+move quickly on this.
+
+@19:40 Proof of concept done. Good enough for tonight? #linear-gesture-interface
+Gotta compose now.

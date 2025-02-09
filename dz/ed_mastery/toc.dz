@@ -1,0 +1,44 @@
+ns ed
+nn ed_mastery
+ns +ed_mastery
+nn toc
+ns +toc
+
+nn 000_introduction
+co $ ..
+at pg 1
+
+nn 001_essentials
+at ol
+co $ ..
+at pg 5
+
+nn 010_addresses
+at ol
+rm pg 11
+
+nn 011_editing
+co $ ..
+at pg 19
+at ol
+
+nn 100_file_management_shell_escapes
+co $ ..
+at pg 27
+at ol
+
+nn 101_regex_searches
+co $ ..
+at pg 35
+at ol
+
+nn 110_substitution
+co $ ..
+at pg 51
+
+nn 111_scripting
+co $ ..
+at pg 69
+
+zz -toc
+ns ..

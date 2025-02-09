@@ -1,0 +1,759 @@
+ns python
+gr stuff about python
+
+nn walrus_operator
+hl https://docs.python.org/3/whatsnew/3.8.html#assignment-expressions
+ln the walrus operator
+rm this came up while looking up how to parse a file line-by-line
+rm in python.
+
+nn timsort
+hl https://en.wikipedia.org/wiki/Timsort
+ln Timsort: the underlying algorithm used by Python for
+ln =sort= and =sorted=.
+rm Found via Fluent Python, via EV
+
+nn heapsort_examples
+hl https://docs.python.org/3/library/heapq.html#basic-examples
+ln heapsort examples
+
+nn docs
+hl https://docs.python.org/3/
+ln Python Documentation
+
+nn docs/stdtypes
+hl https://docs.python.org/3/library/stdtypes.html
+ln Standard Types
+
+nn docs/stdtypes/str
+hl https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+
+nn docs/stdtypes/str/isalnum
+hl https://docs.python.org/3/library/stdtypes.html#str.isalnum
+ln str.isalnum(): Return True if all characters in the
+ln string are alphanumeric and there is at least one
+ln character, False otherwise. A character c is
+ln alphanumeric if one of the following returns True:
+ln c.isalpha(), c.isdecimal(), c.isdigit(), or
+ln c.isnumeric().
+co $ docs/stdtypes/str
+
+nn flashcards/alphanumeric
+zz TODO: make ln an optional type in html output
+zz ln Alphanumeric Flashcard
+ff What method is used to tell if a string is only alphanumeric?
+fb isalnum()
+co $ docs/stdtypes/str/isalnum
+
+nn docs/stdtypes/str/isalpha
+hl https://docs.python.org/3/library/stdtypes.html#str.isalpha
+ln str.isalpha(): Return True if all characters in the
+ln string are alphabetic and there is at least one
+ln character, False otherwise.
+co $ docs/stdtypes/str
+
+nn flashcards/alphabetic
+ff What method is used to tell if a string contains only alphabetic characters?
+fb isalpha()
+co $ docs/stdtypes/str/isalpha
+
+nn docs/stdtypes/str/isnumeric
+hl https://docs.python.org/3/library/stdtypes.html#str.isnumeric
+ln str.isalpha(): Return True if all characters in the
+ln string are alphabetic and there is at least one
+ln character, False otherwise.
+co $ docs/stdtypes/str
+
+nn flashcards/numeric
+ff What method is used to tell if a string contains only numeric characters?
+fb isnumeric()
+co $ docs/stdtypes/str/isnumeric
+
+nn docs/stdtypes/str/lower
+hl https://docs.python.org/3/library/stdtypes.html#str.lower
+ln Return a copy of the string with all the cased characters
+ln converted to lowercase.
+co $ docs/stdtypes/str
+
+nn flashcards/lowercase
+ff How does one convert a string to lowercase in python?
+fb str.lower()
+co $ docs/stdtypes/str/lower
+
+nn docs/stdtypes/str/upper
+hl https://docs.python.org/3/library/stdtypes.html#str.upper
+ln Return a copy of the string with all the cased characters
+ln converted to uppercase.
+co $ docs/stdtypes/str
+co $ docs/stdtypes/str/lower
+
+nn flashcards/uppercase
+ff How does one convert a string to uppercase in python?
+fb str.upper()
+co $ docs/stdtypes/str/upper
+
+nn docs/stdlib/filter
+hl https://docs.python.org/3/library/functions.html#filter
+ln filter(function, iterable): Construct an iterator from those elements
+ln of iterable for which function is true. iterable may
+ln be either a sequence, a container which supports
+ln iteration, or an iterator.
+co $ docs/stdlib
+
+nn docs/stdlib
+ln Python standard library
+hl https://docs.python.org/3/library/index.html
+
+nn docs/stdlib/map
+hl https://docs.python.org/3/library/functions.html#map
+ln map(function, iterable, *iterables): Return an
+ln iterator that applies function to every item of
+ln iterable, yielding the results. If additional
+ln iterables arguments are passed, function must take
+ln that many arguments and is applied to the items from
+ln all iterables in parallel.
+co $ docs/stdlib/filter
+cr map/filter pairing
+co $ docs/stdlib
+
+nn docs/reference
+hl https://docs.python.org/3/reference/index.html
+ln Language reference
+
+nn docs/reference/expressions
+ln Chapter 6: expressions
+co $ docs/reference
+
+nn docs/reference/expressions/lambda
+ln Lambda expressions (sometimes called lambda forms) are
+ln used to create anonymous functions.
+hl https://docs.python.org/3/reference/expressions.html#lambda
+co $ docs/reference/expressions
+co $ docs/stdlib/map
+co $ docs/stdlib/filter
+
+nn docs/stdtypes/list
+ln List
+hl https://docs.python.org/3/library/stdtypes.html#list
+co $ ..
+
+nn docs/stdtypes/common_sequence_ops
+ln Common sequence operations
+hl https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
+co $ docs/stdtypes/list
+
+nn double_colon_reverse
+ln x[::-1] can be used to reverse items in a list
+co $ double_colon_operator
+td What's the difference between this and reverse()?
+
+nn double_colon_operator
+ln double colon operator: x[start:stop:step]
+co $ docs/stdtypes/common_sequence_ops
+
+nn docs/stdlib/data_types
+ln Data types modules
+hl https://docs.python.org/3/library/datatypes.html
+co $ docs/stdlib
+
+nn docs/stdlib/data_types/collections
+ln Collections
+hl https://docs.python.org/3/library/collections.html
+co $ docs/stdlib/data_types
+
+nn docs/stdlib/data_types/collections/counter
+ln Counter()
+hl https://docs.python.org/3/library/collections.html#collections.Counter
+co $ docs/stdlib/data_types/collections
+
+nn docs/glossary/hashable
+hl https://docs.python.org/3/glossary.html#term-hashable
+ln An object is hashable if it has a hash value which
+ln never changes during its lifetime (it needs a
+ln __hash__() method), and can be compared to other
+ln objects (it needs an __eq__() method). Hashable
+ln objects which compare equal must have the same hash
+ln value.
+
+nn docs/stdtypes/set
+hl https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
+ln Sets and frozensets
+co docs/glossary/hashable $
+cr it turns out many can be hashable in python, and therefore
+cr work with a set
+
+nn docs/stdtypes/frozenset
+hl https://docs.python.org/3/library/stdtypes.html#frozenset
+co $ docs/stdtypes/set
+
+nn docs/stdtypes/generator
+hl https://docs.python.org/3/library/stdtypes.html#generator-types
+ln generator type
+
+nn docs/glossary/generator
+hl https://docs.python.org/3/glossary.html#term-generator
+ln generator: function which returns a generator iterator
+co $ docs/stdtypes/generator
+cr definition
+
+nn docs/stdtypes/str/format
+hl https://docs.python.org/3/library/stdtypes.html#str.format
+ln str.format(): produces formatted string
+co $ docs/stdtypes/str
+
+nn docs/stdlib/int
+hl https://docs.python.org/3/library/functions.html#int
+ln int() constructor
+rm 2 args is base. int("11", 2) would be a value in binary,
+ln base 2.
+
+nn docs/stdtypes/str/zfill
+hl https://docs.python.org/3/library/stdtypes.html#str.zfill
+ln str.zfill(widht): return copy of the string left-filled
+ln with ascii '0' digits to make string of lenght =width=.
+
+nn docs/stdlib/bin
+hl https://docs.python.org/3/library/functions.html#bin
+ln bin(): convert an integer number to a binary string
+ln prefixed with "0b".
+
+nn docs/reference/simple_statements
+hl https://docs.python.org/3/reference/simple_stmts.html
+ln Chapter 7: simple statements
+co $ docs/reference
+
+nn docs/reference/simple_statements/nonlocal
+hl https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement
+co $ docs/reference/simple_statements
+ln nonlocal: causes listed identifiers to refer to names
+ln previously bound in nonlocal scope
+
+nn repeat_strings
+ln x = "hello", x*3 would be "hellohellohello"
+
+nn docs/stdlib/re
+ln re: regular expressions
+hl https://docs.python.org/3/library/re.html
+co $ ..
+
+nn docs/stdlib/re/sub
+hl https://docs.python.org/3/library/re.html#re.sub
+ln re.sub(pattern, repl, string, count=0, flags=0):
+ln Return the string obtained by replacing the leftmost
+ln non-overlapping occurrences of pattern in string by
+ln the replacement repl.
+co $ ..
+
+nn docs/stdlib/math
+hl https://docs.python.org/3/library/math.html
+ln math
+
+nn docs/stdlib/math/gcd
+hl https://docs.python.org/3/library/math.html#math.gcd
+ln gcd(*integers): get greatest common divisor of two integers
+co $ ..
+
+nn docs/stdtypes/str/split
+hl https://docs.python.org/3/library/stdtypes.html#str.split
+ln split
+rm if no delimiter provided, the algorithm changes and
+rm will split on variable whitespace
+
+nn boolean_value_coercion
+ln Boolean values can be coerced to ints using int().
+ln int(True) is 1, int(False) is 0.
+
+nn docs/stdtypes/set/intersection
+hl https://docs.python.org/3/library/stdtypes.html#frozenset.intersection
+ln set.intersection(), set & other
+co $ ..
+
+nn docs/stdtypes/set/difference
+hl https://docs.python.org/3/library/stdtypes.html#frozenset.difference
+ln set.difference(), set - other
+
+nn pop_on_empty_stack
+ln Pop on empty stack: stk.pop() if stk else None
+
+nn docs/reference/while
+hl https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
+ln while statement
+rm while can have an extra "else" clause
+
+nn unpacking_argument_lists
+hl https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
+ln Unpacking argument lits, aka "*x" (star operator)
+
+nn docs/reference/expressions/yield
+hl https://docs.python.org/3/reference/expressions.html#yieldexpr
+ln Yield: used when defining a generator function
+co $ docs/glossary/generator
+cr used when defining a generator function
+
+nn docs/glossary/generator_iterator
+hl https://docs.python.org/3/glossary.html#term-generator-iterator
+ln Generator Iterator: an object created by a generator.
+co $ docs/glossary/generator
+co $ docs/reference/expressions/yield
+ln Each yield temporarily suspends processing,
+ln remembering the location execution state (including
+ln local variables and pending try-statements). When the
+ln generator iterator resumes, it picks up where it left
+ln off (in contrast to functions which start fresh on
+ln every invocation).
+
+nn docs/stdtypes/mapping_types
+hl https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+co $ ..
+
+nn docs/stdtypes/mapping_types/setdefault
+ln setdefault: If key is in the dictionary, return its
+ln value. If not, insert key with a value of default and
+ln return default. default defaults to None.
+hl https://docs.python.org/3/library/stdtypes.html#dict.setdefault
+co $ ..
+
+nn docs/stdtypes/mapping_types/get
+ln get(key, default=None)
+hl https://docs.python.org/3/library/stdtypes.html#dict.get
+co $ ..
+
+nn docs/stdlib/data_types/collections/defaultdict
+hl https://docs.python.org/3/library/collections.html#collections.defaultdict
+ln defaultdict
+co $ ../../../../stdtypes/mapping_types
+
+nn docs/stdlib/functions
+hl https://docs.python.org/3/library/functions.html
+ln Built-in functions
+co $ ..
+
+nn docs/stdlib/functions/all
+hl https://docs.python.org/3/library/functions.html#all
+ln all(iterable): return true if all the elements of the
+ln iterable are true
+co $ ..
+
+nn docs/glossary/iterable
+hl https://docs.python.org/3/glossary.html#term-iterable
+co $ ../../stdlib/functions/all
+cr all() takes in iterable as arg
+ln Iterable: an object capable of return its members
+ln one at a time.
+
+nn docs/stdlib/data_types/heapq
+hl https://docs.python.org/3/library/heapq.html
+ln This module provides an implementation of the heap
+ln queue algorithm, also known as the priority queue
+ln algorithm.
+co $ ..
+rm min-heap
+
+ns +docs/stdlib/data_types/heapq
+
+nn heappush
+hl https://docs.python.org/3/library/heapq.html#heapq.heappush
+ln heappush(h, item): push a value onto the heap
+co $ ..
+
+nn heappop
+hl https://docs.python.org/3/library/heapq.html#heapq.heappop
+ln heappop(): pop smallest item from heap
+co $ ..
+
+nn heappushpop
+ln heappushpop(h, val):
+ln Push item on the heap, then pop and return the
+ln smallest item from the heap. The combined action runs
+ln more efficiently than heappush() followed by a
+ln separate call to heappop().
+ff What is heappushpop and why would you use it?
+fb heappushpop pushes an item onto the heap then returns
+fb the smallest item from the heap. The combined action
+fb runs more efficiently than heappush/heappop
+co $ ../heappop
+co $ ../heappush
+co $ ..
+
+ns ../../../..
+
+nn docs/stdlib/zip
+hl https://docs.python.org/3/library/functions.html#zip
+ln zip(): iterates over several objects in parallel,
+ln producing tuples with an item for each one.
+co $ ..
+
+nn docs/stdlib/bisect
+hl https://docs.python.org/3/library/bisect.html
+ln bisect(): array bisection algorithm
+co $ ..
+
+nn docs/stdlib/bisect/bisect_left
+hl https://docs.python.org/3/library/bisect.html#bisect.bisect_left
+ln bisect_left(a, x): locate insertion point for x in a,
+ln if x is present in a, returns an insertion point to the
+ln left of x.
+co $ ..
+
+nn docs/stdlib/functools
+hl https://docs.python.org/3/library/functools.html
+ln functools: Higher-order functions and operations on callable objects
+co $ ..
+
+nn docs/stdlib/functools/cache
+hl https://docs.python.org/3/library/functools.html#functools.cache
+ln cache: Simple lightweight unbounded function cache.
+ln Sometimes called "memoize".
+co $ ..
+
+nn docs/stdlib/functools/lru_cache
+hl https://docs.python.org/3/library/functools.html#functools.lru_cache
+co $ ..
+ln Decorator to wrap a function with a memoizing
+ln callable that saves up to the maxsize most recent
+ln calls. It can save time when an expensive or I/O bound
+ln function is periodically called with the same
+ln arguments.
+co ../cache $
+cr because it never needs to to evict old values, cache is
+cr smaller and faster than lru_cache with a size limit
+
+nn docs/stdlib/persistence
+hl https://docs.python.org/3/library/persistence.html
+ln Perstence: modules for storing data in a persistent
+ln form on disk.
+
+nn docs/stdlib/persistence/sqlite3
+hl https://docs.python.org/3/library/sqlite3.html
+co $ ..
+ln SQLite3 module
+
+ns +docs/stdlib/persistence/sqlite3
+
+nn connect
+hl https://docs.python.org/3/library/sqlite3.html#sqlite3.connect
+ln connect(): connects an initial database
+co $ ..
+
+nn connection
+hl https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection
+ln Connection() object
+co $ ..
+cr produced from connect() method
+
+nn connection/cursor
+hl https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.cursor
+ln cursor(): creates a cursor object
+co $ ..
+co $ ../../cursor
+cr creates cursor object
+
+nn connection/close
+hl https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.close
+ln close(): close the database connection
+co $ ..
+
+nn cursor
+hl https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor
+ln sqlite cursor() object
+co $ ..
+
+nn cursor/execute
+ln execute(): execute a single SQL statement, optionally
+ln binding values using placeholders.
+hl https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor.execute
+co $ ..
+
+nn cursor/fetchall
+hl https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor.fetchall
+co $ ..
+ln fetchall()
+
+nn placeholders
+hl https://docs.python.org/3/library/sqlite3.html#sqlite3-placeholders
+ln how to use placeholders to bind values in SQL queries
+co $ ..
+co $ cursor/execute
+cr placeholders can be optionally used in execute()
+
+ns ../../../..
+
+nn docs/reference/try
+hl https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
+ln try caluse
+
+nn docs/reference/try/finally
+hl https://docs.python.org/3/reference/compound_stmts.html#finally-clause
+ln finally
+co $ ..
+
+nn docs/stdlib/netdata
+hl https://docs.python.org/3/library/netdata.html
+ln Internet Data
+co $ ..
+
+nn docs/stdlib/netdata/json
+hl https://docs.python.org/3/library/json.html
+ln JSON decoder/encoder
+co $ ..
+
+ns +docs/stdlib/netdata/json
+
+nn dumps
+hl https://docs.python.org/3/library/json.html#json.dumps
+ln dumps
+co $ ..
+
+nn loads
+hl https://docs.python.org/3/library/json.html#json.loads
+ln loads
+co $ ..
+
+ns ../../../..
+
+nn docs/stdlib/cli
+hl https://docs.python.org/3/library/cmdlinelibs.html
+ln commandline interface libraries
+co $ ..
+
+nn docs/stdlib/runtime
+hl https://docs.python.org/3/library/python.html
+ln Python runtime services
+co $ ..
+
+nn docs/stdlib/runtime/sys
+hl https://docs.python.org/3/library/sys.html
+co $ ..
+ln sys: system-specific parameters and functions
+
+nn docs/stdtypes/str/encode
+hl https://docs.python.org/3/library/stdtypes.html#str.encode
+ln str.encode(): return the string encoded to bytes, returns
+ln utf-8 by default.
+co $ docs/stdtypes/bytes
+cr converted to bytes
+co $ ..
+
+nn docs/stdtypes/bytes
+hl https://docs.python.org/3/library/stdtypes.html#bytes-objects
+ln bytes
+co $ ..
+
+nn docs/stdtypes/bytes/decode
+hl https://docs.python.org/3/library/stdtypes.html#bytes.decode
+ln decode(): decodes to a string
+co $ ../../str
+co $ ../../str/encode
+
+nn docs/reference/data_model
+hl https://docs.python.org/3/reference/index.html
+ln Chapter 3: data model
+co $ ..
+
+nn docs/reference/data_model/special_method_names
+hl https://docs.python.org/3/reference/datamodel.html#special-method-names
+ln Special Method names
+co $ ..
+
+nn docs/reference/data_model/special_method_names/__del__
+hl https://docs.python.org/3/reference/datamodel.html#object.__del__
+ln __del__(): called when instance is about to be destroyed
+
+nn docs/stdlib/internet
+ln Modules for internet protocols
+hl https://docs.python.org/3/library/internet.html
+co $ ..
+
+nn docs/stdlib/internet/socketserver
+hl https://docs.python.org/3/library/socketserver.html
+ln socketserver: module that simplifies the task of writing
+ln network servers.
+co $ ..
+
+ns +docs/stdlib/internet/socketserver
+nn TCPServer
+ln TCPServer(server_address, RequestHandlerClass, bind_and_activate = True)
+hl https://docs.python.org/3/library/socketserver.html#socketserver.TCPServer
+co $ ..
+co $ ../BaseServer
+cr Additional arguments passed to BaseServer class
+
+nn BaseServer
+hl https://docs.python.org/3/library/socketserver.html#socketserver.TCPServer
+ln BaseServer Class
+co $ ..
+
+nn BaseServer/RequestHandlerClass
+hl https://docs.python.org/3/library/socketserver.html#socketserver.BaseServer.RequestHandlerClass
+ln RequestHandlerClass: user-provided request handler class
+co $ ..
+
+ns ../../../..
+
+nn docs/stdlib/internet/http
+hl https://docs.python.org/3/library/http.html
+ln HTTP modules
+co $ ..
+
+nn docs/stdlib/internet/http/server
+hl https://docs.python.org/3/library/http.server.html#module-http.server
+ln HTTP server
+co $ ..
+
+nn docs/stdlib/internet/http/server/SimpleHTTPRequestHandler
+hl https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler
+ln SimpleHTTPRequestHandler
+co $ ..
+
+nn docs/stdlib/os_services
+hl https://docs.python.org/3/library/allos.html
+ln Generic operating system services
+co $ ..
+
+nn docs/stdlib/os_services/os
+hl https://docs.python.org/3/library/os.html
+ln os: miscellaneous operating system services
+co $ ..
+
+nn docs/stdlib/os_services/os/stat
+hl https://docs.python.org/3/library/os.html#os.stat
+ln os.stat(): get the status of a file or a descriptor
+co $ ..
+
+nn docs/stdlib/os_services/os/stat_result
+hl https://docs.python.org/3/library/os.html#os.stat_result
+ln stat_result type
+co $ ../stat
+
+nn docs/stdlib/runtime/sys/argv
+ln argv
+hl https://docs.python.org/3/library/sys.html#sys.argv
+co $ ..
+
+nn docs/glossary
+ln glossary
+co $ ..
+
+nn docs/glossary/slice
+hl https://docs.python.org/3/glossary.html#term-slice
+ln slice: An object usually containing a portion of a
+ln sequence.
+ln A slice is created using the subscript notation, []
+ln with colons between numbers when several are given,
+ln such as in variable_name[1:3:5]. The bracket
+ln (subscript) notation uses slice objects internally.
+co $ ..
+co $ ../../stdtypes/common_sequence_ops
+
+nn pyright
+ln pyright: static type checker for python
+hl https://github.com/microsoft/pyright
+
+nn docs/stdlib/concurrency
+ln Modules for concurrent execution of code
+hl https://docs.python.org/3/library/concurrency.html
+co $ ..
+
+nn docs/stdlib/concurrency/threading
+hl https://docs.python.org/3/library/threading.html
+ln Threading: Thread-based parallelism
+co $ ..
+
+nn docs/stdlib/exceptions
+hl https://docs.python.org/3/library/exceptions.html
+ln Built-in Exceptions
+co $ ..
+
+nn docs/stdlib/exceptions/KeyboardInterrupt
+hl https://docs.python.org/3/library/exceptions.html#KeyboardInterrupt
+ln KeyboardInterrupt Exception
+co $ ..
+
+nn docs/stdlib/re/split
+hl https://docs.python.org/3/library/re.html#re.split
+
+nn docs/stdlib/development
+hl https://docs.python.org/3/library/development.html
+ln development tools
+co $ ..
+
+nn docs/stdlib/development/typing
+hl https://docs.python.org/3/library/typing.html
+ln support for type hints
+co $ ..
+
+nn docs/stdlib/concurrency/subprocess
+hl https://docs.python.org/3/library/subprocess.html
+ln subprocess: spawn new processes.
+co $ ..
+
+nn docs/stdlib/concurrency/subprocess/run
+hl https://docs.python.org/3/library/subprocess.html#subprocess.run
+ln run()
+co $ ..
+
+nn docs/stdlib/cmdline
+ln command line libs
+hl https://docs.python.org/3/library/cmdlinelibs.html
+co $ ..
+
+nn docs/stdlib/cmdline/optparse
+hl https://docs.python.org/3/library/optparse.html
+co $ ..
+
+nn docs/stdlib/os_services/os/path
+
+nn docs/stdlib/os_services/os/path/dirname
+hl https://docs.python.org/3/library/os.path.html#os.path.dirname
+co $ ..
+
+nn docs/stdlib/os_services/os/path/abspath
+hl https://docs.python.org/3/library/os.path.html#os.path.abspath
+co $ ..
+
+nn docs/stdlib/os_services/os/path/isdir
+hl https://docs.python.org/3/library/os.path.html#os.path.isdir
+co $ ..
+
+nn docs/stdlib/os_services/os/getcwd
+co $ ..
+hl https://docs.python.org/3/library/os.html#os.getcwd
+
+nn docs/stdtypes/str/rstrip
+hl https://docs.python.org/3/library/stdtypes.html#str.rstrip
+ln rstrip()
+ln Return a copy of the string with trailing 
+ln characters removed. The chars argument is a 
+ln string specifying the set of characters to be 
+ln removed. If omitted or None, the chars argument 
+ln defaults to removing whitespace.
+co $ ..
+
+nn docs/stdtypes/str/startswith
+hl https://docs.python.org/3/library/stdtypes.html#str.startswith
+
+nn docs/stdlib/markup
+hl https://docs.python.org/3/library/markup.html
+ln structured markup processing tools
+co $ ..
+
+nn docs/stdlib/markup/html
+hl https://docs.python.org/3/library/html.html
+co $ ..
+
+nn docs/stdlib/markup/html/escape
+hl https://docs.python.org/3/library/html.html#html.escape
+co $ ..
+
+nn PEP_3107_function_annotations
+hl https://peps.python.org/pep-3107/
+ln PEP 3107 Function Annotations
+
+nn docs/stdlib/os_services/io
+hl https://docs.python.org/3/library/io.html
+co $ ..
+ln io: Core tools for working with streams
+
+nn docs/stdlib/os_services/io/BytesIO
+hl https://docs.python.org/3/library/io.html#io.BytesIO
+co $ ..

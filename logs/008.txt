@@ -1,0 +1,143 @@
+@2024-05-27 Day 8. Memorial Day.
+Prev: Setting up HTML generation on recurse wiki and
+dagzet.
+---
+Next: Setting up tasks. Phasor DSP code in boing^3. Start
+transferring some code to new VoxBox project.
+
+@07:47 Tea and Morning Triage
+
+@07:53 create generate_all script
+
+@08:19 Is this even actionable? #plan-reading-schedule
+
+@08:34 back to task parsing, where was I here? #task-sqlite-gen
+
+@08:38 Right, time for thinking about SQL schemas #task-sqlite-gen
+
+@08:48 Also trying to make the text files they are in a kind of group #task-sqlite-gen
+
+@09:06 get insert statements for tasks working #task-sqlite-gen
+
+@09:10 hook up to rest of files #task-sqlite-gen
+
+@09:15 Again with the string escaping in SQLite #task-sqlite-gen
+
+@09:19 Quick walk outside
+
+@09:48 Breakfast
+
+@10:19 Begin work on tag parser #add-tag-parser
+Going to need this if I want to connect logs to specific
+tasks.
+
+@10:39 Tag extraction works, now SQLite statements #add-tag-parser
+Will need a new table for this. I also will want to reference
+tasks specifically, so I need to make sure I can get the
+right rowid from the logs row.
+
+@10:44 Mostly safe to a assume day/time combo is unique #add-tag-parser
+I don't have a formal constraint for this, but this is a 
+reasonably safe assumption. I'll use this to look up the rowid.
+
+@10:45 Actually, would max(rowid) work? #add-tag-parser
+The tag parsing is always done immediately after
+inserting the log entry to the table. I assume it auto-increments
+and is the largest? This would be much easer.
+
+@10:56 Let's see what works? #add-tag-parser
+It works! 
+
+---
+
+===
+#+BEGIN_SRC sqlite
+select tag, logs.title from
+logtags inner join logs on logs.rowid = logtags.logid;
+#+END_SRC
+===
+
+@11:01 I wonder if org can be parsed in my logs? #codeblocks-logs
+
+This is some *bold* text.
+
+@11:07 Code blocks don't work as expected yet. #codeblocks-logs
+This is because lines by default get their lines truncated.
+
+@11:10 Going to try using a new divider to preserve line breaks. #codeblocks-logs
+
+@11:39 Code blocks work. That took more time than expected. #codeblocks-logs
+My org parser is very strict about whitespace, and I had
+to be a little more involved about how to extract
+blocks here. It works though.
+
+@11:44 Attempt to aggregate logs of a certain tag #connect-logs-to-tasks
+If the tag belongs to a task, then this is a comment history.
+---
+This seems to work:
+
+===
+#+BEGIN_SRC sqlite
+SELECT day, time, title, comment from logs
+INNER join logtags ON
+logs.rowid = logtags.logid
+WHERE logtags.tag is "add-tag-parser"
+ORDER BY logs.rowid ASC;
+#+END_SRC
+===
+
+@11:53 Shoot, comments aren't breaking up right
+
+@12:02 comments break up okay now I think
+The =- - -= (no spaces) is something I'm using as a divider.
+I reworked the logic so that it's included in the SQLite
+data, and then handled when the HTML is rendered.
+---
+Previously, it was part of a pre-processor that actually
+got filtered out before the SQLite table.
+
+@12:06 Creating "hist" tool #connect-logs-to-tasks
+This will allow me to view a timeline of logs given a
+task name id.
+
+@12:27 All core ingredients acquired for HTMLized task views #connect-logs-to-tasks
+@12:30 Lunch
+@13:12 Begin generating initial HTML pages for tasks #htmlize-tasks
+This will be similar to what I did for dagzet. Create
+one page for each task, and give it a prefix like
+=tasks/htmlize-tasks=, which then displays a timeline of
+logs.
+@13:49 setting up initial janet code #htmlize-tasks
+
+@14:13 now to generate task groups pages #htmlize-tasks
+I was thinking this could be like =taskgroups/priority=,
+with =taskgroups= display a directory of all the groups.
+
+@14:15 Setting up initial taskgroup pages #htmlize-tasks
+
+@14:23 Janet taskgroup renderer #htmlize-tasks
+
+@14:38 Generating grouptasks directory page #htmlize-tasks
+This will just be at @!(ref "taskgroups")!@.
+
+@14:42 janet code for taskgroups #htmlize-tasks
+
+@14:50 tasksgroups work. basic functionality complete. now what? #htmlize-tasks
+What's left here is to add descriptions to tasks and grouptasks,
+and also to add ordering to the task group lists.
+But hey, this is good enough for now.
+
+@14:54 update site generator script to include new subdirs
+
+@15:21 Getting prepped for phasor-work #implement-phasor
+
+@15:35 Implement phasor example #implement-phasor
+
+@15:45 It works! #implement-phasor
+I have a slow phasor modulating the frequency of an audio
+rate phasor, which is getting filter by an LPF.
+
+@15:50 Logs and example file: #implement-phasor
+Here is the phasor implementation: [[https://github.com/PaulBatchelor/BoingBoingBoing/blob/main/src/phasor.rs]].
+---
+Here is the example:[[https://github.com/PaulBatchelor/BoingBoingBoing/blob/main/examples/phasor.rs]]

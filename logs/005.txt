@@ -1,0 +1,45 @@
+@2024-05-24 Day 5 planning VoxBox, monowav in Rust
+@08:50 Wrap up logging from yesterday
+@09:00 Write checkin
+Prev: more voxbox scaffolding, wrote a simple wav writer in
+C, presentations
+
+Next: start writing wav writer in rust, plan out DSP layout
+in voxbox and make tasks for them, building your volitional
+muscles
+
+@09:27 Ink out voxbox potential DSP layout :voxbox-dsp-tasks
+@09:54 Refill SS fountain pen
+It kind of exploded. Hoping it will be okay.
+
+@10:16 Getting ready to depart for hub
+
+@11:10 Arrival
+
+@11:15 VoxBox DSP planning (ink) #voxbox-dsp-tasks
+
+@12:04 Volitional Muscles Workshop
+
+@13:00 SW Neural Encoders
+
+@14:30 At workstation
+Got into talk with someone
+
+@14:44 monowav pre-setup #implement-monowav
+just some scaffolding
+
+@14:52 adding links to knowledge graph
+
+@14:55 some more boilerplace placeholder
+
+@15:00 ???
+Got pulled into various conversations.
+
+@16:44 back to computer
+Doing some messaging on zulip.
+
+@16:57 Update events in my log
+
+@17:03 pairing with Dan
+
+@18:32 it works

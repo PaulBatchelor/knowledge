@@ -1,0 +1,76 @@
+ns sqlite
+gr topics related to the sqlite database
+
+nn website
+hl https://www.sqlite.org/
+ln SQLite homepage
+
+nn past_present_future
+hl https://www.vldb.org/pvldb/vol15/p3535-gaffney.pdf
+ln SQLite: past, present, future
+
+nn bytecode_engine
+hl https://www.sqlite.org/opcode.html
+ln The SQLite bytecode engine
+
+nn query_optimizer_overview
+hl https://www.sqlite.org/optoverview.html
+ln the SQLite query optimizer overview
+
+nn query_optimizer_overview/07_joins
+hl https://www.sqlite.org/optoverview.html#joins
+ln Joins
+
+nn build_your_own
+hl https://app.codecrafters.io/courses/sqlite/overview
+ln Build your own sqlite
+
+nn git
+hl https://github.com/sqlite/sqlite
+ln Official git mirror of SQLite
+
+nn libsql
+hl https://github.com/tursodatabase/libsql
+ln libsql: fork of SQLite that is both open source and
+ln open contributions
+
+
+nn file_format
+hl https://www.sqlite.org/fileformat.html
+ln SQLite file format overview
+
+nn explaining_sqlite_vm
+ln Explaining The Virtual Machine. It turns out SQLite has a 
+ln special virtual machine to process SQL statements. This 
+ln blog posts covers a bit about the VM and how the virtual 
+ln machine, and the process of converting statements into 
+ln sqlite bytecode.
+hl https://medium.com/@JasonWyatt/squeezing-performance-from-sqlite-explaining-the-virtual-machine-2550ef6c5db.
+tg sqlite
+rm gujhrwjfq
+
+nn sqljs_httpvfs
+hl https://github.com/phiresky/sql.js-httpvfs
+ln Hosting read-only SQLite databases on static file hosters like Github Pages
+
+nn sqlean
+hl https://github.com/nalgeon/sqlean
+ln sqlean: The ultimate set of SQLite
+ln extensions
+nn strict_tables
+hl https://www.sqlite.org/stricttables.html
+
+nn foreign_key
+hl https://www.sqlite.org/foreignkeys.html
+nn indexes_on_expressions
+hl https://www.sqlite.org/expridx.html
+nn explain_query_plan
+hl https://www.sqlite.org/eqp.html
+nn analyze
+hl https://www.sqlite.org/lang_analyze.html
+nn pragma_statements
+hl https://www.sqlite.org/pragma.html
+
+nn sqlite_page_explorer
+hl https://github.com/QuadrupleA/sqlite-page-explorer
+tg sqlite lua

@@ -1,0 +1,163 @@
+@2024-07-07 Day 49. Mini drawing tablets, TIC-80 audio code
+33 days left of batch.
+---
+prev:
+
+kickstart neovim /
+slider groups typescript react /
+rust-analyzer
+
+---
+next:
+
+|| @!(taskref "resume-setup")!@: Add data points
+for projects.
+
+|| @!(taskref "consider-drawing-tablet")!@: potentially
+buy a small drawing tablet to play with.
+
+|| @!(taskref "investigate-tic80-audio")!@: look into
+tic80 audio code and music player.
+
+---
+Right arm is a little sore today, probably
+from typing too much yesterday. Going to lay off
+a little bit today.
+
+@09:21 Morning Triage
+
+@09:40 Data for projects, then done? #resume-setup
+
+@09:41 Impulsive idea to buy a drawing tablet today #consider-drawing-tablet
+I've been on and off about this for a few days.
+I think it could be a good interface to try
+and tune vocal synth parameters. But, I should make a
+decision by end of day.
+---
+Thinking about using this with my number pad, somehow.
+I like the minimalism of the numpad, and consider
+it an interesting interface challenge for the
+task of musical sequencing. The tablet
+could be a good way to get continuous fine tuned
+gestural control.
+---
+Performance interface too?
+
+@09:48 want to examine audio code and capabilities in tic80 today #investigate-tic80-audio
+How hackable is it? Is it feasible to shove my rust
+DSP code into the TIC80, audio callback, and control
+it from tic80 code?
+---
+I think this could be a fruitful way to build an
+ecosystem of toys that match my current aesthetic.
+I have semi-long term plans for this potentially.
+---
+I say "semi-potentially" because for its constraints,
+the software has quite a complex software stack. I
+don't expect this to be the most portable thing
+in the world. The most portable things are ideas,
+and after that, bytes of data (8 bits to a byte
+is fairly universal). There is a cartridge format,
+which may end up being a promising data format
+for portability, but we'll see.
+---
+Short term (as in this batch),
+portability or longevity is not a concern. I just
+want to hack stuff.
+
+@09:56 Publish!
+
+@10:00 taking a walk, thinking about tablets and interfaces and other such things #consider-drawing-tablet
+
+@11:01 Tablet and mousepad purchased. #consider-drawing-tablet
+During my walk, I realized this was a perfect device
+for exploring vocal synthesis control. A sort of gold
+standard I could use to try out interface concepts before
+porting to the web.
+---
+I'm starting to see building instruments for the web as
+"redux", as far as solo interactive musical
+experiences go. It's incredibly convenient, but
+ultimately the medium of the browser is still lackluster,
+and usually there are tradeoffs.
+---
+Future thinking: collaboration and share-ability are the
+big strengths of the web. Something I haven't really
+explored yet. Maybe that's something to think about?
+
+@11:10 Concerto: Vocal ensemble control is still first-person experiences #concept-concerto
+I want to move forward with an ensemble demo, but
+coming up with the interface has been a blocker for me.
+I don't want to blindly recreate Blob Opera or Choir.
+It's been hard to see past that. How do you meaningfully
+control multiple voices?
+---
+Then I realized, it was never about controlling
+multiple voices in Blob Opera or Choir. You were
+always controlling one voice at a time, and
+the rest would follow. A leader-follower, or
+soloist-orchestra relationship. Such a thing
+I will call a "concerto" format.
+
+@11:17 drawing tablet demo needs to be realized now #drawing-tablet-demo
+The initial proof-of-concept should ideally be flexible
+and modular. I'll want to prototype a few instruments
+with this thing.
+
+The inputs will be the 10 keys on my numberpad, and
+the XYZ inputs from the drawing pad. Realtime audio,
+etc.
+
+@14:07 Examining TIC-80 codebase for audio #investigate-tic80-audio #timelog:00:21:25
+The idea is to find the files, then add them to codestudy.
+---
+I think I found the music. One file =sound.c=, almost 600
+lines. Not too bad, actually.
+---
+Adding to codestudy.
+---
+why didn't sound.c import?
+---
+oh it did, but the CSS broke. why did it break? Gotta
+look into this. again.
+
+@14:28 gotta see why CSS for this broke. #investigate-css-codestudy #timelog:00:44:46
+Confirmed broken on my website as well.
+---
+git blame says CSS has been unchanged since it
+was initially added.
+---
+demos CSS still works fine.
+---
+Huh. so the file works on a smaller portion of sound.c.
+---
+Looks like an overflow bug.
+
+@15:15 Overflow error confirmed. Deeper investigation. #investigate-css-codestudy #timelog:00:07:30
+The issue is, I don't know how this CSS works. It
+was just lifted from SourceHut.
+---
+It seems to be a flexbox attribute. I changed =flex-wrap=
+to be =nowrap= and the problem went away.
+
+@15:23 Back to tic80 #investigate-tic80-audio #timelog:00:49:55
+
+@15:42 What things call these functions? #investigate-tic80-audio
+I want to see an audio callback.
+
+@17:01 Tasking.
+
+@17:06 Next steps #investigate-tic80-audio
+I think I'm pretty close to understanding how
+the callback stores audio into buffers. There's
+a resampling step which I need to figure out
+more, but I believe I know where I can
+inject custom DSP. At that point, I'll be
+ready to make a follow-up task.
+
+@17:08 Adding project details to resume #resume-setup #timelog:00:30:32
+
+@17:41 Project links maybe? #resume-setup
+This is looking pretty good though.
+
+@19:21 React: passing state deeply with context. #react-managing-state #timelog:00:31:46

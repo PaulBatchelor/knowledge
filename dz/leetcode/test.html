@@ -1,0 +1,6711 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/style.css" rel="stylesheet"/>
+        <title>leetcode/problems</title>
+    </head>
+    <body>
+        <h1>leetcode/problems</h1>
+        <a href="/dz">dz</a> / <a href="/dz/leetcode">leetcode</a> / <a href="/dz/leetcode/problems">problems</a>
+        <h2>Summary</h2>
+<p></p>
+
+        <h2>Subgraphs</h2>
+        <ul><li><a href="/dz/leetcode/problems/1143_longest_common_subsequence">1143_longest_common_subsequence</a></li>
+<li><a href="/dz/leetcode/problems/421_max_XOR_two_numbers">421_max_XOR_two_numbers</a></li>
+<li><a href="/dz/leetcode/problems/425_word_squares ">425_word_squares </a></li>
+<li><a href="/dz/leetcode/problems/72_edit_distance">72_edit_distance</a></li>
+<li><a href="/dz/leetcode/problems/740_delete_and_earn">740_delete_and_earn</a></li>
+</ul>
+        <h2>Node Tree</h2>
+        <ul><li><a href="#1004_max_consecutive_ones_iii">1004_max_consecutive_ones_iii</a></li>
+<li><a href="#1011_capacity_ship_packages_d_days">1011_capacity_ship_packages_d_days</a></li>
+<li><a href="#104_max_depth_binary_tree">104_max_depth_binary_tree</a></li>
+<ul><li><a href="/dz/leetcode/references#tail_call">leetcode/references/tail_call</a></li>
+</ul><li><a href="#1071_GCD_of_strings">1071_GCD_of_strings</a></li>
+<li><a href="#110_balanced_binary_tree">110_balanced_binary_tree</a></li>
+<li><a href="#1137_nth_tribonacci_number">1137_nth_tribonacci_number</a></li>
+<li><a href="#1143_longest_common_subsequence">1143_longest_common_subsequence</a></li>
+<ul><li><a href="/dz/leetcode/problems/1143_longest_common_subsequence#solutions">solutions</a></li>
+<li><a href="/dz/leetcode/references#longest_common_subsequence">leetcode/references/longest_common_subsequence</a></li>
+</ul><li><a href="#1161_max_level_sum_binary_tree">1161_max_level_sum_binary_tree</a></li>
+<li><a href="#1207_unique_number_of_occurrences">1207_unique_number_of_occurrences</a></li>
+<li><a href="#121_best_time_to_sell_and_buy_stock">121_best_time_to_sell_and_buy_stock</a></li>
+<ul><li><a href="/dz/leetcode/references#maximum_subarray_problem">leetcode/references/maximum_subarray_problem</a></li>
+<li><a href="/dz/leetcode/references#kadanes">leetcode/references/kadanes</a></li>
+</ul><li><a href="#125_valid_palindrome">125_valid_palindrome</a></li>
+<li><a href="#1335_minimum_difficulty_job_schedule">1335_minimum_difficulty_job_schedule</a></li>
+<li><a href="#1372_longest_zigzag_path">1372_longest_zigzag_path</a></li>
+<li><a href="#137_single_number_2">137_single_number_2</a></li>
+<ul><li><a href="#136_single_number">136_single_number</a></li>
+</ul><li><a href="#141_linked_list_cycle">141_linked_list_cycle</a></li>
+<ul><li><a href="#2095_delete_middle_node">2095_delete_middle_node</a></li>
+</ul><li><a href="#1431_kids_with_greatest_number_of_candies">1431_kids_with_greatest_number_of_candies</a></li>
+<li><a href="#1448_count_good_nodes">1448_count_good_nodes</a></li>
+<li><a href="#1456_max_vowels_in_substring">1456_max_vowels_in_substring</a></li>
+<li><a href="#1466_reorder_routes_to_city_zero">1466_reorder_routes_to_city_zero</a></li>
+<li><a href="#146_LRU_cache">146_LRU_cache</a></li>
+<li><a href="#1493_longest_subarray_ones_deleting_elem">1493_longest_subarray_ones_deleting_elem</a></li>
+<li><a href="#151_reverse_words_in_a_string">151_reverse_words_in_a_string</a></li>
+<li><a href="#155_min_stack">155_min_stack</a></li>
+<li><a href="#162_find_peak_element">162_find_peak_element</a></li>
+<li><a href="#1657_close_strings">1657_close_strings</a></li>
+<li><a href="#1659_maximize_grid_happiness">1659_maximize_grid_happiness</a></li>
+<li><a href="#1679_max_number_of_ksum_pairs">1679_max_number_of_ksum_pairs</a></li>
+<li><a href="#169_majority_element">169_majority_element</a></li>
+<ul><li><a href="/dz/leetcode/references#boyer_moore_majority_vote_algorithm">leetcode/references/boyer_moore_majority_vote_algorithm</a></li>
+</ul><li><a href="#1732_find_highest_altitude">1732_find_highest_altitude</a></li>
+<li><a href="#1768_merge_strings_alternately">1768_merge_strings_alternately</a></li>
+<li><a href="#1770_max_score_multiplication_operations">1770_max_score_multiplication_operations</a></li>
+<li><a href="#187_repeated_DNA_sequences">187_repeated_DNA_sequences</a></li>
+<li><a href="#1926_nearest_exit_from_entrance_in_maze">1926_nearest_exit_from_entrance_in_maze</a></li>
+<li><a href="#198_house_robber">198_house_robber</a></li>
+<li><a href="#1_two_sum">1_two_sum</a></li>
+<li><a href="#200_number_of_islands">200_number_of_islands</a></li>
+<ul><li><a href="/dz/leetcode/references#disjoint_data_set">leetcode/references/disjoint_data_set</a></li>
+<li><a href="/dz/leetcode/paradigms#breadth_first_search">leetcode/paradigms/breadth_first_search</a></li>
+<ul><li><a href="#1161_max_level_sum_binary_tree">1161_max_level_sum_binary_tree</a></li>
+<li><a href="#1926_nearest_exit_from_entrance_in_maze">1926_nearest_exit_from_entrance_in_maze</a></li>
+<li><a href="#994_rotting_oranges">994_rotting_oranges</a></li>
+</ul></ul><li><a href="#2034_stock_price_fluctuation">2034_stock_price_fluctuation</a></li>
+<li><a href="#208_implement_trie">208_implement_trie</a></li>
+<li><a href="#20_valid_parentheses">20_valid_parentheses</a></li>
+<li><a href="#211_design_add_and_search_words_data_structure">211_design_add_and_search_words_data_structure</a></li>
+<li><a href="#212_word_search_2">212_word_search_2</a></li>
+<li><a href="#2130_max_twin_sum_linked_list">2130_max_twin_sum_linked_list</a></li>
+<ul><li><a href="#206_reverse_linked_list">206_reverse_linked_list</a></li>
+</ul><li><a href="#215_kth_largest_element">215_kth_largest_element</a></li>
+<li><a href="#216_combination_sum_iii">216_combination_sum_iii</a></li>
+<li><a href="#217_contains_duplicate">217_contains_duplicate</a></li>
+<li><a href="#21_merge_two_sorted_lists">21_merge_two_sorted_lists</a></li>
+<li><a href="#2215_difference_two_arrays">2215_difference_two_arrays</a></li>
+<li><a href="#221_maximal_square">221_maximal_square</a></li>
+<li><a href="#2300_successful_pairs_potions_spells">2300_successful_pairs_potions_spells</a></li>
+<li><a href="#232_implement_queue_using_stacks">232_implement_queue_using_stacks</a></li>
+<li><a href="#2336_smallest_number_in_infinite_set">2336_smallest_number_in_infinite_set</a></li>
+<li><a href="#2352_equal_row_column_pairs">2352_equal_row_column_pairs</a></li>
+<li><a href="#235_lowest_common_ancestor_BST">235_lowest_common_ancestor_BST</a></li>
+<ul><li><a href="/dz/leetcode/references#lowest_common_ancestor">leetcode/references/lowest_common_ancestor</a></li>
+</ul><li><a href="#238_product_of_array_except_self">238_product_of_array_except_self</a></li>
+<ul><li><a href="/dz/leetcode/references#prefix_sum">leetcode/references/prefix_sum</a></li>
+</ul><li><a href="#2390_removing_stars_from_a_string">2390_removing_stars_from_a_string</a></li>
+<li><a href="#242_valid_anagram">242_valid_anagram</a></li>
+<li><a href="#2462_total_cost_hire_k_workers">2462_total_cost_hire_k_workers</a></li>
+<li><a href="#2542_maximum_subsequence_score">2542_maximum_subsequence_score</a></li>
+<li><a href="#260_single_number_3">260_single_number_3</a></li>
+<li><a href="#278_first_bad_version">278_first_bad_version</a></li>
+<li><a href="#282_move_zeros">282_move_zeros</a></li>
+<li><a href="#287_find_the_duplicate_number">287_find_the_duplicate_number</a></li>
+<li><a href="#300_longest_increasing_subsequence">300_longest_increasing_subsequence</a></li>
+<li><a href="#318_max_product_word_lengths">318_max_product_word_lengths</a></li>
+<li><a href="#322_coin_change">322_coin_change</a></li>
+<ul><li><a href="/dz/leetcode/references#optimization_problem">leetcode/references/optimization_problem</a></li>
+<li><a href="/dz/leetcode/references#optimal_substructure">leetcode/references/optimal_substructure</a></li>
+<li><a href="/dz/leetcode/references#recurrence_relation">leetcode/references/recurrence_relation</a></li>
+<li><a href="/dz/leetcode/python#lru_cache">leetcode/python/lru_cache</a></li>
+<li><a href="/dz/leetcode/references#bottom_up_top_down">leetcode/references/bottom_up_top_down</a></li>
+</ul><li><a href="#328_odd_even_linked_list">328_odd_even_linked_list</a></li>
+<li><a href="#334_increasing_triplet_subseq">334_increasing_triplet_subseq</a></li>
+<li><a href="#336_palindrome_pairs">336_palindrome_pairs</a></li>
+<li><a href="#338_counting_bits">338_counting_bits</a></li>
+<li><a href="#33_search_in_rotated_sorted_array">33_search_in_rotated_sorted_array</a></li>
+<ul><li><a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a></li>
+<ul><li><a href="#162_find_peak_element">162_find_peak_element</a></li>
+<li><a href="#2300_successful_pairs_potions_spells">2300_successful_pairs_potions_spells</a></li>
+<li><a href="#278_first_bad_version">278_first_bad_version</a></li>
+<li><a href="#34_first_last_sorted_array">34_first_last_sorted_array</a></li>
+<li><a href="#374_guess_number_lower_higher">374_guess_number_lower_higher</a></li>
+<li><a href="#704_binary_search">704_binary_search</a></li>
+<li><a href="#875_koko_eating_bananas">875_koko_eating_bananas</a></li>
+</ul></ul><li><a href="#345_reverse_vowels_stringa">345_reverse_vowels_stringa</a></li>
+<li><a href="#349_decode_string">349_decode_string</a></li>
+<li><a href="#34_first_last_sorted_array">34_first_last_sorted_array</a></li>
+<li><a href="#374_guess_number_lower_higher">374_guess_number_lower_higher</a></li>
+<li><a href="#392_is_subsequence">392_is_subsequence</a></li>
+<li><a href="#399_evaluate_division">399_evaluate_division</a></li>
+<li><a href="#39_combination_sum">39_combination_sum</a></li>
+<ul><li><a href="/dz/leetcode/references#knapsack_problem">leetcode/references/knapsack_problem</a></li>
+</ul><li><a href="#421_max_XOR_two_numbers">421_max_XOR_two_numbers</a></li>
+<li><a href="#425_word_squares">425_word_squares</a></li>
+<ul><li><a href="/dz/leetcode/references#word_squares">leetcode/references/word_squares</a></li>
+</ul><li><a href="#437_path_sum_iii">437_path_sum_iii</a></li>
+<ul><li><a href="#560_subarray_sum_equals_k">560_subarray_sum_equals_k</a></li>
+</ul><li><a href="#443_string_compression">443_string_compression</a></li>
+<li><a href="#450_delete_node_BST">450_delete_node_BST</a></li>
+<ul><li><a href="/dz/leetcode/references#tree_rotation">leetcode/references/tree_rotation</a></li>
+</ul><li><a href="#543_diameter_of_binary_tree">543_diameter_of_binary_tree</a></li>
+<ul><li><a href="/dz/leetcode/references/binary_tree/terminology#degree">leetcode/references/binary_tree/terminology/degree</a></li>
+</ul><li><a href="#547_number_of_provinces">547_number_of_provinces</a></li>
+<li><a href="#605_can_place_flowers">605_can_place_flowers</a></li>
+<li><a href="#635_design_log_storage_system">635_design_log_storage_system</a></li>
+<li><a href="#642_design_search_autocomplete_system">642_design_search_autocomplete_system</a></li>
+<li><a href="#643_maximum_average_subarray">643_maximum_average_subarray</a></li>
+<ul><li><a href="/dz/leetcode/references#prefix_sum">leetcode/references/prefix_sum</a></li>
+</ul><li><a href="#648_replace_words">648_replace_words</a></li>
+<li><a href="#649_dota2_senate">649_dota2_senate</a></li>
+<li><a href="#677_map_sum_pairs">677_map_sum_pairs</a></li>
+<li><a href="#67_add_binary">67_add_binary</a></li>
+<li><a href="#700_binary_search_tree">700_binary_search_tree</a></li>
+<li><a href="#704_binary_search">704_binary_search</a></li>
+<li><a href="#70_climbing_stairs">70_climbing_stairs</a></li>
+<li><a href="#714_best_time_buy_sell_stock_transaction_free">714_best_time_buy_sell_stock_transaction_free</a></li>
+<li><a href="#724_pivot_index">724_pivot_index</a></li>
+<li><a href="#72_edit_distance">72_edit_distance</a></li>
+<li><a href="#735_asteroid_collision">735_asteroid_collision</a></li>
+<li><a href="#740_delete_and_earn">740_delete_and_earn</a></li>
+<li><a href="#746_min_cost_climbing_stairs">746_min_cost_climbing_stairs</a></li>
+<li><a href="#790_domino_tromino_tiling">790_domino_tromino_tiling</a></li>
+<li><a href="#79_word_search">79_word_search</a></li>
+<li><a href="#841_keys_and_rooms">841_keys_and_rooms</a></li>
+<li><a href="#872_leaf_similar_trees">872_leaf_similar_trees</a></li>
+<li><a href="#875_koko_eating_bananas">875_koko_eating_bananas</a></li>
+<li><a href="#876_middle_of_linked_list">876_middle_of_linked_list</a></li>
+<li><a href="#89_validate_binary_search_tree">89_validate_binary_search_tree</a></li>
+<ul><li><a href="/dz/leetcode/data_structures#binary_search_tree">leetcode/data_structures/binary_search_tree</a></li>
+<ul><li><a href="#235_lowest_common_ancestor_BST">235_lowest_common_ancestor_BST</a></li>
+<ul><li><a href="/dz/leetcode/references#lowest_common_ancestor">leetcode/references/lowest_common_ancestor</a></li>
+</ul><li><a href="#450_delete_node_BST">450_delete_node_BST</a></li>
+<ul><li><a href="/dz/leetcode/references#tree_rotation">leetcode/references/tree_rotation</a></li>
+</ul><li><a href="#700_binary_search_tree">700_binary_search_tree</a></li>
+</ul><li><a href="/dz/leetcode/references/tree_traversal#in_order">leetcode/references/tree_traversal/in_order</a></li>
+</ul><li><a href="#933_number_of_recent_cals">933_number_of_recent_cals</a></li>
+<li><a href="#994_rotting_oranges">994_rotting_oranges</a></li>
+</ul>
+        <h2>Nodes</h2>
+        <table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1004_max_consecutive_ones_iii'><a href='#1004_max_consecutive_ones_iii'>1004_max_consecutive_ones_iii
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1004_max_consecutive_ones_iii
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:681
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1001 Max consecutive ones iii
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#sliding_window">leetcode/paradigms/sliding_window</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/max-consecutive-ones-iii">https://leetcode.com/problems/max-consecutive-ones-iii</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1011_capacity_ship_packages_d_days'><a href='#1011_capacity_ship_packages_d_days'>1011_capacity_ship_packages_d_days
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1011_capacity_ship_packages_d_days
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:302
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1011: Capacity to ship packages within D days
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms/binary_search#lower_bound">leetcode/paradigms/binary_search/lower_bound</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/">https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='104_max_depth_binary_tree'><a href='#104_max_depth_binary_tree'>104_max_depth_binary_tree
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/104_max_depth_binary_tree
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:575
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+104: maximum depth of binary tree
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#tail_call">leetcode/references/tail_call</a> (an optimzed solution involves tail recursion and BFS, where the tail call is the recursive function)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#binary_tree">leetcode/data_structures/binary_tree</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-depth-of-binary-tree">https://leetcode.com/problems/maximum-depth-of-binary-tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1071_GCD_of_strings'><a href='#1071_GCD_of_strings'>1071_GCD_of_strings
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1071_GCD_of_strings
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:601
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1071: greatest common divisor of strings
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#array_string">leetcode/paradigms/array_string</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/greatest-common-divisor-of-strings">https://leetcode.com/problems/greatest-common-divisor-of-strings</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='110_balanced_binary_tree'><a href='#110_balanced_binary_tree'>110_balanced_binary_tree
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/110_balanced_binary_tree
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:443
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+110: balanced binary tree
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#binary_tree">leetcode/data_structures/binary_tree</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/balanced-binary-tree">https://leetcode.com/problems/balanced-binary-tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1137_nth_tribonacci_number'><a href='#1137_nth_tribonacci_number'>1137_nth_tribonacci_number
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1137_nth_tribonacci_number
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:987
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1137: Nth tribonacci number
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#1d">leetcode/paradigms/dynamic_programming/1d</a>, <a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#2_examples">leetcode/explore/dynamic_programming/1_strategic_approach/2_examples</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/n-th-tribonacci-number">https://leetcode.com/problems/n-th-tribonacci-number</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1143_longest_common_subsequence'><a href='#1143_longest_common_subsequence'>1143_longest_common_subsequence
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1143_longest_common_subsequence
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1012
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1143: longest common subsequence
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/problems/1143_longest_common_subsequence#solutions">solutions</a>, <a href="/dz/leetcode/references#longest_common_subsequence">leetcode/references/longest_common_subsequence</a>
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#2d">leetcode/paradigms/dynamic_programming/2d</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#5_examples_multidimensional">leetcode/explore/dynamic_programming/1_strategic_approach/5_examples_multidimensional</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/longest-common-subsequence">https://leetcode.com/problems/longest-common-subsequence</a>
+</td>
+</tr>
+<tr>
+<th>
+subgraph
+</th>
+<td>
+<a href="/dz/leetcode/problems/1143_longest_common_subsequence">1143_longest_common_subsequence</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1161_max_level_sum_binary_tree'><a href='#1161_max_level_sum_binary_tree'>1161_max_level_sum_binary_tree
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1161_max_level_sum_binary_tree
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:848
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1161: Maximum level sum of a binary tree
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#binary_tree">leetcode/data_structures/binary_tree</a>, <a href="/dz/leetcode/paradigms#breadth_first_search">leetcode/paradigms/breadth_first_search</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree">https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1207_unique_number_of_occurrences'><a href='#1207_unique_number_of_occurrences'>1207_unique_number_of_occurrences
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1207_unique_number_of_occurrences
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:716
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1207: unique number of occurrences
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#set">leetcode/data_structures/set</a>, <a href="/dz/leetcode/data_structures#hash_table">leetcode/data_structures/hash_table</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/unique-number-of-occurrences">https://leetcode.com/problems/unique-number-of-occurrences</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='121_best_time_to_sell_and_buy_stock'><a href='#121_best_time_to_sell_and_buy_stock'>121_best_time_to_sell_and_buy_stock
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/121_best_time_to_sell_and_buy_stock
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:366
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+121: Best Time to Sell and Buy Stock
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#maximum_subarray_problem">leetcode/references/maximum_subarray_problem</a> (reminds me of this problem), <a href="/dz/leetcode/references#kadanes">leetcode/references/kadanes</a> (I thought of Kadane's while working through this, though I'm not sure how related they are)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#greedy">leetcode/paradigms/greedy</a>, <a href="/dz/leetcode#grind75">leetcode/grind75</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='125_valid_palindrome'><a href='#125_valid_palindrome'>125_valid_palindrome
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/125_valid_palindrome
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:395
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+125: valid palindrome
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/paradigms#two_pointer">leetcode/paradigms/two_pointer</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/valid-palindrome">https://leetcode.com/problems/valid-palindrome</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1335_minimum_difficulty_job_schedule'><a href='#1335_minimum_difficulty_job_schedule'>1335_minimum_difficulty_job_schedule
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1335_minimum_difficulty_job_schedule
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1504
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1335: minimum difficulty of a job schedule
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/explore/dynamic_programming/2_common_patterns#2_examples">leetcode/explore/dynamic_programming/2_common_patterns/2_examples</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule">https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='136_single_number'><a href='#136_single_number'>136_single_number
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/136_single_number
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1084
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/problems#137_single_number_2">137_single_number_2</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#bit_manipulation">leetcode/paradigms/bit_manipulation</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/single-number/">https://leetcode.com/problems/single-number/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1372_longest_zigzag_path'><a href='#1372_longest_zigzag_path'>1372_longest_zigzag_path
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1372_longest_zigzag_path
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:841
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1372: Longset ZigZag path in binary tree
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#binary_tree">leetcode/data_structures/binary_tree</a>, <a href="/dz/leetcode/paradigms#depth_first_search">leetcode/paradigms/depth_first_search</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree">https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='137_single_number_2'><a href='#137_single_number_2'>137_single_number_2
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/137_single_number_2
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:520
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+137: Single number 2
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/problems#136_single_number">136_single_number</a> (simlar)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#bit_manipulation">leetcode/paradigms/bit_manipulation</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/single-number-ii">https://leetcode.com/problems/single-number-ii</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='141_linked_list_cycle'><a href='#141_linked_list_cycle'>141_linked_list_cycle
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/141_linked_list_cycle
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:458
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+141: Linked List Cycle
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/problems#2095_delete_middle_node">2095_delete_middle_node</a> (A simlar solution for this problem also uses fast/slow pointers)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#linked_list">leetcode/data_structures/linked_list</a>, <a href="/dz/leetcode/references#floyds_algorithm">leetcode/references/floyds_algorithm</a>, <a href="/dz/leetcode/data_structures/linked_list#fast_slow_pointer">leetcode/data_structures/linked_list/fast_slow_pointer</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/linked-list-cycle/">https://leetcode.com/problems/linked-list-cycle/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2095_delete_middle_node'><a href='#2095_delete_middle_node'>2095_delete_middle_node
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2095_delete_middle_node
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:765
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2095 Delete the middle of a node in linked list
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/problems#141_linked_list_cycle">141_linked_list_cycle</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#linked_list">leetcode/data_structures/linked_list</a>, <a href="/dz/leetcode/references#floyds_algorithm">leetcode/references/floyds_algorithm</a>, <a href="/dz/leetcode/data_structures/linked_list#fast_slow_pointer">leetcode/data_structures/linked_list/fast_slow_pointer</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list">https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1431_kids_with_greatest_number_of_candies'><a href='#1431_kids_with_greatest_number_of_candies'>1431_kids_with_greatest_number_of_candies
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1431_kids_with_greatest_number_of_candies
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:610
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1431: Kids with greatest number of candies
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#array_string">leetcode/paradigms/array_string</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/kids-with-the-greatest-number-of-candies">https://leetcode.com/problems/kids-with-the-greatest-number-of-candies</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1448_count_good_nodes'><a href='#1448_count_good_nodes'>1448_count_good_nodes
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1448_count_good_nodes
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:817
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1448: Count good nodes
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#binary_tree">leetcode/data_structures/binary_tree</a>, <a href="/dz/leetcode/paradigms#depth_first_search">leetcode/paradigms/depth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/count-good-nodes-in-binary-tree/">https://leetcode.com/problems/count-good-nodes-in-binary-tree/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1456_max_vowels_in_substring'><a href='#1456_max_vowels_in_substring'>1456_max_vowels_in_substring
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1456_max_vowels_in_substring
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:675
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1456 max vowels in a substring of given length
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#sliding_window">leetcode/paradigms/sliding_window</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length">https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1466_reorder_routes_to_city_zero'><a href='#1466_reorder_routes_to_city_zero'>1466_reorder_routes_to_city_zero
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1466_reorder_routes_to_city_zero
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:915
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+Reorder routes to make all paths lead to the city zero
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#graph">leetcode/data_structures/graph</a>, <a href="/dz/leetcode/paradigms#depth_first_search">leetcode/paradigms/depth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero">https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='146_LRU_cache'><a href='#146_LRU_cache'>146_LRU_cache
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/146_LRU_cache
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1495
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+146: LRU cache
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="python/docs/stdlib/functools#lru_cache">python/docs/stdlib/functools#lru_cache</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1493_longest_subarray_ones_deleting_elem'><a href='#1493_longest_subarray_ones_deleting_elem'>1493_longest_subarray_ones_deleting_elem
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1493_longest_subarray_ones_deleting_elem
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:686
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1493: Longest Subarray of Ones after deleting one element
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#sliding_window">leetcode/paradigms/sliding_window</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element">https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='151_reverse_words_in_a_string'><a href='#151_reverse_words_in_a_string'>151_reverse_words_in_a_string
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/151_reverse_words_in_a_string
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:628
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+151: Reverse words in a string
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#array_string">leetcode/paradigms/array_string</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/reverse-words-in-a-string">https://leetcode.com/problems/reverse-words-in-a-string</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='155_min_stack'><a href='#155_min_stack'>155_min_stack
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/155_min_stack
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:123
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+155: Min Stack
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/min-stack">https://leetcode.com/problems/min-stack</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='162_find_peak_element'><a href='#162_find_peak_element'>162_find_peak_element
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/162_find_peak_element
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:975
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+162: find peak element
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/find-peak-element/">https://leetcode.com/problems/find-peak-element/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1657_close_strings'><a href='#1657_close_strings'>1657_close_strings
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1657_close_strings
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:723
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1657: Determine if two strings are close
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#hash_table">leetcode/data_structures/hash_table</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/determine-if-two-strings-are-close">https://leetcode.com/problems/determine-if-two-strings-are-close</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1659_maximize_grid_happiness'><a href='#1659_maximize_grid_happiness'>1659_maximize_grid_happiness
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1659_maximize_grid_happiness
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1484
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1659: maximize grid happiness
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#3_multidimensional">leetcode/explore/dynamic_programming/1_strategic_approach/3_multidimensional</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximize-grid-happiness/">https://leetcode.com/problems/maximize-grid-happiness/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1679_max_number_of_ksum_pairs'><a href='#1679_max_number_of_ksum_pairs'>1679_max_number_of_ksum_pairs
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1679_max_number_of_ksum_pairs
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:657
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1679: Max number of ksum pairs
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#two_pointer">leetcode/paradigms/two_pointer</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/max-number-of-k-sum-pairs">https://leetcode.com/problems/max-number-of-k-sum-pairs</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='169_majority_element'><a href='#169_majority_element'>169_majority_element
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/169_majority_element
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:497
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+169: Majority Element
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#boyer_moore_majority_vote_algorithm">leetcode/references/boyer_moore_majority_vote_algorithm</a> (A way to solve in linear time with O(1) space)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#hash_table">leetcode/data_structures/hash_table</a>
+</td>
+</tr>
+<tr>
+<th>
+remarks
+</th>
+<td>
+lots of weird solutions for this one, but hash map
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/majority-element">https://leetcode.com/problems/majority-element</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1732_find_highest_altitude'><a href='#1732_find_highest_altitude'>1732_find_highest_altitude
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1732_find_highest_altitude
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:692
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1732: find highest altitude
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#prefix_sum">leetcode/paradigms/prefix_sum</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/find-the-highest-altitude">https://leetcode.com/problems/find-the-highest-altitude</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1768_merge_strings_alternately'><a href='#1768_merge_strings_alternately'>1768_merge_strings_alternately
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1768_merge_strings_alternately
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:595
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1768: merge strings alternative
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#array_string">leetcode/paradigms/array_string</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/merge-strings-alternately">https://leetcode.com/problems/merge-strings-alternately</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1770_max_score_multiplication_operations'><a href='#1770_max_score_multiplication_operations'>1770_max_score_multiplication_operations
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1770_max_score_multiplication_operations
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1491
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1770: maximum score for multiplication operations
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#5_examples_multidimensional">leetcode/explore/dynamic_programming/1_strategic_approach/5_examples_multidimensional</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations">https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='187_repeated_DNA_sequences'><a href='#187_repeated_DNA_sequences'>187_repeated_DNA_sequences
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/187_repeated_DNA_sequences
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:532
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+187: repeated DNA sequences
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#bit_manipulation">leetcode/paradigms/bit_manipulation</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array">https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1926_nearest_exit_from_entrance_in_maze'><a href='#1926_nearest_exit_from_entrance_in_maze'>1926_nearest_exit_from_entrance_in_maze
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1926_nearest_exit_from_entrance_in_maze
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:929
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1926: nearest exit from entrance in maze
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#graph">leetcode/data_structures/graph</a>, <a href="/dz/leetcode/paradigms#breadth_first_search">leetcode/paradigms/breadth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/nearest-exit-from-entrance-in-maze">https://leetcode.com/problems/nearest-exit-from-entrance-in-maze</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='198_house_robber'><a href='#198_house_robber'>198_house_robber
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/198_house_robber
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1450
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+198 house robber
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/explore/dynamic_programming/0_intro/3_when_to_use#2_future_decisions_depend_on_earlier_ones">leetcode/explore/dynamic_programming/0_intro/3_when_to_use/2_future_decisions_depend_on_earlier_ones</a>, <a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#2_examples">leetcode/explore/dynamic_programming/1_strategic_approach/2_examples</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#1d">leetcode/paradigms/dynamic_programming/1d</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/house-robber/">https://leetcode.com/problems/house-robber/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='1_two_sum'><a href='#1_two_sum'>1_two_sum
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/1_two_sum
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:307
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+1: two-sum
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#hash_table">leetcode/data_structures/hash_table</a>, <a href="/dz/leetcode#grind75">leetcode/grind75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/two-sum/">https://leetcode.com/problems/two-sum/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='200_number_of_islands'><a href='#200_number_of_islands'>200_number_of_islands
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/200_number_of_islands
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:156
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+LC 200: number of islands
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#disjoint_data_set">leetcode/references/disjoint_data_set</a> (One of the esoteric solutions involves using a union find disjoint data set), <a href="/dz/leetcode/paradigms#breadth_first_search">leetcode/paradigms/breadth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/paradigms#depth_first_search">leetcode/paradigms/depth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/number-of-islands">https://leetcode.com/problems/number-of-islands</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2034_stock_price_fluctuation'><a href='#2034_stock_price_fluctuation'>2034_stock_price_fluctuation
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2034_stock_price_fluctuation
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:433
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2034: Stock Price Fluctuation
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/stock-price-fluctuation">https://leetcode.com/problems/stock-price-fluctuation</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='206_reverse_linked_list'><a href='#206_reverse_linked_list'>206_reverse_linked_list
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/206_reverse_linked_list
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:802
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+206: reverse linked list
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#linked_list">leetcode/data_structures/linked_list</a>, <a href="/dz/leetcode/problems#2130_max_twin_sum_linked_list">2130_max_twin_sum_linked_list</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/reverse-linked-list">https://leetcode.com/problems/reverse-linked-list</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='208_implement_trie'><a href='#208_implement_trie'>208_implement_trie
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/208_implement_trie
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1563
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+208: implement trie
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>, <a href="/dz/leetcode/explore/trie#2_basic_operations">leetcode/explore/trie/2_basic_operations</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/implement-trie-prefix-tree">https://leetcode.com/problems/implement-trie-prefix-tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='20_valid_parentheses'><a href='#20_valid_parentheses'>20_valid_parentheses
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/20_valid_parentheses
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:338
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+20: Valid Parentheses
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#stack">leetcode/data_structures/stack</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/valid-parentheses/">https://leetcode.com/problems/valid-parentheses/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='211_design_add_and_search_words_data_structure'><a href='#211_design_add_and_search_words_data_structure'>211_design_add_and_search_words_data_structure
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/211_design_add_and_search_words_data_structure
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1557
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+211: Design add and search words data structur
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>, <a href="/dz/leetcode/explore/trie#3_practical_application_1">leetcode/explore/trie/3_practical_application_1</a>, <a href="/dz/leetcode/explore/trie/3_practical_application_1#spell_checker">leetcode/explore/trie/3_practical_application_1/spell_checker</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">https://leetcode.com/problems/design-add-and-search-words-data-structure/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='212_word_search_2'><a href='#212_word_search_2'>212_word_search_2
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/212_word_search_2
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1613
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+212: Word Search 2
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>, <a href="/dz/leetcode/explore/trie#4_practical_application_2">leetcode/explore/trie/4_practical_application_2</a>, <a href="/dz/leetcode/explore/trie/4_practical_application_2#accelerate_dfs">leetcode/explore/trie/4_practical_application_2/accelerate_dfs</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/word-search-ii">https://leetcode.com/problems/word-search-ii</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2130_max_twin_sum_linked_list'><a href='#2130_max_twin_sum_linked_list'>2130_max_twin_sum_linked_list
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2130_max_twin_sum_linked_list
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:793
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2130: Maximum twin sum of a linked list
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/problems#206_reverse_linked_list">206_reverse_linked_list</a> (One solution to 2130 involves reversing the second half of a linked list)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#linked_list">leetcode/data_structures/linked_list</a>, <a href="/dz/leetcode/data_structures/linked_list#fast_slow_pointer">leetcode/data_structures/linked_list/fast_slow_pointer</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list">https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='215_kth_largest_element'><a href='#215_kth_largest_element'>215_kth_largest_element
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/215_kth_largest_element
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:936
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+215: kth largest element in an array
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#priority_queue">leetcode/data_structures/priority_queue</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/kth-largest-element-in-an-array">https://leetcode.com/problems/kth-largest-element-in-an-array</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='216_combination_sum_iii'><a href='#216_combination_sum_iii'>216_combination_sum_iii
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/216_combination_sum_iii
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:981
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+216: combination sum iii
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#backtracking">leetcode/paradigms/backtracking</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/combination-sum-iii">https://leetcode.com/problems/combination-sum-iii</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='217_contains_duplicate'><a href='#217_contains_duplicate'>217_contains_duplicate
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/217_contains_duplicate
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:589
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+217: Contains duplicate
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#hash_table">leetcode/data_structures/hash_table</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/contains-duplicate/">https://leetcode.com/problems/contains-duplicate/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='21_merge_two_sorted_lists'><a href='#21_merge_two_sorted_lists'>21_merge_two_sorted_lists
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/21_merge_two_sorted_lists
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:352
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+21: Merge two sorted lists
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#linked_list">leetcode/data_structures/linked_list</a>, <a href="/dz/leetcode#grind75">leetcode/grind75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/merge-two-sorted-lists/">https://leetcode.com/problems/merge-two-sorted-lists/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2215_difference_two_arrays'><a href='#2215_difference_two_arrays'>2215_difference_two_arrays
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2215_difference_two_arrays
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:707
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2215: Find the difference of two arrays
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#set">leetcode/data_structures/set</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/find-the-difference-of-two-arrays">https://leetcode.com/problems/find-the-difference-of-two-arrays</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='221_maximal_square'><a href='#221_maximal_square'>221_maximal_square
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/221_maximal_square
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1499
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+221: Maximal Square
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#5_examples_multidimensional">leetcode/explore/dynamic_programming/1_strategic_approach/5_examples_multidimensional</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#2d">leetcode/paradigms/dynamic_programming/2d</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2300_successful_pairs_potions_spells'><a href='#2300_successful_pairs_potions_spells'>2300_successful_pairs_potions_spells
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2300_successful_pairs_potions_spells
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:969
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2300: successful pairs of potions and spells
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/successful-pairs-of-spells-and-potions">https://leetcode.com/problems/successful-pairs-of-spells-and-potions</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='232_implement_queue_using_stacks'><a href='#232_implement_queue_using_stacks'>232_implement_queue_using_stacks
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/232_implement_queue_using_stacks
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:483
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+Implement Queue using stacks
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#stack">leetcode/data_structures/stack</a>, <a href="/dz/leetcode/data_structures#queue">leetcode/data_structures/queue</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/implement-queue-using-stacks">https://leetcode.com/problems/implement-queue-using-stacks</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2336_smallest_number_in_infinite_set'><a href='#2336_smallest_number_in_infinite_set'>2336_smallest_number_in_infinite_set
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2336_smallest_number_in_infinite_set
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:945
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2336: smallest number in infinite set
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#priority_queue">leetcode/data_structures/priority_queue</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/smallest-number-in-infinite-set">https://leetcode.com/problems/smallest-number-in-infinite-set</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2352_equal_row_column_pairs'><a href='#2352_equal_row_column_pairs'>2352_equal_row_column_pairs
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2352_equal_row_column_pairs
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:729
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2352: Equal row and column pairs
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#hash_table">leetcode/data_structures/hash_table</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/equal-row-and-column-pairs">https://leetcode.com/problems/equal-row-and-column-pairs</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='235_lowest_common_ancestor_BST'><a href='#235_lowest_common_ancestor_BST'>235_lowest_common_ancestor_BST
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/235_lowest_common_ancestor_BST
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:420
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+235: Lowest Common Ancestor (LCA) of a Binary Search Tree
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#lowest_common_ancestor">leetcode/references/lowest_common_ancestor</a>
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#binary_search_tree">leetcode/data_structures/binary_search_tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='238_product_of_array_except_self'><a href='#238_product_of_array_except_self'>238_product_of_array_except_self
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/238_product_of_array_except_self
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:112
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+238: Product of array except self
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#prefix_sum">leetcode/references/prefix_sum</a> (Left/right product sum solution reminds me of prefix sum tables)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/product-of-array-except-self">https://leetcode.com/problems/product-of-array-except-self</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2390_removing_stars_from_a_string'><a href='#2390_removing_stars_from_a_string'>2390_removing_stars_from_a_string
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2390_removing_stars_from_a_string
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:735
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2390: removing stars from a string
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#stack">leetcode/data_structures/stack</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/removing-stars-from-a-string">https://leetcode.com/problems/removing-stars-from-a-string</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='242_valid_anagram'><a href='#242_valid_anagram'>242_valid_anagram
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/242_valid_anagram
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:408
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+242: valid anagram
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#hash_table">leetcode/data_structures/hash_table</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/valid-anagram">https://leetcode.com/problems/valid-anagram</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2462_total_cost_hire_k_workers'><a href='#2462_total_cost_hire_k_workers'>2462_total_cost_hire_k_workers
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2462_total_cost_hire_k_workers
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:957
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2462: total cost to hire k workers
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#priority_queue">leetcode/data_structures/priority_queue</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/total-cost-to-hire-k-workers">https://leetcode.com/problems/total-cost-to-hire-k-workers</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='2542_maximum_subsequence_score'><a href='#2542_maximum_subsequence_score'>2542_maximum_subsequence_score
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/2542_maximum_subsequence_score
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:951
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+2542: maximum subsequence score
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#priority_queue">leetcode/data_structures/priority_queue</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-subsequence-score">https://leetcode.com/problems/maximum-subsequence-score</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='260_single_number_3'><a href='#260_single_number_3'>260_single_number_3
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/260_single_number_3
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:526
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+260: single number 3
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#bit_manipulation">leetcode/paradigms/bit_manipulation</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/single-number-iii">https://leetcode.com/problems/single-number-iii</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='278_first_bad_version'><a href='#278_first_bad_version'>278_first_bad_version
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/278_first_bad_version
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:288
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+278: First Bad Version
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms/binary_search#lower_bound">leetcode/paradigms/binary_search/lower_bound</a>, <a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/first-bad-version">https://leetcode.com/problems/first-bad-version</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='282_move_zeros'><a href='#282_move_zeros'>282_move_zeros
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/282_move_zeros
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:645
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+282: move zeros
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#two_pointer">leetcode/paradigms/two_pointer</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/move-zeroes">https://leetcode.com/problems/move-zeroes</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='287_find_the_duplicate_number'><a href='#287_find_the_duplicate_number'>287_find_the_duplicate_number
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/287_find_the_duplicate_number
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:476
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+287: Find the duplicate number
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/references#floyds_algorithm">leetcode/references/floyds_algorithm</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/find-the-duplicate-number/">https://leetcode.com/problems/find-the-duplicate-number/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='300_longest_increasing_subsequence'><a href='#300_longest_increasing_subsequence'>300_longest_increasing_subsequence
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/300_longest_increasing_subsequence
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1456
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+300: longest increasing subsequence
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/explore/dynamic_programming/0_intro/3_when_to_use#2_future_decisions_depend_on_earlier_ones">leetcode/explore/dynamic_programming/0_intro/3_when_to_use/2_future_decisions_depend_on_earlier_ones</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/longest-increasing-subsequence">https://leetcode.com/problems/longest-increasing-subsequence</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='318_max_product_word_lengths'><a href='#318_max_product_word_lengths'>318_max_product_word_lengths
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/318_max_product_word_lengths
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:538
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+318: Maximum product of word lengths
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#bit_manipulation">leetcode/paradigms/bit_manipulation</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-product-of-word-lengths">https://leetcode.com/problems/maximum-product-of-word-lengths</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='322_coin_change'><a href='#322_coin_change'>322_coin_change
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/322_coin_change
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:21
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+322: Coin Change
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#optimization_problem">leetcode/references/optimization_problem</a> (can be modeled as an optimization problem using the "standard form"), <a href="/dz/leetcode/references#optimal_substructure">leetcode/references/optimal_substructure</a> (the coin change problem has an optimal substructure property), <a href="/dz/leetcode/references#recurrence_relation">leetcode/references/recurrence_relation</a> (Editorial: "the following recurrence relation holds"), <a href="/dz/leetcode/python#lru_cache">leetcode/python/lru_cache</a> (used in top-down dynamic programming solution to avoid TLE), <a href="/dz/leetcode/references#bottom_up_top_down">leetcode/references/bottom_up_top_down</a> (DP solutions for top-down and bottoms-up)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/explore/dynamic_programming/2_common_patterns#2_examples">leetcode/explore/dynamic_programming/2_common_patterns/2_examples</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/coin-change">https://leetcode.com/problems/coin-change</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='328_odd_even_linked_list'><a href='#328_odd_even_linked_list'>328_odd_even_linked_list
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/328_odd_even_linked_list
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:787
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+328: Odd/even linked list
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#linked_list">leetcode/data_structures/linked_list</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/odd-even-linked-list">https://leetcode.com/problems/odd-even-linked-list</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='334_increasing_triplet_subseq'><a href='#334_increasing_triplet_subseq'>334_increasing_triplet_subseq
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/334_increasing_triplet_subseq
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:634
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+334: Increasing triplet subsequence
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/increasing-triplet-subsequence">https://leetcode.com/problems/increasing-triplet-subsequence</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='336_palindrome_pairs'><a href='#336_palindrome_pairs'>336_palindrome_pairs
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/336_palindrome_pairs
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1619
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+336: Palindrome Pairs
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>, <a href="/dz/leetcode/explore/trie#4_practical_application_2">leetcode/explore/trie/4_practical_application_2</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/palindrome-pairs">https://leetcode.com/problems/palindrome-pairs</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='338_counting_bits'><a href='#338_counting_bits'>338_counting_bits
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/338_counting_bits
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1522
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+338: Counting bits
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#bit_manipulation">leetcode/paradigms/bit_manipulation</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/counting-bits/">https://leetcode.com/problems/counting-bits/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='33_search_in_rotated_sorted_array'><a href='#33_search_in_rotated_sorted_array'>33_search_in_rotated_sorted_array
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/33_search_in_rotated_sorted_array
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:192
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+33: search in rotated sorted array
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a>
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/search-in-rotated-sorted-array">https://leetcode.com/problems/search-in-rotated-sorted-array</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='345_reverse_vowels_stringa'><a href='#345_reverse_vowels_stringa'>345_reverse_vowels_stringa
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/345_reverse_vowels_stringa
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:622
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+345: reverse vowels of a string
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#two_pointer">leetcode/paradigms/two_pointer</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/reverse-vowels-of-a-string">https://leetcode.com/problems/reverse-vowels-of-a-string</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='349_decode_string'><a href='#349_decode_string'>349_decode_string
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/349_decode_string
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:747
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+394: Decode String
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#stack">leetcode/data_structures/stack</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/decode-string">https://leetcode.com/problems/decode-string</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='34_first_last_sorted_array'><a href='#34_first_last_sorted_array'>34_first_last_sorted_array
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/34_first_last_sorted_array
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:280
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+34: Find first and last element in sorted array
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms/binary_search#upper_bound">leetcode/paradigms/binary_search/upper_bound</a>, <a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a>
+</td>
+</tr>
+<tr>
+<th>
+remarks
+</th>
+<td>
+"find a range" problem
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='374_guess_number_lower_higher'><a href='#374_guess_number_lower_higher'>374_guess_number_lower_higher
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/374_guess_number_lower_higher
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:963
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+374: Guess number lower or higher
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/guess-number-higher-or-lower">https://leetcode.com/problems/guess-number-higher-or-lower</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='392_is_subsequence'><a href='#392_is_subsequence'>392_is_subsequence
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/392_is_subsequence
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:651
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+392: is subsequence
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#two_pointer">leetcode/paradigms/two_pointer</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/is-subsequence">https://leetcode.com/problems/is-subsequence</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='399_evaluate_division'><a href='#399_evaluate_division'>399_evaluate_division
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/399_evaluate_division
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:922
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+399: Evaluate division
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#graph">leetcode/data_structures/graph</a>, <a href="/dz/leetcode/paradigms#depth_first_search">leetcode/paradigms/depth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/evaluate-division">https://leetcode.com/problems/evaluate-division</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='39_combination_sum'><a href='#39_combination_sum'>39_combination_sum
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/39_combination_sum
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:233
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+39: Combination sum
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#knapsack_problem">leetcode/references/knapsack_problem</a> (this problem initially reminded me of a knapsack problem, except that this problem enumerating all possibilities instead of finding an optimal one)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/paradigms#backtracking">leetcode/paradigms/backtracking</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/combination-sum/">https://leetcode.com/problems/combination-sum/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='421_max_XOR_two_numbers'><a href='#421_max_XOR_two_numbers'>421_max_XOR_two_numbers
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/421_max_XOR_two_numbers
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1574
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+421: Maximum XOR of two numbers in an array
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>, <a href="/dz/leetcode/explore/trie#4_practical_application_2">leetcode/explore/trie/4_practical_application_2</a>, <a href="/dz/leetcode/explore/trie/4_practical_application_2#store_other_data_type">leetcode/explore/trie/4_practical_application_2/store_other_data_type</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array">https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array</a>
+</td>
+</tr>
+<tr>
+<th>
+subgraph
+</th>
+<td>
+<a href="/dz/leetcode/problems/421_max_XOR_two_numbers">421_max_XOR_two_numbers</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='425_word_squares'><a href='#425_word_squares'>425_word_squares
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/425_word_squares
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1628
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+425: Word Squares
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#word_squares">leetcode/references/word_squares</a>
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/word-squares/">https://leetcode.com/problems/word-squares/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='437_path_sum_iii'><a href='#437_path_sum_iii'>437_path_sum_iii
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/437_path_sum_iii
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:824
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+432 path sum ii
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/problems#560_subarray_sum_equals_k">560_subarray_sum_equals_k</a> (560 helps to understand the solution in 437)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#binary_tree">leetcode/data_structures/binary_tree</a>, <a href="/dz/leetcode/paradigms#prefix_sum">leetcode/paradigms/prefix_sum</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#depth_first_search">leetcode/paradigms/depth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/path-sum-iii">https://leetcode.com/problems/path-sum-iii</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='560_subarray_sum_equals_k'><a href='#560_subarray_sum_equals_k'>560_subarray_sum_equals_k
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/560_subarray_sum_equals_k
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:833
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+560 Subarray Sum Equals K
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/problems#437_path_sum_iii">437_path_sum_iii</a>, <a href="/dz/leetcode/paradigms#prefix_sum">leetcode/paradigms/prefix_sum</a>, <a href="/dz/leetcode/data_structures#hash_table">leetcode/data_structures/hash_table</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/subarray-sum-equals-k">https://leetcode.com/problems/subarray-sum-equals-k</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='443_string_compression'><a href='#443_string_compression'>443_string_compression
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/443_string_compression
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:639
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+443: String Compression
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#array_string">leetcode/paradigms/array_string</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/string-compression/description">https://leetcode.com/problems/string-compression/description</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='450_delete_node_BST'><a href='#450_delete_node_BST'>450_delete_node_BST
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/450_delete_node_BST
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:861
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+450: Delete a node in a BST
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#tree_rotation">leetcode/references/tree_rotation</a> (I initially approached this problem thinking I could do a tree rotation, but this turns out to not be correct)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#binary_search_tree">leetcode/data_structures/binary_search_tree</a>, <a href="/dz/leetcode/references/binary_search_tree#deletion">leetcode/references/binary_search_tree/deletion</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/delete-node-in-a-bst">https://leetcode.com/problems/delete-node-in-a-bst</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='543_diameter_of_binary_tree'><a href='#543_diameter_of_binary_tree'>543_diameter_of_binary_tree
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/543_diameter_of_binary_tree
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:544
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+543: Diameter of Binary Tree
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references/binary_tree/terminology#degree">leetcode/references/binary_tree/terminology/degree</a> (Article refers to a leaf as any node having 1 degree, including the root node if it has 1 degree or less)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#binary_tree">leetcode/data_structures/binary_tree</a>, <a href="/dz/leetcode/data_structures/binary_tree#depth_first_traversal">leetcode/data_structures/binary_tree/depth_first_traversal</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/diameter-of-binary-tree">https://leetcode.com/problems/diameter-of-binary-tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='547_number_of_provinces'><a href='#547_number_of_provinces'>547_number_of_provinces
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/547_number_of_provinces
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:908
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+547: number of provinces
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#graph">leetcode/data_structures/graph</a>, <a href="/dz/leetcode/paradigms#depth_first_search">leetcode/paradigms/depth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/number-of-provinces/">https://leetcode.com/problems/number-of-provinces/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='605_can_place_flowers'><a href='#605_can_place_flowers'>605_can_place_flowers
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/605_can_place_flowers
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:616
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+605: Can place flowers
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#array_string">leetcode/paradigms/array_string</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/can-place-flowers">https://leetcode.com/problems/can-place-flowers</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='635_design_log_storage_system'><a href='#635_design_log_storage_system'>635_design_log_storage_system
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/635_design_log_storage_system
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:438
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+635: Design Log Storage System
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/design-log-storage-system">https://leetcode.com/problems/design-log-storage-system</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='642_design_search_autocomplete_system'><a href='#642_design_search_autocomplete_system'>642_design_search_autocomplete_system
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/642_design_search_autocomplete_system
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1552
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+642: Design Search Autocomplete System
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>, <a href="/dz/leetcode/explore/trie#3_practical_application_1">leetcode/explore/trie/3_practical_application_1</a>, <a href="/dz/leetcode/explore/trie/3_practical_application_1#autocomplete">leetcode/explore/trie/3_practical_application_1/autocomplete</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/design-search-autocomplete-system/description/">https://leetcode.com/problems/design-search-autocomplete-system/description/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='643_maximum_average_subarray'><a href='#643_maximum_average_subarray'>643_maximum_average_subarray
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/643_maximum_average_subarray
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:663
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+643: maximum average subarray
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/references#prefix_sum">leetcode/references/prefix_sum</a> (editorial used a cumulative sum to solve this, AKA prefix sum. It was a little strange.)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#sliding_window">leetcode/paradigms/sliding_window</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/maximum-average-subarray-i">https://leetcode.com/problems/maximum-average-subarray-i</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='648_replace_words'><a href='#648_replace_words'>648_replace_words
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/648_replace_words
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1547
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+648: Replace Words
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>, <a href="/dz/leetcode/explore/trie#3_practical_application_1">leetcode/explore/trie/3_practical_application_1</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/replace-words">https://leetcode.com/problems/replace-words</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='649_dota2_senate'><a href='#649_dota2_senate'>649_dota2_senate
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/649_dota2_senate
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:759
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+649: Dota2 Senate
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#queue">leetcode/data_structures/queue</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/dota2-senate">https://leetcode.com/problems/dota2-senate</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='677_map_sum_pairs'><a href='#677_map_sum_pairs'>677_map_sum_pairs
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/677_map_sum_pairs
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1542
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+677: Map Sum Pairs
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#trie">leetcode/data_structures/trie</a>, <a href="/dz/leetcode/explore/trie#3_practical_application_1">leetcode/explore/trie/3_practical_application_1</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/map-sum-pairs">https://leetcode.com/problems/map-sum-pairs</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='67_add_binary'><a href='#67_add_binary'>67_add_binary
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/67_add_binary
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:511
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+67: Add Binary
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/paradigms#bit_manipulation">leetcode/paradigms/bit_manipulation</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/add-binary/description/">https://leetcode.com/problems/add-binary/description/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='700_binary_search_tree'><a href='#700_binary_search_tree'>700_binary_search_tree
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/700_binary_search_tree
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:855
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+700 Binary Search Tree
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#binary_search_tree">leetcode/data_structures/binary_search_tree</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/search-in-a-binary-search-tree">https://leetcode.com/problems/search-in-a-binary-search-tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='704_binary_search'><a href='#704_binary_search'>704_binary_search
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/704_binary_search
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:414
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+704: binary search
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/binary-search/">https://leetcode.com/problems/binary-search/</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='70_climbing_stairs'><a href='#70_climbing_stairs'>70_climbing_stairs
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/70_climbing_stairs
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1466
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+70: climbing stairs
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#1_framework">leetcode/explore/dynamic_programming/1_strategic_approach/1_framework</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#1d">leetcode/paradigms/dynamic_programming/1d</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/climbing-stairs">https://leetcode.com/problems/climbing-stairs</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='714_best_time_buy_sell_stock_transaction_free'><a href='#714_best_time_buy_sell_stock_transaction_free'>714_best_time_buy_sell_stock_transaction_free
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/714_best_time_buy_sell_stock_transaction_free
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1066
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+714: Best time to buy/sell stock transaction fee
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#2d">leetcode/paradigms/dynamic_programming/2d</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='724_pivot_index'><a href='#724_pivot_index'>724_pivot_index
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/724_pivot_index
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:698
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+724 Pivot Index
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#prefix_sum">leetcode/paradigms/prefix_sum</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/find-pivot-index">https://leetcode.com/problems/find-pivot-index</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='72_edit_distance'><a href='#72_edit_distance'>72_edit_distance
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/72_edit_distance
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1508
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+72: edit distance
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms/dynamic_programming#2d">leetcode/paradigms/dynamic_programming/2d</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/edit-distance/">https://leetcode.com/problems/edit-distance/</a>
+</td>
+</tr>
+<tr>
+<th>
+subgraph
+</th>
+<td>
+<a href="/dz/leetcode/problems/72_edit_distance">72_edit_distance</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='735_asteroid_collision'><a href='#735_asteroid_collision'>735_asteroid_collision
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/735_asteroid_collision
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:741
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+735: Asteroid Collision
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#stack">leetcode/data_structures/stack</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/asteroid-collision">https://leetcode.com/problems/asteroid-collision</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='740_delete_and_earn'><a href='#740_delete_and_earn'>740_delete_and_earn
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/740_delete_and_earn
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1472
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+740 delete and earn
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#2_examples">leetcode/explore/dynamic_programming/1_strategic_approach/2_examples</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#1d">leetcode/paradigms/dynamic_programming/1d</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/delete-and-earn">https://leetcode.com/problems/delete-and-earn</a>
+</td>
+</tr>
+<tr>
+<th>
+subgraph
+</th>
+<td>
+<a href="/dz/leetcode/problems/740_delete_and_earn">740_delete_and_earn</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='746_min_cost_climbing_stairs'><a href='#746_min_cost_climbing_stairs'>746_min_cost_climbing_stairs
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/746_min_cost_climbing_stairs
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:998
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+746: minimum cost of climbing stairs
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#1d">leetcode/paradigms/dynamic_programming/1d</a>, <a href="/dz/leetcode/explore/dynamic_programming/1_strategic_approach#2_examples">leetcode/explore/dynamic_programming/1_strategic_approach/2_examples</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/min-cost-climbing-stairs">https://leetcode.com/problems/min-cost-climbing-stairs</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='790_domino_tromino_tiling'><a href='#790_domino_tromino_tiling'>790_domino_tromino_tiling
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/790_domino_tromino_tiling
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1005
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+790: domino and tromino tiling
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/paradigms#dynamic_programming">leetcode/paradigms/dynamic_programming</a>, <a href="/dz/leetcode/paradigms/dynamic_programming#1d">leetcode/paradigms/dynamic_programming/1d</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/domino-and-tromino-tiling">https://leetcode.com/problems/domino-and-tromino-tiling</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='79_word_search'><a href='#79_word_search'>79_word_search
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/79_word_search
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:1606
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+79: Word Search
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#backtracking">leetcode/paradigms/backtracking</a>, <a href="/dz/leetcode/explore/trie#4_practical_application_2">leetcode/explore/trie/4_practical_application_2</a>, <a href="/dz/leetcode/explore/trie/4_practical_application_2#accelerate_dfs">leetcode/explore/trie/4_practical_application_2/accelerate_dfs</a>
+</td>
+</tr>
+<tr>
+<th>
+remarks
+</th>
+<td>
+also can be thought of as DFS
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/word-search">https://leetcode.com/problems/word-search</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='841_keys_and_rooms'><a href='#841_keys_and_rooms'>841_keys_and_rooms
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/841_keys_and_rooms
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:898
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+841 Keys and Rooms
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#graph">leetcode/data_structures/graph</a>, <a href="/dz/leetcode/paradigms#depth_first_search">leetcode/paradigms/depth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/keys-and-rooms">https://leetcode.com/problems/keys-and-rooms</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='872_leaf_similar_trees'><a href='#872_leaf_similar_trees'>872_leaf_similar_trees
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/872_leaf_similar_trees
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:811
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+872 Leaf Simlar Trees
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#binary_tree">leetcode/data_structures/binary_tree</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/leaf-similar-trees">https://leetcode.com/problems/leaf-similar-trees</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='875_koko_eating_bananas'><a href='#875_koko_eating_bananas'>875_koko_eating_bananas
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/875_koko_eating_bananas
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:295
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+875: Koko eating bananas
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms/binary_search#lower_bound">leetcode/paradigms/binary_search/lower_bound</a>, <a href="/dz/leetcode/paradigms#binary_search">leetcode/paradigms/binary_search</a>, <a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/koko-eating-bananas">https://leetcode.com/problems/koko-eating-bananas</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='876_middle_of_linked_list'><a href='#876_middle_of_linked_list'>876_middle_of_linked_list
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/876_middle_of_linked_list
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:566
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+876: Middle of Linked List
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>, <a href="/dz/leetcode/data_structures#linked_list">leetcode/data_structures/linked_list</a>, <a href="/dz/leetcode/references#floyds_algorithm">leetcode/references/floyds_algorithm</a>
+</td>
+</tr>
+<tr>
+<th>
+remarks
+</th>
+<td>
+Fast/slow pointer
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/middle-of-the-linked-list">https://leetcode.com/problems/middle-of-the-linked-list</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='89_validate_binary_search_tree'><a href='#89_validate_binary_search_tree'>89_validate_binary_search_tree
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/89_validate_binary_search_tree
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:128
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+89: Validate Binary Search Tree
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+<a href="/dz/leetcode/data_structures#binary_search_tree">leetcode/data_structures/binary_search_tree</a>, <a href="/dz/leetcode/references/tree_traversal#in_order">leetcode/references/tree_traversal/in_order</a> (one solution for validating BST is using in-order traversal)
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#grind75">leetcode/grind75</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/validate-binary-search-tree">https://leetcode.com/problems/validate-binary-search-tree</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='933_number_of_recent_cals'><a href='#933_number_of_recent_cals'>933_number_of_recent_cals
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/933_number_of_recent_cals
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:753
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+933: Number of recent calls
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode#leetcode75">leetcode/leetcode75</a>, <a href="/dz/leetcode/data_structures#queue">leetcode/data_structures/queue</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/number-of-recent-calls">https://leetcode.com/problems/number-of-recent-calls</a>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<th scope="row" colspan=2>
+<a id='994_rotting_oranges'><a href='#994_rotting_oranges'>994_rotting_oranges
+</a></a></th>
+</tr>
+<tr>
+<th>
+path
+</th>
+<td>
+leetcode/problems/994_rotting_oranges
+</td>
+</tr>
+<tr>
+<th>
+location
+</th>
+<td>
+leetcode.dz:187
+</td>
+</tr>
+<tr>
+<th>
+content
+</th>
+<td>
+994: number of islands
+</td>
+</tr>
+<tr>
+<th>
+children
+</th>
+<td>
+
+</td>
+</tr>
+<tr>
+<th>
+parents
+</th>
+<td>
+<a href="/dz/leetcode/paradigms#breadth_first_search">leetcode/paradigms/breadth_first_search</a>
+</td>
+</tr>
+<tr>
+<th>
+hyperlink
+</th>
+<td>
+<a href="https://leetcode.com/problems/rotting-oranges/description/">https://leetcode.com/problems/rotting-oranges/description/</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+    </body>
+    </html>
+    

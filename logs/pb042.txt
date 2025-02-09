@@ -1,0 +1,26 @@
+@2024-11-22 Friday, November 22nd
+@08:58 Introducing a new shorthand for cx in dagzet #timelog:00:16:29
+cx tends to be pretty verbose, since paths
+have to be full paths. I tend to be writing
+a lot of =cx A B=, where 'B' is some node I am
+connecting things to.
+---
+I propose that '^' indicate the string of the last item
+connected to for left/right position, respectively. That
+is, assuming I can't get '$' to work the way I want to.
+
+@09:17 LC89: validate binary search tree #grind75 #timelog:00:59:02
+Initial attmpts. Program hit edge cases quickly.
+
+@10:31 LC89 editorial and research #timelog:00:38:42
+
+@15:08 LC200: Number of islands #grind75 #timelog:00:37:44
+@15:48 LC200 Continued #grind75 #timelog:00:41:33
+@16:30 LC200 Editorial and Research #grind75 #timelog:00:38:45
+I was close to getting BFS right. I didn't think
+to simply erase islands as I went.
+
+@17:11 LC994: Rotting Oranges #grind75 #timelog:00:30:56
+
+@21:09 LC33: Search in rotated sorted array #timelog:01:26:34
+Giving up for the night.

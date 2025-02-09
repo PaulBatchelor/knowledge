@@ -1,0 +1,72 @@
+@2024-06-20 Day 32. Tongue control in VoxBoxOSC, Agnus Dei
+51 Days Left of Batch
+---
+Cracked screen update: I have an appointment tomorrow
+morning at the apple store. I was thinking about just
+getting it in and fixed right there, but now I'm thinking
+I'll just get a quote and sit on it some more. It's
+going to be a lot of money. The internet tells me
+it's somewhere in the ballpark of 600-700 USD.
+I'm
+starting to think about just getting a refurbished
+thinkpad (x390). I'm not locked into the apple ecosystem,
+and I don't really need a powerful laptop for my needs.
+Also, my m1 works just fine when plugged into an external
+monitor.
+---
+Prev: More VoxBoxOSC Work, playing around with Sourcehut's CSS
+to figure out how they do line highlighting, reading on React,
+published my vocal chords demo! [[https://pbat.ch/recurse/demos/vocal_chords]].
+---
+Next:
+
+|| @!(taskref "voxbox-tongue-interface")!@: Implement
+this because it would be nice to have for voxboxOSC.
+
+|| @!(taskref "voxboxOSC")!@: add the rest of
+the planned parameters (tongue control and gain).
+
+|| @!(taskref "react-describing-ui")!@: Pretty sure I can
+finish up reading this chapter today.
+
+|| @!(taskref "htmlize-codestudy-files")!@: Get the
+extracted CSS to go from almost working to working.
+
+@08:28 Morning Triage.
+
+@08:40 Zulip Check-in.
+
+@08:57 Done with morning logging I think.
+
+09:24 Off to get batteries for my scanner wand
+
+@10:39 React reading #react-describing-ui #timelog:00:32:22
+
+@11:30 Lunch
+
+@12:46 Implement gain, add smoothing parameter abstraction #voxboxOSC #timelog:00:21:47
+
+@13:08 Time to look at this tongue interface again. #voxbox-tongue-interface #timelog:01:17:47
+
+@13:16 I think I might keep the diams vector in for now #voxbox-tongue-interface #create-diams-interface
+It's very helpful for tongue control.
+
+@13:27 Going to add smoothing to the tongue #voxbox-tongue-interface
+this proved to be more challenging than I expected because I was
+flipping between instantaneous and filtered and I wanted to make
+sure that doing things like setting the smooth amount wouldn't
+cause any jumps, which lead to some subtle logic. I think
+I got it mostly right. Well, good enough.
+
+@14:58 Adding more stuff to read to the priority bin
+
+@15:00 Exporting these to PDF #react-adding-interactivity
+
+@15:35 Reading #react-adding-interactivity #timelog:00:22:29
+
+@16:02 Presentations
+
+@20:02 Worked out some of the parts in "Agnus Dei" by Artemisia Trio
+In an uncharacteristic move, I went back to to the hub at night
+to work out some of the harmonies in this youtube video
+I found @!(dzref "misc/artemisia_agnus_dei")!@.

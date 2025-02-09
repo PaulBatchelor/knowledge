@@ -1,0 +1,87 @@
+ns system_design_interview
+nn 1
+ns +1
+gr volume 1
+
+nn toc
+co $ ..
+ns +toc
+
+nn 01_scale_zero_to_millions
+ln Chapter 1: scale from zero to millions of users
+co $ ..
+rm pg 5
+
+nn 02_back_of_env_estimation
+ln Chapter 2: back of envelope estimation
+co $ ..
+rm pg 34
+at ol
+
+nn 03_framework
+ln Chapter 3: A framework for system design interviews
+co $ ..
+rm pg 42
+
+nn 04_rate_limiter
+co $ ..
+rm pg 51
+
+nn 05_consistent_hashing
+co $ ..
+rm pg 71
+
+nn 06_key_value_store
+co $ ..
+rm pg 87
+
+nn 07_UUID
+co $ ..
+rm pg 110
+
+nn 08_URL_shortener
+co $ ..
+rm pg 119
+
+nn 09_web_crawler
+co $ ..
+rm pg 132
+
+nn 10_notification
+co $ ..
+rm pg 151
+
+nn 11_newsfeed
+co $ ..
+rm pg 166
+
+nn 12_chat
+co $ ..
+rm pg 178
+
+nn 13_search_autocomplete
+co $ ..
+rm pg 200
+
+nn 14_youtube
+co $ ..
+rm pg 220
+
+nn 15_google_drive
+co $ ..
+rm pg 244
+
+nn 16_learning_continues
+co $ ..
+rm pg 264
+
+zz -toc
+ns ..
+
+ns ..
+nn references/multitier_architecture
+hl https://en.wikipedia.org/wiki/Multitier_architecture
+ln Multi-Tier Architecture: client-server architecture
+ln in which presentation, applicatoin, and data management
+ln are physically separated
+co $ ..

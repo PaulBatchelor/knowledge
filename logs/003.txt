@@ -1,0 +1,43 @@
+@2024-05-22 Day 3. Laptop screen broken. What now?
+
+@08:40 off-by-one is going to confuse me
+renaming logs so far
+
+@08:47 reading RC jobs advice #rc-jobs-advice
+top 3 skills/attributes that I want to cultivate during
+my time here: Effectiveness, Agency, Conscientiousness
+
+@09:11 Setting up high-priority task list
+
+@09:17 Document task lists
+It's already blowing up. I'm going to lose track.
+---
+I should add a description metadata field to the task lists.
+that way it stays with the task.
+
+@09:22 Metadata to task lists #add-meta-parser-tags
+
+@09:25 Created metadata tag parser task #add-meta-parser-tags
+Proof of concept should be to add =@!desc= as a known
+tag for description
+
+@11:15 Laptop screen broke
+looking up how to fix this.
+
+@13:07 Settling down at a space
+@13:25 Walk/Lunch
+Went to the apple store, which happens to be about a
+15min walk away from the hub.
+@14:31 Course correction
+@15:20 getting ready for isorhythms study
+I want to build and run this locally, and document
+my steps for this. I also would like to take a closer
+look at the JS involved and see if there's any way I can
+improve this.
+@15:22 attempting to clone and recompile
+@15:40 Recalling what the JS code does
+Got into some discussions while this was happening
+@16:42 Initial VoxBox scaffolding
+@16:52 Break
+@17:00 non-programming talks
+@18:00 travel Home

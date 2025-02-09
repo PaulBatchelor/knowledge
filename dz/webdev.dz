@@ -1,0 +1,529 @@
+ns webdev
+
+nn wiredjs
+hl https://wiredjs.com/
+ln A set of common UI elements with a
+ln hand-drawn, sketchy look.
+tg js webdev UI
+
+nn export_js
+ln export js keyword (MDN)
+hl https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export
+
+nn slider
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range
+ln slider: range input
+tg mdn html
+
+nn audioworklet_safari
+hl https://stackoverflow.com/questions/73164697/implementing-an-audioworklet-in-safari
+ln implementing audioworklet in safari
+tg audioworklet safari
+rm maybe this can fix issues on iphone?
+
+nn textcontent_mdn
+hl https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+ln textContent property in node
+
+nn spread_syntax
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+ln Spread Syntax in JS
+tg js mdn
+rm Initially discovered while doing React tic-tac-toe tutorial
+
+nn single_responsibility_principle
+ln Single Responsibility Principle: A module should be responsible to one, and only one, actor.
+hl https://en.wikipedia.org/wiki/Single-responsibility_principle
+rm found while reading the "Thinking In React" page
+ff what is the Single Responsibility principle?
+fb The single-responsibility principle (SRP) is a computer
+fb programming principle that states that a module should
+fb be responsible to one, and only one, actor.
+
+nn class_selectors
+ln Class Selectors
+hl https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors
+tg mdn css
+
+nn nanostores
+hl https://github.com/nanostores/nanostores
+ln Nanostores: A tiny (286 bytes) state manager for
+ln React/RN/Preact/Vue/Svelte with many atomic tree-shakable
+ln stores
+tg webdev
+
+nn codepen_canvas_pixels
+hl https://codepen.io/anon/pen/pgBjBy
+ln small webgl example drawing pixels
+tg webgl webdev
+
+nn zod
+hl https://zod.dev/
+ln zod: TypeScript-first schema validation with static
+ln type inference
+
+nn conform
+hl https://conform.guide/
+ln conform: Conform is a type-safe form validation library
+ln utilizing web fundamentals to progressively enhance HTML
+ln Forms with full support for server frameworks like Remix
+ln and Next.js.
+
+nn mswjs
+hl https://mswjs.io/
+ln mswjs: API mocking library that allows you to write
+ln client-agnostic mocks and reuse them across any
+ln frameworks, tools, and environments.
+
+nn pdfmake
+hl http://pdfmake.org/
+ln Client/server side PDF printing in pure JavaScript
+tg pdf webdev
+
+nn vercel_files_serverless
+hl https://vercel.com/guides/how-can-i-use-files-in-serverless-functions
+ln This guide will explain how to read files from Vercel
+ln Functions, both when used with frameworks like Next.js
+ln or standalone on Vercel.
+tg webdev vercel
+
+nn npx_create_react_app_typescript
+ln npx create-react-app my-app --template typescript
+
+nn mdn_header_element
+ln The header element (MDN)
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
+tg html mdn
+
+nn typescript_handbook
+ln The (new) typescript handbook
+hl https://microsoft.github.io/TypeScript-New-Handbook/everything/
+tg typescript
+
+nn slug
+ln slug MDN
+hl https://developer.mozilla.org/en-US/docs/Glossary/Slug
+tg mdn
+rm came up while looking at keys from a LC75 data dump
+
+nn deno
+hl https://github.com/denoland/deno
+ln Deno: A modern runtime for JavaScript and TypeScript.
+
+nn stately_docs
+hl https://stately.ai/docs
+ln Stately documentation
+rm DF mentioned this when we were talking
+rm about state machines, thinks the concepts
+rm are solid.
+
+nn digitalocean_typescript_new_project
+ln How to set up a new typescript project (DigitalOcean)
+hl https://www.digitalocean.com/community/tutorials/typescript-new-project
+
+nn using_pointer_events
+hl https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events/Using_Pointer_Events
+ln MDN: Using pointer events
+
+nn touch_action
+hl https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
+ln touch action
+rm had to set this to be none for it to work in chrome
+
+nn bun_js
+hl https://bun.sh/
+ln Bun: A fast all-in-one javascript runtime.
+rm This was mentioned by 3 different people in the span of a few days
+rm at RC. So, I thought it'd be worth checking out. Also,
+rm parts of it are written in Zig.
+
+nn 12factor
+hl https://12factor.net/
+ln The 12-factor app is a methodlogy for building
+ln software-as-a-service apps.
+rm found via zulip.
+
+nn mdxjs
+ln MDX lets you use JSX in your markdown content.
+hl https://mdxjs.com/
+
+nn rxjs
+ln RxJS is a library for composing asynchronous and event-based
+ln programs by using observable sequences.
+hl https://rxjs.dev/guide/observable
+rm DF was trying this out in his granular synth app, mostly
+rm as way to manipulate events.
+
+nn tailwindui
+hl https://tailwindui.com/
+ln Tailwind UI components
+
+nn headlessui
+hl headlessui: components designed to integrate with tailwindcss
+co $ tailwindui
+
+nn inter_typeface
+hl https://rsms.me/inter/
+ln inter typeface
+co $ tailwindui
+cr used by tailwindui components
+
+nn radix_ui
+hl https://www.radix-ui.com/
+ln Radix UI: open source component library optimized for
+ln fast development, easy maintenance, an accessibility.
+rm Found on a job posting, also seen elsewhere I think.
+
+nn pnpm
+hl https://pnpm.io/
+ln A package manager that's faster and more efficient than
+ln npm or yarn.
+
+nn clsx
+hl https://www.npmjs.com/package/clsx
+ln Utility for constructing class names conditionally
+
+nn mockapi
+hl https://mockapi.io/
+ln mockAPI: A third-party service that can be used to mock
+ln REST APIs
+
+nn prisma
+hl https://www.prisma.io/
+ln Prisma: a modern database toolkit and object-relational
+ln model (ORM) that simplifies database operations by providing
+ln typesafe database access, schema management, and query
+ln building for Node.js and TypeScript applications. In
+ln typescript, It will automatically create types based on your
+ln schema.
+
+nn drizzle
+hl https://orm.drizzle.team/
+ln Drizzle is a lightweight, type-safe TypeScript 
+ln ORM that emphasizes SQL-like syntax and zero 
+ln abstractions, offering direct database operations 
+ln with minimal overhead and maximum performance for 
+ln Node.js applications.
+
+nn clsx_github
+hl https://github.com/lukeed/clsx
+ln clsx: github
+co $ clsx
+cr github
+
+nn core_web_values_affect_seo
+hl https://vercel.com/blog/how-core-web-vitals-affect-seo
+ln How Core Web Values affect SEO
+
+nn cumulative_layout_shift
+ln Cumulative Layout Shift: Metric used by Google to
+ln evaluate the performance and user experience of a website.
+ff What is Cumulative Layout Shift?
+fb Cumulative layout shift is a metric used by google to
+fb evalulate the performance and user experience of a
+fb website.
+co $ core_web_values_affect_seo
+cr nextjs linked to this article with this term
+
+nn SPA
+hl https://developer.mozilla.org/en-US/docs/Glossary/SPA
+ln SPA: single-page application, loads only a single
+ln web document, then updates the body content of that
+ln single document via JavaScript APIs such as Fetch when
+ln different content is to be shown.
+ff What is a SPA?
+fb A Single-page page application loads a single web
+fb document, then updates the document via Javascript when
+fb different content is to be shown.
+
+nn request_api
+ln Request API: The Request interface of the Fetch API
+ln represents a resource request.
+hl https://developer.mozilla.org/en-US/docs/Web/API/Request
+
+nn response_api
+ln The Response API interface of the Fetch API represents the
+ln response to a request.
+hl https://developer.mozilla.org/en-US/docs/Web/API/Response
+
+nn fetch_api
+hl https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+ln Fetch API: an interface for fetching resources
+ln (including across the network). It is a more powerful
+ln and flexible replacement for XMLHttpRequest.
+ff What is the fetch API?
+fb The Fetch API is an interface for fetching resources
+fb (including across the network). It is a more powerful
+fb and flexible replacement for XMLHttpRequest.
+co request_api $
+co response_api $
+
+nn xmlhttprequest
+hl https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+ln XMLHttpRequest (XHR) objects are used to interact with 
+ln servers. You can retrieve data from a URL without 
+ln having to do a full page refresh. This enables a Web 
+ln page to update just part of a page without disrupting 
+ln what the user is doing.
+co $ fetch_api
+cr fetch is a more powerful replacement for XMLHttpRequest
+
+nn urlsearchparams
+hl https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+ln URLSearchParams: interface that provides utility methods
+ln to work with the query string of a URL
+
+nn use_debounce
+hl https://www.npmjs.com/package/use-debounce
+ln use-debounce: react libraries for debouncing
+
+nn formdata
+hl https://developer.mozilla.org/en-US/docs/Web/API/FormData
+ln FormData interface: provides a way to construct a set
+ln of key/value pairs representing form fields and their
+ln values, which can be sent using the fetch(),
+ln XMLHttpRequest.send(), or navigator.sendBeacon() methods.
+co $ xmlhttprequest
+cr can be sent via XMLHttpRequest.send() method
+co $ fetch_api
+cr can be sent via fetch() method
+co $ navigator
+cr can be sent via the navigator.sendBeacon() method
+
+nn navigator
+hl https://developer.mozilla.org/en-US/docs/Web/API/Navigator
+ln Navigator interface: represents state and identify of
+ln the user agent.
+
+nn progressive_enhancement
+hl https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement
+ln Progressive Enhancement: a design philosophy that provides
+ln a baseline of essential content and functionality to as
+ln many users as possible, while delivering the best possible
+ln experience only to users of the most modern browsers that
+ln can run all the required code.
+rm "best possible experience only to users of the most modern
+rm browsers" is a very corporate tech sentence.
+
+nn progressive_enhancement_wikipedia
+ln Progressive Enhancement (wikipedia): a strategy in
+ln web design that puts emphasis on web content first,
+ln allowing everyone to access the basic content and functionality
+ln of a web page, whilst users with additional browsers or
+ln features or faster internet access receive the enhanced
+ln version instead.
+co $ progressive_enhancement
+cr further elaboration and context. The writing in the
+cr definition is also a bit more mellow. More of a "semantic web"
+cr bias perhaps?
+
+nn progressive_enhancement_uk
+ln Building a robust frontend using progresive enhancement
+hl https://www.gov.uk/service-manual/technology/using-progressive-enhancement
+hl https://en.wikipedia.org/wiki/Progressive_enhancement
+co $ progressive_enhancement
+rm Recommended by alcinnz, where they link when discussing
+rm the concept
+
+nn web_dev_learn_accessibility
+hl https://web.dev/learn/accessibility/
+ln Learn Accessibility: An evergreen accessibility course
+ln and reference to level up your web development.
+
+nn eslint_plugin_jsx_a11y
+hl https://www.npmjs.com/package/eslint-plugin-jsx-a11y
+ln eslint-plugin-jsx-a11y: Static AST checker for
+ln accessibility rules on JSX elements.
+
+nn zod/safeParse
+hl https://zod.dev/?id=safeparse
+ln safeParse: This method returns an object containing 
+ln either the successfully parsed data or a ZodError instance 
+ln containing detailed information about the validation 
+ln problems.
+
+nn html/aria_describedby
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby
+ln aria-describedby: identifies the element (or elements)
+ln that describes the element on which the attribute is set
+co $ aria
+co $ aria/attributes
+
+nn aria
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+ln ARIA: Accessible Rich Internet Applications, is a set of
+ln roles and attributes that define ways to make web content
+ln and web applications more accessible to those with
+ln disabilites.
+
+nn aria/attributes
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes
+ln ARIA attributes
+co $ aria
+
+nn aria/roles
+ln ARIA roles provide semantic meaning to content, 
+ln allowing screen readers and other tools to present and 
+ln support interaction with an object in a way that is 
+ln consistent with user expectations of that type of 
+ln object. 
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+co $ aria
+
+nn html/aria_live
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
+ln aria-live: indicates that an element will be update, and
+ln describes the types of updates the user agents,
+ln assistive technologies, and user can expect from the live
+ln region
+co $ aria
+co $ aria/attributes
+
+nn html/aria_live/polite
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live#polite
+ln when "aria-live" is set to be polite, it indicates
+ln that updates to the region should be presented at the
+ln next graceful opportunity
+co $ html/aria_live
+
+nn authentication
+hl https://developer.mozilla.org/en-US/docs/Glossary/Authentication
+ln Authentication: is in general the process of 
+ln proving that some fact is genuine. More specifically, 
+ln in web security, it is the process of verifying the 
+ln claimed identity of some entity, such as a user.
+ff What is authentication (in the context of the web)?
+fb Authentication is the process of verifying the claimed
+fb identity of some entity, such as a suer
+
+nn RFC4949_internet_security_glossary
+hl https://datatracker.ietf.org/doc/html/rfc4949
+ln RFC 4949: Internet Security Glossary
+co $ authentication
+cr for more elaboration on authentication and similar terms
+
+nn authorization
+ln Authorization: Once a user's identity is confirmed,
+ln authorization decides what parts of the application they
+ln are allowed to use.
+co $ authentication
+cr authorization happens after authentication
+
+nn oauth
+hl https://en.wikipedia.org/wiki/OAuth
+ln OAuth: Open Authorization (OAuth) is an open standard
+ln for access delegation, commonly used as a way for
+ln internet users to grant websites or applications access
+ln to their information on other websites but without
+ln giving them their passwords.
+
+nn html/aria_disabled
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-disabled
+ln aria-disabled: when set to true, indicates that the element upon 
+ln which it is set and all of its focusable descendants 
+ln are meant to be in the disabled state.
+ln This declaration will inform people using assistive 
+ln technologies, such as screen readers, that such 
+ln elements are not meant to be editable or otherwise 
+ln operable.
+
+nn html/aria_atomic
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-atomic
+ln in ARIA live regions, the global aria-atomic attribute 
+ln indicates whether assistive technologies such as a 
+ln screen reader will present all, or only parts of, the 
+ln changed region based on the change notifications 
+ln defined by the aria-relevant attribute.
+rm when true, present the entire region as a whole, including
+rm the author-defined label if one exists
+
+nn aria/live_regions
+hl https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions
+ln Live regions provide a way to programmatically expose
+ln dynamic content changes in a way that can be announced
+ln by assistive technologies.
+co $ html/aria_atomic
+co $ html/aria_live
+
+nn html
+ln HTML: hyper-text markup language
+hl https://developer.mozilla.org/en-US/docs/Web/HTML
+
+nn html/elements
+ln HTML elements
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+co $ ..
+
+nn html/elements/details
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+ln <details>: The <details> HTML element creates a 
+ln disclosure widget in which information is visible only 
+ln when the widget is toggled into an "open" state. A 
+ln summary or label must be provided using the <summary> 
+ln element.
+
+nn html/elements/summary
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary
+ln The <summary> HTML element specifies a summary, 
+ln caption, or legend for a <details> element's 
+ln disclosure box. Clicking the <summary> element toggles 
+ln the state of the parent <details> element open and 
+ln closed.
+co $ ../details
+cr <summary> must be used with <details> to provide a summary
+cr or label
+
+nn html/elements/input
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+ln <input>:
+ln The <input> HTML element is used to create interactive 
+ln controls for web-based forms in order to accept data 
+ln from the user; a wide variety of types of input data 
+ln and control widgets are available, depending on the 
+ln device and user agent. The <input> element is one of 
+ln the most powerful and complex in all of HTML due to 
+ln the sheer number of combinations of input types and 
+ln attributes.
+co $ ..
+
+nn html/elements/input/type
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#type
+ln input type: a string specifying the type of control to
+ln render
+co $ ..
+
+nn html/elements/script
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+ln <script>:
+ln The <script> HTML element is used to embed executable 
+ln code or data; this is typically used to embed or refer 
+ln to JavaScript code. The <script> element can also be 
+ln used with other languages, such as WebGL's GLSL shader 
+ln programming language and JSON.
+co $ ..
+
+nn html/elements/script/type
+hl https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type
+ln The type attribute of the <script> element indicates 
+ln the type of script represented by the element: a 
+ln classic script, an import map, a JavaScript module, 
+ln speculation rules, or a data block.
+
+nn IndexedDB
+hl https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+ln IndexedDB is a low-level API for client-side storage of
+ln significant amounts of structured data, including
+ln files/blobs.
+
+nn webapi
+hl https://en.wikipedia.org/wiki/Web_API
+
+ns +webapi
+
+nn endpoints
+hl https://en.wikipedia.org/wiki/Web_API#Endpoints
+co $ ..
+
+zz -webapi
+ns ..
+

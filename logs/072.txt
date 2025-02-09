@@ -1,0 +1,124 @@
+@2024-07-30 Day 72. Trio Initial Web Port made
+10 days left of batch
+---
+Prev: attempts to port to web, some more chord manager
+ideas.
+---
+Next: @!(taskref "demo-trio-web")!@: Get an initial
+prototype working, basically.
+
+@07:50 Morning Triage
+
+@08:01 Just do the graphics in canvas instead of p5? #demo-trio-web
+R mentioned this, and it's been a sentiment that others
+have mentioned as well. p5 just makes canvas calls
+anyways.
+
+@08:06 Publish.
+
+@08:07 Get something working using canvas API #demo-trio-web #timelog:01:34:07
+
+@08:56 Trying to get pointer logic working. #demo-trio-web
+Following @!(dzref "webdev/using_pointer_events")!@.
+---
+Issue was a chrome mobile related issue. Had to use
+CSS to set =touch-actions= to be =none=.
+
+@09:35 Setting up dynamic lines layout #demo-trio-web
+
+@09:43 Okay visuals are off to a good start now. #demo-trio-web
+
+@09:48 Begin work making audioworklet stuff #demo-trio-web #timelog:01:02:25
+Once again...
+
+@09:50 turning things into a module #demo-trio-web
+Interesting, the parser becomes stricter. I need
+to formally declare "i" in my for loop. All done
+by simply add "type=module" to my HTML script element.
+
+@10:13 click to start mechanics not behaving for some reason #demo-trio-web
+Figured it out: it was the callback mechanics of
+requestAnimationFrame.
+
+@10:16 adding "TAP TO BEGIN" text. #demo-trio-web
+
+@10:27 setting up message passing to worklet #demo-trio-web
+
+@10:30 first getting the input events to the node #demo-trio-web
+
+@10:38 startAudio returns a promise I guess? #demo-trio-web
+Solution: encapsulate in =then=.
+
+@10:43 move message works! #demo-trio-web
+
+@10:47 send to processor via messages now #demo-trio-web
+
+@10:51 initial message passing implemented #demo-trio-web
+I'll have to do the rest later.
+
+@12:00 Audio Hang
+
+@13:17 More audioworklet stuff #demo-trio-web #timelog:02:51:07
+
+@13:21 Why is gate not being read in chromium #demo-trio-web
+I'm mouse events are happening either way
+---
+Logic bug. And should have been an or. Struggled to clear
+cache on Chromium too.
+
+@13:27 Get wasm stuff working #demo-trio-web
+
+@13:29 My println stuff is causing issues I think. #demo-trio-web
+I'm not going to do macros, I'm just going to comment
+things out.
+
+@13:37 Huh. it's not generating a wasm at all actually, even though there is no error. #demo-trio-web
+Had to generate cdylib.
+
+@13:43 More unknown opcodes in wasm-gc. I wonder if there's a way to get more info on that #demo-trio-web
+It went from unknown opcode 192 to 193, after I commented
+out all the panics.
+
+@13:50 broke the tests last night with more notes I think #demo-trio-web
+Nope, that wasn't it. Sigh. Gotta bisect.
+---
+Bisect tracked down the quick bugfix I made that checked
+for valid lower/upper values.
+
+@14:21 A messy fix for now, but things don't panic and tests pass #demo-trio-web
+
+@14:27 A very odd opcode was generated in wasm #demo-trio-web
+Opcode 193 is something that extends a signed opcode, which
+caused wasm-gc to panic. The lines that do that are in
+the =measure_movement= function. It was quick to find because
+it's the only time I deliberately cast from unsigned to
+signed. I happened to use i16 which caused the panic to
+happen. However, changing to i32 made things work just fine.
+
+@14:31 right. Now I need to get the wasm in. #demo-trio-web
+The exports and the interface are already there from the
+C prototype. It should mostly drop right in.
+
+@15:00 There should be sound. But there is no sound. #demo-trio-web
+
+@15:25 Still not sure where there isn't sound. #demo-trio-web
+
+@15:28 I forgot to return true, but there still ain't any sound. #demo-trio-web
+
+@15:46 Okay, now there's sound. #demo-trio-web
+I wasn't passing in the dsp parameter.
+
+@15:47 Attempting to run on phone. #demo-trio-web
+
+@16:11 Good enough. Taking a break. #demo-trio-web
+
+@19:30 Back to the hub. Didn't actually get anything planned done.
+I did, however, manage to get jackdaw running on my
+computer @!(dzref "misc/jackdaw")!@. I was very impressed
+with project, and didn't realize just how much tooling
+was built for it. Things like a layout editor, a YAML parser,
+and an XMl parser.
+---
+The audio devices weren't querying correctly on my computer,
+and we discovered that it was most likely a problem with
+SDL on my computer.

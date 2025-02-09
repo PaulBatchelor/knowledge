@@ -1,0 +1,176 @@
+@2024-07-01 Day 43. Week 7. Audio Troubleshooting, Moving Circles, Stateful Sliders in React and Typescript
+39 days left of batch.
+---
+Prev:
+
+The creeping answer
+Of a gigantic bug hunt:
+Check for foreign nodes.
+
+---
+
+Next:
+
+|| @!(taskref "add-wasm-dz")!@: missing file in my
+repo, on one of my computers. Quick thing.
+
+|| @!(taskref "resume-setup")!@: read the way to
+set up resume, and make a new one.
+
+|| @!(taskref "demo-poke")!@: pre-work on this
+
+|| @!(taskref "typescript-react-slider")!@: studied
+the boilerplate yesterday, I feel ready enough to
+add a slider.
+
+|| @!(taskref "troubleshoot-webaudio-thinkpad")!@
+This would be very helpful to figure out today.
+
+@08:26 Morning Triage
+
+@08:33 Do this at lunch today #add-wasm-dz
+
+@08:36 Plans on doing this today #resume-setup
+
+@08:39 Pre-work on this today #demo-poke
+Goal will be to figure out initial technical
+scaffolding, getting p5 in a windowed context,
+mouse pointer stuff, etc.
+
+@08:41 added a task for ensemble demo #demo-ensemble
+This will build on the vocal chords demo, and
+will most likely be something vaguely like
+Blob Opera and Choir. Slightly lower priority
+than @!(taskref "demo-poke")!@ because that
+task will let me focus on details for one
+face and voice, which can be a helpful learning
+experience when I go to do the choir app.
+
+@08:43 An actual demos page would be useful this week #add-demos-page
+This shouldn't take any time at all.
+
+@08:45 Ready to actual add a slider now #typescript-react-slider
+After studying the boilerplate in way too much detail
+yesterday @!(dzref "codestudy/hello_ts_react/app_tsx")!@,
+I feel ready for this.
+
+@08:48 I really need to make it possible to link graphs #dzgraph-hyperlinks
+You can't actually use =dzref= to link to graphs, only
+nodes. Hoping to fix that cuz it comes up a lot.
+
+@08:51 Poke demo is priority this week #demo-poke
+It's a good contrast from the vocal chords demo,
+and a good way to start the more whimsical toyetic
+vocal demos.
+
+@08:56 publishing logs from yesterday
+
+@09:03 Let's see if I can find more things out on this #troubleshoot-webaudio-thinkpad #timelog:00:32:02
+
+@09:06 Glicol works, but my project does not #troubleshoot-webaudio-thinkpad
+This has been a repeating theme: my audio code
+doesn't work everywhere, but Glicol does tend to work
+everywhere. Why?
+
+@09:07 Glancing at glicol JS audoi code #troubleshoot-webaudio-thinkpad
+Found an interesting line:
+
+===
+#+BEGIN_SRC
+window.AudioContext = window.AudioContext || window.webkitAudiotContext
+#+END_SRC
+===
+
+@09:17 Sound is broken in glicol now #troubleshoot-webaudio-thinkpad
+More importantly: sounds suddenly worked for my vocal
+demo?
+
+@09:27 Not sure why but I guess it's all working now #troubleshoot-webaudio-thinkpad
+Both my vocal chords and glicol demo work.
+---
+I did do some cache clearing in the dev tools, so
+that could be partially to blame for why it's
+suddenly deciding to work.
+
+@09:30 webkit is safari? #troubleshoot-webaudio-thinkpad #vocal-chords-older-iphone
+Unrelated, but that webkit line may be how to
+get sound working on some iphone devices.
+---
+I've made a new task for this @!(taskref "vocal-chords-older-iphone")!@.
+
+@09:43 I am drafting up a new resume #resume-setup #timelog:00:21:27
+Scew it, outlining in markdown. Text will set us
+free.
+
+@10:05 An outline of a resume has been made in markdown #resume-setup
+it is stored in this repo under =resume/resume.md=.
+---
+I should pandoc this at some point.
+--
+okay it didn't work out of the box and this frustrates me.
+---
+Crazy overengineered idea. Write the resume in dagzet,
+compile to SQLite, then produce tex structure from this.
+
+@10:24 Chattering gibberish sounds are needed for critter #poke-demo #create-chatter-sounds #voxbox-shape-morphing
+This could also be a good pre-cursor to the shape morphing
+stuff, as all the code could be a bit more relaxed
+and inside some sample rust code.
+
+@10:30 Attempting to get some p5 code working #demo-poke #timelog:00:27:02
+
+@10:41 the isorhythms code works, but, it chokes. a lot. #demo-poke
+Not a good sign for future developments on the thinkpad.
+
+@10:58 Trying chromium #demo-poke
+Chromium plays isorhythms okay! Just one of those things.
+
+@11:30 Back home for Lunch
+
+@13:00 Attempted C Creatures Hang
+I was there for 15 minutes, and nobody showed up.
+
+@13:40 Back at the hub. Back to p5 context? #demo-poke #timelog:01:00:08
+Now that things work if we "run in chromium" (sigh), things
+can move forward.
+
+@13:47 Found the documentation #demo-poke
+Found the documentation: [[https://archive.p5js.org/reference/#/p5/p5]].
+
+@14:07 Initial p5 boilerplate working #demo-poke
+Going to put it in a 400x400 window, or something.
+---
+scratch that, let's see what 400x680 does. approximately
+pacman proportions.
+
+@14:33 Adding wall collisions #demo-poke
+It doesn't work, but it's a good start.
+
+@15:57 Nice pairing with Binh on getting a slider in React #typescript-react-slider #timelog:00:15
+Approximating the timelog to be about 15 minutes. Solution
+was much less complicated that my thinking. Instead of
+wrapping slider in react, just use stateful hooks.
+
+@16:28 Trying to make the bounce work #demo-poke #12:14
+
+@16:33 Oh, circle is diameter, not radius. #demo-poke
+
+@16:43 Closer, but not right still. Pen and paper now #demo-poke #timelog:00:15:00
+
+@17:00 Lots of pairing and people stopping by to help me #timelog:01:00:00
+And we are done!
+
+@19:47 React Reading: preserving and resetting state. #react-managing-state #timelog:00:43:21
+
+@20:37 Fixing some dagzet code in hello ts typescript
+
+@20:45 Thinking about haiku bits for tomorrow.
+Poking Propulsion
+---
+Worked Better In Chromium
+---
+Markdown Resume
+---
+New Resume Time
+---
+Stored state in sliders

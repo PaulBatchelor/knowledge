@@ -1,0 +1,68 @@
+@2024-06-15 Day 27. Coarse tract size control, Linear Gesture Demo, Better Sounds in Chords demo
+56 days left of batch.
+---
+prev: read up on react, finished implementing linear gesture
+path algorithm, got potential VCV plugin to compile and run,
+messed around with midinous with Dan and Scott.
+---
+next:
+|| @!(taskref "voxbox-size-control")!@: experiment with realtime
+tract size control.
+|| @!(taskref "react-describing-ui")!@: read more from the
+"describing the UI" chapter from React website.
+|| @!(taskref "voxbox-linear-gesture-demo")!@: create a linear
+gesture webaudio demo from the "tom's diner" example I made
+yesterday.
+|| @!(taskref "create-time-log-format")!@: start building out workable
+code
+
+@10:00 Morning triage. #timelog:00:27:00
+
+@10:14 Chords demo could benefit from having interactive tract size. #chords-demo #voxbox-size-control
+The issue with the chords at the moment is that the voice
+parts don't sound right, which I think is due to the shapes
+being wrong. If I am able to tune the size along with the
+shape, I think I'll end up with better sounding results.
+
+@10:20 Thinking about reworking the timelog format here. #create-time-log-format
+Right now the syntax is =#timelog mm:ss=, but if we include
+the time in the tag like =#timelog:mm:ss=, SQLite would be
+able to parse it.
+
+@10:23 uh-oh, segfault from yesterday's logs
+
+@10:27 Okay it works again
+I forgot to close out an inline Janet expression.
+
+@11:03 Set up some initial boilerplate files for gesture demo #voxbox-linear-gesture-demo #timelog:01:28:37
+
+@11:42 oh boy, lifetimes #voxbox-linear-gesture-demo
+
+@11:51 maybe I should be using vectors here? #voxbox-linear-gesture-demo
+
+@12:03 Trying to rework things so that the linear gesture doesn't need the path upfront #voxbox-linear-gesture-demo
+
+@12:33 Okay taking a break from this. Still running into ownership problems #voxbox-linear-gesture-demo
+
+@13:45 Did some (re)-reading on the lifetimes chapter, and other research #voxbox-linear-gesture-demo #timelog:00:10:30
+
+@13:57 Things seem to build. Now, will it play? #voxbox-linear-gesture-demo #timelog:00:10:29
+We have sound! More fiddling with voxbox gesture path required.
+
+@14:08 Tempo control #voxbox-linear-gesture-demo #timelog:00:20:38
+
+@14:30 Some initial write-ups #voxbox-linear-gesture-demo #timelog:00:19:01
+
+@14:51 Uploading to website. #timelog:00:03:33
+
+@16:02 Experimenting with timelog querying in SQLite #create-time-log-format #timelog:00:50:31
+
+@16:55 Commandline tool "timelog" made. Good enough for my needs #create-time-log-format
+
+@18:29 Going to implement crude tract size control #voxbox-size-control #timelog:00:52:41
+Units will be in CM, and there won't be any interpolation.
+---
+I can't believe it worked haha.
+
+@18:52 Okay time to make this stuff sound better in the chords demo #timelog:00:42:48
+Things are starting to sound pretty.

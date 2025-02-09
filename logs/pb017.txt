@@ -1,0 +1,20 @@
+@2024-10-06 Sunday, October 6th
+@10:02 Grind75 #grind75 #timelog:01:37:11
+Uh oh, I've just been running locally. I've been
+forgetting to submit stuff. I knew things were feeling
+wrong.
+---
+56, 981
+
+@12:46 Grind75 #grind75 #timelog:02:37:49
+
+@16:09 Typescript Handbook #read-typescript-handbook #timelog:00:44:28
+Finished the Generics chapter. Variance annotations,
+covariance, and contravariance are taking a while to
+sink in.
+
+@17:14 See if I can re-implement 236 #grind75 #timelog:01:02:24
+Even with the editorial in my face, it still took me an
+hour to implement. jeez.
+
+@20:57 Some boilerplate python code #flashcard-mvp #timelog:01:06:59

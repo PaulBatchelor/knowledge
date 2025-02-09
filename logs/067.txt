@@ -1,0 +1,42 @@
+@2024-07-25 Day 67. Chord Selector Planning.
+15 days left of batch.
+---
+Prev: initial dagzet rust port completed.
+---
+Next: work out chord engine logic in trio. add
+more facial expressions in poke, port balloon
+signal generator to trio?
+
+@08:43 Morning triage
+
+@08:53 Might be worth trying to port balloon #voxbox-balloon
+I have just created the task for it.
+
+@08:56 Might be a good day to do some resume follow-up stuff #resume-follow-up
+I got some good suggestions.
+
+@10:02 finished up responding back to jobs chat.
+
+@10:03 publishing.
+
+@10:06 laughing facial expressions in poke. #poke-laughter-chitter #timelog:01:05:39
+
+@12:54 Trio Chord Selector planning #demo-trio-chords #timelog:01:11:47
+
+@14:41 Plan out some initial code #demo-trio-chords #timelog:01:16:26
+The initial structures: chords, and valid chord
+transitions.
+
+@15:53 Initial chord structure, now to think about querying #demo-trio
+We want to make a query: given some pitch (0-11), and
+a current chord, provide a range of potential candidates
+for the next chord.
+---
+Since this is going to be used in a realtime
+situation. My thinking is to populate
+with a pre-allocated fixed size array that is managed
+internally.
+
+@16:00 Presentations
+
+@19:27 Wrap-up chapter 4 (machine language), begin chapter 5 (Computer Architecture) #read-elem-compsys #timelog:01:00:09

@@ -1,0 +1,710 @@
+ns system_design_interview
+gr reading notes: system design interview
+
+nn 2
+
+ns +2
+gr volume 2
+
+ns +toc
+gr Table of Contents
+
+nn 01_proximity_service
+ln Chapter 1: proximity Service
+rm pg 9-40
+
+nn 02_nearby_friends
+ln Chapter 2: Nearby Friends
+rm pg 43-65
+
+nn 03_google_maps
+ln Chapter 3: Google Maps
+rm pg 67-95
+
+nn 04_distributed_message_queue
+ln Chapter 4: Distribtued Message Queue
+rm pg 97-132
+
+ns +04_distributed_message_queue
+
+nn step1
+ln Step 1
+co $ ..
+
+nn step1/functional_requirements
+ln Functional Requirements
+co $ ..
+co $ ../../../../../glossary/functional_requirement
+
+ns +step1/functional_requirements
+
+nn producers_send_messages
+ln Producers send messages to a message queue
+co $ ..
+
+nn consumers_consume_messages
+ln Consumers consume messages from message queue
+co $ ..
+co $ producers_send_messages
+
+nn messages_consumed_repeatedly_or_once
+ln messages can be consumed repeatedly or only once
+co $ ..
+
+nn message_size_kb_range
+ln Message size in kilobyte range
+co $ ..
+
+nn deliver_in_order
+ln Ability to deliver messages to consumers
+ln in the order they were added to the queue
+co $ ..
+
+nn delivery_semantics_configurable
+ln Data delivery semantics (at once, at most-once,
+ln or exactly once) can be configured by users
+co $ ..
+co $ messages_consumed_repeatedly_or_once
+
+nn history_can_be_truncated
+ln Historical data can be truncated
+co $ ..
+
+ns ../..
+
+nn step1/non_functional_requirements
+ln Non-Functional Requirements
+co $ ..
+co $ ../../../../../glossary/non_functional_requirement
+
+ns +step1/non_functional_requirements
+
+nn high_throughput_or_low_latency
+ln High Throughput or Low Latency, configurable
+ln based on use cases
+co $ ..
+
+nn scalable
+ln Scalable: the system should be distributed.
+ln Should be able to support a sudden surge in message
+ln volume.
+co $ ..
+
+nn persistent_durable
+ln Persistant and durable: data should be persisted
+ln on disk and replicated across multiple nodes
+co $ ..
+
+ns ../..
+
+nn step2
+ln Step 2
+co $ ..
+
+nn step2/message_models
+ln Message Models
+co $ ..
+
+ns +step2/message_models
+
+nn point_to_point
+ln Point-to-point: a message is sent to a queue
+ln and consumed by one and only one consumer
+co $ ..
+co $ ../../../../../../glossary/consumer_group
+cr point-to-point model can be simulated by the
+cr concept of a consumer group
+co $ publish_subscribe
+cr While the design could simulate a point-to-point
+cr model, its capabilities map more naturally to
+cr the publish-subscribe model
+
+nn publish_subscribe
+ln Publish-subscribe
+co $ ..
+co $ ../../../../../../glossary/topic
+co $ ../../../../../../glossary/publish_subscribe
+
+ns ../..
+
+nn step2/topics_partitions_brokers
+ln Topics, Partitions, Brokers
+co $ ..
+co $ ../../../../../glossary/partition
+cr Used to distribute load for topics.
+co $ ../../../../../glossary/broker
+cr The distribution of partitions among brokers
+cr is key to scalability
+
+ns +step2/topics_partitions_brokers
+
+nn partition_topic
+ln Partition Topic: queue with FIFO used to keep
+ln order of messages inside partition
+co $ ..
+
+nn offset
+ln Offset: the possition of a message in a queue
+co $ ..
+co $ ../partition_topic
+
+ns ../..
+
+nn step2/consumer_group
+ln Consumer Group
+co $ ..
+co $ ../../../../../glossary/consumer_group
+
+nn step2/high_level_design
+ln High-Level Design
+co $ ..
+co $ ../../../../../glossary/high_level_design
+
+nn step2/high_level_design/producer
+ln Producer
+co $ ..
+
+nn step2/high_level_design/consumer
+ln Consumer
+co $ ..
+
+nn step2/high_level_design/broker
+ln Broker
+co $ ..
+
+nn step2/high_level_design/broker/data_storage
+ln Data Storage
+co $ ..
+
+nn step2/high_level_design/broker/state_storage
+ln Data Storage
+co $ ..
+
+nn step2/high_level_design/metadata_storage
+ln Metadata Storage
+co $ ..
+
+nn step2/high_level_design/coordination_service
+ln Coordination Service
+co $ ..
+
+ns ..
+nn 05_metrics_monitoring_and_alert_system
+zz pg 135-159
+ln Chapter 5: Metrics monitoring and alert system
+co $ ../../../glossary/event_monitoring
+rm pg 135-159
+
+ns +05_metrics_monitoring_and_alert_system
+nn step1
+co $ ..
+
+ns +step1
+
+nn functional_requirements
+co $ ../../../../../glossary/functional_requirement
+co $ ..
+
+ns +functional_requirements
+
+nn collect_variety_of_metrics
+co $ ..
+
+nn alert
+co $ ..
+
+nn visualization
+co $ ..
+
+ns ..
+
+nn non_functional_requirements
+co $ ../../../../../glossary/non_functional_requirement
+co $ ..
+
+ns +non_functional_requirements
+
+nn scalability
+ln Scalability: System should be able to accomodate
+ln growing metrics and alert volume.
+co $ ..
+
+nn reliability
+ln Reliability: System should be highly reliable to
+ln avoid missing critical alets
+co $ ..
+
+nn flexibility
+ln Flexibility: Technology keeps changing, so the
+ln pipeline should be flexible neough to
+ln easily integrate new technologies in the future.
+co $ ..
+
+nn low_latency
+ln low latency: the system needs to have low query
+ln latency for dashboard and alerts.
+co $ ..
+
+ns ..
+
+ns ..
+
+nn step2
+co $ ..
+
+ns +step2
+
+nn five_components_of_system
+co $ ..
+
+ns +five_components_of_system
+
+nn data_collection
+co $ ..
+
+nn data_transmission
+co $ ..
+
+nn data_storage
+co $ ..
+
+nn alert
+co $ ..
+
+nn visualization
+co $ ..
+
+ns ..
+
+nn data_model
+co $ ../../../../../glossary/data_model
+co $ ..
+
+ns +data_model
+nn data_access_pattern
+ln Data Access Pattern
+co $ ../../../../../../glossary/access_pattern
+co $ ..
+
+ns +data_access_pattern
+nn read_spiky
+ln read load is spiky
+co $ ..
+
+nn write_heavy
+ln system under constant heavy write load
+co $ ..
+
+ns ..
+
+nn data_storage_system
+ln Data Storage System
+co $ ..
+co $ ../../../../../../references/db_engines_ranking
+
+nn data_storage_system/time_series_database
+ln Time Series Database (TSB)
+co $ ../../../../../../../glossary/time_series_database
+co $ ../../../../../../../tools/influxdb
+cr according to dbrankings, most commonly used TSDB
+ns ..
+co $ ../../../../../../../references/db_engines_ranking
+cr DB-engines ranking used to determine which TSDB to use
+co $ ../../../../../../../tools/prometheus
+cr according to db-rankings, one of the mostly commonly
+cr used TSDB
+
+nn high_level_design
+co $ ../../../../../glossary/high_level_design
+co $ ..
+
+
+ns ..
+
+ns ..
+nn 06_ad_click_event_aggregation
+ln Chapter 6: ad click event aggreegation
+
+nn 07_hotel_reservation_system
+ln Chapter 7: Hotel reservation system
+
+nn 08_distributed_email_service
+ln Chapter 8: Distributed Email Service
+
+nn 09_s3_object_storage
+ln Chapter 09: S3-like object storage
+
+nn 10_real_time_gaming_leaderboard
+ln Chapter 10: real-time gaming leaderboard
+
+nn 11_payment_system
+ln Chapter 11: payment system
+
+nn 12_digital_wallet
+ln Chapter 12: digital wallet
+
+nn 13_stock_exchange
+ln Chapter 13: stock exchange
+
+zz Steps 1 and 2
+
+ns system_design_interview/2/toc/01_proximity_service
+
+nn step1
+ln step 1
+co $ ..
+
+nn step1/func_reqs
+ln function requirements
+co $ ..
+co $ ../../../../../glossary/functional_requirement
+
+nn step1/func_reqs/return_nearby_business
+ln return nearby businesses
+co $ ..
+
+nn step1/func_reqs/view_business
+ln view a business
+co $ ..
+
+nn step1/func_reqs/add_del_update_business
+ln Add/delete/update a business
+co $ ..
+
+nn step1/nonfunc_reqs
+ln non-functional requirements
+co $ ..
+co $ ../../../../../glossary/non_functional_requirement
+
+nn step1/nonfunc_reqs/low_latency
+ln low latency
+co $ ..
+
+nn step1/nonfunc_reqs/data_privacy
+ln Data Privacy
+co $ ..
+
+nn step1/nonfunc_reqs/5k_search_qps
+ln 5000 search sqps
+co $ ..
+
+nn step2
+ln step2
+co $ ..
+
+nn step2/api_design
+ln API Design
+co $ ..
+co $ ../../../../../glossary/REST
+
+nn step2/high_level_design
+ln High level design diagram
+co $ ..
+
+nn step2/high_level_design/load_balancer
+ln Load Balancer
+co $ ..
+co $ ../../../../../../glossary/load_balancing
+
+nn step2/high_level_design/LBS
+ln LBS: location based service
+co ../load_balancer $
+co $ ..
+
+nn step2/high_level_design/business_service
+ln Business Service
+co ../load_balancer $
+co $ ..
+
+nn step2/high_level_design/database_cluster
+ln Database Cluster
+co ../business_service $
+co ../LBS $
+
+nn step2/data_model
+ln Data Model
+co $ ..
+co $ ../../../../../glossary/data_model
+
+nn step2/data_model/rw_ratio
+ln R/W ratio: high read volume due to search
+ln and viewing details for business. Write volume
+ln is low because adding/removing businesses is
+ln infrequent
+co $ ../../../../../../tools/mysql
+cr good fit for read-heavy systems
+
+nn step2/algorithms
+ln Varous algorithms for exploring nearby businesses
+co $ ..
+co $ ../../../../../tools/redis/geohash
+co $ ../../../../../tools/postgres_postgis
+
+nn step2/algorithms/1_two_dimensional_search
+ln Option 1: two-dimensional search
+co $ ..
+
+nn step2/algorithms/2_evenly_divided_grid
+ln Option 2: evenly divided grid
+co $ ..
+
+nn step2/algorithms/3_geohash
+ln Option 3: geohash
+co $ ../../../../../../glossary/geohash
+co $ ..
+
+nn step2/algorithms/4_quadtree
+ln Option 4: quadtree
+co $ ..
+co $ ../../../../../../glossary/quadtree
+
+nn step2/algorithms/5_google_s2
+ln Google S2
+co $ ..
+co $ ../../../../../../tools/s2_geometry
+
+nn step2/api_design/search
+ln API for search
+co $ ..
+
+nn step2/api_design/businesses
+ln API for businesses
+co $ ..
+
+nn step2/api_design/pagination
+ln API for pagination
+co $ ..
+
+ns system_design_interview/2/toc/02_nearby_friends
+
+nn step1
+ln step 1
+co $ ..
+
+nn step1/func_reqs
+ln functional requirements
+co $ ..
+co $ ../../../../../glossary/functional_requirement
+
+nn step1/func_reqs/view_nearby_friends
+ln View nearby friends
+co $ ..
+
+nn step1/func_reqs/update_nearby_friend_list
+ln Update nearby friend list
+co $ ..
+
+nn step1/nonfunc_reqs
+ln non-functional requirements
+co $ ..
+
+nn step1/nonfunc_reqs/low_latency
+ln Low-latency
+co $ ..
+
+nn step1/estimation/radius_5_mile
+ln 5-mile radius
+co $ ..
+
+nn step1/estimation/location_refresh_interval_30s
+ln Location refresh interval: 30s
+co $ ..
+
+nn step1/estimation/locate_update_334k_qps
+ln Locate update: 334k qps
+
+nn step1/estimation
+ln estimation
+co $ ..
+
+nn step2
+ln step2
+co $ ..
+
+nn step2/high_level_design
+ln High level design diagram
+co $ ..
+co $ ../../../../../glossary/high_level_design
+
+nn step2/high_level_design/load_balancer
+ln Load Balancer
+co $ ..
+co $ ../../../../../../glossary/load_balancing
+
+nn step2/high_level_design/RESTful_API_servers
+ln RESTful API servers
+co $ ..
+co $ ../../../../../../glossary/REST
+co ../load_balancer $
+
+nn step2/high_level_design/websocket_servers
+ln WebSocket Servers
+co $ ..
+co $ ../../../../../../glossary/websocket
+
+nn step2/high_level_design/location_cache
+ln Redis location cache
+co $ ..
+co ../websocket_servers $
+
+nn step2/high_level_design/redis_pub_sub
+ln Redis Pub/Sub server
+co $ ../../../../../../tools/redis/pub_sub
+co ../websocket_servers $
+
+nn step2/periodic_location_update
+ln Periodic location update
+co $ ..
+
+nn step2/api_design
+ln API Design
+co $ ..
+
+nn step2/api_design/websocket
+ln API Design for the web socket protocol
+co $ ..
+
+nn step2/api_design/websocket/1_periodic_location_update
+ln Periodic Location Update
+co $ ..
+
+nn step2/api_design/websocket/2_client_receives_location_updates
+ln Client receives location updates
+co $ ..
+
+nn step2/api_design/websocket/3_websocket_initialization
+ln websocket initializaton
+co $ ..
+
+nn step2/api_design/websocket/4_subscribe_new_friend
+ln Subscribed to new friend
+co $ ..
+
+nn step2/api_design/websocket/5_unsubscribe_new_friend
+ln unsubscribe a friend
+co $ ..
+co $ ../4_subscribe_new_friend
+
+nn step2/api_design/http_requests
+ln http requests
+co $ ..
+rm this is pretty vague and adhoc, not an important
+rm aspect for this design
+
+nn step2/api_design/http_requests/add_remove_friends
+ln add/remove friends
+co $ ..
+
+nn step2/api_design/http_requests/update_user_profile
+ln update user profile
+co $ ..
+
+nn step2/data_model
+ln Data Model
+co $ ..
+
+nn step2/data_model/location_cache
+ln Location Cache
+co $ ..
+
+nn step2/data_model/location_history_database
+ln Location history database
+co $ ..
+rm needs a database that handles heavy-write
+rm workload well and can be horizontally scaled
+co $ ../../../../../../tools/cassandra
+cr Cassandra is a suitable candidate for the high write
+cr workload.
+
+ns system_design_interview/2/toc/03_google_maps
+
+nn step1
+ln step 1
+co $ ..
+
+nn step1/func_reqs
+ln functional requirements
+co $ ..
+
+nn step1/func_reqs/user_location_update
+ln User Location Update
+co $ ..
+
+nn step1/func_reqs/navigation_service
+ln Navigation Service
+co $ ..
+
+nn step1/func_reqs/map_rendering
+ln Map Rendering
+co $ ..
+
+nn step1/nonfunc_reqs
+ln non-functional requirements
+co $ ..
+
+nn step1/nonfunc_reqs/highly_accurate
+ln Highly accurate
+co $ ..
+
+nn step1/nonfunc_reqs/smooth_navigation
+ln Smooth navigation
+co $ ..
+
+nn step1/nonfunc_reqs/minimize_data_usage
+ln Client should use as little data and
+ln battery as possible. This is important
+ln for mobile devices
+co $ ..
+
+nn step1/estimation
+ln estimation
+co $ ..
+
+nn step1/estimation/storage
+ln Storage
+co $ ..
+
+nn step1/estimation/server_traffic
+ln Server Traffic
+co $ ..
+
+nn step2
+ln step2
+co $ ..
+
+nn step2/map_101
+ln map 101
+co $ ..
+co $ ../../../../../glossary/geocoding
+co $ ../../../../../glossary/geohash
+
+nn step2/map_101/road_data_processing_navigation
+ln Road data processing for navigation algorithms
+co $ ../../../../../../glossary/A_star_algorithm
+
+nn step2/map_101/positioning_system
+ln Positioning System
+co $ ..
+
+nn step2/high_level_design
+ln High-Level Design
+co $ ..
+co $ ../../../../../glossary/high_level_design
+
+nn step2/high_level_design/location_service
+ln Location Service: responsible for recording
+ln a user's location update
+co $ ..
+
+nn step2/high_level_design/navigation_service
+ln Navigation Service: responsible for finding
+ln a reasonably fast route from point A to
+ln point B.
+co $ ..
+
+nn step2/high_level_design/map_rendering
+ln Map Rendering
+co $ ..
+
+ns system_design_interview
+

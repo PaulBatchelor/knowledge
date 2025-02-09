@@ -1,0 +1,1649 @@
+ns leetcode
+gr things related to the leetcode and leetcode strategy
+
+nn grokking_notes
+ln Grokking Notes
+hl https://gist.github.com/tykurtz/3548a31f673588c05c89f9ca42067bc4
+
+nn grind75
+ln grind75: a collection of leetcode problems that you can
+ln customize
+hl https://www.techinterviewhandbook.org/grind75/
+
+nn blind75
+ln blind75: a curated collection of leetcod problems
+hl https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions
+
+nn leetcode75
+ln leetcode75: a curated study guide of 75 leetcode problems
+hl https://leetcode.com/studyplan/leetcode-75/
+
+nn problems/322_coin_change
+ln 322: Coin Change
+hl https://leetcode.com/problems/coin-change
+co references/optimization_problem $
+cr can be modeled as an optimization problem
+cr using the "standard form"
+co $ paradigms/dynamic_programming
+co $ grind75
+
+nn references/optimization_problem
+hl https://en.wikipedia.org/wiki/Optimization_problem
+ln Optimization Problem (Computer Science): the problem
+ln of finding the best solution from all feasible solutions.
+ff What is an optimization problem?
+fb the problem of finding the best solution from all feasible
+fb solutions.
+
+nn references/candidate_solution
+ln Candidate solution: member of the set of possible solutions
+ln in the feasible region of given problems.
+co $ references/optimization_problem
+cr the "best solution" is a candidate solution
+ff What is a candidate solution?
+fb A candidate solution is a solution in the feasible region
+fb of given problems.
+
+nn references/optimal_substructure
+ln Optimal Substructure: in computer sience, a problem is
+ln said to have optimal substructure if an optimal solution
+ln can be constructed from optimal solutions of its
+ln subproblems.
+hl https://en.wikipedia.org/wiki/Optimal_substructure
+co $ problems/322_coin_change
+cr the coin change problem has an optimal substructure property
+co $ paradigms/dynamic_programming
+cr optimal substructure key piece in solving dynamic programming problems
+ff What is optimal substructure?
+fb Optimal substructure is a property of a problem where
+fb an optimal solution can be constructed from optimal
+fb solutions of its subproblems.
+
+nn paradigms/dynamic_programming
+ln Dynamic Programming
+
+nn references/recurrence_relation
+hl https://en.wikipedia.org/wiki/Recurrence_relation
+ln Recurrence Relation: In mathematics, a recurrence
+ln relation is an equation according to which the n
+ln nth term of a sequence of numbers is equal
+ln to some combination of the previous terms.
+co $ references/optimal_substructure
+cr used to represent optimal substructure
+co $ problems/322_coin_change
+cr Editorial: "the following recurrence relation holds"
+
+nn python/lru_cache
+hl https://docs.python.org/3/library/functools.html#functools.lru_cache
+ln lru_cache(): Decorator to wrap a function with a
+ln memoizing callable that saves up to the maxsize most recent calls.
+co $ problems/322_coin_change
+cr used in top-down dynamic programming solution to avoid TLE
+
+nn references/bottom_up_top_down
+hl https://en.wikipedia.org/wiki/Bottom%E2%80%93up_and_top%E2%80%93down_design
+ln Bottom-up and Top-down design: are both strategies of
+ln information processing and ordering knowledge, used in a
+ln variety of fields including software, humanistic and
+ln scientific theories (see systemics), and management and
+ln organization. In practice they can be seen as a style of
+ln thinking, teaching, or leadership.
+co $ paradigms/dynamic_programming
+cr Dynamic programming can come in top-down or bottoms-up approaches
+co $ problems/322_coin_change
+cr DP solutions for top-down and bottoms-up
+
+nn references/dynamic_programming
+hl https://en.wikipedia.org/wiki/Dynamic_programming
+ln Dynamic Programming: A mathematicl optimization method
+ln and an algorithmic paradigm.
+co $ paradigms/dynamic_programming
+
+nn references/algorithmic_paradigm
+hl https://en.wikipedia.org/wiki/Algorithmic_paradigm
+ln Algorithmic Paradigm: An algorithmic paradigm is a
+ln generic model or framework which underlies the design
+ln of a class of algorithms.
+co $ paradigms/algorithmic_paradigm
+
+nn paradigms/algorithmic_paradigm
+ln Algorithmic Paradigms
+
+nn problems/238_product_of_array_except_self
+ln 238: Product of array except self
+hl https://leetcode.com/problems/product-of-array-except-self
+co $ grind75
+
+nn references/prefix_sum
+hl https://en.wikipedia.org/wiki/Prefix_sum
+ln Prefix Sum
+co $ problems/238_product_of_array_except_self
+cr Left/right product sum solution reminds me of prefix sum tables
+
+nn problems/155_min_stack
+hl https://leetcode.com/problems/min-stack
+ln 155: Min Stack
+co $ grind75
+
+nn problems/89_validate_binary_search_tree
+hl https://leetcode.com/problems/validate-binary-search-tree
+ln 89: Validate Binary Search Tree
+co $ grind75
+
+nn references/binary_search_tree
+hl https://en.wikipedia.org/wiki/Binary_search_tree
+ln Binary Search Tree
+co $ data_structures/binary_search_tree
+
+nn data_structures/binary_search_tree
+ln Binary Search Tree
+co $ problems/89_validate_binary_search_tree
+
+nn references/tree_traversal
+hl https://en.wikipedia.org/wiki/Tree_traversal
+ln tree traversal
+
+nn references/tree_traversal/in_order
+ln in-order tree traversal
+co $ problems/89_validate_binary_search_tree
+cr one solution for validating BST is using in-order traversal
+co $ data_structures/binary_search_tree
+cr in-order tree traversal on BST retrieves keys in ascending
+cr order. I'd be most likely to try to implement a solution
+cr this way in an interview setting because this property
+cr is pretty well established for BSTs
+
+nn problems/200_number_of_islands
+ln LC 200: number of islands
+co $ grind75
+hl https://leetcode.com/problems/number-of-islands
+
+nn references/depth_first_search
+hl https://en.wikipedia.org/wiki/Depth-first_search
+ln Depth-First-Search (DFS)
+co $ paradigms/depth_first_search
+
+nn paradigms/depth_first_search
+ln Depth-First Search
+co problems/200_number_of_islands $
+
+nn references/disjoint_data_set
+hl https://en.wikipedia.org/wiki/Disjoint-set_data_structure
+ln Disjoint Data Set: a data structure that stores a
+ln collection of disjoint (non-overlapping) sets.
+co $ problems/200_number_of_islands
+cr One of the esoteric solutions involves using a union find
+cr disjoint data set
+
+nn references/breadth_first_search
+hl https://en.wikipedia.org/wiki/Breadth-first_search
+ln Bread-first search (BFS)
+co $ paradigms/breadth_first_search
+
+nn paradigms/breadth_first_search
+ln Breadth-First Search
+co $ problems/200_number_of_islands
+
+nn problems/994_rotting_oranges
+hl https://leetcode.com/problems/rotting-oranges/description/
+ln 994: number of islands
+co $ paradigms/breadth_first_search
+
+nn problems/33_search_in_rotated_sorted_array
+hl https://leetcode.com/problems/search-in-rotated-sorted-array
+ln 33: search in rotated sorted array
+co $ grind75
+
+nn references/binary_search
+hl https://en.wikipedia.org/wiki/Binary_search
+ln Binary Search: algorithm that finds the position of
+ln a target value in a sorted array.
+co $ paradigms/binary_search
+
+nn paradigms/binary_search
+ln Binary Search
+co $ problems/33_search_in_rotated_sorted_array
+
+nn references/binary_search_java
+hl https://algs4.cs.princeton.edu/11model/BinarySearch.java.html
+ln Binary Search code snippet in Java, with with code comments
+co $ paradigms/binary_search
+rm Recommended by EV
+
+nn references/sorted_array
+hl https://en.wikipedia.org/wiki/Sorted_array
+ln Sorted Array: an array data structure where each element
+ln is sorted in numerical, alphabetical, or some other order.
+co $ references/binary_search
+cr sorted array is the data structure used in binary search
+
+nn references/opionated_guide_binary_search
+hl https://leetcode.com/discuss/study-guide/2371234/An-opinionated-guide-to-binary-search-
+ln An opinionated guide to binary search
+co $ paradigms/binary_search
+
+nn paradigms/backtracking
+ln Backtracking
+
+nn references/backtracking
+ln Backtracking
+hl https://en.wikipedia.org/wiki/Backtracking
+co $ paradigms/backtracking
+
+nn problems/39_combination_sum
+hl https://leetcode.com/problems/combination-sum/
+ln 39: Combination sum
+co $ grind75
+co $ paradigms/backtracking
+
+nn references/knapsack_problem
+hl https://en.wikipedia.org/wiki/Knapsack_problem
+ln Knapsack problem: given a set of items, each with a
+ln weight and a value, determine which items to include in
+ln the collection so that the total weight is less than or
+ln equal to a given limit and the total value is as large
+ln as possible.
+co $ problems/39_combination_sum
+cr this problem initially reminded me of a knapsack problem,
+cr except that this problem enumerating all possibilities
+cr instead of finding an optimal one
+ff What is the knapsack problem?
+fb The knapsack problem can be described as: given a set
+fb of items, each with a weight and a value, determine
+fb which items to include in the collection so that the
+fb total weight is less than or equal to a given limit and
+fb the total value is as large as possible.
+
+nn references/combinatorial_optimization
+hl https://en.wikipedia.org/wiki/Combinatorial_optimization
+ln Combinatorial optimization is a subfield of mathematical
+ln optimization that consists of finding an optimal object
+ln from a finite set of objects,[1] where the set of
+ln feasible solutions is discrete or can be reduced to a
+ln discrete set.
+co references/knapsack_problem $
+cr knapsack problem is a problem in combinatorial optimization
+
+nn paradigms/binary_search/upper_bound
+ln Upper bound binary search problems
+rm EV: upper bound problems are rarer but are part of
+rm "find a range" problems
+
+nn paradigms/binary_search/lower_bound
+ln Lower bound binary search problems
+
+nn references/binary_search_leetcode
+hl https://leetcode.com/explore/learn/card/binary-search/
+ln Binary Search Leetcode explore card
+co $ paradigms/binary_search
+
+nn problems/34_first_last_sorted_array
+hl https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+ln 34: Find first and last element in sorted array
+rm "find a range" problem
+co $ paradigms/binary_search/upper_bound
+co $ paradigms/binary_search
+td work on LC 34: first/last element in sorted array
+
+nn problems/278_first_bad_version
+hl https://leetcode.com/problems/first-bad-version
+ln 278: First Bad Version
+co $ paradigms/binary_search/lower_bound
+zz TODO: can we treat this as implicit?
+co $ paradigms/binary_search
+
+nn problems/875_koko_eating_bananas
+ln 875: Koko eating bananas
+hl https://leetcode.com/problems/koko-eating-bananas
+co $ paradigms/binary_search/lower_bound
+co $ paradigms/binary_search
+co $ leetcode75
+
+nn problems/1011_capacity_ship_packages_d_days
+ln 1011: Capacity to ship packages within D days
+hl https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+co $ paradigms/binary_search/lower_bound
+
+nn problems/1_two_sum
+hl https://leetcode.com/problems/two-sum/
+ln 1: two-sum
+co $ data_structures/hash_table
+co $ grind75
+
+nn data_structures/hash_table
+ln Hash Table
+
+nn references/hash_table
+hl https://en.wikipedia.org/wiki/Hash_table
+ln A hash table is a data structure that implements an
+ln associative array, also called a dictionary or map.
+co $ data_structures/hash_table
+
+nn references/associative_array
+hl https://en.wikipedia.org/wiki/Associative_array
+ln associative array: an abstract data type that stores a
+ln collection of key-value pairs, such that each possible
+ln key appears at most once in the collection.
+co references/hash_table $
+cr a hash table implements an associative array
+
+nn references/abstract_data_type
+hl https://en.wikipedia.org/wiki/Abstract_data_type
+ln abstract data type: mathematical model for data types,
+ln defined by its behavior (semantics) from the point of
+ln view of a user of the data, specifically in terms of
+ln possible values, possible operations on the data of
+ln this type, and the behavior of these operations.
+
+nn problems/20_valid_parentheses
+ln 20: Valid Parentheses
+hl https://leetcode.com/problems/valid-parentheses/
+co $ grind75
+co $ data_structures/stack
+
+nn data_structures/stack
+ln Stack
+
+nn references/stack
+hl https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+ln Stack (abstract data type)
+co $ references/abstract_data_type
+
+nn problems/21_merge_two_sorted_lists
+hl https://leetcode.com/problems/merge-two-sorted-lists/
+ln 21: Merge two sorted lists
+co $ data_structures/linked_list
+co $ grind75
+
+nn data_structures/linked_list
+ln linked list
+
+nn references/linked_list
+hl https://en.wikipedia.org/wiki/Linked_list
+ln linked list
+co $ data_structures/linked_list
+
+nn problems/121_best_time_to_sell_and_buy_stock
+ln 121: Best Time to Sell and Buy Stock
+co $ paradigms/greedy
+cr I'm pretty sure this is a greedy algorithm? ("locally optimal choices")
+co $ grind75
+co $ paradigms/dynamic_programming
+hl https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+nn paradigms/greedy
+ln Greedy
+
+nn references/maximum_subarray_problem
+hl https://en.wikipedia.org/wiki/Maximum_subarray_problem
+ln Maximum Subarray problem
+co $ problems/121_best_time_to_sell_and_buy_stock
+cr reminds me of this problem
+
+nn references/kadanes
+hl https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm
+ln Kadane's algorithm
+co $ references/maximum_subarray_problem
+cr used to solve maximum subarray problem
+co $ problems/121_best_time_to_sell_and_buy_stock
+cr I thought of Kadane's while working through this, though
+cr I'm not sure how related they are
+
+nn references/greedy_algorithm
+hl https://en.wikipedia.org/wiki/Greedy_algorithm
+ln Greedy Algorithm
+co $ paradigms/greedy
+
+nn problems/125_valid_palindrome
+ln 125: valid palindrome
+hl https://leetcode.com/problems/valid-palindrome
+co $ grind75
+co $ paradigms/two_pointer
+
+nn paradigms/two_pointer
+ln Two Pointer
+
+nn references/two_pointer_technique
+hl https://leetcode.com/articles/two-pointer-technique/
+ln Two-Pointer Technique (leetcode)
+
+nn problems/242_valid_anagram
+hl https://leetcode.com/problems/valid-anagram
+ln 242: valid anagram
+co $ grind75
+co $ data_structures/hash_table
+
+nn problems/704_binary_search
+hl https://leetcode.com/problems/binary-search/
+ln 704: binary search
+co $ grind75
+co $ paradigms/binary_search
+
+nn problems/235_lowest_common_ancestor_BST
+ln 235: Lowest Common Ancestor (LCA) of a Binary Search Tree
+co $ grind75
+co $ data_structures/binary_search_tree
+
+nn references/lowest_common_ancestor
+hl https://en.wikipedia.org/wiki/Lowest_common_ancestor
+ln Lowest Common Ancestor: the LCA of two nodes v and w
+ln in a tree or DAG is the lowest node that has both v and
+ln w as descendants, where we define each node to be
+ln a descendant of itself
+co $ problems/235_lowest_common_ancestor_BST
+
+nn problems/2034_stock_price_fluctuation
+hl https://leetcode.com/problems/stock-price-fluctuation
+ln 2034: Stock Price Fluctuation
+td Work on LC 2034: Stock Price Fluctuation
+
+nn problems/635_design_log_storage_system
+ln 635: Design Log Storage System
+hl https://leetcode.com/problems/design-log-storage-system
+td Work on LC 635: Design Log Storage System
+
+nn problems/110_balanced_binary_tree
+ln 110: balanced binary tree
+hl https://leetcode.com/problems/balanced-binary-tree
+co $ grind75
+co $ data_structures/binary_tree
+
+nn data_structures/binary_tree
+ln binary tree
+
+nn references/binary_tree
+hl https://en.wikipedia.org/wiki/Binary_tree
+ln Binary Tree: tree data structure in which a node has at most
+ln two children: a left child and a right child.
+co $ data_structures/binary_tree
+
+nn problems/141_linked_list_cycle
+hl https://leetcode.com/problems/linked-list-cycle/
+ln 141: Linked List Cycle
+co $ grind75
+co $ data_structures/linked_list
+
+nn references/floyds_algorithm
+ln Floyd's Cycle Finding Algorithm
+hl https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare
+co $ data_structures/linked_list
+co problems/141_linked_list_cycle $
+cr Elegant solution with O(n) time and O(1) space
+ff Describe Floyd's algorithm
+fb Floyd's algorithm can be used for cycle detection in
+fb linked lists (think tortois and hare). You a slow pointer
+fb a fast pointer. If there's a cycle, the fast pointer will
+fb eventually lap the fast pointer.
+
+nn problems/287_find_the_duplicate_number
+hl https://leetcode.com/problems/find-the-duplicate-number/
+ln 287: Find the duplicate number
+co $ grind75
+co $ references/floyds_algorithm
+cr one solution this problem uses a variant on floyd's algorithm
+
+nn problems/232_implement_queue_using_stacks
+hl https://leetcode.com/problems/implement-queue-using-stacks
+ln Implement Queue using stacks
+co $ data_structures/stack
+co $ data_structures/queue
+
+nn data_structures/queue
+ln Queues
+
+nn references/queues
+hl https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+ln Queue (Abstract Data Type)
+co $ data_structures/queue
+
+nn problems/169_majority_element
+ln 169: Majority Element
+hl https://leetcode.com/problems/majority-element
+co $ grind75
+co $ data_structures/hash_table
+cr hash table was most straight forward
+rm lots of weird solutions for this one, but hash map
+
+nn references/boyer_moore_majority_vote_algorithm
+hl https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
+ln Boyer-Moore majority vote algorithm
+co $ problems/169_majority_element
+cr A way to solve in linear time with O(1) space
+
+nn problems/67_add_binary
+hl https://leetcode.com/problems/add-binary/description/
+ln 67: Add Binary
+co $ grind75
+co $ paradigms/bit_manipulation
+
+nn paradigms/bit_manipulation
+ln Bit manipulation
+
+nn problems/137_single_number_2
+hl https://leetcode.com/problems/single-number-ii
+ln 137: Single number 2
+co $ paradigms/bit_manipulation
+td work on LC 137
+
+nn problems/260_single_number_3
+hl https://leetcode.com/problems/single-number-iii
+ln 260: single number 3
+co $ paradigms/bit_manipulation
+td work on LC 421
+
+nn problems/187_repeated_DNA_sequences
+ln 187: repeated DNA sequences
+hl https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array
+co $ paradigms/bit_manipulation
+td work on LC 187
+
+nn problems/318_max_product_word_lengths
+hl https://leetcode.com/problems/maximum-product-of-word-lengths
+ln 318: Maximum product of word lengths
+co $ paradigms/bit_manipulation
+td work on LC 318
+
+nn problems/543_diameter_of_binary_tree
+hl https://leetcode.com/problems/diameter-of-binary-tree
+ln 543: Diameter of Binary Tree
+co $ data_structures/binary_tree
+co $ data_structures/binary_tree/depth_first_traversal
+
+nn data_structures/binary_tree/depth_first_traversal
+ln Depth-First Traversal of binary tree
+
+nn references/binary_tree/terminology
+hl https://en.wikipedia.org/wiki/Tree_(abstract_data_type)#Terminology
+ln Terminology
+
+nn references/binary_tree/terminology/degree
+ln Degree: for a given node, its number of children.
+rm A leaf, by definition, has degree 0.
+ff In a binary tree structure, what is a degree?
+fb Degree refers to the number of children for any given node.
+co $ problems/543_diameter_of_binary_tree
+cr Article refers to a leaf as any node having 1 degree,
+cr including the root node if it has 1 degree or less
+
+nn problems/876_middle_of_linked_list
+hl https://leetcode.com/problems/middle-of-the-linked-list
+ln 876: Middle of Linked List
+co $ grind75
+co $ data_structures/linked_list
+rm Fast/slow pointer
+co $ references/floyds_algorithm
+cr the fast/slow pointer trick made me think of floyd's algorithm
+
+nn problems/104_max_depth_binary_tree
+ln 104: maximum depth of binary tree
+hl https://leetcode.com/problems/maximum-depth-of-binary-tree
+co $ grind75
+co $ data_structures/binary_tree
+co $ components/max
+co $ components/depth
+
+nn references/tail_call
+hl https://en.wikipedia.org/wiki/Tail_call
+ln tail call: subroutine performed as the final action
+ln of a procedure
+co $ problems/104_max_depth_binary_tree
+cr an optimzed solution involves tail recursion and BFS,
+cr where the tail call is the recursive function
+
+nn problems/217_contains_duplicate
+hl https://leetcode.com/problems/contains-duplicate/
+ln 217: Contains duplicate
+co $ data_structures/hash_table
+cr python set structure
+
+nn problems/1768_merge_strings_alternately
+hl https://leetcode.com/problems/merge-strings-alternately
+ln 1768: merge strings alternative
+co $ leetcode75
+co $ paradigms/array_string
+
+nn problems/1071_GCD_of_strings
+hl https://leetcode.com/problems/greatest-common-divisor-of-strings
+ln 1071: greatest common divisor of strings
+co $ leetcode75
+co $ paradigms/array_string
+
+nn paradigms/array_string
+ln array/string manipulation
+
+nn problems/1431_kids_with_greatest_number_of_candies
+hl https://leetcode.com/problems/kids-with-the-greatest-number-of-candies
+ln 1431: Kids with greatest number of candies
+co $ paradigms/array_string
+co $ leetcode75
+
+nn problems/605_can_place_flowers
+hl https://leetcode.com/problems/can-place-flowers
+ln 605: Can place flowers
+co $ leetcode75
+co $ paradigms/array_string
+
+nn problems/345_reverse_vowels_stringa
+hl https://leetcode.com/problems/reverse-vowels-of-a-string
+ln 345: reverse vowels of a string
+co $ leetcode75
+co $ paradigms/two_pointer
+
+nn problems/151_reverse_words_in_a_string
+hl https://leetcode.com/problems/reverse-words-in-a-string
+ln 151: Reverse words in a string
+co $ paradigms/array_string
+co $ leetcode75
+
+nn problems/334_increasing_triplet_subseq
+hl https://leetcode.com/problems/increasing-triplet-subsequence
+ln 334: Increasing triplet subsequence
+co $ leetcode75
+
+nn problems/443_string_compression
+hl https://leetcode.com/problems/string-compression/description
+ln 443: String Compression
+co $ leetcode75
+co $ paradigms/array_string
+
+nn problems/282_move_zeros
+hl https://leetcode.com/problems/move-zeroes
+ln 282: move zeros
+co $ leetcode75
+co $ paradigms/two_pointer
+
+nn problems/392_is_subsequence
+hl https://leetcode.com/problems/is-subsequence
+ln 392: is subsequence
+co $ leetcode75
+co $ paradigms/two_pointer
+
+nn problems/1679_max_number_of_ksum_pairs
+hl https://leetcode.com/problems/max-number-of-k-sum-pairs
+ln 1679: Max number of ksum pairs
+co $ paradigms/two_pointer
+co $ leetcode75
+
+nn problems/643_maximum_average_subarray
+hl https://leetcode.com/problems/maximum-average-subarray-i
+ln 643: maximum average subarray
+co $ leetcode75
+co $ paradigms/sliding_window
+co references/prefix_sum $
+cr editorial used a cumulative sum to solve this,
+cr AKA prefix sum. It was a little strange.
+
+nn paradigms/sliding_window
+ln Sliding Window
+
+nn problems/1456_max_vowels_in_substring
+ln 1456 max vowels in a substring of given length
+hl https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length
+co $ leetcode75
+co $ paradigms/sliding_window
+
+nn problems/1004_max_consecutive_ones_iii
+ln 1001 Max consecutive ones iii
+hl https://leetcode.com/problems/max-consecutive-ones-iii
+co $ paradigms/sliding_window
+
+nn problems/1493_longest_subarray_ones_deleting_elem
+hl https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element
+ln 1493: Longest Subarray of Ones after deleting one element
+co $ leetcode75
+co $ paradigms/sliding_window
+
+nn problems/1732_find_highest_altitude
+hl https://leetcode.com/problems/find-the-highest-altitude
+ln 1732: find highest altitude
+co $ leetcode75
+co $ paradigms/prefix_sum
+
+nn problems/724_pivot_index
+hl https://leetcode.com/problems/find-pivot-index
+ln 724 Pivot Index
+co $ leetcode75
+co $ paradigms/prefix_sum
+
+nn paradigms/prefix_sum
+ln Prefix Sum
+
+nn problems/2215_difference_two_arrays
+hl https://leetcode.com/problems/find-the-difference-of-two-arrays
+ln 2215: Find the difference of two arrays
+co $ data_structures/set
+co $ leetcode75
+
+nn data_structures/set
+ln Set
+
+nn problems/1207_unique_number_of_occurrences
+hl https://leetcode.com/problems/unique-number-of-occurrences
+ln 1207: unique number of occurrences
+co $ leetcode75
+co $ data_structures/set
+co $ data_structures/hash_table
+
+nn problems/1657_close_strings
+hl https://leetcode.com/problems/determine-if-two-strings-are-close
+ln 1657: Determine if two strings are close
+co $ leetcode75
+co $ data_structures/hash_table
+
+nn problems/2352_equal_row_column_pairs
+hl https://leetcode.com/problems/equal-row-and-column-pairs
+ln 2352: Equal row and column pairs
+co $ data_structures/hash_table
+co $ leetcode75
+
+nn problems/2390_removing_stars_from_a_string
+ln 2390: removing stars from a string
+hl https://leetcode.com/problems/removing-stars-from-a-string
+co $ leetcode75
+co $ data_structures/stack
+
+nn problems/735_asteroid_collision
+ln 735: Asteroid Collision
+hl https://leetcode.com/problems/asteroid-collision
+co $ leetcode75
+co $ data_structures/stack
+
+nn problems/349_decode_string
+hl https://leetcode.com/problems/decode-string
+ln 394: Decode String
+co $ leetcode75
+co $ data_structures/stack
+
+nn problems/933_number_of_recent_cals
+hl https://leetcode.com/problems/number-of-recent-calls
+ln 933: Number of recent calls
+co $ leetcode75
+co $ data_structures/queue
+
+nn problems/649_dota2_senate
+hl https://leetcode.com/problems/dota2-senate
+ln 649: Dota2 Senate
+co $ leetcode75
+co $ data_structures/queue
+
+nn problems/2095_delete_middle_node
+ln 2095 Delete the middle of a node in linked list
+co $ leetcode75
+co $ data_structures/linked_list
+hl https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list
+co $ references/floyds_algorithm
+cr fast/slow pointer as seen in floyd's algorithm used to find middle of list
+co $ problems/141_linked_list_cycle
+cr A simlar solution for this problem also uses fast/slow pointers
+
+nn data_structures/linked_list/fast_slow_pointer
+ln Fast/Slow Pointer: a common technique in linked lists
+ln where two pointers are used to traverse through
+ln linked list at two different speeds, one usually 2x
+ln faster. This can be used for things like cycle detection,
+co $ references/floyds_algorithm
+cr Floyd's algorithm for cycle detection is the algorithm
+cr most often associated with fast/slow pointers.
+co problems/2095_delete_middle_node $
+co problems/141_linked_list_cycle $
+cr One solution involves using floyds algorithm using fast/slow pointers
+
+nn problems/328_odd_even_linked_list
+ln 328: Odd/even linked list
+hl https://leetcode.com/problems/odd-even-linked-list
+co $ leetcode75
+co $ data_structures/linked_list
+
+nn problems/2130_max_twin_sum_linked_list
+hl https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list
+ln 2130: Maximum twin sum of a linked list
+co $ leetcode75
+co $ data_structures/linked_list
+co $ data_structures/linked_list/fast_slow_pointer
+cr one solution involved going to middle of list, then
+cr reversing the second half
+
+nn problems/206_reverse_linked_list
+hl https://leetcode.com/problems/reverse-linked-list
+ln 206: reverse linked list
+co $ leetcode75
+co $ data_structures/linked_list
+co $ problems/2130_max_twin_sum_linked_list
+cr One solution to 2130 involves reversing the second
+cr half of a linked list
+
+nn problems/872_leaf_similar_trees
+hl https://leetcode.com/problems/leaf-similar-trees
+ln 872 Leaf Simlar Trees
+co $ data_structures/binary_tree
+co $ leetcode75
+nn problems/872_leaf_similar_trees/solutions/DFS
+
+nn problems/1448_count_good_nodes
+hl https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+ln 1448: Count good nodes
+co $ leetcode75
+co $ data_structures/binary_tree
+co $ paradigms/depth_first_search
+co $ components/count
+cr counting good nodes
+co $ components/path
+cr a good node involves a path from root to node X
+
+nn problems/437_path_sum_iii
+ln 432 path sum ii
+hl https://leetcode.com/problems/path-sum-iii
+co $ data_structures/binary_tree
+co $ paradigms/prefix_sum
+cr yes, the solution for 437 uses prefix sum
+co $ leetcode75
+co $ paradigms/depth_first_search
+co $ components/count
+cr count number of paths that meet criteria (sum)
+co $ components/sum
+cr get the sum of values along a given path
+co $ ../1448_count_good_nodes
+cr also a counting problem, but 437 is trickier because
+cr paths don't need to start from the root
+
+nn problems/560_subarray_sum_equals_k
+hl https://leetcode.com/problems/subarray-sum-equals-k
+ln 560 Subarray Sum Equals K
+co $ problems/437_path_sum_iii
+cr 560 helps to understand the solution in 437
+co $ paradigms/prefix_sum
+co $ data_structures/hash_table
+
+nn problems/1372_longest_zigzag_path
+ln 1372: Longset ZigZag path in binary tree
+hl https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree
+co $ data_structures/binary_tree
+co $ paradigms/depth_first_search
+co $ leetcode75
+co $ components/longest
+cr problem aims to find the longest path
+co $ components/path
+cr problem is about finding paths
+
+nn problems/1161_max_level_sum_binary_tree
+hl https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree
+ln 1161: Maximum level sum of a binary tree
+co $ data_structures/binary_tree
+co $ paradigms/breadth_first_search
+co $ leetcode75
+co $ components/level
+cr problem asks to return the smallest level with the max sum
+co $ components/max
+cr problem wants to find max sum
+co $ components/sum
+cr summation problem
+
+nn problems/700_binary_search_tree
+hl https://leetcode.com/problems/search-in-a-binary-search-tree
+ln 700 Binary Search Tree
+co $ data_structures/binary_search_tree
+co $ leetcode75
+
+nn problems/450_delete_node_BST
+hl https://leetcode.com/problems/delete-node-in-a-bst
+ln 450: Delete a node in a BST
+co $ leetcode75
+co $ data_structures/binary_search_tree
+
+nn references/binary_search_tree/deletion
+hl https://en.wikipedia.org/wiki/Binary_search_tree#Deletion
+ln Delete a node from a binary search tree
+co problems/450_delete_node_BST $
+cr This solution outlined seems different then the LC editorial
+co $ data_structures/binary_search_tree
+
+nn data_structures/binary_search_tree/successor
+ln Successor: next node in inorder traversal. To find,
+ln go right once, then as many times to the left as possible
+co $ ..
+
+nn data_structures/binary_search_tree/predecessor
+ln Predecessor: previous node in inorder traversal, To find,
+ln go left once, then as many times to the right as possibl
+co $ ..
+
+nn references/tree_rotation
+hl https://en.wikipedia.org/wiki/Tree_rotation
+ln Tree rotation: an operation on a binary tree that
+ln changes the structure without interfering with the
+ln order of the elements.
+co $ problems/450_delete_node_BST
+cr I initially approached this problem thinking I could
+cr do a tree rotation, but this turns out to not be correct
+ff What does a tree rotation do?
+fb A tree rotation is an operation on a binary tree
+fb that changes the structure without interfering with
+fb the order of the elements
+co $ data_structures/binary_tree
+
+nn problems/841_keys_and_rooms
+hl https://leetcode.com/problems/keys-and-rooms
+ln 841 Keys and Rooms
+co $ leetcode75
+co $ data_structures/graph
+co $ paradigms/depth_first_search
+
+nn data_structures/graph
+ln Graph
+
+nn problems/547_number_of_provinces
+hl https://leetcode.com/problems/number-of-provinces/
+ln 547: number of provinces
+co $ leetcode75
+co $ data_structures/graph
+co $ paradigms/depth_first_search
+
+nn problems/1466_reorder_routes_to_city_zero
+hl https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero
+ln Reorder routes to make all paths lead to the city zero
+co $ leetcode75
+co $ data_structures/graph
+co $ paradigms/depth_first_search
+
+nn problems/399_evaluate_division
+hl https://leetcode.com/problems/evaluate-division
+ln 399: Evaluate division
+co $ leetcode75
+co $ data_structures/graph
+co $ paradigms/depth_first_search
+
+nn problems/1926_nearest_exit_from_entrance_in_maze
+hl https://leetcode.com/problems/nearest-exit-from-entrance-in-maze
+ln 1926: nearest exit from entrance in maze
+co $ leetcode75
+co $ data_structures/graph
+co $ paradigms/breadth_first_search
+
+nn problems/215_kth_largest_element
+ln 215: kth largest element in an array
+hl https://leetcode.com/problems/kth-largest-element-in-an-array
+co $ data_structures/priority_queue
+co $ leetcode75
+
+nn data_structures/priority_queue
+ln Priority Queue
+
+nn problems/2336_smallest_number_in_infinite_set
+ln 2336: smallest number in infinite set
+hl https://leetcode.com/problems/smallest-number-in-infinite-set
+co $ leetcode75
+co $ data_structures/priority_queue
+
+nn problems/2542_maximum_subsequence_score
+hl https://leetcode.com/problems/maximum-subsequence-score
+ln 2542: maximum subsequence score
+co $ leetcode75
+co $ data_structures/priority_queue
+
+nn problems/2462_total_cost_hire_k_workers
+hl https://leetcode.com/problems/total-cost-to-hire-k-workers
+ln 2462: total cost to hire k workers
+co $ data_structures/priority_queue
+co $ leetcode75
+
+nn problems/374_guess_number_lower_higher
+hl https://leetcode.com/problems/guess-number-higher-or-lower
+ln 374: Guess number lower or higher
+co $ leetcode75
+co $ paradigms/binary_search
+
+nn problems/2300_successful_pairs_potions_spells
+hl https://leetcode.com/problems/successful-pairs-of-spells-and-potions
+ln 2300: successful pairs of potions and spells
+co $ leetcode75
+co $ paradigms/binary_search
+
+nn problems/162_find_peak_element
+hl https://leetcode.com/problems/find-peak-element/
+ln 162: find peak element
+co $ leetcode75
+co $ paradigms/binary_search
+
+nn problems/216_combination_sum_iii
+hl https://leetcode.com/problems/combination-sum-iii
+ln 216: combination sum iii
+co $ paradigms/backtracking
+co $ leetcode75
+
+nn problems/1137_nth_tribonacci_number
+hl https://leetcode.com/problems/n-th-tribonacci-number
+ln 1137: Nth tribonacci number
+co $ paradigms/dynamic_programming
+co $ leetcode75
+co $ paradigms/dynamic_programming/1d
+
+nn paradigms/dynamic_programming/1d
+ln 1-dimensional dynamic programming
+co $ ..
+
+nn problems/746_min_cost_climbing_stairs
+ln 746: minimum cost of climbing stairs
+hl https://leetcode.com/problems/min-cost-climbing-stairs
+co $ leetcode75
+co $ paradigms/dynamic_programming
+co $ paradigms/dynamic_programming/1d
+
+nn problems/790_domino_tromino_tiling
+ln 790: domino and tromino tiling
+hl https://leetcode.com/problems/domino-and-tromino-tiling
+co $ leetcode75
+co $ paradigms/dynamic_programming
+co $ paradigms/dynamic_programming/1d
+
+nn problems/1143_longest_common_subsequence
+hl https://leetcode.com/problems/longest-common-subsequence
+ln 1143: longest common subsequence
+co $ leetcode75
+co $ paradigms/dynamic_programming/2d
+co $ paradigms/dynamic_programming
+
+ns +problems/1143_longest_common_subsequence
+
+nn solutions
+co $ ..
+
+ns +solutions
+
+nn 01_memoization
+nn 02_improved_memoization
+nn 03_dynamic_programming
+nn 04_dynamic_programming_space_optimization
+
+zz solutions
+ns ..
+
+zz problems/1143_longest_common_subsequence
+ns ../..
+
+nn references/longest_common_subsequence
+hl https://en.wikipedia.org/wiki/Longest_common_subsequence
+ln Longest Common Subsequence (Wikipedia)
+co $ problems/1143_longest_common_subsequence
+
+nn paradigms/dynamic_programming/2d
+ln two-dimensional dynamic programming
+co $ ..
+
+nn references/memoization
+hl https://en.wikipedia.org/wiki/Memoization
+ln memoization: adds caching to a function that has
+ln no side effects
+co $ paradigms/dynamic_programming
+cr in DP, used on recursive functions for top-down
+cr solution that starts with the initial problem,
+cr and recursively calls itself to solve smaller problems
+co $ references/bottom_up_top_down
+cr used in top-down DP problems
+
+nn references/tabulation
+ln tabulation: uses a table to keep track of subproblem
+ln results, and works in a bottom-up manner, solving
+ln the smallest subproblems before the large ones in
+ln an iterative manner.
+co $ paradigms/dynamic_programming
+cr often people use "tabulation" and "dynamic programming"
+cr interchangeably.
+
+nn problems/714_best_time_buy_sell_stock_transaction_free
+hl https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
+ln 714: Best time to buy/sell stock transaction fee
+co $ leetcode75
+co $ paradigms/dynamic_programming
+co $ paradigms/dynamic_programming/2d
+
+nn explore
+ln leetcode explore
+hl https://leetcode.com/explore/
+
+nn explore/dynamic_programming
+hl https://leetcode.com/explore/featured/card/dynamic-programming/
+ln dynamic programming explore card
+co $ paradigms/dynamic_programming
+td read dynamic programming explore card
+co $ ..
+
+nn problems/136_single_number
+hl https://leetcode.com/problems/single-number/
+co $ problems/137_single_number_2
+cr simlar
+co $ leetcode75
+co $ paradigms/bit_manipulation
+
+ns +explore/dynamic_programming
+
+nn 0_intro
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/
+
+nn 0_intro/1_what_is
+ln What is dynamic programming?
+hl https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/4034/
+co $ ..
+
+ns +0_intro/1_what_is
+
+co $ ../../../../references/fibbonacci
+cr fibbonacci is a classic example of DP
+
+nn kinds_of_problems
+ln Kinds of problems dynamic programming solves
+co $ ..
+
+nn kinds_of_problems/overlapping_subproblems
+ln Overlapping Subproblems
+co $ ../../../../../../glossary/overlapping_subproblems
+co $ ..
+co $ ../../../../../../paradigms/divide_and_conquer
+cr divide and conquer problems break a problem
+cr into subproblems, but these are not overlapping.
+cr DP and divide and conquer are often mistaken
+cr for one another for this reason.
+
+nn kinds_of_problems/optimal_substructure
+ln Optimal Subtructure
+co $ ../../../../../../glossary/optimal_substructure
+co $ ..
+co $ ../../../../../../paradigms/greedy
+cr greedy problems have optimal substructure, but
+cr the not overlapping subproblems
+
+zz 0_intro/1_what_is
+ns ../..
+
+nn 0_intro/2_top_down_bottom_up
+hl https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/4035/
+ln top down vs bottom up
+co $ ..
+
+ns +0_intro/2_top_down_bottom_up
+
+nn top_down
+ln top-down, AKA memoization
+co $ ..
+co $ ../../../../../glossary/memoization
+cr AKA
+co $ ../../../../../glossary/recursion
+cr implemented with recursion, made efficient
+cr with memoization
+
+nn bottoms_up
+ln bottoms-up, AKA tabulation
+co $ ../../../../../glossary/tabulation
+cr AKA
+co $ ..
+
+nn which_is_better
+ln which is better?
+co $ ..
+co bottoms_up $
+co top_down $
+
+nn which_is_better/bottoms_up_faster_runtime
+co $ ..
+ln runtime is usually faster, iteration doesn't
+ln have the overhead top-down has
+
+nn which_is_better/top_down_easier_to_write
+co $ ..
+co top_down $
+ln easier to write: with recursion, ordering
+ln of subproblem does not matter. with tabulation,
+ln there needs to be a logical ordering of
+ln solving subproblems
+
+zz ns 0_intro/2_top_down_bottom_up
+ns ../..
+
+nn 0_intro/3_when_to_use
+ln When to use DP
+hl https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/4094/
+co $ ..
+
+ns +0_intro/3_when_to_use
+
+nn 1_find_optimum_value
+ln A characteristic that is common in DP problems
+ln is asking for the optimum value (min/max) of
+ln something. For example, the minimum cost
+ln of doing..., the max profit of from ...,
+ln how many ways to..., what is the longest possible...,
+ln is it possible to reach a certain point..
+co $ ../../../../../paradigms/greedy
+cr sometimes a problem in this kind of format is meant to
+cr be solved with a greedy algorithm
+co $ ..
+
+nn 2_future_decisions_depend_on_earlier_ones
+ln A characteristic of DP problems is that
+ln Future decisions depend on eariler ones.
+co $ 1_find_optimum_value
+co $ ../../../../../paradigms/greedy
+cr this characteristic is what makes a greedy algorithm
+cr invalid for a DP problem
+co $ ..
+
+co ../../../../../problems/198_house_robber $
+cr each decision will affect which options are
+cr available to the rubber in the future
+co ../../../../../problems/300_longest_increasing_subsequence $
+td study example problems more carefully
+
+
+zz 0_intro/3_when_to_use
+ns ../..
+
+
+nn 1_strategic_approach
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/631/strategy-for-solving-dp-problems/
+
+ns +1_strategic_approach
+
+nn 1_framework
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/631/strategy-for-solving-dp-problems/4096/
+ln A framework for DP problems
+co ../../../../problems/70_climbing_stairs $
+cr used as a sample problem for applying framework
+
+ns +1_framework
+
+nn state
+ln state: set of variables that can sufficiently describe
+ln a scenario.
+co $ ..
+
+nn state_variables
+ln state variables: variables that describe the state
+co $ ../state
+co $ ..
+
+nn 1_store_answer_for_states
+ln A function or data structure that will compute/contain
+ln answer for states
+co $ ..
+co $ ../state
+
+nn 2_recurrence_relation
+ln a recurrence relation to transition between states
+co $ ..
+co $ ../state
+co $ ../../../../../glossary/recurrence_relation
+
+nn 3_base_cases
+co $ ..
+ln base cases, so that our recurrence relation
+ln doesn't go on infinitely.
+
+zz 1_framework
+ns ..
+
+nn 2_examples
+ln Example: House Robber (198), etc
+co ../../../../problems/198_house_robber $
+co $ ..
+co ../../../../problems/746_min_cost_climbing_stairs $
+co ../../../../problems/1137_nth_tribonacci_number $
+co ../../../../problems/740_delete_and_earn $
+
+ns +2_examples
+
+zz 2_examples
+ns ..
+
+nn 3_multidimensional
+hl https://leetcode.com/explore/featured/card/dynamic-programming/631/strategy-for-solving-dp-problems/4098/
+ln Multidimensional DP
+co $ ..
+co $ ../../1_strategic_approach/1_framework/state_variables
+cr multidimensional problems are problems that have
+cr more than one state variable
+co ../../../../problems/1659_maximize_grid_happiness $
+cr multidimensional problem that requires 5 dimensions
+
+ns +3_multidimensional
+
+nn 1_index_along_input
+ln index along some input. This is usually used
+ln if an input is given as an array or string.
+co $ ../../2_examples
+cr so far these have been the sole the sole
+cr state variable for all problems looked at
+cr so far
+co $ ..
+
+nn 2_second_index
+ln second index along some input
+co $ ..
+
+nn 3_explicit_numerical_constraints
+ln Explicit numerical constraints in the problem,
+ln ex: "you are only allowed to complete K
+ln transactions" or "you are allowed to break up
+ln K obstacles", etc
+co $ ..
+
+nn 4_variables_describing_state
+ln Variables describing status in a given state.
+ln Ex: "true if currently holding key, false if not",
+ln "currently holding k packages", etc
+co $ ..
+
+nn 5_data_for_visited
+ln some sort of data or bitmask to indicate things like
+ln being "visited" or "used".
+co $ ..
+
+zz 3_multidimensional
+ns ..
+
+nn 4_top_down_to_bottom_up
+hl https://leetcode.com/explore/featured/card/dynamic-programming/631/strategy-for-solving-dp-problems/4099/
+ln Top-down to bottom-up
+co $ ..
+
+ns +4_top_down_to_bottom_up
+
+nn 1_start_with_top_down
+ln start with completed top-down
+co $ ..
+
+nn 2_initialize_array
+ln initialize array dp that is sized according to
+ln state variables
+co $ ..
+
+nn 3_set_base_cases
+ln set the base cases
+co $ ..
+
+nn 4_iterate
+ln iterate over state variables. these should
+ln start iterating from bsae cases
+co $ ..
+
+nn 5_copy_function_logic
+ln Copy the function logic from the top-down solution
+ln into the inner loop of the bottoms-up solution.
+ln dp() changes into dp[]
+co $ ..
+
+nn 6_update_return
+ln update return from dp() to dp[]
+co $ ..
+
+zz 4_top_down_to_bottom_up
+ns ..
+
+nn 5_examples_multidimensional
+ln Sample multidimensional problems
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/631/strategy-for-solving-dp-problems/4100/
+co ../../../../problems/1770_max_score_multiplication_operations $
+co ../../../../problems/1143_longest_common_subsequence $
+co ../../../../problems/221_maximal_square $
+
+nn 6_time_space_complexity
+ln time and space complexity
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/631/strategy-for-solving-dp-problems/4101/
+
+zz 1_stragetic_approach
+ns ..
+
+nn 2_common_patterns
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/632/common-patterns-in-dp-problems/
+td read
+
+ns +2_common_patterns
+
+nn 1_iteration_recurrence_relation
+ln Iteration in the recurrence relation
+hl https://leetcode.com/explore/featured/card/dynamic-programming/632/common-patterns-in-dp-problems/4049/
+co $ ..
+
+nn 2_examples
+hl https://leetcode.com/explore/featured/card/dynamic-programming/632/common-patterns-in-dp-problems/4109/
+ln Examples
+co $ ..
+co ../../../../problems/1335_minimum_difficulty_job_schedule $
+co ../../../../problems/322_coin_change $
+
+zz 2_common_patterns
+ns ..
+
+nn 3_common_patterns_cont
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/633/common-patterns-continued/
+td read
+
+
+nn 4_paths_in_matrix
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/634/matrix-path-based-dp/
+td read
+
+nn 5_more_practice_problems
+co $ ..
+hl https://leetcode.com/explore/featured/card/dynamic-programming/647/more-practice-problems/
+td read
+
+zz explore/dynamic_programming
+ns ../..
+
+nn references/fibbonacci
+hl https://en.wikipedia.org/wiki/Fibonacci_sequence
+
+nn paradigms/divide_and_conquer
+ln divide and conquer
+
+nn problems/198_house_robber
+hl https://leetcode.com/problems/house-robber/
+ln 198 house robber
+co $ leetcode75
+co $ paradigms/dynamic_programming/1d
+
+nn problems/300_longest_increasing_subsequence
+hl https://leetcode.com/problems/longest-increasing-subsequence
+ln 300: longest increasing subsequence
+td complete problem
+
+nn problems/70_climbing_stairs
+hl https://leetcode.com/problems/climbing-stairs
+ln 70: climbing stairs
+co $ paradigms/dynamic_programming
+co $ paradigms/dynamic_programming/1d
+
+nn problems/740_delete_and_earn
+hl https://leetcode.com/problems/delete-and-earn
+ln 740 delete and earn
+co $ paradigms/dynamic_programming
+co $ paradigms/dynamic_programming/1d
+
+ns +problems/740_delete_and_earn
+nn solutions/1_top_down
+nn solutions/2_bottoms_up
+nn solutions/3_bottoms_up_space_optimized
+ns ../..
+
+nn problems/1659_maximize_grid_happiness
+hl https://leetcode.com/problems/maximize-grid-happiness/
+ln 1659: maximize grid happiness
+td do problem
+co $ paradigms/dynamic_programming
+cr multidimensional (5 variables)
+
+nn problems/1770_max_score_multiplication_operations
+hl https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations
+ln 1770: maximum score for multiplication operations
+
+nn problems/146_LRU_cache
+hl python/docs/stdlib/functools#lru_cache
+ln 146: LRU cache
+
+nn problems/221_maximal_square
+ln 221: Maximal Square
+co $ paradigms/dynamic_programming
+co $ paradigms/dynamic_programming/2d
+
+nn problems/1335_minimum_difficulty_job_schedule
+hl https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule
+ln 1335: minimum difficulty of a job schedule
+
+nn problems/72_edit_distance
+hl https://leetcode.com/problems/edit-distance/
+ln 72: edit distance
+co $ paradigms/dynamic_programming/2d
+co $ paradigms/dynamic_programming
+co $ leetcode75
+
+ns +problems/72_edit_distance
+nn solutions/top_down
+nn solutions/bottoms_up
+td complete solution
+zz problems/72_edit_distance
+ns ../..
+
+nn problems/338_counting_bits
+hl https://leetcode.com/problems/counting-bits/
+ln 338: Counting bits
+co $ paradigms/bit_manipulation
+co $ leetcode75
+
+nn data_structures/trie
+ln Trie
+
+nn references/trie
+hl https://en.wikipedia.org/wiki/Trie
+co $ data_structures/trie
+
+nn problems/677_map_sum_pairs
+hl https://leetcode.com/problems/map-sum-pairs
+ln 677: Map Sum Pairs
+co $ data_structures/trie
+
+nn problems/648_replace_words
+hl https://leetcode.com/problems/replace-words
+ln 648: Replace Words
+co $ data_structures/trie
+
+nn problems/642_design_search_autocomplete_system
+hl https://leetcode.com/problems/design-search-autocomplete-system/description/
+ln 642: Design Search Autocomplete System
+co $ data_structures/trie
+
+nn problems/211_design_add_and_search_words_data_structure
+hl https://leetcode.com/problems/design-add-and-search-words-data-structure/
+ln 211: Design add and search words data structur
+co $ grind75
+co $ data_structures/trie
+
+nn problems/208_implement_trie
+hl https://leetcode.com/problems/implement-trie-prefix-tree
+ln 208: implement trie
+co $ data_structures/trie
+
+nn references/autocomplete
+hl https://en.wikipedia.org/wiki/Autocomplete
+
+nn references/spell_checker
+hl https://en.wikipedia.org/wiki/Spell_checker
+
+nn problems/421_max_XOR_two_numbers
+hl https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array
+ln 421: Maximum XOR of two numbers in an array
+td solve
+co $ data_structures/trie
+
+ns +problems/421_max_XOR_two_numbers
+
+nn solutions
+ln Solutions involve bitwise prefixes, either i
+ln a hashset or a Trie. The idea is the same:
+ln convert all numbers to binary form, and
+ln construct maximum XOR bit by by, starting
+ln from the leftmost one
+
+ns +solutions
+
+nn hashset
+ln Bitwise prefixes using HashSet
+co ../../../../data_structures/set $
+
+nn trie
+ln Bitwise prefixes using Trie
+co ../../../../data_structures/trie $
+co $ hashset
+cr Trie is faster
+
+ns ..
+
+zz problems/421_max_XOR_two_numbers
+ns ../..
+
+nn problems/79_word_search
+hl https://leetcode.com/problems/word-search
+ln 79: Word Search
+co $ paradigms/backtracking
+td review
+rm also can be thought of as DFS
+
+nn problems/212_word_search_2
+hl https://leetcode.com/problems/word-search-ii
+ln 212: Word Search 2
+co $ data_structures/trie
+td solve
+
+nn problems/336_palindrome_pairs
+ln 336: Palindrome Pairs
+hl https://leetcode.com/problems/palindrome-pairs
+co $ data_structures/trie
+
+nn references/longest_prefix_match
+hl https://en.wikipedia.org/wiki/Longest_prefix_match
+ln Longest Prefix Match
+
+nn problems/425_word_squares
+hl https://leetcode.com/problems/word-squares/
+ln 425: Word Squares
+co $ data_structures/trie
+
+nn references/word_squares
+hl https://en.wikipedia.org/wiki/Word_square
+co $ problems/425_word_squares
+
+nn problems/52_n_queens_2
+hl https://leetcode.com/problems/n-queens-ii/description/
+ln 52: N-Queens ii
+co $ paradigms/backtracking
+td initial attempt
+
+nn problems/489_robot_cleaner
+hl https://leetcode.com/problems/robot-room-cleaner/
+ln 489: robot cleaner
+co $ paradigms/backtracking
+td initial attempt
+
+nn problems/37_sudoku_solver
+hl https://leetcode.com/problems/sudoku-solver
+ln 32: sudoku solver
+co $ paradigms/backtracking
+td initial attempt
+
+nn problems/77_combinations
+hl https://leetcode.com/problems/combinations
+ln 77: combinations
+co $ paradigms/backtracking
+td initial attempt
+
+nn problems/134_gas_station
+hl https://leetcode.com/problems/gas-station
+ln 134: gas station
+co $ paradigms/greedy
+co $ grind75

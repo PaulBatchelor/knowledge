@@ -1,0 +1,102 @@
+@2024-06-21 Day 33. Attempted better tract length control, "Milowda" chords
+50 Days Left of Batch
+---
+Prev: VoxBoxOSC works!, Tongue Control in VoxBox, React
+Reading (finished up "Describing the UI chapter").
+---
+Next
+
+|| @!(taskref "htmlize-codestudy-files")!@: Did not get to
+this yesterday. Hopefully today.
+
+|| @!(taskref "react-adding-interactivity")!@: More reading
+on React.
+
+|| @!(taskref "voxbox-change-nose-length")!@: shouldn't be too difficult to do
+
+|| @!(taskref "voxbox-better-size-control")!@: if there's time today, try
+to look at this.
+
+|| @!(taskref "demo-poke")!@: Start brainstorming the "poke" demo
+
+@08:58 Morning Triage
+
+@09:07 Small task, hoping to get to it today. #voxbox-change-nose-length
+
+@09:08 Will look at this today if there's time #voxbox-better-size-control
+
+@09:10 created. initial brainstorming today? #demo-poke
+
+@09:17 Writing up zulip checkin.
+
+@09:30 Done with morning logging.
+
+@09:48 Pack up for Apple appointment
+
+@12:00 Lunch
+
+@13:01 The poke should be a tickle. Think tickle-me-elmo, or the Pillsbury Doughboy #demo-poke
+
+@13:02 Adding tractlen control to OSC model #voxbox-better-size-control #timelog:00:03:47
+This will be a good way to test out tract length while on
+my Linux box.
+--
+Actually, this won't work. Interpolation doesn't smooth
+discontinuities, but allows smoothing transitions with
+floating point values. I will need to build an example.
+
+@13:08 Building tract length example instead #voxbox-better-size-control #timelog:00:06:00
+
+@13:15 The glitches are there (deliberately), now to see if they can be smoothed #voxbox-better-size-control #timelog:00:30:00
+
+@13:45 This is not working as expected #voxbox-better-size-control
+I was hoping this would be a quick matter of linear interpolation
+between the last two samples at the output, but I I'm still getting
+issues. It's starting to turn into more of a DSP problem
+than I'd like it be, which is not why I'm here at this
+program. So, I'm putting it to rest for now.
+---
+The attempts are managed in the "tractlen" branch on
+my voxbox repo
+
+@14:50 trying one more thing... #voxbox-better-size-control #timelog:00:18:43
+Somehow I think the fractional tract length needs to be
+considered while computing the scatering junctions. But
+I'm not sure how yet. I added in best guess but it's
+not right. Okay I really really need to stop this.
+
+@15:21 Reading and notetaking #react-adding-interactivity #timelog:00:19:07
+
+@15:43 More reading and notetaking #react-adding-interactivity #timelog:00:18:49
+
+@16:40 Attempts to study sourcehut CSS again #htmlize-codestudy-files #timelog:00:15:59
+
+@16:46 Ha, okay I managed to make it go. Magic! #htmlize-codestudy-files
+
+@16:53 Did some clean-up. I now need to start pre-planning htmlization #htmlize-codestudy-files
+
+@16:55 Re-familiarizing myself with the schemas used here. #htmlize-codestudy-files
+What does the schema look like? What kind of information does it have?
+How do file names get translated into things "seen" by dagzet?
+How to make sure file range links go to the right place?
+All this and more... later...
+
+@16:57 Attempt to quickly change the nose length like tract #voxbox-change-nose-length #timelog:00:23:10
+This would be the quick and dirty approach, no interpolation.
+
+@17:00 There is a lot of duplicate code between the tract and nose #voxbox-change-nose-length
+Including this tract size behavior. I am ignoring that fact right
+now.
+
+@17:06 attempting to integrate with singer sliders demo #voxbox-change-nose-length
+
+@17:11 Uh-oh. why is my JS code not working. I didn't do anything?
+Oh okay. Just needed to clean some caching and rebuild.
+
+@17:22 Things sound right in the example! #voxbox-change-nose-length
+The velum now sounds more nasally everywhere pretty evenly.
+
+@20:15 Attempt to sequence the first few bars of "Milowda" using vocal synthesizer
+Found some sheet music. I want to hear how the sonorities sound.
+
+@21:49 Got some initial milowda chords. Attached it to the file "milowda_chords.mp3"

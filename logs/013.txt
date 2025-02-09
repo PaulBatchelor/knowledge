@@ -1,0 +1,21 @@
+@2024-06-01 Day 13. Moving day.
+@09:04 Tract example tweaks. #implement-tract
+@09:33 Some write-ups for social media on tract
+Here is what I wrote:
+---
+I have ported my tract filter to rust now [0]. I couldn't resist garnishing my "simple" example a little bit [1] to make it more musical and sing-y.
+---
+In addition to the bare minimum tract filter processing the glottal source, I've also added some controls over vibrato, amplitude, and tract shape (for vowel morphing). I tuned the tract shapes by ear using the distinct region model.
+---
+0: [[https://github.com/PaulBatchelor/voxbox/blob/main/src/tract.rs]]
+---
+1: [[https://github.com/PaulBatchelor/voxbox/blob/main/examples/tract_simple.rs
+
+@10:28 Some looks at react quickstart #react-quickstart
+@10:45 Follow-up: tic-tac-toe tutorial #react-quickstart #react-tic-tac-toe
+Link [[https://react.dev/learn/tutorial-tic-tac-toe]]
+@16:45 Get some singing stuff working in the browser #initial-singing-web
+@18:00 Dinner
+@18:57 Is a hslider an HTML element? #initial-singing-web
+@19:20 How to set up pitch? #initial-singing-web #initial-singing-web
+@19:36 Set up DRM sliders #initial-singing-web

@@ -1,0 +1,251 @@
+@2024-06-30 Day 42. (Something something Deep Thought)
+40 days left of batch.
+---
+Previous:
+
+Typescript and React \
+Topological Sort Bugs \
+Singing Quite Loudly
+
+---
+Next:
+
+|| @!(taskref "voxbox-shape-morphing")!@: set up initial
+mechanics for morphing shapes in voxbox.
+
+
+|| @!(taskref "troubleshoot-webaudio-thinkpad")!@: Figure
+out why sounds aren't playing in the browser on my
+thinkpad.
+
+|| @!(taskref "typescript-react-slider")!@: Try
+to get a single input slider working in 
+React using typescript
+
+@09:43 Morning Triage.
+
+@09:50 Sunsetting morning triage task #morning-triage
+I initially was going to time my morning
+triage stuff. But I don't think I want to do that.
+---
+Also, comments on the triage itself aren't all too
+helpful. I'd much rather comment on tasks themselves
+
+@09:52 core mechanic for this shouldn't be too hard #voxbox-shape-morphing
+
+@09:58 webaudio is broken on firefox thinkpad. #troubleshoot-webaudio-thinkpad
+Sounds do work on youtube, so I am getting browser sound.
+No clues in console. Locally hosted versions do not
+work either.
+
+@10:02 Uploading and posting to zulip
+Ah, still running into issues with uploading.
+I didn't finish setting things up.
+---
+Ooops I just blew up my recurse site. ROLL BAAACK.
+
+@10:11 Oh god it's all broken. starting a new task. #site-debugging-jun30
+Seeing what I can accomplish in 15 minutes, then
+I have to quickly leave for errands.
+
+@10:15 Ooops forgot to install rsync. #site-debugging-jun30 #timelog:00:20:00
+
+@10:16 codestudy is getting errors in export #site-debugging-jun30
+Looks like the escape string is wrong. I am using
+"'" instead of """. I did this to myself when I was
+trying to update the SQLite generator scripts (they
+got stricter about single vs double qoute usage apparently.
+Technically, you're supposed to use single quotes only,
+but they used to allow both interchangeably).
+
+@10:23 I deleted some tasks #site-debugging-jun30
+I think this is fine actually? Looking at them,
+it seems like I meant to delete them. I was
+worried that I accidentally deleted the tasks
+or something.
+
+@10:35 Errands
+
+@10:51 I found a Haiku during my errands
+I've just decided to start doing my daily check-ins
+as Haikus, so I was destined to find this today.
+It was printed on a wall of a builing. A haiku
+by Richard Wright.
+
+===
+The creeping shadow /
+
+Of a gigantic oak tree /
+
+Jumps Over the Wall
+===
+
+@11:36 Back at Hub. Setting up.
+
+@11:37 Initial voxbox-ing setup #voxbox-shape-morphing
+
+@11:39 Oh, right. I need to build mplayer form source #voxbox-shape-morphing #mplayer-jack-thinkpad
+This thinkpad isn't fully provisioned yet. Upstream
+mplayer doesn't have jack support, so I need to
+build it from source.
+---
+I remember this taking a while. Uh, maybe I should look
+at other things.
+---
+Nevermind? It just finsihed as I wrote this. That's
+not a great sign.
+---
+Ran into build issues. Great. Downloading from git,
+using the APKBUILD as hints.
+---
+MPlayer is kinda SVN? But this build script is
+using git?
+
+@11:40 Attempts to get mplayer working on thinkpad begins. #mplayer-jack-thinkpad #timelog:00:48:13
+
+@12:01 Going to try building the package instead of source. #mplayer-jack-thinkpad
+Not what I wanted to do, but here we are.
+---
+Bandwidth is slow even at the hub. git feels slow too.
+I wonder how much faster it'd be on a newer laptop.
+
+@12:09 going to attempt to get abuild to run #mplayer-jack-thinkpad
+
+@12:19 It builds! But I wasn't sure how to install it #mplayer-jack-thinkpad
+Build time wasn't too bad, so I'm rebuilding.
+
+@12:20 Where is "pkgdir"? #mplayer-jack-thinkpad
+Package installed in =packages/community/x86_64=.
+
+@12:24 attempting to install manually #mplayer-jack-thinkpad
+Can be done with =apk add foo.apk=. I don't think I needed
+the =--allow-untrusted= flag because it was self-signed.
+
+@12:26 works! #mplayer-jack-thinkpad
+I love how straightforward that was.
+
+@13:35 Back at the hub. Thinking about what to do next.
+
+@13:39 Made a formal task for slider #typescript-react-slider
+I created the project with this
+command: @!(dzref "webdev/npx_create_react_app_typescript")!@.
+
+@13:41 Time to think about resume this week #what-now-week7 #resume-setup
+
+@13:51 Finally getting around to implementing initial shape morphing #voxbox-shape-morphing #timelog:00:09:00
+I think...
+
+@13:58 This isn't going to work the way I thought, and I'm happy about that. #voxbox-shape-morphing
+Initially I was going to add a small method to the tract
+that linearly interpolates two DRM tract shapes, given a
+position. BUT, the DRM shapes aren't in there. So,
+I actually have to plan out a new interface.
+
+@14:00 Working out interface (ink and paper) #voxbox-shape-morphing #timelog:00:14:34
+
+@14:35 Making a cooler looking lock screen for swaylock
+
+@14:48 Re-examining GSG code. Generics possible? #voxbox-shape-morphing #timelog:00:25:03
+Basically, I want to generalize the values that can be
+interpolated. It is currently set to be 32-bit floats,
+BUT, it'd be nice to make them generics. That way, the shape
+morphing can work on those generics.
+
+@15:01 some initial refactoring completed #voxbox-shape-morphing
+The core Gesture and GestureVertex structs take in generic
+arguments, with the rest hardcoded to take in f32. This was
+much less friction than I expected.
+---
+Next steps: have the linear gesture signal generator take
+in generics as well. After that, the generics can be
+refit to take in shapes. Somehow. (Indices? references?)
+
+@15:40 attempts to look at this typescript sample code #typescript-react-slider #timelog:00:54:42
+Does it look like the other react code I've been examining?
+
+@17:15 React Reading: Sharing State Between Components #react-managing-state #timelog:00:24:29
+
+@18:17 Another session of troubleshooting #bug-missing-nodes #timelog:00:51:53
+
+@18:24 Ah, the node IDs changed I think. good for me. #bug-missing-nodes
+Actually not too much of an issue, I have enough
+printing happening now that I can update when/if
+needed.
+
+@18:29 Examining all the connections now #bug-missing-nodes
+The =magsign_cpp= is what we are investigating. What
+would need to happen for it to not show up in =cpp=?
+
+@18:33 =magsign_struct= is the only child that doesn't exist #bug-missing-nodes
+Not sure if that is helpful or not.
+---
+Of the three, It's also the only one that only shows
+up once as a left-node (it only has
+one parent node). That parent is =magsign_cpp=.
+
+@18:39 It's probably the external nodes. #bug-missing-nodes
+As we go down this tree, we are approaching the only
+two external nodes here: =rust/std= and
+=rust/std_iter_zip=. The TOC generates the links
+just fine, but it just seems like anything that has
+those links doesn't want to show up.
+
+@18:40 Also, edges for those external are returning NULL. #bug-missing-nodes
+What's up with that?
+
+@18:41 commenting out the external nodes, I want to see what happens.
+
+@18:43 People of Earth, we have our smoking gun. #bug-missing-nodes
+Removing those external nodes causes it to render
+properly.
+
+@18:47 Working out another hunch #bug-missing-nodes
+I don't think the edges are supposed to be nil, even
+though they are here.
+---
+I have another hunch: there is a local node called
+"rust", and the namespace for these external nodes
+also starts with "rust". Going to re-introduce the
+external nodes, and change the local "rust" node
+to be "rust_code", and then if that still breaks,
+"code_rust". It could be that there is some faulty
+logic related to string matching somewhere.
+---
+Neither worked. Okay, so I have to check
+out those nil edges now.
+
+@18:51 Tracking down those nil edges. #bug-missing-nodes
+
+@19:00 I think I did it. #bug-missing-nodes
+While populating a local copy of
+the edges table (to be pruned later by the topsort
+algo), I added a check to see if the left node
+id shows up in the nodes list. If it doesn't, it
+indicates that it is an externally linked node
+outside of the namespace.
+---
+TL;DR: Check for foreign nodes.
+
+@19:04 cleanup debug code #bug-missing node
+
+@19:37 refactor linear gesture to take in generics #voxbox-shape-morphing #timelog:00:21:41
+Okay that didn't work.
+
+@19:49 stop writing code, think about the problem. Why generics? #voxbox-shape-morphing
+This gesture is currently hard-coded to work with
+floats as values. Which, most of the time, is fine.
+However, for shape morphing, the values that
+need to be interpolated aren't floating point values,
+but tables.
+---
+The hope with generics was to be able to elegantly
+use the existing linear gesture logic to create
+gestures that morphed between DRM shapes.
+---
+Things would be set up in such a way that when
+=tick()= would be called, it would know to
+interplate between two DRM tables and store it
+somewhere in another table. That table could
+then be taken and passed to the vocal tract.
+---
+Stopping for now because I've had enough of a day.

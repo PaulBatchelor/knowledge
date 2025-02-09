@@ -1,0 +1,119 @@
+@2024-07-04 Day 46. Connected poking sounds to poking visuals
+36 days left of batch.
+---
+Prev:
+
+built jitter signals /
+summer 2 conversations /
+learned about old pipes
+
+---
+
+Next:
+
+|| @!(taskref "create-chatter-sounds")!@: In the example,
+add poke interactions, somehow.
+
+|| @!(taskref "demo-poke")!@: Add eyes and mouth.
+
+|| @!(taskref "how-big-are-react-apps")!@: Figure out,
+how big are these react apps when exported?
+
+|| @!(taskref "investigate-kickstart-neovim")!@: See how
+far I can go getting kickstart to work with neovim.
+
+@08:32 Morning Triage.
+Starting this at home on my Mac.
+
+@09:01 Poke interactions in chatter: thoughts. #demo-poke
+The offline example should have some parts that will
+eventually be designed to be modulated by user input (poking).
+Poking can be simulating using a triggered gate. The gate
+would go into an envelope (envelopes?) of some sort as way
+to shape things like fundamental pitch and jitter.
+
+@09:05 Eyes and mouth thoughts #demo-poke
+Basically, my source of inspiration for this one are
+those poptart commercials that were around during
+the early 2000s @!(dzref "demos/poptarts")!@
+---
+It'd be nice to get collision working for the eyes, because
+I think they will bulge out of the face occasionally.
+---
+Mouth shape needs to be flexible enough to support
+mouth shapes. I want these to be synchronized with
+the mouth shapes being synthesized by the audio.
+
+@09:12 Trying to look into this today #investigate-kickstart-neovim
+
+@09:13 I would like to have a working demo by EOD Friday (tomorrow) #demo-poke
+
+@09:14 Publishing logs from yesterday
+
+@09:29 I really need to focus and get this done by EOD Friday #resume-setup
+I keep procrastinating and yak-shaving on this.
+
+@10:04 Adding tgate. #demo-poke #timelog:00:19:46
+
+@10:24 Creating metro #demo-poke #timelog:00:06:45
+This will drive the tgate. This can be made from a phasor.
+Any time the phasor resets, produce a trigger.
+---
+Created a phasor to trigger utility called PhasorTrig
+
+@10:32 Initial test of tgate in chatter example #demo-poke #timelog:00:10:10
+Actually, I'm building out a metro that combines phasor
+and phasortrig.
+
+@10:42 I want an envelope now. #demo-poke #timelog:00:26:20
+I will opt to port the envelope I made in sndkit.
+
+@11:10 Initial envelope code ported. Now to see if it works. #demo-poke #timelog:00:07:16
+
+@11:13 Loud distored noises (it didn't work). investigating #demo-poke
+Now it works. Forgot to add the =exp= and update =pgate=.
+
+@11:30 Lunch
+
+@13:34 Refactoring chatter, getting it ready for poke. #demo-poke #timelog:00:42:36
+Chatter sound needs to be consolidated into a struct
+rather than in a main function. There also needs to be
+a poke method, which will eventually be the thing called
+when the user pokes the circle on the screen.
+
+@13:35 At this point, the base chatter sounds have been made #create-chatter-sounds #demo-poke
+So I think this task can be considered completed. The rest
+of the sound design work will be polish for the poke demo.
+
+@14:16 Fully encapsulated chatter into struct #create-chatter-sounds #demo-poke
+
+@14:17 Now, to implement poke method #demo-poke #timelog:00:12:11
+Up to this point, "poking" has been simulating using a
+metro object. This metro needs to be pulled out of the
+struct, and replaced with a gate fed into a threshold
+generator. The metro function will exist outside, and when
+it ticks an impulse, it will call the poke method. The
+poke method will flip a gate signal on and off. Inside
+ChatterBox, it will detect changes in the gate and turn
+those into triggers like before.
+
+@15:27 Making sure graphics work on my mac #demo-poke #timelog:00:01:34
+
+@15:29 Connecting sound to graphics. #demo-poke #timelog:00:17:55
+It works! It's a coarse experience, but it sorta works.
+
+@15:56 Trying out on Android. #demo-poke #timelog:00:03:15
+termux is awesome, because I can run it locally on my
+phone.
+---
+It works. definitely needs some refinement. But a good enough
+stopping point.
+
+@16:22 Add "tap to begin" mechanic #demo-poke #timelog:30:12
+
+@17:06 Debugging tap to begin on mobile #demo-poke
+
+@17:15 Attempting to SSH #demo-poke #timelog:00:16:55
+
+@18:14 Maybe a div/canvas onClick event handler will work? #demo-poke #timelog:00:06:17
+Okay that works! Nice.

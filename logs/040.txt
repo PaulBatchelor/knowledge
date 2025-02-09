@@ -1,0 +1,228 @@
+@2024-06-28 Day 40. Missing nodes. HTML/WASM export in tic80.
+42 days left of batch.
+
+@07:28 Get Sokol example working on new laptop #investigate-tic80
+Precursor to getting tic-80 working.
+Oh wow that was easy. Little did I know I was 30 seconds
+away from getting this working last night.
+
+@07:30 Back to tic-80 compilation on new laptop #investigate-tic80
+Now that sokol example works, I think I figured out
+all the graphics issues
+
+@07:36 TIC-80 builds, runs tetris, no sound yet #investigate-tic80
+
+@07:47 Sound works. Studying music demo. #investigate-tic80
+I like the scale and form factor of this.
+
+@08:08 trying to see where export is hanging #investigate-tic80
+
+@08:12 tried running in gdb and gdb crashed. musl issues? #investigate-tic80
+
+@08:44 tic80 export works on mac #investigate-tic80
+The bundle includes the tic80 card and a wasm file. I
+have no idea where the wasm comes from. It's not a file
+included in the source, and there doesn't seem to be
+any clear indication where/how it is being generated. My
+best guess is that somewhere it gets made with emscripten
+because I see mentions of it when I grep for wasm-y things.
+
+@09:39 At the hub.
+
+@09:40 Back to investigating missing nodes #bug-missing-nodes #timelog:01:25:41
+
+@09:41 Oh crap the ulitimate spinner is available
+I missed my chance months ago (waited months
+for this). Can't afford it. Oh well. Still
+buying.
+
+@09:52 =generate_graph_data.lua= and =genpage.lua= #bug-missing-nodes
+These are the missing files
+
+@09:55 Run =dz_wikigen.sh= to trigger debug message #bug-missing-nodes
+
+@09:57 The nodelist is not being created correctly. why? #bug-missing-nodes
+
+@10:00 genpage.pagedata: output nodes being made via params.nodelist #bug-missing-nodes
+How is this being created?
+
+@10:00 Lua issues, debug flag is not working #bug-missing-nodes
+
+@10:12 Lua function setting the global variable sets it to true somehow? #bug-missing-nodes
+
+@10:13 Oh wait, I was setting this #bug-missing-nodes
+
+@10:18 okay weird. the debug flag is being unset somewhere apparently #bug-missing-nodes
+Not the problem I wanted to troubleshoot, but hey I need
+this for the visibility.
+
+@10:22 more testing for visibility with traverse_node() #bug-missing-nodes
+The debug mode flag is never set to true here. Confirmed
+with printing and filtering output.
+---
+Also confirmed that it doesn't matter if you're using the
+function =dbg= I made or checking the variable itself. It's
+the same. So, I'm pretty sure the =dbg= shortcut function is
+fine.
+---
+I need to be able to track down when this is being set,
+and then unset.
+
+@10:29 the debug flag is definitely being set exactly once #bug-missing-nodes
+I think what's happening is the variable is being copied over
+when it is loaded up in the module. Hoping to fix this by
+using a big global that can be read everywhere.
+
+@10:35 Okay, global debug flag didn't work. Rethinking approach #bug-missing-nodes
+This is NOT what I'm debugging. I just need visibility.
+
+@10:39 Crap. I was setting the debug flag too late. Oh well. #bug-missing-nodes
+I have a clumsier approach now, but it works, and I've wasted
+too much time chasing this pre-bug to improve it.
+
+@10:42 Missing node names show up in input node list supplied to genpage #bug-missing-nodes
+Confirmed that the nodes do come up, but they aren't being
+traversed for whatever reason.
+
+@10:44 Do missing nodes show up in topsort? #bug-missing-nodes
+
+@10:48 Topsort isn't returning enough nodes. Why? #bug-missing-nodes
+should be 33, but I'm getting 20.
+
+@11:17 Let's find ou the missing nodes #bug-missing-nodes
+I tried looking for something to make sense in the code,
+but I can't yet see a pattern for what is there and
+what isn't there.
+
+@11:21 Missing nodes seem to line up with the missing nodes on page #bug-missing-nodes
+Clocking out for now
+
+@13:34 Troubleshooting tic80 export on thinkpad #investigate-tic80 #timelog:00:44:37
+
+@13:42 onExportHTML call seems to return hmmm #investigate-tic80
+printf-ing to console works, even if gdb crashes
+
+@13:45 =tic_net_get()=: that doesn't sound great #investigate-tic80
+Sounds like it might be trying to download something from
+the internet? Yeah, that could be a problem here.
+
+@13:51 =tic_net_get()= might not be getting called #investigate-tic80
+Firslty, the printf I placed there isn't showing up.
+Secondly, it makes a call to =empscripten_fetch=, which
+I do not (think I) have.
+---
+Maybe it is defined elsewhere?
+---
+Ah, there are multiple definitions here. Wonder which
+one is the actual one.
+
+@13:57 =tic_net_get()= is an empty function. #investigate-tic80
+The tic cart loaders are pre-compiled wasm files.
+The path is =/export/1.2-dev/html=.
+
+@14:08 The tic cart loader, as far as I can tell, is closed source. #investigate-tic80
+Basically, HTML export works by fetching from a URL. This
+downloads a zipfile that already has the wasm in there.
+Exporting is simply a matter of dropping that TIC file
+in the in the zip file.
+
+@14:11 Options moving forward #investigate-tic80
+So, it's looking like doing any kind of hacking on this
+would be a fairly ambitious task that would take up most
+of my time. It looks like this wasm file is the only thing
+I have. What I'd like to do is to somehow patch it,
+potentially. And get it to load in custom code for audio
+playback.
+---
+It's not a no, though it would dramatically change what it
+is I came here to do. Instead of doing funny vocal synth
+stuff, I'd be going deep into trying to reverse engineer
+this thing. Feels very much in the spirit of RC. And this
+is more motivating to me than more frontend-y stuff. There
+may be less polished things to show, though.
+
+@14:21 Looking into wasm2wat #investigate-wabt #timelog:00:22:34
+Needed for reverse engineering tic80 wasm bundle.
+---
+I love how easy it was to build, and the tools look
+very neat.
+
+@14:45 thoughts on reverse engineering tic80 #investigate-tic80
+Using
+this to make any sense of tic80 feels like something
+that would take me maybe months to a year to do maybe.
+Hacking the tic80 source code itself would take
+less time. I'd probably have better luck building
+my own cartridge loader.
+---
+I think if I wanted to go deep on wasm rather
+than frontend stacks, I'd definitely want to look
+into this. This stuff sparks joy more than
+javascript/React.
+
+@14:46 how is a tic cart saved? #investigate-tic80 #timelog:00:22:00
+I am pretty sure it's lua5.3, based on grepping for
+version for the built in luajit.
+---
+Functions defined in =cart.c=. Looking at =music.tic=, the
+code for the seems to be at the very bottom.
+
+@16:48 The Big Plans #what-now-week6 #timelog:00:26:42
+Ink on paper.
+
+@17:20 some triage and organizing
+
+@17:23 Friday concluding thoughts #what-now-week6 #timelog:00:27:00
+I want to focus on designing more musical experiences
+using my vocal synthesizer, that run in the browser.
+---
+This, however, is not enough of a project, and
+risks being too design oriented rather than technically
+oriented. I am also quite seriously considering putting
+some work into hacking my vocal synthesis DSP written
+in Rust into tic80.
+---
+Why tic80? I like the aesthetic. And hacking the
+software's source code seems to very much be in the
+spirit of RC. It is also possible to export to WASM,
+but not with the hacks. As a stretch, it may be
+possible to somehow hack the wasm TIC cartridge
+wasm blob, or even write a custom TIC loader based
+on the TIC-80 codebase.
+---
+Design and presentation is still and important
+factor. There will be two kinds musical interactions:
+ensemble and solo. The main ensemble sining project will
+probably be something similar to blob opera. The
+main solo singing project will be "A Blob Named Bucket",
+a chittering singinig virtual pet that you have to
+coax out of hiding with food.
+---
+A Blob Named Bucket will be the more complicated project,
+requiring a procedurally generated critter generator,
+and a character engine simulator Bucket's behavior.
+For this reason, these components will be broken up
+into smaller self-contained demos. These need to
+be self contained because it's likely I may not
+be able to get to the final project.
+---
+The ensemble demo will probably just be for the web
+using p5, and will building off of the chords
+demo I made in the first half.
+---
+TIC-80 demos will do their best to follow some
+of the ideas in the p5 demos. Could be thought
+of as "redux" versions? I want to do my best to
+refine the mechanics of these demos, reduce
+until they are distilled into simple elegant
+forms of sonic interaction.
+---
+Tooling will need to be made as well. These
+will probably be HTML/WASM, and for practice,
+I will use React for these.
+
+@17:38 Careers strategy #what-now-week6 #what-now-week7
+I did not think about this too hard for this.
+That's what next week can be for?
+
+@17:40 End of planning in week6 #what-now-week6

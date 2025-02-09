@@ -1,0 +1,94 @@
+@2024-06-25 Day 37. HTMLize codestudy work, half-baked demos
+46 days left of batch.
+---
+A table of contents sure would be nice, huh. @!(taskref "toc-logs")!@.
+---
+Did you know Philip Glass used to be a plumber?
+---
+Prev: "A Blob Named Bucket" planning, reflect on RC time so
+far, C creatures, Reading.
+---
+Next:
+
+|| @!(taskref "htmlize-codestudy-files")!@: Did not
+do yesterday. Try to tackle this before leaving for Hub.
+
+|| @!(taskref "bucket-initial-scoping")!@: Did some brainstorming,
+now I want to work out some actionable items.
+
+|| Lots of RC things today: Webdev Meetup, Audio Hang,
+Graphics Hang, Half Baked Demos
+
+@09:29 Morning Triage.
+Late start. Ironically, I was trying to wake up earlier,
+but it backfired.
+
+@09:32 I need to do less. #what-now-week6
+There is always the temptation to bite off more than
+one can chew, and once again I feel like this is starting
+to happen. I'll probably want to leave this up for
+the rest of the week and see if any more thoughts emerge.
+
+@09:36 Make tiny games before this small game #bucket-initial-scoping
+I want to build demos exploring a some of the core "verbs" I wrote down,
+like "poke", "eat", "move (to target). Probably in p5. Sound
+design would be a great thing to garnish it with after. Sound
+design will be another task too.
+
+@09:56 Zulip Checkin
+
+@10:02 Initial refactoring attempt of my weewiki system #htmlize-codestudy-files #timelog:01:04:09
+Basically, there are default header/footer functions for
+HTML pages. I need to rework this so that the dagzet files
+use their own custom header/footer functions.
+---
+Does weewiki store the current page name somewhere? Yes,
+it's =ww-name=.
+---
+I'm going with global mutable state, because that's ultimately
+going to be easier.
+---
+Oh boy, this is tricky. By the time the Org gets parsed,
+the headers/footers are already set up. This means I
+can't actually disable the templates from the Org file
+itself. It needs to come from a lower level.
+---
+I can add the files to a list, but that's error prone.
+---
+Okay, files are going to have the "dzfiles" or perhaps
+"dzf" extension for terseness. So for example, a file
+called =codestudy/potential/mag_sign.rs= would have
+a prefix of =dzf/codestudy/potential/mag_sign.rs=.
+My weewiki server would then be able to filter those
+pages and disable templates entirely. So far this is the
+best hack I got.
+---
+testing out hacky idea
+---
+Initial idea working. I'll need to inject the rest of the
+HTML next.
+
+@10:03 Oh wow my laptop is coming today gotta pick that up.
+
+@11:00 Prep For Hub
+
+@11:30 Webdev meetup
+
+@12:30 Half of Audio Hang
+
+@13:00 Lunch
+Halal cart nearby. Pretty good.
+
+@14:00 Graphics
+
+@15:00 More demo planning #what-now-week6 #timelog:00:23:46
+
+@16:00 Half-baked demos
+I showed my "milowda" work and my vocal chords demo. I
+feel a little self-conscious about showing the vocal chords
+demo, as it was a little too polished. This work is also
+very personal too me, so I felt quite anxious after
+presenting. Did not expect that. I'm usually pretty okay
+with presentations.
+
+@17:30 head home.

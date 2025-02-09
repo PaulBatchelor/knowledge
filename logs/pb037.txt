@@ -1,0 +1,43 @@
+@2024-11-17 Sunday, November 17th
+@08:47 334: increasing triplet subsequence #leetcoding #timelog:00:45:10
+I glanced at this one I think. I don't think I ever
+actually tested it.
+---
+Well, I didn't understand this problem when I first read it.
+A subsequence doesn't have to be consecutive. Before I looked
+at the answer, I tried making it a sliding window problem,
+and it failed the edge cases.
+
+@09:37 692: top K frequent words #grind75 #timelog:00:31:54
+Lexicographic order threw me off. It turns out the built-in
+structures in Python used to solve this
+problem (Counter, heapify) seem to handle this for you
+already? Was I supposed to know that?
+---
+Follow-up problem 347 Top K frequent elements. Apparently
+this follows a similar pattern:
+[[https://leetcode.com/problems/top-k-frequent-elements/description/]]
+
+@12:00 NextJS-ing #nextjs-dashboard-app #timelog:00:52:49
+
+@13:11 Watching a NextJS video on forms in Next.JS #timelog:00:20:46
+video: [[https://www.youtube.com/watch?v=dDpZfOQBMaU]]
+
+@14:36 LC347: top k frequent elements #leetcoding #timelog:00:17:32
+This is a variation of top K frequent words
+
+@14:57 LC53: Maximum Subarray #grind75 #timelog:00:25:16
+I did this already I think. But I didn't submit it, so
+it's a redo now.
+---
+Note to self: a subarray is different from a subsequence.
+Subarrays are continguous.
+---
+Wow, I did not get this right the first time. I gave up
+early and looked at the answer.
+
+@15:30 I have to redo the first 3 weeks #grind75
+I didn't submit. So, I didn't really learn anything. yay.
+
+@15:31 LC57: Insert Interval #grind75 #timelog:01:18:50
+Got something working, but I want to review this tomorrow

@@ -1,0 +1,243 @@
+ns javascript
+gr things related to the javascript programming language
+
+nn js_questions
+ln Front End Interview: JavaScript Questions
+hl https://www.frontendinterviewhandbook.com/javascript-questions
+
+nn how_event_delegation_works
+hl https://davidwalsh.name/event-delegate
+ln how event delegation works
+co $ js_questions
+cr found via
+
+nn simple_rules_to_this
+hl https://codeburst.io/the-simple-rules-to-this-in-javascript-35d97f31bde3
+ln The Simple Rules to "this" in JavaScript
+co $ js_questions
+cr found via
+
+nn dom_event_delegation_stack_overflow
+hl https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
+ln Stack overflow: what is event delegation?
+
+nn js_objects
+hl https://davidwalsh.name/javascript-objects
+ln JavaScript Objects: Inherited a Mess
+
+nn the_core
+hl http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
+ln JavaScript: The Core
+
+nn mdn_prototype_chain
+ln Inheritance and the Prototype change
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+
+nn IIFE
+ln Immediately Invoked Function Expression
+hl https://en.wikipedia.org/wiki/Immediately_invoked_function_expression
+ff What is an IIFE?
+fb An Immediately Invoked Function Expression, or IIFE, is a
+fb programming language idiom which produces a lexical scope
+fb using function scoping. Example =(function () { })();=.
+fb It was a popular way to do modular programming in JS
+fb before ES modules and CommonJS.
+
+nn this
+ln this
+ff explain "this" in JavaScript
+fb 1. new keyword used: brand new object.
+fb 2. apply/call/bind: object passed in as argument.
+fb 3. obj.method(): object that function is property of
+fb 4. free function invocation: global object. window in
+fb the browser, undefined in strict mode.
+fb 5. multiple rules apply: higher rule wins.
+fb 6. arrow function in ES2015: ignore previous rules, use
+fb encapsulating scope.
+
+nn coercion
+ln coercion: an automatic conversion of values from one
+ln data type to another. Ex: having 0 coerce itself to be
+ln false.
+ff What is coercion in javascript?
+fb An automatic conversion of values from one data type
+fb to another. (ex: 0 to false)
+
+nn truthiness
+ln truthiness: When value is considered true when encountered
+ln in a boolean context.
+td define truthiness
+hl https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+co coercion $
+cr A value is said to be coerced to a boolean value
+
+nn type_coercion_mdn
+ln MDN: type coercion
+hl https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
+co $ coercion
+
+nn instanceof
+ln instanceof: tests to see if the prototype property of a
+ln constructor appears anywhere in the prototype chain of
+ln an object.
+ff what does instanceof do?
+fb instanceof is a javascript operator that checks to see
+fb if a prototype property exists anywhere in the prototype
+fb chain of an object
+co $ mdn_prototype_chain
+cr checks prototype chain
+
+nn rest_parameter
+ln Rest Parameter: syntax that allows a function to
+ln accept an indefinite number of arguments as an array,
+ln providing a way to represent variadic functions in
+ln javascript. ex: =function sum(...theArgs)=
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
+ff What are rest parameters?
+fb Rest parameter syntax in JS allows for variadic functions
+fb to be represented as an array. Ex: =function sum(..theArgs)=.
+
+nn template_literals
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+ln Template Literals: literals delimited with backticks (`).
+ln used for multi-line strings, string interpolation with
+ln embedded expressions, and special constructs called
+ln tagged templates.
+ff What are template literals in javascript?
+fb Template literals are literals denoted with backtick ('`'),
+fb and allow for multi-line strings, string interpolation
+fb with embedded expressions, and special constructs
+fb called tagged templates.
+
+nn tagged_templates
+ln tagged templates
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates
+co $ template_literals
+cr template literals are used with tagged templates
+
+nn await
+ln The await operator is used to wait for a Promise and 
+ln get its fulfillment value. It can only be used inside 
+ln an async function or at the top level of a module.
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
+ff what does the 'await' keyword do?
+fb The await keyword is an operator that is used to wait
+fb for a promise and get its fulfillment value. It can
+fb only be used inside an async function or at the top
+fb level of a module.
+
+nn static
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static
+ln Static: defines a method or field for a class, or a static
+ln initialization block. They are accessed on the class itself,
+ln rather than an instance of the class.
+
+nn static_initialization_blocks
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks
+ln static initialization blocks: contains statements tobe
+ln evaluated during class initialization
+co $ static
+
+nn class_expression
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class
+ln class expression
+
+nn bind
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+ln bind:  method of Function instances creates a new
+ln function that, when called, calls this function with
+ln its this keyword set to the provided value, and a
+ln given sequence of arguments preceding any provided when
+ln the new function is called.
+
+nn error
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+ln Error Object
+
+nn regex
+ln Regex Reference
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions
+
+nn regex/lookahead_assertion
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion
+ln Lookahead Assertion
+co $ regex
+
+nn regex/regexp
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp
+ln regexp constructor
+co $ regex
+
+nn bcrypt
+hl https://www.npmjs.com/package/bcrypt
+ln bcrypt package
+
+nn spread_syntax
+hl https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+ln spread syntax: (...) syntax allows an iterable, 
+ln such as an array or string, to be expanded in places 
+ln where zero or more arguments (for function calls) or 
+ln elements (for array literals) are expected.
+ff What is spread syntax?
+fb Spread syntax (...) allows things like arrays to be
+fb expanded in functions where arguments are expected.
+
+nn bcrypt/source
+hl https://github.com/kelektiv/node.bcrypt.js
+ln Source code (github)
+co $ bcrypt
+rm Bcrypt and blowfish are written in C, are included in
+rm the code, and appear to have some special native node
+rm glue code to make JS bindings
+
+nn node-gyp
+hl https://www.npmjs.com/package/node-gyp/v/3.8.0
+ln node-gyp: native addon build tool
+co $ bcrypt/source
+cr Used to get bcrypt and blowfish native code (C) working as node js package
+
+nn import_js_module_html
+ln Import javascript as JS module: <script src="main.js" type="module"></script>
+rm Usually put in <head>
+
+nn webapi
+hl https://developer.mozilla.org/en-US/docs/Web/API
+ln Web APIs
+
+nn webapi/HTML_DOM
+hl https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API
+ln HTML DOM API
+co $ ..
+
+nn webapi/HTML_DOM/HTMLElement
+hl https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+ln HTMLElement
+co $ ..
+
+nn webapi/HTML_DOM/HTMLElement/textContent
+co $ ..
+
+nn webapi/HTML_DOM/HTMLElement/innerText
+hl https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+co $ ..
+
+nn webapi/node/textContent
+hl https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+co $ ../../HTML_DOM/HTMLElement/innerText
+cr similar, but used in different ways
+co $ ..
+
+nn webapi/node/textContent/vs_innerText
+hl https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent#differences_from_innertext
+co $ ../../../HTML_DOM/HTMLElement/innerText
+ln textContent gets/sets all text content, including
+ln hidden elements. innerText is more aware of styling
+ln and won't return text of hidden elements.
+
+
+nn webapi/node
+hl https://developer.mozilla.org/en-US/docs/Web/API/Node
+ln node: The DOM Node interface is an abstract base 
+ln class upon which many other DOM API objects are based, 
+ln thus letting those object types to be used similarly 
+ln and often interchangeably.

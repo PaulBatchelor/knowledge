@@ -1,0 +1,45 @@
+@2024-06-16 Day 28. Chord progressions in vocal ensemble, studying VCV Potential code
+55 days left of Batch.
+---
+Prev: Added adjustable vocal tract size to singer demo
+(crude, but it works), establish internal time logging
+protocol for my logging system, created a
+linear gesture demo, some sound design work on
+"vocal chords" demo.
+---
+Next:
+
+|| @!(taskref "react-describing-ui")!@: read more from the
+"describing the UI" chapter from React website.
+
+|| @!(taskref "vcv-potential-study")!@: study the VCV potential
+plugin code.
+
+@14:08 starting this log
+
+@14:12 Follow-up: add interpolation for smoother size transitions #voxbox-size-control #voxbox-better-size-control
+
+@14:15 This would be a good opportunity to use my code annotation tool #vcv-potential-study
+
+@14:17 Pulling in codegen utilities #vcv-potential-study
+
+@14:20 Pulling in code files to study #vcv-potential-study
+It doesn't have to be all the files, just enough to understand
+how the plugin architecture is organized. Figuring
+that out now.
+
+@14:28 I have once again installed NERDTree to help me out #vcv-potential-study
+I stripped my editor of all features a while ago, now they are
+slowly creeping back in.
+
+@14:46 Gotta make file ranges visisble in HTML output #vcv-potential-study
+Eventually, I'd like to generate interactive pages of code,
+but that can wait.
+
+@15:09 Okay let's get studying #vcv-potential-study #timelog:01:01:44
+
+@16:24 Trying to make dztodo filterable
+
+@16:27 break
+
+@16:43 Attempt to make a chord progression using gesture #chords-demo #timelog:01:45:00

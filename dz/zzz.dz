@@ -1,0 +1,327 @@
+zz external connections between graphs
+
+cx rust/crates/regex reading/how_not_to_learn_rust/top
+cr mentioned in reading
+
+cx misc/coqtail software_foundations/01_logical_foundations/top
+cr use coq with vim to do software foundations
+
+cx rust/books/rust_by_example/traits rust/books/rust_book/traits
+cr related
+
+cx webdev/export_js webdev/react/quickstart
+cr referenced in the quickstart guide wanted to better understand
+cr what was meant by "export default".
+
+cx webdev/react/tic_tac_toe webdev/spread_syntax
+cr discovered spread syntax from react's tic tac toe tutorial
+
+cx webdev/single_responsibility_principle webdev/react/thinking_in_react
+cr found "Single Responsibility Principle" whiled reading "Thinking In React"
+
+cx webdev/class_selectors webdev/react/thinking_in_react
+cr found while reading thinking in react, wasn't 100% clear on terminology
+
+cx rust/std_iter codestudy/potential/bipolar_iter
+cx rust/std_iter_zip codestudy/potential/bipolar_zip
+
+cx webdev/nanostores codestudy/rusty_bikes/client_README
+cr mentioned by Binh, "overkill using nanostores as event bus within my FE code"
+
+cx webdev/mdn_header_element codestudy/hello_ts_react/header_element
+cr looked up header element because I didn't recognize it
+
+cx FPGA/wikipedia compeng/cceckman_resources
+cr linked on cceckman resources page
+
+cx FPGA/yosys_oss_cad_suite compeng/cceckman_resources
+cx FPGA/fomu compeng/cceckman_resources
+cx FPGA/ULX3S compeng/cceckman_resources
+cr cceckman has heard good things about this
+
+cx webdev/clsx webdev/nextjs/learn_dashboard_app
+cr clsx library used in nextjs dashboard tutorial
+
+cx javascript/template_literals webdev/typescript/template_literal_types
+cr typescript template literals use the same
+cr javascript syntax for string template literals
+
+cx webdev/response_api webdev/nextjs/route_handler
+cr route handlers use the response API to make
+cr custom requests for the given route
+
+cx webdev/request_api webdev/nextjs/route_handler
+cr route handlers use the request API to make
+cr custom requests for the given route
+
+cx webdev/formdata webdev/nextjs/learn_dashboard_app
+cr FormData mentioned in chapter 12 (mutating data), for
+cr using forms with server actions
+
+cx webdev/zod webdev/nextjs/learn_dashboard_app
+cr zod used for validation in chapter 12
+
+cx javascript/bind webdev/nextjs/dashboard_app_pass_id_server_action
+cr bind() is somehow needed here for some reason
+
+cx javascript/error webdev/nextjs/learn_dashboard_app/13_handling_errors
+cr error component makes use of the native error object in javascript
+
+cx webdev/react/ref/useActionState webdev/nextjs/learn_dashboard_app/14_improving_accessibility
+cr show form errors in NextJS via useActionState hook
+
+cx webdev/web_dev_learn_accessibility ^
+
+cx webdev/eslint_plugin_jsx_a11y ^
+
+cx webdev/zod/safeParse ^
+
+cx webdev/html/aria_describedby ^
+
+cx webdev/html/aria_live ^
+cr aria-live="polite" used to indicate the screen reader
+cr should politely notify the user when the error inside
+cr the div element is updated
+
+cx webdev/html/aria_live/polite ^
+
+cx python/docs/stdtypes/str/isalnum leetcode/problems/125_valid_palindrome
+cr used to detect if string is alphanumeric
+
+cx python/docs/stdtypes/str/isalpha ^
+cr I used this initially because I didn't know about isalnum
+
+cx python/docs/stdtypes/str/isnumeric ^
+cr I used this initially because I didn't know about isalnum
+
+cx python/docs/stdtypes/str/lower ^
+cr Converted to all lowercase to make string case-insensitive
+
+cx python/docs/stdlib/filter ^
+cr In reversed approach, filter is used to whittle down the
+cr input string to only contain alphanumeric characters
+
+cx python/docs/stdlib/map ^
+cr In reversed approach, map is used to converted characters
+cr to be lowercase
+
+cx python/docs/reference/expressions/lambda ^
+cr used with map/filter in reverse approach
+
+cx python/double_colon_reverse ^
+cr trick used in reverse approach to do reversing. Not sure
+cr why it didn't use reverse()
+
+cx python/docs/stdlib/data_types/collections/counter leetcode/problems/242_valid_anagram
+cr built-in counter() turns this problem into a one-liner solution
+
+cx ^ leetcode/data_structures/hash_table
+cr Convenient to use with many hash table problems in Python,
+cr to the point where Counter() is imported by default in the leetcode
+cr environment.
+
+cx webdev/authentication webdev/nextjs/learn_dashboard_app/15_adding_authentication
+cx webdev/authorization ^
+
+cx python/docs/glossary/hashable leetcode/problems/141_linked_list_cycle
+cr "Objects which are instances of user-defined classes are hashable by default". This would have been good to know while attempting to solve this problem.
+cx python/docs/stdtypes/set ^
+cr useful data structure in python for simple case
+
+cx python/docs/stdtypes/generator leetcode/problems/169_majority_element
+cr divide-and-conquer solution, made use of iterator generators in sum() object
+
+cx python/docs/stdtypes/str/format leetcode/problems/67_add_binary
+cr One-liner: "{0:b}".format(int(a, 2) + int(b, 2))
+
+cx python/docs/stdlib/int ^
+cr int(a,2) will convert a base 2 represented string value a to number
+
+cx python/docs/stdtypes/str/zfill ^
+cr in bit-by-bit manipulation problem, zfill is used to leftpad with 0s
+
+cx python/docs/stdlib/bin ^
+cr used by bitwise manipulation solution to convert number to binary string
+cr at the end.
+
+cx python/docs/reference/simple_statements/nonlocal leetcode/problems/543_diameter_of_binary_tree
+cr used in the editorial example, when a "global", declared inside
+cr of a function, was used inside of nested function
+
+cx python/docs/stdtypes/set leetcode/problems/217_contains_duplicate
+
+cx javascript/regex webdev/nextjs/matcher
+cr matcher uses full regex for matching paths
+
+cx javascript/regex/lookahead_assertion webdev/nextjs/learn_dashboard_app/15_adding_authentication
+cr the "(?! pattern)" syntax was used in the middleware.ts file
+
+cx javascript/bcrypt ^
+cr used to compare that password entered by the user matches
+cr the one in the database
+cx ^ cryptography/bcrypt
+
+cx javascript/spread_syntax ^
+cr used in auth.ts file to spread the authConfig object
+
+cx webdev/nextjs/nextauthjs/credentials_provider ^
+cr in auth.ts, providers is an array that can list many
+cr login options such as google, or github, but for this
+cr tutorial, only the credentials provider will be used
+
+cx webdev/oauth ^
+cr while credentials provider is used here, oauth is
+cr generally recommended
+
+cx webdev/html/aria_disabled ^
+cr used for the login button. isPending determines the state.
+cr it is generated from a action state react web hook.
+
+cx webdev/react/ref/useActionState ^
+
+cx webdev/html/aria_atomic ^
+
+cx webdev/nextjs/nextauthjs/credentials_provider webdev/oauth
+cr oauth generally recommended over credentials provider
+
+cx python/repeat_strings leetcode/problems/1071_GCD_of_strings
+cr Really helpful to use this operator in brute force solution to this problem
+
+cx python/docs/stdlib/re/sub ^
+cr The C++ brute force solution uses string substitution, which
+cr can be reproduced with re.sub()
+
+cx python/docs/stdlib/math/gcd ^
+cr there's this really proof-y math-y solution that is quite
+cr short in python because it uses the built-in gcd() function
+
+cx python/boolean_value_coercion leetcode/problems/1456_max_vowels_in_substring
+cr coercing bools to ints shaves some lines off code
+
+cx ^ javascript/coercion
+
+cx python/docs/stdtypes/set leetcode/data_structures/set
+
+cx python/docs/stdtypes/set/intersection leetcode/problems/2215_difference_two_arrays
+cr Got familiar with intersection method for this problem
+cx python/docs/stdtypes/set/difference leetcode/problems/2215_difference_two_arrays
+
+cx python/docs/glossary/hashable leetcode/problems/2352_equal_row_column_pairs
+cr Tuples are hashable, which you can use to build up a counter map to solve this problem efficiently
+
+cx python/pop_on_empty_stack leetcode/problems/2390_removing_stars_from_a_string
+cr Figured out a clever way to pop on empty stacks to day
+
+cx ^ leetcode/data_structures/stack
+
+cx python/docs/reference/while leetcode/problems/735_asteroid_collision
+cr I fed my solution into claude, and it used an "else"
+cr clause in the while loop, which I didn't know you could
+cr do.
+
+cx javascript/spread_syntax python/unpacking_argument_lists
+cr similar concept
+
+cx vscode/autogen_templates webdev/html
+cr Useful for generating boilerplate HTML5 code
+
+cx javascript/import_js_module_html webdev/html/elements/script
+
+cx ^ webdev/html/elements/script/type
+cr when "type" is set to "module", it turns it into a JS
+cr module, which implicitely adds more strictness to
+cr the js docs
+
+cx leetcode/problems/872_leaf_similar_trees python/docs/glossary/generator_iterator
+cx ^ python/docs/reference/expressions/yield
+
+cx leetcode/problems/1448_count_good_nodes python/docs/reference/simple_statements/nonlocal
+cr Once again, the 'nonlocal' variable trick comes in handy for recursively defined functions used in DFS problems like these
+
+cx leetcode/data_structures/hash_table python/docs/stdtypes/mapping_types/get
+cr useful for default keyword
+
+cx leetcode/data_structures/hash_table python/docs/stdtypes/mapping_types/setdefault
+cr useful for defaults
+
+cx rust/iter python/docs/glossary/iterable
+cr same concept
+
+cx leetcode/problems/841_keys_and_rooms python/docs/stdlib/functions/all
+cr editorial solution used an all() on visited bool table to check to see if all nodes traversed
+
+cx leetcode/problems/1466_reorder_routes_to_city_zero python/docs/stdlib/data_types/collections/defaultdict
+cr having a defaultdict with a list was a very useful abstract for building an adjacency list
+
+cx leetcode/data_structures/priority_queue python/docs/stdlib/data_types/heapq
+
+cx leetcode/problems/2542_maximum_subsequence_score python/docs/stdlib/zip
+cr solution made used of zip to create sorted array
+
+cx leetcode/problems/2300_successful_pairs_potions_spells python/docs/stdlib/bisect
+cr used in editorial solution
+
+cx ^ python/docs/stdlib/bisect/bisect_left
+
+cx python/docs/stdlib/bisect leetcode/paradigms/binary_search
+cr useful builtin for binary search
+
+cx leetcode/problems/790_domino_tromino_tiling python/docs/stdlib/functools/cache
+cr caching decorator used in top-down approach
+
+cx python/docs/stdlib/persistence DDIA/glossary/durable
+cr persistant on-disk state is used in the context of durability
+
+cx python/docs/stdlib/persistence/sqlite3 sqlite/website
+
+cx DDIA/glossary/fact_table databases/star_schema_benchmark/star_queries
+cr one large fact table
+
+cx DDIA/glossary/dimension_table databases/star_schema_benchmark/star_queries
+cr multiple dimension tables
+
+cx sqlite/query_optimizer_overview/07_joins databases/nested_loop_join
+cr SQLite implements joins as nested loops
+
+cx rust/book/toc/10_generic_types_traits_lifetimes/10_3_validating_references_with_lifetimes/borrow_checker rust/borrow_checker
+
+cx rust/std/collections/hashmap data_structures/hashmap
+
+cx leetcode/data_structures/hash_table data_structures/hashtable
+
+cx javascript/await rust/await
+cr same concept
+
+cx hardware/precursor osdev/xous
+cr designed for security-first platforms like precursor
+
+cx python/docs/glossary/slice rust/std/slice
+cr python: [0:4], rust: [0..4]
+
+cx webdev/typescript/covariance_contravariance types/type_theory/polymorphism/subtyping/covariance_contravariance
+cx webdev/typescript/covariance_contravariance_wiki ^
+
+cx leetcode/problems/1770_max_score_multiplication_operations python/docs/stdlib/functools/lru_cache
+cr used in top-down implementation, used with a size of 2000
+cr because this particular problem has tight time limits
+
+cx leetcode/problems/146_LRU_cache ^
+cr implements an LRU cache
+
+cx TADM/toc/08_dynamic_programming/02_approximate_string_matching leetcode/problems/72_edit_distance
+cr Edit distance problem is a case study in TADM
+
+cx DDIA/toc/2_distributed_data/07_transactions/meaning_of_ACID/durability system_design_interview/concepts/non_func_reqs/durability
+
+cx DDIA/glossary/scalability system_design_interview/concepts/non_func_reqs/scalability
+
+cx webdev/vue/nuxt IPFS/teatime
+cr TeaTime is a Nuxt.js application
+
+cx sqlite/sqljs_httpvfs ^
+cr Before a user performs a search in TeaTime, they choose
+cr which database to use and then TeaTime queries the
+cr database using sql.js-httpvfs
+
+cx webdev/IndexedDB ^
+cr Cache files in IndexedDB for fast loading

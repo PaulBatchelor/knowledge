@@ -1,0 +1,18 @@
+@2024-12-04 Wedensday, December 4th
+@13:33 some futzing with linking logs and dznodes#timelog:00:07:26
+At one point, I thought I had the ability to link log
+files with specific dz nodes.
+---
+well, I don't know what happened here. Things either
+got overwritten, or I was imagining things. I don't see
+any code doing what I thought I did.
+
+@13:42 Transcribing initial notes #read-system-design-interview #timelog:00:31:19
+Concept: perform bread-first search of this book, looking
+at the helpful graphs at the end, and working backwards,
+filling in gaps and builing up emergent knowledge
+graph structures.
+
+@21:19 1679: Max number of K-sum pairs #LC75-review #timelog:00:10:34
+
+@21:32 643: maximum average subarray 1 #LC75-review #timelog:00:24:18

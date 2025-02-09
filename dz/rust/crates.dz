@@ -1,0 +1,51 @@
+ns rust/crates
+gr a collection of rust libraries/crates
+
+nn regex
+ln regex
+hl https://lib.rs/crates/regex
+
+nn typed_floats
+ln typed floats
+hl https://lib.rs/crates/typed_floats
+rm found through someone on mastodon. "your problem made me search for 'better' floats"
+
+nn rosc
+ln rosc: OSC library for rust
+hl https://crates.io/crates/rosc
+rm will attempt to use to build voxbox OSC prototype
+
+nn cpal
+ln CPAL: cross-platform audio library
+hl https://crates.io/crates/cpal
+rm Didn't work on my Alpine Box (had trouble linking libasound, which
+rm was clearly there. might have needed libasound2, which
+rm alpine doesn't ship with)
+
+nn xmrsplayer
+hl https://crates.io/crates/xmrsplayer/0.1.0
+ln XMrsPlayer is a safe soundtracker music player
+rm Googled "xm player rust crate" and this is exactly
+rm what I wanted: libxm manually ported to Rust.
+
+nn anyhow
+hl https://crates.io/crates/anyhow
+ln anyhow: flexible concrete Error type built on std::error::Error
+
+nn rayon
+hl https://docs.rs/rayon/latest/rayon/
+
+nn bytes
+hl https://docs.rs/bytes/1.9.0/bytes/struct.Bytes.html
+
+nn dashmap
+hl https://docs.rs/dashmap/latest/dashmap/
+
+nn leapfrog
+hl https://docs.rs/leapfrog/latest/leapfrog/
+
+nn flurry
+hl https://docs.rs/flurry/latest/flurry/
+
+nn async_channel
+hl https://docs.rs/async-channel/latest/async_channel/

@@ -1,0 +1,52 @@
+@2024-12-12 Thursday
+@09:27 437 Path Sum iii #LC75-review #timelog:00:45:49
+
+@10:28 437 Review #LC75-review #timelog:01:05:42
+
+@10:31 looking at 560 to understand 437 #LC75-review #dz:leetcode/problems/560_subarray_sum_equals_k
+
+@11:26 currently tripped on grokking 560 #dz:leetcode/problems/560_subarray_sum_equals_k
+The solution in this problem involves using a hashmap
+counter, with this sort of logic:
+===
+#+BEGIN_SRC
+count += h[target-count]
+#+END_SRC
+===
+What is bothering me is that the counter is always
+updating. A situation could occur where this hashmap
+entry is tapped more than once, making things
+get counted twice.
+
+@11:33 I think I grok this actually #dz:leetcode/problems/560_subarray_sum_equals_k
+I think this has to mean you reset to zero at some point,
+so all those elements can get counted again. I can't
+dwell on this too long, this will have to do.
+
+@11:50 1372 Longest ZigZag #LC75-review #timelog:00:13:57
+
+@12:04 1372 Study #LC75-review #timelog:00:04:14
+
+@12:11 1161 max level sum of binary tree #LC75-review #timelog:00:09:28
+
+@12:24 1161 study #LC75-review #timelog:00:01:28
+
+@12:27 700 Binary Search Tree #LC75-review #timelog:00:04:00
+
+@12:54 450 Delete node in BST #LC75-review #timelog:00:38:41
+
+@13:34 450 Study #LC75-review #timelog:00:37:06
+
+@14:20 Solution here updates node values, but not the reference to the node #dz:leetcode/problems/450_delete_node_BST
+I was initially imagining a solution that involved moving
+the reference to the node itself. What this algorithm does
+instead is update the value of the node to be deleted with
+either the predecessor/successor, then delete the predecessor
+in the previous position. This happens recursively until
+leaves are found.
+
+@14:22 Flashcard-ing #timelog:00:25:59 #flashcards
+
+@16:04 DDIA: chapter 8 summary skimming #read-DDIA #timelog:00:20:45
+
+@16:26 DDIA: chapter 9 summary skimming #read-DDIA #timelog:00:42:54

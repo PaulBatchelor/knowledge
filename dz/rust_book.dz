@@ -1,0 +1,68 @@
+ns rust/books/rust_book
+gr the rust book.
+
+nn traits
+hl https://doc.rust-lang.org/book/ch10-02-traits.html
+ln Traits: Defining Shared Behavior
+tg rust traits
+
+nn aka_interfaces
+ln sometimes known as "interfaces" in other languages
+co $ traits
+cr aka
+
+
+ns rust
+nn book
+hl https://doc.rust-lang.org/book
+ln The Rust Book
+
+ns rust/book
+gr The rust book
+
+nn toc
+ln Table of Contents
+co $ ..
+
+ns +toc
+
+nn 10_generic_types_traits_lifetimes
+ln Chapter 10: Generic Types, Traits, and Lifetimes
+hl https://doc.rust-lang.org/book/ch10-00-generics.html
+co $ ..
+
+ns +10_generic_types_traits_lifetimes
+
+nn 10_3_validating_references_with_lifetimes
+ln 10.3 Validating References with Lifetimes
+hl https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html
+co $ ..
+
+ns +10_3_validating_references_with_lifetimes
+nn borrow_checker
+ln the rust compiler has a borrow checker that compares
+ln scope to determine whether all borrows are valid
+hl https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#the-borrow-checker
+co $ ..
+
+ns ..
+ns ..
+
+
+nn 13_funclang_features
+hl https://doc.rust-lang.org/book/ch13-00-functional-features.html
+co $ ..
+ln 13: Functional language features: Iterators and
+ln Closures
+
+ns +13_funclang_features
+
+nn 13_1_closures
+ln 13.1 Closures: Anonymous functions that capture
+ln their environment
+hl https://doc.rust-lang.org/book/ch13-01-closures.html
+co $ ..
+
+ns ..
+
+ns ..

@@ -1,0 +1,14 @@
+ns prep
+gr Interview Prep
+
+nn tech_interview_handbook
+ln Tech Interview Handbook
+hl https://github.com/yangshun/tech-interview-handbook
+
+nn frontend_interview_handbook
+ln Frontend Interview Handbook
+hl https://www.frontendinterviewhandbook.com/
+
+nn frontend_mentor
+ln Frontend Mentor
+hl https://www.frontendmentor.io/

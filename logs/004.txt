@@ -1,0 +1,138 @@
+@2024-05-23 Day 4. mono WAV writer in C
+@09:00 Morning Logging
+Raining today, might go into the hub later.
+@09:48 VoxBox project setup thoughts #rust-proj-setup
+Yesterday I pushed initial code:
+
+https://github.com/paulBatchelor/voxbox
+
+Used cargo to generate a library, with examples, similar
+to my boing^3 library.
+
+@09:51 oops guess I need to add the rest of the files #rust-proj-setup
+Also setting up my adhoc workstation while doing this...
+
+@10:01 Troubleshooting trackpad mouse
+While setting up my adhoc workstation, my trackpad decided
+not to work.
+
+It was a faulty microusb cable. Tossed that in the trash.
+
+@10:07 Back to adding more files to voxbox
+
+@10:12 simple WAV file generators: didn't I do this already? #implement-monowav
+I feel like I wrote a bare bones mono wav file generator
+somewhere in C.
+
+@10:18 can't find it, guess I'm doing it from scratch
+going to write a quick and dirty one in C, then port it to
+rust. Reviewing the spec now.
+
+@10:54 Packing up to leave
+Got side-tracked with Dan during this.
+
+@12:12 Arrival
+
+@12:33 Getting ready to work
+
+@12:34 filling out initial chunks #implement-monowav
+
+@12:44 Okay, poking at the hex data for the header #implement-monowav
+
+@12:56 main chunk done, now data chunk
+hex viewer is nice. I'm assuming it's only going to be
+one data chunk with PCM.
+
+What I'm not sure about is: how does it know to do 16-bit
+and not like 10 or 12 bit?
+
+@13:11 wav written, but afplay doesn't like it #implement-monowav
+
+@13:14 Inspect riff data of reference
+I figured there'd be a tool for this. exiftool looks to
+be about right.
+
+@13:16 why is the exif data saying my WAV has duration of 0? #implement-monowav
+
+@13:26 Time to generate a smaller reference file #implement-monowav
+
+@13:37 now we're only writing zeros #implement-monowav
+
+@13:44 why is there weird junk in the reference zeros? #implement-monowav
+
+@13:49 Don't know what the junk is, but the header is wrong #implement-monowav
+I used sox to convert my generated wav into another wav,
+and it fixed some things. I diffed the xxd'd output and
+saw the header differences.
+
+@13:57 36 byte difference between data payload chunk size and riff chunk size #implement-monowav
+4 bytes for RIFF
+16 bytes for fmt
+16 bytes for data in riff?
+
+@14:04 zerod wav works. now add sound. #implement-monowav
+
+@14:08 off to lunch. next steps #implement-monowav
+next steps: get dynamic file size working.
+
+@15:07 Return from lunch. settled in. #implement-monowav
+Now, to tackle the file size things. I'm anticipating
+when I port this to Rust, I'll want to be able to write
+the stream of an indefinite size, get the total samples
+written to disk, and then update the header bits.
+
+It would be nice to do that using someo kind of r/w
+mode. Otherwise, just close and re-open.
+@15:24 number of bytes acquired dynamically, now to update WAV
+My Orphium project is updating stuff in-place, which flag
+is it?
+---
+Ah, appears to be "a+".
+
+@15:26 it seems to work without updates? #implement-monowav
+Nevermind, just didn't update everything, and had
+to go back to the beginning of the file. Be kind, and
+rewind().
+
+@15:28 back on track #implement-monowav
+
+@15:43 It works!
+Making it a commandline application to take in input/output
+params.
+
+@15:46 "a+" doesn't actually work like I thought it would
+I just looked up the man pages. "w" is fine.
+
+@15:48 things look good. next steps.
+Next steps are to port a version of this code to rust
+as a mono wav writer to boing^3. After that, it should
+be ported to voxbox with some sine code to make sure I
+can get WAV files generated.
+
+@15:50 packing up, getting ready to watch presentations
+
+@16:00 Apple 2e MIDI, rest bug, coltrane timing
+
+@16:10 Neural nets as a musical instrument
+DIY auto-encoder, RAVE: realtime auto-encoder, RAVE on
+Daisy (hey I know these guys!) (didn't work), on norns?
+Maybe I can help with the norns stuff?
+
+@16:15 Evlish PL and shell, testing
+
+@16:30 How to never miss a train
+
+@16:40 Everything is an Object
+pharo smalltalk VM
+
+@16:46 Music tracking for the privacy conscious
+Navidrone, clerk (clojure)
+
+@16:52 Debugging and logging in vscode
+"tech demo state"
+
+@16:56 PSAs and how to think about time at RC
+Use checkin stream, show links in zulip. "closed" on
+monday. kind vs nice: try to be kind.
+
+@17:15 head back home

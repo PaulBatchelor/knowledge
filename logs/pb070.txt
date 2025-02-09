@@ -1,0 +1,73 @@
+@2024-12-29 Second to last day in NYC for December
+@10:28 Making my flashcards app more convenient to use #dz:python/docs/stdlib/concurrency/threading #dz:python/docs/stdlib/internet/http/server/SimpleHTTPRequestHandler #dz:python/docs/stdlib/exceptions/KeyboardInterrupt
+I am learnig how to use the threading module in python,
+and getting more familiar with the SimpleHTTPRequestHandler
+class. The KeyboardInterrupt Exception trick was also
+nice to know about, seems to cleanly close the server
+
+@11:00 Light flash-carding #flashcards #timelog:00:10:00
+
+@12:07 Looking at dynamic programming card #dz:leetcode/explore/dynamic_programming #timelog:01:03:06
+
+@2024-12-31 happy new year
+@20:20 reading #dz:leetcode/explore/dynamic_programming/1_strategic_approach #timelog:00:56:55
+
+@2025-01-01 new years day
+@09:53 More climbing stairs again #dz:leetcode/problems/746_min_cost_climbing_stairs #timelog:00:15:00
+I needed to look at the solution. The recurrence relation
+is still a bit fuzzy for me. I'm not grokking the optimal
+substructure.
+
+@10:15 Continued #dz:leetcode/problems/746_min_cost_climbing_stairs #timelog:00:04:40
+Going for both top-down and bottoms up.
+
+@10:22 Onto tribbonacci, top down, bottoms up #dz:leetcode/problems/1137_nth_tribonacci_number #timelog:00:17:55
+
+@10:42 Delete and earn #dz:leetcode/problems/740_delete_and_earn #timelog:00:20:46
+Hints and similar problems tells me it's like house robber,
+so I want to do house robber again.
+
+@11:08 House robber, again #dz:leetcode/problems/198_house_robber #timelog:00:08:24
+I'm trying to grok the pattern. Trying to grok better.
+
+@11:22 Back to delete and earn #dz:leetcode/problems/740_delete_and_earn #timelog:00:11:58
+
+@11:35 looking at editorial #dz:leetcode/problems/740_delete_and_earn #timelog:00:28:38
+
+@12:12 Reading #dz:leetcode/explore/dynamic_programming/1_strategic_approach/3_multidimensional #timelog:00:23:18
+
+@12:45 Examples #dz:leetcode/explore/dynamic_programming/1_strategic_approach/5_examples_multidimensional #timelog:00:33:33
+
+@12:46 1770 was the case study #dz:leetcode/problems/1770_max_score_multiplication_operations
+Implemented top down and bottoms up approach using the
+the case study. Bottoms-up I messed up with some off-by-one
+errors because I turned there awkward range functions into
+reversed iterables using =reversed=.
+
+@14:57 dynamic programming explore card #dz:leetcode/problems/1143_longest_common_subsequence #timelog:00:20:16
+figured out top-down solution by myself.
+
+@15:19 attempt to work out bottoms up solution #dz:leetcode/problems/1143_longest_common_subsequence #timelog:00:06:50
+
+@15:19 dynamic programming explore card #dz:leetcode/problems/221_maximal_square #timelog:00:57:19
+
+@16:25 looking at editorial #dz:leetcode/problems/221_maximal_square #timelog:00:11:46
+
+@17:51 an attempt to do a top-down solution #dz:leetcode/problems/221_maximal_square #timelog:00:24:39
+It would be nice to try and get a top-down version. There's
+also a "better solution"
+
+@18:03 close to top-down derivation #dz:leetcode/problems/221_maximal_square
+
+@18:20 got it! #dz:leetcode/problems/221_maximal_square
+The trick was returning 0. I'm also noticing that I need
+to store the maximum globally with both. That could be a
+pattern to think about for some "find the max" problems
+
+@18:20 studying the "better" solution in the editorial #dz:leetcode/problems/221_maximal_square #timelog:00:04:46
+Didn't really grok it, but it's basically a space optimized
+bottoms-up solution.
+
+@18:31 More dynamic programming explore card #dz:leetcode/explore/dynamic_programming/1_strategic_approach/6_time_space_complexity #timelog:00:06:56
+
+@18:39 Common patterns #dz:leetcode/explore/dynamic_programming/2_common_patterns #timelog:00:45:01

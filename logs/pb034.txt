@@ -1,0 +1,34 @@
+@2024-11-14 Thursday, November 14th (Stopping Practice)
+@10:31 Grind75 #grind75 #timelog:01:27:44
+211: Design and Search Words Data Structure.
+I think it's a Trie problem. Spent most of this time
+just getting the Trie structure the way I imagined it. Have not
+implemented the search yet, which I believe will be a DFS
+using a stack (for backtracking when a '.' is encountered).
+@12:56 211 continued #grind75 #timelog:01:12:21
+Ran out of time. Right data struture (trie), but my
+search doesn't work properly ('..' is a problem on the
+huge edge case).
+
+@14:23 wait wait, one idea to try. #grind75 #timelog:00:28:15
+I'm breaking out too early.
+---
+Nevermind. I'm not getting it right. Time to stop.
+
+@16:38 Re-examine priority tasks #timelog:00:01:48
+
+@16:39 Completed? #flashcard-mvp
+I mean, it's got a bug, but it works.
+
+@16:41 Typescript Handbook #read-typescript-handbook #timelog:00:24:07
+Finally done with the reading.
+
+@18:40 database internals #reading-dbint #timelog:00:18:08
+Ordering, operations, invocatoin/completion, shared memory,
+registers, safe/atomic/regular, consistency models
+
+@21:12 databse internals #reading-db-int #timelog:00:13:18
+consistency models, single-operation, strict consistency
+(theoretical), all possible histories vs histories
+permissable under X, linearizablility, total ordering of
+events

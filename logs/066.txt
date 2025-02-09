@@ -1,0 +1,149 @@
+@2024-07-24 Day 66. Initial Dagzet Rust Port Completed.
+16 days left of batch.
+---
+Prev: Dagzet initial commandset almost done,
+but different strange things break when I try to use it.
+The Trio voice manager mostly works except for that
+one weird timing thing, which ain't bad.
+---
+Next: try to get rust dagzet working with my RC
+knowledge grpah. investigate timing logic and think
+about chords in Trio.
+
+@09:40 Later morning triage.
+
+@09:51 This feels completed. #demo-trio-voice-scheduler #demo-trio-low-timing
+There's one timing issue that I'm going to look at,
+but that feels like another task.
+
+@09:52 Description of timing issue #demo-trio-low-timing
+Sometimes, when I put the pen down on the tablet,
+the lower voice will wait an extra beat before
+turning on. I can see in the window that the time
+value becomes "1" twice, which I don't want to happen.
+---
+I think the issue here may have to do with how I am
+handling clock resets. It's possible that I missed
+something when I quickly add it in yesterday.
+
+@10:04 Our little fella needs to enjoy themselves #poke-laughter-chitter
+The sound could be done to facilitate this better.
+But I also think the eyes should change from bug-eyed
+to the kawaii "> <" eyes.
+---
+The graphics will be a faster change than the sounds,
+so I may want to get started on that in the next
+day or so
+
+@10:11 A more sophisticated chord selection algorithm is required #demo-trio-chords #demo-trio
+The issue is there is no sense of resolution anywhere.
+It still kinda meanders.
+
+@10:16 Publish
+
+@10:27 More dagzet integration work #dagzet-rust #timelog:00:42:14
+
+@10:34 I don't think I finished the topsort work #dagzet-rust
+
+@11:09 topsort bug fixed. I just didn't finish writing #dagzet-rust
+The test I had for it was too small.
+
+@11:10 nice! running into invalid command error, which is what we want. #dagzet-rust
+
+@11:11 Working on cx command. #dagzet-rust
+"cx" is an external connection, and it allows you to make
+connections to nodes that are external
+---
+A partial implementation of cx is all that is needed for now.
+No aliases, no shorthands. It's all just full paths.
+---
+Any nodes used by =cx= get stored in a list (set?). When
+unknown nodes are checked, if it can't find the node
+in the locally created nodes, it'll check the nodes here.
+---
+Connections will work the same way since it utilizes a SQL
+command. The burden is on the dagzetter to ensure that
+nodes get created before they are connected with =cx=. This
+is different from =co=, which follows a more declarative
+style.
+
+@11:38 set up tests for initila cx behavior #dagzet-rust
+
+@11:50 now the implementation #dagzet-rust #timelog:01:40:38
+
+@12:09 now to try and hook things up again #dagzet-rust
+
+@12:12 In generate edges, I need to ignore external connections #dagzet-rust
+At this point, any unknown nodes should have checked for.
+---
+Is there ever a situation where an edge would have an
+unknown node missed by the unknown node error check?
+
+@12:22 I think it works. One quick look around. #dagzet-rust
+
+@12:24 Nope. Full page generation is causing a crash in genpage.lua #dagzet-rust
+It's a sqlite error. I need to figure out what the error is.
+---
+I need to use =db:errmsg=
+---
+I didn't configure the column name correctly.
+
+@12:34 More sqlite errors. I think I'm forgetting to name the columns #dagzet-rust
+
+@12:36 The rest of the tables need to be implemented #dagzet-rust
+
+@12:54 Running into a really odd stack overflow error #dagzet-rust
+I'm going to have to call it quits after this.
+
+@13:00 We are getting loops in the output. #dagzet-rust
+It is random too, probably due to randomness in lua tables.
+---
+Something is going wrong in the SQLite table generation.
+When I place debug prints in the =shortname= generator,
+I get a ton of stuff.
+===
+#+BEGIN_SRC sh
+./tools/gendb.sh && ./tools/dz_wikigen.sh | cut -f 2 | sort | uniq -c | sort
+#+END_SRC
+
+@16:46 debugging #dagzet-rust #timelog:00:45:48
+My goal is to take a look at the generated table outputs of both.
+
+@17:00 number of nodes are consistent, name order is not #dagzet-rust
+This is probably due to the randomized hashmap structure
+in Rust.
+---
+But, the node IDs are the same, monotonically increasing
+unique values.
+
+@17:02 lines output is identical as well #dagzet-rust
+
+@17:14 something is wrong with the connections #dagzet-rust
+There seems to be duplicates. I generated and sorted
+the connections alphabetically and found these.
+---
+The rust version also has inconsistent connections as well.
+
+@17:18 connections: 127 rust dagzet vs 142 lua dagzet #dagzet-rust
+It is consistently this. I wonder if "cx" is partially
+to blame. disabling all the cxs now.
+
+@17:21 connections are the same without cx. #dagzet-rust
+There are 15 cx connections made, and that accounts for
+the missing connections.
+
+@17:22 I wonder if it's the edge generation somehow #dagzet-rust
+
+@17:25 I think I should be doing a name lookup, not using the ID values directly #dagzet-rust
+
+@17:30 Okay! that fixed the connections issues. #dagzet-rust
+Now, let's see if the error goes away.
+
+@17:32 FINALLY. IT WORKS. #dagzet-rust
+I think I really mean it this time. It generates the
+data without crashing and everything. Peaking around,
+it seems to produce the data just fine.
+
+@18:21 I have taken a break broadcast my success. Heading out now for dinner. #dagzet-rust
+
+@20:14 More reading on machine language. #read-elem-compsys #timelog:00:45:17

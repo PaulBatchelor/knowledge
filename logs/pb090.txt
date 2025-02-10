@@ -72,4 +72,45 @@ prefixes, and to have this information be read from a textfile
 
 @14:18 Food
 
-@15:26 Begin knowledge graph migration
+@15:26 Begin knowledge graph migration #timelog:00:24:55
+
+@15:59 jimsh investigation: can you add new functions from C? #timelog:00:30:39
+You can, but the bootstrapped amalgamation is a little
+dense. Might not be worth pursuing right now.
+---
+Shared object loaded does not work with jimsh0
+
+@17:35 false exit. back to hub. setting up.
+
+@17:36 dzb initial work #timelog:00:58:22
+#! dz dagzet/dzb/tasks/initial_work
+
+@17:43 setting up initial buffer. Create test set/get commands
+#! dz $
+
+@18:06 regions
+#! dz $
+
+@18:26 offset calculation
+#! dz $
+regions can be nested with relative offsets, and their global
+offset value can be computed by traversing their parents
+and adding offsets.
+---
+Example: root(0,0)->child_a(4, 5)->child_b(6, 7)
+---
+Child b is expected to have global offets (10, 12).
+
+@19:42 more dzb work #timelog:01:01:17
+#! dz $
+
+@19:43 region drawing
+
+@20:07 Can a region be reduced to a single offset?
+The problem is:
+right now a region draw needs to compute the global offset
+every time. How to avoid this for every pixel?
+---
+Caching this offset computation somewhere is probably the
+most practical solution. But, since this is a bitfield,
+wouldn't it be possible to just store a pointer?

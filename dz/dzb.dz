@@ -1,0 +1,7 @@
+ns dagzet/dzb
+
+nn tasks
+at ol
+
+nn tasks/initial_work
+co $ ..

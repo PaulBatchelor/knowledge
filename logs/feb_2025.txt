@@ -1,0 +1,25 @@
+@2025-02-10 New logs, early morning
+I'm at the hub now. Trying to figure out a better
+log structure that can work on the order of years.
+Right now, I'm going to see what it's like grouping logs
+by month.
+
+@09:39 settling in.
+
+@09:50 trying out ed with my logs
+so far, it is a little clumsy
+
+@09:55 1-bit png support #timelog:00:51:10
+#! dz dagzet/dzb/tasks/initial_work
+we have this already, just need to retrofit it for
+the codebase.
+
+@10:47 break
+
+@11:28 uf2 support #timelog:00:28:24
+#! dz $
+adapt from mnolth code, create example
+
+@12:03 checksum for buffer, use in testing #timelog:00:26:26
+
+@12:25 checksum test for fonts

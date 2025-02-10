@@ -21,5 +21,13 @@ the codebase.
 adapt from mnolth code, create example
 
 @12:03 checksum for buffer, use in testing #timelog:00:26:26
+#! dz $
 
 @12:25 checksum test for fonts
+#! dz $
+
+@13:52 time to load in initial dagzet data, starting with keytree #timelog:01:31:10
+#! dz $
+
+@13:59 winding up a generic hash table
+#! dz $

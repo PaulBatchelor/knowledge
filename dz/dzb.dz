@@ -5,3 +5,6 @@ at ol
 
 nn tasks/initial_work
 co $ ..
+
+nn tasks/initial_dz_data
+co $ ..

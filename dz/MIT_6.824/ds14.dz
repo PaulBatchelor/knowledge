@@ -1,0 +1,408 @@
+ns distributed_systems_MIT/lec14
+gr Farm, OCC
+
+nn farm
+ln Farm
+
+nn RDMA_nics
+ln RDMA nics
+co $ farm
+
+nn vs_spanner
+ln vs spanner
+co $ farm
+
+nn both_2pc
+ln Both use two-phase commit
+co $ vs_spanner
+
+nn geographic_in_repl
+ln Spanner is geographic in replication
+co $ vs_spanner
+
+nn ro_trans_sync_time
+ln Uses read-only transactions using synchronized time
+co $ vs_spanner
+
+nn bottlenecks
+ln Bottlenecks
+co $ farm
+
+nn same_datacenter
+ln same datacenter
+co $ farm
+
+nn research_prototype
+ln research prototype
+co $ farm
+
+nn forced_occ
+ln Forced to use OCC (optimistic concurrency control)
+co $ farm
+co $ RDMA_nics
+cr RDMA NICs are the reason for using OCC
+
+nn good_performance
+ln good performance
+co $ vs_spanner
+
+nn speed_of_light
+ln Speed of Light
+co $ bottlenecks
+
+nn cpu_time
+ln CPU time
+co $ bottlenecks
+
+nn sharded_primary_backup_pairs
+ln Sharded on primary backup pairs
+co $ farm
+
+nn high_performance
+ln Ways farm gets high performance
+co $ farm
+
+nn sharding
+ln Sharding
+co $ high_performance
+cr main way farm gets high performance
+
+nn data_fits_RAM
+ln Data fits in RAM
+co $ high_performance
+rm much faster than disk
+
+nn transaction_code
+ln Transaction code
+co $ high_performance
+
+nn RDMA
+ln RDMA
+co $ high_performance
+co $ RDMA_nics
+
+nn kernel_bypass
+ln Kernal Bypass
+co $ high_performance
+
+nn clever_network_interface_card
+ln Clever network interface card (NIC)
+co $ RDMA_nics
+co $ RDMA
+
+nn NVRAM
+ln Non-volatile RAM (NVRAM)
+co $ high_performance
+co $ data_fits_RAM
+
+nn app_code_acces_nic_without_kernel
+ln Applicaiton code can directly access network card
+ln without kernel
+co $ kernel_bypass
+cr description
+
+nn multiple_servers_write_ram_enough
+ln Is it enough to simply write to the RAM of
+ln multiple servers?
+co $ NVRAM
+
+nn site_wide_power_failure
+ln A site-wide power failure will lose data
+co $ multiple_servers_write_ram_enough
+cr No, a sitewide power failure will wipe it all out
+
+nn battery_system
+ln Battery System
+co $ site_wide_power_failure
+cr prevantative measure against power failures
+
+nn alert_system
+ln Alert System
+co $ battery_system
+
+nn server_saves_to_disk
+ln Server saves RAM to disk
+co $ alert_system
+cr on alert
+
+nn only_works_for_power_fail
+ln Only works for power failure crash
+co $ NVRAM
+
+nn network_cpu_bottleneck
+ln Network CPU bottlenecks
+co $ farm
+
+nn classic_network_stack_too_slow
+ln Classic Network Stack too slow for RPCs.
+co $ network_cpu_bottleneck
+
+nn classic_network_stack_top_down
+ln Classic Network stack order: app, buffer, TCP,
+ln NIC driver, DMA, NIC
+co $ classic_network_stack_too_slow
+
+nn skip_stack
+ln Skip stack
+co $ kernel_bypass
+co $ classic_network_stack_top_down
+
+nn DMA_in_app_memory
+ln DMA is directly in application memory
+co $ kernel_bypass
+
+nn app_takes_tcp_responsibilities
+ln Because it skips TCP, application takes on some
+ln TCP responsibilities
+co $ DMA_in_app_memory
+
+nn remote_direct_memory_access
+ln Remote Direct Memory Access
+co $ RDMA
+cr Acronym
+
+nn firmware_only
+ln Firmware only: computer OS doesn't know about read/writes
+co $ RDMA_nics
+
+nn sequence_protocol
+ln Run their own reliable sequence protocol, similar to TCP
+co $ RDMA_nics
+co $ app_takes_tcp_responsibilities
+cr NIC handles this too
+
+nn LAN_only
+ln LAN only
+co $ RDMA
+
+nn one_sided_RDMA
+ln One-sided RDMA
+co $ RDMA
+
+nn one_app_RDMA_another_RDMA
+ln One app uses RDMA to read/write RDMA of another app
+co $ one_sided_RDMA
+cr description
+
+nn append_to_log_op
+ln appends to log
+co $ one_app_RDMA_another_RDMA
+cr the typical operation for one-sided RDMA in Farm
+
+nn transactions_with_only_one_sided
+ln Can you implemented transactions with only one-sided
+ln RDMA?
+co $ one_sided_RDMA
+
+nn farm_suggests_no
+ln Farm would suggest the answer would be "no"
+co $ transactions_with_only_one_sided
+cr still a question to think about though
+
+nn OCC
+ln Optimistic Concurrency Control (OCC)
+co $ farm
+
+nn buffer_writes_locally
+ln Buffer Writes Locally
+co $ OCC
+
+nn check_later_if_reads_okay
+ln Check later if reads are okay
+co $ OCC
+
+nn commit_then_validate
+ln commit then validate
+co $ OCC
+
+nn abort_on_conflicts
+ln Abort on conflicts
+co $ commit_then_validate
+
+nn validation
+ln Validation
+co $ commit_then_validate
+
+nn farm_api
+ln API
+co $ farm
+
+nn txcreate
+ln txCreate()
+co $ farm_api
+
+nn txread
+ln txRead()
+co $ farm_api
+
+nn OID
+ln Object ID (OID)
+co $ farm_api
+
+nn creates_transaction
+ln Creates Transaction
+co $ txcreate
+
+nn txwrite
+ln txWrite()
+co $ farm_api
+
+nn exponential_backup
+ln Exponential backup maybe used?
+co $ abort_on_conflicts
+
+co OID txread
+cr input argument
+
+co OID txwrite
+cr input argument
+
+nn compound_identifier
+ln Compound Identifier
+co $ OID
+
+nn region_num
+ln Region Number
+co $ compound_identifier
+
+nn address
+ln Address
+co $ compound_identifier
+
+nn server_memory_layout
+ln Server Memory Layout
+co $ farm
+
+nn region
+ln Region
+co $ server_memory_layout
+
+nn versioned_objects
+ln Versioned Objects
+co $ region
+
+nn version_num
+ln version number
+co $ versioned_objects
+
+nn lock_flag
+ln Lock flag
+co $ versioned_objects
+
+nn pair_msg_queues
+ln Pair of Message Queues
+co $ server_memory_layout
+
+nn logs_for_each_server
+ln Logs, one for each of the other servers
+co $ server_memory_layout
+
+nn commit_protocol
+ln Commit Protocol
+co $ farm
+
+nn execute_phase
+ln Execute Phase
+co $ commit_protocol
+
+nn reads_everything_needed
+ln Reads everything it needs
+co $ execute_phase
+
+nn txcommit_call
+ln txcommit call
+co $ execute_phase
+co $ txcommit
+
+nn txcommit
+ln txCommit
+co $ farm_api
+
+nn commit_phase
+ln commit phase
+co $ txcommit_call
+cr happens when all yes
+
+nn lock_phase
+ln Lock Phase
+co $ commit_phase
+
+nn send_object_id
+ln client sends each primary server identity of udpated
+ln object
+co $ lock_phase
+
+nn trans_coord_all_yes
+ln Tranasaction coordinator notifies primary servers
+ln "all yes"
+co $ lock_phase
+co $ commit_phase
+
+nn append_to_log
+ln Append to log
+co $ send_object_id
+
+nn prim_active_log_process
+ln Primaries actively process new logs, and send yes/no vote
+co $ append_to_log
+
+nn is_object_already_locked
+ln is object already locked?
+co $ prim_active_log_process
+
+nn version_changed
+ln has the version number changed?
+co $ prim_active_log_process
+
+nn atomic_compare_and_swap
+ln Atomic compare_and_swap
+co $ version_changed
+
+nn multithread_race_transactions
+ln Multithreading can cause races between transactions
+co $ atomic_compare_and_swap
+cr rationale for atomic operation
+
+nn append_to_prim
+ln append to primary log
+co $ trans_coord_all_yes
+
+nn commit_prim_record
+ln commit primary record
+co $ append_to_prim
+
+nn update_object_version_clear_lock_bit
+ln Update object and version number, clear lock bit
+co $ commit_prim_record
+
+nn version_lockbits_enforce_serializability
+ln Version numbering and lock bits enforce serializability
+ln in OCC
+co $ OCC
+
+nn optimize_for_reads
+ln Optimization to treat objects read by transactions, not
+ln written
+co $ validation
+
+nn refetch_object_header
+ln Refetch object header
+co $ validation
+
+nn check_versions_locks
+ln Checks for version changes since start and if the lock
+ln bit is set
+co $ refetch_object_header
+
+nn straight_ro_transaction
+ln Straight read-only transaction
+co $ optimize_for_reads
+
+nn execute_one_sided_read
+ln Execute with fast one-sided read
+co $ straight_ro_transaction
+co $ one_sided_RDMA
+
+nn ro_valid_optimizer
+ln read-only validation optimizer
+co $ straight_ro_transaction

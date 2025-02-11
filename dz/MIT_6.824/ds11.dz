@@ -1,0 +1,311 @@
+ns distributed_systems_MIT/lec11
+gr Cache consistency, Fangipani
+
+nn frangipani
+ln Frangipani
+
+nn caching_coherence
+ln Caching Coherence
+co $ frangipani
+
+nn distributed_transactions
+ln Distributed Transactions
+co $ frangipani
+
+nn crash_recovery
+ln Crash Recovery
+co $ frangipani
+
+nn kernel_module
+ln Kernel Module
+co $ frangipani
+
+nn overall_design
+ln Overall Design
+co $ frangipani
+
+nn NFS
+ln NFS
+co $ overall_design
+
+nn works_with_unix
+ln Works with existing unix workstations
+co $ overall_design
+
+nn petal
+ln Petal
+co $ frangipani
+
+nn acts_like_shared_disk
+ln Acts like shared disk drive
+co $ petal
+
+nn virtual_disk
+ln Virtual disk
+co $ acts_like_shared_disk
+
+nn athena
+ln Athena AFS
+co $ works_with_unix
+cr similar
+
+nn no_security_precautions
+ln No security precautions
+co $ overall_design
+
+nn shared_environment
+ln Shared environment
+co $ overall_design
+
+nn small_group
+ln small group
+co $ overall_design
+
+nn human_level
+ln "human" level
+co $ overall_design
+
+nn caching
+ln Caching
+co $ caching_coherence
+
+nn write_back
+ln Write-Back
+co $ caching
+
+nn write_local_initially
+ln Write to local cache initially
+co $ write_back
+cr description
+
+nn filesystem_complexity_local
+ln All filesystem complexity handled locally in each client
+co $ write_local_initially
+
+nn nautral_scaling
+ln Natural scaling
+co $ filesystem_complexity_local
+
+nn challenges
+ln Challenges
+co $ frangipani
+co $ overall_design
+
+co caching challenges
+
+nn atomicity
+ln Atomicity
+co $ challenges
+
+nn decentralized
+ln Decentralized
+co $ challenges
+
+co caching_coherence challenges
+
+nn auto_update_cache
+ln Automatically update cache if mods are made in another
+ln cache.
+co $ caching_coherence
+cr description
+
+nn operations_feel_instant_time
+ln Operations that feel instant in time
+co $ atomicity
+cr description
+
+nn individual_file_servers
+ln Of Individual file-servers
+co $ crash_recovery
+cr elaboration
+
+nn driven_by_locks
+ln driven by use of locks
+co $ challenges
+
+nn lock_server
+ln Lock Server
+co $ driven_by_locks
+
+nn file_owner
+ln File/Owner
+co $ lock_server
+
+nn strong_consistency
+ln Strong Consistency
+co $ caching_coherence
+
+nn linearizability
+ln Linearizability
+co $ strong_consistency
+
+nn protocols
+ln Protocols
+co $ caching_coherence
+
+nn request
+ln Request (WS->LS)
+co $ protocols
+
+nn grant
+ln Grant (LS->WS)
+co $ protocols
+
+nn revoke
+ln Revoke (LS->WS)
+
+nn release
+ln Release (WS->LS)
+co $ protocols
+
+nn rules
+ln Rules
+co $ lock_server
+
+nn no_cached_data_without_lock
+ln No cached data without lock
+co $ rules
+
+nn acquire_read
+ln Acquire lock, then read from Petal
+co $ no_cached_data_without_lock
+co $ petal
+
+nn write_then_release
+ln Write to Petal, then release lock
+co $ petal
+co $ rules
+
+nn idle
+ln Idle state for locks
+co $ protocols
+
+nn exclusive_writers_shared_readonly
+ln Exclusive for writers, shared for read-only access
+co $ lock_server
+
+nn transactions
+ln Transactions
+co $ atomicity
+
+nn atomic_multistep_operations
+ln Atomic Multistep Operations
+co $ atomicity
+
+nn distrubuted
+ln Distrubuted
+co $ transactions
+
+nn lock_driven
+ln Lock-Driven
+co $ transactions
+
+nn acquire_locks_with_operation
+ln Acquire all locks with operation
+co $ atomicity
+
+nn all_updates
+ln Perform All Updates
+co $ acquire_locks_with_operation
+cr step
+
+nn write_petal
+ln Write to petal
+co $ all_updates
+cr step
+co $ petal
+
+nn release_locks
+ln Release the locks
+co $ write_petal
+cr step
+
+nn crash_with_some_writes
+ln Workstation crashes with locks with some writes to petal
+co $ crash_recovery
+cr an interesting situation
+
+nn log_entry
+ln Log Entry
+co $ crash_recovery
+
+nn log_seq_num
+ln Log Sequence Number
+co $ log_entry
+
+nn array_modifications
+ln Array of Modifications
+co $ log_entry
+
+nn block_num
+ln Block Number
+co $ log_entry
+
+nn version_num
+ln Version Number
+co $ log_entry
+
+nn log_data
+ln Log Data
+co $ log_entry
+
+nn metadata_fs_only
+ln metadata for filesystem only
+co $ log_entry
+co $ log_data
+
+nn stored_in_petal
+ln Stored in Petal
+co $ petal
+co $ log_entry
+
+nn per_workstation
+ln Per-workstation logs
+co $ log_entry
+
+nn on_revoke
+ln On Revoke
+co $ revoke
+co $ log_entry
+
+nn write_log_to_petal
+ln Write log to petal
+co $ on_revoke
+
+nn sequencing_important
+ln Sequencing is important
+co $ on_revoke
+co $ write_log_to_petal
+co $ send_release
+
+nn write_modified_blocks
+ln Write Modified Blocks for lock
+co $ write_log_to_petal
+
+nn send_release
+ln Send Release
+co $ write_modified_blocks
+
+nn log_may_be_outdated
+ln Logs may be out of date by the time it replays logs from
+ln crashed server
+co $ crash_recovery
+co $ crash_with_some_writes
+
+nn cant_blindly_replay_logs
+ln Can't blindly replay logs
+co $ log_may_be_outdated
+
+nn use_version_numbers
+ln Use version numbers with every piece of data in fileystem
+ln as stored in Petal
+co $ log_may_be_outdated
+cr solution
+
+nn associate_update_with_version
+ln Associate update with version number in log
+co $ use_version_numbers
+
+nn write_data_back
+ln Write data back with updated version
+co $ associate_update_with_version

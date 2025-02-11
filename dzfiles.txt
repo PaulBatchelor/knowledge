@@ -63,4 +63,5 @@ dz/ed_mastery
 dz/vue.dz
 dz/companies/fused
 dz/pydata.dz
+dz/MIT_6.824
 dz/zzz

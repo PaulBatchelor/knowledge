@@ -1,0 +1,160 @@
+ns distributed_systems_MIT/lec08
+gr Lecture 8, more linearizability, zookeeper
+
+nn linearizability
+ln linearizability
+
+nn strongly_consistent_system
+ln strongly consistent system
+co $ linearizability
+cr important for
+
+nn history_linearizable
+ln is the history linearizable
+co $ linearizability
+
+nn proof_of_order
+ln client must observe proof of only one order
+co $ linearizability
+
+nn no_cycles
+ln no cycles
+co $ history_linearizable
+
+nn correctness
+ln correctness
+co $ linearizability
+
+nn no_stale_data
+ln can't serve stale data
+co $ correctness
+co $ strongly_consistent_system
+cr a strongly consistent system can't serve stale data
+
+nn correct_tolerant
+ln correct applications must be tolerant of these systems
+co $ correctness
+
+nn zookeeper
+ln zookeeper
+
+nn why_zookeeper
+ln why?
+co $ zookeeper
+
+nn more_better_performance
+ln Nx -> Nx performance (does adding more nodes yield better
+ln performance?)
+co $ why_zookeeper
+
+nn API_general_purpose_coordination
+ln API general purpose coordination service
+co $ why_zookeeper
+
+nn raft_like
+ln RAFT-like
+co $ zookeeper
+
+nn write_more_slower
+ln write: more servers -> slwoer
+co $ more_better_performance
+rm write needs to coordinate with replicas, single server
+
+nn read_from_replicas
+ln read from replicas
+co $ more_better_performance
+rm reading from replicas speeds things up
+
+nn up_to_date
+ln up to date? (maybe, maybe not)
+co $ read_from_replicas
+co $ raft_like
+
+nn not_good_correctness
+ln not good for correctness
+co $ up_to_date
+co $ correctness
+
+nn how_to_make_safe
+ln How to make safe?
+co $ not_good_correctness
+
+nn non_linearized_reads_rules
+ln non-linearized reads are in the rules of conistency
+co $ how_to_make_safe
+rm in other words, zookeeper doesn't provide guarantee
+rm for reads. A tradeoff of correctness for read
+rm performance
+
+nn still_useful
+ln Is this still useful?
+co $ non_linearized_reads_rules
+
+nn consistency_guarantees
+ln Consistency Guarantees
+co $ zookeeper
+
+nn writes_linearizable
+ln Writes are linearizable
+co $ linearizability
+co $ correctness
+
+nn fifo_client_order
+ln FIFO client order: any given client operations are in
+ln that order
+co $ consistency_guarantees
+
+nn writes_client_specified_order
+ln Writes: client-specified order
+co $ fifo_client_order
+cr AKA
+
+nn reads
+ln reads
+co $ consistency_guarantees
+
+nn relative_to_log
+ln relative to log client is talking to
+co $ reads
+
+nn sucessive_reads
+ln occur in log. successive reads have to be in order
+co $ relative_to_log
+
+nn cant_go_backwards
+ln Can't go backwards
+co $ sucessive_reads
+
+nn client_switches_replicas
+ln rule still holds if client switches replicas
+co $ cant_go_backwards
+
+nn zxid_tag
+ln ZXID tag from leader entry
+co $ client_switches_replicas
+
+nn client_remembers
+ln Client remembers
+co $ zxid_tag
+
+nn replica_responds_zxid
+ln replica responds with zxid
+rm "highest ZXID I've ever seen"
+co $ client_remembers
+
+nn reasonable_programming
+ln Possible to reasonable programming with?
+co $ consistency_guarantees
+
+nn sync
+ln sync operation
+co $ reasonable_programming
+
+nn proliferates_like_write
+ln Proliferates through system like write
+co $ sync
+
+nn sync_before_read
+ln sync before a read gets data
+co $ proliferates_like_write
+rm sync is therefore an expensive operation

@@ -1,0 +1,257 @@
+ns distributed_systems_MIT/lec03
+
+nn GFS
+ln GFS (aka Google File System)
+
+nn big_storage
+ln Big Storage
+co $ GFS
+
+nn why_hard
+ln Why is Big Storage hard?
+co $ GFS
+
+nn performance
+ln Performance
+co $ why_hard
+
+nn faults
+ln Faults
+co $ why_hard
+
+nn sharding
+ln Sharding
+co $ performance
+cr I forget what sharding has to do with performance
+
+nn tolerance
+ln Fault Tolerance
+co $ faults
+
+nn replication
+ln Replication as a means to add fault tolerance
+co $ tolerance
+
+nn almost_identical
+ln "Almost Identical" inconsistency risk
+co $ replication
+
+nn consistency
+ln Consistency in replications
+co $ almost_identical
+
+nn strong_consistency
+ln A strongly consistent system will be identical when
+ln duplicating data
+co $ consistency
+
+nn low_performance_tradeoff
+ln A strongly consistent system has a low performance
+ln cost as a tradeoff.
+co $ strong_consistency
+
+nn system_behaves
+ln A strongly consistent system behaves just like
+ln it was one server
+co $ strong_consistency
+
+nn bad_replication
+ln Bad Replication Design
+co $ consistency
+
+nn events_order
+ln no way to ensure events (writes/reads)
+ln processed in correct order
+co $ bad_replication
+
+nn GFS_goals
+ln GFS Goals: Big, Fast, Global
+co $ GFS
+
+nn high_speeds_parallel
+ln High Speeds, Parallel Access
+co $ GFS
+
+nn files_autosplit
+ln Files Automatically Split
+co $ GFS
+
+nn shard
+ln Shard
+co $ files_autosplit
+cr One of the splits of a file is called a "shard"
+co $ sharding
+
+nn auto_failure_recovery
+ln Automatic Failure Recovery
+co $ GFS
+
+nn single_data_center
+ln Single Data Center
+co $ GFS
+
+nn big_sequence
+ln Designed for big sequential reads/writes
+rm As opposed to random reads/reads
+co $ GFS
+
+nn internal_use
+ln Used internally by Google
+co $ GFS
+
+nn weak_consistency
+ln Designed with weak consistency
+rm Heretical to use weak consistency for academics
+
+nn single_master
+ln Single Master
+co $ GFS
+
+nn chunk_server
+ln Chunk Server stores the actually chunks
+rm Are "chunks" the same thing as shards?
+co $ shard
+cr Shards and chunks may be analogous
+co $ single_master
+cr Master knows which chunks are stored on which chunk
+cr servers
+
+nn master_data
+ln Master Data
+co $ single_master
+
+nn filename
+ln Filename
+co $ master_data
+
+nn nv
+ln Non-volatile storage
+co $ filename
+
+nn handle
+ln Handle
+co $ master_data
+
+nn log_checkpoint
+ln log, checkpoint
+co $ master_data
+
+nn disk_storage
+ln Stored to Disk
+co $ log_checkpoint
+
+nn log_better
+ln Log is better than something like database or b-tree
+ln because it is more efficient
+
+nn record_append
+ln How a record is appened in GFS
+co $ GFS
+
+nn last_chunk
+ln Where is the last chunk?
+co $ record_append
+
+nn ask_master
+ln Ask the Master server
+co $ last_chunk
+
+nn no_primary
+ln No Primary?
+co $ ask_master
+
+nn find_replicate
+ln Find an up-to-date replicate
+co $ no_primary
+
+nn pick_primary
+ln Picks Primary
+co $ find_replicate
+
+nn version_bumped
+ln Version Bumped
+co $ pick_primary
+
+nn tells_primary_secondary
+ln Tells Primary and Secondary Replicates to Master
+co $ version_bumped
+
+nn lease
+ln Leased on Primary: "you are primary for 60s"
+co $ tells_primary_secondary
+
+nn client_data_ps
+ln Client sends copy of data to Primary and Secondary
+co $ record_append
+
+nn primary_offset
+ln Primary Picks Offset
+co $ client_data_ps
+
+nn replicas_write_to_off
+ln All replicas told to write the data to that offset
+co $ primary_offset
+
+nn all_replicas_ok
+ln If all replicas reply back "yes", all okay
+co $ replicas_write_to_off
+
+nn what_if_some_append
+ln What if only some append?
+co $ all_replicas_ok
+
+nn nature_of_gfs
+ln things sometimes not appending is just the nature of GFS
+co $ what_if_some_append
+co $ weak_consistency
+cr I think this is what is meant by weak consistency here?
+
+nn records_different_order
+ln Records in replicas can be in different orders
+co $ what_if_some_append
+
+nn primary_dead
+ln What if Master server thinks the Primary is dead?
+co $ ask_master
+co $ lease
+cr this is what the lease helps with
+
+nn two_primaries
+ln Two primaries in a system is known as "split brain"
+co $ primary_dead
+
+nn network_partition
+ln split brain can be caused by a network partition
+ln where parts of the network can transmit but maybe
+ln not receive
+co $ two_primaries
+
+nn split_brain_solution
+ln The solution to Split Brain (two primaries) is to
+ln use a lease on a primary. After the lease is up,
+ln commands are no longer sent to that primary.
+co $ lease
+co $ two_primaries
+
+nn master_doesnt_pick
+ln The Master should NOT designate a primary
+co $ primary_dead
+co $ two_primaries
+cr Otherwise, you end up causing "Split Brain"
+
+nn two_phase_commit
+ln Two-Phase Commit. A mechanism for strong consistency
+co $ not_strongly_consistent
+co $ extra_bits
+cr One of the things you'd add to GFS to make it
+cr strongly consistent
+
+nn not_strongly_consistent
+ln GFS is not strongly consistent
+co $ strong_consistency
+cr NOT strongly consistent
+co $ weak_consistency
+
+nn extra_bits
+ln GFS would need "extra bits" for strong consistency
+co $ not_strongly_consistent

@@ -64,3 +64,5 @@ adapt from mnolth code, create example
 @! dz $
 I mainly need to do this to extract the JSON, I just
 don't remember the schema
+
+@11:40 importing some older knowledge graphs

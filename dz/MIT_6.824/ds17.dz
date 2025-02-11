@@ -1,0 +1,289 @@
+ns distributed_systems_MIT/lec17
+gr Lecture 17: COPS, Causal Consistency
+
+nn COPS
+ln COPS
+
+nn data_multiple_centers
+ln Data in multiple centers
+co $ COPS
+
+nn close_to_users
+ln Want: data close to users
+co $ COPS
+
+nn data_duplicated_across
+ln Data duplicated across multiple data centers
+co $ data_multiple_centers
+co $ close_to_users
+
+nn spanner_similar_pattern
+ln Spanner follows this similar pattern
+co $ COPS
+
+nn writes_procede_locally
+ln Can we have a system where writes procede locally?
+co $ COPS
+
+nn local_reads_writes
+ln Local reads, local writes
+co $ COPS
+
+nn strawman_designs
+ln Strawman designs
+
+nn strawman_1
+ln Strawman 1
+co $ strawman_designs
+
+nn queue_outstanding_writes
+ln Queue of outstanding writes to send to others
+co $ strawman_1
+
+nn good_perf
+ln Good performance
+co $ strawman_1
+
+nn lots_of_parallelism
+ln Lots of parallelism
+co $ strawman_1
+
+nn reads_less_than_writes
+ln Reads are less work than writes
+co $ strawman_1
+
+nn eventual_consistency
+ln Eventual Consistency
+co strawman_1 eventual_consistency
+
+nn writes_stops_eventually_same
+ln If writes stop, everything eventually has same data
+co $ eventual_consistency
+cr description
+
+nn which_write_is_recent
+ln Which write is most recent?
+co $ eventual_consistency
+
+nn versioning
+ln Versioning
+co $ which_write_is_recent
+
+nn wall_clock
+ln Wall clock
+co $ versioning
+
+nn clocks_not_in_sync
+ln Clocks not in sync?
+co $ wall_clock
+
+nn lamport_clocks
+ln Lamport Clocks
+co $ clocks_not_in_sync
+cr solution
+
+nn same_timestamp
+ln Same timestamp?
+co $ wall_clock
+
+nn use_id_from_datacenter
+ln Use ID from datacenter
+co $ same_timestamp
+
+nn placed_bottom_bits
+ln placed in bottom bits
+co $ use_id_from_datacenter
+
+nn anomaly
+ln Anomaly
+co $ eventual_consistency
+
+nn weak_spec
+ln Weak spec, lots of freedom in implementation
+co $ eventual_consistency
+
+nn timestamps_related_realtime_cope_fast_clocks
+ln A way to assign timestamps that are related to relatime,
+ln but cope with fast clocks.
+co $ lamport_clocks
+cr description
+
+nn t_max
+ln T_max: highest version it has seen
+co $ lamport_clocks
+
+nn calculate_t
+ln T = (T_max + 1, real time)
+co $ t_max
+
+nn concurrent_writes_conflicts
+ln Concurrent writes causing conflicts
+co $ eventual_consistency
+
+nn no_good_answer
+ln "real puzzle". No good answer
+co $ concurrent_writes_conflicts
+
+nn last_writer_wins
+ln Last writer wins policy
+co $ concurrent_writes_conflicts
+
+nn more_sophisticated_conflict_resolution
+ln More sophisticated conflict resolution
+co $ concurrent_writes_conflicts
+
+nn strawman_2
+ln Strawman 2
+co $ strawman_designs
+
+nn eventual_consistency_barriers
+ln Eventual consistency plus barriers
+co $ strawman_2
+
+nn sync_operator
+ln Sync Operator
+co $ strawman_2
+
+nn waits_until_version
+ln Waits until all data centers know at least up to version
+ln number
+co $ sync_operator
+
+nn key_version
+ln Key, version number
+co $ waits_until_version
+
+nn requires_careful_thought
+ln Requires careful thought from the programmer to use
+co $ eventual_consistency_barriers
+
+nn quorum_avoid_faults
+ln Use of quorum to avoid fault tolerance problems
+co $ sync_operator
+
+nn encode_order_instead_of_waiting
+ln Instead of waiting, encode the order
+co $ sync_operator
+
+nn designated_log_server
+ln Each data center has designated log server in charge
+ln of communicating to other data centers
+co $ encode_order_instead_of_waiting
+
+nn non_scalable_solution
+ln non-scalable solution
+co $ designated_log_server
+
+nn sent_log_order
+ln Sent in log ordre
+co $ designated_log_server
+
+nn all_writes_through_log_server
+ln All writes go through log server
+co $ designated_log_server
+co $ non_scalable_solution
+
+nn eliminate_central_log
+ln How to elimante central log server?
+co $ all_writes_through_log_server
+
+nn non_GT_COPS
+ln non-GT COPS
+co $ COPS
+
+nn get_transaction
+ln GT = get transaction
+co $ non_GT_COPS
+cr abbrevation
+
+nn cascading_wait_problem
+ln Cascading wait problem
+co $ non_GT_COPS
+
+nn context_accumulates_puts_gets
+ln Context that accumulates puts/gets
+co $ non_GT_COPS
+
+nn deps_in_put
+ln Dependencies in "put"
+co $ context_accumulates_puts_gets
+
+nn passed_to_local_shard
+ln Passed to local shard server
+co $ deps_in_put
+
+nn causal_consistency
+ln Causal Consistency
+co $ COPS
+
+nn actions_induce_dependencies
+ln Clients actions induce dependencies
+co $ causal_consistency
+cr description
+
+nn client_put_dep_prev_put
+ln Client put/get, get/put, or put/put
+ln depends on previous put
+co $ actions_induce_dependencies
+
+nn get_corr_put
+ln Client get corresponds to a put
+co $ actions_induce_dependencies
+
+nn dep_relationship_transitive
+ln Dependency relationship is transitive
+co $ causal_consistency
+
+nn causal_dependency
+ln Causal Dependency
+co $ causal_consistency
+
+nn no_obligations_if_not_causal
+ln If updates not causally related, no obligations about
+ln maintaining order.
+co $ causal_consistency
+
+nn client_reads_b_sees_a
+ln If A depends on B, and client reads B, the client
+ln is guaranteed to see A
+co $ causal_dependency
+
+nn only_aware_certain_relationships
+ln Only aware of certain relationships
+co $ COPS
+
+nn larger_scheme_causality_other_channels
+ln In the larger scheme: causality is often conveyed
+ln through channels not aware of by COPS
+co $ COPS
+rm this was kind of vague in the lecture. There was
+rm an example given about a human operator calling another
+rm human to explicitely look at a node because it updated.
+
+nn situations_no_desired_order_reads_writes
+ln Situations where no one order of reads or writes will
+ln yield desired behavior.
+co $ COPS
+
+nn transactions
+ln Transactions
+co $ situations_no_desired_order_reads_writes
+cr mechanism used to help with this (I think?)
+
+nn ACL
+ln ACL (Access Control List)
+co $ situations_no_desired_order_reads_writes
+
+nn at_least_new_as_deps
+ln At least as new as dependencies
+co $ situations_no_desired_order_reads_writes
+
+nn mutually_consistent_ACL
+ln How to get mutually consistent ACL?
+co $ ACL
+
+nn COPS_GT
+ln COPS GT
+co $ mutually_consistent_ACL
+cr solution
+rm Not elaborated on in lecture (out of time)

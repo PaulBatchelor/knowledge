@@ -1,0 +1,131 @@
+zz Adding the overview here
+ns distributed_systems_MIT
+gr These notes are for the lecture videos for
+gr MIT 6.584 (Distributed Systems), by Professor
+gr Robert Morris.
+
+ns distributed_systems_MIT/lec01
+
+nn coop_comp
+ln Co-operating computers
+
+nn why
+ln Why?
+
+nn parallelism
+ln Parallelism
+co parallelism why
+
+nn fault_tolerance
+ln Fault Tolerance
+co $ why
+
+nn security
+ln Security
+co $ why
+
+nn physical
+ln Physical
+co $ why
+
+nn isolation
+ln isolation
+co $ security
+
+nn challenges
+ln Challenges
+
+nn concurrency
+ln Concurrency
+co $ challenges
+
+nn partial_failure
+ln Partial Failure
+co $ challenges
+
+nn top
+ln Big Topics / Top-Level
+
+co challenges top
+co why top
+
+nn comments
+ln remarks and comments
+
+nn lectures_papers
+ln Lectures have papers, recommend to read beforehand
+co $ comments
+
+nn implementation
+ln Implementation
+co $ top
+
+nn rpc
+ln RPC
+co $ implementation
+rm What does RPC stand for again?
+
+nn threads
+co $ implementation
+
+nn concur_ctrl
+ln concurrency control
+
+nn raft
+ln 'Raft' for fault tolerance
+rm are these examples of RAFT? SQLite, RQLite, rclone?
+co $ comments
+
+nn infra
+ln infrastructure
+co $ top
+
+nn storage
+ln Storage
+co $ infra
+nn comms
+ln Comms
+co $ infra
+nn comp
+ln computation (I think?)
+co $ infra
+
+nn perf_scalable
+ln Performance is Scalable
+co $ infra
+
+nn speedup
+ln AKA: 2x computers yields 2x speedup
+co $ perf_scalable
+
+nn availability
+ln Availability
+co $ fault_tolerance
+
+nn recoverability
+ln Recoverability
+co $ fault_tolerance
+
+nn tools
+ln Tools
+co $ fault_tolerance
+
+nn nvstorage
+ln Non-Volatile (NV) storage
+co $ tools
+
+nn replication
+ln Replication
+co $ tools
+
+nn consistency
+ln Consistency
+co $ top
+
+nn strong_vs_weak
+ln String vs Weak Consistency
+co $ consistency
+
+nn weak_less_expensive
+ln Weak Consistency is less expensive
+co $ strong_vs_weak

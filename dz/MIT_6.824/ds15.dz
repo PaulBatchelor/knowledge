@@ -1,0 +1,170 @@
+ns distributed_systems_MIT/lec15
+gr Lecture 15: Spark
+
+nn spark
+ln spark
+
+nn mapreduce_successor
+ln Successor to MapReduce
+co $ spark
+
+nn generalizes_mapreduce
+ln Generalizes map + reduce steps
+co $ mapreduce_successor
+
+nn pagerank
+ln Pagerank algorithm
+co $ spark
+
+nn estimates_page_importance
+ln Estimates importance of page
+co $ pagerank
+cr description
+
+nn difficult_in_MR
+ln difficult to implement in MapReduce
+co $ pagerank
+
+nn driver
+ln driver: computer than runs program
+co $ spark
+
+nn spark_exec
+ln How does spark execute?
+co $ spark
+co $ pagerank
+cr demo: pagerank implemented in Spark
+
+nn distinct
+ln distinct
+co $ spark_exec
+
+nn readfile
+ln Read File
+co $ spark_exec
+
+nn lineage_graph
+ln lineage graph
+co $ readfile
+
+nn doesnt_read
+ln Doesn't initialy read, only produces lineage graph
+co $ readfile
+co $ lineage_graph
+
+nn join
+ln join
+co $ spark_exec
+
+nn group_by_key
+ln group-by ke
+co $ spark_exec
+
+nn collect
+ln collect
+co $ spark_exec
+
+nn cache
+ln cache
+co $ spark_exec
+
+nn persist_data
+ln Persist Data
+co $ spark_exec
+co $ cache
+
+nn reduce_by_key
+ln reduce by key
+co $ spark_exec
+
+nn map_values
+ln map values
+co $ spark_exec
+
+nn doesnt_process_data
+ln doesn't process data
+co $ doesnt_read
+cr AKA
+
+nn exec_looks_like
+ln What does execution look like?
+co $ spark_exec
+
+nn transformations
+ln Transformations
+co $ exec_looks_like
+
+nn narrow
+ln narrow
+co $ transformations
+
+nn wide
+ln wide
+co $ transformations
+co $ narrow
+cr vs
+
+nn individual_workers
+ln Individual Workers
+co $ narrow
+
+nn expensive
+ln Expensive
+co $ wide
+
+co distinct wide
+cr distinct is wide transformation
+
+nn info_all_workers
+ln Needs to know info from all workers
+co $ distinct
+cr distinct is a wide operation
+
+nn optimization
+ln Optimization
+co $ exec_looks_like
+
+nn looks_at_lineage_graph
+ln Looks at lineage graph
+co $ lineage_graph
+co $ optimization
+
+nn fault_tolerance
+ln spark
+co $ spark
+
+nn tolerate_common_errors
+ln Tolerate common errors
+co $ fault_tolerance
+
+nn HDFS
+ln HDFS
+co $ spark
+
+nn input_assumed_ft
+ln Input assumed to be fault-tolerant via HDFS
+co $ fault_tolerance
+co $ HDFS
+
+nn not_bulletproof
+ln Doesn't have to be bullet-proof
+co $ fault_tolerance
+
+nn driveer_not_replicated
+ln Driver machine not replicated
+co $ not_bulletproof
+cr for example
+co $ fault_tolerance
+
+nn failed_worker_wide_deps
+ln Failed Worker, Wide dependencies
+co $ fault_tolerance
+
+nn recompute_days_worth
+ln Can end up recomputing a days worth of computation
+co $ failed_worker_wide_deps
+
+nn checkpoints
+ln Checkpoints for specific transformation
+co $ recompute_days_worth
+cr mitigations against

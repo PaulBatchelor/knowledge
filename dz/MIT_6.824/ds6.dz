@@ -1,0 +1,262 @@
+ns distributed_systems_MIT/lec06
+gr RAFT part 1
+
+nn raft
+ln RAFT
+
+nn problems_solved
+ln Problems Solved
+co $ raft
+cr Problems that RAFT solves
+
+nn replication_patterns
+ln Common Patterns Found in Replication Systems
+co $ problems_solved
+cr example
+
+nn GFS
+ln GFS Replication: datat relies on single master
+co $ replication_patterns
+cr example
+
+nn MR
+ln MapReduce: replicates communication, but controlled by
+ln single master
+co $ replication_patterns
+cr example
+
+nn vmware_ft
+ln VMWare FT: relies on single test and set server
+co $ replication_patterns
+cr example
+
+nn single_entity
+ln Single Entity to decide critical decisions
+co $ replication_patterns
+cr The main pattern being observed
+
+nn single_point_of_failure
+ln This is a single point of failure
+co $ single_entity
+cr single entity -> single point of failure
+
+nn prevent_split_brain
+ln prevent split brain
+co $ problems_solved
+
+nn partition
+ln Partition: sides that can't communicate
+co $ prevent_split_brain
+ff Partition (RAFT)
+fb Refers to sides that can't communicate
+co $ automated_failover
+
+nn automated_failover
+ln automated failover systmes that can partition
+co $ raft
+
+nn majority_vote
+ln RAFT centers around the principle of a majority vote
+co $ raft
+cr Core principle
+
+nn total_number
+ln Out of total number of servers, not just active servers
+co $ majority_vote
+
+nn odd_number
+ln Odd number of servers required to prevent ties
+co $ majority_vote
+cr required to prevent ties
+
+nn assemble_majority
+ln Assemble majority before doing anything
+co $ majority_vote
+
+nn quorem_systems
+ln Majority Vote is also known as being a "Quarom"(sp?) system
+co $ majority_vote
+td How to spell "Quorum"?
+
+nn overlap
+ln Any two majorities overlap for at least one server
+co $ majority_vote
+cr This is an important property of the majority vote.
+
+
+nn early_systems
+ln Early Systems that implemented something like RAFT
+co $ raft
+
+nn paxos
+ln Paxos
+co $ early_systems
+
+nn vsr
+ln View Stamp Replication (VSR)
+co $ early_systems
+
+nn library_implementation
+ln RAFT is typically implemented/used as a library
+co $ raft
+cr how it's typically used in practice
+
+nn operation_log
+ln Operation Log
+co $ raft
+
+nn raft_layer
+ln Application Architecture has a RAFT Layer
+co $ library_implementation
+
+nn time_diagram
+ln Time Diagram: used to visualize communications between
+ln leader/followers and client request
+co $ raft
+
+nn log_focused
+ln Log Focused. Why?
+co $ operation_log
+
+nn mechanism_ordering
+ln Mechanism for Ordering Operations
+co $ log_focused
+
+nn tentative_ops
+ln Place to set aside tentative operations (for the follower)
+co $ log_focused
+
+nn resend_replicas
+ln Way to resend events to replicas (leader)
+co $ log_focused
+
+nn rejoin
+ln Means to rejoin
+co $ log_focused
+
+zz nn interface_go
+zz ln Interface (in go)
+
+nn failure
+ln If there's a failure, what did the logs see?
+rm Didn't connect to anything
+
+nn logs_diverge
+ln logs sometimes diverge
+co $ raft
+cr raft ensures identical long term
+
+nn leader_election
+ln Leader Election
+co $ majority_vote
+
+nn term
+ln Term for a leader
+co $ leader_election
+
+nn possible_no_leader
+ln It's possible when designing these systems to not
+ln have a leader (leaderless), but using a leader yields
+ln better performance
+co $ leader_election
+
+nn at_most_one
+ln At most one leader per term
+co $ term
+cr at most one leader
+
+nn majority_rule
+ln Majority Rule: allows election to happen if something
+ln crashes
+co $ leader_election
+
+nn election_timer
+ln Election Timer
+co $ term
+
+nn if_expires
+ln If election timer expires, start election
+co $ election_timer
+cr start election if expires
+
+nn term++
+ln Increment term number on new election
+co $ if_expires
+
+nn request_votes
+ln Request Votes
+co $ term++
+
+nn no_one_can_append
+ln No one can append entries unless they are leader for
+ln that term.
+co $ majority_rule
+co $ term
+
+nn random_split_votes
+ln The chance of split votes are reduced by randomizing
+ln the election timer amount
+co $ election_timer
+
+nn zero_leaders
+ln What if zero leaders?
+co $ leader_election
+
+nn failure_rest
+ln Failed election. Reset.
+co $ zero_leaders
+
+nn atleast_heartbeat
+ln At least as long as heartbeat
+co $ election_timer
+
+nn max_election_timer
+ln What should the max election timer time be?
+co $ election_timer
+
+nn longer_delay
+ln Longer delay means longer recovery time (slower client requests)
+co $ max_election_timer
+
+nn longer_than_roundtrip
+ln Should be longer than the roundtrip latency of
+ln for making an election
+co $ max_election_timer
+
+nn choose_new_random
+ln Choose new random number on each reset
+co $ random_split_votes
+
+
+nn leader_partition_minority
+ln What if? Leader in partition with minorty due, to
+ln network failure?
+co $ leader_election
+
+nn client_no_response
+ln The client will never hear a response, because this leader
+ln has a minority and no append will ever happen.
+co $ leader_partition_minority
+co $ majority_rule
+cr Appends from old leader can never happen due to the majority rule
+
+nn append_entries_to_subset
+ln What happens if a leader appends to subset of entries?
+co $ network_failures
+
+nn network_failures
+ln Problems due to network failures
+co $ raft
+
+nn divergent_logs
+ln How does new leader sort out divergent logs?
+co $ append_entries_to_subset
+
+nn log_combos
+ln visualize hypothetical log combinations from different servers
+co $ divergent_logs
+
+nn could_it_happen
+ln important to ask: could it happen? Could it actually
+ln occur?
+co $ log_combos

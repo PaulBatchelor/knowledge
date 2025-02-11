@@ -1,0 +1,259 @@
+ns distributed_systems_MIT/lec12
+gr Distributed Transactions, Atomic Commit
+
+nn distributed_transactions
+ln Distributed Transactions
+
+nn atomic_commit
+ln atomic commit
+co $ distributed_transactions
+
+nn concurrency_control
+ln Concurrency Control
+co $ distributed_transactions
+
+nn transaction
+ln Transaction
+co $ distributed_transactions
+co concurrency_control transaction
+co atomic_commit transaction
+
+nn databases
+ln Databases
+co $ distributed_transactions
+
+nn correctness
+ln Correctness
+co $ databases
+
+nn ACID
+ln ACID
+co $ correctness
+
+nn atomic_or_none
+ln Atomic or none, despite failures
+co $ ACID
+
+nn isolated
+ln Isolated
+co $ ACID
+
+nn consistent
+ln Consistent
+co $ ACID
+
+nn serializable
+ln Serializable
+co $ isolated
+
+nn durable
+ln Durable
+co $ ACID
+
+nn nv_storage
+ln Non-volatile st9orage
+co $ durable
+
+nn easy_for_programmers
+ln Easy model for programmers
+co $ serializable
+
+nn serializable_def
+ln If order of execution of actions that yields same result
+rm wrote this verbatim from my notes, I think I am missing
+rm something
+co $ serializable
+cr definition
+
+nn abort
+ln Abort
+co $ serializable
+co $ transaction
+
+nn fail_in_transaction
+ln Fail or decide to fail in the middle of a transaction
+co $ abort
+
+nn pessimistic
+ln Pessimistic
+co $ correctness
+co $ concurrency_control
+
+nn optimistic
+ln Optimistic
+co $ concurrency_control
+
+nn no_locks
+ln No Locks
+co $ optimistic
+
+nn check_at_end
+ln Check for interfering transaction only at end
+co $ no_locks
+
+nn abort_retry
+ln Abort and retry
+co $ abort
+co $ check_at_end
+
+nn two_phase_locking
+ln Two-phase locking
+co $ concurrency_control
+
+nn acquire_lock_before_using
+ln Acquire lock before using record
+co $ two_phase_locking
+
+nn hold_until_done
+ln Hold until done
+co $ acquire_lock_before_using
+
+nn why_hold
+ln Why hold until transaction finished?
+co $ hold_until_done
+
+nn avoid_instruction_interleaving
+ln Avoids instruction interleaving
+co $ why_hold
+
+nn force_serial_order
+ln Can force serial order
+co $ two_phase_locking
+
+nn deadlock_easily_produceable
+ln Easy to produce deadlock
+co $ two_phase_locking
+
+nn failures
+ln Failures
+co $ distributed_transactions
+
+nn atomicity_against
+ln Atomicity Against
+co $ failures
+
+nn atomic_commit_protocol
+ln Atomic Commit Protocol
+co $ atomicity_against
+
+nn two_phase_commit
+ln Two-phase commit
+co $ atomic_commit_protocol
+
+nn transaction_coordinator
+ln Transaction coordinator
+co $ two_phase_commit
+
+nn computer_driving_commit
+ln Computer Driving THe Commit
+co $ transaction_coordinator
+cr description
+
+nn transaction_id
+ln Transaction ID
+co $ computer_driving_commit
+
+nn prepare_message
+ln prepare message
+co $ transaction_coordinator
+
+nn what_if_fails
+ln What if it fails
+co $ transaction_coordinator
+
+nn before_sending_commit
+ln Before sending commit
+co $ what_if_fails
+
+nn doesnt_matter
+ln Doesn't matter
+co $ before_sending_commit
+
+nn cant_forget_might_have_committed
+ln Can't forget anything that might have been committed
+co $ what_if_fails
+
+nn after_sending_commit
+ln After sending commit
+co $ what_if_fails
+co $ cant_forget_might_have_committed
+
+nn single_entity
+ln Single Entity
+co $ transaction_coordinator
+
+nn crash_stores
+ln "crash stores"
+rm not sure what this, I had it in quotes
+co $ transaction_coordinator
+
+nn write_information_before_commit
+ln Write information (outcome, id) before sending commit
+ln messages
+co $ after_sending_commit
+
+nn receive_dup_commits
+ln Participants prepared to receive duplicate commit messages
+co $ write_information_before_commit
+
+nn timeout_block
+ln timeout/block
+co $ transaction_coordinator
+
+nn critical_prop_2pc
+ln Critical property of 2-phase commit
+co $ timeout_block
+
+nn b_times_out
+ln B times out
+co $ timeout_block
+
+nn evil_rep
+ln "evil" reputation
+co $ two_phase_commit
+
+nn slow_lots_chitchat
+ln slow, lots of chitchat
+co $ two_phase_commit
+
+nn sharded_db
+ln Used in shareded databse
+co $ two_phase_commit
+
+nn different_from_raft
+ln Different from RAFT
+co $ two_phase_commit
+
+nn low_availability
+ln Low Availability
+co $ two_phase_commit
+
+nn servers_diff_things
+ln Servers do different things
+co $ two_phase_commit
+
+nn do_same_thing
+ln does the same thing
+co $ different_from_raft
+cr RAFT does the same thing
+co $ servers_diff_things
+cr 2pc servers do different things
+
+nn combine_2pc_raft
+ln combine two-phase-commit with RAFT
+co $ different_from_raft
+
+nn high_availabilty_through_repl
+ln High availability through repl
+co do_same_thing high_availabilty_through_repl
+cr RAFT has high availability
+
+nn participants_in_cluster
+ln Participants in Cluster
+co $ combine_2pc_raft
+
+nn ts_replicated_service
+ln TS replicated servce
+td What does TS stand for?
+rm not sure what TS stands for.
+co $ combine_2pc_raft

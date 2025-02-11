@@ -1,0 +1,96 @@
+zz Comments should work like this
+
+zz Empty lines are ignored
+
+zz Sets the node namespace, using filepath naming system
+ns distributed_systems_MIT/lec02
+
+zz nn: new node
+nn threads
+
+zz ln add text line currently selected node
+zz more than one line can be added
+ln Threads
+
+nn parallelism
+ln Parallelism
+
+nn sep_prog
+ln Separate program counter, stacks
+
+nn io_conc
+ln I/O Concurrency
+
+nn goroutines
+ln Goroutines
+
+nn event_driven
+ln Event Driven
+
+nn same_address
+ln Same Address Space
+
+nn convenience
+ln Convenience
+
+nn why_important
+ln Why Important?
+
+nn while_one
+ln While one activity is waiting, others can proceed
+
+nn single_thread
+ln Single threaded, event loop
+
+nn RACE
+ln RACE
+
+nn shared_memory_bug
+ln Shared Memory Bug
+
+nn solution_lock
+ln Solution: use a lock
+
+nn mutex
+ln Mutex
+
+nn locks_stop_threads
+ln Do locks stop all other threads?
+
+nn deadlock
+ln Deadlock
+
+nn coord
+ln Coordination
+
+nn channels
+ln Channels
+
+nn wait_group
+ln Wait Group
+
+nn sync_cond
+ln Sync Condition
+
+nn wait_for_things
+ln Wait for specific number of things to finish
+
+zz Set up connections using 'co'
+co sep_prog threads
+co goroutines threads
+co parallelism threads
+co event_driven threads
+co io_conc threads
+co parallelism why_important
+co io_conc why_important
+co convenience why_important
+co same_address sep_prog
+co single_thread event_driven
+co shared_memory_bug RACE
+co solution_lock RACE
+co mutex solution_lock
+co locks_stop_threads mutex
+co channels coord
+co wait_group coord
+co sync_cond coord
+co wait_for_things coord

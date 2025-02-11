@@ -1,0 +1,196 @@
+ns distributed_systems_MIT/lec05
+
+nn go
+ln the Go Progamming language
+
+nn concurrency
+ln Concurrency
+co $ go
+cr Concurrency primitives in go
+
+nn primitives
+ln Primitives
+co $ go
+co $ concurrency
+
+nn goroutines
+ln Goroutines
+co $ go
+co $ primitives
+co $ concurrency
+
+nn expressivity_not_performance
+ln not used for performance reasons, but expressivity
+co $ goroutines
+ff Are goroutines good for performance?
+fb While goroutines may help with performance, they are
+fb primarily used for expressivity
+
+
+nn memory_model
+ln Memory Model in Go
+rm There was a paper that discussed how the memory model
+rm works. The wisdom boiled down here is "don't be clever".
+co $ go
+
+nn closures
+ln Closures
+co $ primitives
+
+nn identifier_capture
+ln Identifier Capture
+co $ closures
+
+nn scope_correct
+ln Make sure scope is correct
+co $ identifier_capture
+
+nn periodic_function
+ln Period Function: Run something, sleep, run again, etc.
+co $ primitives
+
+nn periodic_function_variation
+ln Periodic Function Variation: Periodic Until
+ln (Some Conidition)
+co $ periodic_function
+cr variation of periodic function pattern
+
+nn mutexes
+ln Mutexes (Mutual Exclusion)
+co $ primitives
+
+nn serial
+ln Serial
+co $ run_atomically
+
+nn run_atomically
+ln Makes blocks of code run atomically
+co $ mutexes
+
+nn critical_section
+ln Critical Section: region of code inside the mutex.
+ln this is guaranteed mutual exclusion
+co $ mutexes
+ff Critial Section
+ln The region of code found inside a mutex
+
+nn protects_invariants
+ln Mutexes protect invariants
+co $ mutexes
+cr Mutexes protect against invariants
+rm Probably would be a good idea to define this better
+td Define "invariant" better
+
+nn condition_variables
+ln Condition Variables
+co $ primitives
+
+nn threads_waiting
+ln Used when threads are wiating for some condition to
+ln come true
+co $ condition_variables
+cr CV are used to coordinate when condition comes true
+ff What is a conidition variable and when should it be used?
+fb Condition variables are Go primitives used when you have
+fb threads are waiting for some condition to come true.
+
+nn cv_wait
+ln wait: called when it is waiting
+co $ condition_variables
+
+nn cv_broadcast
+ln broadcast: called when something is changed
+
+nn wakes_up
+ln Wakes up whoever is waiting.
+co $ cv_broadcast
+
+nn lost_wakeup_problem
+ln The lost wakeup problem
+rm This was mentioned in the lecture, but I forget what it
+rm means. I think it was a vague mention in the lecture.
+co $ wakes_up
+
+nn channels
+ln Channels
+co $ primitives
+
+nn synchronous
+ln Synchronous
+co $ channels
+rm Communication Mechanism
+
+nn blocking
+ln Blocking behavior
+co $ synchronous
+
+nn channels_useful_for
+co $ channels
+ln Useful for
+
+nn producer_consumer
+ln producer/consumer
+rm vaguely mentioned. not sure?
+
+nn probably_avoid
+ln channels should probably be avoided most of the time
+co $ channels
+
+nn wait_groups
+ln Can be used as an approach for wait groups
+co $ channels
+cr channels used as an approach for wait groups
+
+nn threads_to_be_done
+ln Wait Group waits for a certain number of threads to be
+ln done.
+co $ wait_groups
+
+nn raft
+ln RAFT
+
+nn common_bugs
+ln Common Bugs
+co $ raft
+cr Common bugs when implementing RAFT
+
+nn holding_lock
+ln Holding lock through RPC calls causes deadlock
+co $ common_bugs
+
+nn attempt_election_function
+ln Attempt an election
+co $ common_bugs
+
+nn elected_two_leaders
+ln Bug: elected two leaders, when there should be only one.
+co $ attempt_election_function
+
+nn double_check
+ln One Solution: double check that the term is the same,
+ln and that they are still a candidate
+co $ elected_two_leaders
+
+nn debugging
+ln Debugging RAFT implementations
+co $ raft
+
+nn where_stuck
+ln Where stuck?
+co $ debugging
+
+nn log_printf
+ln Log.printf(...)
+co $ where_stuck
+
+nn minimize_scope
+ln Minimize scope of bug
+co $ where_stuck
+
+nn dprintf
+ln dprintf() wrapper
+co $ log_printf
+
+nn race_flag
+ln Using the "-race" flag to check for race coniditions
+co $ debugging

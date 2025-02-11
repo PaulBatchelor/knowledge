@@ -1,0 +1,265 @@
+ns distributed_systems_MIT/lec20
+gr Lecture 19: Blockstack
+
+nn blockstack
+ln blockstack
+
+nn non_crypto_blockchain
+ln non-cryptocurrency use of blockchain
+co $ blockstack
+
+nn build_public_key_infrastructure
+ln How to build a naming / public key infrastructure?
+co $ blockstack
+
+nn decentralized
+ln decentralized
+co $ blockstack
+
+nn arch
+ln Architecture
+co $ decentralized
+
+nn current_websites
+ln current websites
+co $ decentralized
+cr vs
+
+nn little_control_data
+ln not much control over data websites get to see
+co $ current_websites
+
+nn snooping
+ln snooping
+co $ current_websites
+co $ little_control_data
+
+nn interface_website_browsers
+ln Main interface is between entire website and browsers
+co $ current_websites
+
+nn app_code_runs_client
+ln Application code runs on client
+co $ arch
+
+nn cloud_storage
+ln Cloud storage system to store data
+co $ arch
+
+nn storage_instead_of_html
+ln Storage interface is main interface instead of HTML
+co $ cloud_storage
+co $ interface_website_browsers
+cr vs
+
+nn needs_access_control_permissions
+ln Needs reasonably powerful access control and
+ln permissions.
+co $ storage_instead_of_html
+
+nn apps_read_allowed_data
+ln Applications read data they are allowed to read
+co $ cloud_storage
+
+nn subsidiary_permissions
+ln Subsidiary Permissions
+co $ needs_access_control_permissions
+
+nn encrypted_data_cloud
+ln Encrypted data on the cloud
+co $ cloud_storage
+
+nn what_goes_wrong
+ln What goes wrong?
+co $ blockstack
+
+nn some_data_not_user_owned
+ln Some data not owned by users
+co $ what_goes_wrong
+
+nn reddit
+ln Reddit front page
+co $ some_data_not_user_owned
+cr example
+
+nn ebay
+ln ebay bidding (would reveal bid)
+co $ some_data_not_user_owned
+cr example
+
+nn less_flexible_db
+ln Less flexible than database
+co $ what_goes_wrong
+
+nn enforce_shared_data_some_users
+ln How to enforce data to only some users?
+co $ what_goes_wrong
+
+nn complex_multiuser
+ln Complex multi-user app: cryptography becomes hard to use
+co $ enforce_shared_data_some_users
+
+nn naming
+ln naming
+co $ blockstack
+
+nn usernames
+ln Usernames, human users
+co $ naming
+cr specifically, names for humans, usernames
+
+nn map_location
+ln Map names to data location
+co $ naming
+
+nn map_public_key
+ln Map names to public key
+co $ naming
+co $ map_location
+cr related
+
+nn ACL
+ln ACL: access control list
+co $ map_public_key
+
+nn PKI
+ln PKI: public key infrastructure
+co $ naming
+
+nn unique
+ln Unique (Global Meaning)
+co $ naming_props
+
+nn naming_props
+ln Ideal Naming Properties
+co $ naming
+
+nn human_readable
+ln Human Readale
+co $ naming_props
+
+co decentralized naming_props
+
+nn bitcoin_transaction_log
+ln Uses bitcoins single ordered log of transcations
+co $ naming_props
+cr implementation of these properties
+
+nn naming_on_bitcoin
+ln Naming on bitcoin
+co $ bitcoin_transaction_log
+
+nn naming_reservation
+ln Naming Reservation
+co $ bitcoin_transaction_log
+
+nn first_come_first_serve
+ln First come, first serve
+co $ naming_reservation
+
+nn zuko_trianlge_property
+ln Zukos Triangle Property
+co $ naming_props
+cr AKA
+
+nn bigger_system_readable_less_valuable
+ln The bigger the system, the less valuable human readable
+ln property is
+co $ human_readable
+
+nn deceptive_defective
+ln Can be deceptive, defective
+co $ bigger_system_readable_less_valuable
+co $ human_readable
+
+nn possible_fixes
+ln Possible Fixes
+co $ blockstack
+
+nn remove_readable
+ln Remove Human readble property, just use keys
+co $ possible_fixes
+co $ bigger_system_readable_less_valuable
+
+nn remove_decentralized
+ln Remove decentralized aspect
+co $ decentralized
+co $ possible_fixes
+
+nn fork_detection
+ln Fork detection on name servers
+co $ blockstack
+
+nn how_to_find_names
+ln How to find names? (name lookup)
+co $ deceptive_defective
+
+nn blockstack_browser
+ln Blockstack browser
+co $ blockstack
+
+nn gaia_servers
+ln GAIA servers
+co $ blockstack
+
+nn per_app_private_key
+ln Per-app private key
+co $ blockstack_browser
+
+nn manages_master_privkey
+ln Manages masters private key
+co $ blockstack_browser
+cr description
+
+nn fees_for_name_reg
+ln Require frees for name registration as deterrant against
+ln malicious use.
+co $ blockstack
+co $ naming_reservation
+
+nn brittle
+ln Brittle (from user standpoint): no way to retrieve
+ln key if lost.
+co $ what_goes_wrong
+
+nn is_bitcoin_needed
+ln Does it need to use bitcoin?
+co $ bitcoin
+
+nn bitcoin
+ln bitcoin
+co $ blockstack
+
+co bitcoin_transaction_log bitcoin
+
+nn cert_transparency_instead
+ln Use certificate transparency instead to enforce
+ln adequate rules about naming?
+co $ is_bitcoin_needed
+
+nn probably_not
+ln Guess: probably not
+co $ cert_transparency_instead
+
+nn ownership_conflicts
+ln Doesn't resolve ownership conflicts
+co $ cert_transparency_instead
+co $ probably_not
+
+nn fees_prevent_abuse
+ln Fees important for preventing abuse
+co $ cert_transparency_instead
+co $ fees_for_name_reg
+
+nn convenient_programmers
+ln Convenient for programmers?
+co $ blockstack
+
+nn more_difficult
+ln A lot more difficult
+co $ convenient_programmers
+
+nn trust_storage_service
+ln Have to trust storage service to store data
+ln correctly
+co $ cloud_storage

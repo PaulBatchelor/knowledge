@@ -1,0 +1,251 @@
+ns distributed_systems_MIT/lec07
+gr RAFT part 2
+
+nn raft
+ln RAFT
+
+nn backup_mechanism
+ln Backup Mechanism
+co $ raft
+
+nn rollback_scheme
+ln Rollback Scheme
+co $ backup_mechanism
+cr AKA
+
+nn takes_a_while
+ln Can take a while
+co $ backup_mechanism
+cr Backups can take a while to do a full restore
+
+nn detect_point
+ln Detect a point at which followers match servers
+co $ backup_mechanism
+
+nn forget_client
+ln Why is it okay to forget about client command
+co $ backup_mechanism
+rm I believe this was a hypothetical situation in the lecture
+
+nn not_majority
+ln not in majority, never executed, no reply back to
+ln client. Client resends
+co $ forget_client
+cr answer
+
+nn prefers_candidates
+ln Prefers candidates who know about more recent terms
+co $ takes_a_while
+
+nn who_can_be_leader
+ln Who can be a leader?
+co $ raft
+
+nn why_not_longest
+ln Why not use longest log as heuristic?
+co $ who_can_be_leader
+cr why not choose leader based on longest log?
+rm At this point, there was a good example that showed
+rm situation where this wouldn't be a good idea.
+
+nn election_restriction
+ln Election Restriction: vote "yes" only if higher term in
+ln last entry, or same last term, or the log length greater
+ln than or equal to server that received vote request.
+co $ who_can_be_leader
+co prefers_candidates election_restriction
+
+nn faster_backup_scheme
+ln A faster backup scheme
+rm The paper is apparently vague here. Prof calls it
+rm a "nondescription".
+
+nn log_backup_acceleration
+ln Log Backup Acceleration
+co $ faster_backup_scheme
+
+nn xterm
+ln xterm
+co $ log_backup_acceleration
+td what does xterm mean again?
+
+nn xleng
+ln xleng
+co $ log_backup_acceleration
+td what does xleng mean again?
+
+nn xindex
+ln xindex
+co $ log_backup_acceleration
+td what does xindex mean again?
+
+nn persistance
+ln Persistance
+co $ raft
+
+nn writes_to_disk
+ln Writes to Disk
+co $ persistance
+
+nn vs_nonvolatile
+ln VS. Nonvolatile
+co $ persistance
+
+nn performance
+ln Performance
+co $ vs_nonvolatile
+
+nn restore_after_crash
+ln Restore After Crash
+co $ persistance
+
+nn simultaneous_power_failure
+ln Simulataneous Power Failure
+co $ persistance
+cr What Persistance Can Help With
+
+nn save_state
+ln Save State When Power Returns
+co $ simultaneous_power_failure
+co $ persistance
+
+nn validate_data
+ln Way to Validate Datat
+co $ save_state
+
+nn items
+ln Items that are persistant
+co $ persistance
+
+nn log
+ln Log
+co $ items
+
+nn current_term
+ln Current Term
+co $ items
+
+nn voted_for
+ln Voted For
+co $ items
+
+nn communicating_outside
+ln Don't need to persist until communicating with outside
+co $ persistance
+
+nn preserve_evidence
+ln preserves evidence of pre-existing term numbers
+co $ current_term
+
+nn application_state
+ln Only place where application state exists
+co $ log
+
+nn disk_writes_limit
+ln Disk writes are a limiting factor in performance
+co $ communicating_outside
+cr This is probably why there's a benefit to waiting to
+cr persist.
+
+nn synchronous_disk_update
+ln Synchronous Disk Update
+co $ disk_writes_limit
+
+nn ssd_flash_dram
+ln SSD, Flash, Batter-Backed DRAM
+co $ synchronous_disk_update
+cr These are ways to improve performance
+co $ optimization
+
+nn optimization
+ln Optimiation strategies for synchronous disk update
+co $ synchronous_disk_update
+
+nn batch
+ln Batch operation: do everything in one go
+co $ optimization
+
+nn thrown_away
+ln Why is it okay for some things to be thrown away?
+ln (non-volatile)
+co $ persistance
+cr what can be thrown away?
+co $ vs_nonvolatile
+
+nn reconstructed
+ln Some things can be reconstructed from logs
+co $ thrown_away
+
+nn log_compaction_snapshots
+ln Log Compaction and Snapshots
+co $ backup_mechanism
+
+nn solves_long_logs
+ln Problem Solved: long logs from servers that have been
+ln up a while
+co $ log_compaction_snapshots
+
+nn snapshots
+ln Snapshots
+co $ log_compaction_snapshots
+
+nn ask_application_state
+ln Ask Application to save state as log entry
+co $ snapshots
+cr transcend software layers (RAFT layer vs Application Layer)
+
+nn app_state_smaller
+ln usually app state is smaller than log
+co $ snapshots
+
+nn log_structure
+ln Snapshots are part of logs, works like this:
+ln index with snapshot, then logs after the snapshot
+co $ snapshots
+
+nn restart
+ln What happens during restart?
+co $ snapshots
+
+nn find_latest_snapshot
+ln Find latest snapshot index that RAFt found
+co $ restart
+
+nn follower_not_caught_up
+ln Problem: if follower isn't fully caught up with logs up
+ln to snapshot, it will never be able to catch up.
+co $ restart
+
+nn install_snapshot_rpc
+ln Install Snapshot RPC
+co $ follower_not_caught_up
+cr solution to the "follower not caught up" issue
+
+nn send_snapshot
+ln Send Snapshot to Follower
+co $ follower_not_caught_up
+
+nn correctness
+ln correctness
+co $ raft
+
+nn linearizability
+ln Linearizability
+co $ correctness
+cr Synonym
+rm Prof will admit later on that linearizability and
+rm correctness are used interchangeably here, but
+rm linearizability has a more formal definition.
+
+nn adds_significant_complexity
+ln adds significant complexity
+co $ install_snapshot_rpc
+
+nn formalization_of_behavior
+ln Formalization of Behavior
+co $ linearizability
+
+nn linearization_definition
+ln Execution history is linearizable if total order of
+ln operations matches realtime for non-concurrent requests,
+ln each read sees most recent write in order

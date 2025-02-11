@@ -1,0 +1,152 @@
+ns distributed_systems_MIT/lec19
+gr Lecture 19: Bitcoin
+
+nn bitcoin
+ln Bitcoin
+
+nn public_ledger
+ln Public Ledger
+co $ bitcoin
+
+nn use_single_trusted_entity
+ln Simple idea: use single trusted entity
+co $ public_ledger
+cr simple idea
+
+nn doesnt_work_global_scale
+ln Doesn't work at global scale
+co $ use_single_trusted_entity
+cr why it doesn't work
+
+nn peers_transaction_logs_identical
+ln Peers: transaction logs should be identical
+co $ public_ledger
+
+nn majority_vote
+ln Majority vote
+co $ peers_transaction_logs_identical
+
+nn easy_to_make_attack
+ln Easy to make attack
+co $ peers_transaction_logs_identical
+
+nn open_system_controlled_membership_difficult
+ln Hard to build open system with controlled membership
+co $ majority_vote
+
+nn agreement_ledger_despite_malice
+ln Agreement on ledger, despite malice
+co $ peers_transaction_logs_identical
+
+nn blockchain
+ln Blockchain
+co $ bitcoin
+
+nn block
+ln Block
+co $ blockchain
+
+nn hash_prev_transaction
+ln Hash of previous transaction
+co $ block
+cr item in block entry
+
+nn signature_prev_owner
+ln Signature of previous owners public key
+co $ block
+cr item in block entry
+
+nn current_owner_public_key
+ln Current Owner's Public Key 
+co $ block
+cr item in block entry
+
+nn creating
+ln Creating
+co $ blockchain
+
+nn mining
+ln Mining
+co $ creating
+
+nn proof_of_work
+ln Proof of work
+co $ mining
+
+nn leading_zeros
+ln Leading zeros in hash
+co $ mining
+
+nn nonce
+ln Nonce
+co $ leading_zeros
+
+nn dynamically_adjust_leading_zeros
+ln If block creation rate faster than one every
+ln 10 minutes, leading zeroes increases. If slower,
+ln decrease leading zeros.
+co $ leading_zeros
+
+nn two_successors_block
+ln Two successors to a single block possible
+co $ blockchain
+
+nn fork
+ln Fork
+co $ two_successors_block
+
+nn handling_forks
+ln How to handle forks
+co $ fork
+
+nn peers_immediately_work_on_successor_block
+ln Peers that see a successor block will immediately start
+ln working on it
+co $ handling_forks
+
+nn longer_fork_preference
+ln Preference for longer fork
+co $ handling_forks
+co $ peers_immediately_work_on_successor_block
+
+nn chain_grows_prop_num_peers
+ln Rate at which chain can grow is proportional to number
+ln of peers
+co $ longer_fork_preference
+
+nn rapidly_chooses_fork
+ln Rapidly chooses fork
+co $ longer_fork_preference
+
+nn change_blocks_attack
+ln Can you change blocks in an attack?
+co $ blockchain
+
+nn cryptographic_hashes_prevent
+ln Cryptographic hashes prevent this
+co $ change_blocks_attack
+
+nn manufacture_longer_chain
+ln Manufacture longer chain
+co $ longer_fork_preference
+
+nn more_CPU_peers
+ln Possible to do if you have more CPU than all the peers
+co $ manufacture_longer_chain
+
+nn non_malicious_network_more_CPU
+ln non-malicious part of network should have more CPU power
+co $ more_CPU_peers
+
+nn nonce_hardness
+ln Hardness of finding nonce
+co $ dynamically_adjust_leading_zeros
+
+nn peers_agree
+ln Peers need to agree
+co $ nonce_hardness
+
+nn use_deterministic_function
+ln Use deterministic function on blockchain to find
+ln hardness
+co $ peers_agree

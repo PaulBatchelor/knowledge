@@ -1,0 +1,251 @@
+ns distributed_systems_MIT/lec18
+gr Lecture 18: Fork consistency, certificate transparency
+
+nn certificate_transparency
+ln Certificate Transparency
+
+nn mutually_distrusting_system
+ln mutually distrusting system
+co $ open_system
+
+nn open_system
+ln Open System
+co $ certificate_transparency
+
+nn talking_to_right_computer
+ln Are you talking to the right computer
+co $ open_system
+
+nn mostly_unsolveable
+ln Mostly Unsolveable
+co $ talking_to_right_computer
+
+nn 90s_web
+ln 90s web security
+
+nn pre_1995_web_security
+ln Pre-1995 web security
+co $ 90s_web
+
+nn man_in_the_middle_attack
+ln Man-in-the-middle attack
+co $ pre_1995_web_security
+
+nn intercepts_dns_packets
+ln intercepts DNS packets
+co $ man_in_the_middle_attack
+
+nn mid_90s
+ln Mid-90s security
+co $ 90s_web
+
+nn ssl_tls_https
+ln SSL, TLS, HTTPS
+co $ certificates
+
+nn certificate_authority
+ln Certificate Authority
+co $ certificates
+
+nn certificates
+ln Certificates
+co $ mid_90s
+
+nn now_hundreds_CA
+ln Now: hundreds of CAs
+co $ certificate_authority
+
+nn bogus_certs
+ln Bogus Certificates
+co $ now_hundreds_CA
+cr problem
+
+nn unclear_how_to_fix
+ln Unclear how to fix
+co $ bogus_certs
+
+nn solutions_fixes
+ln (possible) Solutions / Fixes
+co $ bogus_certs
+
+nn db_valid_certs
+ln Database of Valid Certificates
+co $ solutions_fixes
+
+nn still_unclear_distinguish_valid
+ln Still unclear how to distinguish valid
+co $ db_valid_certs
+
+nn no_single_point_trust
+ln No single point of trust
+co $ db_valid_certs
+
+nn certs_change
+ln Certs change
+co $ db_valid_certs
+
+nn audit_system
+ln Audit System
+co $ certificate_transparency
+
+nn public_for_investigation
+ln Causes all info to be public for investigation
+co $ audit_system
+
+nn bogus_still_possible
+ln Bogus Still possible
+co $ public_for_investigation
+
+nn not_preventative
+ln Not preventative
+co $ bogus_still_possible
+
+nn log_system
+ln Log system
+co $ audit_system
+
+nn append_only
+ln Append-only
+co $ log_system
+
+nn no_forks
+ln No Forks
+co $ log_system
+
+nn untrusted
+ln Untrusted
+co $ log_system
+
+nn log_server
+ln Certificate Transparency Log Server / Service
+co $ certificate_transparency
+
+nn is_cert_in_log
+ln Is cert in log?
+co $ log_server
+
+nn user_request
+ln User Request
+co $ is_cert_in_log
+
+nn monitor
+ln Monitor
+co $ log_server
+
+nn knows_correct_certs
+ln Knows what corrects certs are
+co $ monitor
+
+nn periodically_talks_log_server
+ln Periodically talks to log server
+co $ monitor
+co $ log_server
+
+nn depends_browsers_see_what_monitor_sees
+ln Depends on browsers seeing what monitor sees
+co $ log_system
+co $ monitor
+
+nn log_contents
+ln Log Contents
+co $ depends_browsers_see_what_monitor_sees
+
+nn prevent_equivocation
+ln Prevent Equivocation
+co $ log_system
+
+nn merkle_tree
+ln Merkle Tree
+
+nn built_on_top_of_logs
+ln Built on top of logs
+co $ merkle_tree
+
+nn cryptographic_hashes
+ln Cryptographic hashes
+co $ merkle_tree
+
+nn prove_things 
+ln Forces log server to prove certain things
+co $ merkle_tree
+co $ log_server
+
+nn proof_of_inclusion
+ln Proof of Inclusion
+co $ prove_things
+
+nn returns_location_hash
+ln Log server returns location of hash, and the hash
+ln of the other element.
+co $ proof_of_inclusion
+
+nn tree_of_hashes
+ln tree of hashes
+co $ merkle_tree
+
+nn trustworthy_log_summary
+ln Trustworthy summary of logs
+co $ merkle_tree
+
+nn log_grows_tree_head_higher
+ln Log grows, tree heads higher
+co $ tree_of_hashes
+
+nn signed_tree_head
+ln Signed Tree Head (STH)
+co $ merkle_tree
+
+nn revocation_system
+ln Revocation system for certificates
+co $ monitor
+
+nn tree_head_bogus
+ln what if tree head is bogus?
+co $ proof_of_inclusion
+
+nn fork_attack
+ln Fork Attack
+co $ tree_head_bogus
+
+nn equivocation
+ln Equivocation
+co $ fork_attack
+
+nn gossip
+ln gossip
+co $ fork_attack
+
+nn compare_tree_heads
+ln Compare tree heads
+co $ gossip
+
+co gossip certificate_transparency
+
+nn drop_heads_into_pool_for_inspection
+ln Participants drop off heads into pool that is inspected
+ln for inconsistencies and divergent forks in logs
+co $ gossip
+cr description
+
+nn log_consistency_proof
+ln Log Consistency Proof
+co $ prove_things
+
+nn log_consistency_proof_description
+ln Input: 2 signed tree heads H1 and H2. Is H1's log a
+ln prefix of H2's log?
+co $ log_consistency_proof
+cr description
+
+nn stay_on_fork
+ln If the browser's been forked, it needs to stay on that fork
+co $ fork_consistency
+cr description
+
+nn fork_consistency
+ln Fork Consistency
+co $ fork_attack
+
+nn track_failed_proofs
+ln Keep track of failed proofs
+co $ stay_on_fork

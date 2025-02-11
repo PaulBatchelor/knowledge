@@ -1,0 +1,320 @@
+ns distributed_systems_MIT/lec10
+gr Cloud replicated databases, Aurora
+
+nn aurora
+ln Aurora
+
+nn amazon
+ln Amazon
+co $ aurora
+cr Created by
+
+nn aurora_description
+ln Reliable, high performance, cloud databse
+co $ aurora
+cr description
+
+nn backhistory
+ln Backhistory
+co $ aurora
+cr Backhistory before Aurora
+
+nn ec2
+ln EC2
+co $ backhistory
+
+nn good_for_webservers
+ln Good for webservers
+co $ ec2
+
+nn not_good_database
+ln Not as good for databses
+co $ good_for_webservers
+cr not as good for
+co $ ec2
+
+nn physical_storage
+ln Storage: physical, slice to guest
+co $ ec2
+
+nn data_loss_on_hardware_crash
+ln If hardware crashes, data is lost
+co $ not_good_database
+cr why ec2 wasn't good for datases
+co $ physical_storage
+
+nn s3
+ln S3
+co $ data_loss_on_hardware_crash
+cr intermediate solution
+
+nn ebs
+ln EBS: elastic block store
+co $ data_loss_on_hardware_crash
+cr fixes
+co $ ec2
+cr works with
+
+nn replicated_pair_storage_servers
+ln Replicated pair of storage servers
+co $ ebs
+cr description
+
+nn not_sharing_system
+ln Not a system for sharing
+co $ ebs
+
+nn looks_like_regular_drive
+ln Looks like a regular drive to client
+co $ ebs
+
+nn ebs_problems
+ln problems with EBS
+co $ ebs
+
+nn not_fault_tolerant
+ln Not very fault tolerant
+co $ ebs_problems
+
+nn large_volumes_network_traffic
+ln Produces large volumes of network trafic
+co $ ebs_problems
+
+nn database
+ln database
+co $ large_volumes_network_traffic
+cr I think this has to do with how databases send whole
+cr pages around the network
+
+nn availability_zone
+ln Availability zone
+
+nn db_tutorial
+ln Database Tutorial
+rm A brief overview of how databases work. Just enough to
+rm understand Aurora
+co $ aurora
+cr Fundamentals to understand Aurora architecture
+co $ database
+
+nn transaction
+ln Transaction
+co $ db_tutorial
+
+nn multi_ops_grouped_atomic
+ln Multiple operations grouped and declared atomic
+co $ transaction
+
+nn locks
+ln Locks
+co $ transaction
+co $ multi_ops_grouped_atomic
+co $ db_tutorial
+
+nn crash_recovery
+ln Crash Recovery
+co $ db_tutorial
+
+nn data_pages
+ln Data pages
+co $ db_tutorial
+
+nn transactions_all_or_none
+ln After crash: all transactions commited or none
+co $ crash_recovery
+co $ multi_ops_grouped_atomic
+
+nn write_ahead_log
+ln Write-Ahead log (WAL)
+co $ db_tutorial
+
+nn redo
+ln redo: do all transactions again using log
+co $ write_ahead_log
+
+nn RDS
+ln RDS
+
+nn RDS_def
+ln Replicated database in multiple availability zones
+co $ RDS
+
+nn db_server
+ln Database server
+co $ aurora
+
+nn custom_software
+ln Custom software
+co $ db_server
+
+nn database_setup
+ln Setup
+co $ db_server
+
+nn data_configuration
+ln Data: 6 replicants in 3 availability zones
+co $ availability_zone
+
+nn log_records
+ln Log records anything being sent to replicas
+co $ database_setup
+
+nn log_smaller_than_pages
+ln Log entries smaller than database pages
+co $ log_records
+
+nn storage_understand_db_entries
+ln Underlying storage system understands database entries
+co $ db_server
+rm An important fact. Aurora went with a specialized
+rm filesystem rather than a generalized filesystem and
+rm got significant performance gains as a result of this.
+
+nn super_ft
+ln Super fault-tolerant
+co $ data_configuration
+
+
+nn quorum
+ln Quorum
+co $ aurora
+
+nn ft_goals
+ln Fault-Tolerant Goals
+co $ quorum
+
+nn write_one_dead_az
+ln Write with one dead availability zone (AZ)
+co $ availability_zone
+co $ ft_goals
+
+nn read_2_dead_az_1_other_server
+ln Read with 2 dead availability zones plus one other server
+co $ ft_goals
+co $ availability_zone
+
+nn ride_out_transient_slowness
+ln Ride out ransient slowness in replicas
+co $ ft_goals
+
+nn fast_replication
+ln Fast replication
+co $ ft_goals
+
+nn storage_only
+ln Storage Only
+co $ ft_goals
+
+nn replication
+ln Replication
+co $ quorum
+
+nn N_rep
+ln N rep
+co $ replication
+
+nn W_writes
+ln W Writes
+co $ replication
+
+nn R_replicas
+ln R replicas
+co $ replication
+
+nn R_plus_W_equals_N_plus_one
+ln R + W = N + 1
+co $ R_replicas
+co $ N_rep
+co $ W_writes
+
+nn guaranteed_overlap
+ln Guaranteed to overlap
+co $ R_plus_W_equals_N_plus_one
+
+nn variable_defaults
+ln N=6,W=4,R=3
+rm Defaults used by the Aurora setup
+co $ R_plus_W_equals_N_plus_one
+
+nn append_only_log_writes
+ln Append-only log writes
+co $ aurora
+
+nn app_4_reps_complete
+nn Append to at least 4 replicas to be completed
+co $ append_only_log_writes
+
+nn parallel_copy
+ln Parallel Copy
+co $ fast_replication
+
+nn chunks_of_log_protection_groups
+ln Chunks of log protection groups
+co $ parallel_copy
+
+co log_records storage_server
+
+nn storage_server
+ln Storage Server
+co $ aurora
+
+nn apply_log_record_to_page
+ln Apply log record to page when ready req
+rm not sure what I meant by "req"
+rm also, added that this is "quorum logic" not here
+co $ old_page_log_records
+
+nn old_page_log_records
+ln Old page and log records
+co $ immediately_appended_log_records
+
+nn immediately_appended_log_records
+ln Immediately appened to list of log records
+co $ log_records
+
+nn db_tracks_server_log_indexes
+ln DB tracks server log indexes (how far along) for
+ln each server
+co $ storage_server
+
+nn db_read_updated_ss
+ln On read, find up-to-date storage server and read from
+ln that
+co $ db_tracks_server_log_indexes
+
+nn when_quorum_reads_used
+ln Quorum reads used during crash recovery of DB server
+co $ db_read_updated_ss
+
+nn big_db_handling
+ln Big Database Handling
+co $ aurora
+
+nn sharding
+ln sharding
+co $ big_db_handling
+
+nn protection_servers
+ln Protection Servers
+co $ sharding
+
+nn logs
+ln Logs
+co $ protection_servers
+
+nn how_to_split_up_logs
+ln How to split up logs?
+co $ protection_servers
+
+nn pg_stores_logs_relevant_to_pages
+ln Protection Group stores logs relevant to pages
+co $ how_to_split_up_logs
+co $ protection_servers
+
+nn groups_of_six_servers
+ln Groups of six servers
+co $ protection_servers
+
+nn find_pg_with_data
+ln Find protection group with data
+co $ pg_stores_logs_relevant_to_pages

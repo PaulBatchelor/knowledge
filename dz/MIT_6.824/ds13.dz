@@ -1,0 +1,289 @@
+ns distributed_systems_MIT/lec13
+gr Spanner
+
+nn spanner
+ln Spanner
+
+nn spanner_desc
+ln Provides distrubuted transactions over data that is
+ln widely separated
+co $ spanner
+
+nn synchronized_time
+ln synchronized time
+co $ spanner
+
+nn 2pc_paxos
+ln 2-phase commit over paxos replicated participants
+co $ spanner
+
+nn goals
+ln goals
+co $ spanner
+
+nn read_only_transactions
+ln Read-only transactions
+co $ goals
+
+nn strong_consistency
+ln Strong consistency
+co $ goals
+
+nn external_consistency
+ln External Consistency
+co $ goals
+
+nn challenges
+ln Challenges
+co $ spanner
+
+nn reads_local_data
+ln Reads from local data replica for speed
+co $ challenges
+
+nn stay_up_to_date
+ln How to stay up-to-date?
+co $ reads_local_data
+
+nn outdated_replica
+ln Local replica may be out of date
+co $ reads_local_data
+co $ stay_up_to_date
+
+nn transactions
+ln Transactions
+co $ strong_consistency
+
+nn readwrite
+ln Readwrite
+co $ transactions
+
+nn locking_ensures_serialization
+ln Locking ensures serialization
+co $ readwrite
+
+nn 2pc
+ln 2-phase commit
+co $ readwrite
+
+nn blocking
+ln blocking
+co $ 2pc
+
+nn paxos
+ln paxos
+co $ 2pc_paxos
+
+co 2pc 2pc_paxos
+
+nn replicate_transaction_mgr
+ln Solved by replicating transaction manager
+co $ paxos
+co $ blocking
+cr solution
+
+nn paxos_instead_of_servers
+ln Paxos replicated groups instead of individual servers
+co $ 2pc
+
+nn huge_amt_messages
+ln Huge amount of messages
+co $ readwrite
+
+nn avoiding_preferrable
+ln Slow enough that avoiding is preferrable
+co $ huge_amt_messages
+co $ read_only
+cr justification for readonly transactions
+
+nn read_only
+ln Read-only
+co $ transactions
+co $ read_only_transactions
+
+nn still_serializable
+ln Serializable (still)
+co $ read_only
+
+nn linearizability
+ln Linearizability
+co $ external_consistency
+
+nn local_read
+ln Local read
+co $ read_only
+
+nn no_locks
+ln No Locks
+co $ read_only
+
+nn latest_copy_local_replica
+ln What if you simply read the latest copy in the local
+ln replica?
+co $ read_only
+
+nn not_serializable
+ln Not serializable
+co $ latest_copy_local_replica
+
+nn snapshot_isolation
+ln Snapshot isolation
+co $ read_only
+
+nn complex_approach
+ln Complex Approach
+co $ read_only
+
+nn ext_cons_def
+ln If one transaction commits, and another transaction
+ln starts in realtime, it is required to see that first
+ln commit
+co $ external_consistency
+cr definition
+
+nn transaction_timestamp
+ln Transaction Timestamp
+co $ snapshot_isolation
+
+co synchronized_time snapshot_isolation
+co transaction_timestamp synchronized_time
+
+nn exec_ts_order
+ln executions arranged by timestamp order
+co $ transaction_timestamp
+
+nn multi_version_db
+ln Multi-version database
+co $ read_only
+
+nn read_lower_ts
+ln Only read transactions with lower timestamp
+co $ read_only
+
+nn stale_data_allowed
+ln Stale data allowed because concurrency in linearizability
+co $ read_lower_ts
+
+nn concurrent
+ln concurrent
+co $ stale_data_allowed
+
+nn blows_up_storage
+ln Blows up storage
+co $ transaction_timestamp
+
+nn forget_some_history
+ln forget some history?
+co $ blows_up_storage
+
+nn too_old
+ln What if too old? (not in visible transaction)
+co $ read_lower_ts
+
+nn safe_time
+ln Safe Time
+co $ too_old
+
+nn replicas_wait_to_respond
+ln Replicas do not respond until they know everything
+co $ safe_time
+
+nn clocks_not_synced
+ln What if clocks aren't synced?
+co $ synchronized_time
+
+nn rw_okay
+ln Readwrite transactions are okay, due to locks
+co $ clocks_not_synced
+
+nn ro_ts_too_large
+ln Readonly timestamp too large?
+co $ clocks_not_synced
+
+nn wait_for_paxos
+ln Wait for Paxos leader to catch up
+co $ ro_ts_too_large
+
+nn too_slow
+ln Too slow?
+co $ clocks_not_synced
+
+nn violation_ext_cons
+ln Violation of external consistency
+co $ too_slow
+co $ external_consistency
+
+nn government_labs
+ln "Time comes from government labs"
+co $ synchronized_time
+
+nn UTC
+ln UTC
+co $ government_labs
+
+nn GPS
+ln GPS Satellite
+co $ UTC
+
+nn GPS_rec
+ln GPS receiver
+co $ GPS
+
+nn time_master
+ln Time Master
+co $ GPS_rec
+
+nn uncertainty
+ln Uncertainty in time
+co $ synchronized_time
+
+nn sat_delay
+ln Propagation delay from satellite
+co $ uncertainty
+
+nn network_var_delay
+ln network communication variable delay
+co $ uncertainty
+
+nn true_time
+ln TrueTime
+co $ time_master
+co $ safe_time
+cr what is produced by safe time (I think?)
+
+nn time_pair
+ln Pair of earliest/latest possible times
+co $ uncertainty
+cr window of time to account for time uncertainty
+
+nn 2_rules
+ln 2 rules for transactions
+co $ transactions
+
+nn start_rule
+ln Start rule
+co $ 2_rules
+cr rule
+
+nn start_rule_desc
+ln Transaction timestamp has to be equal to latest half of
+ln truetime pair.
+co $ start_rule
+cr description
+
+nn guaranteed_not_happened
+ln Guaranteed not to have happned yet
+co $ start_rule_desc
+
+nn commit_wait
+ln Commit Wait
+co $ 2_rules
+cr rule
+
+nn rw_start
+ln R/W start
+co $ start_rule
+
+nn ro_commit
+ln R/O commit
+co $ start_rule

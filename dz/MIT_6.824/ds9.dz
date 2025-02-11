@@ -1,0 +1,263 @@
+ns distributed_systems_MIT/lec09
+gr More Replication, CRAQ
+
+nn zookeeper
+ln zookeeper
+
+nn based_on_raft
+ln based on raft
+co $ zookeeper
+
+nn reads_stale_writes_ordered
+ln Reads can be stale, writes are ordered
+co $ zookeeper
+
+nn problems_to_solve
+ln Problems to solve
+co $ zookeeper
+rm problems it solves, perhaps?
+
+nn config_info
+ln Config info
+co $ problems_to_solve
+
+nn test_and_set
+ln VMWare test and set service that is fault-tolerant
+ln and does right thing under partitions
+
+nn elect_master
+ln Elect Master
+co $ problems_to_solve
+
+nn zookeeper_primitives
+ln "zookeeper primitives"
+co $ elect_master
+cr I think this was a phrase used while talking about
+cr electing a master as a usecase
+
+nn API
+ln API
+co $ zookeeper
+
+nn filesystem_like
+ln Filesystem-like
+co $ API
+
+nn naming_system
+ln naming system
+co $ filesystem_like
+
+nn z_nodes
+ln Z-Nodes
+co $ API
+
+nn regular
+ln Regular
+co $ z_nodes
+
+nn ephemeral
+ln Ephemeral
+co $ z_nodes
+
+nn sequential
+ln Sequential
+co $ z_nodes
+
+nn flags
+ln flags
+co $ ephemeral
+co $ regular
+co $ sequential
+
+nn create
+ln create(path, data, flags)
+co $ API
+co $ flags
+cr flags argument
+
+nn delete
+ln delete
+co $ API
+
+nn version
+ln version
+co $ delete
+
+nn exists
+ln exists(path, watch)
+co $ API
+
+nn check_and_insert
+ln exists check and insert if watch is atomic
+rm "if watch is atomic?" I think I meant to say it
+rm was an atomic operation?
+co $ exists
+
+nn get_data
+ln get data
+co $ API
+
+nn set_data
+ln set data
+co $ API
+
+nn ex_count
+ln Example: count (using zookeeper)
+co $ API
+
+nn count_pseudocode
+ln While true
+ln   x,v = getdata("f")
+ln   if setdata("f", x-> 1, w)
+ln     break
+co $ ex_count
+
+nn mini_transaction
+ln Mini-transaction
+co $ count_pseudocode
+
+nn pulled_off_atomic
+ln Once pulled off, is atomic
+co $ count_pseudocode
+co $ mini_transaction
+cr Atomicity is why this is referred to as a "mini
+cr transaction"
+
+nn no_finish_guarantee
+ln Not guaranteed to finish
+co $ count_pseudocode
+
+nn okay_in_practice
+ln this is usually okay in practice and doesn't happen
+co $ no_finish_guarantee
+
+nn ex_locks
+ln Example: Locks
+co $ API
+rm Prof: "in paper, not necessarily helpful"
+
+nn herd_effect
+ln Herd effect
+co $ ex_locks
+
+nn too_many_clients
+ln Problem caused by too many clients
+co $ herd_effect
+
+nn non_scalable_lock
+ln non-scalable lock
+co $ ex_locks
+
+nn list
+ln list operation
+co $ API
+
+nn lock_without_herd
+ln Lock without herd effect
+co $ herd_effect
+co $ ex_locks
+
+nn scalable_lock
+ln Scalable lock
+rm Prof impressed that zookeeper can express it but not
+rm sure why it is helpful to have in zookeeper
+co $ lock_without_herd
+
+nn CRAQ
+ln CRAQ
+
+nn why_reading
+ln Why read about this?
+co $ CRAQ
+
+nn different_ft_properties
+ln The fault-tolerant properties are different from
+ln from RAFT
+
+nn chain_repl
+ln Chain replication
+co $ CRAQ
+
+nn old_version
+ln old version
+co $ chain_repl
+
+nn optimizes_reads
+ln Optimizes reads
+co $ CRAQ
+co $ chain_repl
+
+nn chain_of_servers
+ln Chain of servers
+co $ chain_repl
+
+nn head
+ln Head
+co $ chain_of_servers
+
+nn tail
+ln tail
+co $ chain_of_servers
+
+nn reads_from_tail
+ln Reads from tail
+co $ tail
+
+nn sends_reply_client
+ln sends reply to client
+co $ tail
+
+nn writes_start_proliferate
+ln writes start here, proliferate
+co $ head
+
+co sends_reply_client writes_start_proliferate
+
+nn failure_recovery
+ln Failure Recovery
+co $ chain_repl
+
+nn constrainted_set_of_states
+ln Set of strates after failure relatively constrained
+co $ failure_recovery
+
+nn head_fails_next
+ln If head fails, next one in chain becomes head
+co $ failure_recovery
+
+nn tail_fails_prev
+ln If tail fails, previous node takes over
+co $ failure_recovery
+
+nn intermediate_more_compliex
+ln Intermediate failed node, more complex than head/tail
+co $ failure_recovery
+co $ tail_fails_prev
+cr more complex than tail
+co $ head_fails_next
+cr more complex than head
+
+nn raft_load_higher_than_chain_head
+ln load on raft leader higher than chain replication head
+co $ chain_repl
+
+nn incomplete_repl_story
+ln Not a complete replication story
+co $ chain_repl
+
+nn config_manager
+ln Configuration manager
+co $ incomplete_repl_story
+cr config manager completes I think?
+
+nn monitors_liveness
+ln Monitors Liveness
+co $ config_manager
+
+nn if_dead_new_config
+ln If it thinks a server is dead, it sends a new config
+co $ config_manager
+
+nn built_on
+ln built on RAFT, Pasx, or zookeeper
+co $ config_manager

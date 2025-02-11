@@ -1,0 +1,333 @@
+ns distributed_systems_MIT/lec04
+
+nn fault_tolerance
+ln Fault Tolerance
+
+nn replication
+ln Replication
+co $ fault_tolerance
+cr Tool Used For Fault Tolerance
+
+nn expected_failures
+ln Expected Failures To Address
+co $ replication
+
+nn fail_stop_faults
+ln Fail Stop Faults: Stops Computing Entirely
+co $ expected_failures
+
+nn limits_to
+ln Limits To Replication (Not Covered)
+co $ replication
+
+nn software_bugs
+ln Bugs in Software
+co $ limits_to
+
+nn vmware_ft
+ln VMWare FT. This lecture studies this particular
+ln replication design.
+co $ fault_tolerance
+
+nn hardware_errors
+ln Hardware errors can be turned into fault errors
+ln sometimes. The advantage of this is that these
+ln errors can be detectable.
+co $ fail_stop_faults
+
+nn correlated_failures
+ln Correlated failures include hardware defects (such as
+ln from defective batch of servers from a single company),
+ln and natural disasters like earthquakes.
+co $ limits_to
+
+nn worth_it
+ln Is replication worth it?
+co $ replication
+
+nn depends
+ln Depends on value of a reliable service
+
+nn physical_separation
+ln Physical separtion (different countries)
+co $ correlated_failures
+
+nn state_transfer
+ln State Transfer
+co $ replication_schemes
+
+nn replication_schemes
+ln Replication Schemes
+co $ replication
+
+nn replicated_state_machine
+ln Replicated State Machine
+co $ replication_schemes
+
+nn whole_state
+ln Sends whole state of primary
+co $ state_transfer
+
+nn internal_deterministic
+ln Works on the assumption that most internal operations
+ln of a CPU are deterministic
+co $ replicated_state_machine
+
+nn just_send_external
+ln Just send external events (input events, packets, etc)
+co $ whole_state
+cr Sending external events typically means sending less
+
+nn smaller_operations
+ln RSMs tend to have smaller operations (compared to state
+ln transfer), tends to be more favorable
+co $ replicated_state_machine
+cr This is a "pro" for using RSMs over
+co $ state_transfer
+cr more favorable than state transfer
+
+nn ops_more_complex
+ln Operations in RSMs tend to be more complex
+co $ smaller_operations
+cr Potential downside of RSMs
+
+nn unicore_processor
+ln VMWare FT replication works on unicore processors
+co $ vmware_ft
+co $ internal_deterministic
+cr single-core instructions are determinstic
+
+nn multicore_nondeterministic
+ln multicore processors can't be used because the
+ln way instructions are interleaved makes them
+ln non-deterministic
+co $ unicore_processor
+cr multicore unable to be used with this replication scheme
+ff Why can't multicore processors be used in the VMWare FT
+ff Replication scheme?
+fb The way multicore processors interleave instructions
+fb makes them non-deterministic and therefore unsuitable
+fb for the VMware FT replication scheme.
+
+nn level_of_replication
+ln What level of replication should be used?
+co $ designing_rsm
+
+nn designing_rsm
+ln Designing a Replicated State Machine (RSM)
+co $ replicated_state_machine
+ff What does RSM stand for?
+fb Replicated State Machine.
+
+nn how_close_is_sync
+ln How close is synchronization? (between primary/backup)
+co $ designing_rsm
+
+nn sync_ideal
+ln Ideal Synchronization: if primary fails, switch over to
+ln backup with no anomalies.
+rm this never actually happens in practice, anomalies do occur
+co $ how_close_is_sync
+
+nn new_replica_expensive
+ln Creation of a new replica is expensive
+co $ designing_rsm
+
+nn full_state_detailed
+ln Copying full State of machine (registers, memory) is
+ln very detailed
+co $ vmware_ft
+cr This is the approach that VMWare FT uses, which makes
+cr it unique.
+co $ level_of_replication
+co $ new_replica_expensive
+
+nn application_level
+ln Most replication schemes are application-level
+co $ full_state_detailed
+cr more efficient than machine-level replication
+
+nn replication_application
+ln Replication needs to be a part of the application
+ln in order to work.
+co $ application_level
+
+nn existing_software
+ln Existing software will work as-is using machine-level
+ln replication.
+co $ replication_application
+cr Existing software runs on top of machine and can work
+cr without modification or any knowledge of replication.
+
+nn multicore_parallelism
+ln Multicore Parallelism is not covered
+co $ multicore_nondeterministic
+co $ nondeterministic_events
+
+nn nondeterministic_events
+ln Examples of non-deterministic events
+co $ just_send_external
+cr External events are the non-deterministic events
+
+nn inputs
+ln Inputs are the most common non-deterministic event
+co $ nondeterministic_events
+
+nn network_packets
+ln Inputs in this scope are just network packets
+co $ inputs
+
+nn data_interrupt
+ln When a packet arrives, the data in the packet, and the
+ln interrupt type is stored.
+co $ network_packets
+
+nn timing_interrupt
+ln The timing of the interrupt (where it is in the
+ln instruction set) must be identical.
+co $ data_interrupt
+
+nn vmm
+ln Virtual Machine Monitor
+co $ vmware_ft
+
+nn packet_sends_vm_backup
+ln Network packets, sends to the VM, then sends a version
+ln of the packet to the backup
+co $ vmm
+
+nn primary_outputs_only
+ln Both primary and backup see inputs, primary is the only
+ln one that outputs.
+co $ packet_sends_vm_backup
+
+nn logging_channel
+ln Logging Channel: stream of events.
+rm Context: sending "Log events on the log channel"
+
+nn primary_fails
+ln What if the primary fails?
+co $ vmware_ft
+
+nn backup_stops_logs
+ln Indicator that primary fails is if the backup stops
+ln getting logs from the primary.
+co $ primary_fails
+rm Apparently logs get sent quite frequently to the backup
+rm (many times a second). Some kind of "heartbeat" or timing
+rm interrupt? I forget the exact terminology
+
+nn backup_goes_live
+ln The Backup Goes "Live"
+co $ backup_stops_logs
+
+nn vm_allows_backup_to_run
+ln The VM allows the backup to run. The backup then
+ln stops discarding output.
+co $ backup_goes_live
+
+nn only_weird_instructions
+ln Only "weird" instructions get sent to the log channel
+co $ logging_channel
+
+nn log_entry_format
+ln Format of a log entry
+co $ logging_channel
+rm They don't explicitely say what the format of a log
+rm entry is in the paper.
+
+nn interrupt_type
+ln Interrupt Type
+rm I just wrote "type", but I'm assuming it's interrupt
+rm type
+co $ log_entry_format
+
+nn log_entry_data
+ln Data (from network packet)
+co $ log_entry_format
+
+nn timer_exact
+ln Assumes VM has timer in exactly the same place for
+ln both the Primary and Backup
+co $ vmware_ft
+
+nn physical_timer_to_guest
+ln Physical timer interrupts are sent to guest
+co $ timer_exact
+
+nn arriving_packets
+ln Arriving Packets
+co $ logging_channel
+
+nn NICS_DMA
+ln Some NICS use DMA (direct memory access) in their
+ln implementation.
+co $ arriving_packets
+
+nn primary_no_DMA
+ln Primary cannot directly access NIC and the DMA directly
+co $ NICS_DMA
+
+nn private_mem
+ln Events from NIC are DMA'd into private memory in VM,
+ln then they are copied over to the primary
+co $ primary_no_DMA
+
+nn bounce_buffer
+ln Bounce Buffer
+co $ private_mem
+cr "Bounce Buffer" is the term for what this does
+
+nn backup_gets_ahead
+ln What if backup gets ahead of primary execution?
+ln This can't ever happen.
+co $ timer_exact
+
+nn event_buffer_nonempty
+ln Event buffer: VM only executes instructions if non-empty
+co $ backup_gets_ahead
+cr Event buffer is used to prevent backup from getting ahead
+
+nn output
+ln Handling output events
+co $ vmware_ft
+
+nn network_packets_only
+ln In this context, the only thing being output are
+ln network packets
+co $ output
+
+nn awkward_failures
+ln What are the kinds of awkward failures that could happen?
+co $ output
+
+nn output_rules
+ln Output Rules
+co $ awkward_failures
+ln Preventative Measures against certain kinds of failures
+
+nn output_waits_for_backup
+ln Output can't produce any output until backup receives
+ln all previous events to this point in time.
+co $ output_rules
+cr This prevents issues related to backup not receiving
+cr network packets over log channel
+
+nn test_and_set
+ln Test And Set: an outside authority that deices
+ln which machine (primary/backup) can be "live"
+co $ awkward_failures
+cr Prevantative Solution
+
+nn network_split_brain
+ln Network Issues can cause split brain
+co $ awkward_failures
+cr example of failure
+co $ test_and_set
+cr "Test and Set" server used to solve this
+
+nn acts_like_lock
+ln Test/Set server acts like a lock. The primary/secondary
+ln send requests to this server to get write permission,
+ln which in turn set a flag on the Test/Set server.
+co $ test_and_set

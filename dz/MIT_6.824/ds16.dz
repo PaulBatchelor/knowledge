@@ -1,0 +1,284 @@
+ns distributed_systems_MIT/lec16
+gr Lecture 16: Facebook and Memcached
+
+nn how_to_start_web_app
+ln How to start a web app
+
+nn single_computer
+ln single computer
+co $ how_to_start_web_app
+
+nn few_users
+ln Few Users
+co $ single_computer
+
+nn php
+ln PHP
+co $ single_computer
+
+nn mysql
+ln MySQL
+co $ single_computer
+
+nn too_much_cpu
+ln Too much CPU
+co $ php
+cr too much CPU on single computer
+co $ single_computer
+cr early problem that arises: php takes up too much CPU
+
+nn second_approach
+ln Second Approach
+co $ single_computer
+cr next
+co $ how_to_start_web_app
+
+nn scale_out_frontend
+ln Scale out frontend servers running PHP
+co $ second_approach
+co $ too_much_cpu
+cr solution
+
+nn db_server_out_of_steam
+ln Database server runs out of steam
+co $ second_approach
+co $ mysql
+
+nn third_approach
+ln Third Approch
+co $ second_approach
+cr next
+co $ how_to_start_web_app
+
+nn multiple_FE_BE_servers
+ln Multiple frontend and backend servers
+co $ third_approach
+
+nn sharding
+ln Sharding
+co $ third_approach
+
+nn mysql_expensive
+ln mysql is expensive, not fast
+co $ third_approach
+co $ mysql
+
+nn run_out_of_steam_reads
+ln Runs out of steam for reads
+co $ mysql_expensive
+
+nn use_caching
+ln Use Caching
+co $ run_out_of_steam_reads
+cr solution
+
+nn fourth_approach
+ln Fourth Approach
+co $ third_approach
+cr next
+
+nn caching_layer
+ln Use a caching layer
+co $ fourth_approach
+co $ memcached
+
+nn memcached
+ln Memcached
+
+nn facebook
+ln Facebook
+
+nn 10x_faster_reads
+ln 10x faster than database reads
+co $ memcached
+
+nn lookaside_cache
+ln lookaside cache
+co $ memcached
+
+nn lookthrough_cache
+ln look-through cache
+co $ lookaside_cache
+cr verses
+
+nn neutral_about_db
+ln Neutral about database
+co $ lookaside_cache
+
+nn stay_synced_with_db
+ln How to stay synchronized with database?
+co $ memcached
+
+nn mc_fails_db_load_increases
+ln If Memcached fails, database load increases
+co $ memcached
+
+nn db_shouldnt_see_full_load
+ln Database shouldn't see full load
+co $ mc_fails_db_load_increases
+
+nn stale_data_okay
+ln Stale data (seconds) okay
+co $ consistency
+
+nn consistency
+ln Consistency
+co $ facebook
+
+nn users_should_see_their_changes
+ln If a user changes data, they should be able to see it
+co $ consistency
+
+nn east_west_datacenter
+ln East/West Datacenter
+co $ facebook
+
+co lookaside_cache facebook
+
+nn read_operation
+ln read: if v = get(k); if v is nil:
+ln v = [fetch from DB]; set(k, v)
+co $ lookaside_cache
+
+nn write_operation
+ln write: send kv to database, then delete(k)
+co $ lookaside_cache
+
+nn delete_needed
+ln Delete needed so frontends will see their own writes
+co $ write_operation
+
+nn invalidates_key
+ln Invalidates key
+co $ delete_needed
+
+nn performance_architecture
+ln Performance Architecture
+co $ facebook
+
+nn parallel_execution
+ln Parallel Execution
+co $ performance_architecture
+
+nn replicate
+ln Replicate
+co $ performance_architecture
+
+nn partition
+ln Partition
+co $ performance_architecture
+
+nn memory_efficient
+ln Memory Efficient
+co $ partition
+
+nn not_good_hot_keys
+ln Not good for hot keys
+co $ partition
+
+nn client_talks_every_part
+ln Client talks to every partition
+co $ partition
+
+nn good_hot_keys
+ln Good for hot keys
+co $ replicate
+co $ not_good_hot_keys
+cr verses
+
+nn few_tcp_connections
+ln Few TCP connections
+co $ replicate
+co $ client_talks_every_part
+cr verses
+
+nn less_total_data
+ln Less total data
+co $ replicate
+
+nn 50ms_latency
+ln 50ms Latency Across country
+co $ partition
+
+nn regions
+ln Regions
+co $ replicate
+
+nn localized_faster_reads
+ln Localized, faster reads
+co $ regions
+co $ 50ms_latency
+cr Removes latency caused by traveling across country
+
+nn db_servers
+ln Database servers
+co $ regions
+
+nn clusters
+ln Clusters
+co $ db_servers
+
+nn why_multicluster
+ln Why Multicluster?
+co $ clusters
+
+nn regional_pool
+ln Regional (memcached) Pool
+co $ regions
+co $ memcached
+
+nn helps_popular_keys
+ln Helps with popular keys
+co $ why_multicluster
+cr a reason
+
+nn parallel_serving
+ln Parallel Serving
+co $ why_multicluster
+cr a_reason
+co $ helps_popular_keys
+
+nn communication_overhead
+ln Lots of communication overhead (TCP)
+co $ data_spread
+
+nn data_spread
+ln Data spread over all memcached servers
+co $ why_multicluster
+
+nn less_popular_keys_go_here
+ln Less popular keys go here
+co $ regional_pool
+
+nn thundering_herd
+ln Thundering Herd
+co $ memcached
+
+nn lease
+ln Lease
+co $ thundering_herd
+
+nn delete_popular_key
+ln Deleting a popular key
+co $ thundering_herd
+
+nn high_load_on_same_key
+ln Causes high load on same key
+co $ delete_popular_key
+cr causes
+co $ thundering_herd
+cr how it gets its name
+co lease high_load_on_same_key
+cr solution
+
+nn gutter
+ln Gutter
+co $ memcached
+
+nn idle_except_on_failure
+ln Idle, except when memcached fails
+co $ gutter
+
+nn lots_of_copies_of_data
+ln Lots of copies of data
+co $ consistency

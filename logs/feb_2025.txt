@@ -48,3 +48,19 @@ adapt from mnolth code, create example
 
 @20:24 oops, there are two number fields not one
 #! dz $
+
+@2025-02-11 Ridgewood, maybe hub
+
+@10:25 get the size parameter into key tree #timelog:00:16:47
+#! dz dagzet/dzb/tasks/initial_dz_data
+
+@10:52 intial scaffolding for loading JSON object #timelog:00:23:24
+#! dz dagzet/dzb/tasks/initial_dz_data
+
+@10:53 bringing in cJSON
+@! dz $
+
+@10:58 working on a loader function
+@! dz $
+I mainly need to do this to extract the JSON, I just
+don't remember the schema

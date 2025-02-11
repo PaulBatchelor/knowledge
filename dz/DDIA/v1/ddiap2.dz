@@ -1,0 +1,79 @@
+zz not sure if I'll actually use this, but I had some
+zz stuff written down so maybe it'll come in handy
+zz if the "bigger picture" themes can be tied to
+zz the contained chapters. will need to make a part1
+zz though.
+ns designing_data_intensive_applications/part2
+gr Part 2: Distributed Data
+
+nn why_distribute
+ln Why distribute database across multiple machines?
+
+nn scalability
+ln scalability
+co $ why_distribute
+
+nn vertical_scaling
+ln Vertical Scaling
+co $ scalability
+
+nn fault_tolerance
+ln Fault Tolerance / High Availability
+co $ why_distribute
+
+nn latency
+ln Latency
+rm (geospatial)
+
+nn shared_mem_arch
+ln Shared Memory Architecture
+co $ vertical_scaling
+
+nn shared_disk_arch
+ln Shared Disk Architecture
+co $ vertical_scaling
+
+nn horizontal_scaling
+ln Horizontal Scaling / Scaling Out
+co $ scalability
+
+nn shared_nothing_arch
+ln Shared-Nothing Architecture
+co $ horizontal_scaling
+
+nn replication
+ln replication
+
+nn copy_data_many_nodes
+ln Copy data on several different nodes
+co $ replication
+cr description
+
+nn redundant
+ln Redundant
+co $ replication
+
+nn partitioning
+ln Partitioning
+
+nn split_into_subsets
+ln Split into smaller subsets
+co $ partitioning
+cr description
+
+nn partitions
+ln partitions
+co $ split_into_subsets
+cr what these subsets are called
+
+nn assign_different_nodes
+ln Assign to different nodes
+co $ partitions
+
+nn sharding
+ln Sharding
+co $ assign_different_nodes
+cr what this is called
+
+nn transactions
+ln transactions

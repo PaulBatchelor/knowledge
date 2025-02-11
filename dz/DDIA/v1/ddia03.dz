@@ -1,0 +1,752 @@
+ns designing_data_intensive_applications/ch03
+gr Chapter 3: Storage and Retrieval
+
+nn storage_engine
+ln Storage Engine
+
+nn log_structured
+ln log-structured
+co $ storage_engine
+
+nn page_oriented
+ln Page Oriented
+co $ storage_engine
+
+nn log
+ln Log
+co $ log_structured
+
+nn append_only
+ln append-only
+co $ log
+
+nn b_trees
+ln B-Trees
+co $ page_oriented
+
+nn index
+ln Index
+co $ storage_engine
+
+nn efficient_data_struct_lookup
+ln Efficient data structure for lookup
+co $ index
+
+nn incurs_overhead
+ln Incurs overhead, especially for writes
+co $ index
+
+nn tradeoff
+ln Tradeoff
+co efficient_data_struct_lookup tradeoff
+co incurs_overhead tradeoff
+
+nn additional_struct_data_derived
+ln Additional structure derived from data
+co $ index
+
+nn hash_index
+ln Hash Index
+co $ index
+
+nn kv_store
+ln Key-Value store
+co $ hash_index
+
+nn bitcask
+ln Bitcask
+co $ kv_store
+
+nn dictionary
+ln Dictionary
+co $ kv_store
+
+nn compaction
+ln Compaction
+co $ hash_index
+
+nn keys_mem_values_disk
+ln in-memory keys, values on disk with offsets
+co $ bitcask
+
+nn break_log_segments
+ln Break log into segments
+co $ log
+
+nn throw_away_dup_keep_recent
+ln Throw away duplicate keys, keep most recent
+co $ compaction
+
+nn tombstone
+ln Tombstone
+co $ kv_store
+
+nn deletion_record
+ln Deletion record after removing key
+co $ tombstone
+
+nn merge_segments
+ln Merge Segments
+co $ compaction
+co $ break_log_segments
+
+nn SSTables
+ln SSTables
+co $ break_log_segments
+
+nn sorted_string_table
+ln Sorted String Table
+co $ SSTables
+cr decrypting the abbreviation
+
+nn advantages
+ln Advantages
+co $ SSTables
+
+nn each_key_appears_once
+ln Each key appears only once
+co $ SSTables
+
+nn LSM_Trees
+ln LSM-Trees
+
+nn most_recent_multi_segs
+ln Most recent key used when dealing with multiple segments
+co $ each_key_appears_once
+co $ merge_segments
+
+nn merging_segments_simple
+ln Merging segments simple and efficient
+co $ advantages
+
+nn no_need_all_keys_in_memory
+ln in-memory representation of keys no longer needed
+co $ advantages
+
+nn one_key_offset_every_few_kb
+ln One key offset every few kb is sufficient density
+co $ no_need_all_keys_in_memory
+
+nn sparse_in_mem_index
+ln sparse in-memory index
+co $ one_key_offset_every_few_kb
+cr terminology
+co $ records_grouped_compressed
+
+nn records_grouped_compressed
+ln Records can be grouped and compressed
+co $ advantages
+
+nn how_to_sort
+ln How to sort?
+co $ SSTables
+
+nn sort_in_memory
+ln In memory
+co $ how_to_sort
+
+nn sort_on_disk
+ln On Disk
+co $ how_to_sort
+
+co b_trees sort_on_disk
+cr b-trees main structure for on-disk sorting
+
+co sort_in_memory sort_on_disk
+cr in-memory sorting easier than on-disk
+
+nn memtable
+ln memtable
+co $ sort_in_memory
+
+nn in_mem_tree
+ln in-memory tree
+co $ memtable
+
+
+nn redblack
+ln Red-Black tree
+co $ in_mem_tree
+
+nn AVL
+ln AVL
+co $ in_mem_tree
+
+nn memtable_write
+ln Write
+co $ memtable
+
+nn memtable_read
+ln Read
+co $ memtable
+
+co memtable SSTables
+
+nn db_crash_recent_writes_lost
+ln issue: if database crashes the most recent writes (still
+ln in memory) will be lost.
+co $ memtable
+
+nn crash_solution
+ln Solution: use append-only log for most recent writes
+co $ db_crash_recent_writes_lost
+
+nn log_structured_merge_tree
+ln Log Structured Merge Tree
+co $ LSM_Trees
+cr decrypting the abbreviation
+
+nn LSM_storage_engine
+ln LSM storage engine
+co $ LSM_Trees
+co $ storage_engine
+
+nn uses_SSTable
+ln Uses SSTable
+co $ LSM_Trees
+co $ SSTables
+
+nn LSM_Trees_perf
+ln Performance
+co $ LSM_Trees
+
+nn term_dictionary
+co $ LSM_Trees
+
+nn lucene
+ln Lucene
+co $ term_dictionary
+
+nn term_desc
+ln Key: Term, Value: List of ID's of all the documents
+ln containing term (word) (postings list)
+co $ term_dictionary
+cr description
+
+nn kept_in_SSTable
+ln Kept in SSTable-like sorted files
+co $ term_desc
+
+nn nonexist_keys_slow
+ln Nonexistant key look-up slow
+co $ LSM_Trees_perf
+
+nn bloom_filters
+ln Bloom filters
+co $ nonexist_keys_slow
+cr optimization solution
+
+nn bloom_desc
+ln Memory-efficient data structure for approximating the
+ln contents in a set
+co $ bloom_filters
+cr description
+
+nn order_timing_strategies_compaction_merge
+ln Strategies for the order and time of SSTables compaction
+ln and merge
+co $ SSTables
+cr performance
+co $ compaction
+co $ merge_segments
+
+nn size_tiered
+ln Size Tiered
+co $ order_timing_strategies_compaction_merge
+
+nn size_tiered_elab
+ln Newer/smaller merged into older/larger
+co $ size_tiered
+cr Elaboration
+
+nn leveled
+ln Leveled
+co $ order_timing_strategies_compaction_merge
+
+nn leveled_elab
+ln Key range split into smaller tables. Old data moved int
+ln levels
+co $ leveled
+cr elaboration
+
+nn cascade_SSTables
+ln Cascade of SSTables
+co $ LSM_Trees
+
+nn most_widely_used_index_struct
+ln Most widely used indexing structure
+co $ b_trees
+
+nn keep_kv_sorted_key
+ln Keeps key/value pairs sorted by key
+co $ b_trees
+co $ SSTables
+cr Similarity to SSTables
+
+nn blocks_pages
+ln Blocks/pages
+co $ b_trees
+
+nn fixed_size_page
+ln Fixed size (4kb traditionally)
+co $ blocks_pages
+
+nn identified_using_address
+ln identified using an on-disk address/location
+co $ b_trees
+
+nn refs_make_tree
+ln References make tree
+co $ identified_using_address
+
+nn btree_root
+ln Root
+co $ b_trees
+co $ blocks_pages
+
+nn leaf_page
+ln Leaf page: page containing individual keys
+co $ blocks_pages
+
+nn branching_factor
+ln Branching factor: number of references to child pages
+ln in one page
+co $ blocks_pages
+
+nn balanced
+ln balanced
+co $ b_trees
+
+nn n_keys_depth
+ln N-keys has depth O(n*log(n))
+co $ balanced
+
+nn 4_level_tree
+ln 4-level tree of 4kb pages with branching factor of
+ln 500 can store up to 256TB
+co $ b_trees
+
+nn orphan_page
+ln Orphan Page
+co $ blocks_pages
+
+nn not_child_to_parent
+ln Not a child of any parent page
+co $ orphan_page
+cr description
+
+nn orphan_caused_when
+ln Can be caused when writing page split gets interrupted.
+co $ orphan_page
+cr caused by
+
+nn write_ahead_log
+ln Write-ahead log (WAL)
+co $ b_trees
+
+nn redo_log
+ln redo log
+co $ write_ahead_log
+cr AKA (I think?)
+
+nn latches
+ln latches
+co $ b_trees
+
+nn lightweight_locks
+ln Lightweight locks for concurrent access
+co $ latches
+cr description
+
+nn fractal_trees
+ln fractal trees
+co $ b_trees
+cr variation of b-trees (I think?)
+
+nn btree_vs_lsm_tree
+ln B-Trees vs LSM-Trees
+co $ b_trees
+co $ LSM_Trees
+
+nn btree_vs
+ln B-Tree
+co $ btree_vs_lsm_tree
+
+nn lsm_tree_vs
+ln LSM Tree
+co $ btree_vs_lsm_tree
+
+nn more_mature
+ln More Mature
+co $ btree_vs
+
+nn faster_reads
+ln faster reads
+co $ btree_vs
+
+nn write_amplification
+ln Write Amplification
+co $ btree_vs_lsm_tree
+
+nn one_db_write_several_disk_writes
+ln One DB write yields mulitple disk writes over DB lifetime
+co $ write_amplification
+cr description
+
+nn higher_throughput_lower_wa
+ln Sustain higher throughput, lower write amplification
+co $ lsm_tree_vs
+co $ write_amplification
+
+nn better_compression
+ln Better compression
+co $ lsm_tree_vs
+
+nn faster_writes
+ln Faster Writes
+co $ lsm_tree_vs
+
+nn more_predictable
+ln More predictable
+co $ btree_vs_lsm_tree
+
+nn compaction_interference
+ln Compaction sometimes interferes with read/write
+ln performance
+co $ lsm_tree_vs
+
+co more_predictable compaction_interference
+cr compaction makes r/w performance less predictable
+
+nn impacts_higer_percentiles
+ln Impacts higher percentiles
+co $ more_predictable
+co $ compaction_interference
+rm see previous chapters on percentiles
+td externally link to percentiles
+
+nn queries
+ln queries
+co $ more_predictable
+cr more predictable queries
+
+nn key_exists_in_one_place
+ln Key exists in exactly one place in the index
+co $ btree_vs
+
+nn strong_transactional_semantics
+ln Strong Transactional Semantics
+co $ key_exists_in_one_place
+
+nn misconfigured_compaction
+ln Misconfigured compaction causes disks to fill up
+co $ lsm_tree_vs
+
+
+nn primary_key_index
+ln Primary key index
+td connect to relational models from previous chapter
+
+nn secondary_key_index
+ln Secondary key index
+co $ primary_key_index
+co $ b_trees
+co $ LSM_Trees
+cr also used with LSM-Trees
+
+nn key
+ln Key 
+co $ index
+
+nn value
+ln Value
+co $ index
+
+nn queries_for
+ln Queries For
+co $ key
+
+nn row
+ln Row
+co $ value
+
+nn row_ref
+ln Ref to row, stored elsewhere
+co $ row
+cr or
+
+nn heap_file
+ln Heap File
+co $ row_ref
+
+nn avoids_duplication
+ln Avoids duplication when multiple secondary indexes are
+ln present
+co $ heap_file
+co $ secondary_key_index
+
+nn indexed_row_in_index
+ln If hop from index to heap too expensive, store indexed
+ln row in index
+co $ heap_file
+
+nn clustered_index
+ln Clustered Index
+co $ indexed_row_in_index
+
+nn clustered_nonclustered_compromise
+ln Compromise between clustered and nonclustered
+co $ covering_index
+
+nn multi_column_index
+ln Multi-Column Index
+co $ indexed_row_in_index
+
+nn concat_index
+ln Concatenated Index
+co $ multi_column_index
+
+nn covering_index
+ln covering index, or index with included columns
+
+nn geospatial_data
+ln geospatial data
+co $ multi_column_index
+
+nn fts_fuzzy
+ln Full-text search and fuzzy indexes
+
+nn similar_keys
+ln similar keys
+co $ fts_fuzzy
+
+nn fuzzy_querying
+ln Fuzzy Querying
+co $ fts_fuzzy
+
+nn levenshtein_automation
+ln levenshtein automation
+co $ fts_fuzzy
+
+nn efficient_search_words_edit_distance
+ln Efficient search of words within edit distance
+co $ levenshtein_automation
+cr description
+
+nn keeping_everything_memory
+ln Keeping everything in memory
+
+nn in_memory_db
+ln In-memory databses
+co $ keeping_everything_memory
+
+nn disk_durablity
+ln Use disk as append-only log for durability
+co $ in_memory_db
+
+nn implement_models_difficult_for_disks
+ln Can provide models that are difficult to implement with
+ln disk-based indexes
+co $ in_memory_db
+
+nn redis_data_structs
+ln Redis: priority queues and sets
+co $ implement_models_difficult_for_disks
+cr examples
+
+nn avoids_encoding_overhead
+ln Performance advantage comes from avoiding overheads
+ln of encoding data in a form that can be written to disk
+co $ in_memory_db
+
+nn anti_caching
+ln Anti-caching
+co $ keeping_everything_memory
+
+nn datasets_larger_than_mem
+ln Datasets larger than memory
+co $ anti_caching
+cr situation when to use it
+
+nn evict_least_used
+ln Evict least used data from memory and write to disk
+co $ anti_caching
+
+nn NVM
+ln NVM: non-volatile memory
+co $ keeping_everything_memory
+
+nn transaction
+ln Transaction
+
+nn commercial_transaction
+ln Commercial transaction
+co $ transaction
+cr business origins
+
+nn rw_group_logical_unit
+ln Group of reads/writes that form a logical unit
+co $ transaction
+cr description
+
+nn OLTP
+ln Online Transaction Processing (OLTP)
+co $ transaction
+
+nn data_analytics
+ln Data Analytics
+co $ transaction
+
+nn business_intel
+ln Business intelligence
+co $ data_analytics
+
+nn OLAP
+ln Online analytic processing (OLAP)
+co $ business_intel
+
+nn data_warehouse
+ln Data Warehouse
+
+nn specialized_db_olap
+ln specialized database for OLAP
+co $ data_warehouse
+cr description
+co $ OLAP
+
+nn doesnt_affect_user_facing_db
+ln Doesn't affect performance of user-facing OLTP databse
+co $ data_warehouse
+
+nn extract_transform_load
+ln extract, transform, load
+co $ data_warehouse
+
+nn star_schema
+ln Star Schema
+co $ data_warehouse
+
+nn dimensional_modeling
+ln Dimensional Modeling
+co $ star_schema
+cr AKA
+
+nn fact_table
+ln Fact Table
+co $ star_schema
+
+nn snowflake_schema
+ln Snowflake schema
+co $ star_schema
+
+nn dimension_tables
+ln Dimension Tables
+co $ fact_table
+
+nn surround_like_star_rays
+ln Surround facts table like rays of a star
+co $ dimension_tables
+co $ star_schema
+cr Where "star schema" gets its name
+
+nn OLTP_ops
+ln OLTP operations
+co $ OLTP
+
+nn drill_down
+ln Drill Down
+co $ OLTP_ops
+
+nn slicing
+ln Slicing
+co $ OLTP_ops
+
+nn dicing
+ln dicing
+co $ OLTP_ops
+
+nn column_oriented_storage
+ln Column-oriented storage
+co $ data_warehouse
+co $ OLAP
+
+nn compresses_well
+ln Tends to compress well
+co $ column_oriented_storage
+
+nn access_few_columns_at_a_time
+ln Queries tend to access only 3-5 columns at a time
+co $ column_oriented_storage
+
+nn bitmap_encoding
+ln Bitmap Encoding
+co $ compresses_well
+
+nn dimensions_broken_into_subdimensions
+ln Dimensions broken down into subdimensions
+co $ snowflake_schema
+
+nn sort_order
+ln sort order
+co $ column_oriented_storage
+
+nn helpful_for_col_compr
+ln Can help with compression of columns
+co $ sort_order
+
+nn writing
+ln writing
+co $ column_oriented_storage
+
+nn sorted_different_ways
+ln sorted in different ways
+co $ column_oriented_storage
+
+nn optimized_diff_queries
+ln Optimized for different queries
+co $ sorted_different_ways
+
+nn more_difficult
+ln more difficult
+co $ writing
+
+nn lstm_trees
+ln LSTM Trees
+co $ more_difficult
+cr solution
+
+nn materialized_aggregates
+ln Materialized Aggregates
+co $ data_warehouse
+
+nn materialized_view
+ln Materialized View
+co $ materialized_aggregates
+
+nn cache_common_queries
+ln Cache common aggregate queries (count, sum, avg, etc)
+co $ materialized_aggregates
+
+nn datacube
+ln datacube/OLAP cube
+co $ materialized_view
+
+nn some_olap_traits
+ln low volume, demanding queries, business analyists
+co $ OLAP
+
+nn some_oltp_traits
+ln high volume, user-facing
+co $ OLTP
+co $ some_olap_traits
+cr contrasting
+
+nn storage_engine_schools_of_thought
+ln storage engine schools of thought
+co $ OLTP
+
+co log_structured storage_engine_schools_of_thought
+
+nn update_in_place
+ln Update in-place
+co $ storage_engine_schools_of_thought

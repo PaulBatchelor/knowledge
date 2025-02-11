@@ -1,0 +1,309 @@
+ns designing_data_intensive_applications/ch06
+gr Chapter 6: Partitioning
+
+nn partitions
+ln Partitions
+
+nn break_data_up
+ln Break data up
+co $ partitions
+
+nn sharding
+ln Sharding
+co $ partitions
+cr AKA
+
+nn large_datasets_high_throughput
+ln For large datasets or very high throughput
+co $ partitions
+cr when to use
+
+nn main_reason_scalability
+ln Main reason: scalability
+co $ partitions
+
+nn combined_with_replication
+ln Usually combined with replication
+co $ partitions
+
+nn leader_follower_part
+ln Leader-follower: partition leader assignment to one
+ln node, followers to other
+co $ combined_with_replication
+cr example
+
+nn spread_data_load_evenly
+ln Goal: spread data and query load evenly across nodes
+co $ partitions
+
+nn key_range_dist
+ln Key-range distribution
+co $ spread_data_load_evenly
+
+nn part_bounds_adapt_data
+ln Partitions boundaries need to adapt to data
+co $ key_range_dist
+
+nn keys_sorted_on_each_node
+ln Keep keys sorted on each node
+co $ key_range_dist
+
+nn skewed_partitioning
+ln Skewed Partitioning
+co $ spread_data_load_evenly
+
+nn nodes_more_data_others
+ln Some nodes have more data than others
+co $ skewed_partitioning
+
+nn hotspot_node
+ln Hotspot node with high load
+co $ skewed_partitioning
+
+nn partition_hash_keys
+ln Parition by hash of keys
+co $ spread_data_load_evenly
+
+nn access_patterns_hotspots
+ln Certain access patterns can lead to hotspots
+co $ key_range_dist
+
+nn node_more_than_one_part
+ln NOdes can store more than one partition
+co $ leader_follower_part
+
+nn good_hash_func
+ln A good hash function takes skewed data and makes it
+ln uniformly distributed
+co $ partition_hash_keys
+
+nn MD5
+ln MD5 (cassandra, mongodb)
+co $ good_hash_func
+cr example
+
+nn fowler_noll_vo
+ln Fowler-Noll-Vo (Voldemort)
+co $ good_hash_func
+cr example
+
+nn assign_part_hash_range
+ln Assign each partition a range of hashes
+co $ partition_hash_keys
+
+nn consistent_hashing
+ln Consistent hashing: ranges chosen pseudorandomly
+rm rarely used
+co $ assign_part_hash_range
+
+nn range_queries_inefficient
+ln Range Queries Inefficient
+co $ partition_hash_keys
+co $ key_range_dist
+
+nn hash_partitioning
+ln Hash Partitioning
+co $ consistent_hashing
+cr AKA
+
+nn compound_primary_key
+ln Compound Primary Key: compromise between key-range
+ln hash-range distribution (Cassandra)
+co $ key_range_dist
+co $ partition_hash_keys
+
+nn several_columns
+ln Several Columns: only first column hashed and used to
+ln determine parition. The rest are
+ln concatenated index for sorting data in SSTables
+co $ compound_primary_key
+
+nn good_for_many_to_one
+ln Good for many-to-one relationships
+co $ several_columns
+
+nn secondary_indexes
+ln Secondary Indexes
+co $ partitions
+
+nn document_partitioning_index
+ln Document Partitioning Index
+co $ secondary_indexes
+
+nn local_index
+ln Local Index
+co $ document_partitioning_index
+cr AKA
+
+nn global_index
+ln Global Index
+co $ local_index
+cr vs
+
+nn doesnt_map_neatly_part
+ln Doesn't map neatly to partitions
+co $ secondary_indexes
+
+nn scatter_gather
+ln Scatter / Gather
+co $ local_index
+
+nn document_partitioned_index
+ln Document partitioned index
+co $ document_partitioning_index
+cr AKA
+
+nn query_all_combine
+ln Query all partitions, combine results
+co $ scatter_gather
+cr description
+
+nn prone_to_tail_latency
+ln Prone to tail latency amplification
+co $ scatter_gather
+
+nn term_partitioned
+ln term-partitioned
+co $ global_index
+
+nn partitions_global_index
+ln Partitions global index
+co $ term_partitioned
+
+nn up_to_date_dist_trans
+ln Up-to-date index requires distributed transactions
+co $ term_partitioned
+
+nn faster_reads_slow_complicated_writes
+ln Reads faster, writers slower and more complicated
+co $ global_index
+
+nn rebalancing
+ln Rebalancing
+co $ partitions
+
+nn move_load_from_node
+ln Move load from one node in cluster to another
+co $ rebalancing
+cr description
+
+nn dont_do_hash_mod_n
+ln Don't do hash mod N
+co $ rebalancing
+
+nn fixed_num_parts
+ln Fixed number of partitions
+co $ rebalancing
+
+nn more_parts_than_nodes
+ln More partitions than nodes, move/steal partitions
+ln when new noded added
+co $ fixed_num_parts
+
+nn account_mismatched_hardware
+ln Can even account for mismatched hardware
+co $ fixed_num_parts
+
+nn partition_number
+ln Partition Number: too large and rebalancing is expensive,
+ln too small and there's too much overhead.
+co $ fixed_num_parts
+
+nn not_good_key_range
+ln Not good for key-range partitioning
+co $ fixed_num_parts
+co $ key_range_dist
+
+nn dynamic_partitioning
+ln Dynamic Partitioning
+co $ rebalancing
+co $ fixed_num_parts
+cr vs
+co $ not_good_key_range
+cr solution
+
+nn split_part_exceeds_size
+ln Split partition that exceeds certain size
+co $ dynamic_partitioning
+
+nn merge_part_below_thresh
+ln Merge partition when it sinks below certain threshold
+co $ dynamic_partitioning
+co $ split_part_exceeds_size
+cr related
+
+nn partition_number_adaptive
+ln Number of partitions adapts to the total data volume
+co $ dynamic_partitioning
+
+nn suitable_key_range_hash_part
+ln Suitable for key-range and hash-partioned data
+co $ dynamic_partitioning
+
+nn empty_db_single_part
+ln An initialized empty database starts with a single
+ln partition. All writes initially processed by single
+ln node while other nodes are idle.
+co $ dynamic_partitioning
+cr caveat
+
+nn partitioning_proportional_nodes
+ln Partitioning proportional to nodes
+co $ rebalancing
+
+nn fixed_part_num_per_node
+ln Fixed number of partitions per node
+co $ partitioning_proportional_nodes
+
+nn part_growth_prop_data
+ln Partition size grows proportional to data size
+co $ rebalancing
+
+nn part_shrinks_when_new_node
+ln Partition size shrink when new node is added
+co $ part_growth_prop_data
+
+nn MPP
+ln Massively parallel processing (MPP)
+
+nn parallel_query_exec
+ln Parallel query execution
+co $ MPP
+
+nn key_range
+ln Key Range
+co $ partitions
+
+nn split_if_part_too_long
+ln Split into two subranges if partition gets too long
+co $ key_range
+cr description
+
+nn document_partitioned_indexes
+ln document partitioned indexes
+co $ partitions
+
+nn global
+ln global
+co $ document_partitioned_indexes
+
+nn term_partitioned_indexes
+ln Term partitioned indexes
+co $ partitions
+co $ document_partitioned_indexes
+cr related
+
+nn local
+ln Local
+co $ term_partitioned_indexes
+
+nn partitioned_separately
+ln Partitioned separately
+co $ term_partitioned_indexes
+co $ secondary_indexes_stored_same_part
+cr vs
+
+nn secondary_indexes_stored_same_part
+ln Secondary indexes stored on same partition as primary
+ln key/value
+co $ document_partitioned_indexes

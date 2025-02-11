@@ -1,0 +1,586 @@
+ns designing_data_intensive_applications/ch02
+gr Chapter 2: Data Models and Query Languages
+
+nn data_models
+ln Data Models
+
+nn represented_next_lower
+ln How is it represented in terms of next-lower layer?
+co $ layer_one_atop_another
+co $ data_models
+
+nn layer_one_atop_another
+ln Layering one atop another
+co $ data_models
+
+nn how_it_will_be_used
+ln Embodies assumptions on how it will be used
+co $ data_models
+
+nn general_purpose
+ln General Purpose
+co $ data_models
+
+nn relations
+ln Relations
+co $ relational_model
+
+nn relational_model
+ln Relational Model
+co $ general_purpose
+
+nn document_model
+ln Document Model
+co $ general_purpose
+
+nn graph_model
+ln Graph-based model
+co $ general_purpose
+
+nn sql_table
+ln SQL table
+co $ relations
+
+nn tuples
+ln tuples
+co $ relations
+
+nn sql_rows
+ln SQL rows
+co $ tuples
+cr AKA
+
+nn nosql
+ln NoSQL
+co $ relational_model
+cr not actually relational
+
+nn polyglot_persistance
+ln Polyglot, persistance (both)
+co $ nosql
+rm What did I mean by this?
+td look into what "polyglot persistance" means
+co $ relational_model
+
+nn business_data_processing
+ln Business data processing
+co $ relational_model
+
+nn transaction_processing
+ln Transaction Processing
+co $ business_data_processing
+
+nn batch_processing
+ln Batch Processing
+co $ business_data_processing
+
+nn object
+ln Object
+co $ nosql
+
+nn or_mismatch
+ln object-relational mismatch
+rm How we want to represent things in code (objects) does
+rm not match how it is represented in the database (SQL)
+co $ object
+co $ relational_model
+
+nn or_mapping_frameworks
+ln Object-relational mapping frameworks
+co $ object
+co $ or_mismatch
+cr Tries to smooth the gap.
+
+nn json
+ln JSON
+co $ object
+co $ impedance_mismatch
+
+nn impedance_mismatch
+ln Impedance mismatch
+co $ or_mismatch
+
+nn reduce_IM_storage_application
+ln Reduce impedance mismatch between storage and
+ln application
+co $ json
+co $ impedance_mismatch
+
+nn better_locality
+ln Better locality, compared to multi-table schema
+co $ json
+
+
+nn lack_of_schema
+ln Lack of schema
+co $ json
+rm sometimes an advantage
+
+nn one_to_many_tree_structure
+ln One-to-many relationships explicitly tree structure
+co $ json
+
+nn one_to_many
+ln One to many
+co $ one_to_many_tree_structure
+
+nn many_to
+ln Many to...
+
+nn many_to_one
+ln One
+co $ many_to
+co $ doesnt_fit_in_doc_model
+
+nn many_to_many
+ln Many
+co $ many_to
+
+nn doesnt_fit_in_doc_model
+ln Doesn't fit nicely in document model
+co $ document_model
+
+nn joins_are_weak
+ln Joins are weak
+co $ document_model
+co $ doesnt_fit_in_doc_model
+
+nn IMS
+ln Information Management System (IMS)
+co $ many_to_many
+cr Difficult
+
+nn hierarchical_model
+ln Hierarchical Model
+co $ IMS
+
+nn normalization
+ln Normalization
+co $ many_to_one
+co $ doesnt_fit_in_doc_model
+
+nn removing_duplication_db
+ln Removing Duplication in database
+co $ id
+co $ normalization
+
+nn id
+ln Row ID
+co $ row_id_vs_text_strings
+
+nn row_id_vs_text_strings
+ln Row ID vs Text Strings
+co $ relational_model
+
+nn text_strings
+ln Text Strings
+co $ row_id_vs_text_strings
+
+nn human_readable
+ln Human Redable
+co $ text_strings
+
+nn network_model
+ln Network Model
+co $ many_to_many
+co $ hierarchical_model
+cr Generalization
+
+nn record_multiple_parents
+ln Records could have multiple parents
+co $ network_model
+co $ many_to_many
+
+nn access_path
+ln Access path
+co $ network_model
+
+nn pointers_rootrecs_links
+ln Pointers, root records, chain of links
+co $ access_path
+
+nn app_tracks_multi_paths
+ln App had to keep track of multiple paths
+co $ pointers_rootrecs_links
+co $ record_multiple_parents
+
+nn query_optimizer
+ln Query Optimizer
+co $ relational_model
+
+nn querying_updating_complicated
+ln Querying and updating complicated and inflexible
+co $ app_tracks_multi_paths
+
+nn data_laid_out_in_open
+ln Data laid out in the open
+co $ relational_model
+co $ querying_updating_complicated
+cr Contrast
+
+nn no_complicated_paths
+ln No complicated paths
+co $ data_laid_out_in_open
+
+nn complicated_but_only_built_once
+ln Complicated, but only needed to be built once, and many
+ln applications benefit from it.
+co $ query_optimizer
+
+nn comp_to_document_db
+ln Comparison to Document Database
+co $ relational_model
+
+nn similar_to_hierarchical
+ln Similar to hierarchical
+co $ comp_to_document_db
+
+nn similar_mto1_mtom
+ln Similar way of representing many-to-one and many-to-many
+co $ comp_to_document_db
+co $ many_to_one
+co $ many_to_many
+
+nn related_item
+ln Related Item
+co $ similar_mto1_mtom
+
+nn unique_id
+ln Unique ID
+co $ related_item
+co $ relational_model
+
+nn foreign_key
+ln Foreign Key
+co $ unique_id
+co $ relational_model
+
+nn document_reference
+ln Document Reference
+co $ related_item
+co $ document_model
+
+nn relational_vs_doc_today
+ln Relational vs Document Model Today
+co $ relational_model
+co $ document_model
+
+nn doc_pros
+ln Document Model Pros
+co $ relational_vs_doc_today
+
+nn schema_flex
+ln Schema Flexibility
+co $ doc_pros
+
+nn better_performance_locality
+ln Better performance (locality)
+co $ doc_pros
+
+nn rel_pros
+ln Relational Model Pros
+co $ relational_vs_doc_today
+
+nn better_joins
+ln Better support for joins
+co $ rel_pros
+
+nn better_mm_m1
+ln Better many-to-many and many-to-one relationships
+co $ rel_pros
+
+nn shredding
+ln Shredding
+co $ relational_model
+
+nn split_document_into_tables
+ln Splitting a document into multiple tables
+co $ shredding
+cr definition
+
+nn shredding_cumbersome
+ln Shredding is cumbersome, complicates application code
+co $ shredding
+cr shredding is cumbersome
+
+nn schemaless
+ln Schemaless
+co $ schema_flex
+
+nn schema_on_read
+ln Schema On Read
+co $ schemaless
+
+nn schema_on_write
+ln Schema On Write
+co $ schema_on_read
+cr contrasts
+co $ relational_model
+
+nn implicit_structure_interp
+ln Implicit structure interpretted only when read
+co $ schema_on_read
+cr definition
+
+nn different_structures
+ln Adventageous if items in collection don't have similar
+ln structures
+co $ schema_on_read
+
+nn storage_locality
+ln Storage Locality
+co $ document_model
+
+nn only_for_large_doc_access
+ln Only applies if you need a large part of a document at
+ln one time
+co $ storage_locality
+
+nn keep_docs_small
+ln Recommend to keep documents small
+co $ storage_locality
+
+nn writes_inplace_full
+ln in-place updates do not require rewrite (assuming the
+ln entry is the same size). A full update requires an entire
+ln rewrite
+co $ keep_docs_small
+cr reason for keeping documents small
+
+nn locality_relational
+ln Storage Locality in Relationonal Models
+co $ storage_locality
+co $ relational_model
+
+nn spanner
+ln Google spanner: interleaved
+co $ locality_relational
+
+nn oracle
+ln Oracle: multi-table index cluster tables
+co $ locality_relational
+co $ spanner
+cr Similar
+
+nn big_table
+ln Big Table: column family
+co $ locality_relational
+
+nn hybrid_rel_Doc
+ln Hybrid of relational and documenta
+rm not sure what this means
+co $ relational_model
+co $ document_model
+
+nn query_languages_data
+ln Query Languages for Data
+
+nn declarative
+ln Declarative (SQL)
+co $ query_languages_data
+co $ relational_model
+
+nn imperative
+ln Imperative (CODASYL)
+co $ query_languages_data
+
+nn relational_algebra
+ln Relational Algebra
+co $ declarative
+
+nn mapreduce_querying
+ln MapReduce Querying
+co $ query_languages_data
+
+nn allows_bts_optimizing
+ln Allows for behind-the-scenes optimizing
+co $ declarative
+
+nn parallelization
+ln Parallelization
+co $ declarative
+co $ allows_bts_optimizing
+
+nn mapreduce_desc
+ln programming model for processing large amounts of
+ln data in bulk across many computers
+co $ mapreduce
+cr description
+
+nn mapreduce
+ln MapReduce
+co $ mapreduce_querying
+
+nn map
+ln Map
+co $ mapreduce
+
+nn reduce
+ln Reduce
+co $ mapreduce
+
+nn pure_functions
+ln Pure Functions
+co $ map
+co $ reduce
+
+nn mongodb
+ln MongoDB
+co $ mapreduce_querying
+
+nn couchdb
+ln CouchDB
+co $ mapreduce_querying
+
+nn aggregation_pipeline
+ln Aggregation Pipeline
+co $ mongodb
+
+nn sql_expressiveness_with_json
+ln SQL-like expressiveness with JSON-based syntax
+co $ aggregation_pipeline
+cr description
+
+nn objects
+ln Objects
+co $ graph_model
+
+nn complex_many_to_many
+ln Handles complex many-to-many relationships
+co $ graph_model
+
+nn vertices
+ln Vertices/nodes/entities
+co $ objects
+
+nn edges
+ln Edges/relationships/arcs
+co $ objects
+
+nn property_graph_model
+ln Property Graph Model
+co $ graph_model
+
+nn triple_store_model
+ln triple store modle
+co $ graph_model
+
+nn pg_vertex
+ln Property Graph Vertex
+co $ property_graph_model
+
+nn subject_predicate_object
+ln Subject, Predicate, Object
+co $ triple_store_model
+
+nn sets_of_edges
+ln Sets of edges
+co $ pg_vertex
+
+co unique_id pg_vertex
+
+nn outgoing
+ln outgoing
+co $ sets_of_edges
+
+nn incoming
+ln incoming
+co $ sets_of_edges
+
+nn collection_of_properties
+ln Collection of properties (KV pairs)
+co $ pg_vertex
+
+nn pg_edge
+ln Property Graph Edge
+co $ property_graph_model
+co unique_id pg_edge
+
+nn vert_label
+ln Vertice Label
+co $ pg_edge
+
+nn vertex
+ln Vertex
+co $ pg_edge
+
+nn head
+ln Head
+co $ vertex
+
+nn tail
+ln Tail
+co $ vertex
+
+nn traverse
+ln Traverse
+co $ graph_model
+
+nn cypher_query_language
+ln Cypher Query Language
+co $ property_graph_model
+
+nn graph_queries_sql
+ln Graph Queries in SQL
+co $ graph_model
+
+nn recursive_common_table_expressions
+ln Recursive Common Table Expressions
+co $ graph_queries_sql
+
+nn variable_length_traversal
+ln Variable Length Traversal paths in query
+co $ recursive_common_table_expressions
+
+nn turtle_triples_notation
+ln Turtle Triples notation
+co $ triple_store_model
+
+nn semantic_web
+ln Semantic web
+co $ triple_store_model
+
+nn RDF_data_model
+ln RDF Data Model
+co $ turtle_triples_notation
+cr turtle is a human readable notation for RDF
+
+
+nn resource_description_framework
+ln Resource Description Framework
+co $ RDF_data_model
+
+nn XML
+ln XML
+co $ RDF_data_model
+
+nn SPO
+ln SPO
+co $ RDF_data_model
+
+nn SPO_URIs
+ln SPO URIs
+co $ SPO
+co $ RDF_data_model
+
+nn SPARQL
+ln SPARQL
+co $ RDF_data_model
+
+nn datalog
+ln Datalog
+co $ graph_model
+rm older than SPARQL, Cypher
+
+nn cypher
+ln cypher
+co $ datalog
+
+nn qlist_datomic
+ln QList, Datomic
+co $ datalog
+
+nn sim_to_tsm
+ln similar to TSM
+rm what is "TSM" here?
+co $ datalog

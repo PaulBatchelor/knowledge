@@ -1,0 +1,462 @@
+ns designing_data_intensive_applications
+gr Notes taken while reading "Designing Data Intensive Applications"
+gr by Martin Kleppman
+
+ns designing_data_intensive_applications/ch01
+gr Chapter 1: reliable, scalable, and maintainable applications
+
+nn reliability
+ln Reliability
+
+nn continue_work_correctly
+ln Continuing to work correclty, even when things go wrong
+co $ reliability
+cr definition
+co $ faults
+
+nn faults
+ln faults
+co $ reliability
+
+nn things_go_wrong
+ln things that go wrong
+co $ faults
+cr definition
+
+nn anticipate_cope
+ln anticipate/cope
+co $ faults
+
+nn fault_tolerant
+ln Fault Tolerant
+co $ anticipate_cope
+
+nn resilient
+ln Resilient
+co $ anticipate_cope
+
+nn not_equal_to_failure
+ln Not equivalent to failure
+co $ faults
+cr Faults are not equivalent to failure
+
+nn deviation_spec
+ln Deviation from Spec
+co $ faults
+
+nn systems_stop_providing_service
+ln Systems as a whole stop providing service to user
+co $ not_equal_to_failure
+cr this is what a failure is
+
+nn hardware
+ln Hardware
+co $ faults
+
+nn hardware_failure_examples
+ln Examples of harware failure: disk crash, faulty RAM,
+ln power outage
+co $ hardware
+cr examples
+
+nn mean_time_to_failure_disks
+ln Mean Time To Failure (MTTF) for disks: 10-60yrs
+co $ MTTF
+co $ hardware
+
+nn MTTF
+ln Mean Time To Failure (MTTF)
+co $ hardware
+
+nn tolerate_loss_entire_machine
+ln Tolerate loss of entire machine
+co $ hardware
+
+nn rolling_updates
+ln Rolling updates: patch made one ndoe at a time
+co $ tolerate_loss_entire_machine
+
+nn software
+ln Software
+co $ faults
+
+nn bugs
+ln Bugs
+co $ software
+cr Kind of software fault
+
+nn runaway_process
+ln Runaway Process
+co $ software
+cr Kind of software fault
+
+nn corrupted_service
+ln Slow/Unresponsive corrupted service
+co $ software
+cr Kind of software fault
+
+nn human
+ln Human
+co $ faults
+
+nn decouple_mistakes
+ln Decouple mistakes from failures
+co $ human
+
+nn minimize_opportunities
+ln Minimize Opportunities
+co $ human
+
+nn quick_easy_recovery
+ln Quick, Easy, Recovoery
+co $ human
+
+nn detailed_clear_monitoring
+ln Detailed and Clear Monitoring
+co $ human
+
+nn telemetry
+ln Telemetry
+co $ detailed_clear_monitoring
+
+nn sandbox
+ln sandbox
+co $ decouple_mistakes
+
+nn good_management
+ln Good Management Practices
+co $ human
+
+nn scalability
+ln Scalability
+
+nn cope_increased_load
+ln System's ability to cope with increased load
+co $ scalability
+
+nn describing_load
+ln Describing Load
+co $ scalability
+
+nn ex_twitter
+ln Example: Twitter
+co $ describing_load
+
+nn load_params
+ln Load Parameters
+co $ describing_load
+
+nn post_tweet
+ln Post a Tweet
+co $ ex_twitter
+
+nn approach_SQL
+ln Approach A: SQL Join
+co $ post_tweet
+
+nn approach_cache
+ln Approach B: cache each users home timeline
+co $ post_tweet
+
+nn could_keep_up
+ln Initial approach, couldn't keep up with load of home
+ln timelines
+co $ approach_SQL
+co $ approach_cache
+cr solution
+
+nn faster_reads
+ln Faster Reads
+co $ approach_cache
+
+nn post_tweet_more_work
+ln Posting a tweet takes more work
+co $ approach_cache
+co $ approach_SQL
+cr Compared to
+
+nn follows_per_user
+ln Follower Per User: key load parameter for scalability
+co $ load_params
+
+nn fan_out
+ln Fan Out
+co $ follows_per_user
+co $ approach_cache
+
+nn hybrid_approach
+ln Hybrid Approach: tweets from users with huge amount of
+ln followers (celebrites) handled separately
+co $ approach_cache
+
+nn describing_performance
+ln Describing Performance
+
+nn load_param_increased
+ln When you increase a load parameter
+co $ load_params
+co $ describing_performance
+
+nn keep_resources_unchanged
+ln ...and keep resources unchanged, how is system performance
+ln affected?
+co $ load_param_increased
+
+nn maintain_performance
+ln how much increased in resources is needed to maintain
+ln current performance?
+co $ load_param_increased
+
+nn throughput
+ln throughput
+co $ describing_performance
+
+nn num_records_processed_per_second
+ln Number of records processed per second
+co $ throughput
+
+nn batch_process_system
+ln Batch process system
+co $ throughput
+
+nn response_time
+ln Response Time
+co $ describing_performance
+
+nn time_btwn_request_response
+ln Time between request and response
+co $ response_time
+cr definition
+
+nn online_systems
+ln Online Systems
+co $ response_time
+cr response time is a metric used in the context of systems
+cr and services that are online
+
+nn latency
+ln Latency: duration that request awaits to be handled
+co $ response_time
+cr Latency and Response time are often used interchangeably
+cr but they measure different things.
+
+nn distribution_of_values
+ln Distribution of Values
+co $ response_time
+
+nn avg_mean
+ln Average/mean
+co $ distribution_of_values
+
+nn median
+ln Median
+co $ distribution_of_values
+
+nn outliers
+ln Outliers
+co $ distribution_of_values
+
+nn how_bad
+ln How bad are the outliers? P95, p99, p999.
+co $ outliers
+cr Quantifying how bad the outliers are
+co $ percentiles
+
+nn percentiles
+ln Percentiles
+co $ distribution_of_values
+co median percentiles
+
+nn 50th_percentile
+ln 50th Perecentile: p50
+co $ percentiles
+co $ how_bad
+
+nn tail_latencies
+ln Tail Latencies
+co $ how_bad
+
+nn service_level_objectives
+ln Service Level Objectives (SLO)
+co $ percentiles
+
+nn service_level_agreements
+ln Service Level Agreements
+co $ percentiles
+
+nn head_of_line_blocking
+ln head of line blocking
+co $ tail_latencies
+
+nn small_request_holdup_rest
+ln small number of requests holding up subsequent
+ln requests
+
+nn percentiles_in_practice
+ln Percentiles in Practice
+co $ percentiles
+
+nn tail_latency_amplification
+ln Tail Latency Amplification
+co $ tail_latencies
+co $ percentiles_in_practice
+
+nn rolling_window
+ln Rolling window of response times
+co $ percentiles_in_practice
+
+nn multiple_calls_high_latency_probability
+ln Chance of high latency increases when end-user
+ln requires multiple backend calls
+
+nn more_efficient_than_rolling_window
+ln More efficient alternatives to rolling window:
+ln forward decay, t-digest, HdrHistrogram
+
+nn load_cope_approaches
+ln Approaches for coping with load
+
+nn scaling_up
+ln Scaling Up
+co $ scaling
+
+nn scaling_out
+ln Scaling Out
+co $ scaling
+
+nn scaling
+ln Scaling
+co $ load_cope_approaches
+
+nn vertical
+ln Vertical
+co $ scaling_up
+
+nn horizontal
+ln Horizontal
+co $ scaling_out
+
+nn elastic
+ln Elastic
+co $ scaling_out
+
+nn shared_nothing_arch
+ln Shared nothing architecture
+co $ scaling_out
+
+nn auto_add_resources
+ln auto-add resources on load increase
+co $ elastic
+
+nn good_for_unprepared_load
+ln Good for unprepared laod
+co $ elastic
+
+nn manual_simpler
+ln Manual is simpler
+co $ elastic
+
+nn magic_scaling_sauce
+ln "Magic Scaling Sauce" (informal)
+co $ scaling_out
+
+nn maintainability
+ln Maintainability
+
+nn legacy_system
+ln Legacy System
+
+nn design_principles
+ln Design Principles
+co $ maintainability
+
+nn operability
+ln Operability
+co $ design_principles
+
+nn simplicity
+ln Simplicity
+co $ design_principles
+
+nn evolvability
+ln Evolvability
+co $ design_principles
+
+nn evolve_aka
+ln AKA
+co $ evolvability
+
+nn extensibility
+ln Extensibility
+co $ evolve_aka
+
+nn modifiability
+ln Modifiability
+co $ evolve_aka
+
+nn plasticicity
+ln Plasticicity
+co $ evolve_aka
+
+nn operations_team
+ln Operations Team
+co $ operability
+
+nn good_operability
+ln Good operability
+co $ operability
+
+nn routine_tasks_easy
+ln Making routine tasks easy
+co $ good_operability
+cr characteristic of
+
+nn managing_complexity
+ln Managing Complexity
+
+nn big_ball_of_mud
+ln Big Ball Of Mud
+co $ managing_complexity
+
+nn mired_in_complexity
+ln Software Mired in Complexity
+co $ big_ball_of_mud
+cr definition
+
+nn remove_accidental_complexity
+ln Removing accidental complexity
+co $ managing_complexity
+
+nn not_inherent_to_problem
+ln Not inherent to problem it solves
+co $ remove_accidental_complexity
+cr What defines "accidental complexity"?
+
+nn making_change_easy
+ln Making Change Easy
+co $ evolvability
+
+nn agile
+ln Agile
+co $ evolvability
+
+nn abstraction
+ln Abstraction
+co $ remove_accidental_complexity
+cr tool for
+
+nn test_driven_development
+ln Test-Driven Development (TDD)
+co $ agile
+
+nn agility_data_system_level
+ln Agility on the data system levle
+co $ agile
+
+nn working_pattern
+ln working pattern
+co $ agile
+
+nn framework_adapting_change
+ln Framework for adapting to change
+co $ agile

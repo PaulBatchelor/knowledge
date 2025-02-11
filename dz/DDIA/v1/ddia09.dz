@@ -1,0 +1,635 @@
+ns designing_data_intensive_applications/ch09
+gr Chapter 9: Consistency and Consensus
+
+nn consistency
+ln Consistency
+
+nn consensus
+ln Consensus
+
+nn eventual_consistency_hard_for_devs
+ln Eventual consistency is hard for devs: behavior
+ln for variables is different due to replication lag
+co $ consistency
+
+nn getting_all_nodes_to_agree
+ln Getting all nodes to agree on something
+co $ consensus
+cr description
+at pg 456
+
+nn elections_without_split_brain
+ln Helps to elect a new leader without split brain
+co $ consistency
+
+nn transaction_isolation_vs_distrib_consistency
+ln Transaction Isolation: avoids race condition in concurrent
+ln executing transactions. Distributed Consistency: coordinating
+ln state of replicas in the face of delays and faults.
+co $ consistency
+td connection to transaction isolation in previous chapter
+
+nn recency_guarantee
+ln Recency Guarantee: value read is most recent up-to-date
+ln value
+co $ linearizability
+
+nn linearizability
+ln Linearizability
+co $ consistency
+
+nn lin_aka
+ln atomic consistency, strong consistency, immediate consistency,
+ln external consistency
+co $ linearizability
+cr AKA
+
+nn system_appears_one_copy
+ln Make a system appear as if there were only one copy of
+ln the data, with atomic operations
+co $ linearizability
+cr desc
+at pg 460
+
+nn register
+ln register: in distributed systems, key in key/value,
+ln row in database, document in document database
+co $ linearizability
+
+nn possible_to_test_linear
+ln possible (though expensive) to test if system is
+ln linearizable by recording timings of all requests/
+ln responses, and checking whether they can be arranged
+ln in valid sequential order
+co $ linearizability
+at pg 466
+
+nn usefulness
+ln usefulness (where used)
+co $ linearizability
+at pg 468
+
+nn cross_channel_timing_deps
+ln cross-channel timing dependencies
+co $ usefulness
+at pg 470
+
+nn constraints_uniqueness_guarantees
+ln constraints and uniqueness guarantees
+co $ usefulness
+at pg 469
+
+nn locking_leader_election
+ln locking and leader election
+co $ usefulness
+
+nn implementation
+ln implementation
+co $ linearizability
+at pg 471
+
+nn simplest
+ln simplest: only use single copy of data (not fault
+ln tolerant)
+co $ implementation
+
+nn single_leader_potential_lin
+ln Single-leader replication: potentially linear
+ln if reads are from leader or synchronously updated
+ln followers
+co $ implementation
+at pg 472
+
+nn consensus_algos_impl_lin_storage_safely
+ln Consensus algorithms can implement linear storage
+ln safely
+co $ implementation
+
+nn multi_leader_not_lin
+ln Multi-leader replication not linearizable
+co $ implementation
+at pg 473
+
+nn leaderless_probably_not_lin
+ln Leaderless replication is probably not linearizable
+co $ implementation
+
+nn strict_quorum_rw_not_lin
+ln strict quorum reads/writes in a Dynamo-style model
+ln actually not linearizable. Variable network delays
+ln add possibility of race conditions.
+co $ linearizability
+
+nn read_repair_lin_possible
+ln linearizability possible with read-repair (synchronous),
+ln but there is a performance penalty
+co $ strict_quorum_rw_not_lin
+
+nn CAP_theorem
+ln CAP theorem: applications needing linearizability will
+ln have unavailable replicas when they are disconnected.
+ln Applications that don't need linearizability can have
+ln available replcas even if they are disconnected. Thus,
+ln those applications are more tolerant of network
+ln problems
+co $ linearizability
+
+nn rule_of_thumb
+ln initial a rule of thumb that encouraged engineers to
+ln explor ewider design space of distributed shared-nothing
+ln systems
+co $ CAP_theorem
+
+nn formal_def_not_practical
+ln Formal definition has a narrow scope. While CAP is
+ln historically significant, it is not very practical
+co $ CAP_theorem
+
+nn few_systems_lin
+ln Few systems are actually linearizable in practice
+co $ linearizability
+at pg 479
+
+nn RAM_not_lin
+ln RAM on modern CPU not linearizable, unless memory
+ln barrier or fence is used
+co $ few_systems_lin
+co $ linearizability
+
+nn each_core_mem_cach_store_buf
+ln Not linearizable due to each core having their own
+ln memory cache and store buffer, which are asynchronous.
+co $ RAM_not_lin
+cr explanation for why RAM isn't linearizable
+
+nn drop_lin_perf_not_fault_tol
+ln The reason for dropping linearizability is for
+ln performance, not fault tolerance.
+co $ few_systems_lin
+
+nn lin_rw_resp_high_vardelay_network
+ln In a network with highly variable delay, the response
+ln time of linear reads and writes is inevitably going to
+ln be very high.
+at pg 480
+co $ drop_lin_perf_not_fault_tol
+
+nn ordering_linearizability_consensus
+ln Deep connections between ordering, linearizability,
+ln and consensus.
+co $ linearizability
+co $ consensus
+co $ ordering
+at pg 481
+
+nn ordering
+ln ordering
+
+nn causality
+ln causality
+co $ ordering
+
+nn ordering_helps_causality
+ln Ordering helps preserve causality
+co $ ordering
+co $ causality
+
+nn causal_dep
+ln Causal dependency
+co $ causality
+
+nn causally_consistent
+ln Causally consistent: system obeys ordering imposed by
+ln causality
+co $ causality
+
+nn total_order
+ln Total Order: any 2 items can be compared
+co $ ordering
+at pg 483
+
+nn partial_order
+ln Partial order: in comse cases comparable, other ases
+ln incomparable (ex: mathematical sets)
+co $ ordering
+at pg 483
+
+nn lin_total_order_ops
+ln Linearizable system has total order of operations
+co $ total_order
+
+nn causality_partial_order
+ln Causality: ordered if events causally related, incomparable
+ln if concurrent. partially ordered.
+co $ partial_order
+at pg 484
+
+nn lin_implies_cause
+ln Linearizability implies causality (linearizability is
+ln stronger than causality).
+co $ linearizability
+co $ causality
+at pg 485
+
+nn only_causality_required_not_lin
+ln in many cases, systems that appear to require
+ln linearizability in fact only require causal consistency,
+ln which can be implemented more efficiently.
+co $ linearizability
+co $ causality
+
+nn maintain_causality
+ln maintain causality: know which operation happned
+ln before which other causality
+co $ only_causality_required_not_lin
+co $ partial_order
+
+nn sequence_number_ordering
+ln Sequence number ordering
+co $ ordering
+at pg 487
+
+nn order_events_with_timestamps_or_numbers
+ln Use sequence numbers or timestamps to efficiently
+ln order events
+co $ sequence_number_ordering
+cr description
+
+nn logical_clock
+ln Logical clock: an altorithm a sequence numbers to identify
+ln operations, typically using counters that are incremental
+ln for every operation.
+co $ order_events_with_timestamps_or_numbers
+co $ sequence_number_ordering
+
+nn consistent_with_causality
+ln Consistent with causality
+co $ logical_clock
+
+nn every_op_comparable
+ln Every operation has a sequence number that is comparable
+ln (one will always be greater), thus making a total order
+co $ logical_clock
+co $ total_order
+at pg 487
+
+nn noncausal_seq_num_generator
+ln noncausal sequence number generators
+co $ sequence_number_ordering
+at pg 488
+
+nn lamport_timestamps
+ln Lamport Timestamps
+co $ causality
+co $ consistent_with_causality
+
+nn counter_node_id_pair
+ln Pair: counter, node ID
+co $ lamport_timestamps
+cr components of a lamport timestamp
+
+nn comparing_lamport_timestamps
+ln counter with greater value is the one with the larger
+ln timestamp. If timestamps are equal, then the node with
+ln the greater ID is used.
+co $ counter_node_id_pair
+co $ lamport_timestamps
+
+nn every_node_keeps_track_of_max_value_seen
+ln Every node keeps track of max value it has seen so far.
+ln This value is included on every request.
+at pg 490
+co $ lamport_timestamps
+
+nn increase_to_max
+ln if node receives a request with a greater max value,
+ln it will increase its own value to that max value.
+co $ every_node_keeps_track_of_max_value_seen
+
+nn every_causal_dep_yields_time_incr
+ln every causal dependency results in an increased
+ln timestamp
+co $ increase_to_max
+
+nn uniqueness_totord_finalized
+ln For uniqueness constraint, not only is total order
+ln required, but also it needs to know when the order
+ln is finalized
+co $ total_order
+at pg 492
+
+nn total_order_broadcast
+ln Total Order Broadcast: knowing when total order is
+ln finalized
+at pg 492
+co $ total_order
+
+nn atomic_broadcas
+ln Atomic Broadcast
+co $ total_order_broadcast
+cr AKA
+
+nn TOB_challenge
+ln Challenge: how to scale system if throughput is greater
+ln than a single leader can handle, and how to handle
+ln failover if leader fails
+co $ total_order_broadcast
+
+nn reliable_delivery
+ln reliable delivery: no lost messages. delivered to
+ln all nodes.
+co $ total_order_broadcast
+
+nn total_ordered_deliver
+ln Total Ordered Delivery: messages delivered in same order
+co $ total_order_broadcast
+
+nn strong_connection_TOB_consensus
+ln Strong connection between total order broadcast and
+ln consensus
+co $ total_order_broadcast
+
+nn state_machine_replication
+ln State Machine Replication: if every replca processes
+ln writes in same order, then replicas will remain consistent
+ln with eachother
+co $ total_order_broadcast
+at pg 494
+
+nn msg_delivery_order_fixed
+ln Order is fixed at the time messages are delivered.
+ln No retroactive insertion into earlier slots.
+co $ total_order_broadcast
+
+nn sequential_consistency
+ln Sequential Consistency: logs are in correct order.
+ln Ensures linearizable writes but not reads.
+at pg 496
+co $ total_order_broadcast
+
+nn lin_storage_impl_TOB
+ln Linearizable storage can be implemented using total
+ln order broadcast
+co $ total_order_broadcast
+
+nn TOB_impl_lin_storage
+ln Total order broadcast can be implemented using
+ln linearizable storage
+co $ lin_storage_impl_TOB
+cr vice-versa
+
+nn lin_comp_set_TOB_equiv_consensus
+ln can be proven that a linearizable compare-and-set
+ln (or increment-and-get) register and total order
+ln broadcast are equivalent to consensus
+co $ total_order_broadcast
+co $ consensus
+at pg 498
+
+nn solve_one_transform_to_other_solutions
+ln Solve one, transform into solution for others
+co $ lin_comp_set_TOB_equiv_consensus
+
+nn distr_trans_consensus
+ln Distributed transactions and consensus
+at pg 498
+
+nn subtle_topic
+ln Topic is subtle, requires prerequistes in replication,
+ln transactions, system models, linearizability, and
+ln total order broadcast
+co $ distr_trans_consensus
+
+nn serveral_nodes_agree
+ln Goal: get several nodes to agree on something
+co $ distr_trans_consensus
+
+nn situations_where_nodes_agree
+ln Situations where ndoes need to agree
+co $ distr_trans_consensus
+
+nn leader_election
+ln Leader Election
+co $ situations_where_nodes_agree
+at pg 499
+
+nn atomic_commit
+ln Atomic Commit
+co $ situations_where_nodes_agree
+
+nn atomic_commit_problem
+ln Atomic Commit Problem: get all ndoes to agree on outcome
+ln of transaction: abort / rollback or commit.
+co $ atomic_commit
+
+nn FLP_result
+ln FLP result proves that no algorithm exists that can always
+ln reach consensus if a system has risk of a node crashing.
+ln However, in practice, consensus in achievable.
+co $ distr_trans_consensus
+at pg 590
+
+nn single_node_trans_storage_engine_atomicity
+ln Single-node database transactions typically use storage
+ln engine to implement atomicity
+co $ atomic_commit
+at pg 501
+
+nn writes_durable_commit
+ln Make writes durable (WAL usually), then commit to disk
+co $ single_node_trans_storage_engine_atomicity
+
+nn durwrite_order
+ln Durable write order: data, then commit record
+co $ writes_durable_commit
+
+nn commit_abort_depends_commit_record
+ln Commit / abort depends on finishing commit record
+co $ durwrite_order
+
+nn multi_node_trans
+ln Multi-node transaction
+co $ atomic_commit
+at pg 502
+
+nn only_commits_if_others_will
+ln Node only commits once it is certain that other nodes
+ln transaction will commit
+co $ multi_node_trans
+
+nn compensating_trans
+ln Compensating transaction: transaction that undoes effects
+ln of previous transaction
+co $ read_committed_isolation
+
+nn read_committed_isolation
+ln Read committed isolation: transaction commit must be
+ln irrevocable. No retroactive abort.
+co $ multi_node_trans
+
+nn two_phase_commit
+ln two-phase commit
+co $ multi_node_trans
+
+nn algo_for_atomic_multi_node_trans
+ln Algorithm for achieving atomic transaction commit
+ln across multiple nodes
+co $ two_phase_commit
+cr desc
+
+nn coord_transaction_mgr
+ln coordination transaction manager
+co $ two_phase_commit
+at pg 504
+
+nn transaction
+ln transaction
+co $ two_phase_commit
+
+nn participants
+ln Participants: nodes in the transaction
+co $ two_phase_commit
+
+nn rw_data_multiple_nodes
+ln Start: read / write data on multiple nodes (AKA participants)
+co $ participants
+co $ transaction
+
+nn phase1_prepare
+ln Phase 1: prepare request
+co $ rw_data_multiple_nodes
+cr app ready to commit
+
+nn ask_if_ready_to_commit
+ln Ask each node if they are ready to commit
+co $ phase1_prepare
+
+nn all_yes_commit
+ln All yes: coordinator sends commit request
+co $ ask_if_ready_to_commit
+co $ coord_transaction_mgr
+
+nn phase2
+ln phase2
+co $ phase1_prepare
+
+nn phase2_commit
+ln phase 2: commit
+co $ all_yes_commit
+
+nn phase2_abort
+ln phase 2: abort
+co $ any_no_abort
+
+nn any_no_abort
+ln any no: coordinator sends abort request
+co $ ask_if_ready_to_commit
+co $ coord_transaction_mgr
+
+nn promises_that_assure_atomicity
+ln Promises that ensure atomicity
+co $ two_phase_commit
+
+nn part_says_yes_definitely_commit_later
+ln When a participant says yes, it will definitely be
+ln able to commit later.
+co $ promises_that_assure_atomicity
+co $ participants
+
+nn coordinator_desicion_irrevocable
+ln once coordinator decides, decision is irrevocable
+co $ promises_that_assure_atomicity
+co $ coord_transaction_mgr
+
+nn on_fail_coodinator_tries_indefinitely
+ln on any commit or abort request fail, coordinator tries
+ln indefinitely
+co $ coord_transaction_mgr
+
+nn in_doubt
+ln in doubt / uncertain: coordinator crashes after
+ln participant receives prepare request and votes yes. state
+ln where nothing to do but wait.
+co $ participants
+
+nn blocking_atomic_commit_protocol
+ln Blocking atomic commit protocol: two-phase commit can get
+ln stuck waiting for coordination transaction manager to
+ln recover.
+at pg 508
+co $ two_phase_commit
+co $ atomic_commit
+
+nn three_phase_commit
+ln three-phase commit: propsed non-blocking atomic
+ln commit. assumes bounded delay in network and bounded
+ln response time in nodes, which most systems do not have.
+co $ blocking_atomic_commit_protocol
+at pg 509
+
+nn perfect_failure_detector
+ln perfect failure detector: reliable mechanism for
+ln telling if node has crashed or not
+co $ three_phase_commit
+
+nn distributed_transactions
+ln distributed transactions
+at pg 510
+
+nn db_internal
+ln Database-internal distributed transactions: transactions
+ln internal to nodes of that database
+co $ distributed_transactions
+
+nn heterogeneous
+ln heterogeneous distributed transactions: participants
+ln are 2 or more different technologies
+co $ distributed_transactions
+co $ db_internal
+cr vs
+
+nn integrate_diverse_systems_powerful_ways
+ln allows deiverse systems to be integrated in powerful
+ln ways
+co $ heterogeneous
+
+nn msg_queue_db_trans
+ln message queue process acknowledgement if and only if
+ln transaction successful
+co $ integrate_diverse_systems_powerful_ways
+cr example
+
+nn exactly_once_messaging
+ln exactly once messaging: atomic commit ensures message
+ln effectively processed once, even if multiple retries
+ln required
+co $ msg_queue_db_trans
+at pg 511
+
+nn XA_transactions
+ln XA transactions
+co $ heterogeneous
+
+nn extended_architecture
+ln eXtended Architecture
+co $ XA_transactions
+cr abbreviation
+
+nn standard_impl_2pc_hetero_tech
+ln Standard for implementing two-phase-commit across
+ln heterogeneous technologies
+co $ XA_transactions
+
+nn trans_coord_impl_XA_API
+ln Transaction coordinator imlements XA API
+co $ XA_transactions
+
+nn orphaned_in_doubt
+ln Orphaned in-doubt transaction: transaction for which
+ln coordinator cannot decide outcome.
+co $ in_doubt
+
+nn in_doubt_trans_locks_up_system
+ln Transactions in doubt will often lock up a system because
+ln transactions often take a row level exclusive lock on any
+ln rows they modify to prevent dirty writes.

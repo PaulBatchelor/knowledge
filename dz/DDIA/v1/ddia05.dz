@@ -1,0 +1,661 @@
+ns designing_data_intensive_applications/ch05
+gr Chapter 5: Replication
+zz pg 215
+
+nn replication
+ln replication
+
+nn handling_data_changes
+ln Handling changes to data
+co $ replication
+
+nn copy_data_multi_machines_networked
+ln Keep copy of the same data on multiple machines,
+ln connected via a network
+co $ replication
+cr description
+
+nn sync_async
+ln Synchronous vs Asynchronous
+co $ replication
+
+nn sync
+ln synchronous
+co $ sync_async
+
+nn async
+ln asynchronous
+co $ sync_async
+
+nn eventual_consistency
+ln Eventual Consistency
+co $ replication
+
+nn btwn_nodes
+ln Between Nodes
+co $ handling_data_changes
+
+nn single_leader
+ln Single Leader
+co $ btwn_nodes
+
+nn multi_leader
+ln multi-leader
+co $ btwn_nodes
+
+nn leaderless
+ln Leaderless
+co $ btwn_nodes
+
+nn guarantees
+ln guarantees
+co $ replication
+
+nn read_your_writes
+ln read-your-writes
+co $ guarantees
+
+nn monotonic_reads
+ln monotonic reads
+co $ guarantees
+
+nn replica
+ln Replica
+co $ replication
+
+nn ensure_data_on_all_reps
+ln How to ensure data ends up on all replicas?
+co $ replica
+
+nn leader_based_replication
+ln Leader-based replication
+co $ ensure_data_on_all_reps
+cr solution
+
+nn designated_leader
+ln Designated leader/primary/master
+co $ leader_based_replication
+
+nn follower
+ln Followers/read replicas/slaves/secondaries/hot standby
+co $ leader_based_replication
+
+nn client_write_sent_to_leader
+ln Client write requests sent to leader
+co $ designated_leader
+
+nn write_local_storage
+ln Write to local storage
+co $ client_write_sent_to_leader
+
+nn sends_data_to_reps
+ln Sends data changes to other replicas
+co $ write_local_storage
+cr then
+co $ follower
+
+nn replication_log
+ln Replication Log / Change Stream
+co $ sends_data_to_reps
+
+nn leader_only_writes
+ln Client write queries only accepted by leader
+co $ client_write_sent_to_leader
+
+nn client_reads
+ln Client Reads: query leader or followers
+co $ follower
+
+co $ designated_leader
+co $ client_write_sent_to_leader
+
+nn guaranteed_up_to_date
+ln guaranteed to have up-to-date copy
+co $ sync
+
+nn unresponsive_follower_blocks
+ln Unresponsive follower doesn't process write, blocks
+ln all writes
+co $ sync
+co $ follower
+
+nn only_one_sync_follower
+ln Only one synchronous follower
+co $ unresponsive_follower_blocks
+cr mitigation
+
+nn semi_sync
+ln semi-synchronous
+co $ only_one_sync_follower
+cr terminology
+co $ async
+
+nn usually_async
+ln Usually asynchronous
+co $ async
+co $ leader_based_replication
+
+nn new_follower
+ln New Follower setup
+co $ follower
+
+nn db_snapshot
+ln Database Snapshot (from leader)
+co $ new_follower
+
+nn log_seq_num
+ln Log Sequence Number/binlog coordinates
+co $ db_snapshot
+
+nn changes_since_snap
+ln Changes Since Snapshot
+co $ log_seq_num
+
+nn caught_up
+ln Caught Up
+co $ log_seq_num
+
+nn chain_repl
+ln Chain replication
+co $ replication
+
+nn consensus
+ln Consensus
+co $ replication
+
+nn handling_node_outage
+ln Handling node outage
+co $ leader_based_replication
+
+nn follower_failure
+ln follower failure
+co $ handling_node_outage
+
+nn recover_from_log
+ln Recover From Log
+co $ follower_failure
+
+nn leader_failure
+ln Leader Failure
+co $ handling_node_outage
+co $ follower_failure
+cr Trickier
+
+nn failover
+ln Failover
+co $ leader_failure
+
+nn select_follower_become_leader
+ln Selecto Follower to become leader
+co $ failover
+cr description
+
+nn automatic_failover
+ln Automatic Failover
+co $ failover
+
+nn things_that_go_wrong
+ln things that go wrong
+co $ automatic_failover
+
+nn split_brain
+ln Split Brain
+co $ things_that_go_wrong
+
+nn discarded_writes
+ln Discarded Writes
+co $ things_that_go_wrong
+
+nn unnecessary_failover
+ln Unncessary Failover (timeout too small)
+co $ things_that_go_wrong
+
+nn replication_methods
+ln Replication Methods
+co $ leader_based_replication
+
+nn trigger_based
+ln Trigger-Based Replication
+co $ replication_methods
+
+nn statement_based
+ln Statement-based Replication
+co $ replication_methods
+
+nn logical_log
+ln Logical Log
+co $ replication_methods
+
+nn wal_shipping
+ln WAL Shipping
+co $ replication_methods
+
+nn read_scaling_arch
+ln Read Scaling Architecture
+co $ leader_based_replication
+
+co eventual_consistency read_scaling_arch
+
+nn decouple_log_from_storage
+ln Decouple replication log from storage engine
+co $ logical_log
+
+nn read_after_write_consistency
+ln Read after write consistency
+co $ leader_based_replication
+
+nn cross_device_RAW
+ln cross device read-after-write consistency
+co $ read_after_write_consistency
+
+co read_your_writes read_after_write_consistency
+cr AKA
+
+nn replication_lag
+ln Replication lag
+co $ leader_based_replication
+
+nn moving_backwards_in_time
+ln Moving backwards in time
+co $ monotonic_reads
+cr monotonic reads prevent this
+
+nn guarantee_less_strong_greater_eventual
+ln Lesser guarantee than strong consistency. Stronger
+ln guarantee than eventual consistency
+co $ monotonic_reads
+co $ eventual_consistency
+zz co $ strong_consistency
+
+nn violations_of_causality
+ln Violations of Causality
+co $ replication_lag
+
+nn consistent_prefix_reads
+ln consistent prefix reads
+co $ violations_of_causality
+cr solution
+
+nn write_seq_order_read_order
+ln If sequence of writres happen in certain order, anyone
+ln reading those writes will read them in same order
+co $ consistent_prefix_reads
+
+nn transactions
+ln transactions
+co $ replication_lag
+
+nn dont_think_replication_lag
+ln Designed so that programmers don't have to think about
+ln replication lag.
+co $ transactions
+
+nn multi_leader_replication
+ln Multi-leader replication
+co $ replication
+
+nn more_than_one_node_writes
+ln More than one node can accept writes
+co $ multi_leader_replication
+
+nn multi_datacenter_operastion
+ln Multi Datacenter Operation
+co $ multi_leader_replication
+
+nn clients_offline_operation
+ln Clients with offline operation
+co $ multi_leader_replication
+
+nn collab_editing
+ln Collaborative Editing
+co $ multi_leader_replication
+
+nn handling_write_conflicts
+ln Handling Write Conflicts
+co $ multi_leader_replication
+
+nn write_sync
+ln Synchronous Writes
+co $ handling_write_conflicts
+
+nn write_async
+ln Asynchronous Writes
+co $ handling_write_conflicts
+
+nn second_write_blocks
+ln Second write: block and wait, or abort
+co $ write_sync
+
+co single_leader second_write_blocks
+
+nn accepts_writes_independently
+ln Accepts writes independently
+co $ write_async
+
+nn wait_for_write_before_success
+ln Wait for write to be replicated before success
+co $ write_sync
+
+nn defeats_multi_leader_advantage
+ln Defeats advantage of multi-leader replication
+co $ wait_for_write_before_success
+co $ accepts_writes_independently
+cr by contrast, asynchronous works better with MLR
+
+nn avoiding_conflicts
+ln Avoiding Conflicts
+co $ handling_write_conflicts
+
+nn particular_record_writes_same_leader
+ln Ensure all writes for a particular record go through
+ln the same leader
+co $ avoiding_conflicts
+
+nn breaks_when_leader_changes
+ln Breaks down when leader changes
+co $ particular_record_writes_same_leader
+
+nn convergence_consistency
+ln Convergence Towards Consistency
+co $ handling_write_conflicts
+
+nn last_write_wins
+ln Last Write Wins
+co $ convergence_consistency
+
+nn auto_conflict_resolution
+ln Automatic Conflict Resolution
+co $ handling_write_conflicts
+
+nn mergeable_persistant_data_structs
+ln Mergeable Persistant Data Structures
+co $ auto_conflict_resolution
+
+nn CRDT
+ln Conflict-free Replicated Data Types (CRDT)
+co $ auto_conflict_resolution
+
+nn operational_transformation
+ln Operational Transformation
+co $ auto_conflict_resolution
+
+nn replication_topology
+ln Replication Topology
+co $ multi_leader_replication
+
+nn all_to_all
+ln All to all
+co $ replication_topology
+
+nn every_leader_writes_every_leader
+ln Every leader sends writes to every other leader
+co $ all_to_all
+cr description
+
+nn fault_tolerant
+ln Fault Tolerant
+co $ all_to_all
+
+nn common_topology
+ln Most common topology used
+co $ all_to_all
+
+nn circular_topology
+ln Circular Topology
+co $ replication_topology
+
+nn mysql_default
+ln MySQL default
+co $ circular_topology
+
+nn one_node_receive_forward_another
+ln Receives writes from one node, forwards writes to
+ln another node
+co $ circular_topology
+cr description
+
+nn star_topology
+ln Star Topology
+co $ replication_topology
+
+nn designated_node_writes
+ln One designated root node writes to all other nodes
+co $ star_topology
+cr description
+
+nn one_failure_interrupts_writes
+ln One node failure can interrupt write flows
+co $ star_topology
+co $ circular_topology
+co $ fault_tolerant
+cr not fault tolerant
+
+nn network_messages_overtake
+ln Some network links may be faster, messages may overtake
+ln others
+co $ all_to_all
+co $ violations_of_causality
+cr causality problem
+
+nn leaderless_replication
+ln Leaderless replication
+co $ replication
+
+nn dynamo_style
+ln Dynamo-style
+co $ leaderless_replication
+cr AKA
+
+nn write_implementations
+ln Write Implementations
+co $ leaderless_replication
+
+nn client_writes_directly
+ln client writes directly to several replicas
+co $ write_implementations
+
+nn parallel_read_requests
+ln Parallel Read Requests
+co $ client_writes_directly
+
+nn coordinator_node
+ln Coordinator node, manages writes to replicas on behalf
+ln of client
+co $ write_implementations
+
+nn failover_does_not_exist
+ln Failover does not exist
+co $ leaderless_replication
+
+nn potentially_stale_data
+ln Potentially stale data
+co $ failover_does_not_exist
+
+nn read_requests_parallel
+ln Read requests sent to many nodes in parallel
+co $ potentially_stale_data
+
+nn node_catch_up_missed_writes
+ln how does node catch up on missed writes?
+co $ potentially_stale_data
+
+nn read_repair
+ln Read Repair
+co $ node_catch_up_missed_writes
+
+nn versions
+ln Versions
+co $ read_repair
+
+nn anti_entropy_process
+ln anti-entropy process
+co $ node_catch_up_missed_writes
+
+nn background_process_differences_replicas
+ln Background process that looks for differences between
+ln replicas
+co $ anti_entropy_process
+cr description
+
+nn quorum_reads_writes
+ln Quorum reads and writes
+co $ leaderless_replication
+
+nn w_plus_r_greater_n
+ln w + r > n
+co $ quorum_reads_writes
+
+nn w_less_n_still_writes
+ln if w < n, can still process writes if node is unavailable
+co $ w_plus_r_greater_n
+
+nn n_w_r
+ln n replicas, w successfully confirmed writes, at least r 
+ln nodes queried for each read
+co $ w_plus_r_greater_n
+
+nn r_less_n_still_reads
+ln if r < n, can still process reads if node is unavailable
+co $ w_plus_r_greater_n
+
+nn n3w2r2_one_unavail
+ln n=3, w=2, r=2 can tolerate one unavailable node
+co $ w_plus_r_greater_n
+
+nn n5w3r3_two_unavail
+ln n=5, w=3, r=3 can tolerate two unavailable nodes
+co $ w_plus_r_greater_n
+co $ n3w2r2_one_unavail
+
+nn smaller_wr
+ln w+r < n stale values more likely, but lower latency
+ln and higher availablility
+co $ w_plus_r_greater_n
+
+nn stale_possible_for_greater_n
+ln stale is also possible for w+r > n in certain situations
+co $ smaller_wr
+
+nn monitoring_staleness
+ln Monitoring staleness
+co $ replication
+
+nn LBR_lag_metrics
+ln Leader-based replication: uses metrics for the
+ln replication lag
+co $ leader_based_replication
+co $ monitoring_staleness
+
+nn leaderless_more_difficult
+ln Leaderless: more difficult
+co $ monitoring_staleness
+
+nn assurance_of_durability
+ln Quorum is an assurance of durability
+co $ quorum_reads_writes
+
+nn sloppy_quorum
+ln Sloppy Quorum
+co $ quorum_reads_writes
+
+nn accept_writes_reachable_nodes_atypical
+ln Accepts writes, write to reachable nodes where value
+ln doesn't typically live (not in "n")
+co $ sloppy_quorum
+co $ w_plus_r_greater_n
+cr the "n" in this equation
+
+nn not_in_designated_home_nodes
+ln Nodes not in designated "home" nodes
+co $ sloppy_quorum
+
+nn hinted_handoff
+ln Hinted Handoff
+co $ not_in_designated_home_nodes
+
+nn temp_values_sent_home
+ln Temporarily accepted values on node sent
+ln to "home" node when it comes back online
+co $ hinted_handoff
+cr description
+
+nn detecting_concurrent_writes
+ln Detecting Concurrent Writes
+co $ replication
+
+nn discards_concurrent_writes
+ln Discards concurrent writes
+co $ last_write_wins
+
+nn happens_before
+ln Happens-before
+co $ detecting_concurrent_writes
+
+nn happens_before_AB_combos
+ln A happens before B, B happens before A, A and B are
+ln concurrent
+co $ happens_before
+
+nn clients_merging_concurrent_vals
+ln Clients merging concurrently written values
+co $ happens_before
+
+nn same_as_conflict_resolution
+ln Essentially same as conflict resolution in
+ln multi-leader replication
+co $ handling_write_conflicts
+co $ multi_leader_replication
+
+nn siblings
+ln Concurrent values sometimes called "siblings" (Riak)
+co $ clients_merging_concurrent_vals
+
+nn union_reasonable_approach
+ln Reasonable approach is to take a union
+co $ clients_merging_concurrent_vals
+
+co CRDT clients_merging_concurrent_vals
+cr CRDTs for auto-merge (Riak)
+
+nn doesnt_work_with_removing
+ln Doesn't work with removing
+co $ union_reasonable_approach
+
+nn tombstone
+ln Tombstone: deletion marker indicating item has been
+ln removed.
+co $ doesnt_work_with_removing
+cr solution
+td TODO connect to tombstone in previous chapter
+
+nn version_vector
+ln Version Vector
+co $ version_number_per_replica
+
+nn collection_from_all_replicas
+ln collection of version numbers from all replicas
+co $ version_vector
+
+nn version_number_per_replica
+ln Version Number per replica
+co $ versions
+cr [I think this connection makes sense?]
+
+nn dotted_version_vecotr
+ln Dotted Version Vector (Riak)
+co $ version_vector
+cr variation on version vector
+
+nn vector_clock
+ln Vector Clock: almost like version vector
+co $ version_vector
+
+nn users_see_data_in_state_that_makes_sense
+ln Users should see data in a state that makes sense
+co $ consistent_prefix_reads
+cr description that popped up in summary of chapter
+
+nn causal_context
+ln Causal context: version vector encoded as string
+ln sent to client
+co $ version_vector

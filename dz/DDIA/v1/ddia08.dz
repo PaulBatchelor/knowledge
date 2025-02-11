@@ -1,0 +1,526 @@
+ns designing_data_intensive_applications/ch08
+gr Chapter 8: The Trouble With Distributed Systems
+
+nn faults_partial_failures
+ln Faults and Partial Failures
+
+nn deterministic
+ln Deterministic: same opereration produces same result
+co $ faults_partial_failures
+
+nn partial_failure
+ln Partial Failure: parts of distributed system broken in
+ln unpredictable way, other parts working fine
+co $ faults_partial_failures
+
+nn nondeterministic
+ln nondeterministic
+co $ deterministic
+cr vs
+co $ partial_failure
+
+nn makes_dist_systems_difficult
+ln What makes distributed systems hard to work with
+co $ partial_failure
+
+nn large_scale_computing_philosophies
+ln Large-scale computing philosophies
+
+nn cloud_and_super_computing
+ln Cloud computing and supercomputing
+co $ large_scale_computing_philosophies
+
+nn HPC
+ln High Performance Computing (HPC)
+co $ large_scale_computing_philosophies
+co $ cloud_and_super_computing
+cr vs
+
+nn checkpoint_and_crash
+ln Use checkpoints, let everything crash
+co $ HPC
+
+nn cloud_computing
+ln Cloud Computing
+co $ cloud_and_super_computing
+
+nn thousands_of_nodes_something_wrong
+ln When a system has thousands of nodes, it is safe to
+ln assume something is wrong.
+co $ cloud_and_super_computing
+
+nn reliable_system_unreliable_components
+ln Reliable system form unreliable components
+co $ cloud_computing
+
+nn unreliable_networks
+ln Unreliable Networks
+co $ faults_partial_failures
+
+nn APN
+ln Asynchronous Packet Networks (APN)
+co $ unreliable_networks
+
+nn impossible_determine_why_request_not_received
+ln Impossible to determine why you don't receive request
+ln from APN
+co $ APN
+co $ unreliable_networks
+
+nn timeout
+ln Timeout: after some time, give up waiting and assume
+ln response won't arrive
+co $ impossible_determine_why_request_not_received
+
+nn network_faults_practice
+ln Network Faults in Practice
+co $ unreliable_networks
+
+nn network_partition
+ln Network Partition / Netsplit: One part of network
+ln cut off from the rest of network due to
+ln a network fault
+co $ network_faults_practice
+
+nn network_fault
+ln Network Fault
+co $ network_partition
+cr AKA
+co $ network_faults_practice
+
+nn how_software_reacts_to_network_problems
+ln Need to know how your software reacts to network
+ln problems and that the system can recover from them
+co $ network_faults_practice
+
+nn detecting_faults
+ln Detecting Faults
+co $ faults_partial_failures
+
+nn rapid_feedback
+ln Rapid Feedback about a node being down is useful, but
+ln can't count on it
+
+nn certain_response_success
+ln Certainty that response that response was successful:
+ln positive response from application itself
+co $ rapid_feedback
+cr the only way to know for sure
+
+nn how_long_to_declare_dead
+ln How long to wait before declaring a node is dead?
+co $ timeout
+
+nn unbounded_delay
+ln Unbounded Delay: deliver packets as quickly as possible,
+ln no upper limit on packet arrival time.
+co $ timeout
+co $ APN
+
+nn ideal_timeout
+ln Ideal Timeout: 2d + r, where d is time to deliver,
+ln and r is the time it takes to handle request on
+ln non-failed node.
+co $ timeout
+
+nn network_congestion
+ln Network Congestion: packets have to wait in queue for
+ln a slot
+co $ timeout
+
+nn flow_control
+ln flow control / congestion avboidance / backpressure:
+ln (TCP) node limits rate of sending in order to avoid
+ln overloading newtwork link or receiving node
+co $ timeout
+
+nn noisy_neighbor
+ln Noisy Neighbor: delays caused by other customer using
+ln shared resources.
+co $ timeout
+
+nn jitter
+ln Jitter: systems can continuously monitor response times
+ln and their variability
+co $ timeout
+
+nn sync_async_networks
+ln Synchronous vs Asynchronous Networks
+co $ APN
+
+nn circuit
+ln Circuit: (in telephone systems) fixed, guaranteed amount
+ln of bandwidth allocated for a call
+co $ sync_async_networks
+
+nn synchronous
+ln Synchronous: no queuing, 16 bits of space are already
+ln reserved.
+co $ circuit
+co $ sync_async_networks
+
+nn ISDN_network
+ln ISDN Network
+co $ circuit
+co $ sync_async_networks
+
+nn bursty_traffic
+ln Internet and datacenter networks optimized for bursty
+ln traffic instead of constant bitrate
+co $ sync_async_networks
+
+nn quality_of_service
+ln Quality of Service: priority scheduling of packets
+co $ emulating_circuit_switching
+
+nn emulating_circuit_switching
+ln Emulating circuit switching on asynchronous network or
+ln statistically bounded delay
+co $ sync_async_networks
+
+nn admission_control
+ln Admission Control: rate limit senders
+co $ emulating_circuit_switching
+
+nn variable_delays_dynamic_partitioning
+ln More generally, you can think of variable delays as
+ln a consequence of dynamic partitioning
+co $ unbounded_delay
+
+nn static_partitioning
+ln Static Partitioning: latency guarantees, reducied
+ln utilization (less expensive)
+co $ variable_delays_dynamic_partitioning
+cr dynamic vs static partitioning
+
+nn no_correct_timeout
+ln No correct timeout, determined experimentally
+co $ timeout
+co $ unbounded_delay
+
+nn dynamic_partitioning
+ln Dynamic Partitioning: multi-tenancy, better
+ln utilization (cheaper), but variable delays
+co $ variable_delays_dynamic_partitioning
+co $ static_partitioning
+cr vs
+
+nn clocks
+ln clocks
+
+nn measuring_duration
+ln Measuring Duration
+co $ clocks
+
+nn describing_points_in_time
+ln Describing points in time
+co $ clocks
+co $ measuring_duration
+cr related
+
+nn node_clock_not_accurate
+ln Each node has its own hardware clock (quartz, usually), 
+ln not perfectly accurate
+co $ clocks
+
+nn time_of_day_clock
+ln Time-of-Day Clock: returns current calendar date
+co $ clocks
+co $ NTP
+cr synced with
+
+nn monotonic_clock
+ln Monotonic Clock: Clock that is guaranteed to move
+ln forward in time. Suitable for measuring durations.
+co $ clocks
+co $ time_of_day_clock
+cr vs
+
+nn unsuitable_for_measuing_duration
+ln Time jumps (backwards) and (often) ignoring leap
+ln seconds make time-of-day clock unsuitable for
+ln measuring elapsed time
+co $ time_of_day_clock
+co $ monotonic_clock
+cr used for measuring elapsed time
+
+nn NTP
+ln NTP: network time protocol, syncs clocks according
+ln to time reported by group of servers
+
+nn timediff_yields_duration_absolute_meaningless
+ln Difference between times gives duration elapsed,
+ln absolute value is meaningless
+co $ monotonic_clock
+
+nn different_timers_per_CPU
+ln Different timers per CPU: unsynchronized. OS compensates,
+ln but take monoticity guarantee with grain of salt
+co $ monotonic_clock
+
+nn slew
+ln Slew: to adjust the rate a monotonic clock moves forward.
+co $ monotonic_clock
+co $ NTP
+cr NTP uses slew
+
+nn NTP_slew_amount
+ln NTP slew rate up to +/- 0.05%, but no forward/backward
+ln jumps
+co $ slew
+co $ NTP
+
+nn drift
+ln Drift: clock runs slower/faster than it should
+co $ monotonic_clock
+co $ clocks
+
+nn 200ppm_drift
+ln Google assumes 200ppm drift for their servers. 6ms
+ln drift for a node resynchronized every 30s, 17s for
+ln a node resynchronized once a day
+co $ drift
+
+nn smearing
+ln Smearing: performing leap second gradually over
+ln course of day.
+co $ drift
+co $ clocks
+co $ NTP
+cr how NTP handles leap seconds
+
+nn timestamps_for_ordering_can_fail
+ln Timestamps for ordering events across multiple nodes
+ln can fail due to skew.
+co $ drift
+
+nn NTP_accuracy_limited_by_network_roundtrip
+ln NTP accuracy limited by network roundtrip time
+co $ NTP
+
+nn clock_reading_confidence_interval
+ln Clock Reading: less a point in time, more of a range
+ln with confidence interval
+co $ clocks
+
+nn uncertainy_bound
+ln Uncertainty bound computed based on time source
+co $ clock_reading_confidence_interval
+
+nn truetime_google
+ln TrueTime (Google Spanner): explicitely reports
+ln confidence interval on local clock
+co $ clock_reading_confidence_interval
+td link to spanner lecture notes in distributed systems lectures
+
+nn clock_sync_global_snapshots
+ln Clock sync for global snapshots (synched time-of-day-clocks
+ln used as transaction IDs)
+co $ truetime_google
+co $ time_of_day_clock
+
+nn clock_issues
+ln Clock Issues
+co drift clock_issues
+co $ clocks
+co different_timers_per_CPU clock_issues
+
+nn process_pauses
+ln process pauses
+co $ clock_issues
+
+nn VM_suspended
+ln VM Suspended
+co $ clock_issues
+
+nn preempt_thread
+ln Preempt running thread at any moment and resume it
+ln without any noticing
+co $ process_pauses
+
+nn thrashing
+ln thrashing: OS spends most time swapping pages in/out of
+ln memory
+co $ process_pauses
+
+nn steal_time
+ln steal_time: CPU time spent in another thread
+co $ process_pauses
+
+nn hard_realtime_systems
+ln Hard Realtime Systems: specified deadline by which
+ln software must respond
+co $ process_pauses
+
+nn RTOS
+ln Real-Time Operating System (RTOS): allows processes
+ln to be scheduled with a guaranteed allocation of CPU
+ln time in specified intervals
+co $ hard_realtime_systems
+
+nn GC_brief_planned_outages
+ln Garbage collection: emerging idewa to treat GC pauses
+ln like brief planned outages, let other nodes handle
+ln requests
+co $ process_pauses
+co $ RTOS
+cr GC
+
+nn knowledge_truth_and_lies
+ln Knowledge, Truth, and Lies
+
+nn system_model
+ln System Model: assumptions about behavior in distrubuted
+ln systems.
+co $ knowledge_truth_and_lies
+
+nn truth_defined_by_majority
+ln Truth defined by majority
+co $ knowledge_truth_and_lies
+
+nn node_cant_trust_judgement_of_situation
+ln A node can't trust its own judgement of a situation
+co $ truth_defined_by_majority
+
+nn quorum
+ln Quorum: voting amongst the nodes
+co $ truth_defined_by_majority
+
+nn consensus_algos
+ln Consensus Algorithms
+co $ truth_defined_by_majority
+
+nn fencing
+ln Fencing: in locking/leasing to protect access to
+ln a resource, a way to ensure nodes under false belief
+ln of ownership can't disrupt rest of system.
+co $ knowledge_truth_and_lies
+
+nn fencing_token
+ln Fencing Token: returned every time lock or lease granted,
+ln It is a number that increses
+co $ fencing
+
+nn byzantine_fault
+ln Byzantine Fault: node claims to have received a
+ln particular message when in fact it didn't
+co $ knowledge_truth_and_lies
+
+nn consensus_in_untrusted_environment
+ln Reaching consensus in untrusted environment
+co $ byzantine_fault
+
+nn byzantine_generals_problem
+ln Byzantine Generals Problem
+co $ consensus_in_untrusted_environment
+cr terminology
+
+nn byz_fault_tolerant
+ln Byzantine Fault Tolerant: oeprates correctly even if
+ln some of the nodes are malfunctioning or if there are
+ln malicious attackers
+co $ byzantine_fault
+
+nn byz_ft_protocols_complicated
+ln Protocoals for Byzantine Fault Tolerant systems
+ln are usually complicated and impractical in most use
+ln server-side data systems.
+co $ byz_fault_tolerant
+co $ byzantine_fault
+
+nn relevant_p2p
+ln Relevant in P2P systems
+co $ byzantine_fault
+co $ byz_fault_tolerant
+
+nn timing_assumptions
+ln Timing Assumptions
+at pg 436
+
+nn asynchronous
+ln Asynchronous
+co $ timing_assumptions
+
+co synchronous timing_assumptions
+
+nn partially_synchronous
+ln Partially Synchronous
+co $ timing_assumptions
+
+nn node_failures
+ln Node Failures
+at pg 437
+co $ system_model
+
+nn crash_stop_faults
+ln Crash-stop faults
+co $ node_failures
+
+nn crash_recoevery_faults
+ln Crash Recovery Faults
+co $ node_failures
+
+nn byzantine_arbitrary_faults
+ln Byzantine (arbitrary) faults
+co $ node_failures
+
+nn correctness
+ln Correctness
+co $ system_model
+at pg 438
+
+nn correctness_properties
+ln Corretness Properties
+co $ correctness
+
+nn safety
+ln Safety
+co $ correctness_properties
+
+nn liveness
+ln liveness
+co $ correctness_properties
+
+nn fencing_tokens_lock
+ln Fencing tokens for lock
+co $ correctness_properties
+co $ fencing_token
+
+nn uniqueness
+ln Uniqueness
+co $ fencing_tokens_lock
+co $ safety
+
+nn monotonic_sequence
+ln Monotonic Sequence
+co $ safety
+
+nn availability
+ln Availability
+co $ liveness
+at pg 439
+
+nn nothing_bad_happens
+ln Nothing bad happens
+co $ safety
+cr informal description
+
+nn something_good_eventually_happens
+ln something good eventually happens
+co $ liveness
+cr informal description
+
+nn on_violation_point_to_time
+ln On violation, able to point to specific point in time.
+ln Violation can't be undone.
+co $ safety
+
+nn satisfied_in_future
+ln May not hold at some point in time, but may be
+ln satisified in the future
+co $ liveness
+
+nn proving_correct_doesnt_mean_implementation_correct
+ln Proving correct doesn't mean implementation will be,
+ln but it's a good first step
+co $ correctness

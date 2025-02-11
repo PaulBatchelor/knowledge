@@ -1,0 +1,647 @@
+ns designing_data_intensive_applications/ch07
+gr Chapter 7: Transactions
+
+nn transactions
+ln Transactions
+
+nn group_rw_logical_unit
+ln Groups reads and writes into logical unit
+co $ transactions
+cr description
+
+nn simplify_programming_model
+ln Created to simplify programming model for apps
+ln accessing database
+co $ transactions
+cr why transactions were created
+
+nn no_partial_failure
+ln No partial failure. Safe to retry.
+co $ transactions
+
+nn safety_guarantees
+ln Safety Guarantees: databse handles certain potential
+ln error scenarios and concurrency issues
+co $ transactions
+
+nn ACID
+ln ACID: Atomicity, Consistency, Isolation, Durability
+co $ transactions
+
+nn terminology_fault_tolerant_mechanisms
+ln An effort to establish precise terminology for
+ln fault-tolerant mechanisms in databases
+co $ ACID
+
+nn implementations_not_equal
+ln Implementations not equal
+co $ ACID
+
+nn isolation_ambiguity
+ln "Isolation" ambiguity
+co $ implementations_not_equal
+
+nn BASE
+ln BASE: Basically available Soft-state Eventual consistency
+co $ ACID
+cr BASE is a less strict version of ACID
+
+nn atomicity
+ln Atomicity
+co $ ACID
+
+nn atomic
+ln Atomic: something that cannot be broken down into smaller
+ln parts
+co $ atomicity
+
+nn not_about_concurrency
+ln Not about concurrency in a DB context
+co $ atomicity
+
+nn atomic_transaction
+ln Atomic Transaction: if writes in a transaction can't be
+ln completed due to fault, abort and discard writes
+co $ atomicity
+
+nn abortability
+ln "abortability"
+co $ atomic_transaction
+
+nn consistency
+ln consistency
+co $ ACID
+
+nn invariants
+ln Invariants: statements about data that must always be
+ln true
+co $ consistency
+
+nn depends_app_invariants
+ln Depends on application's notion of invaraints
+co $ consistency
+co $ invariants
+
+nn property_of_app_not_db
+ln Property of application, not database
+co $ depends_app_invariants
+
+nn isolation
+ln Isolation
+co $ ACID
+
+nn concurrent_tasks_isolated
+ln Concurrently executing tasks are isolated from one
+ln another
+co $ isolation
+
+nn concurrency_problems_multiusers
+ln Concurrency problems with multiple users
+co $ isolation
+
+nn isolation_formalized_serializability
+ln Classical database textbooks formalize isolation
+ln as serializability
+co $ isolation
+
+nn serializability
+ln Serializability: each transaction can pretend it is
+ln the only one running on the entire database
+co $ isolation_formalized_serializability
+
+nn perf_penalty
+ln Performance penalty: rarely used.
+co $ isolation_formalized_serializability
+
+nn snapshot_isolation_oracle
+ln Snapshot Isolation (Oracle)
+co $ isolation
+co $ snapshot_isolation
+
+nn durability
+ln Durability
+co $ ACID
+
+nn nv_storage
+ln Non-volatile storage
+co $ durability
+
+nn WAL
+ln WAL (write-ahead-log)
+co $ durability
+
+nn repl_wait_copy_before_success
+ln Replicated database: wait for data to copy to nodes
+ln before reporting success
+co $ durability
+
+nn data_written_not_forgotten
+ln Promise: data written in successful transaction will
+ln not be forgotten
+co $ durability
+
+nn even_crash_hardware_fault
+ln Even with crashes or hardware faults
+co $ data_written_not_forgotten
+co WAL even_crash_hardware_fault
+
+nn single_node
+ln Single-node
+co WAL single_node
+co nv_storage single_node
+
+nn multi_object_transactions
+ln multi-object transactions
+co $ transactions
+
+nn single_object_writes
+ln Single-object writes
+co $ multi_object_transactions
+
+nn determine_which_ops_belong_to_transaction
+ln requires some way of determining which read/write
+ln operations belong to same transaction
+co $ multi_object_transactions
+
+nn provides_atomicity_single_objects
+ln Usually provides atomicity for single objects
+co $ single_object_writes
+
+nn ensures_foreign_keys_remain_valid
+ln In relational model, multi-object transactions ensure
+ln that foreign keys remain valid
+co $ multi_object_transactions
+
+nn keeps_denorm_data_synced
+ln Helps to keep denormalized data in sync
+co $ multi_object_transactions
+td what is denormalized data?
+
+nn best_effort
+ln Best Effort: databse does as much as it can, won't undo
+ln changes it has already done if it runs into error
+co $ ACID
+
+nn leaderless_repl
+ln Leaderless replication
+td tie to leaderless replication in last chapter
+co $ best_effort
+cr useful in leaderless replication schemes (I think?)
+
+nn transaction_isolation
+ln Transaction Isolation
+co $ transactions
+
+nn concurrency_bugs_difficult
+ln Created because concurrency bugs are hard to find
+ln by testing
+co $ transaction_isolation
+cr reason they were created
+
+nn serializable_isolation
+ln serializable isolation: database guarantees that
+ln transactions have same effect as if they ran serially
+co $ transaction_isolation
+
+nn read_committed
+ln read committed
+co $ transaction_isolation
+
+nn no_dirty_reads
+ln Reads: only see committed (AKA no dirty reads)
+co $ read_committed
+
+nn no_dirty_writes
+ln Writes: only overwrite data that has been comitted
+ln (AKA no dirty writes)
+co $ read_committed
+co $ no_dirty_reads
+cr related
+
+nn performance_cost
+ln performance cost
+co $ serializable_isolation
+
+nn weaker_isolation_levels
+ln Weaker levels of isolation that protect aginst
+ln only some concurrency bugs
+co $ performance_cost
+cr alternative solution
+
+nn subtle_bugs
+ln Can lead to subtle bugs
+co $ weaker_isolation_levels
+
+nn delay_2nd_write_until_1st_done
+ln Usually delays second write until first write is either
+ln committed or aborted
+co $ no_dirty_writes
+
+nn row_level_locks
+ln Row-level locks
+co $ delay_2nd_write_until_1st_done
+
+nn read_skew
+ln Read Skew / Non-repeatable Read
+co $ read_committed
+
+nn reads_inconsistent_state
+ln Anomaly where databse is read in an inconsistent state
+co $ read_skew
+
+nn read_committed_impl
+ln For every object written, DB remembers old comitted and new
+ln value (set by transaction holding write lock). Old
+ln value is returned while transaction ongoing,
+ln new value returned when transaction committed
+co $ read_committed
+co $ no_dirty_reads
+
+nn snapshot_isolation
+ln Snapshot Isolation: each transaction reads from a
+ln consistent snapshot of the database
+co $ read_skew
+
+nn visibility_rules
+ln Visibility Rules
+co $ snapshot_isolation
+
+nn impl_generalization_of_dirty_read
+ln Implemenation is generalization of dirty read prevention
+ln mechanism
+co $ read_committed_impl
+cr description of dirty read prevention mechanism
+
+nn MVCC
+ln MVCC: multi-version concurrency control
+co $ impl_generalization_of_dirty_read
+
+nn indices_multiversion_db
+ln Indices in multiversion DB
+co $ MVCC
+
+nn postgres_GC
+ln PostgreSQL: use garbage collection on rows marked for
+ln deletion
+co $ MVCC
+
+nn postgres_optimizations_avoid_index_updates
+ln PostgreSQL: optimizations for avoiding index updates
+ln if idfferent versions of same object can fit on same
+ln page
+co $ indices_multiversion_db
+
+nn append_only_b_trees
+ln append-only / copy-on-write B-Trees (CouchDB, Datomic,
+ln LMDB)
+co $ indices_multiversion_db
+
+nn serializable_oracle
+ln Serializable (Oracle)
+co $ snapshot_isolation
+cr AKA
+
+nn repeatable_read
+ln Repeatable Read (PostreSQL, MySQL)
+co $ snapshot_isolation
+
+nn SQL_standard_repeatable_read
+ln SQL Standard doesn't have concept of Snapshot Isolation
+ln (wasn't invented yet), Repeatable Read meets requirements
+ln of standard.
+co $ repeatable_read
+
+nn SQL_isolation_ambiguous
+ln Standard's definition of isolation ambiguous, and
+ln imprecise, different database implementations have
+ln different guarantees
+co $ SQL_standard_repeatable_read
+co $ isolation_ambiguity
+
+nn lost_update_problem
+ln Lost Update Problem: if two concurrent transactions
+ln perform read-modify-write-cycle, one of the writes
+ln will be lost.
+co $ isolation
+
+nn read_modify_write
+ln read-modify-write: read a value, modify the value,
+ln then write the new value back to the DB.
+co $ lost_update_problem
+
+nn later_write_clobbers_earler
+ln Later write clobbers the earlier write
+co $ lost_update_problem
+
+nn atomic_updates
+ln Atomic Updates
+co $ lost_update_problem
+cr solution
+
+nn cursor_stability
+ln Cursor Stability: Take exclusive lock on object when it
+ln is being read so that no transaction can read it until
+ln the update has been applied.
+co $ atomic_updates
+
+nn explicit_locking
+ln Explicit Locking
+co $ lost_update_problem
+cr solution
+
+nn app_explicitely_locks_objects
+ln Application explicitely locks objects to updated
+co $ explicit_locking
+
+nn compare_and_set
+ln Compare-and-set
+co $ lost_update_problem
+
+nn auto_detecting_lost_updates
+ln auto-detecting lost updates: on detection, abort
+ln transaction and retry.
+co $ lost_update_problem
+
+nn in_DBs_without_transactions
+ln in Databases that don't provide transactions
+co $ compare_and_set
+
+nn allows_parallel_RMW
+ln Allows read-modify-write cycles to run in parallel
+co $ auto_detecting_lost_updates
+co $ read_modify_write
+
+nn update_only_if_value_unchanged
+ln Update value only if value has not changed since it was
+ln last read.
+co $ compare_and_set
+
+nn replicated_lost_update
+ln Replicated: allow concurent writes, conflicting versions
+ln (siblings), use application code or special data
+ln structures to resolve later.
+co $ lost_update_problem
+
+nn write_skew
+ln Write Skew
+co $ lost_update_problem
+
+nn generalization_lost_update
+ln Generalization of lost update problem
+co $ write_skew
+co $ lost_update_problem
+
+nn two_reads_same_object_some_updates
+ln Can happen if two transactions read same objects,
+ln then update some of those objects
+co $ write_skew
+
+nn timing_dirty_write_LU_anomaly
+ln Depending on timing: it can either be a dirty write
+ln or a lost update anomaly
+co $ two_reads_same_object_some_updates
+co $ no_dirty_writes
+co $ lost_update_problem
+
+nn phantom
+ln phantom
+co $ write_skew
+
+nn write_changes_result_in_other_trans
+ln Write in one transactions changes the result in another
+ln transaction.
+co $ phantom
+cr description
+
+nn materializing_conflicts
+ln Materializing Conflicts
+co $ phantom
+
+nn phantom_to_lock_conflict
+ln Takes phantom and turns it into a lock conflict on
+ln concrete set of rows
+co $ materializing_conflicts
+cr description
+
+nn strongest_isolation_level
+ln Strongest Isolation Level
+co $ serializable_isolation
+
+nn actual_serial_execution
+ln Actual Serial Execution
+co $ serializable_isolation
+
+nn interactive_multistatements_forbidden
+ln Interactive multi-statement transactions not allowed
+ln in single-trhead serial transaction processing (for
+ln performance reasons)
+co $ actual_serial_execution
+
+nn stored_procedure
+ln stored procedure: entire transaction code submitted to
+ln databse ahead of time
+co $ actual_serial_execution
+
+nn every_trans_small_fast
+ln Every transaction must be small and fast
+co $ actual_serial_execution
+
+nn limited_to_in_memory
+ln Limited to usecases where dataset fits in memory
+co $ actual_serial_execution
+
+nn low_write_throughput
+ln Write throughput must be low enough for single CPU
+ln core, otherwise use partitioning
+co $ actual_serial_execution
+
+nn two_phase_locking
+ln Two-Phase Locking (2PL)
+co $ serializability
+co $ row_level_locks
+cr similar
+
+nn not_two_phase_commit
+ln not to be confused with two-phase commit (2PC)
+co $ two_phase_locking
+cr not to be confused with
+
+nn many_reads_until_write_then_exclusive
+ln Severual concurrent reads allowed until write occurs,
+ln then, exclusive access
+co $ two_phase_locking
+cr description
+
+nn writers_block_readers_vice_versa
+ln Writers block other readers and vice versa
+co $ two_phase_locking
+co $ si_mantra
+cr contrasts
+
+nn si_mantra
+ln Serializable Isolation Mantra: readers nver block writers
+co $ serializable_isolation
+
+nn lock_impl
+ln Lock Implementation
+co $ two_phase_locking
+
+nn shared_mode
+ln Shared Mode
+co $ lock_impl
+
+nn exclusive_mode
+ln Exclusive Mode
+co $ lock_impl
+
+nn transaction_reads_objects
+ln Transaction reads objects
+co $ shared_mode
+co $ transaction_writes_objects
+
+nn transaction_writes_objects
+ln Transaction writes objects
+co $ exclusive_mode
+
+nn upgrade_shared_to_exclusive
+ln When a transaction reads an object, then writes to it,
+ln it gets upgraded from shared mode to exclusive mode
+co $ shared_mode
+co $ exclusive_mode
+
+nn lock_held_until_trans_end
+ln Acquired lock must be held until the end of the
+ln transaction
+co $ lock_impl
+
+nn phases
+ln Phase 1: acquire lock. Phase 2: release lock
+co $ lock_impl
+co $ two_phase_locking
+cr origin of name
+
+nn deadlock
+ln Deadlock: Transaction A stuck waiting for Transaction B
+ln to finish and release lock, and vice versa
+co $ two_phase_locking
+
+nn auto_deadlock_detection
+ln Automatic Deadlock Detection
+co $ deadlock
+
+nn throughput_and_response_worse_than_weak_isolation
+ln throughput and response times signficantly worse compared
+ln to weak isolation
+co $ weaker_isolation_levels
+
+nn reduced_concurrency
+ln Reduced Concurrency
+co $ throughput_and_response_worse_than_weak_isolation
+
+nn predicate_lock
+ln Predicate Lock: lock that bleongs to all objects that
+ln match search condition
+co $ phantom
+co $ two_phase_locking
+co $ lock_impl
+cr similar to shared/exclusive lock
+
+nn index_range_locking
+ln Index-range locking
+co $ lock_impl
+
+nn better_than_predicate
+ln Better than predicate locking
+co $ index_range_locking
+co $ predicate_lock
+
+nn protects_against_write_skew_phantom
+ln Protects aginst write skew and phantoms
+co $ phantom
+co $ write_skew
+
+nn next_key_locking
+ln next-key locking
+co $ index_range_locking
+cr AKA
+
+nn simplify_predicate
+ln Simplify predicate by making it match greater set of
+ln objects
+co $ better_than_predicate
+co $ index_range_locking
+cr description
+
+nn lock_table_as_safe_fallback
+ln Safe (but expensive) Fallback: shared lock on entire
+ln table if not suitable range found
+co $ index_range_locking
+
+nn SSI
+ln Serializable Snapshot Isolation (SSI)
+co $ serializable_isolation
+co $ snapshot_isolation
+
+nn full_serializability_small_penalty
+ln Provides full serializability and only a small
+ln performance penalty compared to snapshop isolation
+co $ SSI
+
+nn pessimistic_concurrency
+ln Pessimistic Concurrency Control: if something goes wrong,
+ln better to wait until it's safe to do something
+co $ two_phase_locking
+
+nn mutex
+ln Mutal Exclusion
+co $ pessimistic_concurrency
+cr similar
+
+nn premise
+ln Premise: fact that was true at beginning of transaction
+co $ write_skew
+
+nn optimistic_concurrency
+ln Optimistic Concurrency Control: keep going if things
+ln go wrong in the hope that everything willl turn out
+ln all right
+co $ SSI
+co $ pessimistic_concurrency
+cr vs
+
+nn poor_perf_high_contention
+ln Performs badly if there is high contention (many
+ln transactions trying to access same object)
+co $ optimistic_concurrency
+
+nn usually_better_than_pessimistic
+ln Usually better than pessimistic concurrency control
+co $ optimistic_concurrency
+
+nn SSI_overview
+ln Builds on top of snapshot isolation, detects serialization
+ln conflicts, determines which transactions to abort
+co $ SSI
+
+nn db_detects_outdated_premise_abort
+ln Database must detect outdated premises and abort
+co $ premise
+co $ SSI_overview
+
+nn stale_MVCC
+ln Stale MVCC
+co $ db_detects_outdated_premise_abort
+co $ MVCC
+
+nn abort_rate_affects_perf
+ln Abort rate significantly affects performance
+co $ SSI
+
+nn granular_tracking_more_overhead
+ln More granular in tracking transactions yields more
+ln bookkeeping overhead
+co $ SSI
+
+nn abort_reduces_many_errors
+ln Reduces large class of errors to do transaction abort
+co $ transactions

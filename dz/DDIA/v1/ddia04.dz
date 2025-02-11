@@ -1,0 +1,405 @@
+ns designing_data_intensive_applications/ch04
+gr Chapter 4: Encoding and Evolution
+
+nn data_representation_programs
+ln Data representation in programs
+
+nn in_memory
+ln in-memory
+co $ data_representation_programs
+
+nn byte_sequence
+ln Self-contained sequence of bytes
+co $ data_representation_programs
+
+nn optimized_for_cpu
+ln Optimized for CPU
+co $ in_memory
+
+nn in_mem_bytes
+ln in-memory to bytes
+co $ data_representation_programs
+
+nn bytes_in_mem
+ln Byte sequence to in-memory
+co $ data_representation_programs
+
+nn encoding
+ln encoding
+co in_mem_bytes encoding
+
+nn built_in_language
+ln built-in language libraries
+co $ encoding
+rm avoid this approach
+
+nn standardized_encodings
+ln Standardized encodings
+co $ encoding
+
+nn JSON
+ln JSON
+co $ standardized_encodings
+
+nn XML
+ln XML
+co $ standardized_encodings
+
+nn CSV
+ln CSV
+co $ standardized_encodings
+
+nn text_based
+ln text-based
+co $ JSON
+co $ CSV
+co $ standardized_encodings
+
+nn binary
+ln Binary
+co $ standardized_encodings
+co $ msgpack
+
+nn msgpack
+ln msgpack, BJSON, etc
+co $ JSON
+
+nn schema_evolution
+ln Schema evolution
+
+nn thrift_protobuf
+ln Thrift and Protocol Buffers
+co $ standardized_encodings
+co binary thrift_protobuf
+co schema thrift_protobuf
+
+nn schema
+ln Schema
+co $ schema_evolution
+
+nn tag_field
+ln Tag field
+co $ thrift_protobuf
+
+nn compatibility
+ln Compatibility
+co $ schema_evolution
+
+nn forward
+ln Forward
+co $ compatibility
+
+nn backward
+ln Backward
+co $ compatibility
+
+nn unique_tag_number
+ln Unique Tag Number
+co $ tag_field
+co $ compatibility
+
+nn avro
+ln Avro
+co $ encoding
+
+nn decode_exact_schema
+ln decoded using exact same schema
+co $ avro
+
+nn writers_schema
+ln Writer's Schema
+co $ avro
+
+nn readers_schema
+ln Reader's schema
+co $ avro
+
+nn decode_data
+ln decode data
+co $ readers_schema
+
+nn resolves_differences
+ln Resolves differences between read and write schema
+ln on decode
+co $ decode_data
+co $ readers_schema
+co $ writers_schema
+
+nn encode_data
+ln Encode Data
+co $ writers_schema
+co $ decode_data
+cr semantic pair
+
+nn only_add_remove_default
+ln only add/remove fields with default value
+co $ avro
+co $ compatibility
+
+nn object_container
+ln Object Container File
+co $ avro
+
+nn no_tag_numbers
+ln No tag numbers
+co $ avro
+
+nn dynamic_generated_schema
+ln Dynamically generated schemas
+co $ no_tag_numbers
+
+nn self_describing
+ln Self-describing
+co $ object_container
+
+nn apache_pig
+ln Apache Pig
+co $ self_describing
+
+nn relationship_encode_decode
+ln Relationship betwen process that encodes the data
+ln and the process that decodes the data
+co $ schema_evolution
+
+nn vs_schemaless
+ln Allows same flexibility as schema-less/schema-on-read,
+ln also with better guarantees about data and tooling
+co $ schema_evolution
+
+nn databases
+ln Databases
+co $ modes_of_dataflow
+co $ schema_evolution
+
+nn modes_of_dataflow
+ln modes of dataflow
+
+nn data_outlives_code
+ln Data Outlives Code
+co $ databases
+
+nn migrating
+ln Migrating
+co $ databases
+
+nn unknown_fields
+ln Unknown Fields
+co $ databases
+
+nn services
+ln Services
+co $ modes_of_dataflow
+
+nn RPC
+ln RPC
+co $ services
+
+nn REST
+ln REST
+co $ services
+
+nn clients
+ln Clients
+co $ services
+
+nn web_browswer
+ln Web Browser
+co $ clients
+cr example
+
+nn app_network_requests
+ln Application making network requests
+co $ clients
+cr example
+
+nn servers
+ln Servers
+co $ services
+
+nn API_exposed_by_server
+ln API expsoed by server
+co $ services
+cr description
+co $ servers
+
+nn clients_to_other_service
+ln Can be clients to another service
+co $ servers
+
+nn service_oriented_arch
+ln Service-oriented architecture
+co $ clients_to_other_service
+
+nn microservices_arch
+ln Microservices Architecture
+co $ service_oriented_arch
+cr rebranded as
+
+nn independent_deployable_easier_maintain
+ln Services designed to be independently deployable/evolvable
+ln in order to make applications easier to change and
+ln maintain
+co $ service_oriented_arch
+
+nn web_service
+ln Web Service
+co $ services
+
+nn http_comm_proto
+ln HTTP used as underlying communication protocol
+co $ web_service
+
+co REST web_service
+
+nn SOAP
+ln SOAP
+co $ web_service
+
+nn design_principles_of_http
+ln Design philosophy built on principles of HTTP
+co $ REST
+cr description
+
+nn xml_based
+ln XML based
+co $ SOAP
+
+nn WDSL
+ln WDSL
+co $ SOAP
+
+nn web_services_description_language
+ln Web Services Description Language
+co WDSL web_services_description_language
+cr abbreviation
+co $ xml_based
+
+nn problems
+ln Problems
+co $ RPC
+
+nn timeout
+ln timeout
+co $ problems
+
+nn unpredictable
+ln unpredictable
+co $ problems
+
+nn remote_call_procedure
+ln Remote Call Procedure
+co $ RPC
+cr accronym
+
+nn grpc
+ln gRPC
+co $ RPC
+
+nn make_request_look_like_func
+ln tries to make request to remote service look like
+ln a function/method call in a programming language
+co $ RPC
+cr description
+
+nn rpc_protobuf
+ln RPC using protobuf
+co $ RPC
+co $ thrift_protobuf
+
+nn location_transparency
+ln Location Transparency
+co $ make_request_look_like_func
+cr term to describe this
+
+nn indempotence
+ln Indepotence
+co $ RPC
+
+nn deduplication_mechanism
+ln Mechanism for Deduplication
+co $ indempotence
+
+nn futures_promises
+ln futures/promises
+co $ RPC
+
+nn encapsulate_async_actions
+ln Abstractions that encapsulate asynchronous actions
+ln that may fail
+co $ futures_promises
+cr description
+
+nn service_discovery
+ln Service Discovery
+co $ RPC
+
+nn compat_encoding_scheme
+ln Backward/forward compatibility inhereted from underlying
+ln encoding scheme
+co $ RPC
+
+nn streams
+ln streams
+co $ grpc
+
+nn series_req_resp
+ln series of requests and responses over time
+co $ streams
+cr description
+
+nn async_message_passing
+ln Asynchronous message-passing systems
+co $ RPC
+
+nn message_broker
+ln Message Broker
+co $ async_message_passing
+
+nn message
+ln message
+co $ async_message_passing
+
+nn btwn_rpc_db
+ln Between RPC and database
+co $ async_message_passing
+
+nn consumers_subscribers
+ln Consumers/Subscribers
+co $ message
+cr delivered to
+
+nn queue_topic
+ln Queue/Topic
+co $ message
+cr sent to
+
+nn message_queue
+ln Message Queue / msg-oriented middleware
+co $ message_broker
+cr AKA
+
+nn actor_model
+ln Actor Model
+
+nn actor_model_desc
+ln Programming model for concurrency in single process
+co $ actor_model
+cr description
+
+nn actor
+ln actor
+co $ actor_model
+
+nn distributed_actor_framework
+ln Distributed Actor Framework
+co $ actor_model
+
+nn scale_app_across_multi_nodes
+ln used to scale application across multiple nodes
+co $ distributed_actor_framework
+cr description
+
+nn actor_comm_async_message
+ln Communicates with other actors by sending and receiving
+ln messages asynchronously
+co $ actor

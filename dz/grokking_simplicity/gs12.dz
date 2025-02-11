@@ -1,0 +1,79 @@
+ns grokking_simplicity/ch12
+gr Grokking Simplicity Chapter 12: Functional Iteration
+
+nn functional_tools
+ln Functional Tools
+
+nn map
+ln Map
+co $ functional_tools
+
+nn transforms_array_x_to_y
+ln Transforms some array X to Y using a function
+co $ map
+
+nn inline_anonymous_function
+ln Inline Anonymous Function
+co $ map
+
+nn define_in_place
+ln Defning it right in place where used
+co $ inline_anonymous_function
+
+nn filter
+ln Filter
+co $ functional_tools
+
+nn ways_to_pass_funcs_js
+ln Ways to pass functions in JS
+
+nn inline
+ln Inline
+co $ ways_to_pass_funcs_js
+co $ inline_anonymous_function
+
+nn global
+ln Global
+co $ ways_to_pass_funcs_js
+
+nn local
+ln Local
+co $ ways_to_pass_funcs_js
+
+nn subset_of_array
+ln Selects subset of elements in array
+co $ filter
+cr definition
+
+nn reduce
+ln Reduce
+co $ functional_tools
+
+nn accumulates_value
+ln Accumulates value while iterating over array
+co $ reduce
+cr definition
+
+nn neat_things_reduce
+ln Neat things that can be done with reduce
+co $ reduce
+
+nn undo_redo
+ln Undo/Redo
+co $ neat_things_reduce
+
+nn audit_trails
+ln Audit Trails
+co $ neat_things_reduce
+
+nn replace_user_interaction
+ln Replay User Interaction
+co $ neat_things_reduce
+
+nn map_filter_implemented_reduce
+ln Map/Filter can be implemented using reduce
+co $ reduce
+
+nn mutating_vs_nonmutating
+ln Mutating vs non-mutating
+co $ map_filter_implemented_reduce

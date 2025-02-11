@@ -1,0 +1,92 @@
+zz Adding the overview here
+ns grokking_simplicity
+gr "Grokking Simplicty" book notes
+
+ns grokking_simplicity/ch01
+gr Grokking Simplicty... chapter 1 I think?
+
+nn actions
+ln Actions
+
+nn calculations
+ln Calculations
+
+nn data
+ln Data
+
+nn learn_to_break
+ln Learn to break up a program into these parts
+co data learn_to_break
+co calculations learn_to_break
+co actions learn_to_break
+
+nn minimize_use
+ln Minimize Use of Actions
+co $ actions
+
+nn same_ins_outs
+ln Same Inputs will always yield same Outputs
+co $ calculations
+
+nn pure_functions
+ln Pure Functions
+co $ calculations
+cr AKA
+
+nn how_many_times
+ln Depends on how many times called
+co $ actions
+
+nn ex_send_emails
+ln Example: Send Emails to Subscribers with Coupons
+
+nn why_not_one_action
+ln Why not just make it one action?
+co $ ex_send_emails
+
+nn easier_to_test
+ln Breaking things up into computations makes things
+ln easier to test
+co $ why_not_one_action
+co $ calculations
+cr Calculations are easier to test
+
+nn actions_proliferate
+ln Actions proliferate through code
+co $ actions
+
+nn megamart_example
+ln Megamart Example
+
+nn imperitive_way
+ln Imperitive way first, faster to
+ln implement, easier to understand
+co $ megamart_example
+
+nn harder_to_test
+ln harder to test and re-use
+co $ imperitive_way
+
+nn refactor
+ln Refactoring
+co $ imperitive_way
+
+nn dont_depend_global_vars
+ln Don't depend on global variables
+co $ refactor
+
+nn separate_business_DOM
+ln Separate business and DOM rules
+co $ refactor
+
+nn implicit_inputs
+ln Implicit inputs can be replaced by arguments
+co $ refactor
+
+nn implicit_outputs
+ln Implicit outputs can be replaced by return values
+co $ refactor
+
+nn dont_assume_answer_DOM
+ln Don't assume answer goes in DOM
+co $ separate_business_DOM

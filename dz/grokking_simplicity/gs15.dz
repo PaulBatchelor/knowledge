@@ -1,0 +1,116 @@
+ns grokking_simplicity/ch15
+gr Grokking Simplicity Chapter 15: Isolating Timelines
+
+nn timeline_diagrams
+ln Timeline Diagrams
+
+nn actions_in_sequence
+ln What actions run in sequence?
+co $ timeline_diagrams
+cr Timeline diagrams helps to visualize
+
+nn actions_in_parallel
+ln What actions run in parallel
+co $ timeline_diagrams
+cr Timeline diagrams helps to visualize
+
+nn one_timeline_one_after_other
+ln One timeline, one after the other
+co $ actions_in_sequence
+
+nn multiple_timelines_side_by_side
+ln multiple timelines, side by side
+co $ actions_in_parallel
+
+nn two_kinds_of_sequential
+ln Captures two kinds of sequential code
+co $ timeline_diagrams
+cr timeline diagrams capture two kinds of sequential code
+
+nn can_be_interleaved
+ln can be interleaved
+co $ two_kinds_of_sequential
+
+nn cant_be_interleaved
+ln can't be interleaved
+co $ two_kinds_of_sequential
+
+nn interleave_actions_happen_between
+ln Interleaved actions on different timelines can happen
+ln between eachother
+co cant_be_interleaved interleave_actions_happen_between
+co can_be_interleaved interleave_actions_happen_between
+
+nn uncertain_ordering_parallel
+ln captures uncertain ordering of parallel code
+co $ timeline_diagrams
+
+nn possible_orderings
+ln possible orderings
+co $ uncertain_ordering_parallel
+
+nn timeline_principles
+ln Principles of working with timelines
+
+nn easier
+ln what is easier?
+co $ timeline_principles
+
+nn fewer_timelines
+ln Fewer timelines
+co $ easier
+
+nn shorter_timelines
+ln shorter timelines
+co $ easier
+
+nn sharing_fewer_resources
+ln Sharing fewer resources
+co $ easier
+
+nn coordinate_resources_shared
+ln coordinate when resources are shared
+co $ timeline_principles
+
+nn manipulate_time_first_class
+ln Manipulate time as a first-class concept
+co $ timeline_principles
+
+nn two_orderings
+ln two orderings
+co $ timeline_diagrams
+
+nn certain
+ln certain
+co $ two_orderings
+
+nn uncertain
+ln uncertain
+co $ two_orderings
+
+nn review_drawing_the_timeline
+ln Review: drawing the timeline
+co $ timeline_diagrams
+
+nn share_resources_problem
+ln timelines that share resources can cause problems
+co $ review_drawing_the_timeline
+
+nn identify_actions
+ln identify actions
+co $ review_drawing_the_timeline
+
+nn draw_initial_diagram
+ln draw initial diagram
+co $ identify_actions
+co $ review_drawing_the_timeline
+
+nn platform_knowledge_simplification
+ln Simplify using knowledge of platform
+co $ draw_initial_diagram
+co $ review_drawing_the_timeline
+
+nn async_final_callback
+ln In async, a final callback is used instead of return
+ln value as explicit output.
+rm does this make a sort of linked-list of actions?

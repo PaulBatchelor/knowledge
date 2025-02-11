@@ -1,0 +1,315 @@
+ns grokking_simplicity/ch18
+gr Grokking Simplicity Chapter 18: Reactive and Onion
+gr Architectures
+
+nn reactive_arch
+ln Reactive Architecture
+
+nn onion_arch
+ln Onion Architecture
+
+nn flips_actions
+ln Flips the way actions are sequenced
+co $ reactive_arch
+
+nn operate_world
+ln High-level structure of functional programs that have to
+ln operate in the real world
+co $ onion_arch
+
+nn level
+ln Levels Architectures work at
+co $ reactive_arch
+co $ onion_arch
+
+nn individual_sequence_actions
+ln Individual Sequence of Actions
+co $ reactive_arch
+cr Level reactive arch works at
+co $ level
+
+nn entire_service
+ln Entire service
+co $ onion_arch
+cr Level onion arch works at
+co $ level
+
+nn respond_to_events
+ln Main organizing principle: specify what happens in
+ln response to events
+co $ reactive_arch
+
+nn event_handler
+ln Event Handler
+co $ respond_to_events
+
+nn do_xyz
+ln Do y when x. Do z when y.
+co $ respond_to_events
+cr example
+
+
+nn reactive_features
+ln Reactive Architecture Features and Characteristics
+co $ reactive_arch
+
+nn decouples_effects_causes
+ln Decouples Effects/Causes
+co $ reactive_features
+
+nn less_readable_code
+ln Potentially less readable code?
+co $ decouples_effects_causes
+
+nn series_of_steps_pipeline
+ln Series of steps to produce a pipeline
+co $ reactive_features
+
+nn flexibility_timeline
+ln Flexibility in timeline
+co $ reactive_features
+
+nn unwanted_orders
+ln Could lead to unwanted orderings
+co $ flexibility_timeline
+
+nn value_cells
+ln ValueCells
+
+nn state_first_class
+ln makes state first-class
+co $ value_cells
+
+nn watchers
+ln Watchers
+co $ value_cells
+
+nn watchers_def
+ln handler functions that get called when state changes
+co $ watchers
+cr definition
+
+nn watchers_aka
+ln AKA
+co $ watchers
+
+nn observers
+ln Observers
+co $ watchers_aka
+
+nn callbacks
+ln Callbacks
+co $ watchers_aka
+
+nn listeners
+ln Listeners
+co $ watchers_aka
+
+nn cells
+ln Cells
+co value_cells cells
+
+nn formula_cells
+ln FormulaCell
+co $ cells
+
+nn calculate_derived_val
+ln Calculate derived value
+co $ formula_cells
+
+nn update_called_with_calc
+ln Update called with calculation, makes it easy to keep
+ln current value valid.
+co $ value_cells
+cr wraps a valuecell
+
+nn vc_valid_data_not_order
+ln Value Cell can't guarantee order, but it can guarantee
+ln valid data
+co $ value_cells
+co $ update_called_with_calc
+
+nn formula_cells_aka
+ln AKA
+co $ formula_cells
+
+nn tvars_haskell
+ln TVars (Haskell)
+co $ formula_cells_aka
+
+nn agents_elixr
+ln Agents (Elixr)
+co $ formula_cells_aka
+
+nn atoms_clojure
+ln atoms (clojure)
+co $ formula_cells_aka
+
+nn redux_store_recoil_atoms_react
+ln Redux Store, Recoil Atoms (React)
+co $ formula_cells_aka
+
+nn no_way_to_directly_update
+ln No way to directly update. Must change upstream
+ln (value)cell. It watches.
+co $ formula_cells
+
+nn reactive_reconfig
+ln How Reactive Reconfigures Systems
+co $ reactive_arch
+
+nn treats_steps_as_pipeline
+ln Treats series of steps as pipeline
+co $ reactive_reconfig
+
+co flexibility_timeline reactive_reconfig
+co decouples_effects_causes reactive_reconfig
+
+nn center_cause_effect
+ln decoupling manages a center of cause and effect
+co $ decouples_effects_causes
+
+nn turns_mult_into_addition
+ln Turns multiplication (causes * effects) into addition
+ln (causes + effects)
+co $ center_cause_effect
+
+nn not_helpful_if
+ln not helpful if you don't have this in your problem
+co $ turns_mult_into_addition
+co $ decouples_effects_causes
+
+nn reactive_manifesto
+ln Reactive Manifesto
+co $ reactive_arch
+
+nn not_passing_data_dont_use
+ln If your steps don't follow the pattern of passing data,
+ln this might not be a good fit
+co $ treats_steps_as_pipeline
+
+nn operates_larger_scale
+ln Onion operates on larger scale than Reactive
+co $ onion_arch
+co $ reactive_arch
+cr works on a larger scale than
+
+nn constructs_service_real_world_interaction
+ln Constructs entire service that interacts with the
+ln real world
+co $ onion_arch
+
+nn concentric_layers
+ln Concentric Layers
+co $ constructs_service_real_world_interaction
+
+nn interaction_layer
+ln interaction
+co $ concentric_layers
+
+nn domain_layer
+ln Domain
+co $ concentric_layers
+co $ interaction_layer
+
+nn language_layer
+ln Language
+co $ concentric_layers
+co $ domain_layer
+
+nn actions_affect_outside_world
+ln Actions that are affected by/affect outside world
+co $ interaction_layer
+
+nn calcs_define_business_rules
+ln Calculations that define rules of your business
+co $ domain_layer
+
+nn language_utility_libs
+ln Language and Utility Libraries
+co $ language_layer
+
+nn interacts_layer_exclusively
+ln Real-world interaction happens in the interaction layer
+ln exclusively
+co $ onion_arch
+co $ interaction_layer
+
+nn dont_know_about_others
+ln Don't know about other layers outside themselves
+co $ onion_arch
+
+nn extracting_actions_natural_onion
+ln Extraction actions from calculations naturally arrives
+ln at something like the onion architecture
+
+nn trad_layered_arch
+ln Traditional Layered Architecture (Web)
+co $ trad_vs_functional_arch
+
+nn db_bottom
+ln Database at Bottom
+co $ trad_layered_arch
+
+nn everything_action_above
+ln Everything above is action
+co $ db_bottom
+
+nn trad_vs_functional_arch
+ln Traditional vs Functional Architecture
+co $ onion_arch
+
+nn functional_arch
+ln Functional Architecture
+co $ trad_vs_functional_arch
+
+nn db_pulled_out_to_side
+ln Database pulled out to side
+co $ functional_arch
+co $ db_bottom
+cr By comparison, DB is at bottom in traditional arch
+
+nn clean_separation_calcs_actions
+ln Clean separation of calculations and actions
+co $ functional_arch
+
+nn facilitating_change_reuse
+ln Facilitating Change and Reuse
+co $ onion_arch
+
+nn kinds_of_easy_changes
+ln Kinds changes Onion Architecture makes easy
+co $ facilitating_change_reuse
+
+nn interaction_layer_easiest
+ln The interaction layer is easiest to change
+co $ kinds_of_easy_changes
+
+nn external_services
+ln External Services
+co $ interaction_layer_easiest
+
+nn easy_to
+ln Easy to..
+co $ facilitating_change_reuse
+
+nn reuse
+ln Easy to reuse
+co $ easy_to
+
+nn change
+ln Easy to change
+co $ easy_to
+
+nn domain_layer_easily_tested
+ln Domain Layer Easily tested
+co reuse domain_layer_easily_tested
+co $ external_services
+cr no access
+
+co change interaction_layer_easiest
+
+nn onion_fractal
+ln Onion architecture is fractal at every level of
+ln abstraction in your actions
+co $ onion_arch

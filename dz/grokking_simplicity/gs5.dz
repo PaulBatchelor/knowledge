@@ -1,0 +1,38 @@
+ns grokking_simplicity/ch05
+gr Grokking Simplicty Chapter 5: Improving the design of
+gr actions.
+
+nn improve_action_design
+ln Improving the design of actions
+
+nn minimize_implicit
+ln minimize implicit inputs/outputs
+co $ improve_action_design
+
+nn group_calculations
+ln Group calculations to get layers of meaning
+co $ improve_action_design
+
+nn pull_things_apart
+ln Design is to pull things apart
+co $ improve_action_design
+
+nn design_flow
+ln design flow
+co $ pull_things_apart
+
+nn undesigned
+ln undesigned
+co $ design_flow
+
+nn pulled_apart
+co $ undesigned
+ln Pulled Apart
+
+nn composed
+ln Composed
+co $ pulled_apart
+
+nn copy_on_write
+ln Copy-on-write design pattern: make copy of data before
+ln modifying it

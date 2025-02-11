@@ -1,0 +1,40 @@
+ns grokking_simplicity/ch11
+gr Grokking Simplicity Chapter 11: First Class Functions
+gr Part 2
+
+nn refactoring_COW
+ln refactoring copy-on-write
+
+nn arrays
+ln arrays
+co $ refactoring_COW
+
+nn replace_body_with_callback
+ln Replace Body With Callback
+co $ arrays
+
+nn standardizes_COW_arrays
+ln Codifies/Standardizes copy-on-write for arrays
+co $ replace_body_with_callback
+
+nn group_with_one_copy
+ln Group Operations Together with one copy. Faster.
+co $ replace_body_with_callback
+
+nn return_funcs_from_funcs
+ln Returning functions from functions
+
+nn wraplogging
+ln WrapLogging(f)
+co $ return_funcs_from_funcs
+
+nn function_factories
+ln Function Factories: Automate creation of functions,
+ln codify a standard
+co $ return_funcs_from_funcs
+co $ standardizes_COW_arrays
+cr similar idea shared: "codifying" and standard
+
+nn remove_duplication_cost_readability
+ln Can remove code duplication at the cost of readability
+co $ return_funcs_from_funcs

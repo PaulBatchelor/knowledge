@@ -1,0 +1,64 @@
+ns grokking_simplicity/ch06
+gr Grokking Simplicty Chapter 6: Staying immutable in a
+gr mutable language
+
+nn operation
+ln Operation can be categorized as a read or write
+
+nn COW_discipline
+ln Copy-on-write discipline: make copy, modify copy,
+ln return copy
+
+nn read_and_write
+ln What about a function that does both a read and write?
+
+nn shift
+ln Example: shift function. Returns first value, shifts
+ln array function
+co $ read_and_write
+cr example of function that does both read/write
+
+nn either_shift_refactor
+ln Either
+co $ shift
+
+nn split_up_into_2
+ln Split up into 2 functions
+co $ either_shift_refactor
+
+nn return_2_values
+ln Return 2 values from function
+co $ either_shift_refactor
+
+nn immutable_reads_calculations
+ln Reads to immutable data structures are calculations
+
+nn mutable_reads_actions
+ln Mutable reads are actions
+co $ immutable_reads_calculations
+cr Corollary
+
+nn writes_data_mutable
+ln Writes make data mutable
+
+nn convert_writes_reads
+ln converting writes to reads makes more calculations
+rm I'd like to understand this better. examples are
+rm in the book fortunately.
+co $ immutable_reads_calculations
+
+nn shallow_copy
+ln Shallow Copy: only duplicate top-level structure of
+ln nested data
+
+nn structural_sharing
+ln Structural Sharing: two pieces of data shrae some of
+ln their references
+
+nn nested_data_cow
+ln Nested data and copy-on-write make efficient use of
+ln references
+
+nn only_parts
+ln only parts of structure need to be replaced
+co $ nested_data_cow

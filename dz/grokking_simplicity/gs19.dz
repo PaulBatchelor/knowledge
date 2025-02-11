@@ -1,0 +1,19 @@
+ns grokking_simplicity/ch19
+gr Grokking Simplicity Chapter 19: The Functional Journey
+gr Ahead
+
+nn remember_three_things
+ln Three things to remember, if nothing else
+
+nn calcs_hidden_in_actions
+ln There are often calculations hidden in your actions
+co $ remember_three_things
+
+nn higher_order_funcs_abstraction
+ln Higher-order functions can reach new hights of
+ln abstraction
+co $ remember_three_things
+
+nn temporal_semantics_code
+ln You can control the temporal semantics of your code
+co $ remember_three_things

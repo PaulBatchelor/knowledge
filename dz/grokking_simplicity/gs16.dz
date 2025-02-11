@@ -1,0 +1,45 @@
+ns grokking_simplicity/ch16
+gr Grokking Simplicity Chapter 16: Sharing Resources
+gr Between Timelines
+
+nn concurrency_primitive
+ln concurrency primitive
+
+nn concurrency_primitive_def1
+ln Piece of re-usable functionality that helps share
+ln resources across timelines
+rm Official definition from the book
+co $ concurrency_primitive
+cr definition 1
+
+nn concurrency_primitive_def2
+ln data structure that helps coordinate timelines
+rm Definition based on the context it was in when I read
+rm the word.
+co $ concurrency_primitive
+cr definition 2
+
+nn use_realworld_sharing
+ln Use Real-world sharing as inspiration
+
+nn blackboards
+ln Blackboards
+co $ use_realworld_sharing
+
+nn locks_on_bathrooms
+ln Locks on Bathrooms
+co $ use_realworld_sharing
+
+nn public_libraries
+ln Public Libraries
+co $ use_realworld_sharing
+
+nn queue_to_guarantee_order
+ln Queue to guarantee order
+co $ concurrency_primitive
+
+nn linearize
+ln Call the queue function "linearize()"
+rm This reminds me of linearizability in the
+rm distributed systems lectures
+td connect to distributed systems node

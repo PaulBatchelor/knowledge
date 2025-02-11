@@ -1,0 +1,83 @@
+ns grokking_simplicity/ch13
+gr Grokking Simplicity Chapter 13: Chaining Functional Tools
+
+nn identity_function
+ln Identity Function
+
+nn returns_arg_unchanged
+ln Returns Argument Unchanged
+co $ identity_function
+cr Definition
+
+nn stream_fusion
+ln Stream Fusion
+
+nn optimizing-chain
+ln Optimizing chain of map(), filter(), and reduce().
+co $ stream_fusion
+cr What stream fusion does
+
+nn two_maps_single_map
+ln Two maps in a row equivlane to single map
+co $ stream_fusion
+
+nn two_filters_one_filter_with_and
+ln Two filters in a row equivalent to one filter with AND
+co $ stream_fusion
+
+nn map_reduce-one_reduce
+ln Map + reduce equivalent to one reduce
+co $ stream_fusion
+
+nn chaining_tips
+ln Chaining Tips
+
+nn make_data
+ln Make Data
+co $ chaining_tips
+
+nn operate_on_whole_array
+ln Operate on whole array
+co $ chaining_tips
+
+nn replace_conditionals_filter
+ln replace conditionals with filter
+co $ chaining_tips
+
+nn extract_helper_functions
+ln extract helper functions
+co $ chaining_tips
+
+nn many_small_steps
+ln Many small steps
+co $ chaining_tips
+
+nn other_functional_tools
+ln Other Functional Tools
+
+nn concat
+ln concat
+co $ other_functional_tools
+
+nn pluck
+ln Pluck
+co $ other_functional_tools
+
+nn frequencies_by
+ln frequenciesBy()
+co $ other_functional_tools
+
+nn group_by
+ln groupBy
+co $ other_functional_tools
+
+nn reduce_for_building_values
+ln reduce for building values
+
+nn event_sourcing
+ln Event sourcing
+co $ reduce_for_building_values
+
+nn augmenting_data
+ln Augmenting Data
+co $ reduce_for_building_values

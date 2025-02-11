@@ -1,0 +1,71 @@
+ns grokking_simplicity/ch17
+gr Grokking Simplicity Chapter 17: Coordinating Timelines
+
+nn formula_possible_orderings
+ln Formula for possible orderings: o = (ta)! / (a!)^t,
+ln where t is number of timelines, and a is number of
+ln actions per timeline
+rm would be nice to get a TeX metadata entry for this
+
+nn possible_orderings_analysis
+ln Possible Orderings Analysis
+rm I liked this term. It's when you look at a timeline and
+rm examing all the possible orderings that can happen in
+rm each part of the timeline
+
+nn cut_primitive
+ln Cut Primitive
+
+nn race_condition
+ln Race Condition
+
+nn race_condition_definition
+ln Occurs when the behavior depends on which timeline
+ln finishes first.
+rm Really like the brevity of this definition. Often
+rm definitions of race conditions involve hard to follow
+rm examples, followed by a "and that's a race condition".
+
+nn idempotent
+ln Idempotent
+
+
+nn just_once
+ln Just Once (function primitive)
+co $ idempotent
+
+nn idempotent_def
+ln Action that only has an effect the first time you call
+ln it
+co $ idempotent
+cr definition
+
+nn models_of_time
+ln Models of Time
+
+nn implicit
+ln Implicit
+co $ models_of_time
+
+nn explicit
+ln Explicit
+co $ models_of_time
+
+nn all_pl_implicit
+ln All programming languages have some implicit model of
+ln time
+co $ implicit
+
+nn explicit_ordering_repitition
+ln Builing explicit model of ordering and repetition
+co $ explicit
+
+nn queue
+ln queue
+co $ explicit
+cr example of explicit model of time (forces order)
+
+nn solves_problem_better
+ln Explicit time models are used by functional programmers
+ln to solve problems better
+co $ explicit

@@ -1,0 +1,92 @@
+ns grokking_simplicity/ch08
+gr Grokking Simplicity Chapter 8: Stratified Design:
+gr Part 1
+
+
+nn stratified_design
+ln Stratified Design
+
+nn software_in_layers
+ln Software in layers
+co $ stratified_design
+
+nn straightforward_implementation
+ln Straightforward implementation
+co $ stratified_design
+
+nn abstraction_barrier
+ln Abstraction Barrier
+co $ stratified_design
+
+nn minimal_interface
+ln Minimal Interface
+co $ stratified_design
+
+nn comfortable_layers
+ln Comfortable Layers
+co $ stratified_design
+co $ software_in_layers
+
+nn call_graph
+ln Call Graph: visualize what function calls or language
+ln features a function uses
+
+nn same_layer_same_purpose
+ln All functions in a layer should serve the same purpose
+co $ software_in_layers
+
+nn zoom_levels
+ln zoom levels: global, layer, function
+
+nn call_graph_arrows
+ln In Call Graph, use of arrows at layer level to indicate
+ln what functions are called
+co $ call_graph
+
+nn arrows_same_length
+ln Ideal: make arrows the same length
+co $ call_graph_arrows
+cr ideal for arrows in callgraph
+
+nn intermediate_functions
+ln can be done with the use of intermediate functions
+co $ arrows_same_length
+
+nn remove_shorten_arrows
+ln remove or shorten arrows
+co $ arrows_same_length
+
+nn single_level_detail
+ln Solves a problem at a single level of detail
+co $ stratified_design
+
+nn clear_code
+ln Clear Code
+co $ single_level_detail
+
+nn target_detail_level
+ln Stratified Design helps target specific level of detail
+co $ single_level_detail
+co $ stratified_design
+
+nn call_graph_detail_clues
+ln Call Graph gives clues about level of detail
+co $ single_level_detail
+co $ call_graph
+
+nn extract_function_generalize
+ln Extracting a function yields a more general function
+co $ call_graph_detail_clues
+
+nn general_function_reusable
+ln general functions are more re-usable
+co $ extract_function_generalize
+
+nn clarify_implementation
+ln Not done to deduplicate code, but to clarify
+ln implementation.
+co $ general_function_reusable 
+
+nn serendipitous re-use
+ln "serendipitous re-use"
+co $ clarify_implementation

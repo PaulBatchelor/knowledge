@@ -1,0 +1,22 @@
+ns grokking_simplicity/ch07
+gr Grokking Simplicty Chapter 7: Staying immutable with
+gr untrusted code
+
+nn defensive_copying
+ln Defensive copying
+
+nn safe_zone
+ln Create "safe zone" for immutability
+co $ defensive_copying
+
+nn create_deep_copy
+ln Create "deep copy" of input data
+co $ defensive_copying
+
+nn create_copy_before_return
+ln Create copy before returning
+co $ defensive_copying
+
+nn deep_vs_shallow_copy
+ln Deep copy: slower than shallow copy
+co $ create_deep_copy

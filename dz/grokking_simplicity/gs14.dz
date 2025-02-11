@@ -1,0 +1,61 @@
+ns grokking_simplicity/ch14
+gr Grokking Simplicity Chapter 14: Functional Tools For
+gr Nested Data
+
+nn update
+ln Update
+
+nn update_definition
+ln Takes function that operates on single value and apply
+ln it in-place inside of an objection
+co $ update
+cr definition
+
+nn needs
+ln Needs
+co $ update
+
+nn object_to_modify
+ln object to modify
+co $ needs
+
+nn key
+ln key
+co $ needs
+
+nn func_to_modify_value
+ln Function to modify value
+co $ needs
+
+nn replace_get_modify_set_with_update
+ln Replace get, modify, set, with update (refactoring)
+co $ update
+
+nn nested_update
+ln Nested Update
+co $ update
+
+nn generalized_recursive_function
+ln Can be generalized as recursive function
+co $ nested_update
+
+nn abstraction_barriers_deeply_nested_data
+ln Abstraction barriers on deeply nested data
+co $ nested_update
+
+nn safe_recursion
+ln safe recursion
+co $ generalized_recursive_function
+
+nn base_case_to_stop
+ln Base Case To Stop
+co $ safe_recursion
+
+nn one_recursive_case
+ln At least one recursive case
+co $ safe_recursion
+
+nn progress_towards_base_case
+ln Progress towards base case
+co $ safe_recursion
+co $ base_case_to_stop

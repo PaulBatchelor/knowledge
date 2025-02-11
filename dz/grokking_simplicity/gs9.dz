@@ -1,0 +1,42 @@
+ns grokking_simplicity/ch09
+gr Grokking Simplicity Chapter 8: Stratified Design:
+gr Part 2
+
+nn abstraction_barrier
+ln Abstraction Barrier
+
+nn decouple_code
+ln Decouple Code Above and Below Barrier
+co $ abstraction_barrier
+
+nn helps_coordinate_code
+ln Helps coordinate code across teams
+co $ abstraction_barrier
+
+nn ignoring_details_symmetrical
+ln Ignoring Details is Symmetrical: above doesn't worry
+ln about below and below doesn't worry about above.
+co $ abstraction_barrier
+
+nn ignore_details_focus_problem
+ln Ignoring detail allows better focus on problem being
+ln solved.
+co $ ignoring_details_symmetrical
+
+nn minimal_interface
+ln Minimal Interface
+
+nn keep_abstraction_barrier_minimal
+ln Keep Abstraction Barrier Minimal
+co $ minimal_interface
+co $ abstraction_barrier
+cr abstraction barrier should have minimal interface
+
+nn ideal_function_set
+ln Ideal Function Set: complete, minimal, timeless
+co $ keep_abstraction_barrier_minimal
+
+nn completeness_vs_minimalism
+ln Tension in Stratified Design: completeness of an
+ln abstraction barrier vs. pattern minimalism
+co $ minimal_interface

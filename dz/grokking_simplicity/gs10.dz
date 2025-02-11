@@ -1,0 +1,87 @@
+ns grokking_simplicity/ch10
+gr Grokking Simplicity Chapter 10: First Class Functions
+gr Part 1
+
+nn implicit_argument_function_name
+ln Code Smell: implicit argument in function name
+
+nn make_implicit_explicit
+ln Refactor: make implicit explicit
+co $ implicit_argument_function_name
+
+nn implicit_funcname_examples
+ln Examples of Implicit Argument in Function Name: do_foo,
+ln do_bar, do_blah, etc.
+
+nn value_first_class
+ln makes value first class
+co $ make_implicit_explicit
+
+nn first_class_vs_not
+ln First Class vs Not First Class
+
+nn non_firstclass_js
+ln Non-Firstclass things in JS
+co $ first_class_vs_not
+
+nn arith_op
+ln Arithmetic Operations
+co $ non_firstclass_js
+
+nn for_loops
+ln For Loops
+co $ non_firstclass_js
+
+nn if_stmt
+ln If Statement
+co $ non_firstclass_js
+
+nn try_catch
+ln Try/Catch
+co $ non_firstclass_js
+
+nn things_firstclass_can_do
+ln things first-class values can doo
+co $ first_class_vs_not
+
+nn assign_to_variable
+ln Assign to Variable
+co $ things_firstclass_can_do
+
+nn pass_arg_to_function
+ln Pass as argument to function
+co $ things_firstclass_can_do
+
+nn return_from_function
+ln Return from function
+co $ things_firstclass_can_do
+
+nn store_in_array
+ln Store in array
+co $ things_firstclass_can_do
+
+nn higher_order
+ln Higher Order: functions that take functions as input
+
+nn replace_body_with_callback
+ln Replace Body With Callback
+
+nn identify_before_body_after
+ln Identify Before, Body, and After sections
+co $ replace_body_with_callback
+
+nn extract_into_function
+ln extract whole thing into function
+co $ identify_before_body_after
+co $ replace_body_with_callback
+
+nn extract_body_section
+ln extract body section into a function passed as argument
+ln to that function
+co $ extract_into_function
+co $ replace_body_with_callback
+
+nn before_after_dont_change
+ln Before/After sections don't change. They form a "hole"
+ln that you slip different code into
+co $ identify_before_body_after

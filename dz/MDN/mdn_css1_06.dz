@@ -1,0 +1,269 @@
+ns mdn/css/1_css_building_blocks/06_cascade_layers
+gr Cascade Layers
+
+nn cascade_layers
+ln Cascade Layers
+
+nn builds_on_cascade_specificity
+ln Builds on Cascade and Specificity
+co $ cascade_layers
+td tie to external topics
+
+nn most_relevant_when
+ln Most relevant when importing from multiple sources when
+ln there are conflicting seletors and competing specificities
+co $ cascade_layers
+
+nn explicit_specificity_containers
+ln Explicit Specificity Containers
+co $ cascade_layers
+
+nn simpler_greater_control_declarations
+ln Simpler and greater control over CSS declarations
+ln that get applied
+co $ explicit_specificity_containers
+
+nn cascade_review
+ln Cascade Review
+
+nn steps_user_agent_runs_through
+ln Steps the user-agent runs through
+co $ cascade_review
+
+nn clearly_defined_steps
+ln Relevance, importance, origin, cascade layers,
+ln specificity
+co $ steps_user_agent_runs_through
+
+nn levels_of_precedence
+ln Levels of precedence
+co $ cascade_review
+
+nn styles_levels_of_precedence_list
+ln User-agent normal, user normal, author normal,
+ln animated, author important, user important,
+ln user-agent important, transitioned
+co $ levels_of_precedence
+
+nn cascade_origin_types
+ln Cascade Origin Types
+co $ cascade_review
+co $ styles_levels_of_precedence_list
+cr elaboration on terminology in list
+
+nn cascade_origin_types_list
+ln User-agent, user, and author stylesheets
+co $ cascade_origin_types
+
+nn user_agent
+ln User agent: browser
+co $ cascade_origin_types_list
+
+nn author
+ln Author: you (developer)
+co $ cascade_origin_types_list
+
+nn user
+ln User: Site visitor
+co $ cascade_origin_types_list
+
+nn winning_declaration
+ln For each property, declaration that "wins" is one
+ln from the origin with precedence based on the
+ln weight (normal/important)
+co $ cascade_review
+
+nn origin_highest_precedence
+ln Value from origin with highest precedence applied
+co $ winning_declaration
+
+nn winning_origin_multiple_declarations
+ln Winning origin more than one property declaration for
+ln element?
+co $ origin_highest_precedence
+
+nn compare_specificity
+ln Compare specificity for competing values
+co $ winning_origin_multiple_declarations
+
+nn precedence_over_specificity
+ln Origin precedence always wins over selector specificity
+co $ origin_highest_precedence
+
+nn cascade_layer_precedence
+ln Cascade Layer Precedence
+co $ cascade_layers
+co $ clearly_defined_steps
+cr focusing on "cascade layer" element
+
+nn suborigin_priority
+ln Sub-origin level of priority within an origin
+co $ cascade_layer_precedence
+
+nn unlayered_important_styles_cascade
+ln Unlayered important styles cascade together into
+ln implicit layer, precedence over non-transitioning
+ln normal styles
+co $ cascade_layer_precedence
+
+nn order_sets_precedence
+ln Order of layer creation sets precedence among layers
+ln within origin.
+co $ cascade_layer_precedence
+
+nn nested_cascade_layers
+ln Nested Cascade Layers
+co $ cascade_layers
+
+nn creating_cascade_layers
+ln Creating Cascade Layers
+co $ cascade_layers
+
+nn layer_at_rule
+ln @layer
+co $ creating_cascade_layers
+
+nn import_at_rule
+ln @import
+co $ creating_cascade_layers
+
+nn layer_keyword_or_layer_func
+ln Layer keyword or layer() function
+co $ import_at_rule
+
+nn statement
+ln statement
+co $ import_at_rule
+
+nn block
+ln block
+co $ import_at_rule
+
+nn creates_layers_no_style
+ln Creates (named) layers without assigning any styles
+co $ statement
+
+nn styles_within_added_to_layer
+ln Styles with block added to named/unnamed layer
+co $ block
+
+nn define_layer_order
+ln Can be used to define layer order
+co $ creates_layers_no_style
+
+nn assigns_file_contents_to_layer
+ln Assigns imported file contents into that layer
+co $ layer_keyword_or_layer_func
+
+nn create_anonymous_layers
+ln Used to create anonymous layers
+co $ block
+
+nn normal_unlayered_over_layered
+ln Normal unlayered takes precedence over layered
+co $ cascade_precedence_order
+
+nn cascade_precedence_order
+ln Cascade Precedence Order
+co $ cascade_layers
+
+nn styles_added_to_anon_layer_creation_time
+ln Styles can only be added to an anonymous layer at the
+ln time of its creation
+co $ create_anonymous_layers
+
+nn layer_creation_media_feature_queries
+ln Layer creation with media queries and feature
+ln queries
+co $ creating_cascade_layers
+
+nn layer_not_created_no_match_unsupported_feature
+ln No layer is creatred if media is not a match or feature
+ln not supported
+co $ layer_creation_media_feature_queries
+
+nn defined_before_CSS_styles
+ln must be defined before any CSS styles within stylesheet
+ln or <style> block
+co $ import_at_rule
+
+nn preceded_by_charset
+ln Can be preceded by a @charset rule
+co $ import_at_rule
+
+nn import_stylesheet_into_layer
+ln Import stylesheet into named layer, nested layer,
+ln or anonymous layer
+co $ import_at_rule
+
+nn import_multiple_into_layer
+ln import more than one CSS file into a single layer
+co $ import_stylesheet_into_layer
+
+nn import_create_layers_media_feature_queries
+ln Import/create layers based on media queries and
+ln feature queries (conditional)
+co $ import_at_rule
+
+nn created_same_as_regular
+ln Can be created same as regular layers
+co $ nested_cascade_layers
+
+nn layer_at_rule_dot_notation
+ln @layer using dot noation
+co $ created_same_as_regular
+
+nn multiple_dots_names_multiple_nesting
+ln Multiple dots and layer names signifies multiple
+ln layer_at_rule_dot_notation
+
+nn precedence
+ln Precedence
+co $ cascade_layers
+
+nn normal_styles_lowest
+ln normal styles lowest priority
+co $ precedence
+
+nn styles_declared_outside_layers
+ln Styles declared outside of layers
+co $ normal_styles_lowest
+cr next
+
+nn inline_style_attr
+ln Inline styles declared using style attribute
+co $ styles_declared_outside_layers
+cr next
+
+nn animating_styles
+ln Animating Styles
+co $ inline_style_attr
+cr next
+
+nn important
+ln !important
+co $ animating_styles
+cr next
+
+nn inline_important
+ln Inline Important
+co $ important
+cr next
+
+nn transitioning_styles
+ln Transitioning Styles
+co $ inline_important
+
+nn important_order_precedence_reversed
+ln Order of precedence reversed for important styles
+co $ inline_important
+co $ precedence
+co $ important
+
+nn precedence_order_nested_cascade_layer
+ln Precedence order of nested cascade layers
+co $ cascade_layers
+
+nn based_on_order_nested_creation
+ln Based on order of nested creation
+co $ precedence_order_nested_cascade_layer

@@ -1,0 +1,116 @@
+ns mdn/css/3_css_layout/08_media_queries_beginners
+gr A beginner's guide to media queries
+
+nn media_queries
+ln CSS media queries
+pg 127
+
+nn apply_CSS_when_device_matches_rule
+ln a way to apply CSS only when the browser device
+ln environment matches a specified rule
+co $ media_queries
+cr desc
+pg 127
+
+nn basics
+ln media query basics
+co $ media_queries
+pg 127
+
+nn syntax
+ln @media meda-type and (media-feature-rule) {}
+co $ basics
+
+nn media_type
+ln media-type: what kind of media code meant for (print,
+ln screen, all)
+co $ syntax
+
+nn media_expression
+ln media expression: rule/test that must be passed for
+ln contained CSS to be applied.
+co $ syntax
+pg 128
+
+nn feature_rules
+co $ basics
+ln media feature rules
+pg 129
+
+nn width_height_min_max
+ln width, height, max-[width|height], min-[width|height]
+co $ feature_rules
+pg 129
+
+nn orientation
+ln orientation: [portrait|landscape]
+co $ feature_rules
+pg 130
+
+nn hover
+ln hover
+co $ feature_rules
+pg 130
+
+nn pointer
+ln pointer
+co $ feature_rules
+pg 131
+
+nn none
+ln none: no pointing device. navigation possibly done
+ln with keyboard or voice?
+co $ pointer
+
+nn fine
+ln fine: mouse/trackpad
+co $ pointer
+
+nn coarse
+ln coarse: finger on touchscreen
+co $ pointer
+
+nn complex_media_queries
+ln more complex media queries
+co $ media_queries
+
+nn and_logic
+ln "and" logic
+co $ complex_media_queries
+
+nn or_logic
+ln "or" logic
+co $ complex_media_queries
+pg 132
+
+nn not_logic
+ln "not" logic
+co $ complex_media_queries
+pg 132
+
+nn comma_separted
+ln comma-separated
+co $ or_logic
+
+nn negates_entire_query
+ln negates entire query
+co $ not_logic
+
+nn how_to_choose_breakpoints
+ln how to choose breakpoints
+pg 133
+co $ media_queries
+
+nn breakpoint
+ln breakpoint: point at which a media query is introduced
+co $ how_to_choose_breakpoints
+co $ media_queries
+
+nn change_size_when_design_breaks
+ln instead of targetting specific devices, change design
+ln at size when con tent starts to break in some way
+co $ how_to_choose_breakpoints
+
+nn responsive_design_mode
+ln responsive design mode in firefox DevTools
+co $ how_to_choose_breakpoints

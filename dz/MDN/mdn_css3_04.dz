@@ -1,0 +1,81 @@
+ns mdn/css/3_css_layout/04_floats
+gr Floats
+
+nn floats
+ln floats
+
+nn background
+ln background
+co $ floats
+pg 74
+
+nn intended_for_image_floating
+ln originally intended for image floating inside column
+ln of text
+co $ background
+
+nn repurposed
+ln started being repurposed for many things
+co $ intended_for_image_floating
+
+nn drop_caps
+ln drop-caps
+co $ repurposed
+cr example
+td what are "drop-caps"
+
+nn box_float_margin_right
+ln box can be floated with "float" and "margin-right"
+co $ floats
+pg 76
+
+nn margin_left_reverse
+ln "margin-left" for reverse effect
+co $ box_float_margin_right
+pg 78
+
+nn margin_float_pushes_text
+ln applying a margin to float pushes text away
+co $ floats
+co $ box_float_margin_right
+co $ margin_left_reverse
+pg 78
+
+nn cant_add_margin_text_push_float
+ln cant add margin to text to push away float:
+ln element taken out of normal flow, boxes of following
+ln items run behind float
+co $ margin_float_pushes_text
+cr other way around doesn't work
+
+nn clearing_floats
+ln clearing floats
+pg 79
+
+nn clear
+ln clear: stop element following float from moving up
+co $ clearing_floats
+
+nn clear_prop
+ln clear property
+co $ clearing_floats
+
+nn clear_prop_args
+co $ clear_prop
+ln clear: left/right/both. clears items floated to
+ln left/right/both.
+pg 80
+
+nn clearing_boxes_wrapped_around_float
+ln clearing boxes wrapped around a float
+co $ clearing_floats
+pg 81
+
+nn block_formatting_context
+ln block formatting context (BFC) using display property
+co $ clearing_boxes_wrapped_around_float
+pg 83
+
+nn display_flow_root
+ln display: flow-root
+co $ block_formatting_context

@@ -1,0 +1,64 @@
+ns mdn/css/1_css_building_blocks
+gr CSS Building Blocks
+
+ns mdn/css/1_css_building_blocks/00_css_selectors
+gr CSS selectors
+
+nn selector
+ln selector
+
+nn spec
+ln specification
+co $ selector
+
+nn level3
+ln level 3
+co $ spec
+
+nn level4
+ln level 4
+co $ spec
+
+nn subject
+ln subject
+co $ selector
+
+nn elements_selected
+ln elements selected
+co $ subject
+
+nn selector_list
+ln selector list
+co $ selector
+
+nn type_selector
+ln Type Selector
+co $ selector
+
+nn types
+ln types
+co $ type_selector
+
+nn id_selector
+ln ID selector
+co $ types
+
+nn class_selector
+ln Class Selector
+co $ types
+
+nn attr_selector
+ln Attribute Selector
+co $ types
+
+nn combinators
+ln Combinators
+co $ types
+
+nn pseudo_elements
+ln Pseudo-Elements
+co $ types
+
+nn pseudo_classes
+ln Pseudo classes
+co $ types

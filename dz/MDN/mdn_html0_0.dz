@@ -1,0 +1,133 @@
+ns mdn/html
+gr MDN HTML guide
+
+nn elements
+ln elements
+zz rm a collection of HTML elements referenced over the
+zz rm course of this guide.
+
+ns mdn/html/0_intro_to_html
+gr HTML is a language of elements which can be applied to
+gr pieces of text to give them meaning in a document.
+
+ns mdn/html/0_intro_to_html/0_intro
+gr Introduction
+
+al elements mdn/html/elements
+
+nn html
+ln HTML
+
+nn html_elements
+ln html elements
+co $ html
+cx $ @elements
+cr foundations
+
+nn void
+ln void
+co $ html_elements
+
+nn content
+ln content
+cr $ html_elements
+
+nn tags
+ln tags
+cr $ html_elements
+
+nn opening
+ln opening
+co $ tags
+
+nn closing
+ln closing
+co $ tags
+
+co content tags
+
+nn nesting
+ln nesting
+co $ html_elements
+
+nn attributes
+ln attributes
+co $ html_elements
+
+nn boolean
+ln boolean
+co $ html_elements
+
+nn required
+ln required
+co $ html_elements
+
+nn vals_without_quotes
+ln Values without quotes
+co $ attributes
+
+nn single_vs_double_quotes
+ln Single vs double quotes
+co $ vals_without_quotes
+
+nn anatomy_of_doc
+ln Anatomy of a document
+co $ html
+
+nn open_close_inside_outside
+ln Open/Close elements in a way that they are inside or
+ln outside one another
+co $ closing
+co $ opening
+
+nn anchor
+ln Anchor
+co $ tags
+
+nn doctype
+ln doctype
+co $ anatomy_of_doc
+
+nn root_element
+ln Root Element
+co $ anatomy_of_doc
+
+nn html_tag
+ln <html>
+co $ html_elements
+co $ root_element
+cx $ @elements
+
+nn whitespace
+ln whitespace
+co $ html
+
+nn title_tag
+ln <title>
+co $ anatomy_of_doc
+cx $ @elements
+
+nn head_tag
+ln <head>
+co $ anatomy_of_doc
+cx $ @elements
+
+co title_tag head_tag
+
+nn meta_tag
+ln <meta>
+co $ anatomy_of_doc
+cx $ @elements
+
+nn comments
+ln comments
+co $ html
+
+nn entity_reference
+ln entity reference
+co $ html
+
+nn character_references
+ln Character References
+co $ entity_reference
+cr AKA

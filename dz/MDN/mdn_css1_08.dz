@@ -1,0 +1,118 @@
+ns mdn/css/1_css_building_blocks/08_backgrounds_and_borders
+gr Backgrounds and Borders
+
+nn background_property
+ln Background Property
+
+nn background_color
+ln background-color
+co $ backgrounds
+
+nn shorthand_for_bg_longhand
+ln Shorthand for background longhand properties
+co $ background_property
+
+nn backgrounds
+ln Backgrounds
+co background_property backgrounds
+
+nn accepts_valid_color
+ln Accepts any valid <color>
+co $ background_color
+
+nn background_image
+ln background-image
+co $ backgrounds
+
+nn background_repeat
+ln background-repeat
+co $ backgrounds
+
+nn background_size
+ln background-size
+co $ backgrounds
+
+nn tiling_behavior_images
+ln Controls tiling behavior of images
+co $ background_repeat
+
+nn size_image_background
+ln Use length or percentage to size image to fit in
+co $ backgrounds
+
+nn repeat_options
+ln no-repeat, repeat-x, repeat-y, repeat
+co $ tiling_behavior_images
+
+nn background_position
+ln Background Position
+co $ backgrounds
+
+nn gradient_backgrounds
+ln Gradient Backgrounds
+co $ backgrounds
+
+nn background_attachment
+ln background-attachment
+co $ backgrounds
+
+nn how_bg_scrolls_with_content
+ln Specifies how backgrounds scrolls when content
+ln scrolls
+co $ background_attachment
+cr description
+
+nn fixed
+ln fixed
+co $ background_attachment
+
+nn local
+ln local
+co $ background_attachment
+
+nn fixes_bg_to_elem
+ln Fixes background to element it is set on. It scrools
+ln with element scroll.
+co $ local
+
+nn keywords
+ln keywords
+co $ background_size
+
+nn scroll
+ln scroll
+co $ background_attachment
+
+nn cover
+ln cover
+co $ keywords
+
+nn contain
+ln contain
+co $ keywords
+
+nn background_shorthand_property
+ln Background shorthand property
+co $ backgrounds
+
+nn set_props_simultaneously
+ln Lets you set all the different properties at once
+co $ background_shorthand_property
+
+nn multi_bg_comma_sep
+ln Multiple backgrounds are separated by a comma
+co $ background_shorthand_property
+
+nn borders
+ln Borders
+
+nn border_shorthand
+ln Typically use "border" shorthand
+
+nn rounded_corners
+ln Rounded Corners
+co $ borders
+
+nn border_radius
+ln border-radius
+co $ borders

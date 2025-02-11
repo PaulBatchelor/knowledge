@@ -1,0 +1,61 @@
+ns mdn/css/1_css_building_blocks/02_attribute_selectors
+gr attribute selectors
+zz TODO add page attribute
+zz gp 23
+
+nn presence_value_selectors
+ln Presence and Value Selectors
+
+nn select_based_on_attribute_presence
+ln Select element based on presence of attribute alone
+co $ presence_value_selectors
+cr description
+
+nn substring_matching_selectors
+ln Substring matching selectors
+co $ presence_value_selectors
+
+nn substrings_in_attribute
+ln More advanced matching of substrings in attribute value
+co $ substring_matching_selectors
+cr description
+
+nn attr
+ln [attr]
+co $ presence_value_selectors
+
+nn attr_val
+ln [attr = val]
+co $ presence_value_selectors
+
+nn attr_tilde_val
+ln [attr ~= val]
+co $ presence_value_selectors
+
+nn attr_pipe_val
+ln [attr |= val]
+co $ presence_value_selectors
+td what does attr |= val mean again?
+
+nn attr_carrot_val
+ln [attr ^= val]
+co $ substring_matching_selectors
+
+nn attr_dollar_val
+ln [attr $= val]
+co $ substring_matching_selectors
+
+nn attr_asterisk_val
+ln [attr *= val]
+co $ substring_matching_selectors
+
+nn case_insensitivity
+ln Case-insensitivity
+co $ presence_value_selectors
+
+nn i_before_closing_bracket
+ln i before closing bracket
+co $ case_insensitivity
+cr how to turn on
+rm syntax: [a=v i]
+

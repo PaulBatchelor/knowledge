@@ -1,0 +1,66 @@
+ns mdn/css/3_css_layout/10_supporting_older_browsers
+gr Supporting Older Browsers
+
+nn browser_landscape
+ln what is the browser landscape for your site?
+pg 166
+
+nn support_desired_features
+ln what is the support for desired features?
+pg 166
+
+nn support_not_looks_the_same
+ln support is not equivalent to "looks the same"
+co $ support_desired_features
+pg 167
+
+nn creating_fallbacks
+ln creating fallbacks in CSS
+pg 170
+
+nn grid_to_float
+co $ creating_fallbacks
+ln falling back from grid to float
+
+nn fallback_methods
+ln fallback methods
+co $ creating_fallbacks
+pg 170
+
+nn float_and_clear
+ln float and clear
+co $ fallback_methods
+
+nn display_inline_block
+ln display: inline-block
+co $ fallback_methods
+
+nn display_table
+ln display: table
+co $ fallback_methods
+
+nn flexbox_fallback_for_grid
+ln flexbox as fallback for grid
+co $ fallback_methods
+
+nn ignroed_if_flex_grid
+ln ignored if theres flex/grid
+co display_table $
+co display_inline_block $
+co float_and_clear $
+
+nn multicol
+ln multicol
+co $ fallback_methods
+
+nn feature_queries
+ln Feature Queries
+pg 170
+
+nn IE10_11_prefixed_grid
+ln IE10 and 10 prefixed versions of grid
+pg 174
+
+nn testing_older_browsers
+ln testing older browsers
+pg 175

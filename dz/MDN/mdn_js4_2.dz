@@ -1,0 +1,38 @@
+ns mdn/js/4_client_side_web_APIs/2_fetching_data
+gr Fetching Data From the Server
+
+nn fetch_api
+ln Fetch API
+pg 32
+
+nn http_req_retrieve_res
+ln Make http requests to retrieve specific resources
+co $ fetch_api
+cr desc
+
+nn update_page_using_DOM
+ln update page using DOM manipulation APIs
+co $ http_req_retrieve_res
+cr after retrieval
+
+nn ajax
+ln ajx: asynchronous JS and XMl
+pg 32
+
+nn used_old_days_json_now
+ln used in old days. JSON used more now. term still used to
+ln describe same diea
+co $ ajax
+
+nn fetching_text_content
+ln Fetching text content
+co $ fetch_api
+pg 33
+
+nn xml_http_request_api
+ln xmlHttpRequest API
+pg 39
+
+nn predates_fetch
+ln predates fetch
+co $ xml_http_request_api

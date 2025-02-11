@@ -1,0 +1,38 @@
+ns mdn/css/1_css_building_blocks/14_styling_tables
+gr Styling Tables
+
+nn table
+ln table
+
+nn table_layout
+ln table-layout
+co $ table
+
+nn border_collapse
+ln border-collapse: collapse
+co $ table
+
+nn letter_spacing
+ln letter-spacing
+co $ table
+
+nn text_align
+ln text-align
+co $ table
+
+nn fixed_more_predictable_than_default
+ln "fixed" good idea. behaves more predictable than default
+co $ table_layout
+
+nn zebra_stripes
+ln Zebra Stripes: alternating rows of color that make data
+ln in table easier to parse
+co $ table
+
+nn tr_nth_child
+ln tr: nth-child(odd/even)
+co $ zebra_stripes
+
+nn caption_side
+ln caption-side
+co $ table

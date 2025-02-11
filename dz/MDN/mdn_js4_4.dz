@@ -1,0 +1,170 @@
+ns mdn/js/4_client_side_web_APIs/4_drawing_graphics
+gr Drawing Graphics
+
+nn canvas_api
+ln canvas API
+pg 58
+
+nn canvas_elem
+ln <canvas>
+co $ canvas_api
+pg 58
+
+nn webgl
+ln WebGL
+pg 59
+
+nn get_context
+co $ canvas_api
+ln HTMLCanvasElement.getContext()
+pg 63
+
+nn fill_style
+ln fillStyle
+co $ canvas_api
+
+nn fill_rect
+ln fillRect()
+co $ canvas_api
+
+nn 2d_canvas_basics
+ln 2d canvas basics
+co $ canvas_api
+pg 63
+
+nn simple_rects
+ln simple rectangles
+co $ 2d_canvas_basics
+pg 64
+
+co fill_rect simple_rects
+
+nn strokes_line_widths
+ln strokes and line widths
+co $ 2d_canvas_basics
+pg 65
+
+nn stroke_rect
+ln strokeRect()
+co $ strokes_line_widths
+
+nn stroke_style_set_color
+ln stroke style used to set color
+co $ strokes_line_widths
+
+nn line_width
+ln lineWidth
+pg 66
+co $ strokes_line_widths
+
+nn drawing_paths
+ln drawing paths
+co $ 2d_canvas_basics
+pg 66
+
+nn begin_path
+ln beginPath()
+co $ drawing_paths
+pg 67
+
+nn move_to
+ln moveTo()
+co $ drawing_paths
+pg 67
+
+nn fill
+ln fill()
+co $ drawing_paths
+pg 67
+
+nn stroke
+ln stroke()
+co $ drawing_paths
+pg 67
+
+nn drawing_lines
+ln drawing lines
+co $ 2d_canvas_basics
+pg 67
+
+nn drawing_circs
+ln drawing circles
+co $ 2d_canvas_basics
+pg 69
+
+nn arc
+ln arc()
+co $ drawing_circs
+pg 69
+
+nn drawing_text
+ln drawing text
+co $ 2d_canvas_basics
+pg 71
+
+nn fill_text
+ln fillText()
+co $ drawing_text
+
+nn stroke_text
+ln strokeText()
+co $ drawing_text
+
+nn xy_coords_bottom_left_textbox
+ln xy coordinates are bottom left corner of textbox
+co $ stroke_text
+co $ fill_text
+
+nn drawing_images_canvas
+ln drawing images onto canvas
+co $ canvas_api
+pg 72
+
+nn draw_image
+ln drawImage()
+pg 73
+co $ drawing_images_canvas
+
+nn html_image_elem_and_load_evt
+ln HTMLImageElement and load event
+co $ drawing_images_canvas
+co $ draw_image
+cr load event calls drawImage()
+
+nn loops_anim
+ln loops and animations
+pg 74
+
+nn translate
+ln translate()
+co $ canvas_api
+pg 75
+
+nn animations
+ln animations
+pg 78
+
+nn request_animation_frame
+ln Window.requestAnimationFrame()
+co $ animations
+pg 78
+
+nn cancel_animation_frame
+ln cancelAnimationFrame()
+co $ request_animation_frame
+cr related
+co $ animations
+
+nn clear_canvas
+ln clear canvas: fillRect() or clearRect()
+co $ animations
+co $ fill_rect
+
+nn save_state_canvas
+ln use save() to save state on canvas before continuing
+co $ animations
+
+nn mostly_written_using_third_party
+ln mostly written using third-party JS libary: Three.js,
+ln PlayCanvas, Babylon.js
+co $ webgl

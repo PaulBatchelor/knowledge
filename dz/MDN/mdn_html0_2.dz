@@ -1,0 +1,110 @@
+ns mdn/html/0_intro_to_html/2_text_fundamentals
+gr Text Fundamentals
+
+al elements mdn/html/elements
+
+nn headings
+ln headings
+
+nn h1_through_h6
+ln <h1> ... <h6>
+co $ headings
+cx $ @elements
+
+nn paragraphs
+ln paragraphs
+
+nn p_tag
+ln <p>
+co $ paragraphs
+cx $ @elements
+
+nn ideals
+ln ideals
+co $ h1_through_h6
+
+nn single_h1_per_page
+ln single h1 per page
+co $ ideals
+
+nn 3_heading_level_per_page
+ln 3 heading levels per page
+co $ ideals
+
+nn structural_hierarchy
+ln Structural Hierarchy
+co $ headings
+co $ h1_through_h6
+
+nn semantics
+ln Semantics
+
+nn lists
+ln lists
+
+nn unordered
+ln unordered
+co $ lists
+
+nn ordered
+ln ordered
+co $ lists
+
+nn ul_tag
+ln <ul>
+co $ unordered
+cx $ @elements
+
+nn ol_tag
+ln <ol>
+co $ ordered
+cx $ @elements
+
+nn li_tag
+ln <li>
+co $ lists
+cx $ @elements
+
+nn nesting
+ln nesting
+co $ lists
+
+nn emphasis
+ln emphasis
+
+nn text
+ln text
+co emphasis text
+
+nn strong
+ln strong
+co $ text
+
+nn tag_emphasis
+ln <em>
+cx $ @elements
+co $ emphasis
+
+nn tag_strong
+ln <strong>
+co $ strong
+cx $ @elements
+
+nn presentational
+ln presentationl
+rm deprecated
+
+nn tag_b
+ln <b>
+co $ presentational
+cx $ @elements
+
+nn tag_i
+ln <i>
+co $ presentational
+cx $ @elements
+
+nn tag_u
+ln <u>
+co $ presentational
+cx $ @elements

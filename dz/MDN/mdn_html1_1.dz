@@ -1,0 +1,128 @@
+ns mdn/html/1_multimedia_and_embedding/1_video_and_audio_content
+gr Video and Audio Content
+zz pg 24
+
+al elements mdn/html/elements
+
+nn OVP
+ln OVP: Online Video Provider
+co $ video
+
+nn video
+ln video
+
+nn fallback_content
+ln Fallback Content
+co $ video
+
+nn tag_video
+ln <video>
+co $ video
+cx $ @elements
+
+nn src
+ln src
+co $ tag_video
+
+nn controls
+ln controls
+co $ tag_video
+
+nn multimedia_files
+ln Multimedia files
+
+nn codecs
+ln codecs
+co $ multimedia_files
+
+nn container_formats
+ln Container Formats
+co $ multimedia_files
+
+nn width
+ln width
+co $ tag_video
+
+nn height
+ln height
+co $ tag_video
+
+nn autoplay
+ln autoplay
+co $ tag_video
+
+nn loop
+ln loop
+co $ tag_video
+
+nn muted
+ln muted
+co $ tag_video
+
+nn preload
+ln preload
+co $ tag_video
+td what does preload do again?
+
+nn poster
+ln poster
+co $ tag_video
+
+nn none
+ln "none"
+co $ preload
+
+nn metadata
+ln "metadata"
+co $ preload
+
+nn auto
+ln "auto"
+co $ preload
+
+nn tag_source
+ln <source>
+co $ tag_video
+cx $ @elements
+
+nn tag_audio
+ln <audio>
+co $ audio
+cx $ @elements
+
+nn audio
+ln audio
+
+nn video_text_tracks
+ln Video text tracks
+co $ video
+
+nn webvtt
+ln WebVTT
+co $ video_text_tracks
+
+nn tag_track
+ln <track>
+co $ video_text_tracks
+cx $ @elements
+
+nn placed_after_source_elements
+ln Placed inside audio or video after all <source>
+ln elements
+co $ tag_track
+
+nn cues
+ln cues
+co $ webvtt
+
+nn subtitles
+ln subtitles
+co $ cues
+
+nn captions
+ln captions
+co $ cues
+
+nn timed_descriptions
+ln Timed Descriptions
+co $ cues

@@ -1,0 +1,67 @@
+ns mdn/js/2_javascript_objects
+gr Introducing JavaScript Objects
+
+ns mdn/js/2_javascript_objects/0_object_basics
+gr JavaScript Object Basics
+
+nn object
+ln Object
+
+nn collection_data_functionality
+ln Collection of data and/or functionality
+co $ object
+
+nn property
+ln Property: data item
+co $ object
+
+nn method
+ln Method: function that allows the object to do something
+ln with the data
+co $ object
+
+nn object_literal
+ln Object Literal: object content written out literally as
+ln it is created
+co $ object
+
+nn useful_for_transfering_related_data
+ln Useful for transfering series of related data items
+co $ object_literal
+
+nn dot_notation
+ln Dot Notation
+co $ object
+
+nn namespace
+ln Namespace
+co $ dot_notation
+
+nn bracket_notation
+ln Bracket Notation
+co $ object
+co $ dot_notation
+cr alternative
+
+nn associative_arrays
+ln Associative Arrays
+co $ object
+
+nn this
+ln this: enables use to use the same method definition
+ln for every object you create
+co $ object
+
+nn constructor
+ln constructor
+co $ this
+pg 13
+
+nn called_using_new_keyword
+ln Function called using "new" keyword
+co $ constructor
+
+nn capitalized_type_of_object
+ln Convention: start with capital lettert, named for
+ln type of object they create
+co $ constructor

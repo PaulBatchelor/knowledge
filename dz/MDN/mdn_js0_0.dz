@@ -1,0 +1,215 @@
+ns mdn/js/0_javascript_first_steps
+gr JavaScript first steps
+
+ns mdn/js/0_javascript_first_steps/0_what_is_javascript
+gr What is Javascript?
+
+nn javascript
+ln JavaScript
+
+nn implement_complex_features_on_web
+ln Scripting/programming language that allows you to
+ln implement complex features on web pages
+co $ javascript
+
+nn complex_feature_ex
+ln Create dynamically udpating content, control multimedia,
+ln animate images
+co $ implement_complex_features_on_web
+cr examples of "complex features"
+
+nn builds_on_html_css
+ln Buils on top of HTML, CSS
+co $ javascript
+
+nn API
+ln Application Programming Interface (API)
+co $ javascript
+
+nn ready_made_set_code_building_blocks
+ln ready-made set of code building blocks that allow a dev
+ln to implement programs otherwise hard or impossible
+co $ API
+cr description
+
+nn browser_API
+ln Browser APIs
+co $ API
+
+nn DOM_API
+ln DOM API
+co $ browser_API
+
+nn geolocation
+ln Geolocation
+co $ browser_API
+
+nn canvas_webgl
+ln Canvas / WebGL
+co $ browser_API
+
+nn AV_APIs
+ln AV APIs HTMLMediaElement and WebRTC
+co $ browser_API
+
+nn third_party_API
+ln Third-Party APIs
+co $ API
+
+nn twitter
+ln twitter
+co $ third_party_API
+
+nn google_maps
+ln Google Maps
+co $ third_party_API
+
+nn grab_code_info_somewhere
+ln Generally have to grab code and info somewhere on the
+ln web.
+co $ third_party_API
+
+nn exec_environment
+ln Execution environment
+co $ javascript
+
+nn bucket_for_running_code
+ln Each browser tab has its own bucket for running code in
+co $ exec_environment
+
+nn code_run_separately
+ln Code is run separately
+co $ exec_environment
+
+nn interpretted
+ln Interpretted
+co $ javascript
+
+nn compiled
+ln Compiled
+co $ interpretted
+cr versus
+
+nn just_in_time_compiling
+ln Most modern JS interpreters use a technique called
+ln just-in-time compiling to improve performance
+co $ interpretted
+
+nn client_side
+ln Client-side
+co $ javascript
+
+nn server_side
+ln Server-sisde
+co $ client_side
+cr versus
+
+nn run_on_users_computer
+ln Run on Users Computer
+co $ client_side
+
+nn server_side_languages
+ln PHP, Python, Ruby, ASP.NET, Javascript (via node.js)
+co $ server_side
+
+nn dynamic
+ln Dynamic
+co $ javascript
+
+nn static_code
+ln Static code
+co $ dynamic
+cr versus
+
+nn ability_to_update_page
+ln Ability to udpate display of web page / app to show
+ln different things in different circumstances
+co $ dynamic
+cr description
+
+nn uses_script_tag
+ln Uses <script>
+co $ javascript
+
+nn internal
+ln internal
+co $ uses_script_tag
+
+nn external
+ln external
+co $ uses_script_tag
+co $ internal
+cr versus
+
+nn inline_js_handlers
+ln Inline JS handlers
+co $ javascript
+rm bad practice to use these
+
+nn QuerySelectorAll
+ln QuerySelectorAll()
+co $ javascript
+co $ addEventListener
+
+nn addEventListener
+ln addEventListener()
+co $ javascript
+
+nn event_listener
+ln Event Listener
+co $ javascript
+co addEventListener event_listener
+
+nn DOMContentLoaded
+ln DOMContentLoaded
+co $ addEventListener
+
+nn tag_script
+ln <script>
+co $ javascript
+co uses_script_tag tag_script
+
+nn defer
+ln defer
+co $ tag_script
+
+nn HTML_body_parsed
+ln Signifies HTML body is parsed
+co $ defer
+cr modern approach
+co $ DOMContentLoaded
+
+nn async
+ln async
+co $ defer
+ln vs
+
+nn load_background_ASAP
+ln Should be used to load in place background scripts
+ln as soon as possible
+co $ async
+cr when to use
+
+nn no_guarantee_order
+ln no guarantee on execution order
+co $ blocks_page
+
+nn blocks_page
+ln Blocks page when executing
+co $ download_noblock
+
+nn download_noblock
+ln Downloads without blocking
+co $ async
+
+nn comments
+ln comments
+co $ javascript
+
+nn single_line
+ln Single Line (//)
+co $ comments
+
+nn multiline
+ln multiline (/* */)
+co $ javascript

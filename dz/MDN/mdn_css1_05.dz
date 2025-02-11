@@ -1,0 +1,198 @@
+ns mdn/css/1_css_building_blocks/05_cascade_specificity_and_inheritance
+gr Cascade Specificity and Inheritance
+
+nn cascade
+ln cascade
+
+nn specificity
+ln specificity
+
+nn inheritance
+ln inheritance
+
+nn origin_cascade_layer_order_matter
+ln Origin, cascade layer, origin of CSS rules matter
+co $ cascade
+
+nn algo_determine_applied_prop_val
+ln Algorithm used to determine which propererty value
+ln is applied to an element
+co $ specificity
+cr description
+
+nn conflicting_rules
+ln Conflicting Rules
+co $ cascade
+cr helps to determine
+co $ specificity
+cr helps to determine
+
+nn universal_prop_vals
+ln Universal Property Values for Controlling Inheritance
+co $ inheritance
+
+nn origin_types
+ln Origin Types
+co $ universal_prop_vals
+
+nn inherit
+ln Inherit
+co $ universal_prop_vals
+co $ origin_types
+
+nn initial
+ln Initial
+co $ universal_prop_vals
+co $ origin_types
+
+nn revert
+ln Revert
+co $ universal_prop_vals
+co $ origin_types
+
+nn revert_layer
+ln Revert-layer
+co $ universal_prop_vals
+co $ origin_types
+
+nn unset
+ln Unset
+co $ universal_prop_vals
+co $ origin_types
+
+nn measure_how_specific
+ln Measure of how specific selection will be
+co $ specificity
+cr description
+
+nn some_propvals_inherited
+ln Some property values are in inherited, some aren't
+co $ inheritance
+
+nn child_doesnt_inherit_width
+ln Child doesn't inherit width of 50% from parent
+co $ some_propvals_inherited
+cr example of property value not inherited
+
+nn margin_padding_border_not_inherited
+ln Margin, padding, border, also not inherited
+co $ child_doesnt_inherit_width
+cr other examples
+co $ some_propvals_inherited
+cr examples of not inherited
+
+nn inspect_inheritance_firefox_devtools
+ln Firefox devtools to inspect inheritance
+co $ inheritance
+
+nn all_shorthand
+ln "all" shorthand property applies inheritance value to
+ln (almost) all properties
+co $ universal_prop_vals
+
+nn 3_factors
+ln 3 factors (in increasing order of importance)
+co $ cascade
+
+nn source_order
+ln source order
+co $ 3_factors
+
+nn specificity_factor
+ln specificity
+co $ 3_factors
+co $ specificity
+co $ source_order
+cr next
+
+nn importance
+ln importance
+co $ specificity_factor
+cr next
+co $ 3_factors
+
+nn universal_comb_no_effect_specificity
+ln Universal combinators (+,>,~,") and specificity
+ln adjustment selector have no effect on specificity
+co $ specificity
+
+nn value_in_points
+ln Value in points
+co $ specificity
+
+nn id_hundreds
+ln ID (hundreds place)
+co $ value_in_points
+
+nn class_tens
+ln CLASS (tens place)
+co $ value_in_points
+
+nn element_ones
+ln ELEMENT (ones place)
+co $ value_in_points
+
+nn lower_selectors_cant_overwrite_higher
+ln Lower specificity selectors can never overwrite
+ln higher specificity selectors
+co $ specificity
+
+nn inline_takes_precedence
+ln Inline styles take precedence over all normal styles,
+ln no matter the specificity (1-0-0-0).
+co $ specificity
+
+nn important_overrides_inline
+ln !important overrides inline
+rm Text says never to use this
+co $ inline_takes_precedence
+
+nn effect_of_css_location
+ln Effect of CSS location
+co $ origin_cascade_layer_order_matter
+
+nn order_of_overriding_declarations
+ln Order of overriding declarations
+co $ effect_of_css_location
+
+nn user_agent_stylesheet
+ln User-agent stylesheet
+co $ order_of_overriding_declarations
+
+nn user_stylesheet
+ln User stylesheet
+co $ user_agent_stylesheet
+cr next
+co $ order_of_overriding_declarations
+
+nn author_stylesheet
+ln Author stylesheet
+co $ user_stylesheet
+cr next
+co $ order_of_overriding_declarations
+
+nn author_stylesheet_important
+ln Author Stylesheet (important)
+co $ author_stylesheet
+cr next
+co $ order_of_overriding_declarations
+
+nn user_stylesheet_important
+ln User stylesheet (important)
+co $ author_stylesheet_important
+cr next
+co $ order_of_overriding_declarations
+
+nn user_agent_stylesheet_important
+ln User-agent stylesheet (important)
+co $ user_stylesheet_important
+cr next
+co $ order_of_overriding_declarations
+
+nn scoping_proximity
+ln Scoping proximity
+co $ order_of_overriding_declarations
+
+nn order_of_cascade_layers
+ln Order of Cascade Layers
+co $ effect_of_css_location

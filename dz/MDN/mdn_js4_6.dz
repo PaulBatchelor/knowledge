@@ -1,0 +1,222 @@
+ns mdn/js/4_client_side_web_APIs/6_client_side_storage
+gr Client-side storage
+
+nn client_side_storage
+ln client-side storage
+pg 111
+
+nn uses
+ln uses
+co $ client_side_storage
+
+nn persistance
+ln persisting previous site activity
+co $ uses
+
+nn personalization
+ln personalizing site preferences
+co $ uses
+
+nn optimization
+ln saving data/assets for quicker reload
+co $ uses
+
+nn offline
+ln save web docs locally for local use
+co $ uses
+
+nn cookies
+ln cookies
+co $ client_side_storage
+pg 112
+
+nn old_school
+ln old school
+co $ cookies
+
+nn webstorage_indexeddb
+ln WebStorage nad IndexedDB
+co $ client_side_storage
+pg 112
+
+nn web_storage_api
+ln WebStorage API: store/retrieve smaller data values
+ln name/value
+co $ webstorage_indexeddb
+
+nn indexed_db
+ln IndexedDB: provides browser with complete DB system for
+ln storing complex data
+co $ webstorage_indexeddb
+pg 113
+
+nn set_item
+ln SetItem(): save data item in storage
+co $ web_storage_api
+pg 114
+
+nn cache_api
+ln Cache API: stores HTTP responses to specific request,
+ln useful for storing assets offline so site can be used
+ln without network connection.
+co $ webstorage_indexeddb
+
+nn get_item
+ln getItem(): retrieves data, given a name
+co $ set_item
+cr related
+pg 114
+co $ web_storage_api
+
+nn persistant_btwn_reloads
+ln persistant data between reloads
+co $ web_storage_api
+co $ persistance
+
+nn remove_item
+ln removeItem(): given a name, removes item out of storage
+co $ web_storage_api
+
+nn sep_storage_each_domain
+ln separate storage for each domain
+co $ web_storage_api
+pg 115
+
+nn create_object_stores_within_db
+ln create object stores within db
+co $ indexed_db
+pg 119
+
+nn more_complex_than_web_storage
+ln more complex than web storage API
+co $ web_storage_api
+cr idb more complex than
+co $ indexed_db
+
+nn obj_stores_sim_db_table
+ln object stores similar to tables in relational DB,
+ln each object can contain a number of objects.
+co $ create_object_stores_within_db
+pg 119
+
+nn open
+ln open()
+co $ indexed_db
+pg 121
+
+nn returns_req_add_event_handlers
+ln returns request, add success/error event handlers
+co $ open
+
+nn result_contains_db
+ln e.result contains the database
+co $ returns_req_add_event_handlers
+
+nn upgradeneeded
+ln upgradeneeded: handler than runs when/if DB not set
+ln up or if DB opned with bigger version number than
+ln existing stored DB.
+co $ indexed_db
+pg 123
+
+nn create_object_store
+ln createObjectStore()
+co $ indexed_db
+
+nn create_index
+ln createIndex()
+co $ create_object_store
+pg 123
+
+nn transaction
+ln transaction()
+co $ indexed_db
+pg 125
+
+nn object_store
+ln objectStore
+co $ indexed_db
+
+nn add
+ln add()
+co $ object_store
+
+nn open_cursor
+ln openCursor()
+co $ object_store
+pg 126
+
+nn delete
+ln delete()
+co $ object_store
+pg 129
+
+nn storing_complex_data
+ln storing complex data
+co $ indexed_db
+pg 130
+
+nn response_blob
+ln respones.blob()
+co $ storing_complex_data
+pg 132
+
+nn object_url
+ln object URL: internal URLs that point to blobs stored
+ln in memory.
+co $ storing_complex_data
+pg 133
+
+nn create_object_url
+ln URL.creatObjectURl()
+co $ object_url
+
+nn offline_asset_storage
+ln offline asset storage
+pg 134
+co $ client_side_storage
+
+nn service_worker
+ln service worker: JS file registered against origin,
+ln controls pages available at origin by setting between
+ln loaded page and intercepting network requests for that
+ln page.
+co $ offline_asset_storage
+pg 134
+
+nn usually_saves_network_responses
+ln usually saves network responses
+co $ service_worker
+
+nn registering
+ln registering
+co $ service_worker
+pg 135
+
+nn used_with_cache_api
+ln used with Cache API to store requests
+co $ usually_saves_network_responses
+co $ cache_api
+pg 134
+
+nn add_all
+ln Cache.addAll()
+co $ cache_api
+pg 137
+
+nn respond_with
+ln respondWith()
+co $ used_with_cache_api
+co $ cache_api
+pg 137
+
+nn match
+ln cache.match()
+co $ cache_api
+pg 137
+co $ used_with_cache_api
+
+nn installing
+ln installing
+co $ service_worker
+pg 136

@@ -1,0 +1,52 @@
+ns mdn/html/0_intro_to_html/6_debugging_html
+gr Debugging HTML
+
+nn permissive_code
+ln Permissive Code
+
+nn html_permissive_parse
+ln HTML parsed permissively, no syntax errors
+co $ permissive_code
+co $ syntax_errors
+
+nn syntax_errors
+ln Syntax Errors
+co $ something_goes_wrong
+
+nn something_goes_wrong
+ln Errors that happen when something goes wrong
+
+
+nn logic_errors
+ln Logic Errors
+co $ something_goes_wrong
+
+nn browser_devtools
+ln Browser Developer Tools
+
+nn HTML_validation
+ln HTML Validation
+
+nn markup_validation_service
+ln Markup Validation Service
+co $ HTML_validation
+
+zz Last two sections don't have any real content
+zz so I'm appending them here
+
+ns mdn/html/0_intro_to_html/7_marking_up_letter
+gr Marking Up a Letter
+
+nn semantics
+ln Semantics
+
+nn inline
+ln inline
+co $ semantics
+
+nn block_structural
+ln Block/Structural
+co $ semantics
+
+ns mdn/html/0_intro_to_html/8_structuring_a_page_of_content
+gr Structuring a page of content

@@ -1,0 +1,186 @@
+ns mdn/css/1_css_building_blocks/07_the_box_model
+gr The Box Model
+
+nn box_model
+ln Box Model
+
+nn normal_flow
+ln Normal Flow
+co $ box_model
+
+nn box_around_it
+ln Everything in CSS has a box around it
+co $ box_model
+
+nn block_boxes
+ln Block Boxes
+co $ box_model
+
+nn inline_boxes
+ln Inline Boxes
+co $ box_model
+co $ block_boxes
+cr vs
+
+nn flex
+ln flex
+co $ box_model
+
+nn grid
+ln grid
+co $ box_model
+
+nn inner_display_type
+ln Inner display type
+co $ box_model
+
+nn outer_display_type
+ln Outer display type
+co $ box_model
+co $ inner_display_type
+cr vs
+
+nn display_property
+ln Display property
+co $ box_model
+
+nn outer_block
+ln Block: newline break, width/height properties respected,
+ln padding, margin, border, push elements away, if no width specified,
+ln will extend inline direction to fill container
+co $ outer_display_type
+
+nn outer_inline
+ln Inline: no break, width/height don't apply, top/bottom
+ln padding margins border apply but do not cause other inline
+ln elements to move, left right padding margins border apply
+ln and move other inline elements
+co $ outer_display_type
+
+nn default
+ln default
+co $ outer_inline
+
+nn display_property_types
+ln inline, block, inline-flex, flex
+co $ display_property
+
+nn changes_outer_display_type
+ln Changes whether outer display type is block or
+ln inline. Changes way it displays alongside other elements
+ln in layout.
+co $ display_property
+
+nn parts_of_box
+ln Parts of Box: margin, border, padding, content
+
+nn inline_block_size_content
+ln inline-size and block-size are for content box
+co $ parts_of_box
+
+nn box_area_stops_border
+ln Box area stops at border. Margin is not counted towards
+ln size of box.
+co $ parts_of_box
+
+nn order_outer_inner
+ln Box order (from outer to inner): margin, border,
+ln padding, content
+co $ parts_of_box
+
+nn alt_box_model
+ln Alternative box model
+co $ box_model
+
+nn any_width_is_visible_box_width
+ln Any width is the width of the visible box on the page
+co $ alt_box_model
+cr description
+
+nn box_sizing_border_box
+ln box-sizeing: border-box
+co $ alt_box_model
+cr how to set
+
+nn use_with_all_elems
+ln Use with all elements: set property on <html> element
+ln and set all other elements to inherit the value
+co $ box_sizing_border_box
+
+nn box_sizing_inherit
+ln Box Sizing: Inherit
+co $ use_with_all_elems
+
+nn margin_padding_border
+ln Margin, padding, border
+co $ parts_of_box
+
+nn margin
+ln Margin
+co $ margin_padding_border
+
+nn negative_overlaps
+ln Negative causes overlap
+co $ margin
+
+nn TRBL
+ln -top, -right, -bottom, -left
+co $ margin
+cr varations
+co $ border
+cr variations
+
+nn border
+ln Border
+co $ margin_padding_border
+
+nn collapsing
+ln Collapsing
+co $ margin
+
+nn collapsing_value_rules
+ln +/+ combined to one, size equal to largest margin.
+ln -/- collapse, smallest used (furthest from zero)
+ln +/-, -/+ negative value substracts from total
+co $ collapsing
+
+nn when_to_collapse
+ln Rules dictate when to collapse margins
+co $ collapsing
+co $ collapsing_value_rules
+cr rules *when* to collapse and how to handle margin 
+cr values are two different things
+
+nn width_style_color
+ln -width, -style, -color
+co $ border
+cr variations
+
+nn width_style_color_border_prop
+ln Width, style, or color of all border properties
+co $ border
+
+nn padding
+ln padding
+co $ margin_padding_border
+
+nn background_displays_behind_padding
+ln Any background applied to your element will display
+ln behind padding
+co $ padding
+co TRBL padding
+cr variations
+
+nn box_model_inline_boxes
+ln Box Model and Inline Boxes
+co $ box_model
+co $ inline_boxes
+
+nn display_inline_block
+ln display: inline-block
+co $ box_model_inline_boxes
+
+nn respects_wh_no_break
+ln Respects width/height properties, will not break onto
+ln new line
+co $ display_inline_block

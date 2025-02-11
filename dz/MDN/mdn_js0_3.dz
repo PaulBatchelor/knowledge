@@ -1,0 +1,90 @@
+ns mdn/js/0_javascript_first_steps/3_variables
+gr Variables
+
+nn variables
+ln Variables
+
+nn declaring
+ln Declaring
+co $ variables
+
+nn container_for_value
+ln Container for value
+co $ variables
+cr description
+
+nn let
+ln let
+co $ variables
+co $ declaring
+
+nn var
+ln var
+co $ variables
+
+nn initializing
+ln initializing
+co $ variables
+
+nn cant_redeclare
+ln Can't redeclare
+co $ let
+
+co var let
+cr "let" is more modern than "var"
+
+nn older
+ln Older, confusing, error-prone
+co $ var
+
+nn hoisting
+ln hoisting
+co $ var
+td What does hoisting mean again?
+
+nn variable_types
+ln Variable Types
+co $ variables
+
+nn strings
+ln Strings
+co $ variable_types
+
+nn numbers
+ln Numbers
+co $ variable_types
+
+nn arrays
+ln Arrays
+co $ variable_types
+
+nn boolean
+ln Boolean
+co $ variable_types
+
+nn objects
+ln objects
+co $ variable_types
+
+nn structure_models_real_life
+ln Structure of code that models a real-life object
+co $ variable_types
+
+nn dynamic_typing
+ln Dynamic Typing
+co $ variables
+
+nn type_specification_unneeded
+ln No need to specify what data type a variable will
+ln contain
+co $ dynamic_typing
+cr description
+
+nn constants
+ln constants
+
+nn constant_objects_updatable
+ln Can update constant objects because pointer is the
+ln the same
+co $ objects
+co $ constants

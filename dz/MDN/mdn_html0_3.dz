@@ -1,0 +1,81 @@
+ns mdn/html/0_intro_to_html/3_creating_hyperlinks
+gr Creating Hyperlinks
+
+al elements mdn/html/elements
+
+nn hyperlink
+ln hyperlink
+
+nn hyperlink_reference
+ln hyperlink_reference
+co $ hyperlink
+
+nn target
+ln target
+co $ hyperlink_reference
+
+nn a_tag
+ln <a>
+co $ hyperlink
+cx $ @elements
+
+nn title
+ln title
+co $ a_tag
+
+nn hashtag_id
+ln #id
+co $ a_tag
+
+nn mailto
+ln mailto: URL scheme
+co $ a_tag
+
+nn email_link
+ln email links
+co $ mailto
+
+nn email_address_optional
+ln Email address optional
+co $ mailto
+
+nn share_link
+ln "share" links
+co $ email_address_optional
+
+nn URL
+ln URL
+co $ hyperlink
+
+nn relative
+ln relative
+co $ URL
+
+nn absolute
+ln absolute
+co $ URL
+
+nn document_fragment
+ln Document fragment
+co $ hyperlink
+
+nn id_attr
+ln ID attribute
+co $ document_fragment
+co $ hashtag_id
+
+nn download_attr
+ln "download" attribute
+co $ a_tag
+
+nn default_save
+ln Default save filename
+co $ download_attr
+cr description
+
+nn href
+ln href
+co $ a_tag
+
+co hyperlink_reference href
+cr abbreviation

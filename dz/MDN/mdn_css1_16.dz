@@ -1,0 +1,100 @@
+ns mdn/css/1_css_building_blocks/16_organizing_your_css
+gr Organizing Your CSS
+
+nn tidy_CSS
+ln Tidy CSS
+
+nn consistent
+ln consistent
+co $ tidy_CSS
+
+nn coding_style_guide
+ln Coding Style Guide
+co $ tidy_CSS
+
+nn comments
+ln comments
+co $ tidy_CSS
+
+nn readability
+ln Readability
+co $ tidy_CSS
+
+nn single_vs_multi_line_rules
+ln Single line rules vs multi-line rules (pref)
+co $ readability
+
+nn logical_sections
+ln Logical Sections
+
+nn header_comment_convention
+ln Header comment coding convention: || Foo
+co $ comments
+co $ logical_sections
+
+nn general_styles
+ln General Styles
+co $ logical_sections
+
+nn utilities
+ln Utilities
+co $ logical_sections
+
+nn sitewide
+ln Sitewide
+co $ logical_sections
+
+nn specific_things
+ln Specific Things
+co $ logical_sections
+
+nn avoid_overspecific_selectors
+ln Avoid overly specific selectors
+co $ tidy_CSS
+
+nn break_into_smaller
+ln Break large stylesheets into multiple smaller ones
+co $ tidy_CSS
+
+nn other_helpful_tools
+ln Other Helpful Tools
+
+nn OOCSS
+ln Object-oriented CSS (OOCSS)
+co $ other_helpful_tools
+
+nn media_object_pattern
+ln The Media Object pattern
+co $ OOCSS
+
+nn BEM
+ln BEM: block element modifier
+co $ other_helpful_tools
+
+nn build_systems_CSS
+ln Build systems for CSS
+co $ other_helpful_tools
+
+nn pre_post_processors
+ln Pre/post processors
+co $ build_systems_CSS
+
+nn SASS
+ln SASS
+co $ build_systems_CSS
+
+nn defining_variables
+ln Defining Variables
+co $ SASS
+
+nn less_important_with_custom_props
+ln Custom properties in CSS make this less important
+co $ defining_variables
+
+nn partials
+ln Partials
+co $ SASS
+
+nn CSS_nano
+ln post-processor for shrinking files
+co $ pre_post_processors

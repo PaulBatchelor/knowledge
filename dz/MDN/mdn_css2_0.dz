@@ -1,0 +1,150 @@
+ns mdn/css/2_css_styling_text
+gr CSS Styling Text
+
+ns mdn/css/2_css_styling_text/0_fundamental_text_and_font_styling
+gr Fundamental text and font styling
+
+nn text_styling
+ln Text Styling
+
+nn text_layout_styles
+ln Text Layout Styles
+co $ text_styling
+
+nn font_styles
+ln Font Styles
+co $ text_styling
+
+nn color
+ln Color
+co $ font_styles
+
+nn font_family
+ln font-family
+co $ font_styles
+
+nn web_safe_fonts
+ln Web Safe Fonts: fonts generally available across all
+ln systems
+co $ font_family
+
+nn default_fonts
+ln Default Fonts: serif, sans-serif, monospace, cursive,
+ln fantasy
+co $ web_safe_fonts
+
+nn worst_case_scenario
+ln Worst-case scenario
+co $ default_fonts
+
+nn font_stack
+ln Font Stack: font-family consisting of multiple names,
+ln that browser can choose from if availablity isn't
+ln guaranteed.
+co $ font_family
+
+nn font_size
+ln Font Size
+co $ font_styles
+pg 12
+
+nn font_size_units
+ln px: pixels high, em: font size of parent element,
+ln rem: font size of root element
+co $ font_size
+
+nn 16px_default
+ln 16px by default in root element
+co $ font_size
+co $ font_size_units
+
+nn rem_keeps_it_simple
+ln Use rem to keep things simple
+co $ font_size_units
+
+nn visual_weight_emphasis_text
+ln Visual weight/emphasis of text
+pg 13
+
+nn font_style
+ln font-style: normal, italic, oblique
+co $ visual_weight_emphasis_text
+
+nn font_weight
+ln font-weight: normal, bold, lighter, bolder, 100-900
+co $ visual_weight_emphasis_text
+
+nn text_transform
+ln text-transform: none, uppercase, lowercase, capitalize,
+ln full-width
+co $ visual_weight_emphasis_text
+pg 14
+
+nn text_decoration
+ln text decoration: none, underline, overline, line-through
+co $ visual_weight_emphasis_text
+
+nn text_drop_shadows
+ln text drop shadows
+pg 15
+
+nn text_shadow
+ln text-shadow
+co $ text_drop_shadows
+
+nn text_shadow_params
+ln text shadow params (4 params): horizontal/vertical offset,
+ln blur radius, base color
+co $ text_shadow
+pg 16
+
+nn multi_shadow_commas
+ln Multi-shadows separated with commas
+co $ text_shadow
+
+nn text_layout
+ln text layout
+pg 17
+
+nn text_alignment
+ln text alignment
+co $ text_layout
+
+nn text_align
+ln text-align: left, right, center, justify
+co $ text_layout
+co $ text_alignment
+
+nn justify_with_hyphens
+ln Use justify with "hyphens" to break longer words
+ln across lines
+co $ text_align
+cr justify
+
+nn line_height
+ln line-height
+co $ text_alignment
+
+nn letter_spacing_word_spacing
+ln letter-spacing and word-spacing
+co $ text_layout
+pg 20
+
+nn other_styles
+ln Other styles: font-variant, font-kerning,
+ln font-feature-settings, font-variant-alternates
+ln font-variant-caps, font-variant-east-asians,
+ln font-variant-ligatures
+pg 22
+
+nn other_layout
+ln Other layout properties: text-indent, text-overflow,
+ln white-space, word-break, direction, hyphens, line-break,
+ln line-break, text-align-last, text-orientation,
+ln overflow-wrap, writing-mode
+pg 23
+
+nn font_shorthand_order
+ln "font" shorthand order: font-style, font-variant,
+ln font-weight, font-stretch, font-size, line-height,
+ln font-family

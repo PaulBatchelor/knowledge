@@ -1,0 +1,55 @@
+ns mdn/css/3_css_layout/01_normal_flow
+gr Normal Flow
+
+nn normal_flow
+ln Normal Flow
+pg 30
+
+nn webpage_layout_if_unchanged
+ln Way webpage lays out elements if layout unchanged.
+co $ normal_flow
+cr description
+
+nn readable_document_design
+ln Designed to produce readable document
+co $ normal_flow
+
+nn box_model
+ln box model: boxes of individual elements laid out in such
+ln a way that padding, border, or margin is added to their
+ln content
+co $ normal_flow
+
+nn block_level_elem
+ln Block level element fills available inline space of
+ln parent element it is contained in, growing along block
+ln dimension
+co $ normal_flow
+pg 31
+
+nn inline_level_elem
+ln Inline level element is the size of their content
+co $ normal_flow
+co $ block_level_elem
+cr related
+pg 31
+
+nn laid_out_block_direction
+ln Laid out in block direction
+co $ block_level_elem
+pg 31
+
+nn inline_same_line_adjacent_wrapped_text
+ln Inline elements sit on same line along adjacent or
+ln wrapped text
+co $ inline_level_elem
+pg 31
+
+nn margin_collapsing
+ln Margin Collapsing: 2 vertically adjacent elements touch
+ln with margin set on them, large margin remains, other
+ln disappears.
+
+nn vertical_direction_only
+ln Only relevant in vertical direction
+co $ margin_collapsing

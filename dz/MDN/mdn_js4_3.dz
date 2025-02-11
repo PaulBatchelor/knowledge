@@ -1,0 +1,67 @@
+ns mdn/js/4_client_side_web_APIs/3_third_party_apis
+gr Third-Party APIs
+
+nn third_party_apis
+ln third-party APIs
+pg 42
+
+nn third_party_servers
+ln Located on third-party servers
+co $ third_party_apis
+pg 43
+
+nn via_script
+ln usually via <script>
+co $ third_party_servers
+
+nn API_keys
+ln API Keys
+co $ third_party_apis
+pg 44
+
+nn RESTful_API
+ln RESTful API
+co $ third_party_apis
+pg 48
+
+nn data_via_http_and_url_params
+ln get data via HTTP requests, with input data 
+ln encoded into URL as URL parameters
+co $ RESTful_API
+cr desc
+
+nn approach_using_third_party
+co $ third_party_apis
+ln an approach for using third-party APIs
+pg 48
+
+nn find_docs
+ln Find documentation
+co $ approach_using_third_party
+
+nn acquire_dev_key
+ln Acquire a dev key
+co $ approach_using_third_party
+co $ find_docs
+cr next
+
+nn connect_api_to_app
+ln connect the API to your app
+co $ acquire_dev_key
+cr next
+co $ approach_using_third_party
+pg 49
+
+nn request_data_api
+ln requesting data from the API
+co $ approach_using_third_party
+co $ connect_api_to_app
+cr next
+pg 51
+
+nn display_data
+ln displaying the data
+co $ request_data_api
+cr next
+co $ approach_using_third_party
+pg 52

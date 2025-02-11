@@ -1,0 +1,164 @@
+ns mdn/css/3_css_layout/05_positioning
+gr Positioning
+
+nn positioning
+ln positioning
+
+nn outside_normal_flow_diff_bhvr
+ln takes elements outside of normal flow and makes them
+ln behave differently
+co $ positioning
+pg 86
+
+nn static_positioning
+ln static positioning
+co $ positioning
+pg 86
+
+nn static_pos_default
+ln default behavior: puts elements into normal position
+ln in document flow
+co $ static_positioning
+pg 87
+
+nn rel_pos
+ln relative positioning
+co $ positioning
+pg 87
+
+nn modify_after_placement
+ln after placement in normal flow, modify final position
+co $ rel_pos
+pg 88
+
+nn pos_direction
+ln top/left/bottom/right: used alongside position to specify
+ln where to move positioned element to
+co $ rel_pos
+pg 88
+
+nn top_left_pushes_down_right
+ln top/left will push box down and to the right
+co $ pos_direction
+pg 89
+
+nn abs_pos
+ln absolute positioning
+co $ positioning
+pg 89
+
+nn not_in_normal_flow
+ln no longer exixsts in normal flow. sits in own
+ln layer separate from everything else
+co $ abs_pos
+pg 90
+
+nn creates_isolated_UI_features
+ln can create UI features isolated from other page elements
+ln that do not interfere
+co $ not_in_normal_flow
+pg 90
+
+nn abs_pos_directions
+ln top/bottom/left/right specifies distance from each
+ln of the containing element sides
+co $ abs_pos
+pg 91
+
+nn initial_containing_block
+ln initial containing block
+co $ abs_pos
+pg 91
+
+nn used_when_no_anc_blocks_have_pos
+ln used when no ancester blocks have their position
+ln explicitely defined
+co $ initial_containing_block
+
+nn viewport_dims
+ln dimensions of viewport
+co $ initial_containing_block
+
+nn contains_html_elem
+ln contains HTMl element: absolute positioned element
+ln displayed outside <html>, position
+ln relative to initial viewport.
+co $ initial_containing_block
+pg 92
+
+nn positioning_context
+ln positioning context: which element the absolutely
+ln positioned element is positioned relative to
+co $ abs_pos
+pg 92
+
+nn set_pos_on_anc
+ln set position on one of elements ancesters
+co $ positioning_context
+
+nn z_index
+ln z-index
+pg 93
+co $ abs_pos
+
+nn z_axis
+ln z-axis
+co $ z_index
+cr similar to
+
+nn change_stacking_order
+ln used to change stacking order of absolutely positioned
+ln elements
+co $ z_index
+pg 94
+
+nn higher_above_lower
+ln higher values go above lower values
+co $ change_stacking_order
+co $ z_index
+pg 95
+
+nn fixed_pos
+ln fixed positioning
+co $ positioning
+pg 95
+
+nn fixes_rel_to_viewport
+ln usually fixes items in place relative to viewport
+pg 95
+co $ fixed_pos
+
+nn fixed_pos_exception
+ln exception: one of the element ancestors is a fixed
+ln containing block because its transform property is
+ln non-nnone
+pg 95
+co $ fixes_rel_to_viewport
+cr almost always true, with on exception
+
+nn sticky_pos
+ln sticky positioning
+co $ positioning
+pg 97
+
+nn hybrid_rel_fixed
+ln hybrid of relative and fixed positioning
+co $ sticky_pos
+pg 97
+co $ rel_pos
+co $ fixed_pos
+
+nn rel_until_thresh_then_fixed
+ln relative positioning until it scrolls past a threshold,
+ln then it is fixed positioning
+co $ sticky_pos
+
+nn scrolling_index
+ln Scrolling Index
+co $ sticky_pos
+pg 98
+
+nn dt_dl
+ln <dt> and <dl>
+co $ scrolling_index
+pg 99

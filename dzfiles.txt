@@ -65,4 +65,6 @@ dz/companies/fused
 dz/pydata.dz
 dz/MIT_6.824
 dz/grokking_simplicity
+zz alias not yet implemented yet
+zz dz/MDN
 dz/zzz

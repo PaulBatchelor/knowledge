@@ -1,0 +1,45 @@
+ns mdn/js/4_client_side_web_APIs/5_video_audio_apis
+gr video and audio APIs
+
+nn html_video_audio
+ln HTML video and audio
+pg 94
+
+nn video_elem
+ln <video>
+co $ html_video_audio
+
+nn audio_elem
+ln <audio>
+co $ html_video_audio
+
+nn controls_vary_btwn_browsers
+ln controls are different in each browser: can be removed
+ln and programmed in JS
+co $ html_video_audio
+pg 96
+
+nn html_media_element_api
+ln HTMLMediaElement API
+pg 96
+
+nn controls_av_programatically
+ln controls audio and video programatically
+co $ html_media_element_api
+
+nn play_pause
+ln play()/pause()
+co $ html_media_element_api
+
+nn media_element
+ln MediaElement
+co $ html_media_element_api
+
+nn current_time
+ln current_time property (seconds)
+co $ media_element
+pg 104
+
+nn timeupdate_event
+ln timeupdate event
+co $ html_media_element_api

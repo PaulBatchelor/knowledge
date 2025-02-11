@@ -1,0 +1,72 @@
+ns mdn/js/4_client_side_web_APIs
+gr Client-Side Web APIS
+
+ns mdn/js/4_client_side_web_APIs/0_intro_to_web_apis
+gr Introduction to Web APIs
+
+nn API
+ln API
+
+nn constructs_allow_complex_easily
+ln Constructs made available in programming languages to
+ln allow devs to create complex functionality more easily
+co $ API
+
+nn client_side
+ln Client-side JS
+co $ API
+pg 5
+
+nn browser_APIs
+ln Browser APIs
+co $ API
+pg 6
+
+nn common_browser_APIs
+ln Common Browser APIs
+co $ browser_APIs
+co $ API
+pg 7
+
+nn third_party_APIs
+ln Third-party APIs
+co $ client_side
+
+nn common_third_party
+ln Common third-party
+co $ API
+pg 8
+co $ third_party_APIs
+
+nn objects_as_API_containers
+ln JS objects serve as containers for API data and
+ln functionality
+co $ API
+
+nn entry_point
+ln Entry Point
+pg 13
+co $ API
+
+nn events_to_change_state
+ln Often use events to handle changes in state
+co $ API
+pg 14
+
+nn additional_security_measures
+ln Additional security measures when appropriate
+co $ API
+pg 15
+
+nn same_origin_policy
+ln Same-origin policy
+co $ additional_security_measures
+pg 15
+
+nn auto_play_policy
+ln Auto-play policy: can't automatically play when
+ln page loads. Must allow users to initiate plate
+ln through a control like a button.
+co $ additional_security_measures
+rm this affects UX of all web-based synthesizers
+pg 15

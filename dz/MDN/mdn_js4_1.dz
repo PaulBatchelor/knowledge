@@ -1,0 +1,146 @@
+ns mdn/js/4_client_side_web_APIs/1_manipulating_documents
+gr Manipulating Documents
+
+nn DOM
+ln DOM
+pg 17
+
+nn document_object_model
+ln Document Object Model
+pg 19
+co $ DOM
+cr abbreviation
+
+nn APIs_control_HTML_styling
+ln Set of APIs for controlling HTML and styling info
+co $ DOM
+cr desc
+
+nn browser_important_parts
+ln Import parts of a web browser
+pg 17
+
+nn window
+ln Window: browser tab that browser page is loaded onto
+co $ browser_important_parts
+pg 18
+
+nn window_object
+ln window object
+co $ window
+
+nn navigator
+co $ browser_important_parts
+ln Navigator: represents state and identity of browser
+
+nn navigator_object
+ln Navigator object
+co $ navigator
+
+nn document
+ln Document (represented by DOM): actual page loaded into
+ln window.
+co $ browser_important_parts
+co $ window
+cr loaded into window
+co $ DOM
+cr represented as DOM
+
+nn document_object
+ln document object
+co $ document
+
+nn tree_structure
+ln Tree structure for easy access in programming language
+co $ DOM
+
+nn nodes
+ln Nodes
+co $ DOM
+pg 20
+
+nn root_node
+ln Root Node: top node of tree. for HTML, this is always
+ln the <HTML> node.
+co $ nodes
+
+nn child_node
+ln Child node: node directly inside another node
+co $ nodes
+
+nn desc_node
+ln Descendant Node: a node anywhere inside another node
+co $ nodes
+
+nn parent_node
+ln Parent Node: a node which ahs another node inside of
+ln it.
+co $ nodes
+pg 21
+
+nn sibling_nodes
+ln Sibling nodes: nodes that sit on the same level of
+ln DOM tree
+co $ nodes
+pg 21
+
+nn query_selector
+ln Document.querySelector(): modern way to select an
+ln element.
+co $ document_object
+pg 22
+
+nn query_selector_all
+ln querySelectorAll(): matches every element in doc that
+ln matchesselector, stores in array called NodeList
+co $ query_selector
+pg 22
+
+nn create_element
+ln createElement()
+pg 23
+co $ document_object
+
+nn append_child
+ln appendChild()
+co $ document_object
+pg 23
+
+nn create_text_node
+ln createTextNode()
+co $ document_object
+
+nn moving_removing_elements
+ln moving/removing elements
+co $ document_object
+pg 24
+
+nn append_child_moves_to_bottom
+ln appendChild() can be used to move item to bottom
+ln of section
+co $ moving_removing_elements
+pg 24
+
+nn uses_refs
+ln uses refs
+co $ append_child_moves_to_bottom
+
+nn remove_child
+ln removeChild() removes node
+co $ moving_removing_elements
+pg 24
+
+nn manipulating_styles
+ln Manipulating Styles
+pg 24
+
+nn inline_styles_applied_to_element
+ln inline styles applied directly to element with
+ln HTMLElement.style property
+co $ manipulating_styles
+pg 25
+
+nn set_attribute_css_classes
+ln Element.setAttribute() and CSAS classes
+pg 26
+co $ manipulating_styles

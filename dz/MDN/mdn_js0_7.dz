@@ -1,0 +1,85 @@
+ns mdn/js/0_javascript_first_steps/7_arrays
+gr Arrays
+
+nn array
+ln array
+
+nn list_like_object
+ln List-Like Object
+co $ array
+
+nn creating
+ln creating
+co $ array
+
+nn length_prop
+ln Length Property
+co $ array
+
+nn accessing
+ln accessing
+co $ array
+
+nn index
+ln index
+co $ accessing
+
+nn multidimensional
+ln Multidimensional
+co $ array
+
+nn push
+ln push(): add items
+co $ array
+
+nn pop
+ln pop(): remove last item
+co $ array
+
+nn splice
+ln splice(): remove item at index
+co $ array
+
+nn indexOf
+ln indexOf(): finds index of value
+co $ array
+
+nn unshift
+ln unshift(): add item to start
+co $ array
+
+nn access_items_for_of
+ln Access every item using for .. of statement
+co $ array
+
+nn map
+ln map(): apply functin to every item in array
+co $ array
+
+nn for_of_example
+ln for (const bird of birds) {}
+co $ access_items_for_of
+cr example of syntax
+
+nn filter
+ln filter(): return items in array that only match certain
+ln test.
+co $ array
+
+nn split
+ln split(): splits strings into substrings using separator
+co $ array
+
+nn join
+ln join(): concatentates array of strings using separator
+co $ array
+co $ split
+cr opposite
+
+nn typed_arrays
+ln typed arrays
+td what are typed arrays?
+co $ array
+
+ns mdn/js/0_javascript_first_steps/8_silly_story_generator
+zz no content

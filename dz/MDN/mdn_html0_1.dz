@@ -1,0 +1,85 @@
+ns mdn/html/0_intro_to_html/1_metadata
+gr What's in the head? Metadata in HTML
+
+al elements mdn/html/elements
+
+nn head
+ln head
+
+nn not_displayed
+ln not displayed
+co $ head
+
+nn metadata
+ln metadata
+co $ head
+
+nn title
+ln title
+co $ head
+
+nn h1
+ln h1
+co $ title
+cr similar
+
+nn h1_tag
+ln <h1>
+cx $ @elements
+co $ h1
+
+nn meta_tag
+ln <meta>
+co $ metadata
+cx $ @elements
+
+nn charset
+ln charset
+co $ meta_tag
+
+nn name_content
+ln name/content
+co $ meta_tag
+
+nn author
+ln author
+co $ name_content
+
+nn description
+ln description
+co $ name_content
+
+nn link_tag
+ln <link>
+co $ head
+cx $ @elements
+
+nn css
+ln CSS
+co $ head
+co link_tag css
+
+nn script_tag
+ln <script>
+cx $ @elements
+co $ js
+
+nn js
+ln JS
+co $ head
+
+nn href
+ln href
+co $ link_tag
+
+nn rel
+ln rel
+co $ link_tag
+
+nn src
+ln src
+co $ script_tag
+
+nn defer
+ln defer
+co $ script_tag

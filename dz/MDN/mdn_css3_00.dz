@@ -1,0 +1,257 @@
+ns mdn/css/3_css_layout
+gr CSS Layout
+
+ns mdn/css/3_css_layout/00_intro_to_css_layout
+gr Introduction to CSS layout
+
+nn css_layout
+ln CSS Layout
+
+nn control_elems_position_rel_to
+ln Take webpage elements, control where they are positioned
+ln relative to...
+co $ css_layout
+
+nn default_pos_normal_layout_flow
+ln Default position in normal layout flow
+co $ control_elems_position_rel_to
+co $ normal_flow
+
+nn surrounding_elems
+ln Other surrounding elements
+co $ control_elems_position_rel_to
+
+nn parent_container
+ln Parent Container
+co $ control_elems_position_rel_to
+
+nn main_viewport_window
+ln Main viewport / window
+co $ control_elems_position_rel_to
+
+nn page_layout_techniques
+ln Page Layout Techniques
+
+nn normal_flow
+ln Normal Flow
+co $ page_layout_techniques
+
+nn display_prop
+ln Display Property
+co $ page_layout_techniques
+
+nn flexbox
+ln flexbox
+co $ page_layout_techniques
+
+nn floats
+ln floats
+co $ page_layout_techniques
+
+nn grid
+ln grid
+co $ page_layout_techniques
+
+nn positioning
+ln positioning
+co $ page_layout_techniques
+
+nn table_layout
+ln table layout
+co $ page_layout_techniques
+
+nn multi_column_layout
+ln Multi-column layout
+co $ page_layout_techniques
+
+nn default_html_layout
+ln How browser lays out HTML pages by default
+co $ normal_flow
+cr description
+
+nn dprop_main_method_page_layout
+ln Specifying main values for the display property
+ln is the main method for achieving page layout in CSS
+co $ display_prop
+
+nn display_block
+ln "display:block" displays paragraphs one after the other
+co $ display_prop
+pg 9
+
+nn display_inline
+ln "display:inline" diplays next to eachother like words
+ln in sentence.
+co $ display_prop
+
+nn flexible_box_layout
+ln flexible box layout
+co $ flexbox
+cr AKA
+
+nn lay_things_out_1d
+ln makes it easy to lay things out in one dimension
+co $ flexbox
+
+nn flex_items
+ln flex items
+co $ flexbox
+pg 10
+
+nn flex_direction
+ln flex-direction (initial val: row)
+co $ flexbox
+
+nn props_applied_to_flex_items
+ln Properites applied to flex items
+pg 11
+co $ flex_items
+
+nn align_items
+ln align-items (initial value: stretch)
+co $ flexbox
+
+nn stretch
+ln stretch: items stretch to height of flex container
+co $ align_items
+
+nn flex
+ln flex: causes items to grow and fill the container
+co $ props_applied_to_flex_items
+
+nn grid_layout
+ln grid layout: designed to lay things out in two
+ln dimensions: rows and columns.
+co $ lay_things_out_1d
+cr 2d instead of 1d
+
+nn display_grid
+ln display: grid
+co $ grid_layout
+co $ display_prop
+
+nn placing_items_grid
+ln Placing items on the grid
+co $ grid_layout
+pg 13
+
+nn grid_template_rows_cols
+ln grid-template-rows/grid-template-columns define row
+ln and column tracks for parents
+co $ grid_layout
+
+nn grid_column_row
+ln grid-column / grid-row
+co $ placing_items_grid
+
+nn start_end
+ln :start/end
+co $ grid_column_row
+
+nn elem_removed_normal_flow
+ln floated element is moved to left or right and removed
+ln from normal flow. surrounding cont float around it.
+co $ floats
+
+nn positioning_techniques
+ln positioning techniques
+pg 17
+
+nn float_prop_vals
+ln float property values: left, right, none, inherit
+co $ floats
+
+nn moves_elem_to_another_loc
+ln moves elemen from where it would otherwise be placed in
+ln normal flow to another location
+co $ positioning_techniques
+cr description
+
+nn pos_type
+ln position types
+pg 18
+co $ positioning_techniques
+
+nn static
+ln static
+co $ pos_type
+
+nn relative
+ln relative
+co $ pos_type
+
+nn absolute
+ln absolute
+co $ pos_type
+
+nn fixed
+ln fixed
+co $ pos_type
+
+nn sticky
+ln sticky
+co $ pos_type
+
+nn pos_offsets_containing_block
+ln Completely removes element from normal flow, positions
+ln it using offsets from containing block
+co $ absolute
+
+nn offset_item_default_normal_flow_pos
+ln offsets an item from its default position in normal
+ln flow
+co $ absolute
+pg 18
+
+nn fixed_positioning
+ln Fixed Positioning
+co $ fixed
+pg 22
+
+nn offsets_from_viewport
+ln Offsets applied from viewport
+co $ fixed_positioning
+co $ absolute
+cr in absolute positioning, offsets applied from container
+
+nn sticky_positioning
+ln Sticky Positioning
+co $ sticky
+pg 24
+
+nn relative_fixed_mix
+ln Mixes relative positioning with fixed positioning
+co $ sticky_positioning
+cr description
+co $ relative
+co $ fixed
+
+nn sticky_scroll_behavior
+ln Scrolls in normal flow until it hits defined viewport
+ln offsets, then it becomes "stuck" as if it had position:fixed
+ln applied
+co $ sticky_positioning
+
+nn table_legacy_only
+ln Legacy, should only be used to support browsers that
+ln don't use flex or grid.
+co $ table_layout
+pg 25
+
+nn text_flows_like_newspaper
+ln Layout content in columns similar to how text
+ln flows in a newspaper
+co $ multi_column_layout
+cr description
+pg 27
+
+nn column_count
+ln column-count: how many columns to have
+co $ multi_column_layout
+
+nn column_width
+ln column-width: fill the container with as many columns
+ln columns as possible using width.
+co $ multi_column_layout
+co $ column_count
+cr related

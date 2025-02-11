@@ -1,0 +1,47 @@
+ns mdn/css/0_css_first_steps/1_getting_started_with_css
+gr Getting started with CSS
+
+nn class
+ln class
+
+nn attribute
+ln attribute (HTML_
+co $ class
+td link to HTML attribrute
+
+nn full_stop_char
+ln full-stop character
+rm where does this terminology come from?
+td investigate origin of "full-stop" term (aka "." in CSS)
+
+nn period
+ln '.'
+co $ full_stop_char
+cr this is what the full-stop character is
+
+nn selector
+ln selector
+td link to CSS selector from previous chapter
+
+nn combinator
+ln combinator
+co $ selector
+
+nn next_sibling
+ln next-sibling combinator
+co $ combinator
+
+nn descendent
+ln Descendent combinator
+co $ combinator
+
+nn space_btwn_selectors
+ln Space between selectors
+co $ descendent
+
+nn state
+ln state
+
+nn hyperlink_states
+ln hyperlink states
+co $ state

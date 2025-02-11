@@ -1,0 +1,78 @@
+ns mdn/css/3_css_layout/09_legacy_layout_methods
+gr Legacy Layout Methods
+
+nn layout_grid_before_css_grid
+ln layout and grid systems before CSS grid layout
+pg 143
+
+nn sized_items_lined_up
+co $ layout_grid_before_css_grid
+ln work by giving items a size, and pushing them
+ln around to line the up in a way that looks like a grid
+pg 144
+
+nn 2col
+ln two-column layout
+pg 144
+
+nn perc_as_width
+ln use pertange as widths
+co $ 2col
+
+nn liquid_layout
+ln liquid layout: adjusts to different screen sizes and
+ln keeps the same proportions for column widths at smaller
+ln screen sizes
+co $ 2col
+
+nn float_left_right
+ln float left/right
+co $ 2col
+
+nn legacy_grid_frameworks
+ln creating simple legacy grid frameworks
+pg 147
+
+nn fixed_width_grid
+ln simple fixed-width grid
+co $ legacy_grid_frameworks
+pg 148
+
+nn fluid_grid
+ln creating a fluid grid
+co $ legacy_grid_frameworks
+pg 152
+
+nn fixed_to_flexible_formula
+ln formula for computing fixed width to flexible percent
+ln based: target / context = result
+co $ fluid_grid
+
+nn use_calc
+ln use calc() for easier calculations
+co $ fluid_grid
+co $ fixed_to_flexible_formula
+
+nn semantic_vs_unsemantic
+ln semantic vs "unsemantic" grid systems
+co $ legacy_grid_frameworks
+pg 157
+
+nn classes_markup_content_tied_presentation
+ln adding classes to markup means that content and markup
+ln are tied to visual presentation
+co $ semantic_vs_unsemantic
+
+nn unsemantic
+ln "unsemantic": describing how the content looks vs
+ln semantic use of classes to describe content
+co $ semantic_vs_unsemantic
+
+nn flexbox_grids
+co $ layout_grid_before_css_grid
+cr Flexbox grids
+pg 159
+
+nn third_party_grid
+ln third-party grid systems
+pg 161

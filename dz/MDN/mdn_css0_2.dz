@@ -1,0 +1,168 @@
+ns mdn/css/0_css_first_steps/2_how_css_is_structured
+gr How CSS is structured
+
+nn applying_css_html
+ln Applying CSS to HTML
+
+al elements mdn/html/elements
+
+nn stylesheet
+ln stylesheet
+co $ applying_css_html
+
+nn ext_stylesheet
+ln external stylesheet
+co $ stylesheet
+
+nn internal_stylesheet
+ln internal stylesheet
+co $ stylesheet
+
+nn inline_styles
+ln Inline styles
+co $ applying_css_html
+rm avoid this approach
+
+nn tag_link
+ln <link>
+co $ ext_stylesheet
+cx $ @elements
+
+nn tag_style
+ln <style>
+co $ internal_stylesheet
+cx $ @elements
+
+nn tag_head
+ln <head>
+co tag_style tag_head
+co $ internal_stylesheet
+cx $ @elements
+
+nn style_attribute
+ln style attribute
+co $ inline_styles
+
+nn selector
+ln selector
+td cross-connect this to other selector nodes
+
+nn specificity
+ln Specificity
+co $ selector
+
+nn cascade
+ln cascade
+co $ selector
+
+nn rules_event_of_conflict
+ln Rules to control which is stronger in the event of
+ln conflict
+co $ specificity
+co $ cascade
+
+
+nn props_vals
+ln Properties and Values
+
+nn props
+ln Properties
+co $ props_vals
+
+nn vals
+ln Values
+co $ props_vals
+
+nn human_readable_identifiers
+ln Human Readable Identifiers, Which stylistic features
+ln to modify
+co $ props
+cr description
+
+nn css_declaration
+ln CSS declaration
+co $ props_vals
+
+nn declaration_blocks
+ln Declaration Blocks
+co $ css_declaration
+
+nn css_rulesets
+ln CSS rulesets
+co declaration_blocks css_rulesets
+co $ selector
+
+nn case_insensitive
+ln Case Insensitive
+co $ props_vals
+
+nn functions
+ln Functions
+
+nn calc
+ln calc()
+co $ functions
+
+nn transform
+ln transform
+co $ functions
+
+nn rotate
+ln rotate
+co $ transform
+
+nn at_rules
+ln @rules
+
+nn at_rules_name
+ln "at rules"
+co $ at_rules
+cr pronunciation
+
+nn instruction_perform_behave
+ln Provides instruction for what CSS should perform or
+ln how it should behave
+co $ at_rules
+cr description
+
+nn at_import
+ln @import
+co $ at_rules
+cr example
+
+nn at_media
+ln @media
+cr example
+
+nn media_rules
+ln Media Rules
+co $ at_media
+
+nn shorthands
+ln Shorthands
+
+nn several_vals_single_line
+ln Several values in a single line
+co $ shorthands
+co $ vals
+
+nn shorthand_properties
+ln Shorthand Properties
+co $ shorthands
+co $ props
+
+nn omission_overrides
+ln An omission can override previously set values
+co $ shorthands
+cr warning
+
+nn comments
+ln comments
+
+nn whitespace
+ln whitespace
+
+nn prop_names_no_whitespace
+ln Property names never have any whitespace
+co $ whitespace
+co $ props

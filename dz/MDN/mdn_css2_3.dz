@@ -1,0 +1,29 @@
+ns mdn/css/2_css_styling_text/3_webfonts
+gr Webfonts
+
+nn font_face_ruleset
+ln @font-face ruleset
+pg 58
+
+nn start_of_CSS
+ln Placed at start of CSS
+co $ font_face_ruleset
+
+nn variable_fonts
+ln Variable Fonts
+
+nn font_family
+ln font-family
+co $ font_face_ruleset
+pg 62
+
+nn src
+ln src
+co $ font_face_ruleset
+
+nn font_weight_style
+ln font-weight / font-style
+co $ font_face_ruleset
+
+ns mdn/css/2_css_styling_text/4_typesetting_school_homepage
+gr typesetting a community school homepage

@@ -1,0 +1,119 @@
+ns mdn/html/2_html_tables/1_html_table_advanced_features_accessibility
+gr HTML table Advanced Features and Accessibility
+
+al elements mdn/html/elements
+
+nn table
+ln table
+
+nn captions
+ln captions
+co $ table
+
+nn tag_caption
+ln <caption>
+co $ captions
+cx $ @elements
+
+nn structure
+ln structure
+co $ table
+
+nn tag_thead
+ln <thead>
+cx $ @elements
+co $ structure
+
+nn tag_tfoot
+ln <tfoot>
+cx $ @elements
+co $ structure
+
+nn tag_tbody
+ln <tbody>
+cx $ @elements
+co $ structure
+
+nn nested_but_not_advised
+ln Can be nested, but not advised
+co $ table
+
+nn placed_beneath_table
+ln Placed directly beneath <table> tag
+co $ tag_caption
+
+nn accessibility
+ln Accessibility
+
+nn scope_attr
+ln Scope attribute
+co $ accessibility
+
+nn tells_screen_readers_header
+ln Tells screen readers what cesll the header is a header
+ln for.
+co $ scope_attr
+
+nn screen_readers_programmatic_associations
+ln Screen readers identify headers to make programmatic
+ln associations.
+co $ accessibility
+
+co tells_screen_readers_header screen_readers_programmatic_associations
+
+nn scope
+ln scope
+
+nn row
+ln row
+co $ scope
+
+nn col
+ln col
+co $ scope
+
+nn rowgroup
+ln rowgroup
+co $ scope
+
+nn colgroup
+ln colgroup
+co $ scope
+
+nn id_header_attr
+ln id and header attribute
+co $ scope
+cr alternative to
+
+nn explicit_definition_position_cell
+ln Gives explicit definition of position of each cell in
+ln table
+co $ id_header_attr
+
+nn id
+ln id
+co $ id_header_attr
+
+nn header
+ln header
+co $ id_header_attr
+
+nn tag_th
+ln <th>
+co id tag_th
+cx $ @elements
+
+nn tag_td
+ln <td>
+co header tag_td
+cx $ @elements
+
+
+nn precise_associations_no_room_for_error
+ln Precise assocations, but uses a lot more markup,
+ln no room for errors
+co $ id_header_attr
+
+zz Last Exercise: no notetaking content
+ns mdn/html/2_html_tables/2_structuring_planet_data
+gr Structuring Planet Data

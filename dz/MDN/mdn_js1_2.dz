@@ -1,0 +1,72 @@
+ns mdn/js/1_javascript_building_blocks/2_functions
+gr Functions: Re-usable blocks of code
+
+nn functions
+ln functions
+
+nn built_in
+ln built-in
+co $ functions
+
+nn invoke
+ln invoke: run or execute a function
+co $ functions
+
+nn functions_vs_methods
+ln Functions vs Methods
+co $ functions
+
+nn custom
+ln Custom
+co $ functions
+
+nn parameters
+ln Parameters
+co $ functions
+
+nn optional
+ln Optional
+co $ parameters
+
+nn default
+ln Default
+co $ parameters
+
+nn default_ex
+ln hello(foo="bar")
+co $ default
+cr example
+
+nn anonymous_funcs
+ln Anonymous Functions
+co $ functions
+
+nn arrow_funcs
+ln Arrow Functions
+co $ anonymous_funcs
+
+nn one_param_omit_parens
+ln Can omit parentheses if there is only one parameter
+co $ arrow_funcs
+
+nn arrow_notation_ex
+ln instead of function(event), write (event) =>
+co $ arrow_funcs
+cr notation example
+
+nn one_line_return_omit_braces_return
+ln If only one line that's a return statement, can omit
+ln braces and return keyword
+co $ arrow_funcs
+
+nn scope
+ln scope
+co $ functions
+
+nn global
+ln global
+co $ scope
+
+nn function_scope
+ln Function Scope
+co $ scope

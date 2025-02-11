@@ -1,0 +1,79 @@
+ns mdn/css/2_css_styling_text/1_styling_lists
+gr Styling Lists
+
+nn handling_list_spacing
+ln Handling list spacing 
+pg 29
+
+nn vertical_rhythm
+ln vertical rhythm: adjsuting styles so they keep the
+ln vertical spacing the same as their surrounding elements
+co $ handling_list_spacing
+
+nn list_specific_styles
+ln list-specific styles
+
+nn list_style_type
+ln list-style-type
+co $ list_specific_styles
+
+nn list_style_position
+ln list-style-position
+co $ list_specific_styles
+
+nn upper_roman
+ln upper-roman
+co $ list_style_type
+
+nn sets_bullets_inside_outside_list_item
+ln Sets bullets appearing inside list items or outside them
+ln before the start of each item
+co $ list_style_position
+
+nn list_style_image
+ln list-style-image
+co $ list_specific_styles
+
+nn background_props_more_flexible
+ln Using background family of properties much more flexible
+co $ list_style_image
+cr use background properties instead
+
+nn custom_bullet_image
+ln Custom image for your bullet
+co $ list_style_image
+cr description
+
+nn controlling_list_counting
+ln Controlling list counting
+pg 35
+
+nn list_style_shorthand
+ln List-style shorthand
+pg 34
+co $ list_specific_styles
+
+nn type_image_position
+ln Type, iamge, position. any or all, in any order
+co $ list_style_shorthand
+cr arguments
+
+nn reversed
+ln reversed
+co $ controlling_list_counting
+pg 36
+co $ start_attr
+cr used with?
+
+nn start_attr
+ln start
+co $ controlling_list_counting
+
+nn value_attr
+ln value
+co $ controlling_list_counting
+
+nn numerical_vals_used
+ln numerical values used, even for non-number
+ln list-style-stype
+co $ value_attr

@@ -1,0 +1,41 @@
+ns mdn/js/1_javascript_building_blocks
+gr JavaScript building blocks
+
+ns mdn/js/1_javascript_building_blocks/0_conditionals
+gr conditionals: making decisions in your code
+
+nn conditionals
+ln conditionals
+
+nn if_else
+ln if/else
+co $ conditionals
+
+nn else_if
+ln else if
+co $ if_else
+
+nn values_that_return_true
+ln any value that isn't false, undefined, null, 0, NaN,
+ln or an empty string returns true
+co $ conditionals
+
+nn nesting
+ln nesting
+co $ conditionals
+
+nn logical_operators
+ln logical operators
+co $ conditionals
+
+nn and_or_not
+ln AND/OR/NOT
+co $ logical_operators
+
+nn ternary_operator
+ln Ternary Operator
+co $ conditionals
+
+nn switch_statement
+ln Switch Statement
+co $ conditionals

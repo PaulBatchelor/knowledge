@@ -1,0 +1,26 @@
+ns mdn/js/0_javascript_first_steps/5_handling_text
+
+gr Handling Text: Strings in Javascript
+
+nn strings
+ln strings
+
+nn template_literal
+ln Template literal: string with backticks (`)
+co $ strings
+
+nn can_embed_js
+ln Can embed_js using ${}
+co $ template_literal
+
+nn declared_multiline
+ln Can be declared over multiple lines
+co $ can_embed_js
+
+nn concatentation
+ln Concatentation with normal strings can be done with "+"
+co $ strings
+
+nn multiline_strings
+ln multiline strings
+co $ strings

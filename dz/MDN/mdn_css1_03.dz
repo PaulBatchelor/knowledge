@@ -1,0 +1,86 @@
+ns mdn/css/1_css_building_blocks/03_pseudo_classes_and_pseudo_elements
+gr Pseudo Classes and Pseudo-Elements
+zz TODO add page attribute
+zz gp 34
+
+nn pseudo_class
+ln Pseudo class
+
+nn selects_elem_particular_state
+ln Selector that selects elements in a particular state
+co $ pseudo_class
+cr description
+
+nn pseudo_element
+ln pseudo-element
+
+
+nn whole_new_element
+ln Acts as if you added a whole new element to the HTML
+ln markup
+co $ pseudo_element
+cr description
+
+nn class_hover
+ln :hover
+co $ pseudo_class
+
+nn class_first_child
+ln :first-child
+co $ pseudo_class
+
+nn class_last_child
+ln :last-child
+co $ pseudo_class
+
+nn class_invalid
+ln :invalid
+co $ pseudo_class
+
+nn class_focus
+ln :focus
+co $ pseudo_class
+
+nn user_action_pseudo_class
+ln User action pseudo class
+co $ pseudo_class
+co class_hover user_action_pseudo_class
+
+nn dynamic_pseudo_class
+ln Dynamic Pseudo Class
+co $ user_action_pseudo_class
+cr AKA
+
+nn apply_when_user_interacts_doc
+ln applied when user interacts with the document
+co $ user_action_pseudo_class
+
+nn can_be_combined
+ln Can be combined
+co $ pseudo_class
+cr can be combined with pseudo-elements
+co $ pseudo_element
+cr can be combined with pseudo-classes
+
+nn starts_with_double_colon
+ln starts with "::"
+co $ pseudo_element
+cr notation
+
+nn element_first_line
+ln ::first-line
+co $ pseudo_element
+
+nn content_property
+ln Content Property
+co $ pseudo_element
+
+nn element_before
+ln ::before
+co $ content_property
+cr used with
+
+nn element_after
+ln ::after
+co $ content_property
+cr used with

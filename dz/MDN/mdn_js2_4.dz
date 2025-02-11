@@ -1,0 +1,54 @@
+ns mdn/js/2_javascript_objects/4_working_with_JSON
+gr Working With JSON
+
+nn JSON
+ln JSON
+pg 42
+
+nn text_based_data_format
+ln Text-based data format following JavaScript Object
+ln syntax
+co $ JSON
+cr description
+
+nn deserialization
+ln Deserialization: converting string to a native object
+co $ JSON
+
+nn serialization
+ln Serialization: converting a native object to a string
+co $ deserialization
+cr related
+co $ JSON
+
+nn structure
+ln structure
+co $ JSON
+pg 43
+
+nn arrays_as_JSON
+ln Arrays as JSON
+co $ JSON
+
+nn props_no_meths
+ln COntains only properties, no methods
+co $ JSON
+
+nn fetch
+ln Fetch: API for making network requests in JavaScript,
+ln to retrieve resources (such as JSON)
+co $ JSON
+pg 48
+
+nn async_keyword
+ln async keyword used to call async function
+co $ fetch
+cr fetch is an async API
+
+nn parse
+ln parse()
+co $ deserialization
+
+nn stringify
+ln stringify()
+co $ serialization

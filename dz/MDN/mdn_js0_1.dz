@@ -1,0 +1,66 @@
+ns mdn/js/0_javascript_first_steps/1_a_first_splash_into_javascript
+gr A first splash into javascript
+
+nn devtools_console
+ln Developer tools javascript console
+
+nn functions
+ln functions
+
+nn operators
+ln operators
+
+nn strict_equality
+ln === (strict equality)
+co $ operators
+
+nn non_equality
+ln non-equality (!==)
+co $ operators
+
+nn template_literals
+ln template literals
+
+nn strings_backticks
+ln Strings with backticks (`)
+co $ template_literals
+cr description
+
+nn events
+ln events
+
+nn event_listener
+ln event listener
+co $ events
+
+nn event_handler
+ln event handler
+co $ event_listener
+
+nn serve_events
+ln Serve specific events, calls event hanlder
+co $ event_listener
+cr description
+
+nn codeblocks_response_event
+ln Blocks of code that run in response to event firing
+co $ event_handler
+cr description
+
+nn loops
+ln loops
+
+nn for_of
+ln for .. of
+
+nn iterator_for_arrays
+ln Iterator for arrays
+co $ for_of
+
+nn object
+ln object: collection of reltaed functionality
+ln stored in a single grouping
+
+nn focus
+ln focus(): automatically puts text cursor into text
+ln field when page loads

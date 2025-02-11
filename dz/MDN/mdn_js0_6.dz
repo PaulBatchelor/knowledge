@@ -1,0 +1,40 @@
+ns mdn/js/0_javascript_first_steps/6_useful_string_methods
+gr Useful String Methods
+
+nn string_methods
+ln string methods
+
+nn length
+ln .length(): string length
+co $ string_methods
+
+nn includes
+ln .includes(): contains substring
+co $ string_methods
+
+nn startsWith_endsWith
+ln .startsWith() and .endsWith(): check if string starts/ends
+ln with substring
+co $ string_methods
+
+nn indexOf
+ln .indexOf(): find position of substring in string
+co $ string_methods
+
+nn indexOf_2ndarg
+ln Second argument: find index greater, used for subsequent
+ln occurances
+co $ indexOf
+
+nn toLowerCase_toUpperCase
+ln .toLowerCase() and .toUpperCase: change case
+co $ string_methods
+
+nn slice
+ln .slice(): extract substring from string.
+ln slice(start, end). exclusive.
+co $ string_methods
+
+nn replace
+ln .replace(): replaces one substring with another
+co $ string_methods

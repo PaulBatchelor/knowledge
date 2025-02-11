@@ -1,0 +1,65 @@
+ns mdn/js/3_async_javascript/3_introducing_workers
+gr Introducing Workers
+
+nn workers
+ln Workers
+pg 33
+
+nn tasks_run_seperate_thread
+ln Enables some tasks to be run in a separate thread of
+ln execution
+co $ workers
+
+nn thread_seq_instructions
+ln Thread: sequence of instructions that a program follows
+co $ tasks_run_seperate_thread
+co $ workers
+
+nn no_access_to_vars
+ln Main code and worker code never get access to eachothers
+ln variables, only share data in specific cases
+co $ workers
+
+nn message_passing
+ln Interaction via message passing
+co $ no_access_to_vars
+
+nn types_of_workers
+ln Types of Workers
+co $ workers
+pg 34
+
+nn dedicated
+ln Dedicated Workers
+co $ types_of_workers
+
+nn shared
+ln Shared Workers
+co $ types_of_workers
+
+nn post_message
+ln postMessage(): send message to worker
+pg 37
+co $ workers
+
+nn used_single_instance
+ln Dedicated: used by single script instance
+co $ dedicated
+pg 39
+cr description
+
+nn shared_by_several_different_scripts
+ln Shared: shared by several different scripts running in
+ln different windows
+co $ shared
+cr description
+pg 40
+
+nn progressive_web_apps
+ln Progressive Web Apps
+pg 40
+
+nn service
+ln Service: act like proxy servers, caching resources and
+ln so that web apps can work when user is offline
+co progressive_web_apps $

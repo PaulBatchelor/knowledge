@@ -1,0 +1,65 @@
+ns mdn/css/1_css_building_blocks/15_debugging_css
+gr Debugging CSS
+
+nn dev_tools
+ln Dev Tools
+
+nn rendered_DOM_normalized_css
+ln rendered DOM may have normalized the HTMl in the source,
+ln correcting badly written HTML
+co $ dev_tools
+
+nn inspecting_applied_CSS
+ln Inspecting Applied CSS
+co $ dev_tools
+
+nn rules_view
+ln Rules View
+co $ inspecting_applied_CSS
+
+nn toggle_values
+ln Toggle Values on/off
+co $ rules_view
+
+nn expanding_shorthand_props
+ln Expanding Shorthand Properties
+co $ inspecting_applied_CSS
+
+nn editing_values
+ln Editing Values
+co $ dev_tools
+
+nn adding_new_prop
+ln Adding a new property
+co $ dev_tools
+
+nn understanding_box_model
+ln Understanding the Box Model
+co $ dev_tools
+
+nn layout_view
+ln Layout View
+co $ understanding_box_model
+
+nn solving_specificity_issues
+ln Solving Specificity Issues
+co $ dev_tools
+
+nn debugging_problems_CSS
+ln Debugging Problems in CSS
+
+nn overriding_CSS
+ln Something overriding CSS?
+co $ debugging_problems_CSS
+
+nn validators
+ln CSS/HTML validators
+co $ debugging_problems_CSS
+
+nn browser_supported
+ln Are property/value supported by browser?
+co $ debugging_problems_CSS
+
+nn reduced_test_case
+ln create reduced test case
+co $ debugging_problems_CSS

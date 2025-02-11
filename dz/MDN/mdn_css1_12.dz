@@ -1,0 +1,68 @@
+ns mdn/css/1_css_building_blocks/12_sizing_items
+gr Sizing Items in CSS
+
+nn size
+ln size
+
+nn extrinsic_size
+ln extrinsic size: size given to an element
+co $ size
+co $ intrinsic_size
+cr related
+
+nn intrinsic_size
+ln intrinsic size: size determined by the image itself
+co $ size
+
+nn percentages
+ln percentages
+co $ size
+
+nn resolved_against_block
+ln percentage is resolved against contained block
+co $ percentages
+
+nn margin_padding_percentage
+ln margin and padding set in percentages: value calculated
+ln from size of containing block
+co $ percentages
+
+nn min_max_sizes
+ln min- and max- sizes
+co $ size
+
+nn min_height
+ln min-height
+co $ min_max_sizes
+
+nn max_width
+ln max_width
+co $ min_max_sizes
+
+nn max_width_use_case
+ln Common usecase for max-width: cause images to scale down
+ln if not enough space for their intrinsic width, also makes
+ln sure they don't become larger than max-
+co $ max_width
+
+nn makes_images_response
+ln Makes images responsive
+co $ max_width_use_case
+
+nn viewport_units
+ln Viewport Units
+co $ size
+
+nn visible_area_of_page
+ln Visible are of page in the browser you are using to view
+ln a site
+co $ viewport_units
+cr description
+
+nn vw_vh
+ln vw, vh
+co $ viewport_units
+
+nn vw_vh_scale
+ln 1 vw/vh = 1% of viewport width/height, respectively
+co $ vw_vh

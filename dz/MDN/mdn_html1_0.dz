@@ -1,0 +1,91 @@
+ns mdn/html/1_multimedia_and_embedding
+gr Multimedia and Embedding
+zz gp 1
+
+ns mdn/html/1_multimedia_and_embedding/0_images_in_html
+gr Images in HTML
+zz gp 4
+
+al elements mdn/html/elements
+
+nn tag_img
+ln <img>
+cx $ @elements
+co $ image
+
+nn image
+ln image
+
+nn URL
+ln URL
+co $ image
+
+nn void_element
+ln Void Element
+co $ tag_img
+
+nn src
+ln src
+co $ tag_img
+
+nn alt
+ln alt
+co $ tag_img
+co $ alternative_text
+
+nn replaced_elem
+ln Replaced Element
+co $ tag_img
+cr sometimes referred to as
+
+nn width
+ln width
+co $ tag_img
+
+nn height
+ln height
+co $ tag_img
+
+nn title
+ln title
+co $ tag_img
+rm not recommended
+
+nn alternative_text
+ln alternative text
+co $ image
+
+nn size
+ln size
+co $ image
+
+co width size
+co height size
+
+nn image_title
+ln image title
+co $ image
+
+nn content_delivery_network
+ln Content Delivery Network (CDN)
+co $ URL
+
+nn figures
+ln figures
+
+nn tag_figure
+ln <figure>
+cx $ @elements
+co $ figures
+
+nn figure_caption
+ln figure caption
+co $ figures
+
+nn tag_figcaption
+ln <figcaption>
+co $ figure_caption
+cx $ @elements
+
+nn css_background_image
+ln CSS background images

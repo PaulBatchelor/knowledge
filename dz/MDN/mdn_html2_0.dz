@@ -1,0 +1,93 @@
+ns mdn/html/2_html_tables
+gr HTML tables. A very common task in HTML is
+gr structuring tabular data, and it has a number of
+gr elements and attributes for just this purpose.
+
+ns mdn/html/2_html_tables/0_html_table_basics
+gr HTML table basics
+
+al elements mdn/html/elements
+
+nn table
+ln Table
+
+nn tabular_data
+ln Tabular Data
+co $ table
+
+nn data_rows_and_column
+ln Structured data made up of rows and columns
+co $ table
+cr description
+
+nn table_is_rigid
+ln The point of a table is that it is rigid
+co $ table
+
+nn dont_use_table_page_layouts
+ln Don't use table for page layouts
+co $ table
+
+nn use_css_layouts
+ln Use CSS for layouts
+co $ dont_use_table_page_layouts
+cr Use CSS instead
+
+nn tag_table
+ln <table>
+cx $ @elements
+
+nn tag_th
+ln <th>
+co $ tag_table
+
+nn tag_tr
+ln <tr>
+co $ tag_table
+
+nn tag_td
+ln <td>
+co $ tag_table
+
+nn table_header
+ln Table Header
+co $ tag_th
+
+nn table_row
+ln Table Row
+co $ tag_tr
+
+nn table_data
+ln Table Data / Table Cell
+co $ tag_td
+
+nn works_like_td
+ln Works like <td>
+co $ tag_th
+
+nn cells_spanning_multi_rows_cols
+ln Cells spanning multiple rows and columns
+co $ table
+
+nn colspan_rowspan
+ln Colspan / rowspan
+co $ cells_spanning_multi_rows_cols
+
+nn tag_col
+ln <col>
+cx $ @elements
+
+nn tag_colgroup
+ln <colgroup>
+cx $ @elements
+
+nn defines_styling_entire_column
+ln Defines styling information for an entire column of
+ln data in one place.
+co $ tag_col
+
+nn span_attr
+ln Span attribute
+co $ tag_col
+
+co tag_col tag_colgroup

@@ -1,0 +1,113 @@
+ns mdn/html/1_multimedia_and_embedding/4_responsive_images
+gr Responsive Images
+al elements mdn/html/elements
+
+nn responsive_images
+ln Responsive Images
+
+nn responsive_design
+ln Responsive Design
+co $ responsive_images
+cr larger topic it relates to
+
+nn images_diff_screen_sizes_resolutions
+ln Images that work with differing screen sizes,
+ln resolutions, etc
+co $ responsive_images
+cr description
+
+nn art_direction_problem
+ln Art Direction Problem
+co $ responsive_images
+
+nn differently_cropped_for_layouts
+ln Differently cropped for different layouts
+co $ art_direction_problem
+
+nn resolution_switching_problem
+ln Resolution switching problem
+co $ responsive_images
+
+nn optimal_res_based_on_screen
+ln Find optimal resolution based on screen size
+co $ responsive_images
+
+nn tag_picture
+ln <picture>
+co $ art_direction_problem
+cx $ @elements
+
+nn resolution_switching
+ln Resolution Switching
+co $ resolution_switching_problem
+
+nn srcset_sizes_attr
+ln Srcset and sizes attributes
+co $ resolution_switching
+
+nn srcset_attr
+ln srcset
+co $ srcset_sizes_attr
+
+nn intrinsic_width_pixels
+ln Intrinsic width in pixels
+co $ srcset_attr
+
+nn image_filename
+ln Image filename
+co $ srcset_attr
+
+nn sizes_attr
+ln sizes
+co $ srcset_sizes_attr
+
+nn media_condition
+ln Media Condition
+co $ sizes_attr
+
+nn width_of_slot
+ln Width of the slot
+co $ sizes_attr
+
+nn x_descriptors
+ln x-descriptors
+co $ resolution_switching
+
+nn no_sizes_attr
+ln No sizes attribute used
+co $ x_descriptors
+
+nn picture_contains_source_elements
+ln Element is a wrapper containing many source elements
+ln that provide different sources for the browser to
+ln choose from.
+co $ tag_picture
+
+nn tag_source
+ln <source>
+co $ picture_contains_source_elements
+cx $ @elements
+
+nn attr_media
+ln Media attribute
+co $ tag_source
+
+co media_condition attr_media
+
+nn dont_use_media_condition_in_sizes
+ln don't use media condition in sizes when using the
+ln media attribute
+co $ media_condition
+co $ attr_media
+
+nn followed_by_img
+ln Followed by <img> element
+co $ picture_contains_source_elements
+
+nn img_mandatory
+ln <img> is mandatory, otherwise image doesn't appear
+co $ followed_by_img
+
+zz no content in this subgraph, adding here
+ns mdn/html/1_multimedia_and_embedding/5_mozilla_splash_page
+gr Mozilla Splash Page

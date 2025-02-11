@@ -1,0 +1,13 @@
+ns mdn/js/0_javascript_first_steps/2_what_went_wrong
+gr What went wrong? Troubleshooting Javascript
+
+nn types_of_errors
+ln Types of Errors
+
+nn syntax
+ln syntax
+co $ types_of_errors
+
+nn logic
+ln logic
+co $ types_of_errors

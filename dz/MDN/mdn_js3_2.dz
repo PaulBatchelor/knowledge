@@ -1,0 +1,10 @@
+ns mdn/js/3_async_javascript/2_promise_based_API
+gr How to implement a promise-based API
+
+nn promise_based_API
+ln Promise-based API
+pg 27
+
+nn APIs_return_promises
+ln Implements APIs that return promises
+co $ promise_based_API  

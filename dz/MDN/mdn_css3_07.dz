@@ -1,0 +1,170 @@
+ns mdn/css/3_css_layout/07_responsive_design
+gr Responsive Design
+
+nn responsive_design
+ln responsive web design
+pg 114
+
+nn media_queries
+ln Media Queries
+co $ responsive_design
+pg 116
+
+nn design_for_range_of_devices
+ln design approach that addresses the range of
+ln devices and device sizes
+co $ responsive_design
+cr desc
+pg 115
+
+nn RWD
+ln RWD
+co $ responsive_design
+cr AKA
+
+nn run_tests_apply_selective_CSS
+ln runs series of tests and apply CSS selectively to
+ln style the page
+co $ media_queries
+pg 115
+
+nn breakpoints
+ln breakpoints: points at which media query is introduced
+ln and layout is changed
+co $ media_queries
+pg 117
+
+nn common_approach
+ln common approach: single column layout for narrow screen,
+ln check for wider screen, implement multicol
+co $ media_queries
+pg 117
+
+nn mobile_first
+ln mobile-first design
+co $ common_approach
+co $ responsive_design
+
+nn responsive_layout_tech
+ln responsive layout technologies
+co $ responsive_design
+pg 118
+
+nn responsive_sites_flex_grids
+ln responsive sites built on flexible grids
+co $ responsive_layout_tech
+pg 118
+
+nn change_design_when_things_look_bad
+ln used to change design when things start looking bad
+co $ responsive_sites_flex_grids
+
+nn multicol
+ln multicol
+co $ responsive_layout_tech
+pg 118
+
+nn column_count_width
+ln column-count works out width, column-width works out
+ln count
+co $ multicol
+
+nn flexbox
+ln flexbox
+co $ responsive_layout_tech
+pg 119
+
+nn flex_grow_shrink
+ln use flex-grow/shrink to indicate behavior when more
+ln or less space encountered
+co $ flexbox
+pg 119
+
+nn css_grid
+ln CSS Grid
+co $ responsive_layout_tech
+pg 119
+
+nn fr_unit_distr_avail_space
+ln fr unit allows distribution of avilable space across
+ln grid tracks
+co $ css_grid
+
+nn resp_images
+ln responsive images
+co $ responsive_design
+pg 120
+
+nn never_larger_than_container
+ln never larger than its responsive container:
+ln max-width:100%
+pg 120
+co $ resp_images
+
+nn picture_elem
+ln <picture>
+co $ resp_images
+pg 120
+
+nn img_srcset_size
+ln <img> srcset and size attributes
+co $ resp_images
+pg 120
+
+nn art_direction
+ln art direct images used at different sizes
+co $ resp_images
+pg 121
+
+nn responsive_typography
+ln responsive typography
+pg 121
+co $ responsive_design
+
+nn change_font_size_screen_real_estate
+co $ responsive_design
+cr desc
+ln change font size using media queries or viewport
+ln units to reflect less or greater screen real estate
+
+nn viewport_units
+ln viewport units (vw)
+co $ responsive_typography
+pg 124
+
+nn cant_zoom_text
+ln can't zoom text. never set text using viewport units
+ln alone
+co $ viewport_units
+
+nn how_to_use_vw
+ln calc(1.5rem + 3vw)
+co $ cant_zoom_text
+cr solution
+pg 125
+
+nn viewport_meta
+ln The viewport meta tag
+co $ responsive_design
+pg 125
+
+nn tells_browser_set_vp_to_intended_size
+ln tells browsers that they should set width of viewport
+ln to 100% of its intended size, which shows document at
+ln intended mobile optimized size.
+co $ viewport_meta
+cr desc
+pg 125
+
+nn mobile_browsers_lie_about_viewport
+ln mobile browsers tend to lie about viewport width
+co $ tells_browser_set_vp_to_intended_size
+cr why
+pg 125
+
+nn smartphone_early_days
+ln early days of smartphones: not mobile optimized width,
+ln set to 980px, zoomed out version of desktop layout,
+ln users zoomed in to click
+co $ mobile_browsers_lie_about_viewport
+cr historical context

@@ -1,0 +1,135 @@
+ns mdn/js/3_async_javascript/1_how_to_use_promises
+gr How to use promises
+
+nn promises
+ln promises
+pg 12
+
+nn foundation_async_programming
+ln foundation of asynchronous programming in JavaScript
+co $ promises
+
+nn obj_ret_async_cur_state
+ln Object returned by an asynchronous function which
+ln represents the current state of operation
+co $ promises
+cr description
+
+nn handlers_attach_promise
+ln handlers attached to promise object are executed
+ln when oepration succeeds/fails
+co $ promises
+
+nn fetch_API
+ln fetch() API
+co $ promises
+
+nn promise_replacement_XMLHttpRequest
+ln promise-based replacement for XMLHttpRequest
+co $ fetch_API
+cr description
+td connect to XMLHTTPRequest from previous chapter
+
+nn chaining_promises
+ln Chaining Promises
+co $ promises
+pg 14
+
+nn promise_chaining
+ln Promise Chaining: return promise, call then() on it.
+co $ chaining_promises
+pg 15
+
+nn then_returns_promise
+ln then() itself returns a promise, which will be completed
+ln with the result of the function passed to it.
+co $ chaining_promises
+
+nn catching_errors
+ln catching errors
+co $ promises
+pg 16
+
+nn catch_method
+ln catch() method
+co $ catching_errors
+
+nn called_on_any_failure_when_at_end
+ln when placed at end of chain, will be called when
+ln any of the asynchronous functions fail
+co $ catch_method
+pg 17
+
+nn promise_terminology
+ln Promise terminology
+pg 17
+
+nn pending
+ln pending: promise created, async function created with
+ln it has yet to succeed or fail
+co $ promise_terminology
+
+nn fulfilled
+ln Fulfilled: async function suceeded, then() handler
+ln called
+co $ promise_terminology
+
+nn rejected
+ln Rejected: async func failed. Catch() handler called.
+co $ promise_terminology
+
+nn combining_multiple_promises
+ln Combining mUltiple promises
+pg 18
+
+nn promise_all
+ln promise.all(): takes array of promises and returns
+ln single promise
+co $ combining_multiple_promises
+
+nn settled
+ln Settled: covers both fulfilled and rejected
+co $ promise_terminology
+
+nn promise_all_fulfilled_rejected
+ln fulfilled when and if all promises fulfilled. rejected
+ln when and if any are rejected.
+co $ promise_all
+
+nn promise_any
+ln promise.any(): like promise.all(), but fulfilled when
+ln any promises in array are fulfilled
+co $ promise_all
+cr fulfilled when any promise in array fulfilled
+pg 21
+
+nn async_await
+ln Async and Await
+pg 21
+
+nn await
+ln await: used inside async function before function call
+ln that returns promise.
+co $ async_await
+
+nn async
+ln async: keyword before function declaration to make it
+ln asynchronous.
+co $ async_await
+
+nn make_async_look_sync
+ln Enables code using async functions to look like
+ln synchronous code
+co $ await
+cr description
+
+nn only_used_async_or_module
+ln Only used in async function, unless code is inside
+ln a JS module
+co $ await
+
+nn similar_to_promise_chain
+td link to promise chain
+ln similar to promise chain, await forces async operations
+ln to be completed in series
+co $ await

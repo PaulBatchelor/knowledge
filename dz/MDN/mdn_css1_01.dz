@@ -1,0 +1,68 @@
+ns mdn/css/1_css_building_blocks/01_type_class_id_selectors
+gr Type, Class, and ID selectors
+
+nn type_selector
+ln Type Selector
+
+nn element_selector
+ln Element Selector
+co $ type_selector
+
+nn tag_name_selector
+ln Tag Name Selector
+co $ type_selector
+co $ element_selector
+cr AKA
+
+nn class_selector
+ln Class Selector
+
+nn dot
+ln notated with '.'
+co $ class_selector
+
+nn multi
+ln multi
+co $ class_selector
+
+nn chain
+ln chain
+co $ multi
+
+nn universal_selector
+ln Universal Selector
+
+nn selects_everything
+ln Selects everything in document
+co $ universal_selector
+
+nn asterisk
+ln notated with '*"
+co $ universal_selector
+
+nn reset_stylesheet
+ln Reset Stylesheet
+co $ universal_selector
+
+nn helps_with_readability
+ln Can help with readability
+co $ universal_selector
+
+nn id_selector
+ln ID selector
+
+nn hashtag
+ln notated with '#'
+co $ id_selector
+
+nn id
+ln ID
+co $ id_selector
+
+nn once_per_page
+ln Used Once Per Page
+co $ id
+
+nn one_id_per_elem
+ln Elements can only have a single ID applied to them
+co $ id

@@ -1,0 +1,160 @@
+ns mdn/css/3_css_layout/02_flexbox
+gr Flexbox
+
+nn flexbox
+ln Flexbox
+pg 35
+
+nn one_dim_layout
+ln One-dimensional layout method for arranging items in
+ln rows or columns
+co $ flexbox
+cr description
+pg 35
+
+nn flex_shrink_to_fit_space
+ln Items flex (expand) or shrink to fit space
+co $ flexbox
+pg 35
+
+nn flex_container
+ln Flex container
+co $ flexbox
+pg 35
+
+nn flex_items
+ln Flex Items
+co $ flex_container
+pg 37
+
+nn flex_model
+ln The Flex Model
+co flex_items $
+co flex_container $
+co $ flexbox
+
+nn flex_items_axes
+ln Flex items laid out on 2 axes: main and cross
+co $ flex_model
+
+nn main_axis
+ln Main Axis: direction flex items are laid out in.
+co $ flex_items_axes
+
+nn cross_axis
+ln Cross Axis: perpendicular to main axis
+co $ main_axis
+cr perpendicular
+co $ flex_items_axes
+
+nn main_start_end
+ln Main start/end
+co $ main_axis
+td what did I mean by main start/end?
+
+nn cross_start_end
+ln Cross start/end
+co $ main_start_end
+cr related
+co $ cross_axis
+td what did I mean by cross start/end?
+
+nn horiz_vert_align
+ln Horizontal and vertical alignment
+co $ flexbox
+
+nn align_items
+ln align-items
+co $ horiz_vert_align
+
+nn stretch
+co $ align_items
+ln stretch (default): stretches all flex items to fill parent
+ln in direction of cross axis
+co $ cross_axis
+cr stretches in direction of cross axis
+co $ flex_items
+cr stretches all flex items
+
+nn center
+ln center: maintain instrinic dimensions, centered along
+ln cross axis
+co $ cross_axis
+cr centered along cross axis
+td connect to intrinsic dimensions and images (discussed in HTML I think?)
+co $ align_items
+
+nn flex_start_end
+ln flex-start/flex-end: align all items at start/end of
+ln cross axis
+co $ cross_axis
+cr aligns all items at start/end of cross axis
+co $ align_items
+pg 46
+
+nn justify_content
+ln justify-content: controls where items sit on main axis
+co $ horiz_vert_align
+co $ main_axis
+cr controls where items sit on main axis
+
+nn flex_start_end_justify
+ln flex-start/flex-end: align all items at start/end
+ln of main axis.
+co $ flex_start_end
+cr flex-start/end used for justify-content instead of align-items
+co $ main_axis
+cr align all items at start/end of main axis
+
+nn space_around
+ln space-around: distributes all items evenly along main
+ln axis with a bit of space at either end
+co $ justify_content
+co $ main_axis
+cr distributes all items evenly along main axis with bit of space at ends
+
+nn space_between
+ln space-between: like space around, but doesn't leave space
+ln at either end
+co $ space_around
+cr similar, but doesn't leave space at ends
+co $ justify_content
+
+nn ordering_flex_items
+ln Ordering Flex Items
+co $ flex_items
+pg 47
+
+nn higher_vals_display_later
+ln Higher order values display later
+co $ ordering_flex_items
+co $ order
+
+nn order
+ln order property (default: 0)
+co $ ordering_flex_items
+
+nn if_order_val_same_source_order
+ln Use source order if two items have the same order
+ln value
+co $ ordering_flex_items
+co $ higher_vals_display_later
+
+nn neg_vals_appear_before_zero
+ln Negative values appear before zero
+co $ order
+
+nn nested_flex_boxes
+ln nested flex boxes
+co $ flexbox
+pg 48
+
+nn flex_item_can_be_container
+ln A flex item can be a flex container
+co $ nested_flex_boxes
+pg 48
+
+nn nth_of_type
+ln nth-of-type
+co $ nested_flex_boxes
+pg 50

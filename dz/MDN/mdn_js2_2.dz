@@ -1,0 +1,89 @@
+ns mdn/js/2_javascript_objects/2_object_oriented_programming
+gr Object-oriented programming
+
+nn OOP
+ln Object-oriented programming
+pg 26
+
+nn classes_instances
+ln Classes and Instances
+co $ OOP
+
+nn inheritance
+ln Inheritance
+co $ OOP
+
+nn model_system_as_collection_of_objs
+ln Model system as collection of objects, each one
+ln representing an aspect of the system
+co $ OOP
+
+nn encapsulation
+ln Encapsulation
+co $ OOP
+
+nn class
+ln class: abstraction definition representing a type
+ln of object in the system.
+co $ classes_instances
+pg 27
+
+nn instance
+ln Instance: concrete object of a particular type
+co $ classes_instances
+
+nn created_with_constructor
+ln Created with constructor
+co $ instance
+
+nn public_interface_private_state
+ln public interface to other code, private internal
+ln state
+co $ OOP
+
+nn inheritance_desc
+ln inheritance: mechanism that allows objects of different
+ln types to share properties from a common source.
+co $ inheritance
+cr description
+
+nn superclass
+ln superclass / parent class: class a particular class is
+ln derived from
+pg 30
+co $ inheritance
+
+nn subclass
+ln subclass / child class: class derived from superclass
+co $ superclass
+cr related
+
+nn polymorphism
+ln polymorphism: method with same name, but different
+ln implementation in different classes
+co $ inheritance
+
+nn override
+ln override: method in a subclass that replaces the
+ln superclass's implementation
+co $ polymorphism
+
+nn encapsulation_desc
+ln encapsulation: keeping an object state private and
+ln making a clear division between public interface and
+ln private state.
+pg 31
+co $ encapsulation
+
+nn proto_chain_less_inheritance_more_delegation
+ln A prototype is less like inheritance, more like
+ln delegation
+co $ inheritance
+td connect to prototype chain node in previous chapter
+
+nn delegation
+ln delegation: pattern where an object, when asked to
+ln perform a task, can perform the task itself or ask
+ln another object (delegate) to perform task on its behalf
+co $ proto_chain_less_inheritance_more_delegation
+pg 33

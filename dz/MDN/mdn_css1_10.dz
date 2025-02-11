@@ -1,0 +1,47 @@
+ns mdn/css/1_css_building_blocks/10_overflowing_content
+gr Overflowing Content
+
+nn overflow
+ln overflow
+
+nn too_much_content_for_box
+ln Too much content to fit an in an element box
+co $ overflow
+
+nn CSS_does_not_hide_content
+ln Whenever possible, CSS does not hide content
+co $ overflow
+
+nn avoids_data_loss
+ln Avoids "data loss"
+co $ CSS_does_not_hide_content
+
+nn overflow_prop
+ln Overflow Property
+co $ overflow
+
+nn default_visible
+ln Default: Visible
+co $ overflow_prop
+
+nn hidden_crop_overflow
+ln hidden: crop overflowed content
+co $ overflow_prop
+
+nn scroll_add_scrollbars
+ln scroll: adds scrollbars
+co $ overflow_prop
+
+nn overflow_xy
+ln overflow-x, overflow-y
+co $ overflow_prop
+
+nn long_word_small_box
+ln For a long word in a small box, use word-break or
+ln overflow-wrap property instead
+co $ overflow_xy
+
+nn overflow_auto
+ln Overflow: auto make scroll bars only appear when there
+ln is more content than can fit in the box
+co $ overflow_prop

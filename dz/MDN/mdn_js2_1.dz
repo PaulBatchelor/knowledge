@@ -1,0 +1,55 @@
+ns mdn/js/2_javascript_objects/1_object_prototypes
+gr Object Prototypes
+
+nn prototype
+ln Prototype: Mechanism by which JS objects inherit
+ln features from one another.
+pg 18
+
+nn prototype_chain
+ln Prototype Chain: nested prototype
+ln objects, endeing with null.
+co $ prototype
+
+nn prop_access
+ln Property Access: objhect, proto object, proto object
+ln of that, etc. search.
+co $ prototype
+
+nn object_prototype
+ln Object Prototype
+pg 20
+co $ prototype
+
+nn shadowing_prop
+ln Shadowing Property: redefined property in object gest found
+ln before property in prototype.
+pg 21
+co $ prototype
+
+nn setting
+ln Setting
+co $ prototype
+
+nn via_constructor
+ln Set via constructor
+co $ setting
+pg 23
+
+nn object_create
+ln object.create()
+co $ setting
+
+nn object_assign
+ln object.assign()
+co $ via_constructor
+
+nn own_property
+ln Own property: proerpties that are defined directly
+ln in the object
+pg 24
+
+nn inheritance
+ln Inheritance
+pg 25
+co $ prototype

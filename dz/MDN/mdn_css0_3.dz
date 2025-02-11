@@ -1,0 +1,58 @@
+ns mdn/css/0_css_first_steps/3_how_css_works
+gr How CSS works
+
+nn doc_process_stages
+ln Stages of Document Processing
+
+nn DOM
+ln DOM
+
+nn document_object_model
+ln Document Object Model
+co $ DOM
+cr abbreviation
+
+nn load_html
+ln load HTML
+co $ doc_process_stages
+
+nn html_dom
+ln HTML -> DOM
+co $ doc_process_stages
+co $ load_html
+co DOM html_dom
+
+nn fetch_resources
+ln Fetch Resources
+co $ doc_process_stages
+co $ html_dom
+
+nn sort_css_rules
+ln sort CSS rules
+co $ doc_process_stages
+co $ fetch_resources
+
+nn render_tree
+ln Render Tree
+co $ sort_css_rules
+co $ doc_process_stages
+
+nn painting
+ln Painting
+co $ render_tree
+co $ doc_process_stages
+
+nn tree_like_structure
+ln tree-like structure
+co $ document_object_model
+co $ DOM
+
+nn DOM_node
+ln DOM node
+co $ DOM
+co $ html_dom
+
+zz this section has no content, so I am appending it here
+
+ns mdn/css/0_css_first_steps/4_styling_a_bibliography
+gr Styling a Bibliography

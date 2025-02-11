@@ -1,0 +1,207 @@
+ns mdn/css/1_css_building_blocks/11_values_units
+gr CSS Values and Units
+
+nn css_rules
+ln CSS Rules
+
+nn declarations
+ln Declarations
+co $ css_rules
+
+nn props_and_values
+ln Properties and Values
+co $ declarations
+
+nn value_types
+ln Value Types
+
+nn each_prop_has_value_type
+ln Each property has a value type
+co $ value_types
+
+nn data_types
+ln data types
+co $ value_types
+cr AKA
+
+nn collection_of_allowable_values
+ln A way to define a collection of allowable values
+co $ value_types
+
+nn numeric_types
+ln Numeric types
+co $ value_types
+
+nn integer
+ln <integer>
+co $ numeric_types
+
+nn number
+ln <number>
+co $ numeric_types
+
+nn dimension
+ln <dimension>
+co $ numeric_types
+
+nn percentage
+ln <percentage>
+co $ numeric_types
+
+nn length
+ln <length>
+co $ dimension
+
+nn absolute
+ln absolute
+co $ length
+
+nn relative
+ln relative
+co $ length
+
+nn ems_rems
+ln ems and rems
+co $ relative
+
+nn lh_rlh
+ln lh and rlh
+co $ ems_rems
+cr related
+co $ relative
+
+nn percentages
+ln percentages
+co $ relative
+
+nn unitless_numbers
+ln unitless numbers
+co $ value_types
+
+nn opacity
+ln opacity (0-1)
+co $ unitless_numbers
+cr example
+
+nn color
+ln Color
+co $ value_types
+
+nn color_keywords
+ln Color Keywords
+co $ color
+
+nn named_colors
+ln Named Colors
+co $ color_keywords
+cr AKA
+
+nn human_readable_text_value
+ln Human-readable text value
+co $ color_keywords
+cr description
+
+nn hex_rgb_vals
+ln Hexadecimal RGB Values
+co $ color
+
+nn rgb_rgba_vals
+ln RGB/RGBA Values
+co $ color
+
+nn hue
+ln <hue>
+co $ color
+
+nn older_rgb_no_fourth_param
+ln Older versions of rgb() didn't take fourth parameter,
+ln used rgba() instead
+co $ rgb_rgba_vals
+
+nn angle_specified
+ln Specified in <angle>
+co $ hue
+
+nn hsl
+ln hsl()
+co $ hue
+
+nn other_color_funcs
+ln Other color functions: hwb(), lch(), lab()
+co $ color
+
+nn image
+ln <image>
+co $ value_types
+
+nn image_url
+ln (actual) image via url
+co $ image
+
+nn gradient
+ln Gradient
+co $ image
+
+nn position
+ln <position>
+co $ value_types
+
+nn 2d_coords_set
+ln Set of 2d coordinates
+co $ position
+cr description
+
+nn default_to_center
+ln If only one axis specified, the other value defaults
+ln to center
+co $ position
+co $ position_keywords
+cr "center" is a position keyword
+
+nn position_keywords
+ln Keywords: top, left, bottom, right, center
+co $ position
+rm The order these guides mention directions is
+rm consistently in cardinal-clockwise order
+
+nn keywords_are_identifiers
+ln Keywords are more accurately described as identifiers
+co $ position_keywords
+co $ color_keywords
+
+nn not_quoted_not_strings
+ln Not quoted, not strings
+co $ keywords_are_identifiers
+
+nn functions
+ln functions
+
+nn more_color_funcs
+ln rgb(), hsl()
+co $ functions
+cr example
+
+nn transform_functions
+ln Transform Functions: common way to move, rotate,
+ln and scale elements on a page
+co $ functions
+
+nn math_funcs
+ln Math Functions
+co $ functions
+
+nn exponential_funcs
+ln Exponential Functions
+co $ math_funcs
+
+nn calc
+ln calc()
+co $ math_funcs
+
+nn min_max_clamp
+ln min(), max(), clamp(): pick smallest, largest, and
+ln middle value from set of values
+co $ math_funcs
+
+nn trig_funcs
+ln trig functions: sin(), cos(), tan()

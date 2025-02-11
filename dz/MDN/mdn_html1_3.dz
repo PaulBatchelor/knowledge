@@ -1,0 +1,103 @@
+ns mdn/html/1_multimedia_and_embedding/3_adding_vector_graphics_to_the_web
+gr Adding vector graphics to the web
+al elements mdn/html/elements
+
+nn images_on_web
+ln Images on the Web
+
+nn raster
+ln raster
+co $ images_on_web
+
+nn vector
+ln vector
+co $ images_on_web
+
+nn defined_using
+ln Defined Using
+co $ images_on_web
+
+nn algorithms
+ln Algorithms
+co $ defined_using
+co $ vector
+
+nn grid_of_pixels
+ln Grid of Pixels
+co $ defined_using
+co $ raster
+
+nn SVG
+ln SVG
+co $ vector
+
+nn XML_based
+ln XML based
+co $ SVG
+
+nn SVG_elements
+ln SVG elements
+co $ SVG
+
+nn basic_shapes
+ln Basic Shapes
+co $ SVG_elements
+
+nn complex_shapes
+ln complex shapes
+co $ SVG_elements
+
+nn tag_circle
+ln <circle>
+co $ basic_shapes
+
+nn tag_rect
+ln <rect>
+co $ basic_shapes
+
+nn tag_path
+ln <path>
+co $ complex_shapes
+
+nn tag_polygon
+ln <polygon>
+co $ complex_shapes
+
+nn vector_graphics_editor
+ln Vector Graphics Editor
+co $ SVG
+
+nn editor_examples
+ln Inkscape, Illustrator
+co $ vector_graphics_editor
+cr examples
+
+nn adding_SVG_to_pages
+ln Adding SVG to pages
+co $ SVG
+
+nn css_background_images
+ln As CSS background images
+co $ adding_SVG_to_pages
+
+nn SVG_inline
+ln SVG inline / inlining SVG
+co $ adding_SVG_to_pages
+
+nn embed_iframe
+ln Embed using iframe
+co $ adding_SVG_to_pages
+
+nn img_element
+ln Using img element
+co $ adding_SVG_to_pages
+cr quick way
+
+nn srcset_attr
+ln srcset attribute
+co $ img_element
+co $ cross_browser_support
+
+nn cross_browser_support
+ln Cross Browser Support
+co $ adding_SVG_to_pages

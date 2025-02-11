@@ -1,0 +1,83 @@
+ns mdn/js/0_javascript_first_steps/4_basic_math
+
+gr Basic math in javascripts, numbers and operators
+
+nn types_of_numbers
+ln Types of Numbers
+
+nn number_systems
+ln Number Systems
+
+nn integers
+ln integers
+co $ types_of_numbers
+
+nn floats
+ln floats
+co $ types_of_numbers
+
+nn doubles
+ln doubles
+co $ types_of_numbers
+co $ floats
+
+nn octal
+ln octal
+co $ number_systems
+
+nn hexadecimal
+ln hexadecimal
+co $ number_systems
+
+nn binary
+ln Binary
+co $ number_systems
+
+nn number_data_type
+ln One data type for numbers: Number
+
+nn typeof
+ln Typeof: checks data type
+
+nn useful_number_methods
+ln Useful Number Methods
+
+nn toFixed
+ln toFixed(): round number to fixed number of decimal places
+co $ useful_number_methods
+
+nn string_to_number
+ln Passing string to Number() converts to number data type
+co $ useful_number_methods
+
+nn arithmetic_operators
+ln Arithmetic Operators
+
+nn operands
+ln Operands: numbers involved in arithmetic
+co $ arithmetic_operators
+
+nn operator_precedence
+ln Operator Precedence
+co $ arithmetic_operators
+
+nn operators
+ln Operators
+co $ arithmetic_operators
+
+nn increment_decrement
+ln Increment/Decrement Operations
+co $ operators
+
+nn assignment
+ln Assignment Operators
+co $ operators
+
+nn comparison
+ln Comparison Operators
+co $ operators
+
+nn triple_equals_vs_double
+ln === tests equality of values AND their datatypes, while
+ln == only checks if their values are the same.
+co $ comparison

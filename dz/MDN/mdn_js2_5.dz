@@ -1,0 +1,42 @@
+ns mdn/js/2_javascript_objects/5_object_building_practice
+gr Object building practice
+
+nn canvas_api
+ln Canvas API
+pg 55
+
+nn getcontext
+ln getContext()
+co $ canvas_api
+
+
+nn beginpath
+ln beginPath()
+co $ canvas_api
+
+nn arc
+ln arc()
+co $ canvas_api
+
+nn fillstyle
+ln fillstyle
+co $ canvas_api
+
+nn fill
+ln fill()
+co $ canvas_api
+
+nn 2d
+ln "2d"
+co $ getcontext
+
+nn requestAnimationFrame
+ln requestAnimationFrame(): when repeatedly run and passed
+ln the same function name, runs functions set number of times
+ln per second for a smooth animation.
+pg 62
+
+ns mdn/js/2_javascript_objects/6_adding_features
+gr Adding features to our bouncing balls
+zz no content
+gr Object building practice

@@ -1,0 +1,92 @@
+ns mdn/css/1_css_building_blocks/09_handling_different_text_directions
+gr Handling different text directions
+
+nn writing_modes
+ln Writing Modes
+
+nn text_horiz_vert
+ln Refers to whether text is running horizontally or
+ln vertically.
+co $ writing_modes
+
+nn writing_mode_prop
+ln writing-mode property
+co $ writing_modes
+
+nn horizontal_tb
+ln horizontal-tb
+co $ writing_mode_prop
+
+nn vertical_rl
+ln vertical-rl
+co $ writing_mode_prop
+
+nn vertical_lr
+ln vertical-lr
+co $ writing_mode_prop
+
+nn block_dimension
+ln Block Dimension: direction blocks are displayed in the
+ln writing mode
+co $ writing_modes
+
+nn inline_dimension
+ln Inline Dimension: direction a sentence flows
+co $ writing_modes
+co $ block_dimension
+cr related
+
+nn direction
+ln Direction
+co $ writing_modes
+
+nn start_end_instead_of_LR_TB
+ln start/end used in newer CSS instead of LR, TB
+co $ direction
+
+nn mapped_props_replace_physical
+ln Mapped properties to replace physical properties
+co $ writing_modes
+
+nn phys_props
+ln Physical Properties: width, height, etc
+co $ mapped_props_replace_physical
+
+nn logical_relative_flow_versions
+ln Logical or Relative Flow versions
+co $ mapped_props_replace_physical
+
+nn horiz_writing_mode
+ln Horizontal Writing Mode
+co $ mapped_props_replace_physical
+
+nn inline_size_width
+ln inline-size -> width
+co $ horiz_writing_mode
+co $ inline_dimension
+
+nn block_size_height
+ln block-size -> height
+co $ horiz_writing_mode
+co $ block_dimension
+
+nn margin_block_start_margin_top
+ln margin-block-start -> margin->top
+co $ mapped_props_replace_physical
+co $ block_dimension
+
+nn padding_left_padding_inline_start
+ln padding-left -> padding-inline-start
+co $ mapped_props_replace_physical
+
+nn applied_start_inline_direction
+ln applied to start of inline direction
+co $ padding_left_padding_inline_start
+
+nn border_bottom_border_block_end
+ln border-bottom -> border_block_end
+co $ mapped_props_replace_physical
+
+nn logical_props_still_new
+ln Logical properties still relatively new
+co $ mapped_props_replace_physical

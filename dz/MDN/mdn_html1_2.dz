@@ -1,0 +1,149 @@
+ns mdn/html/1_multimedia_and_embedding/2_from_object_to_iframe
+gr From object To iframe
+al elements mdn/html/elements
+
+nn frames
+ln Frames
+
+nn parts_of_website_individual_html
+ln Parts of website stored in individual HTML pages
+co $ frames
+cr description
+
+nn frameset
+ln frameset
+co $ frames
+
+nn master_doc_frames_stored
+ln Master document where frames are stored
+co $ frameset
+cr description
+
+nn plugin_technologies
+ln Plugin Technologies
+
+nn java_applets
+ln Java Applets
+co $ plugin_technologies
+
+nn flash
+ln flash
+co $ plugin_technologies
+
+nn tag_object
+ln <object>
+co $ plugin_technologies
+cx $ @elements
+
+nn tag_embed
+ln <embed>
+co $ plugin_technologies
+cx $ @elements
+co $ tag_object
+cr less used than
+
+nn iframe
+ln IFrame
+
+nn embed_webpage_inside_another
+ln Embed entire webpage inside another, as if it were
+ln <img> or such element
+co $ iframe
+cr description
+
+nn tag_iframe
+ln <canvas>
+co $ iframe
+cx $ @elements
+
+nn other_ways_to_embed_content
+ln Other ways of embedding content
+co $ iframe
+
+nn tag_video
+ln <video>
+co $ other_ways_to_embed_content
+cx $ @elements
+
+nn tag_canvas
+ln <canvas>
+co $ other_ways_to_embed_content
+cx $ @elements
+
+nn border
+ln border
+co $ tag_iframe
+
+nn allow_fullscreen
+ln allow-fullscreen
+co $ tag_iframe
+
+nn src
+ln src
+co $ tag_iframe
+
+nn width_height
+ln Width/height
+co $ tag_iframe
+
+nn sandbox
+ln sandbox
+co $ tag_iframe
+
+nn security
+ln security
+co $ iframe
+
+nn click_jacking
+ln Click-jacking
+co $ security
+
+nn common_target
+ln Common target/attack vector
+co $ security
+
+nn embed_invisible_iframe
+ln Embed invisible iframe and capture user interactions
+co $ click_jacking
+cr description
+
+nn only_embed_when_necessary
+ln Only embed when necessary
+co $ security
+
+nn use_https
+ln Use HTTPS
+co $ security
+
+nn use_sandbox
+ln Always use sandbox attribute
+co $ security
+co $ sandbox
+
+nn CSP
+ln CSP
+co $ security
+
+nn content_security_policy
+ln Content Security Policy
+co $ CSP
+cr acronym
+
+nn set_of_http_headers
+ln Set of HTTP headers, designed to improve security of
+ln HTMl document
+co $ CSP
+
+nn never_add_allow_script_and_allow_same_origin
+ln Never allow both allow-script and allow-same-origin
+ln to sandbox attribute
+co $ use_sandbox
+
+nn could_disable_sandboxing
+ln Embedded content could bypass the same-origin policy,
+ln and use JavaScript to disable sandboxing altogether
+co $ never_add_allow_script_and_allow_same_origin
+
+nn x_frame_options
+ln x-frame-options header
+co $ CSP

@@ -1,0 +1,103 @@
+ns mdn/css/1_css_building_blocks/13_images_media_form_elements
+gr Images, media, and form elements
+
+nn elements
+ln elements
+
+nn replaced_elements
+ln Replaced Elements
+co $ elements
+
+nn images_and_videos
+ln images and videos
+co $ replaced_elements
+cr examples
+
+nn aspect_ratio
+ln aspect ratio: size in horizontal/vertical dimensions,
+ln displayed using intrinsic dimensions by default
+co $ replaced_elements
+
+nn object_fit
+ln object-fit
+co $ replaced_elements
+
+nn layout
+ln layout
+co $ replaced_elements
+
+nn cover
+ln cover: sizes imag eto fit box while maintaining
+ln aspect ratio. May be cropped
+co $ object_fit
+co $ aspect_ratio
+
+nn contain
+ln contain: image scaled down small enough to fit inside
+ln box.
+co $ object_fit
+co $ cover
+cr related
+
+nn diff_default_behaviors
+ln different default behaviors in layout: images do not
+ln stretch
+co $ layout
+
+nn form_elements
+ln Form Elements
+co $ elements
+
+nn input
+ln <input>
+co $ form_elements
+
+nn font_styles_sometimes_uninherited
+ln Some browsers don't inherit font styling by default.
+ln use font-family:inherit.
+co $ form_elements
+
+nn textarea
+ln <textarea>
+co $ form_elements
+
+nn fieldset
+ln <fieldset>
+co $ form_elements
+
+nn legend
+ln <legend>
+co $ form_elements
+
+nn text_input_easily_styled
+ln Text input element easy to style. Behavior like other
+ln boxes on page.
+co $ form_elements
+
+nn box_sizing
+ln box-sizing
+co $ form_elements
+
+nn border_box
+ln border-box
+co $ box_sizing
+
+nn reset
+ln reset
+co $ elements
+co $ zero_margins_padding
+co $ textarea_overflow_auto
+
+nn zero_margins_padding
+ln Good idea to set margins/padding to zero, then add
+ln them back in when styling
+co $ box_sizing
+
+nn textarea_overflow_auto
+ln textarea, overflow: auto to stop IE from needlessly
+ln showing scrollbar
+
+nn normalizing_stylesheet
+ln Normalizing Stylesheet
+co $ reset
+cr AKA

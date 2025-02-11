@@ -1,0 +1,138 @@
+ns mdn/html/0_intro_to_html/5_document_and_website_structure
+gr Document and Website Structure
+
+al elements mdn/html/elements
+
+nn header
+ln header
+co $ web_page_components
+
+nn web_page_components
+ln Web Page Components
+
+nn navbar
+ln Navigation Bar
+co $ web_page_components
+
+nn main_content
+ln Main Content
+co $ web_page_components
+
+nn structuring_content_in_html
+ln Structuring Content in HTML
+
+nn tag_header
+ln <header>
+co $ header
+cx $ @elements
+co $ structuring_content_in_html
+
+nn tag_nav
+ln <nav>
+co $ navbar
+cx $ @elements
+co $ structuring_content_in_html
+
+nn tag_main
+ln <main>
+co $ main_content
+cx $ @elements
+co $ structuring_content_in_html
+
+nn tag_aside
+ln <aside>
+co $ tag_main
+cx $ @elements
+co $ structuring_content_in_html
+
+nn sidebar
+ln Sidebar
+co $ web_page_components
+
+nn footer
+ln Footer
+co $ web_page_components
+
+nn tag_footer
+ln <footer>
+co $ footer
+cx $ @elements
+co $ structuring_content_in_html
+
+nn respect_semantics
+ln Respect Semantics
+co $ structuring_content_in_html
+
+nn right_elem_right_job
+ln Use the right element for the right job
+co $ structuring_content_in_html
+
+nn non_semantic_wrappers
+ln Non-semantic wrappers
+
+nn inline
+ln Inline
+co $ non_semantic_wrappers
+
+nn block_level
+ln Block-level
+co $ non_semantic_wrappers
+
+nn tag_span
+ln <span>
+co $ inline
+cx $ @elements
+
+nn tag_div
+ln <div>
+co $ block_level
+cx $ @elements
+
+nn tag_article
+ln <article>
+co $ tag_main
+cx $ @elements
+
+nn tag_section
+ln <section>
+co $ tag_main
+cx $ @elements
+
+co tag_div tag_main
+
+nn line_breaks_horiz_rules
+ln Line breaks and horizontal rules
+
+nn line_break
+co $ line_breaks_horiz_rules
+
+nn tag_br
+ln <br>
+co $ line_break
+cx $ @elements
+
+nn thematic_break
+ln Thematic Break
+co $ line_breaks_horiz_rules
+
+nn horiz_rule
+ln Horizontal Rule
+co $ thematic_break
+cr AKA
+
+nn tag_hr
+ln <hr>
+co $ thematic_break
+co $ horiz_rule
+cx $ @elements
+
+nn planning_simple_website
+ln Planning A Simple Website
+
+nn card_sorting
+ln Card Sorting
+co $ planning_simple_website
+
+nn info_arch
+ln Information Architecture
+co $ planning_simple_website

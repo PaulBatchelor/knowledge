@@ -1,0 +1,71 @@
+ns mdn/js/3_async_javascript
+gr Asynchronous Javascript
+
+ns mdn/js/3_async_javascript/0_introducing_async_javascript
+gr Introducing Asynchronous Javascript
+
+nn async_programming
+ln Asynchronous Programming: a technique that enables
+ln programs to start a potentially long-running task while 
+ln still being responsive to other elements.
+pg 3
+
+nn sync_programming
+ln Synchronous Programming
+
+nn long_running_sync_fun_unresponsive
+ln Long-running synchronous functions will cause programs
+ln to be unresponsive
+co $ sync_programming
+
+nn event_handlers
+ln event handlers
+co $ async_programming
+pg 7
+
+nn form_async_programming
+ln form of asynchronous programming
+co $ event_handlers
+
+nn XMLHttpRequest
+ln XMLHttpRequest API: allows Http request to remote server.
+ln can attach event listeners to notify when done.
+
+nn callbacks
+ln callbacks
+pg 9
+co event_handlers callbacks
+
+nn event_handler_is_callback
+ln An event handler is a kind of callback
+co $ event_handlers
+co $ callbacks
+
+nn func_passed_into_func
+ln Function passed into another function, with the
+ln expectation that it will get called at the
+ln appropritae time
+co $ callbacks
+cr description
+
+nn cb_code_difficult_to_understand
+ln callback-based code can get hard to understand when
+ln the callback itself has to call functions that accept
+ln a callback
+co $ callbacks
+
+nn callback_hell
+ln Callback Hell / pyramid of doom: deeply nested callbacks
+co $ callbacks
+
+nn common_if_op_breaks_into_async_funcs
+ln Common if you need to perform operation that breaks
+ln into series of asynchronous functions
+co $ cb_code_difficult_to_understand
+
+nn modern_apis_use_promises
+ln Modern asynchronous APIs used promises instead of
+ln callbacks
+co $ callbacks
+co $ callback_hell
+cr promises avoid callback hell

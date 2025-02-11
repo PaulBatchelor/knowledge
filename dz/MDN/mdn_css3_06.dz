@@ -1,0 +1,87 @@
+ns mdn/css/3_css_layout/06_positioning
+gr multiple column layout
+
+nn multi_column_layout
+ln multi-column layout
+pg 102
+
+nn 3col
+ln 3-column layout
+co $ multi_column_layout
+
+nn newspaper_cols
+ln lays out content in columns, just like a newspaper
+co $ multi_column_layout
+
+nn multicol
+ln multicol
+co $ multi_column_layout
+cr AKA
+
+nn column_count_3
+ln column-count: 3
+co $ 3col
+pg 103
+
+nn column_width_200px
+ln column-width: 200px
+co $ 3col
+pg 103
+
+nn styling_cols
+ln styling columns
+pg 104
+co $ multi_column_layout
+
+nn not_individually
+ln not individually
+co $ styling_cols
+
+nn column_gap
+ln column-gap
+co $ styling_cols
+
+nn column_rule
+ln column-rule
+co $ styling_cols
+
+nn column_rule_shorthand
+ln shorthand for column-rule -color, -style, -width
+co $ column_rule
+pg 106
+
+nn lies_across_gap
+ln lies across gap defined in column-gap
+co $ column_rule
+
+nn spanning_columns
+ln spanning columns
+co $ multi_column_layout
+pg 106
+
+nn column_span_all
+ln column-span: all
+co $ spanning_columns
+
+nn none_or_all
+ln none or all
+co $ column_span_all
+
+nn cols_frags
+ln columns and fragmentation
+co $ multi_column_layout
+pg 107
+
+nn content_breaks_fragment_cols
+ln content must break to fragment into columns
+co $ cols_frags
+
+nn break_inside_avoid
+ln "break-inside: avoid" to prevent breaking
+co $ content_breaks_fragment_cols
+pg 111
+
+nn does_not_frag_across_cols
+ln does not fragment across columns
+co $ break_inside_avoid
+pg 111

@@ -1,0 +1,56 @@
+ns mdn/js/1_javascript_building_blocks/1_looping_code
+gr looping code
+
+nn loops
+ln loops
+
+nn looping_through_collection
+ln Looping Through a Collection
+co $ loops
+
+nn for_of_loop
+ln for .. of loop
+co $ looping_through_collection
+
+nn collections_examples
+ln collections: array, set map
+co $ looping_through_collection
+
+nn map
+ln map(): do something to each item in collection and
+ln create a new collection containing the changed items
+co $ looping_through_collection
+
+nn filter
+ln filter(): test each item in collection, create new
+ln collection containing only items that match
+co $ looping_through_collection
+co $ map
+cr similar
+
+nn function_expressions
+ln used with function expressions
+co $ filter
+
+nn standard_for_loop
+ln Standard for loop
+co $ loops
+co $ for_of_loop
+cr for loop is older than for/of
+
+nn exiting_loops_break
+ln exiting loops with break
+co $ loops
+
+nn skipping_continue
+ln Skipping iterations with continue
+co $ loops
+
+nn while_do_while
+ln while and do ... while
+co $ loops
+
+nn do_while_run_at_least_once
+ln Code inside a do/while loop is always expected to run
+ln at least once
+co $ while_do_while

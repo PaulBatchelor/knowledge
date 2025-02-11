@@ -1,0 +1,44 @@
+ns mdn/js/2_javascript_objects/3_classes_in_javascript
+gr Classes in JavaScript
+
+nn class_keyword
+ln class keyword
+
+nn constructor
+ln Constructor
+pg 35
+co $ class_keyword
+
+nn default_if_cons_omitted
+ln If constructor omitted, default one will be created
+pg 37
+co $ constructor
+
+nn encapsulation
+ln Encapsulation
+pg 39
+
+nn inheritance
+ln Inheritance
+pg 37
+
+nn private_data_prop
+ln #foo: private data property
+co $ encapsulation
+
+nn extends_keyword
+ln extends keyword
+co $ inheritance
+co $ class_keyword
+cr related
+
+nn super
+ln super(): class superclass constructor
+co $ constructor
+co $ inheritance
+pg 38
+
+nn private_methods
+ln private methods start with "#"
+co $ private_data_prop
+cr also start with "#"

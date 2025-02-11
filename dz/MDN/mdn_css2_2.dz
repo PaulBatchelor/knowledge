@@ -1,0 +1,69 @@
+ns mdn/css/2_css_styling_text/2_styling_links
+gr Styling Links
+
+nn link_states
+ln Link States
+pg 40
+
+nn active
+ln Active: link is clicked on
+co $ link_states
+
+nn link
+ln link: link that has destination
+co $ link_states
+
+nn visited
+ln Visited: a link that has already been visted
+co $ link_states
+
+nn hover
+ln Hover: link hovered over by mouse pointer
+co $ link_states
+
+nn focus
+ln Focus: moved to by a keynoard using tab or
+ln programatically using HTMlElement.focus()
+co $ link_states
+
+nn default_styles
+ln Default Styles
+pg 41
+
+nn links_underlined
+ln Links Underlined
+co $ default_styles
+co $ link
+
+nn unvisited_blue
+ln Univisited Blue
+co $ default_styles
+co $ visited
+
+nn visted_purple
+ln visted purple
+co $ visited
+co $ default_styles
+
+nn hovering_hand_mouse_pointer
+ln Hoverint turns mouse pointer into hand
+co $ default_styles
+co $ hover
+
+nn active_links
+ln Active links red
+co $ active
+co $ default_styles
+
+nn link_styling_order
+ln link styling order: link, visited link, focus, hover,
+ln active
+pg 43
+
+nn icons_on_links
+ln Icons on links
+pg 47
+
+nn css_href_match
+ln a[href^="http"]
+co $ icons_on_links

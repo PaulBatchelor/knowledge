@@ -1,0 +1,85 @@
+ns mdn/css
+gr MDN CSS guide
+
+ns mdn/css/0_css_first_steps
+gr CSS (Cascasing Style Sheets) is used to style and lay
+gr out web pages.
+
+ns mdn/css/0_css_first_steps/0_what_is_css
+gr what is CSS?
+
+nn CSS
+ln CSS
+
+nn document
+ln document
+co $ CSS
+
+nn cascading_style_sheets
+ln cascading style sheets
+co $ CSS
+
+nn syntax
+ln syntax
+co $ CSS
+
+nn presenting
+ln Presenting
+co $ document
+
+nn rule_based
+ln Rule-based language
+co $ syntax
+
+nn selector
+ln Selector
+co $ syntax
+
+nn declarations
+ln declarations
+co $ rule_based
+
+nn selects_html_elements
+ln Selects HTML elements
+co $ selector
+cr description
+
+nn prop_val_pairs
+ln Property values pairs
+co $ declarations
+
+nn values
+ln Values
+co $ prop_val_pairs
+
+nn color_val
+ln Color value
+co $ values
+cr example
+
+nn size_units
+ln Size units
+co $ values
+cr example
+
+nn modules
+ln modules
+co $ CSS
+
+nn mdn_doc_structure
+ln MDN documentation structure
+co $ modules
+cr related to
+
+nn spec
+ln Specifications
+co $ CSS
+
+nn css_working_group
+ln CSS working group
+co $ spec
+
+nn browser_support
+ln Browser Support Information
+co $ CSS
+co $ mdn_doc_structure

@@ -1,0 +1,96 @@
+ns mdn/css/1_css_building_blocks/04_combinators
+gr Combinators
+zz TODO add page attribute
+zz pg 46
+
+nn combinator
+ln combinator
+td connect to external selector
+
+nn combine_other_selectors
+ln Combine other selectors
+co $ combinator
+cr description
+
+nn descendent_combinator
+ln Descendent combinator
+co $ combinator
+
+nn descendent_combinator_desc
+ln Combines 2 selectors, elements matched by send selector
+ln are selected if ancestor matches first selector
+co $ descendent_combinator
+cr description
+
+nn space
+ln space
+co $ descendent_combinator
+cr notation
+
+nn descendent_selector
+ln Descendent Selector
+co $ descendent_combinator
+
+nn child_combinator
+ln Child Combinator
+co $ combinator
+
+nn greater_than
+ln >
+co $ child_combinator
+cr notation
+
+nn child_combinator_desc
+ln Matches second selector that are drect children of element
+ln matched by first selector
+co $ child_combinator
+cr description
+
+nn desc_elem_dont_match
+ln Descendent Elements don't match
+co $ descendent_combinator
+cr child combinator
+co $ child_combinator_desc
+
+nn next_sibling_combinator
+ln Next-sibling combinator
+co $ combinator
+
+nn plus
+ln +
+co $ next_sibling_combinator
+cr notation
+
+nn next_sibling_combinator_desc
+ln Matches second selector that are next-sibling elements
+ln of first selector
+co $ next_sibling_combinator
+cr description
+
+nn subsequent_sibling_combinator
+ln Subsequent sibling combinator
+co $ combinator
+
+nn tilde
+ln ~
+co $ subsequent_sibling_combinator
+cr notation
+
+nn subsequent_sibling_combinator_desc
+ln Selects siblings of element even if they aren't
+ln adjacent
+co $ subsequent_sibling_combinator
+cr description
+
+nn nesting
+ln nesting
+co $ combinator
+
+nn nesting_selector
+ln Nesting Selector
+co $ nesting
+
+nn ampersand
+ln &
+co $ nesting_selector
+cr notation

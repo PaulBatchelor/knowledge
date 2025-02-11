@@ -1,0 +1,188 @@
+ns mdn/css/3_css_layout/03_grids
+gr Grids
+
+nn grid_layout
+ln Grid Layout
+pg 52
+
+nn gutter
+ln Gutter: gaps bwetween each row and column
+co $ grid_layout
+pg 52
+
+nn 2d_layout_system
+ln 2d layout system for the web
+co $ grid_layout
+cr desc
+
+nn display_grid
+ln display: grid
+co $ grid_layout
+
+nn grid_templte_columns
+ln grid-template-columns
+co $ grid_layout
+
+nn fr_unit
+ln fr unit: represents one fraction of the available space
+ln in teh grid container to flexibly size grid rows and
+ln columns
+co $ grid_layout
+pg 55
+
+nn distr_avail_space_not_all
+ln Distributes available space, but not all space. If
+ln a track has larger item, less space to share.
+td is there definition for "track" anywhere?
+pg 56
+co $ fr_unit
+
+nn gaps_between_tracks
+ln Gaps between tracks
+co $ grid_layout
+pg 56
+
+nn column_row_gap
+ln [column|row]-gap: gaps between columns and rows
+co $ gaps_between_tracks
+
+nn gap_shorthand
+ln gap: shorthand for both column-gap and row-gap
+co $ column_row_gap
+
+nn length_unit_perc_not_fr
+ln length, unit, percentage, but not fr unit
+co $ gaps_between_tracks
+pg 56
+
+nn repeating_track_listings
+ln Repeating track listings
+co $ grid_layout
+pg 57
+
+nn use_repeat_func
+ln Use repeat() function
+co $ repeating_track_listings
+
+nn implicit_explicit_grids
+ln Implicit and explicit grids
+co $ grid_layout
+
+nn explicit_grid
+ln Explicit grid: created using grid-template-rows/cols
+co $ implicit_explicit_grids
+
+nn implicit_grid
+ln Implicit Grid: extends defined explicit grid when
+ln content is spaced outside of that grid
+co $ implicit_explicit_grids
+
+nn tracks_autosized_for_content
+ln Tracks are auto-sized by default to contain content
+co $ implicit_grid
+
+nn grid_auto_rows_cols
+ln grid-auto-rows/columns: used to give implicit
+ln tracks size.
+co $ implicit_explicit_grids
+co $ tracks_autosized_for_content
+pg 58
+
+nn minmax
+ln minmax() sets min/max size for track
+co $ grid_auto_rows_cols
+
+nn minmax_ex
+ln minmanx(100px, auto): min 100px, max will expand to
+ln accomodate more content
+co $ grid_auto_rows_cols
+cr auto
+co $ minmax
+cr example
+
+nn as_many_columns
+ln as many columns as will fit
+pg 60
+co $ grid_layout
+
+nn fit_as_many_columns_css
+ln template-columns: repeat(autofit, minmax(200px, 1fr));
+co $ as_many_columns
+cr CSS code
+
+nn line_based_placement
+ln line-based placement
+co $ grid_layout
+pg 61
+
+nn lines_start_on_1_relate_wmode
+ln Lines start on 1, relate to writing mode (English:
+ln left to right)
+co $ line_based_placement
+
+nn place_items_along_lines_with
+ln place items along lines with grid-column-start/end
+ln and grid-row-start/end
+co $ line_based_placement
+
+nn line_placement_shorthands
+ln shorthands: grid-column for grid-column-start/end
+ln and grid-row for grid-row-start/end.
+co $ place_items_along_lines_with
+
+nn auto_placement
+ln auto-placement: placing each item into its own cell in
+ln the grid
+co $ line_based_placement
+
+nn positioning_grid_template_areas
+ln Positioning with grid-template-areas
+co $ grid_layout
+pg 63
+
+nn grid_template_areas_rules
+co $ positioning_grid_template_areas
+ln Rules
+pg 65
+
+nn every_cell_filled
+ln Every cell of grid filled
+co $ grid_template_areas_rules
+
+nn repeat_name_to_span
+ln Repeat name to span across 2 or more cells
+co $ grid_template_areas_rules
+
+nn period_to_leave_empty
+ln use period '.' to leave cell empty
+co $ grid_template_areas_rules
+
+nn cant_repeat_areas
+ln can't repeat areas in different locations
+co $ grid_template_areas_rules
+
+nn rectangular_only
+ln rectangular areas only
+co $ grid_template_areas_rules
+
+nn nesting_grids_subgrids
+ln Nesting grids and subgrids
+co $ grid_layout
+pg 66
+
+nn subgrid
+ln subgrid: grid within a grid
+co $ nesting_grids_subgrids
+
+nn display_grid_on_grid_item
+ln display:grid on a grid item
+co $ nesting_grids_subgrids
+
+nn use_subgrid_template_row_cols
+co $ nesting_grids_subgrids
+ln use subgrid on template-rows/columns properties
+pg 68
+
+nn grid_frameworks
+ln Grid Frameworks
+pg 69

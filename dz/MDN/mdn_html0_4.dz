@@ -1,0 +1,155 @@
+ns mdn/html/0_intro_to_html/4_advanced_text_formatting
+gr Advanced Text Formatting
+
+al elements mdn/html/elements
+
+nn description_lists
+ln Description Lists
+
+nn terms_descriptions
+ln Terms and their associated descriptions
+co $ description_lists
+
+nn tag_dl
+ln <dl>
+co $ description_lists
+cx $ @elements
+
+nn tag_dt
+ln <dd>
+co $ term
+cx $ @elements
+
+nn tag_dd
+ln <dd>
+co $ description
+cx $ @elements
+
+nn term
+ln term
+co $ description_lists
+
+nn description
+ln description
+co $ description_lists
+
+nn mult_allowed
+ln Multiple allowed
+co $ description
+
+nn quotations
+ln Quotations
+
+nn blockquotes
+ln Blockquotes
+co $ quotations
+
+nn tag_blockquote
+ln <blockquote>
+co $ blockquotes
+cx $ @elements
+
+nn inline_quotations
+ln Inline quotations
+co $ quotations
+
+nn tag_q
+ln <q>
+co $ inline_quotations
+cx $ @elements
+
+nn citations
+ln Citations
+co $ quotations
+
+nn tag_cite
+ln <cite>
+co $ citations
+
+nn short_quote
+ln Short quotations that don't require paragraph breaks
+co $ inline_quotations
+
+nn extended_quote
+ln Extended quotation
+co $ blockquotes
+
+nn abbreviations
+ln abbreviations
+
+nn tag_abbr
+ln <abbr>
+co $ abbreviations
+cx $ @elements
+
+nn title_attr
+ln title
+co $ tag_abbr
+
+nn contact_details
+ln Contact Details
+
+nn tag_address
+ln <address>
+co $ contact_details
+cx $ @elements
+
+nn superscript_subscript
+ln Superscript and Subscript
+
+nn tag_sup
+ln <sup>
+co $ superscript_subscript
+cx $ @elements
+
+nn tag_sub
+ln <sub>
+co $ superscript_subscript
+cx $ @elements
+
+nn representing_computer_code
+ln Representing Computer Code
+
+nn tag_code
+ln <code>
+co $ representing_computer_code
+cx $ @elements
+
+nn tag_pre
+ln <pre>
+co $ representing_computer_code
+
+nn variable_names
+ln Variable Names
+co $ representing_computer_code
+
+nn tag_var
+ln <var>
+co $ variable_names
+cx $ @elements
+
+nn keyboard_input
+ln Keyboard Input
+co $ representing_computer_code
+
+nn tag_kbd
+ln <kbd>
+cx $ @elements
+co $ keyboard_input
+
+nn program_output
+ln Output of Computer Program
+co $ representing_computer_code
+
+nn tag_samp
+ln <samp>
+co $ program_output
+cx $ @elements
+
+nn times_dates
+ln Times and Dates
+
+nn tag_time
+ln <time>
+co $ times_dates
+cx $ @elements

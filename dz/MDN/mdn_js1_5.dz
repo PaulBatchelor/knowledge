@@ -1,0 +1,199 @@
+ns mdn/js/1_javascript_building_blocks/5_introduction_to_events
+gr Introduction To Events
+
+nn events
+ln Events
+
+nn signal
+ln signal
+co $ events
+
+nn things_that_happen
+ln Things that happen in the system you are programming
+co $ events
+cr description
+
+nn event_handler
+ln Event Handler: reacts to event
+co $ events
+
+nn registering
+ln Registering: block of code is defined to run in response
+ln to event
+co $ event_handler
+
+nn event_listener
+ln Event Listener
+co $ event_handler
+cr Interchangeable, mostly
+
+nn addEventListener
+ln addEventListener()
+co $ event_listener
+
+nn focus
+ln focus
+co $ addEventListener
+
+nn blur
+ln blur
+co $ addEventListener
+
+nn click
+ln click
+co $ addEventListener
+
+nn dblClick
+ln dblClick
+co $ addEventListener
+
+nn mouse_over_out
+ln mouse-over/mouse-out
+co $ addEventListener
+
+nn removeEventListener
+ln removeEventListener()
+co $ addEventListener
+
+nn abort_addEventListener
+ln Events can also be removed by passing an AbortSignal
+ln to addEventListener(), then later calling abort() on
+ln controller owning it
+co $ removeEventListener
+
+nn other_event_listener_mechanisms
+ln Other event listener mechanisms
+co $ event_listener
+
+nn event_handler_props
+ln Event handler properties
+co $ other_event_listener_mechanisms
+
+nn on_plus_event_name
+ln Objects propertie names starting with "on" plus
+ln the event name, such as btn.onClick
+co $ event_handler_props
+cr description
+
+nn multiple_listeners
+ln Multiple listeners can be added
+co $ addEventListener
+
+nn only_one_handler
+ln Only one handler
+co $ event_handler_props
+co $ multiple_listeners
+cr vs
+
+nn inline_event_handler
+ln Inline Event Handler (deprecated, don't use)
+co $ other_event_listener_mechanisms
+
+nn event_objects
+ln Event Objects
+co $ events
+
+nn passed_to_event_handlers
+ln Automatically passed to event handlers to provide extra
+ln features and info
+co $ event_objects
+
+nn target
+ln target: property of event object, reference to element
+ln event occured on
+co $ event_objects
+
+nn keyboard_event
+ln Keyboard event: specialized event object with key
+ln property that tells which key prossed
+co $ event_objects
+
+nn preventing_default_behavior
+ln Preventing default behavior
+co $ event_objects
+
+nn preventDefault
+ln preventDefault()
+co $ preventing_default_behavior
+
+nn event_bubbling
+ln Event Bubbling: how browsers handle events targeted
+ln at ensted elements
+co $ events
+
+nn click_ex
+ln Click Example: event bubbles up from the inner most
+ln element that was clocked
+co $ event_bubbling
+
+nn vid_ex
+ln Video Example: problem created with the video toggles
+ln between hidden/unhidden quickly
+co $ event_bubbling
+
+nn stopPropagation
+ln stopPropagation(): called inside vent object in event
+ln handler, stops event from bubbling up
+co $ vid_ex
+cr solution
+co $ event_bubbling
+
+nn event_capture
+ln Event Capture
+co $ event_bubbling
+
+nn reverse_event_bubbling
+ln Reverse of Event Bubbling: event fires first on
+ln least nested element, then on successively more nested
+ln elements until target is reached.
+co $ event_bubbling
+cr reverse
+co $ event_capture
+cr description
+
+nn enable_event_capture
+ln Enable event capture by passing capture option to
+ln addEventListener()
+co $ event_capture
+co $ addEventListener
+cr capture option
+
+nn why_both_event_capture_and_bubbling
+ln historic reasons for both event capture and bubbling:
+ln In early internet, netstacpe only used event capture,
+ln and Internet Explorer only used event bubbling. W3C
+ln standardization included both.
+co $ event_bubbling
+co $ event_capture
+
+nn event_delegation
+ln Event Delegation
+co $ events
+
+nn bubbling_enables_delegation
+ln Event bubbling enables event delegation
+co $ event_delegation
+co $ event_bubbling
+cr enables delegation
+
+nn event_delegation_desc
+ln User interats with large number of child elements, set
+ln event listener on parent and have events bubble up to
+ln parent, rather than individual event listeners
+co $ event_delegation
+cr description
+
+nn nodejs_event_model
+ln node.js event model: listeners listen to events, emitters
+ln emit events periodically.
+co $ events
+cr contrasts from WebAPI event model
+
+nn nodejs_desc
+ln node.js: popular JS runtime that is used to build network
+ln and server-side applications
+co $ nodejs_event_model
+
+ns mdn/js/1_javascript_building_blocks/6_image_gallery
+gr Image Gallery
+zz no content

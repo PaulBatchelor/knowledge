@@ -66,3 +66,9 @@ I mainly need to do this to extract the JSON, I just
 don't remember the schema
 
 @11:40 importing some older knowledge graphs
+
+@15:33 more object loading work #timelog:00:38:12
+@! dz $
+
+@18:04 object loading continued: nodes #timelog:00:15:00
+@! dz $

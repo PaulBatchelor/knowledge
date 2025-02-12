@@ -1,0 +1,2758 @@
+ns links
+
+gr Various links I find online that I want
+gr to look at later.
+
+nn unikernel_wasm
+ln building a unikernal in wasm pt 1
+hl https://flavio.castelli.me/2023/02/07/building-a-unikernel-that-runs-webassembly---part-1/
+tg wasm unikernel
+
+nn hermit
+ln hermit: a unikernel in rust
+hl https://github.com/hermit-os/hermit-rs
+tg rust unikernel
+co $ unikernel_wasm
+
+nn software_foundations
+hl https://softwarefoundations.cis.upenn.edu/
+tg coq compsci books
+ln The Software Foundations series is a
+ln broad introduction to the mathematical
+ln underpinnings of reliable software.
+
+nn epicweb_fullstack
+hl https://www.epicweb.dev/what-does-full-stack-mean-for-epic-web
+ln What Does "Full Stack" mean for Epic Web
+rm this article succintly talks about what
+rm is covered in the course they offer. I am
+rm less interested in the course (cuz $$$),
+rm more interested in keywords
+tg webdev fullstack career
+
+nn feynman_algebra
+hl https://www.feynmanlectures.caltech.edu/I_22.html
+ln Feynman lecture on elementary algebra
+tg algebra math feynman
+
+nn arraycast_games
+hl https://www.arraycast.com/episodes/episode65-games
+ln arraycast: making games with array-based
+ln programming languages
+tg gamedev
+
+nn unix_wasm
+hl https://research.swtch.com/v6/
+ln Research Unix Sixth Edition (WASM)
+tg wasm unix
+
+nn do_not_erase
+hl https://bookshop.org/p/books/do-not-erase-mathematicians-and-their-chalkboards-jessica-wynne/15485316?ean=9780691199221
+ln Do Not Erase: Mathematicians and Their Chalkboards
+rm an interesting looking book where someone
+rm went around the united states photographing
+rm the chalkboards of various mathematicians
+tg book math
+
+nn streamdal_oss
+hl https://docs.streamdal.com/en/resources-support/open-source/
+ln open source tech stack choices for a tool
+ln called "streamdal"
+rm neat because it outlines the components for
+rm basically everything from backend to 
+rm frontend. getting familiar with the
+rm "tooling" of "modern tech" is something
+rm I am trying to do for my career.
+tg streamdal backend frontend swe career
+
+nn fpga_under_150
+hl https://www.fpgajobs.com/blog/fpga-boards-under-150-dollars/
+ln FPGA Development Boards for Under $150
+
+nn fpga_under_150_hn
+hl https://news.ycombinator.com/item?id=38161215
+ln fpga hacker news discussion
+co $ fpga_under_150
+cr HN discussion
+tg HN
+
+nn hilgendorf_audiograph_rust
+hl https://github.com/m-hilgendorf/audio-graph
+ln Rust crate for "Datastructures and
+ln algorithms for audio graphs"
+tg rust dsp graph
+
+nn tatham_portable_puzzle
+hl https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
+ln https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
+rm found via luci on mastodon. games built inside of a little VM, which made them portable. reminded me of Another World.
+
+nn tumble_forth
+hl http://tumbleforth.hardcoded.net/
+ln tumble forth
+tg forth
+
+nn uva_rust_os
+ln operating systems with rust (university of
+ln virginia)
+hl https://rust-class.org/pages/classes.html
+tg rust osdev lectures
+
+nn 8bit_weird_pdp11
+hl https://8bitworkshop.com/docs/posts/2023/problems-with-c-and-8bits.html
+ln Your 8-bit System is a Weird PDP-11
+tg retrocomputing
+
+nn polinius_rust
+hl https://blog.rust-lang.org/inside-rust/2023/10/06/polonius-update.html
+tg rust
+ln plonius update
+
+nn html_first
+hl https://html-first.com/
+ln HTML First is a set of principles
+ln that aims to make building web software
+ln easier, faster, more inclusive, and more
+ln maintainable
+tg html webdev
+
+nn rust_without_crates_io
+hl https://thomask.sdf.org/blog/2023/11/14/rust-without-crates-io.html
+tg rust
+ln Rust without crates.io
+
+nn wasm_by_example
+hl https://wasmbyexample.dev/home.en-us.html
+tg wasm
+ln WASM by example
+
+nn wasm_component_model
+hl https://github.com/WebAssembly/component-model
+tg wasm
+ln WASM component model
+
+nn why_not_content_negotiation
+hl https://htmx.org/essays/why-tend-not-to-use-content-negotiation/
+tg webdev
+ln Why I Tend Not To Use Content Negotiation
+rm Found on HN (obviously). There is so much
+rm here that is jargony and completely foreign
+rm to me (most application layer web concepts
+rm are.) hoping to study and learn.
+
+nn fp_15_150
+hl https://brandonspark.github.io/150/
+ln 15-150: principles of functional
+ln programming (CMU)
+tg funcprog
+
+nn flexlayout
+hl https://github.com/Sleen/FlexLayout
+ln an implementation of Flexbox(Flexible Box) layout algorithm
+tg cprog css flexbox
+
+nn knuth_airgap
+hl https://taylor.town/knuth-airgap
+ln Knuth airgap and buffer
+tg workflow knuth
+
+nn interactive_guide_css_grid
+hl https://www.joshwcomeau.com/css/interactive-guide-to-grid/
+ln An Interactive Guide to CSS Grid
+tg grid
+
+nn enums_rust_better
+hl https://www.shuttle.rs/blog/2023/11/23/enums-in-rust
+tg rust
+ln Why Enums in Rust feel so much better
+
+nn thinkpenguin_router
+hl https://www.thinkpenguin.com/gnu-linux/free-software-wireless-n-mini-vpn-router-v3-tpe-r1300
+ln thinkpenguin free software mini wireless router
+tg wifi router networking
+
+nn idiomatic_rust
+hl https://www.thinkpenguin.com/gnu-linux/free-software-wireless-n-mini-vpn-router-v3-tpe-r1300
+ln idomatic rust
+tg rust
+
+nn alightinthewoods
+ln A Light in The Woods
+hl https://alightinthewoods.net/
+tg worldbuilding forest
+
+nn ripgrep_gh
+hl https://github.com/BurntSushi/ripgrep
+ln ripgrep (github repo)
+tg rust grep
+td figure out approach to study this code?
+
+nn wiktopher
+hl https://100r.co/site/wiktopher.html
+ln wiktopher (100r)
+tg wiktopher 100r
+
+nn zfs_extdrive_tut
+hl http://jenpeterson.net/zfs-blog/
+ln ZFS tutorial for external drive
+
+nn ed_bf
+hl https://github.com/bf-enterprise-solutions/ed.bf
+ln ed implemented in brainfuck
+tg ed brainfuck
+
+nn largest_number_64bits
+hl https://tromp.github.io/blog/2023/11/24/largest-number
+ln largest number representable in 64 bits
+
+nn TAOCP_worth_it
+hl https://news.ycombinator.com/item?id=38443668
+ln Is TAOCP worth the effort?
+tg HN Knuth TAOCP
+
+nn busato_modern_cpp_course
+hl https://github.com/federico-busato/Modern-CPP-Programming
+ln Modern C++ programming course
+tg cpp
+
+nn unit_testing_8bit_cpu
+ln unit testing on an 8 bit CPU
+hl https://boston.conman.org/2023/11/27.1
+tg 8bit unittesting retro
+
+nn rust_std_fs_slower_python
+hl https://xuanwo.io/2023/04-rust-std-fs-slower-than-python/
+ln Rust std fs slower than Python!? No, it's hardware!
+rm good reviews by HN comments
+tg rust python
+
+nn intuitive_convolution
+hl https://betterexplained.com/articles/intuitive-convolution/
+ln intuitive guide to convolution
+tg convolution math
+
+nn youki
+hl https://github.com/containers/youki
+ln youki: A container runtime in Rust
+tg rust container OCI
+
+nn runc
+hl https://github.com/opencontainers/runc
+ln CLI tool for spawning and running
+ln containers according to the OCI specification
+tg container
+
+nn sol_1
+hl http://www.sol-1.org/index.php
+ln sol_1 homebrew CPU and minicomputer built
+ln from 74HC logic
+tg homebrew
+
+nn write_your_own_retro_compiler
+hl http://t3x.org/t3x/0/book.html
+ln Write your own retro compiler, but Nils M
+ln Holm
+tg retro compiler
+
+nn complete_guide_flexbox
+hl https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ln A Complete Guide to Flexbox
+tg css flexbox
+
+nn complete_guide_grid
+hl https://css-tricks.com/snippets/css/complete-guide-grid/
+ln A Complete Guide to CSS grid
+tg css grid
+
+nn forth_vocab_iteration
+hl https://blog.information-superhighway.net/a-forth-vocabulary-for-iteration
+ln A Forth Vocabulary For Iteration
+tg forth
+
+nn moving_forth
+hl http://www.bradrodriguez.com/papers/moving1.htm
+ln Moving Forth
+tg forth
+
+nn fxyt
+hl https://github.com/susam/fxyt
+ln FXYT: Tiny, stack-based, postfix, canvas
+ln colouring language with only 36 simple
+ln commands
+tg fxyt stackbased graphics
+
+nn beneater_8bit
+hl https://eater.net/8bit/
+ln Ben Eater 8 bit computer series
+tg 8bit retro
+
+nn wasm_understand_every_byte
+hl https://danielmangum.com/posts/every-byte-wasm-module/
+ln Understanding every byte in a WASM module
+tg wasm
+
+nn aura_fpga
+hl https://www.jsykora.info/2023/11/aura-fpga-the-replacement-of-ym2151/
+ln AURA FPGA: The replacement of YM2151
+tg fpga ym2151 fm
+
+nn zfs_data_corruption_bug
+hl https://despairlabs.com/blog/posts/2023-12-25-openzfs-data-corruption-bug/
+ln A data corruption bug in OpenZFS?
+tg zfs
+
+nn 2_by_3_font
+hl https://zserge.com/posts/tiny-font/
+ln a tiny 2x3 font
+tg pixelart font bitmap
+
+nn 3_by_3_font
+hl http://luc.devroye.org/fonts-51468.html
+ln 3x3 font, the worlds smallest typeface
+tg pixelart font bitmap
+
+nn tom_thumb
+hl https://web.archive.org/web/20230527121936/https://robey.lag.net/2010/01/23/tiny-monospace-font.html
+ln Tomb Thumb: a tiny public domain bitmap font
+tg pixelart font bitmap
+
+nn pixel_operator
+hl https://www.dafont.com/pixel-operator.font
+ln pixel operator bitmap font
+tg pixelart font bitmap
+
+nn pascal_in_forth
+hl http://tangentstorm.github.io/winfield-pascal-83.html
+ln Pascal in Forth
+tg pascal forth
+
+nn forget_what_you_read
+hl https://ckarchive.com/b/68ueh8hk25687hkq88gqmtzope0kk
+ln How to forget what you read
+rm counter-argument to my current
+rm notetaking approach. Good points.
+tg workflow
+
+nn content_as_graph
+hl https://thisisimportant.net/posts/content-as-a-graph
+ln Displaying content as a graph: An
+ln exploration
+rm What I have been trying to do with dagzet.
+rm I bet there is some good wisdom here.
+rm Dagzet HTML presentation has been mediocre
+rm so far.
+
+nn designing_sound_sc
+hl https://en.m.wikibooks.org/wiki/Designing_Sound_in_SuperCollider
+ln Designing Sound Examples (implemented in SC)
+tg supercollider
+
+nn opus_RFC
+hl https://datatracker.ietf.org/doc/html/rfc6716
+ln RFC 6716: Definition of the Opus Audio Codec
+tg opus speech
+
+nn what_happens_dark_knight
+hl http://www.aaronsw.com/weblog/tdk
+ln what happens in the Dark Knight
+rm synopsis/analysis of the film with ties to
+rm various philosophies and economic theory
+
+nn writing_css_2024
+hl https://leerob.io/blog/css
+ln How I'm Writing CSS in 2024
+tg css
+
+nn k_pdp11_hn
+hl https://news.ycombinator.com/item?id=38912406
+ln k pdp11 HN discussion
+co $ k_pdp11
+tg HN
+
+nn k_pdp11
+hl https://ktye.github.io/pdp11/index.html
+ln K on PDP11
+tg k APL
+
+nn simulate_network_failures
+ln How to simulate network failures on Linux
+hl https://medium.com/@zakharenko/how-to-simulate-network-failures-in-linux-b71ab585e86f
+tg linux networking
+
+nn MIT_6172
+hl https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/download/
+ln MIT 6.172: Performance Engineering of Software Systems
+
+nn dx7_disassembly
+hl https://github.com/ajxs/yamaha_dx7_rom_disassembly
+ln Yamaha DX7 Firmware ROM annotated disassemblytg dx7 fm
+
+nn value_noise
+hl https://joelkp.frama.io/blog/ran-value-noise.html
+ln Value noise in general, and generalizing
+ln the through-zero naive oscillator
+rm joelkp is a mutual on masto. they mention
+rm mention sndkit and soundpipe as a reference
+
+nn conlangs_MIT
+hl https://ocw.mit.edu/courses/24-917-conlangs-how-to-construct-a-language-fall-2018/
+ln Conlangs: How to construct language (MIT)
+tg conlang
+
+nn norvig_programming_10_years
+hl https://norvig.com/21-days.html
+ln Teach Yourself Programming in Ten Years
+
+nn hello_rust_sdl2_wasm
+ln A minimal working "game" written in Rust
+ln with SDL2, compiled to WASM.
+hl https://github.com/awwsmm/hello-rust-sdl2-wasm
+tg rust wasm SDL
+
+nn ksimple
+hl https://github.com/kparc/ksimple
+ln ksimple: bare minimum atw-style interpreter
+ln for learning purposes
+tg APL k
+
+nn mrisc32
+ln MRISC32 is a 32-bit RISC/vector ISA, suitable
+ln for running on FPGA
+hl https://mrisc32.bitsnbites.eu/
+tg fpga risc
+
+nn my4th
+hl http://mynor.org/my4th.htm
+ln my4th: homebuilt CPU-less forth computer
+tg forth hardware
+
+nn demoscene_youtube
+ln demoscene programming youtube playlist
+hl https://m.youtube.com/playlist?list=PLRQwR4-_0PR9HBI_GZs1nTn7q5LTkGeCN
+tg demoscene
+
+nn forth_assembling
+hl https://dercuano.github.io/notes/forth-assembling.html
+ln forth assembling
+tg forth
+
+nn why_tailwind_isnt_for_me
+hl https://www.spicyweb.dev/why-tailwind-isnt-for-me/
+ln Why Tailwind Isn't for Me
+tg tailwind css
+
+nn stem
+hl https://ret2pop.nullring.xyz/blog/stem.html
+ln Stem is an interpreted concatenative
+ln programming language
+tg stack concatenative
+
+nn min
+hl https://min-lang.org/
+ln min is a functional, concatenative
+ln programming language
+tg concatenative nim
+
+nn 6502_100hz
+hl https://www.e-basteln.de/computing/65f02/65f02/
+ln The 100 MHz 6502
+tg 6502 retro fpga
+
+nn riscv_assembler_arithmetic
+hl https://projectf.io/posts/riscv-arithmetic/
+ln RISC-V Assembler: Arithmetic
+tg riscv risc
+
+nn riscv_specs
+hl https://wiki.riscv.org/display/HOME/RISC-V+Technical+Specifications
+ln RISCV Technical Specifications
+tg riscv
+
+nn tindallgrams
+hl https://www.nasa.gov/history/alsj/alsj-Tindallgrams.html
+ln tindallgrams
+tg space NASA
+
+nn distributed_systems_reading_list
+hl https://ferd.ca/a-distributed-systems-reading-list.html
+ln A Distributed Systems Reading List
+tg distributed systems
+
+nn how_to_study
+hl https://cse.buffalo.edu/~rapaport/howtostudy.html#exception
+ln How to Study: A Brief Guide
+tg workflow study focus
+
+nn fourays
+hl https://doug.lon.dev/blog/2024/fourays/tribute/
+ln fourays: a tribute to the AY-3-8910
+tg chiptune
+
+nn hired
+hl https://github.com/sidju/hired?tab=readme-ov-file
+ln hired: a modern take on 'ed'
+tg ed rust
+
+nn wasi
+hl https://wasi.dev/
+ln WASI: The WebAssembly System Interface.
+tg wasm rust
+
+nn rp2040_doom
+hl https://github.com/kilograham/rp2040-doom
+ln Fully-featured Doom port for the
+ln Raspberry Pi RP2040 microcontroller
+tg doom rpi rp2040 gamedev embedded
+
+nn janet_guide
+hl https://janet.guide/
+ln Janet for Mortals by Ian Henry
+tg janet books
+
+nn font_review_journal
+hl https://fontreviewjournal.com/
+ln font review journal
+tg fonts typography design
+
+nn lettering_comics
+hl https://kleinletters.com/Blog/the-art-and-history-of-lettering-comics/
+ln The Art and History of Lettering Comics
+tg lettering comics books
+
+nn speech_and_language_processing
+hl https://web.stanford.edu/~jurafsky/slp3/
+ln Speech and Language Processing 
+ln (3rd ed. draft)
+tg speech books
+
+nn colorize_gb_games_backgrounds
+hl https://toruzz.com/blog/how-to-colorize-gb-games-04/
+ln How to colorize Game Boy games - Backgrounds
+tg gameboy gamedev retro
+
+nn reversing_for_dummies
+hl https://0x44.cc/reversing/2021/07/21/reversing-x86-and-c-code-for-beginners.html
+ln Reversing For Dummies
+tg cprog reverse_engineering books
+
+nn bitfield_text_renderer
+hl https://www.onirom.fr/wiki/blog/25-09-2022_tiny_bitfield_based_text_renderer/
+ln Tiny bitfield based text renderer
+tg gfx text bitmap
+
+nn ultra
+hl https://github.com/iKevinY/ultra
+ln ultra is a Rust implementation of the
+ln Enigma machine that includes the ability
+ln to decrypt ciphertext.
+tg rust enigma
+
+nn unconventional_fpga
+hl https://voltagedivide.com/2024/03/18/unconventional-uses-of-fpgas/
+ln Unconventional Uses of FPGAs
+tg fpga
+
+nn leetcode_solutions
+hl https://github.com/haoel/leetcode/tree/master
+ln GH repo of leetcode problem solutions
+tg leetcode
+rm C++ seems to be the most complete
+
+nn magick_css
+hl https://css.winterveil.net/
+ln magick.css is a minimalistic, (mostly)
+ln classless CSS framework that is designed to
+ln be easy to use and easy to understand.
+tg css
+
+nn failsafe_go
+hl https://failsafe-go.dev/
+ln Fault tolerance and resilience patterns
+ln for Go
+tg golang distributed
+
+nn DECT_NR_plus_tech_dive
+hl https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/dect-nr-a-technical-dive-into-non-cellular-5g
+ln DECT NR+: A technical dive into non-cellular 5G
+tg DECT 5g
+
+nn zero_to_asic
+hl https://zerotoasiccourse.com/
+ln Zero to ASIC
+tg asic hardware
+
+nn chernoff_face
+hl https://en.m.wikipedia.org/wiki/Chernoff_face
+ln chernoff face
+tg face chernoff
+
+nn color_spaces
+hl https://ciechanow.ski/color-spaces/
+ln color spaces
+rm comment from HN "He's really a
+rm reference in interactive visualization."
+tg color
+
+nn llm_c
+hl https://github.com/karpathy/llm.c
+ln LLM training in simple, raw C/CUDA
+tg llm
+
+nn ps1_programming
+hl https://pikuma.com/courses/ps1-programming-mips-assembly-language
+ln PS1 Programming Course with MIPS and C
+tg retro gamedev retrogaming PS1
+
+nn redka
+hl https://github.com/nalgeon/redka
+ln redka: redis re-implemented with SQLite
+tg redis sqlite
+
+nn rust_calling_conv_deserve
+hl https://mcyoung.xyz/2024/04/17/calling-convention/
+ln The Rust Calling Convention We Deserve
+tg rust
+
+nn comprehensive_rust
+ln Comprehensive Rust (Google)
+hl https://google.github.io/comprehensive-rust/
+tg rust
+
+nn pocketmod
+hl https://github.com/rombankzero/pocketmod
+ln pocketmod: small ANSI C library for turning
+ln MOD files into PCM audio
+tg mod tracker
+
+nn podlite
+hl https://podlite.org
+ln Podlite: a markup language for organizing knowledge
+tg podlite workflow
+rm maybe possible to have dagzet work inside a small subset?
+
+nn leaving_rust_gamedev
+hl https://loglog.games/blog/leaving-rust-gamedev/
+ln Leaving Rust gamedev after 3 years
+tg rust gamedev
+
+nn procedural_macros_rust
+hl https://www.freecodecamp.org/news/procedural-macros-in-rust/
+ln procedural macros in rust
+tg rust
+
+nn hecanjog_pulsar
+ln pulsar synth in C
+hl https://hecanjog.com/pulsar.txt
+tg erik dsp pulsar
+
+nn tale_of_pip
+hl https://alejandraandaeron.bandcamp.com/album/tale-of-pip
+ln tale of pip
+rm erik: PS this children's story is 
+rm inspiring to me. It's a children's 
+rm story that doesn't talk down. It's also 
+rm a sound art piece. The original release 
+rm came with a read-along storybook: 
+rm https://alejandraandaeron.bandcamp.com/a
+rm lbum/tale-of-pip I think you'd like it! 
+rm I'm still engaging with the simplicity 
+rm and depth of it today.
+tg erik pip bandcamp
+td listen to tale of pip
+
+nn chroma_interview_polansky
+hl https://github.com/philburk/hmsl/blob/master/docs/chroma_interview_polansky.pdf
+ln Chroma interview Polansky PDF
+rm erik: lots of forth talk! curious about
+rm tracking down that "perceptron" program
+rm he wrote with James Tenney
+tg erik forth
+
+nn soundchaser
+hl https://opstatics.s3.us-west-2.amazonaws.com/i/223fda94-cc23-4368-a8d7-c03ba02c36ea.jpeg
+ln soundchaser vintage computer music
+ln advertisement
+tg erik vintage soundchaser
+
+nn aesthetics_computer_music
+hl https://annas-archive.org/md5/dfea54fbc528c9b6520830cf410223b5
+zz better link below
+hl https://annas-archive.org/scidb/10.2307/3681635
+ln Aesthetics in Computer Music Some
+ln Ontological Remarks about Music Composition
+ln Processes
+rm erik: Hey this is something I'd like 
+rm to share with you for sure. I stumbled 
+rm onto this doing a literature review for 
+rm an article on process music and I found 
+rm it really inspiring. I'd heard a couple 
+rm of Vaggione's pieces but just kind of 
+rm lumped him in with the "GRM granular" 
+rm people, I'm going back to check out his 
+rm work now and it's really amazing... but 
+rm this article is a really cool 
+rm discussion of the composition of 
+rm process-based music and refreshingly 
+rm focuses a lot on the human in the loop 
+rm (he describes it as an 
+rm action/perception loop)
+tg computermusic erik
+
+nn train_notes
+hl https://www.quora.com/What-are-the-notes-of-an-American-train-horn
+ln What are the notes of a train horn?
+tg quora train horn
+
+nn sqlite_bytecode
+hl https://sqlite.org/draft/whybytecode.html
+ln Why SQLite Uses Bytecode
+tg sqlite bytecode vm
+
+nn wasm_ground_up
+hl https://wasmgroundup.com/
+ln WebAssembly from the ground up
+tg wasm ebook
+
+nn mu
+ln mu: a practical course for audio programming
+hl https://mu.krj.st/
+tg audio dsp cprog audioprog
+rm kst@lurk made this tutorial and I keep
+rm recommending it. Now I have a better place
+rm for it!
+
+nn OCW_principles_compsys_design
+hl https://ocw.mit.edu/courses/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/
+ln OpenCourseWare: Principles Of Computer
+ln System Design: An Introduction
+rm recomended to me by adriane@treehouse
+
+nn react_rendering_behavior
+hl https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/
+ln Blogged Answers: A (Mostly) Complete Guide
+ln to React Rendering Behavior
+tg react frontend rendering
+
+nn rust_allocator
+hl https://blog.sulami.xyz/posts/what-is-in-a-rust-allocator/
+ln What is in a Rust Allocator?
+tg rust
+
+nn bitbang_9600_c64
+ln How to bitbang 9600 Baud RS-232 on the C64. I just find 
+ln thinking at this level to be so cool. I'd love to find more 
+ln creative opportuntities to use this headspace: 
+hl https://www.pagetable.com/?p=1656
+tg c64 retrocomputing
+rm gfqwfjpai
+
+nn 3dmath
+ln A book I found while searching for "3d math", a job 
+ln requirement for the audio programmer position at naughty 
+ln dog. I fouind the book first, then the online version here. 
+hl https://gamemath.com/book/intro.html
+tg gamedev math textbook
+rm gidjpfqkw
+
+nn rust_os_tutorial
+ln A tutorial on building an OS in Rust. It seems to be well 
+ln structured, breaking down things by topic. Could be worth 
+ln looking into for my rust studies. 
+hl https://os.phil-opp.com/
+tg rust osdev
+rm ghqaepowi
+
+nn minimal_binary_boot
+ln Minimal Binary Boot: a minimal binary seed for booting. 
+ln looks like it boostraps a forth. 
+hl https://codeberg.org/StefanK/MinimalBinaryBoot
+tg baremetal
+rm gqklkjfpr
+
+nn atari_speech_synthesizer
+ln An atari speech synthesizer for the AT2600. Could be worth 
+ln studying and possibly adapting. .
+hl https://github.com/rossumur/SAM2600.
+tg speech retrocomputing atari
+rm giqdquopq
+
+nn SAM
+ln Software Automatic Mouth: another implementation of SAM (I 
+ln believe it's the same), based on speech software published 
+ln in 1982 by Don't Ask Software. 
+hl https://github.com/s-macke/SAM
+tg speech retrocomputing
+rm gdluhoiuo
+
+nn chipspeech_plogue
+ln Chipseech by Plogue. A collection of vintage speech 
+ln synthesizers. This product page has a bunch of useful 
+ln information on it. .
+hl https://plogue.com/products/chipspeech.html.
+tg speech
+rm gjwqehahw
+
+nn eink_7_8_HDMI
+ln 7.8 inch e-ink display with HDMI in. I purchased this 
+ln actually and am currently using it as my main display (Am 
+ln used to workflows with tiny screens). .
+hl https://www.waveshare.com/product/displays/e-paper/epaper-1/7.8inch-hdmi-e-paper.htm.
+tg eink
+rm gfakspado
+
+nn HiFi_GAN
+ln HiFi-GAN is the underlying neural neural net used for 
+ln speech synthesis in Larynx. 
+hl https://github.com/jik876/hifi-gan
+tg neuralnets
+rm gfwewhfdf
+
+nn layrnx_tts
+ln Larynx is an end-to-end text to speech system. Wonder how 
+ln hard it is to set up?
+hl https://github.com/rhasspy/larynx.
+tg speech
+rm gwfsperld
+
+nn heirloom_unix
+ln heirloom provides traditional implementations of standard 
+ln Unix utilities. Wonder how it compares to things like 
+ln busybox, sbase, etc. 
+hl http://heirloom.sourceforge.net/
+tg unix
+rm gajieiprd
+
+nn monitor_7inch_waveshare
+ln Another screen from waveshare. 7-inch Full-HD display with 
+ln HDMI in. Also there's a nice-looking enclosure. haven't 
+ln purchased it, but it looks pretty reasonable. 
+hl https://www.waveshare.com/product/raspberry-pi/displays/7inch-fhd-monitor.htm
+tg waveshare monitor
+rm grdfljpww
+
+nn dan_luu_programming_books
+ln A annotated list of programming books by Dan Luu. 
+hl http://danluu.com/programming-books/
+tg books CS
+rm girrowodj
+
+nn casio_speech_synthesis
+ln A blog post on the speech synthesis technology employed by 
+ln Casio. Contains some useful links.
+hl http://sandsoftwaresound.net/casio-speech-synthesis-technology/.
+tg casio speech
+rm gjfqewips
+
+nn CS_lecture_list
+ln List of CS lectures with videos.
+hl https://github.com/Developer-Y/cs-video-courses.
+tg CS
+rm gfdjswskk
+
+nn rust_embedded_C
+ln Rust for embedded C programmers. 
+hl https://docs.opentitan.org/doc/ug/rust_for_c/
+tg rust cprog embedded
+rm gaesaehfl
+
+nn integer_hash_function
+ln Integer hash function. At some point, I was needing one of 
+ln these for a tiny project (bitrune perhaps?). I think I just 
+ln ended up using modulo. Could be worth revisiting, if the 
+ln idea of making symbolic notation systems with bitpatterns 
+ln is still interesting to me. .
+hl https://gist.github.com/badboy/6267743.
+tg hash
+rm ghjqdrlwk
+
+nn hn_become_good_sys_design
+ln HN thread: how to become good at system design? Some 
+ln helpful answers. 
+hl https://news.ycombinator.com/item?id=29931816
+tg system_design HN
+rm gfhkqqffr
+
+nn WFC_cprog
+ln WFC is a C implementation of the wave-function-collapse 
+ln algorithm which can produce varied tilsets from a simple 
+ln input. 
+hl https://github.com/krychu/wfc
+tg cprog WFC gfx
+rm gweoqijqq
+
+nn feline_synth
+ln I believe this uses waveguides to produce cat sounds. Have 
+ln not actually tried it, but I like the idea of it.
+hl https://experiments.withgoogle.com/feline-synth.
+tg feline synth dsp
+rm guedsrokk
+
+nn opengl_3_ish
+ln A implementation of OpenGL 3.x-ish in clean C. 
+hl https://github.com/rswinkle/PortableGL
+tg gfx opengl gamedev
+rm gkefqhdsu
+
+nn wikiwiki_awk
+ln A wikiwiki clone, written in Awk! 
+hl http://awkiawki.bogosoft.com/
+tg awk wiki
+rm gufaqidpf
+
+nn nn_512
+ln NN-512 is a compiler that generates C99 code for neural 
+ln net inference. Not exactly sure what that means at the 
+ln moment, but I was really compelled by the website and the 
+ln project when it popped up in the HN comments section. 
+hl https://nn-512.com/
+tg neuralnets cprog
+rm gdqkuifji
+
+nn LISP_game_of_life
+ln LISP implemented in Conway's game of life. 
+hl https://github.com/woodrush/lisp-in-life
+tg lisp game_of_life
+rm gushrewij
+
+nn cant_stop_telling_stories
+ln "The Computer Scientist Who Can't Stop Telling Stories"
+ln (Donald Knuth)
+hl https://www.quantamagazine.org/computer-scientist-donald-knuth-cant-stop-telling-stories-20200416/.
+tg knuth
+rm gsuoplsai
+
+nn tiny_skia
+ln A tiny subset of Skia, ported to Rust.
+hl https://github.com/RazrFalcon/tiny-skia.
+tg rust gfx
+rm gpjeoouud
+
+nn floooh_chips
+ln 8-bit chip and system emulators in standalone C headers. 
+hl https://github.com/floooh/chips
+tg 8bit chiptune cprog
+rm gqfkshfqk
+
+nn how_not_to_learn_rust
+ln How Not to Learn Rust. 
+hl https://dystroy.org/blog/how-not-to-learn-rust/
+tg rust
+rm gasdoehol
+
+nn steerable_discovery_neural_audio
+ln "Steerable Discovery of Neural Audio Effects" by Steinmetz 
+ln and Reiss.
+hl https://csteinmetz1.github.io/steerable-nafx/.
+tg neuralnets dsp
+rm gdjjfdspq
+
+nn junest
+ln A lightweight arch-based distro that runs without 
+ln privelges inside of a chroot within any other linux distro. 
+hl https://github.com/fsquillace/junest
+tg linux
+rm gqjakolfh
+
+nn JWEB
+ln JWEB: a modern, simplified implementation of the CWEB 
+ln system of literate programming. .
+hl https://github.com/matjp/jweb.
+tg literate_programming
+rm gsskrqiah
+
+nn listen_and_learn_birdsong
+ln Listen and Learn: a beginners guide to identifying 
+ln birdsong. 
+hl https://www.bbc.co.uk/programmes/articles/34jF1nwh8Z32sbB92dH23yf/listen-and-learn-a-beginner-s-guide-to-identifying-birdsong
+tg birdsong animal_sounds
+rm ghofwhufp
+
+nn singing_frogs
+ln Singing frogs! Very cute.
+hl https://www.youtube.com/watch?v=vlWOlW31TWU.
+tg frogs animal_sounds
+rm giarqkspk
+
+nn pixpats_min_syntax
+ln Procedurally generated pixel patterns with minimal syntax 
+hl https://yuanchuan.dev/pixel-patterns
+tg gfx pixelart
+rm gqkrwpurk
+
+nn proquints
+ln Proquints are identifiers that are readable, spellable, 
+ln and pronounceable. (Implementations in Java and C).
+hl https://github.com/dsw/proquint.
+tg proquints
+rm gslkjhlfw
+
+nn proquints_proposal
+ln >A proposal for Proquints: Identifiers that are Readable, 
+ln Spellable, and Pronounceable. (Wilkerson, 2009). 
+hl https://arxiv.org/html/0901.4016
+tg proquints
+rm glqqaupfp
+
+nn human_readable_UUIDs
+ln >Human Readable Alternatives for UUIDs (Stackoverflow 
+ln Post). Some useful links in the comments. 
+hl https://stackoverflow.com/questions/49506313/human-readable-alternative-for-uuids
+tg UUIDs proquints
+rm goafqparh
+
+nn unu
+ln >unu: simple, literate source files. 
+hl http://unu.retroforth.org/
+tg retroforth forth literate_programming
+rm glrwrppwr
+
+nn lisp_koans
+ln lisp koans. 
+hl https://github.com/google/lisp-koans
+tg lisp
+rm gdffqhqoi
+
+nn book_from_1500s
+ln cool book from 1500s. some fun sketches 
+hl https://archive.org/details/petribelloniicen00belo/page/50/mode/thumb
+tg books
+rm glsarjsks
+
+nn mults_adds_faster
+ln Multiplications and 2 additions are faster than 2 
+ln additions. TODO: try to understand this. 
+hl https://stackoverflow.com/questions/72306573/why-does-this-code-execute-more-slowly-after-strength-reducing-multiplications-t
+tg optimization
+td try to understand why multiplications and 2 additions are faster than 2 additions
+rm gdpuuowid
+
+nn cistercian_numerals
+ln Cistercian numerals. numerical counting system where each 
+ln glyph can be a value from 1 to 9,999. 
+hl https://en.m.wikipedia.org/wiki/Cistercian_numerals
+tg cistercian
+rm gsaieaudp
+
+nn web_audio_modem
+ln web audio modem. perhaps a way to study web audio stuff? 
+ln there seems to be code snippets. 
+hl https://martinmelhus.com/web-audio-modem
+tg webaudio
+rm gphwkusku
+
+nn tortoise
+ln TorToiSe is a text-to-speech (TTS) program which can mimic 
+ln voices given 2-4 examples. It is composed of five 
+ln separately-trained neural networks that are pipelined 
+ln together to produce the final output. 
+hl https://nonint.com/2022/04/25/tortoise-architectural-design-doc/
+tg speech
+rm geqspdqli
+
+nn strand
+ln "Strand" is an open-source implementation of the 
+ln identically named parallel Prolog dialect as described in 
+ln the book "Strand: New Concepts for Parallel Programming" by 
+ln Ian Foster and Stephen Taylor 
+hl http://www.call-with-current-continuation.org/strand/strand.html
+tg prolog book
+rm grofulqsw
+
+nn microfleng
+ln microfleng: a low level concurrent logic programming 
+ln language descended from Prolog. Also has backend suppport 
+ln for Uxn. 
+hl http://www.call-with-current-continuation.org/microfleng/microfleng.html
+tg logic concurrency uxn prolog
+rm grsrdosqs
+
+nn zet_linking_your_thinking
+ln Zettelkasten, Linking Your Thinking, and Nick Milo's 
+ln Search for Ground 
+hl https://writing.bobdoto.computer/zettelkasten-linking-your-thinking-and-nick-milos-search-for-ground/
+tg zettelkasten
+rm gqkisdqkj
+
+nn chimpanzee_diverse_vocal_sequences
+ln Chimpanzees produce diverse vocal sequences with ordered 
+ln and recombinatorial properties 
+hl https://www.researchgate.net/publication/360622743_Chimpanzees_produce_diverse_vocal_sequences_with_ordered_and_recombinatorial_properties
+tg speech animal_sounds
+rm gduiqoaui
+
+nn knuth_work_habits_problem_solving_happiness
+ln Donald Knuth on work habits, problem solving, and 
+ln happiness 
+hl https://shuvomoy.github.io/blogs/posts/Knuth-on-work-habits-and-problem-solving-and-happiness/
+tg knuth
+rm gjdkhorji
+
+nn vegan_shoes
+ln well made vegan shoes 
+hl https://us.wildling.shoes/collections/autumn-winter/products/elderberry-rw
+tg please_label
+rm guplioooq
+
+nn little_typer_review
+ln Book review: The Little Typer 
+hl https://thatgeoguy.ca/blog/2021/03/07/review-the-little-typer/
+tg books
+rm gdppefuoj
+
+nn list_building_software
+ln engineering resources: list of resources about building 
+ln software. 
+hl https://alexwennerberg.xyz/resources.html
+tg software
+rm gepdfarsu
+
+nn axidraw
+ln axidraw minikit v2. compact DIY kit edition. 
+hl https://shop.evilmadscientist.com/productsmenu/924
+tg gfx
+rm gassjikpq
+
+nn rust_critical_retrospective
+ln Rust: A Critical Retrospective 
+hl https://www.bunniestudios.com/blog/?p=6375
+tg rust
+rm goeedapqs
+
+nn rust_borrow_checker_deep_dive
+ln The Rust Borrow Checker - a Deep Dive 
+hl https://www.infoq.com/presentations/rust-borrow-checker/
+tg rust
+rm gsfqhksia
+
+nn harmonkit
+ln HarmonKit: additive synthesizer written in Clojure, 
+ln Overtone, and SC. Apparently uses CSPs. Created by Richard 
+ln Hickey 
+hl https://www.youtube.com/watch?v=bhkdyCPYgLs
+tg dsp clojure
+rm gioudpero
+
+nn clojure_core_async
+ln >Clojure core.async by Richard Hickey 
+hl https://youtu.be/yJxFPoxqzWE
+tg clojure
+rm gufffrwar
+
+nn libcsp
+ln libcsp is a high performance concurrency C library 
+ln influenced by the CSP model. https://libcsp.dev/
+hl https://libcsp.dev/
+tg concurrency cprog
+rm gqpsweqaa
+
+nn atari_fonts
+ln >Collection of atari fonts, stored in PNG format. 
+hl https://github.com/TheRobotFactory/EightBit-Atari-Fonts
+tg atari retrocomputing
+rm gleuphrhr
+
+nn we_use_bobx
+ln We use BobX 
+hl https://thedailywtf.com/articles/We-Use-bobX
+tg bobx
+td what is bobx again?
+rm gfilwkpdd
+
+nn communicating_sequential_processes
+ln Communicating Sequential Processes. 
+hl https://en.m.wikipedia.org/wiki/Communicating_sequential_processes
+tg concurrency
+rm geieksfkr
+
+nn vocore
+ln VoCore: Coin Sized Linux Computer. 
+hl https://vocore.io/
+tg linux embedded
+rm goskjohaw
+
+nn modos_paper_laptop
+ln modos paper laptop: laptop with eink display. 
+hl https://www.modos.tech/blog/modos-paper-laptop
+tg eink
+rm gaasjhefk
+
+nn concurrent_queue_32bits
+ln A lock-free, concurrent, generic queue in 32 bits 
+hl https://nullprogram.com/blog/2022/05/14/
+tg concurrency
+rm gkrififru
+
+nn litestream
+ln litestream: streaming replication for sqlite. 
+hl https://github.com/benbjohnson/litestream
+tg sqlite
+rm gqwklfdfu
+
+nn cron_sqlite
+ln cron-based backup for SQLite. 
+hl https://litestream.io/alternatives/cron/
+tg sqlite
+rm gripkjsia
+
+nn ffi_beats_c
+ln "When FFI Function Calls Beat Native C". Found in HN 
+ln discussion about FFI benchmarks, which is discussed this 
+ln post. Specifically, it asks why LuaJIT performed better 
+ln than C in the benchmark tests. 
+hl https://nullprogram.com/blog/2018/05/27/
+tg cprog
+rm gadrhiksj
+
+nn string_machine
+ln string machine: virtual analogue string synthesizer, based 
+ln on a digital model designed by Peter Whiting. 
+hl https://github.com/jpcima/string-machine
+tg dsp
+rm gjrpukjer
+
+nn diagrams_gestures_formulae_music
+ln "Diagrams, gestures and formulae in music" by G. Mazolla 
+ln and M. Andreatta. This was mentioned to me while I was 
+ln rambling about Gesture Mastodon. I don't understand the 
+ln math, or really what this paper is about, but it looks 
+ln intetesting. 
+hl https://isidore.science/document/10670/1.rmwpgg
+tg gesture
+rm golofjaqf
+
+nn nandgame
+ln nandgame: build a computer starting from basic components. 
+hl https://nandgame.com/
+tg logic lowlevel
+rm gorladkap
+
+nn getting_startd_embeded_systems
+ln a guide to getting started with embedded systems 
+hl https://yinka.dev/blog/a-guide-to-getting-started-with-embedded-systems/
+tg embedded
+rm gdwoejqqh
+
+nn one_true_awk
+ln one true awk: the version of awk described in The AWK 
+ln programming language by Al Aho, Brian Kernighan, and Peter 
+ln Weinberger (Addison-Wesley, 1988, ISBN 0-201-07981-X). 
+hl https://github.com/onetrueawk/awk
+tg awk
+rm gerfhsfod
+
+nn goawk
+ln goawk: a POSIX compliant awk interpretor written in AWK, 
+ln with CSV support. 
+hl https://github.com/benhoyt/goawk
+tg awk
+rm gjfhplwdp
+
+nn midpoint_ellipse
+ln midpoint ellipse algorithm on SO. 
+hl https://stackoverflow.com/questions/15474122/is-there-a-midpoint-ellipse-algorithm
+tg gfx
+rm gjorqqkoo
+
+nn pinenote
+ln pinenote: linux eink tablet by pine64. comes with stylus. 
+ln seems to have a form factor like the Remarkable. 
+hl https://www.pine64.org/pinenote/
+tg eink
+rm gllffkupr
+
+nn m5paper
+ln m5paper is a hackable 4.7 inch eink touchable eink display 
+ln powered by esp32. 
+hl https://shop.m5stack.com/collections/m5stack-new-arrival/products/m5paper-esp32-development-kit-comm-edition
+tg eink
+rm grqowpqoo
+
+nn paperd_ink
+ln paperd.ink: an open source e ink paper development board 
+hl https://paperd.ink/
+tg eink
+rm gkeesfpld
+
+nn hash_perlin
+ln A simple hash for Perlin Noise (code and explanation). 
+hl https://marcospereira.me/a-simple-hash-for-perlin-noise/
+tg gfx
+rm gpkulkhlr
+
+nn SILE
+ln >SILE: Simon's improved layout engine. Seems to be an 
+ln alrernative to TeX 
+hl https://sile-typesetter.org/
+tg tex
+rm gakpkeaks
+
+nn knuth_framed
+ln Donald Knuth Was Framed. (interesting opinion piece about 
+ln LP, web, and the infamous Mcllroy story). 
+hl https://buttondown.email/hillelwayne/archive/donald-knuth-was-framed/
+tg knuth
+rm gopiffaff
+
+nn bytebeat_analysis_steady_on_tim
+ln >Breakdown and Analysis of bytebeat music in "Steady On 
+ln Tim, It's Only A Budget Game" 
+hl http://www.sizecoding.org/wiki/Steady_On_Tim
+tg bytebeat
+rm gaqqsalro
+
+nn xilum
+ln xilum: an architecture for UI in Rust. (Blog post by 
+ln author providing an overview).
+hl https://raphlinus.github.io/rust/gui/2022/05/07/ui-architecture.html
+tg rust
+rm gujiswffu
+
+nn unix_conventions
+ln Unix command line conventions over time. Early 1970s, 
+ln options, long options, the GNU project, double dash, 
+ln subcommands. 
+hl https://blog.liw.fi/posts/2022/05/07/unix-cli/
+tg unix
+rm gaarliojh
+
+nn code_the_classics
+ln Code the classics vol 1: book that contains anecdotes from 
+ln game developers of the 70s and 80s, as well as 
+ln reimplementations using python and pygame zero. 
+hl https://store.rpipress.cc/products/code-the-classics-volume-1-2nd-edition
+tg retrocomputing gamedev
+rm glhjhosjp
+
+nn pascal_x_in_y
+ln Learn X in Y minutes: Pascal. Brushing up on this to study 
+ln TeX and Metafont. 
+hl https://learnxinyminutes.com/docs/pascal/
+tg pascal tex
+rm gwljwqsuo
+
+nn rust_compiler_bug_catching
+ln Bugs that the rust compiler catches for you. 
+hl https://kerkour.com/bugs-rust-compiler-helps-prevent
+tg rust
+rm guerjsloh
+
+nn NPT
+ln NPT: ANSI common LISP written in C. 
+hl https://github.com/nptcl/npt
+tg lisp cprog
+rm gklasdsro
+
+nn binomial_coefficients_wiki
+ln Wikipedia page on Binomial Coefficients. I ran into this 
+ln while reading !TADM and didn't know what it was. Still 
+ln grokking. 
+hl https://en.m.wikipedia.org/wiki/Binomial_coefficient
+tg math
+td what are binomial coeffiecients?
+rm gsilfquqi
+
+nn cornel_bird_sounds
+ln The Cornell Guide to Bird Sounds: United States and 
+ln Canada. 
+hl https://www.macaulaylibrary.org/product/the-cornell-guide-to-bird-sounds-us-and-canada/
+tg birdsong animal_sounds
+rm goiqljkir
+
+nn birds_listening_birdsong
+ln >how timely to find an article on how birds listen to 
+ln birdsong. birdsong has been a point of interest for me 
+ln recently. 
+hl https://www.scientificamerican.com/article/what-birds-really-listen-for-in-birdsong-its-not-what-you-think/
+tg birdsong animal_sounds
+rm gppqdfqdf
+
+nn clairnote
+ln clairnote SN is an alternative music notation system that 
+ln aims to "make music easier to read and understand". 
+ln Personally it does not look all that better, but I am 
+ln willing to glance it if it makes certain relationships and 
+ln symmetries stand out more in analysis. 
+hl https://clairnote.org/
+tg notation
+rm gdrilarei
+
+nn mechanical_watch
+ln what looks like an excellent write-up on the mechanisms of 
+ln a mechanical watch. complete with interactive diagrams. 
+hl https://ciechanow.ski/mechanical-watch/
+tg watch
+rm goqqlpqej
+
+nn cpal
+ln A audio IO library in pure Rust. might be a good thing to 
+ln use with the Rust DSP library I am working on. .
+hl https://github.com/RustAudio/cpal.
+tg rust audioprogramming
+rm gaajjohfw
+
+nn wavenet_vocoder
+ln An open source implementation of WaveNet vocoder 
+hl https://r9y9.github.io/wavenet_vocoder
+tg neuralnet dsp
+rm guqwwawfe
+
+nn oksh
+ln Portable OpenBSD ksh, based on the Public Domain Korn 
+ln Shell (pdksh). 
+hl https://github.com/ibara/oksh
+tg openbsd
+rm gdlqwqlil
+
+nn FXT
+ln FXT: a library of algorithms. 
+hl https://www.jjj.de/fxt/
+tg algorithms
+rm guwpqlwjd
+
+nn gandalf_colt45
+ln Why didn't Gandalf own a Colt .45? 
+hl https://featherlessbipeds.substack.com/p/why-didnt-gandalf -own-a-colt-45
+tg LOTR
+rm gajfdpsop
+
+nn hyperphysics
+ln Hyperphysics: musical instruments 
+hl http://hyperphysics.phy-astr.gsu.edu/hbase/Music/musinscon .html#c1
+tg NIME
+rm gpqrdraaa
+
+nn katapayadi
+ln Katapayadi system of numerical notation is an ancient 
+ln Indian alphasyllabic numeral system to depict letters to 
+ln numerals for easy remembrance of numbers as words or 
+ln verses. 
+hl https://en.m.wikipedia.org/wiki/Katapayadi_system
+tg notation
+rm groahqequ
+
+nn brachiograph
+ln BrachioGraph: the cheapest, simplest possible pen-plotter 
+hl https://www.brachiograph.art/index.html
+tg plotter
+rm gisiuoefj
+
+nn observations_journaling
+ln Observations on 6 years of journaling. 
+hl https://herman.bearblog.dev/years-of-journaling/
+tg workflow journaling
+rm gqwasfdkr
+
+nn master_system_speech
+ln Making the Master System a Master of Speech 
+hl https://nicole.express/2022/let-me-show-you-the-sound-of-m y-master.html
+tg speech
+rm guwqrrolu
+
+nn writing_vale_neovim
+ln Writing like a pro with vale and neovim 
+hl https://bhupesh.me/writing-like-a-pro-with-vale-and-neovim /
+tg neovim
+rm gdplelaal
+
+nn semiotics_wiki
+ln Semiotics (also called semiotic studies) is the study of 
+ln sign processes (semiosis), which are any activity, conduct, 
+ln or process that involves signs, where a sign is defined as 
+ln anything that communicates something, usually called a 
+ln meaning, to the sign's interpreter. 
+hl https://en.m.wikipedia.org/wiki/Semiotics
+tg linguistics
+rm gqwqhewri
+
+nn display_uhd_55
+ln >NEC UHD 55" professional display. maybe an alternative to 
+ln getting TV? (nothing smart please). 
+hl https://www.sharpnecdisplays.us/products/displays/m551
+tg monitor
+rm gojfljoqf
+
+nn torvalds_microemacs
+ln Linus Torvalds' personal fork of microemacs: 
+hl https://github.com/torvalds/uemacs
+tg emacs
+rm gqjharoia
+
+nn twee
+ln twee editor. 
+hl https://texteditors.org/cgi-bin/wiki.pl?Twee_Editors
+tg texteditor
+rm gqhdfoqeo
+
+nn civil_war_sound_propagation
+ln >Outdoor Sound Propagation in the U.S. Civil War 
+hl http://wesclark.com/jw/sound_propagation.html
+tg acoustics
+rm guldsuqpa
+
+nn minirust
+ln The purpose of MiniRust is to describe the semantics of an 
+ln interesting fragment of Rust in a way that is both precise 
+ln and understandable to as many people as possible. 
+hl https://www.ralfj.de/blog/2022/08/08/minirust.html
+tg rust
+rm ghfaokhfr
+
+nn thinking_pen_paper
+ln Thinking with pen and paper 
+hl https://ljvmiranda921.github.io/life/2022/08/04/pen-and-paper/
+tg ink workflow
+rm gkrehflqe
+
+nn mini_latex
+ln Implementing a "mini-LaTeX" in ~2000 lines of code 
+hl https://nibblestew.blogspot.com/2022/07/implementing-mini-latex-in-2000-lines.html?m=1
+tg tex
+rm gwqjiwdsd
+
+nn aesthetic_global_line_breaking
+ln Attempting to create an aesthetic global line breaking 
+ln algorithm 
+hl https://nibblestew.blogspot.com/2022/06/attempting-to-create-aesthetic-global.html?m=1
+tg typography
+rm guulhafej
+
+nn tipsy
+ln tipsy: tiny playstation-y renderer. 
+hl https://github.com/nkanaev/tipsy
+tg gamedev gfx
+rm gpklpurkh
+
+nn eloquent_javascript
+ln Eloquent Javascript: free ebook for learning modern 
+ln javascript. 
+hl https://eloquentjavascript.net/
+tg javascript books
+rm guwdjiffh
+
+nn towards_narrative_instruments
+ln Towards Narrative Instruments. (pdf) "a sketch of an 
+ln alternative design vision for interactive storytelling 
+ln research: let’s make *narrative instruments* that people 
+ln can play to produce narrative, just like we play musical 
+ln instruments to produce music" 
+hl https://twitter.com/maxkreminski/status/1481723096285396992?t=QB8luqcjxjNNl-PhxrP3Bg&s=19
+tg NIME books
+rm gllpiewlk
+
+nn stretchtext
+ln StretchText ... gives more control to the reader in 
+ln determining what level of detail to read at. Authors write 
+ln content to several levels of detail in a work. 
+hl https://en.m.wikipedia.org/wiki/StretchText
+tg typography
+rm gjfuwpwah
+
+nn ppu_threadj
+ln The PPU thread. 
+hl https://yip.pe/content/The%20PPU%20thread.html
+tg gfx
+rm gwdooskfj
+
+nn rust_mentality
+ln Building a Rust Mentality 
+hl https://slightknack.dev/blog/shift/
+tg rust
+rm glasaloku
+
+nn concatenated k
+ln Concatenated K 
+hl https://nsl.com/papers/ck.htm
+tg catlang k
+rm gkerewahe
+
+nn reading_book_notes_now_what
+ln I just finished reading a book and took lots of notes. Now 
+ln what? 
+hl https://writing.bobdoto.computer/question-i-just-finished-reading-a-book-and-took-lots-of-notes-now-what/
+tg ink workflow
+rm goffloluw
+
+nn coteditor
+ln lightweight text editor for osx 
+hl https://github.com/coteditor/CotEditor
+tg texteditor
+rm gsodofrir
+
+nn p2panda
+ln p2panda is a peer-to-peer communications protocol for 
+ln playful, secure, data-efficient, offline- and local-first 
+ln web applications. 
+hl https://p2panda.org/
+tg p2p distrubuted
+rm gsqshhikl
+
+nn toy_ui_torial
+ln Toy UI library tutorial 
+hl https://nakst.gitlab.io/tutorial/ui-part-1.html
+tg gfx
+rm gwqhrdhas
+
+nn oot_triforce_percent
+ln OoT Triforce Percent ACE Showcase. 
+hl https://youtu.be/2x_pqyrf9lA
+tg gaming zelda
+rm gwekfhsao
+
+nn couch_to_64k
+ln Couch to 64k – a.k.a. Building a Z80 Breadboard 
+ln Computer. Part 1: Pins 
+hl http://bread80.com/2020/07/24/couch-to-64k-a-k-a-building-a-z80-breadboard-computer-part-1-pins/
+tg z80 lowlevel
+rm gwsoruuso
+
+nn open_logic_project
+ln The Open Logic Project is a collection of teaching 
+ln materials on mathematical logic aimed at a non-mathematical 
+ln audience, intended for use in advanced logic courses as 
+ln taught in many philosophy departments. 
+hl http://builds.openlogicproject.org/
+tg logic
+rm gpurkeouh
+
+nn lambda_calculus_wiki
+ln >Lambda calculus wikipedia page. 
+hl https://en.m.wikipedia.org/wiki/Lambda_calculus
+tg lambda_calculus
+rm guklqkikk
+
+nn binary_lambda_calculus
+ln Binary lambda calculus (BLC) is a minimal, pure functional 
+ln programming language invented by John Tromp in 2004,[1] 
+ln based on a binary encoding of the untyped lambda calculus 
+ln in De Bruijn index notation. 
+hl https://tromp.github.io/cl/Binary_lambda_calculus.html
+tg lambda_calculus
+rm glwpfhark
+
+nn 58_bytes_CSS
+ln >58 bytes of CSS to look great nearly everywhere 
+hl https://gist.github.com/JoeyBurzynski/617fb6201335779f8424ad9528b72c41
+tg CSS
+rm gppiuqolo
+
+nn routine_tasks_priority_creative_ideas
+ln Why do your routine tasks get priority over your creative 
+ln ideas? 
+hl https://devashish.bearblog.dev/get-comfortable-with-unknwon/
+tg workflow
+rm gspqqleee
+
+nn robotic_voice_simulator
+ln A Robotic Voice Simulator and the Interactive Training for 
+ln Hearing-Impaired People 
+hl https://www.hindawi.com/journals/bmri/2008/768232/
+tg speech
+rm giaekwluw
+
+nn modulo_bias_how_to_avoid
+ln >Modulo Bias and How to Avoid it 
+hl https://research.kudelskisecurity.com/2020/07/28/the-definitive-guide-to-modulo-bias-and-how-to-avoid-it/
+tg lowlevel
+rm gkjwfaorw
+
+nn programming_34_keys
+ln >Programming On 34 Keys. 
+hl https://peppe.rs/posts/programming_on_34_keys
+tg keyboards
+rm gluifkjks
+
+nn jarvis_neuroscience_speech
+ln >dr. erich jarvis: the neuroscience of speech, language and 
+ln music 
+hl https://hubermanlab.com/dr-erich-jarvis-the-neuroscience-of-speech-language-and-music/
+tg speech
+rm gqekeasrh
+
+nn rainbow_12bit
+ln The 12 bit rainbow palette. 
+hl https://iamkate.com/data/12-bit-rainbow/
+tg gfx color
+rm gosukrlkh
+
+nn nonlinear_va_filters
+ln Nonlinear VA filters. 
+hl https://github.com/Fredemus/va-filter
+tg dsp
+rm gikoaashs
+
+nn german_school_lisp
+ln The German School of Lisp 
+hl http://blog.fogus.me/2011/05/03/the-german-school-of-lisp-2/
+tg lisp
+rm guarohles
+
+nn how_aphex_twin_made_selected_ambient
+ln How Aphex Twin made Selected Ambient Works 85-92 
+hl https://www.musicradar.com/news/how-aphex-twin-made-saw-85-92
+tg aphextwin
+rm geqfusiff
+
+nn decker
+ln Decker is a multimedia platform for creating and sharing 
+ln interactive documents, with sound, images, hypertext, and 
+ln scripted behavior. 
+hl https://beyondloom.com/decker/
+tg 1bit
+rm gksoaiofa
+
+nn spore_creature_creator_steganography
+ln Spore creature creator and steganography 
+hl https://nedbatchelder.com/blog/200806/spore_creature_creator_and_steganography.html
+tg gamedev
+rm gifepqhfo
+
+nn tinyvm
+ln TinyWM is a tiny window manager that I created as an 
+ln exercise in minimalism. It is also maybe helpful in 
+ln learning some of the very basics of creating a window 
+ln manager. It is only around 50 lines of C. 
+hl http://incise.org/tinywm.html
+tg vm
+rm gufishswk
+
+nn decompiled_retail_console_games
+ln Decompiled Retail Console Games 
+hl https://www.retroreversing.com/source-code/decompiled-retail-console-games
+tg retrogaming
+rm gqlsjpoji
+
+nn openbsd_minimalist_desktop
+ln OpenBSD Minimalist Desktop 
+hl https://nechtan.io/articles/openbsd_minimalist_desktop.html
+tg openbsd
+rm ghleiieow
+
+nn benfrost_theory_of_machines
+ln Theory of Machines by Ben Frost 
+hl https://benfrost.bandcamp.com/album/theory-of-machines
+tg bandcamp
+rm gipjekdai
+
+nn miri
+ln Miri: An interpreter for Rust's mid-level intermediate 
+ln representation. 
+hl https://github.com/rust-lang/miri
+tg rust
+rm gwopwjkho
+
+nn knyst
+ln Knyst: Real time dynamic audio graph and synthesis 
+ln library. 
+hl https://crates.io/crates/knyst
+tg rust audioprogramming
+rm gfeaiwlrh
+
+nn palestrina_printed_scores
+ln Where to get palestrina printed scores.
+hl https://www.performersedition.com/catalog/product/view/id/121717.
+tg palestrina
+rm gdalwislw
+
+nn cistercian_dates
+ln cistercian numerals are good for dates 
+hl https://me.micahrl.com/blog/cistercian-dates/
+tg notation
+rm gjoqiwuuj
+
+nn synthesizing_birdsong
+ln synthesizing birdsong. 
+hl https://people.ece.cornell.edu/land/courses/ece4760/labs/f2021/lab1birdsong/Birdsong_keypad.html
+tg birdsong animal_sounds dsp
+rm greuuksha
+
+nn folders_high_file_counts
+ln article on "folders with high file counts" rresonates with 
+ln me as I think about some of the organization strategies I 
+ln have been developing. 
+hl https://bombich.com/blog/2023/01/18/folders-high-file-counts
+tg workflow
+rm gwareajdi
+
+nn sound_of_swearing
+ln The sound of swearing: are there universal patterns in 
+ln profanity? 
+hl https://link.springer.com/article/10.3758/s13423-022-02202-0
+tg speech
+rm gsfidwhad
+
+nn lisp_hard_way
+ln Learn Lisp the Hard Way. 
+hl https://llthw.common-lisp.dev/
+tg lisp
+rm gpeoeoeul
+
+nn links_awakening_game_engine
+ln links awakening game engine documentation. 
+hl https://github.com/zladx/LADX-Disassembly/wiki/Game-engine-documentation
+tg gamedev zelda
+rm gfwqoeasl
+
+nn libcpucycles
+ln libcpucycles is a public domain library for counting cpu 
+ln cycles. 
+hl https://cpucycles.cr.yp.to/
+tg lowlevel
+rm gisprehol
+
+nn making_grammars
+ln making grammars: from computing with shapes to computing 
+ln with things. 
+hl https://core.ac.uk/reader/127609300
+tg gfx grammar
+rm gldswjwqw
+
+nn sharp_NEC_display_32
+ln >sharp NEC display 32" 
+hl https://www.sharpnecdisplays.us/products/displays/e328
+tg display
+rm gqakepwsf
+
+nn sim_text_editor
+ln the Sim text editor. 
+hl https://sim.ssnf.xyz/
+tg texteditor
+rm guelhldeq
+
+nn phase_aligned_formant
+ln phase aligned formant (PAF) generator. 
+hl http://msp.ucsd.edu/techniques/latest/book-html/node96.html
+tg speech dsp
+rm gppfspesa
+
+nn moveable_ring_modulation
+ln Moveable ring modulation. 
+hl http://msp.ucsd.edu/techniques/latest/book-html/node96.html
+tg dsp
+rm gesirhwua
+
+nn voder_puccini
+ln Vocoder Puccini. 
+hl https://dittytoy.net/ditty/6f30b0885d
+tg speech
+rm gfrpseodj
+
+nn tarai_function_music
+ln >Tarai function music. 
+hl http://aikelab.net/tarai/
+tg algomusic
+rm ghraorkqs
+
+nn locality_sensitive_hashes
+ln introduction to locality sensitive hashes 
+hl https://tylerneylon.com/a/lsh1/
+tg hashes
+rm gaejodjhu
+
+nn little_rust_with_your_c
+ln A little rust with your C 
+hl https://docs.rust-embedded.org/book/interoperability/rust-with-c.html
+tg rust cprog
+rm glppuwpru
+
+nn rust_too_many_linked_lists
+ln Learn Rust With Entirely Too Many Linked Lists 
+hl https://rust-unofficial.github.io/too-many-lists/index.html
+tg rust
+rm gudldeial
+
+nn draw_ugly_lines
+ln How to draw ugly lines. 
+hl https://cohost.org/tomforsyth/post/648716-how-to-draw-ugly-lin
+tg gfx
+rm gsiupjwka
+
+nn soundgen
+ln Soundgen is an open-source toolbox for voice synthesis, 
+ln manipulation, and analysis. 
+hl https://cogsci.se/soundgen.html
+tg speech
+rm gpfdrefqi
+
+nn eno_studio_composition_tool
+ln Brian Eno: the Studio as a Compositional Tool 
+hl https://beatpatrol.wordpress.com/2010/02/10/brian-eno-the-studio-as-compositional-tool-1983/
+tg eno composition
+rm gohepuuia
+
+nn big_list_lisp_impl
+ln big list of LISP implementations 
+hl https://taoofmac.com/space/dev/lisp
+tg lisp
+rm gipupwkuj
+
+nn noxin_dream_sequence
+ln NOXIN/Dream Sequence 
+hl https://evel.bandcamp.com/album/dream-sequence
+tg bandcamp
+rm gdlokjkuw
+
+nn zchunk
+ln zchunk: A file format designed for highly efficient deltas while 
+ln maintaining good compression 
+hl https://github.com/zchunk/zchunk
+tg compression
+rm gdkjpridl
+
+nn packrat_parasing
+ln packrat parsing and parsing expression grammars 
+hl https://bford.info/packrat/
+tg PEG
+rm gpdudlahj
+
+nn why_everything_looks_the_same
+ln >why everything looks the same. 
+hl https://medium.com/knowable/why-everything-looks-the-same-bad80133dd6e
+tg design
+rm gawdperhd
+
+nn uxntal_alphabet
+ln The Uxntal Alphabet is a series of glyph representing 
+ln uxntal numbers and opcodes. 
+hl https://wiki.xxiivv.com/site/uxntal_alphabet.html
+tg uxn notation
+rm gajokuaud
+
+nn lisp_code_typography
+ln A Few Examples of Lisp Code Typography 
+hl http://kazimirmajorinc.com/Documents/Lisp-code-typography/index.html
+tg lisp typography
+rm gorkpdwel
+
+nn writing_docs_well
+ln Writing docs well: why should a software engineer care? 
+hl https://surfingcomplexity.blog/2022/11/24/writing-docs-well-why-should-a-software-engineer-care/
+tg documentation
+rm gqwsuehii
+
+nn sounds_central_african_landscapes
+ln Sounds of Central African landscapes 
+hl https://registry.opendata.aws/elp-nouabale-landscape/
+tg nature_sounds
+rm gorrrukdf
+
+nn rv
+ln rv: RISCV core in 600 lines of C89 C. 
+hl https://github.com/mnurzia/rv
+tg riscv cprog
+rm gojpielle
+
+nn tropetwist
+ln TropeTwist: Trope-based Narrative Structure Generation 
+hl https://arxiv.org/abs/2204.09672
+tg gamedev generative
+rm ghlfhsolh
+
+nn bioacoustics
+ln Bioacoustics: finding the voices of other species. 
+hl https://worldsensorium.com/bioacoustics-finding-the-voices-of-other-species/
+tg nature_sounds acoustics animal_sounds
+rm gikolasss
+
+nn effective_rust
+ln Effective Rust 
+hl https://www.lurklurk.org/effective-rust/
+tg rust
+rm grjreerof
+
+nn riscv_os_rust
+ln >Making a RISCV Operating System Using Rust. 
+hl https://osblog.stephenmarz.com/
+tg rust riscv osdev
+rm gpapfpuiq
+
+nn mouth_gestures
+ln An Illustrated Guide to Mouth Gestures and Their Meanings 
+ln Around the World. 
+hl https://thereader.mitpress.mit.edu/an-illustrated-guide-to-mouth-gestures-and-their-meanings-around-the-world/
+tg gesture
+rm gaqakrqef
+
+nn ditherpunk
+ln >Ditherpunk: the article I wish I had about monochrome image 
+ln dithering. 
+hl https://surma.dev/things/ditherpunk/
+tg gfx 1bit pixelart
+rm gksworaui
+
+nn hn_eyeopening_textbooks
+ln HN thread on the most "eye-opening" textbooks. 
+ln Surprisingly interesting range of answers. 
+hl https://news.ycombinator.com/item?id=35929112
+tg HN books
+rm grahrksje
+
+nn anonymous_tor_phone
+ln Anonymous Tor Phone 
+hl https://0ut3r.space/2023/05/02/anonymous-tor-phone/
+tg tor
+rm ghkuifppw
+
+nn atari_800XL_remake
+ln Atari 800XL remake 
+hl https://revive-machines.com/index-en.html
+tg atari retrocomputing
+rm gajukashw
+
+nn rust_performance_book
+ln The Rust Performance Book. 
+hl https://nnethercote.github.io/perf-book/
+tg rust books
+rm gaiaqwseo
+
+nn polygons_another_world
+ln The polygons of Another World. 
+hl https://fabiensanglard.net/another_world_polygons/
+tg gamedev
+rm gkdqruihd
+
+nn diy_touchpad
+ln DIY touchpad
+hl https://github.com/aatishb/DIYtouchpad.
+tg touchpad
+rm grfqsaaps
+
+nn smallest_h264_encoder
+ln Worlds smallest H264 encoder. 
+hl https://www.cardinalpeak.com/blog/worlds-smallest-h-264-encoder
+tg gfx h264
+rm gjwwdqkfl
+
+nn when_doves_cry
+ln What it Sounds Like When Doves Cry: an ornithologist 
+ln proposed a system for transcribing bird sound as human 
+ln speech. It did not catch on. 
+hl https://daily.jstor.org/what-it-sounds-like-when-doves-cry/
+tg birdsong animal_sounds
+rm glehulpfs
+
+nn neural_graphics_primitives
+ln Exploring Neural Graphics Primitives 
+hl https://thenumb.at/Neural-Graphics/
+tg gfx neuralnets
+rm gefddefso
+
+nn interaction_nets_combinators_calculus
+ln >Interaction Nets, Combinators, Calculus. 
+hl https://zicklag.github.io/blog/interaction-nets-combinators-calculus/
+tg combinators
+rm gqifwjhhs
+
+nn diversity_arabic_scripts
+ln The diversity of arabic scripts
+hl https://blogs.bl.uk/asian-and-african/2023/03/the-diversity-of-arabic-scripts.html.
+tg notation
+rm gfsehaohu
+
+nn fictional_alphabet_patters
+ln Fictional alphabet patterns 
+hl https://forum.algorithmicpattern.org/t/fictional-alphabet-patterns/538/4
+tg notation
+rm gkefedsri
+
+nn shoshikantetsu
+ln shoshikantetsu. 
+hl https://asnewman.github.io/shoshikantetsu
+tg workflow
+rm geelqssre
+
+nn CRT_filter_impl
+ln CRT filter implementation 
+hl https://github.com/bisqwit/crt-filter
+tg gfx
+rm gkhpuuidr
+
+nn divide_square_7_sim_rects
+ln Dividing a square into 7 similar rectangles. 
+hl https://johncarlosbaez.wordpress.com/2023/03/06/dividing-a-square-into-7-similar-rectangles/
+tg gfx
+rm gejsdfkkf
+
+nn potatop
+ln PotatoP: Lisp powered laptop with a battery life measured 
+ln in years. 
+hl https://hackaday.io/project/184340-potatop
+tg lisp
+rm gaerukiui
+
+nn bomb_jack_flash
+ln Flash version of the arcade game Bomb Jack, available for 
+ln play on Internet Archive. 
+hl https://archive.org/details/1100_bomb_jack
+tg bombjack gaming
+rm gfrsolask
+
+nn LPCnet
+ln LPCnet: efficient neural speech synthesis: 
+hl https://github.com/xiph/LPCNet
+tg speech neuralnets
+rm ghesjjeue
+
+nn three_ordinary_dice
+ln Making full use of three ordinary dice. 
+hl http://www.quadibloc.com/other/bo0201.htm
+tg dice
+rm grlfkklfq
+
+nn type_hinting_sucks
+ln why type hinting sucks 
+hl https://old.reddit.com/r/Python/comments/10zdidm/why_type_hinting_sucks/
+tg python
+rm gjjaaqpss
+
+nn agon_light
+ln agon light is the fastest and cheapest 8-bit microcomputer 
+ln ever made 
+hl https://www.thebyteattic.com/p/agon.html?m=1
+tg 8bit hardware
+rm gjqpawapk
+
+nn single_cycle_riscv_register_file
+ln A Single-Cycle 64-Bit RISC-V Register File 
+hl https://danielmangum.com/posts/single-cycle-rv64-register-file/
+tg RiscV
+rm gawfwsrri
+
+nn async_rust
+ln Asynchronous Rust on Cortex-M Microcontrollers 
+hl https://interrupt.memfault.com/blog/embedded-async-rust
+tg rust embedded
+rm ghdeodduj
+
+nn ruliad
+ln The Concept of The Ruliad 
+hl https://writings.stephenwolfram.com/2021/11/the-concept-of-the-ruliad/
+tg ruliad
+rm gjepsjwer
+
+nn generative_ai_alien_minds
+ln Generative AI Space and the Mental Imagery of Alien Minds. 
+hl https://writings.stephenwolfram.com/2023/07/generative-ai-space-and-the-mental-imagery-of-alien-minds/
+tg genai
+rm gjdojaphh
+
+nn voice_acoustics_intro
+ln Voice acoustics: an introduction. 
+hl https://newt.phys.unsw.edu.au/jw/voice.html
+tg speech acoustics
+rm gawpkrqrd
+
+nn linear_a
+ln exploring linear A. 
+hl https://lineara.xyz/
+tg notation
+rm gakhfhpss
+
+nn another_world_fpga
+ln another world ported to FPGA: 
+hl https://github.com/sylefeb/a5k
+tg fpga gamedev
+rm ghofqlkrr
+
+nn rust_crossplatform_minimal
+ln Building cross-platform Rust for Web, Android and iOS – 
+ln a minimal example 
+hl https://www.artificialworlds.net/blog/2022/07/06/building-cross-platform-rust-for-web-android-and-ios-a-minimal-example/
+tg rust
+rm gwqkpuewi
+
+nn entity_component_system_wiki
+ln Entity Component System. 
+hl https://en.m.wikipedia.org/wiki/Entity_component_system
+tg gamedev
+rm gajjdhipq
+
+nn nyctography_wiki
+ln Nyctography: a cypher and method for writing in the dark. 
+hl https://en.m.wikipedia.org/wiki/Nyctography
+tg notation
+rm gfwljksqi
+
+nn data_oriented_design
+ln Data oriented design. 
+hl https://www.dataorienteddesign.com/dodbook/dodmain.html
+tg data
+rm guoeuukpe
+
+nn rust_expressif
+ln Rust on Expressif chips 
+hl https://mabez.dev/blog/posts/esp-rust-30-06-2023/
+tg rust embedded
+rm giwpipqws
+
+nn formalising_simple_vm
+ln Formalising a Simple Virtual Machine. 
+hl https://whileydave.com/2022/06/28/formalising-a-simple-virtual-machine/
+tg vm
+rm gdohsohiu
+
+nn whistlegraph
+ln Whistlegraph Performance: Audiovisual performance 
+ln featuring fountain pens, singing, and paper. 
+hl https://youtu.be/YXUUCkqv2LY
+tg whistling
+rm glsrioudi
+
+nn ranking_every_shakespeare
+ln My ranking of every Shakespeare play. 
+hl https://nullprogram.com/blog/2023/06/22/
+tg shakespeare
+rm gjishoahl
+
+nn arcade_game_typography
+ln Arcade game typography 
+hl https://readonlymemory.vg/shop/book/arcade-game-typography/
+tg retrogaming typography
+rm ghwldadoa
+
+nn utexas_CS338_NLP
+hl https://www.cs.utexas.edu/~gdurrett/courses/online-course/materials.html
+ln CS388: Natural Language Processing
+ln (online MS version)
+tg NLP speech
+
+nn zelda64_recomp
+hl https://github.com/Mr-Wiseguy/Zelda64Recomp
+ln Zelda64Recomp: Static recompilation of 
+ln Majora's Mask (and soon Ocarina of Time)
+ln for PC (Windows/Linux)
+tg zelda n64
+
+nn cordic_rent_free
+hl https://github.com/francisrstokes/githublog/blob/main/2024/5/10/cordic.md
+ln Why the CORDIC algorithm lives rent-free
+ln in my head
+tg math algos
+
+nn blazingly_fast_linked_lists
+hl https://dygalo.dev/blog/blazingly-fast-linked-lists/
+ln Blazingly Fast Linked Lists
+tg rust optimization
+
+nn mutable_aliasing_formal_verification_notes
+hl https://graydon2.dreamwidth.org/312681.html
+ln Some notes on Rust, mutable aliasing and
+ln formal verification
+tg rust
+
+nn advanced_js_questions
+hl https://github.com/lydiahallie/javascript-questions
+ln A long list of (advanced) JavaScript
+ln questions, and their explanations
+tg javascript webdev
+
+nn ilya_30
+hl https://arc.net/folder/D0472A20-9C20-4D3F-B145-D2865C0A9FEE
+ln Ilya Sutskever: learn these 30 papers 
+ln to know 90% of what matters [in ML] today
+rm today: may 18 2024
+tg AI papers books
+
+nn ubershaders
+hl https://dolphin-emu.org/blog/2017/07/30/ubershaders/
+ln Ubershaders: A Ridiculous Solution to an
+ln Impossible Problem
+tg gamedev gfx
+
+nn orangecrab_fpga
+hl https://1bitsquared.com/products/orangecrab
+ln orangecrab fpga
+tg fpga
+
+nn linux_riscv_fpga
+hl https://www.contrib.andrew.cmu.edu/~somlo/BTCP/
+ln A Trustworthy, Free (Libre), Linux
+ln Capable, Self-Hosting 64bit RISC-V
+ln Computer
+tg riscv fpga
+
+nn fixing_iterative_damping_interp
+hl https://blog.pkh.me/p/41-fixing-the-iterative-damping-interpolation-in-video-games.html
+ln Fixing the iterative damping interpolation
+ln in video games
+tg gamedev
+
+nn storing_knowledge_text
+ln Storing knowledge in a single long plain
+ln text file
+tg workflow organize text
+hl https://breckyunits.com/scrollsets.html
+
+nn lo_wasm
+hl https://github.com/glebbash/LO
+ln LO - small programming language targeting
+ln WASM that aims to be as simple as possible
+tg wasm rust
+
+nn ewers_life_full_of_challenges
+hl https://vimeo.com/202983845
+ln Neal Ewers: Life Is Full of Challenges
+ln (Interview Excerpts, AD)
+rm mentioned while talking about moving slowly.
+rm ewers, being blind, can not take in images
+rm wholesale, and must accumulate them over
+rm time with repeated interactions. I also
+rm like him describing sight as having distance
+tg erik
+
+nn nanomig
+hl https://github.com/harbaum/NanoMig
+ln Amiga Minimig ported to the Tang Nnao 20k
+ln FPGA
+tg amiga fpga retrocomputing
+
+nn k_oss
+hl https://shakti.com/k
+ln Arthur Whitney releases an open-source
+ln K with MIT license
+tg k apl
+
+nn FMP_notebooks
+hl https://www.audiolabs-erlangen.de/resources/MIR/FMP/C0/C0.html
+ln Python Notebooks for Fundamentals of
+ln Music Processing
+tg dsp python
+
+nn thinkdsp
+hl https://allendowney.github.io/ThinkDSP/
+ln Think DSP is an introduction to Digital
+ln Signal Processing in Python.
+tg dsp python
+
+nn awesome_audio_dsp
+hl https://github.com/BillyDM/Awesome-Audio-DSP
+ln awesome audio DSP
+tg dsp
+
+nn you_are_my_friend
+hl https://publicdomainreview.org/essay/early-androids-and-artificial-speech/
+ln "You Are My Friend" Early Androids
+ln and Artificial Speech
+tg vocsyn speech
+
+nn zx_origins
+hl https://damieng.com/typography/zx-origins/
+ln zx origins: collection of several 8x8 fonts
+tg fonts bitmap pixelart
+
+nn medical_alarms
+hl https://th.id.au/alarms/
+ln ISO/IEC 60601-1-8, Patterson and other
+ln alarms in medical equipment
+tg medical sounddesign
+
+nn borrow_checker_within
+hl https://smallcultfollowing.com/babysteps/blog/2024/06/02/the-borrow-checker-within/
+ln The Borrow Checker Within
+tg rust
+
+nn arthur_miles_throat_singing
+hl https://youtu.be/DpAFZnMyC7o
+ln Arthur Miles "Lonely Cowboy" "cowboy throat singing"
+tg singing
+rm Seamus from RC showed me this one
+
+nn bomb_jack_display_hardware
+hl https://github.com/martinpiper/BombJack/blob/master/README.md
+ln bomb jack display hardware
+tg retrogaming
+
+nn calvin_hobbes_internet_archive
+hl https://archive.org/details/TheCompleteCalvinHobbes_201902
+ln The Complete Calvin and Hobbes (Internet Archive)
+tg comics
+
+nn bittorent_go
+hl https://blog.jse.li/posts/torrent/
+ln Building a BitTorrent client from the
+ln ground up in Go
+tg bittorrent golang
+
+nn cognitive_load_what_matters
+ln Cognitive Load is What Matters
+hl https://github.com/zakirullin/cognitive-load
+tg software_design
+
+nn loudspeaker_movement
+hl https://www.reddit.com/r/audioengineering/comments/ixfb26/loudspeaker_movement/
+ln loudspeaker movement
+tg acoustics
+
+nn syscall_tracer_ebpf
+hl https://sh4dy.com/2024/08/03/beetracer/
+ln Writing a system call tracer using eBPF
+tg ebpf
+
+nn byo_sqlite
+hl https://blog.sylver.dev/build-your-own-sqlite-part-1-listing-tables
+ln Build your own SQLite, Part 1: Listing tables
+tg sqlite
+
+nn creswell_distributed_systems_reading_list
+hl https://dancres.github.io/Pages/
+ln Distributed systems reading list by Dan Creswell
+tg distributed_systems reading
+
+nn distributed_consensus_reading_list
+hl https://github.com/heidihoward/distributed-consensus-reading-list
+ln Distributed Consensus Reading List
+tg distribute_systems reading
+co $ distributed_systems_reading_list
+cr more contemporary
+
+nn implementing_regex_typescript
+hl https://skalt.github.io/projects/brzozowski_ts
+tg typescript regex
+ln Implementing Regular Expressions in TypeScript Types (Badly)
+
+nn forth_512_bytes
+hl https://compilercrim.es/bootstrap/miniforth/
+ln Fitting a Forth in 512 bytes
+tg forth
+
+nn coyles_croissant_workshop
+hl https://www.youtube.com/watch?v=tx31hvWxWaI
+ln Croissant workshop from Coyles Bakery
+ln in Seatle
+rm Recommended by EV
+tg croissant
+
+nn sqlite_index_viz
+hl https://mrsuh.com/articles/2024/sqlite-index-visualization-structure/
+ln SQLite Index Visualization: Structure
+tg sqlite
+
+nn sqlite_index_viz_hn
+hl https://news.ycombinator.com/item?id=42134964
+co $ sqlite_index_viz
+cr HN discussion
+
+nn wikipedia_good_articles
+hl https://en.m.wikipedia.org/wiki/Wikipedia:Good_articles
+ln Wikipedia:Good articles
+tg wikipedia
+
+nn getting_started_FPGA
+hl https://nostarch.com/gettingstartedwithfpgas
+ln Getting Started with FPGAs
+tg fpga books
+
+nn stacked_diffs
+hl https://newsletter.pragmaticengineer.com/p/stacked-diffs
+ln stacked diffs
+
+nn REST_pagination
+hl https://www.merge.dev/blog/rest-api-pagination
+ln A guide to REST API pagination
+tg REST backend
+
+nn chipwits
+hl https://chipwits.com/2024/11/16/chipwits-40th-birthday-original-forth-code-open-sourced/
+ln ChipWits’ 40th Birthday: Original FORTH
+ln Code Open Sourced!
+tg gamedev forth
+
+nn chipwits_gh
+hl https://github.com/chipwits/chipwits-forth
+ln chipwits source (gh)
+tg gamedev forth
+co $ chipwits
+
+nn ballmer_binary_search_nash_equilibria
+hl https://quuxplusone.github.io/blog/2024/09/04/the-game-is-flawed/
+ln Nash equilibria in Ballmer’s
+ln binary-search interview game
+tg algorithms math
+
+nn frosted_glass
+hl https://www.tyleo.com/html-glass.html
+ln Frosted Glass from Games to the Web
+tg css
+
+nn evgrieve
+hl https://evgrieve.com/?m=1
+ln evgrieve: hyperlocal EV news
+tg blog news NYC
+
+nn aztec_skull_whistle
+hl https://caneuro.github.io/blog/2024/study-skullwhistle/
+ln aztec skull whistle
+tg whistle skull aztec
+
+nn teatime
+hl https://github.com/bjesus/teatime
+ln teatime: A fully static distributed
+ln library system powered by IPFS,
+ln SQLite and GitHub
+tg sqlite vue IPFS
+
+nn aduran_ledgers
+hl https://news.alvaroduran.com/p/engineers-do-not-get-to-make-startup
+ln Engineers Do Not Get To Make Startup
+ln Mistakes When They Build Ledgers
+tg fintech sysdesign
+
+nn rust_query
+hl https://github.com/LHolten/rust-query
+ln rust-query: Type safe query builder for
+ln rust
+tg rust databases
+
+nn pandan_recipe
+hl https://www.seriouseats.com/sangkaya-faktong-kabocha-pumpkin-custard-recipe-8746161
+rm recommended by JG
+tg food baking recipes
+
+nn llama_cpp_guide
+hl https://steelph0enix.github.io/posts/llama-cpp-guide/
+ln LLAMA.CPP guide
+tg LLM LLAMA
+
+nn pack_ternary_bytes
+hl https://compilade.net/blog/ternary-packing
+ln How to pack ternary numbers in 8-bit bytes
+tg ternary
+
+nn trailbase
+hl https://trailbase.io/
+tg rust backend
+ln TrailBase: A blazingly fast, open-source
+ln application server with type-safe APIs,
+ln built-in JS/ES6/TS Runtime, Auth, and
+ln Admin UI built on Rust, SQLite & V8.
+
+nn sensible_sqlite_defaults
+hl https://briandouglas.ie/sqlite-defaults/
+ln sensible sqlite defaults
+tg sqlite
+
+nn ternary_computer_system
+hl https://www.ternary-computing.com/history/CPU-History.html
+ln Ternary Computer System
+tg ternary
+
+nn success_failure_ninja
+ln The success and failure of ninja
+hl https://neugierig.org/software/blog/2020/05/ninja.html
+tg ninja
+
+nn git_rebase_in_depth
+hl https://git-rebase.io/
+ln git rebase in depth
+tg git
+
+nn 1d_reversible_cellular_automata
+hl https://richiejp.com/1d-reversible-automata
+ln One Dimensional Reversible Automata
+tg automata 1bit
+
+nn phd_advisor_rewrote_himself_in_bash
+hl https://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
+ln My Ph.D. advisor rewrote himself in bash.
+tg bash writing
+
+nn in_search_of_faster_sqlite
+hl https://avi.im/blag/2024/faster-sqlite/
+ln In search of a faster SQLite
+tg sqlite limbo rust
+
+nn in_house_ai_model
+hl https://blog.jackserv.io/i-built-my-own-in-house-ai-model-and-hes-kind-of-a-dick-2/
+ln I built my own in-house AI model
+ln and he's kind of a dick.
+tg ai llama llm
+
+nn sqlite_nosql
+hl https://gist.github.com/vedantroy/df6b18fa89bc24acfe89fc8493743378
+ln NoSQL, but it's SQLite
+tg typescript nosql sqlite
+
+nn bloom_filters_sqlite
+hl https://avi.im/blag/2024/sqlite-past-present-future/
+ln How bloom filters made SQLite 10x
+ln faster
+tg sqlite
+
+nn bloom_filters_sqlite/discussion
+hl https://news.ycombinator.com/item?id=42486610
+co $ ..
+
+nn long_term_swdev
+hl https://berthub.eu/articles/posts/on-long-term-software-development/
+ln On Long Term Software Development
+tg software
+
+nn spacer
+hl https://github.com/samwho/spacer
+ln spacer: CLI tool to insert spacers when
+ln command output stops
+tg rust
+
+nn flexbox_froggy_source
+hl https://github.com/thomaspark/flexboxfroggy/
+ln flexbox froggy (source code)
+
+nn parsing_millions_urls_second
+hl https://onlinelibrary.wiley.com/doi/10.1002/spe.3296
+ln Parsing millions of URLs per second
+tg performance url cpp
+
+nn four_limitations_rust_borrow_checker
+hl https://blog.polybdenum.com/2024/12/21/four-limitations-of-rust-s-borrow-checker.html
+ln Four limitations of Rust's borrow
+ln checker
+tg rust
+
+nn four_limitations_rust_borrow_checker/discussion
+hl https://news.ycombinator.com/item?id=42485536
+co $ ..
+
+nn written_sound
+hl https://m.writtensound.com/index.php
+ln written sound: an onomatopoeia
+ln dictionary
+tg ononatopoeia
+
+nn cognitive_load_matters
+hl https://minds.md/zakirullin/cognitive
+ln Cognitive load is what matters
+tg cognition workflow
+co cognitive_load_what_matters $
+cr GH and article
+
+nn not_abstraction_layer_of_indirection
+hl https://fhur.me/posts/2024/thats-not-an-abstraction
+ln That's not an abstraction, that's a layer
+ln of indirection
+tg software
+
+nn dont_implement_layered_arch
+hl https://blog.jooq.org/why-you-should-not-implement-layered-architecture/
+ln why you should not implement layered architecture
+tg software
+
+nn seconds_since_epoch
+hl https://aphyr.com/posts/378-seconds-since-the-epoch
+ln Seconds Since the Epoch
+
+nn search_of_faster_sqlite
+hl https://avi.im/blag/2024/faster-sqlite/ln In search of a faster SQLite
+tg sqlite
+
+nn sm2_rust
+hl https://borretti.me/article/implementing-sm2-in-rust
+ln Implementing SM-2 in Rust
+tg rust spaced_repetition
+
+nn casual_viewing
+hl https://www.nplusonemag.com/issue-49/essays/casual-viewing/
+ln Casual Viewing Why Netflix looks
+ln like that
+tg netflix
+
+nn polyglot_html_zip_png
+ln https://gildas-lormeau.github.io/Polyglot-HTML-ZIP-PNG/SUMMARY.html
+hl How to Create HTML/ZIP/PNG Polyglot Files
+tg archive html zip png
+
+nn my_history_forth_stack_machines
+hl https://yosefk.com/blog/my-history-with-forth-stack-machines.html
+ln My history with Forth & stack machines
+tg forth
+
+nn my_history_forth_stack_machines/discussion
+hl https://news.ycombinator.com/item?id=42532157
+
+nn lua_match
+hl https://github.com/alurm/lua-match
+ln Minimalistic sum types and switches
+ln for Lua
+rm almost no code! good use of metatables
+tg lua
+
+nn 2_on_stack
+hl https://unity.com/blog/engine-platform/debugging-memory-debugging-memory-corruption-who-wrote-2-into-my-stack-who-the-hell
+ln Debugging memory corruption: Who
+ln wrote ‘2’ into my stack?!
+tg unity windows c++
+
+nn 2_on_stack/discussion
+hl https://news.ycombinator.com/item?id=42532979
+
+nn database_review_2024
+hl https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html
+ln Databases in 2024: A Year in Review
+tg databases
+
+nn database_review_2024/discussion
+hl https://news.ycombinator.com/item?id=42566192
+
+nn minikanren
+hl http://minikanren.org/
+ln what is minikanren?
+tg kanren logic
+
+nn minikanren/discussion
+hl https://news.ycombinator.com/item?id=42574125
+
+nn btrees_more_than_i_thought
+hl https://benjamincongdon.me/blog/2021/08/17/B-Trees-More-Than-I-Thought-Id-Want-to-Know/
+td read
+tg btree
+
+nn worlds_first_midi_shellcode
+hl https://psi3.ru/blog/swl01u/
+ln World’s First MIDI Shellcode
+tg MIDI reverse_engineering
+
+nn crawshaw_llms
+hl https://crawshaw.io/blog/programming-with-llms
+ln How I program with LLMs
+tg LLM
+
+nn ultra_long_range_toslink
+hl https://blog.benjojo.co.uk/post/sfp-experiment-ultra-long-range-toslink
+ln Building Ultra Long Range TOSLINK
+tg toslink audio electronics
+
+nn dillonshook_laid_off
+hl https://dillonshook.com/laid-off/
+ln Laid Off for the First Time In My
+ln Career, and Twice In One Year
+tg career jobs
+
+nn tiki_particles
+hl https://tiki.li/apps/particles.html?v=2501a
+td codestudy
+tg gfx
+
+nn easylang
+hl https://github.com/chkas/easylang
+ln Easylang is a simple open-source
+ln programming language with built-in
+ln graphical features and a
+ln user-friendly browser IDE that can
+ln be used also offline.
+
+nn ai_engineer_reading_list_2025
+hl https://www.latent.space/p/2025-papers
+ln The 2025 AI Engineer Reading List
+tg ai papers
+nn ai_engineer_reading_list_2025/discussion
+hl https://news.ycombinator.com/item?id=42686457
+co $ ..
+
+nn parinfer
+hl https://shaunlebron.github.io/parinfer/
+ln parinfer: simpler LISP editing
+tg lisp
+
+nn elite_6502
+hl https://elite.bbcelite.com/
+ln elite on 6502: the original 6502
+ln assembly code, heavily commented
+tg gamedev

@@ -72,3 +72,31 @@ don't remember the schema
 
 @18:04 object loading continued: nodes #timelog:00:15:00
 @! dz $
+
+@2025-02-12
+@11:56 more object loading #timelog:00:15:50
+@! dz $
+
+@12:01 expanding the test framework
+@! dz $
+It's starting to get to the point where the unit tests
+I want are smaller than the API I want to expose. So,
+I'm doing rust-style unit tests, where the tests live
+in the same file as the code. This will be due for a
+re-org at some point, but good enough for now.
+
+@12:15 Lunch
+
+@12:49 continued #timelog:00:50:23
+@! dz $
+
+@12:51 nevermind not expanding test
+$! dz $
+I forgot about the asset data I'm baking. Do not want
+to include that. I don't want to do macro magic today.
+
+@13:16 enough of the node has been made, make a node list for subgraph
+#! dz $
+
+@13:40 we got nodes
+#! dz $

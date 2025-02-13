@@ -1,0 +1,4 @@
+ns vim
+
+nn automating_vim_workplace
+hl https://sharats.me/posts/automating-the-vim-workplace/

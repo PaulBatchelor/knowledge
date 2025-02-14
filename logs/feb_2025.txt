@@ -100,3 +100,57 @@ to include that. I don't want to do macro magic today.
 
 @13:40 we got nodes
 #! dz $
+
+@2025-02-13 Teaventure day
+Most of my day was spent out in the city, assembling a very
+fancy tea kit.
+
+@20:17 initial planning for rendering architecture #timelog:00:56:49
+#! dz dagzet/dzb/tasks/architecture_planning
+I've been spending my days on the train today trying
+to piece this together the problem I have. I want to build
+a rendering pipeline suitable enough for UIs. This is of
+course a not a new problem, with known solutions in the
+web world. I want enough to be able to build tree structures
+genenerated from the graph whose visibility can be
+dynamically controlled.
+
+@20:46 whoa, I really don't know how to do this
+#! dz dagzet/dzb/tasks/architecture_planning
+#! dz dagzet/dzb/refs/tree_view
+All day, I've been thinking about a render model that
+takes a tree of nested regions with offsets and widths
+relative to the parent, somewhat similar to nested div
+elements. Call it a render tree. This render tree
+was going to be converted to a list of drawing operations.
+---
+I've been thinking about it wrong. I was imagining a
+situation where you'd have a region of a fixed size, and
+then you'd subdivide proportionally and fit everything
+into that region. That... doesn't really work for presenting
+an interactive "tree view".
+
+@21:03 tempted to take the more low level tile-based approach first
+#! dz dagzet/dzb/tasks/architecture_planning
+#! dz dagzet/dzb/refs/tree_view
+I'm trying to shove a DOM-based approach to producing flexible
+render regions, but for a tree view using a fixed-width
+bitmap font, a more tile-based approach could probably
+work out better for rapid prototyping.
+
+@21:10 high level short-term goals
+#! dz dagzet/dzb/tasks/architecture_planning
+#! dz dagzet/dzb/refs/tree_view
+I've overcomplicated things because I wanted a high level
+language for articulated UI similar to HTML. None of that.
+---
+basic needs: a tree view, a, card table, and logs
+---
+Tree view: for display an active tree: with interactions
+like folding/unfolding, and clicking on a link to load
+a new subtree.
+---
+Card table: a table with two columns: attribute and value.
+---
+Logs: list logs associated with a particular node. Print
+timestamp, title and log. Be able to scroll.

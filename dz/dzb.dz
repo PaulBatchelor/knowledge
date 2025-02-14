@@ -1,6 +1,9 @@
+ns dagzet
+nn dzb
 ns dagzet/dzb
 
 nn tasks
+co $ ..
 at ol
 
 nn tasks/initial_work
@@ -8,3 +11,20 @@ co $ ..
 
 nn tasks/initial_dz_data
 co $ ..
+
+nn tasks/architecture_planning
+
+nn refs
+co $ ..
+
+nn refs/tree_view
+hl https://en.wikipedia.org/wiki/Tree_view
+co $ ..
+ln A tree view is a graphical widget (graphical
+ln control element) within a graphical user
+ln interface (GUI) in which users can navigate
+ln and interact intuitively with concise,
+ln hierarchical data presented as nodes in a
+ln tree-like format.[1][2] It can also be called
+ln an outline view.
+

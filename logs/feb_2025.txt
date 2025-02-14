@@ -154,3 +154,46 @@ Card table: a table with two columns: attribute and value.
 ---
 Logs: list logs associated with a particular node. Print
 timestamp, title and log. Be able to scroll.
+
+@2025-02-14 Valentines Day
+@11:06 settling in at the hub
+I have to be in east harlem by 2pm. calculating how
+much time I have here.
+
+@11:11 Wrapping up ideas #timelog:00:13:37
+#! dz dagzet/dzb/tasks/architecture_planning
+I think I am close...
+---
+Missing ingredient: stretch boxes. The ability for a region
+to grow in size to contain its children. This can happen
+recursively. If the size is set to be negative, then the
+size will be set dynamically.
+---
+There should also be a way to lock the width or height,
+allowing for things like clipping.
+---
+Offsets should be allowed to be negative. This would allow
+for things like scrolling.
+---
+Each region should be given a unique ID, which corresponds
+to an index in something managing data. The data would
+contain the state, as well as a callback function.
+---
+Eventually, the idea would be to build some abstractions
+on top of this so it'll be easy to build up these trees
+programatically from a scripting language (and/or ilo?).
+
+@11:29 beginnig work on stretch boxes
+#! dz dagzet/dzb/tasks/stretch_boxes
+ADD 45
+
+@11:30 Adding a border drawing primitive
+#! dz $
+
+@11:50 drawing in region should clip
+#! dz $
+
+@12:29 Initial test for stretch box #timelog:00:18:09
+#! dz $
+Use outline to construct how we initially want things
+to look, then create failing test.

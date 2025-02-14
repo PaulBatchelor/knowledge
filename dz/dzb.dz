@@ -13,6 +13,7 @@ nn tasks/initial_dz_data
 co $ ..
 
 nn tasks/architecture_planning
+co $ ..
 
 nn refs
 co $ ..
@@ -28,3 +29,6 @@ ln hierarchical data presented as nodes in a
 ln tree-like format.[1][2] It can also be called
 ln an outline view.
 
+nn tasks/stretch_boxes
+ln Implement stretch boxes
+co $ ..

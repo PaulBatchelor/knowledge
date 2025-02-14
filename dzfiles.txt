@@ -65,4 +65,6 @@ dz/pydata.dz
 dz/MIT_6.824
 dz/grokking_simplicity
 dz/DDIA
+dz/vim.dz
+dz/dzb.dz
 dz/zzz

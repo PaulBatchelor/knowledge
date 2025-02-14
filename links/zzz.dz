@@ -1,0 +1,131 @@
+cx links/sqlite_bytecode sqlite/bytecode_engine
+cx sqlite/explaining_sqlite_vm ^
+
+cx links/bloom_filters_sqlite sqlite/past_present_future
+cr five-minute notes on "Past, Present, Future" SQLite paper
+
+cx ^ DDIA/glossary/join
+cr some discussion on joins
+
+cx ^ sqlite/bytecode_engine
+cr SQLite internally uses a VM called VMBE to execute queries
+
+cx ^ DDIA/glossary/OLTP
+cr SQLite is a general-purpose DB, but excels at OLTP workloads
+
+cx ^ DDIA/glossary/OLAP
+cr Researchers at buffalo university in 2015 found that
+cr most queries are simple KV lookups and OLAP queries
+
+cx ^ databases/duckdb
+cr benchmark for OLAP queries to compare against SQLite
+
+cx ^ databases/star_schema_benchmark
+cr industry standard benchmark for OLAP
+
+cx ^ databases/star_schema_benchmark/star_queries
+cr summarizes what star queries are
+
+cx ^ databases/nested_loop_join
+cr SQLite uses nested loop join
+
+cx ^ databases/visualizing_nested_loop_joins
+
+cx ^ sqlite/query_optimizer_overview/07_joins
+cr SQLite uses nested loop join
+
+cx ^ databases/btree/probe
+cr avoid btree probing, they are expensive
+
+cx ^ data_structures/bloom_filter
+cr Bloom filters were used to optimize for nested loop joins
+cr in SQLite by researchers. They were used on the inner
+cr loop. If there's a cache hit match, go into the inner loop.
+
+cx links/four_limitations_rust_borrow_checker rust/borrow_checker
+
+cx links/four_limitations_rust_borrow_checker/outline/1_checking_doesnt_take_match_return_into_account rust/std/collections/hashmap
+cr problem most often manifests when you want to look
+cr up a value in a hashmap, and do something different
+cr if it's not present
+
+cx ^ rust/comprehensive_rust/09_references/exclusive_reference
+cr problems start to happen when you try to use exclusive
+cr references with hashmap retrieval
+
+cx links/four_limitations_rust_borrow_checker/outline/1_checking_doesnt_take_match_return_into_account/hashmap_lookup ^
+
+cx ^ rust/std/collections/hashmap
+
+cx links/four_limitations_rust_borrow_checker/outline/2_async_is_suffering rust/std/iter
+cr iter() used in simple example
+
+cx ^ rust/await
+cr async_for_all makes an await call
+
+cx ^ rust/GATS_stabilization
+cr "Rust recently added the ... Generic Associated Types,
+cr but even those don't seem to help."
+
+cx ^ links/four_limitations_rust_borrow_checker/outline/3_fnmut_reborrowing_captures_disallowed
+cr iterates on code from previous section
+
+cx links/four_limitations_rust_borrow_checker/outline/3_fnmut_reborrowing_captures_disallowed rust/std/iter/trait/copied
+cr iterator from previous section modified to pass everything
+cr by value instead of by reference using copied method
+
+cx ^ rust/std/ops/traits/FnMut
+
+cx ^ rust/book/toc/13_funclang_features/13_1_closures
+
+cx links/four_limitations_rust_borrow_checker/discussion rust/polonius
+
+cx links/rust_critical_retrospective osdev/xous
+cx ^ osdev/QNX
+cx ^ hardware/precursor
+cr xous was designed for security-first platforms
+cr like precursor
+
+cx ^ hardware/precursor/betrusted
+cr "being narrowly scoped means we could also
+cr take advantage of having our CPU run in an FPGA"
+
+cx links/rust_critical_retrospective/outline/1_what_was_sold rust/embedded_rust/toc/01_introduction/01_02_no_std
+cr "Even though its `no-std` support was then-nascent,
+cr it was a strongly-typed, memory-safe language with
+cr good tooling and a burgeoning ecosystem."
+
+cx links/not_abstraction_layer_of_indirection links/cognitive_load_matters/outline/07_layered_architecture
+cr "Abstraction is supposed to hide complexity, here
+cr it just adds indirection."
+
+cx links/dont_implement_layered_arch ^
+cr "Layers of abstraction aren't free of charge, they
+cr are to held in our working memory"
+
+cx osdev/duskos links/tumble_forth
+cx osdev/collapseos ^
+
+cx links/database_review_2024/outline/1_licenses databases/redis
+cr switch away from BSD license in march 2024, much backlash and forks
+
+cx ^ databases/redict
+cx ^ databases/valkey
+cx ^ databases/redis/forks
+cx ^ databases/elasticsearch
+cr elastic NL revert to AGPL august 2024 3 years after license change in 2021
+
+cx ^ databases/dragonfly
+cr mentioned
+
+cx links/database_review_2024/outline/2_gangwar databases/snowflake
+
+cx ^ databases/databricks
+
+cx links/database_review_2024/outline/3_duckdb databases/duckdb
+
+cx links/database_review_2024/outline/4_random databases/limbo
+
+cx ^ sqlite/libsql
+
+

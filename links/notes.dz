@@ -1,0 +1,256 @@
+ns links
+
+sn four_limitations_rust_borrow_checker
+tg outlined
+
+zz various notes
+ns links/four_limitations_rust_borrow_checker
+
+nn url
+hl https://blog.polybdenum.com/2024/12/21/four-limitations-of-rust-s-borrow-checker.html
+
+nn outline
+co $ ..
+
+ns +outline
+
+nn 1_checking_doesnt_take_match_return_into_account
+ln Checking doesn't take match and return into account
+co $ ..
+
+ns +1_checking_doesnt_take_match_return_into_account
+nn hashmap_lookup
+ln Hashmap lookup: do something different if key is
+ln not present
+
+ns ..
+
+nn 2_async_is_suffering
+ln Being async is suffering
+co $ ..
+
+nn 3_fnmut_reborrowing_captures_disallowed
+ln FnMut does not allow reborrowing of captures
+co $ ..
+
+nn 4_send_checker_not_control_flow_aware
+ln send checker not control flow aware
+co $ ..
+
+ns links
+sn rust_critical_retrospective
+tg outlined
+
+ns links/rust_critical_retrospective
+nn url
+hl https://www.bunniestudios.com/blog/2022/rust-a-critical-retrospective/
+
+nn outline
+co $ ..
+
+ns +outline
+
+nn 1_what_was_sold
+ln Rust: what was sold to me
+co $ ..
+
+nn 2_rough_edges
+ln The Rough Edges of Rust
+co $ ..
+
+nn 3_exceeded_expectations
+ln Exceeded Expectations
+co $ ..
+
+zz outline
+ns ..
+
+ns links
+sn cognitive_load_matters
+tg outlined
+
+ns links/cognitive_load_matters
+
+nn outline
+co $ ..
+ln outline
+
+ns +outline
+
+nn 00_introduction
+hl https://minds.md/zakirullin/cognitive#intro
+co $ ..
+
+
+nn 01_cognitive_load
+hl https://minds.md/zakirullin/cognitive#cognitive-load
+co $ ..
+
+
+nn 01_cognitive_load/4_chunks
+hl https://github.com/zakirullin/cognitive-load/issues/16
+ln The average human can hold about 4 chunks
+ln of stuff in their head at one point.
+ln Once it goes past this, things become more difficult
+ln to reason with
+co $ ..
+
+nn 02_types_of_cognitive_load
+hl https://minds.md/zakirullin/cognitive#types
+co $ ..
+
+nn 02_types_of_cognitive_load/intrinsic
+ln Intrinsic: Caused by an inherintely difficult
+ln task
+co $ ..
+
+nn 02_types_of_cognitive_load/extraneous
+ln Extraneous: created by the way information is
+ln presented.
+co $ ..
+co $ ../intrinsic
+
+
+nn 03_complex_conditionals
+hl https://minds.md/zakirullin/cognitive#complex-conditionals
+co $ ..
+
+nn 04_inheritance_nightmare
+hl https://minds.md/zakirullin/cognitive#inheritance
+co $ ..
+
+nn 05_shallow_modules
+hl https://minds.md/zakirullin/cognitive#shallow-modules
+ln Too many small methods, classes, or modules
+co $ ..
+
+nn 05_shallow_modules/shallow_module
+ln Shallow Module: interface is relatively complex
+ln to the small complexity it provides
+co $ ..
+
+nn 05_shallow_modules/deep_module
+ln Deep Module: simple interface, complex functionality
+co $ ..
+
+nn 06_feature_rich_languages
+hl https://minds.md/zakirullin/cognitive#feature-rich-languages
+co $ ..
+
+nn 07_layered_architecture
+hl https://minds.md/zakirullin/cognitive#layers
+co $ ..
+
+nn 08_domain_driven_design
+hl https://minds.md/zakirullin/cognitive#ddd
+co $ ..
+
+nn 09_examples
+hl https://minds.md/zakirullin/cognitive#examples
+co $ ..
+
+nn 10_cognitive_load_familiar_projects
+hl https://minds.md/zakirullin/cognitive#familiar
+co $ ..
+
+nn 11_conclusion
+hl https://minds.md/zakirullin/cognitive#conclusion
+co $ ..
+
+zz outline
+ns ..
+
+ns links
+sn tumble_forth
+tg outlined
+
+ns links/tumble_forth
+nn outline
+co $ ..
+td read tumble forth
+ns +outline
+
+nn 01_buckle_up_dorothy
+hl http://tumbleforth.hardcoded.net/01-duskcc/01-buckleup.html
+co $ ..
+
+nn 02_liberation_bare_metal
+hl http://tumbleforth.hardcoded.net/01-duskcc/02-baremetal.html
+co $ ..
+
+nn 03_one_sector_rule_them_all
+hl http://tumbleforth.hardcoded.net/01-duskcc/03-onesector.html
+co $ ..
+
+nn 04_words_in_the_shell
+hl http://tumbleforth.hardcoded.net/01-duskcc/04-wordsshell.html
+co $ ..
+
+nn 05_do_lookup
+hl http://tumbleforth.hardcoded.net/01-duskcc/05-dolookup.html
+co $ ..
+
+nn 06_tale_two_stacks
+hl http://tumbleforth.hardcoded.net/01-duskcc/06-taletwostacks.html
+co $ ..
+
+nn 07_babys_first_steps
+hl http://tumbleforth.hardcoded.net/01-duskcc/07-babywalk.html
+co $ ..
+
+nn 08_unbearable_immediateness_compiling
+hl http://tumbleforth.hardcoded.net/01-duskcc/08-immediate.html
+co $ ..
+
+nn 09_dusk_til_C
+hl http://tumbleforth.hardcoded.net/01-duskcc/09-dusktillc.html
+co $ ..
+
+nn 10_feeding_beast
+hl http://tumbleforth.hardcoded.net/01-duskcc/10-beast.html
+co $ ..
+
+nn 11_eye_of_compiler
+hl http://tumbleforth.hardcoded.net/01-duskcc/11-eye.html
+co $ ..
+
+ns ..
+
+ns links
+sn database_review_2024
+tg outlined
+ns links/database_review_2024
+
+
+nn outline
+co $ ..
+
+ns +outline
+
+nn 1_licenses
+hl https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html#licenses
+ln It’s My Database and I’m Going to License it the Way I Want!
+co $ ..
+
+nn 2_gangwar
+hl https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html#gangwar
+ln The Databricks vs. Snowflake Gangwar Continues
+co $ ..
+
+nn 3_duckdb
+ln Shoving Ducks Into Everything
+hl https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html#duckdb
+co $ ..
+
+nn 4_random
+hl https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html#random
+ln random happenings
+co $ ..
+
+nn 5_larry
+hl https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html#larry
+ln Can’t Stop, Won’t Stop 
+co $ ..
+
+zz outline
+ns ..

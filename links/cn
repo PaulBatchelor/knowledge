@@ -1,0 +1,10 @@
+DZFILE=links.dz
+
+if [ "$#" -gt 0 ]
+then
+DZFILE=$1
+fi
+
+NODE=$(grep "^nn" < $DZFILE | tail -n 1 | cut -d ' ' -f 2)
+git commit -a -m "$NODE"
+git push

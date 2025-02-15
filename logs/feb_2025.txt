@@ -183,7 +183,7 @@ Eventually, the idea would be to build some abstractions
 on top of this so it'll be easy to build up these trees
 programatically from a scripting language (and/or ilo?).
 
-@11:29 beginnig work on stretch boxes
+@11:29 beginning work on stretch boxes #timelog:00:18:09
 #! dz dagzet/dzb/tasks/stretch_boxes
 ADD 45
 
@@ -193,7 +193,52 @@ ADD 45
 @11:50 drawing in region should clip
 #! dz $
 
-@12:29 Initial test for stretch box #timelog:00:18:09
+@12:29 Initial test for stretch box
 #! dz $
 Use outline to construct how we initially want things
 to look, then create failing test.
+
+@15:57 stretchbox initial implementing #timelog:01:17:09
+#! dz $
+
+@15:59 how is this going to work?
+#! dz $
+stretchiness should be a flag. eventually for the horizontal
+and vertical, so set to be 0b11 by default.
+---
+I believe stretching is an operation that can only be
+done after the tree has been populated. From there, it's
+a matter of DFS-ing into the tree and updating the bounds
+that way.
+---
+Each node will check their parent to see if they are within
+bounds, and readjust the parent bounds accordingly.
+---
+I was initially imagining just adjusting width/height, but
+really all four points should be checked for completeness.
+Make sure the stretch flag has 4 bits, and enable them
+all by default for now.
+---
+My test is only covering bottom right coordinate. Oh well.
+---
+Child has four points top left/right and bottom left/right.
+---
+Bottom Right: If out of bounds, re-adjust width/height
+---
+Bottom Left: re-adjust x position and height
+---
+Top Right: re-adjust width and y
+---
+Top left: re-adjust x and y.
+---
+Note that ultimately things should always grow in size,
+not become smaller.
+---
+Convert xywh to 4 points. Perform calculations on these
+points, then convert back to xywh.a
+
+@16:24 attempting to implement
+#! dz $
+
+@17:22 doesn't work. will have to troubleshoot later
+#! dz $

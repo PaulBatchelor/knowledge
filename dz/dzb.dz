@@ -32,3 +32,12 @@ ln an outline view.
 nn tasks/stretch_boxes
 ln Implement stretch boxes
 co $ ..
+
+nn tasks/remove_stretch_boxes
+co $ ..
+
+nn tasks/simple_font_rendering
+co $ ..
+
+nn tasks/outline_view
+co $ ..

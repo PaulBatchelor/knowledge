@@ -242,3 +242,23 @@ points, then convert back to xywh.a
 
 @17:22 doesn't work. will have to troubleshoot later
 #! dz $
+
+@2025-02-15 Ridgewood
+@15:51 Hello I am rethinking this again
+#! dz dagzet/dzb/tasks/architecture_planning
+I asked myself the question "how do I center a stretchy box?",
+and couldn't answer it well. This is when I realized
+I was doing something hard. Undoing my efforts for now,
+going to just work on building an interactive tree view.
+
+@15:55 ripping out stretchbox code #timelog:00:12:19
+#! dz dagzet/dzb/tasks/remove_stretch_boxes
+
+@16:10 create simple bitmap font renderer #timelog:00:28:48
+#! dz dagzet/dzb/tasks/simple_font_rendering
+
+@17:36 Outline View initial scaffolding #timelog:00:15:00
+#! dz dagzet/dzb/tasks/outline_view
+
+@18:16 Add initial drawing test #timelog:00:15:44
+#! dz dagzet/dzb/tasks/outline_view

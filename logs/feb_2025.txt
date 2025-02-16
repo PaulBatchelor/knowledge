@@ -262,3 +262,10 @@ going to just work on building an interactive tree view.
 
 @18:16 Add initial drawing test #timelog:00:15:44
 #! dz dagzet/dzb/tasks/outline_view
+
+@19:35 more drawing #timelog:00:11:39
+#! dz dagzet/dzb/tasks/outline_view
+
+@20:28 quick stuff, quitting early #timelog:00:12:13
+#! dz dagzet/dzb/tasks/outline_view
+pains in my arm. backing off.

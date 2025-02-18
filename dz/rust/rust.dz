@@ -470,3 +470,8 @@ co $ ..
 nn update_codebase_rust_2024
 hl https://codeandbitters.com/rust-2024-upgrade/
 ln Updating a large codebase to Rust 2024
+
+nn rust_for_rustaceans
+hl https://nostarch.com/rust-rustaceans
+tg books
+

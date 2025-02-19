@@ -2756,3 +2756,7 @@ hl https://elite.bbcelite.com/
 ln elite on 6502: the original 6502
 ln assembly code, heavily commented
 tg gamedev
+
+nn XOR
+hl https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/xor/
+tg bitwise

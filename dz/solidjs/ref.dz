@@ -19,18 +19,69 @@ ln many reactive computations. createMemo creates a
 ln readonly reactive value equal to the return value
 ln of the given function and makes sure that function
 ln only gets executed when its dependencies change.
+ff What does createMemo do?
+fb Memos let you efficiently use a derived value in
+fb many reactive computations. createMemo creates a
+fb readonly reactive value equal to the return value
+fb of the given function and makes sure that function
+fb only gets executed when its dependencies change.
 
 nn createSignal
 hl https://docs.solidjs.com/reference/basic-reactivity/create-signal
 co $ ..
+ln Signals are the most basic reactive
+ln primitive. They track a single value (which can
+ln be a value of any type) that changes over time.
+ff What does createSignal do?
+fb Signals are the most basic reactive
+fb primitive. They track a single value (which can
+fb be a value of any type) that changes over time.
 
 nn createEffect
 hl https://docs.solidjs.com/reference/basic-reactivity/create-effect
 co $ ..
+ln Effects are a general way to make
+ln arbitrary code ("side effects") run whenever
+ln dependencies change, e.g., to modify the DOM
+ln manually. createEffect creates a new computation
+ln that runs the given function in a tracking scope,
+ln thus automatically tracking its dependencies,
+ln and automatically reruns the function whenever
+ln the dependencies update.
+ff What does createEffect do?
+fb Effects are a general way to make
+fb arbitrary code ("side effects") run whenever
+fb dependencies change, e.g., to modify the DOM
+fb manually. createEffect creates a new computation
+fb that runs the given function in a tracking scope,
+fb thus automatically tracking its dependencies,
+fb and automatically reruns the function whenever
+fb the dependencies update.
 
 nn createResource
 hl https://docs.solidjs.com/reference/basic-reactivity/create-resource
 co $ ..
+ln createResource takes an asynchronous fetcher
+ln function and returns a signal that is updated
+ln with the resulting data when the fetcher
+ln completes.
+ln There are two ways to use createResource:
+ln you can pass the fetcher function as the sole
+ln argument, or you can additionally pass a source
+ln signal as the first argument. The source signal
+ln will retrigger the fetcher whenever it changes,
+ln and its value will be passed to the fetcher.
+ff What does createResource do?
+fb createResource takes an asynchronous fetcher
+fb function and returns a signal that is updated
+fb with the resulting data when the fetcher
+fb completes.
+fb There are two ways to use createResource:
+fb you can pass the fetcher function as the sole
+fb argument, or you can additionally pass a source
+fb signal as the first argument. The source signal
+fb will retrigger the fetcher whenever it changes,
+fb and its value will be passed to the fetcher.
 
 
 zz -basic_reactivity
@@ -52,6 +103,10 @@ co $ ..
 ln The <For> component is used to render a list of
 ln items. It is similar to the .map() function in
 ln JavaScript.
+ff What does the For component do?
+fb The <For> component is used to render a list of
+fb items. It is similar to the .map() function in
+fb JavaScript.
 
 nn show
 hl https://docs.solidjs.com/reference/components/show
@@ -61,6 +116,12 @@ ln render part of the view: it renders children when
 ln when is truthy, a fallback otherwise. It is
 ln similar to the ternary operator (when ? children :
 ln fallback) but is ideal for templating JSX.
+ff What does the show component do?
+fb The Show control flow is used to conditionally
+fb render part of the view: it renders children when
+fb when is truthy, a fallback otherwise. It is
+fb similar to the ternary operator (when ? children :
+fb fallback) but is ideal for templating JSX.
 
 nn match_switch
 hl https://docs.solidjs.com/reference/components/switch-and-match
@@ -68,6 +129,10 @@ co $ ..
 ln Useful for when there are more than 2 mutual
 ln exclusive conditions. It is a more flexible
 ln version of the if-else-if-else-if-else-... chain.
+ff What do the match/switch components do?
+fb Useful for when there are more than 2 mutual
+fb exclusive conditions. It is a more flexible
+fb version of the if-else-if-else-if-else-... chain.
 
 zz -components
 ns ..
@@ -93,6 +158,11 @@ ln on is designed to be passed into a computation to
 ln make its dependencies explicit. If an array of
 ln dependencies is passed, input and prevInput are
 ln arrays.
+ff what does on do?
+fb on is designed to be passed into a computation to
+fb make its dependencies explicit. If an array of
+fb dependencies is passed, input and prevInput are
+fb arrays.
 
 nn untrack
 hl https://docs.solidjs.com/reference/reactive-utilities/untrack
@@ -105,11 +175,15 @@ ln reactive context.
 co $ on
 cr used with code example in on(), in the block of code
 cr that shows what the equivalent code is doing without on
+ff what does untrack do?
+fb Ignores tracking any of the dependencies in the
+fb executing code block and returns the value. This
+fb helper is useful when a certain prop will never
+fb update and thus it is ok to use it outside of the
+fb reactive context.
 
 zz -reactive_utilities
 ns ..
-
-
 
 nn rendering
 ln Rendering

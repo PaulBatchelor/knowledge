@@ -67,4 +67,5 @@ dz/grokking_simplicity
 dz/DDIA
 dz/vim.dz
 dz/dzb.dz
+dz/solidjs
 dz/zzz

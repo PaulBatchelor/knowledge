@@ -34,6 +34,13 @@ ln done through the use of getters and setters.
 co $ ?solidjs/glossary/signal
 rm similar to useState?
 co ?solidjs/ref/basic_reactivity/createSignal $
+ff What are signals? (SolidJS)
+fb Signals serve as core elements in reactive
+fb systems, playing an important role in data
+fb management and system responsiveness. They are
+fb responsible for storing and managing data, as well
+fb as triggering updates across the system. This is
+fb done through the use of getters and setters.
 
 nn signals/getter
 ln Getter: A function responsible for accessing the
@@ -42,6 +49,11 @@ ln access the data stored in a signal within a
 ln component.
 co $ ?solidjs/glossary/getter
 co $ ..
+ff what is a Getter? (SolidJS)
+fb Getter: A function responsible for accessing the
+fb current value of the signal. You call a getter to
+fb access the data stored in a signal within a
+fb component.
 
 nn signals/setter
 ln Setter: The function used to modify a signal's
@@ -50,6 +62,11 @@ ln application, you call a setter to update the value
 ln of a signal.
 co $ ?solidjs/glossary/setter
 co $ ..
+ff What is a Setter? (SolidJS)
+fb Setter: The function used to modify a signal's
+fb value. To trigger reactive updates across an
+fb application, you call a setter to update the value
+fb of a signal.
 
 nn subscribers
 co $ ..
@@ -59,12 +76,22 @@ ln in signals and updating the system accordingly.
 ln They are automated responders that keep the system
 ln up-to-date with the latest data changes.
 co ?solidjs/ref/basic_reactivity/createEffect $
+ff What are subscribers? (SolidJS)
+fb Subscribers are the other core element in reactive
+fb systems. They are responsible for tracking changes
+fb in signals and updating the system accordingly.
+fb They are automated responders that keep the system
+fb up-to-date with the latest data changes.
 
 nn subscribers/observation
 co $ ..
 ln Observation: At their core, subscribers observe
 ln signals. This keeps the subscriber primed to pick
-ln up on any changes to the signal they are tracking.
+ln up on any changes to the signal they are tracking.s
+ff Explain observation in the context of signals. (SolidJS)
+fb Observation: At their core, subscribers observe
+fb signals. This keeps the subscriber primed to pick
+fb up on any changes to the signal they are tracking.s
 
 nn subscribers/response
 co $ ..
@@ -73,6 +100,12 @@ ln notified. This triggers the subscriber to respond
 ln to the change in the signal. This can involve
 ln tasks like updating the UI or calling external
 ln functions.
+ff Explain "response" in the context of signals. (SolidJS)
+fb Response: When a signal changes, the subscriber is
+fb notified. This triggers the subscriber to respond
+fb to the change in the signal. This can involve
+fb tasks like updating the UI or calling external
+fb functions.
 
 zz -reactive_principles
 ns ..
@@ -90,6 +123,11 @@ cr signals and subscribers.
 co ../reactive_principles/signals $
 cr With Solid, state management is handled through
 cr signals and subscribers.
+ff What is state management? (SignalJS)
+fb State management is the process of managing the
+fb state of an application. This involves storing and
+fb updating data, as well as responding to the
+fb changes in it.
 
 ns +state_management
 
@@ -100,6 +138,10 @@ ln Tracking changes involves monitoring any updates
 ln to the data and responding accordingly. This is
 ln done through the use of subscribers.
 co ../../reactive_principles/subscribers $
+ff What does it mean to track changes in a reactive system?
+fb Tracking changes involves monitoring any updates
+fb to the data and responding accordingly. This is
+fb done through the use of subscribers.
 
 nn updating_the_UI
 hl https://docs.solidjs.com/concepts/intro-to-reactivity#updating-the-ui
@@ -108,6 +150,11 @@ ln The UI of a Solid application is built using JSX.
 ln JSX creates a tracking scope behind the scenes,
 ln which allows signals to be tracked within the
 ln return statement of a component.
+ff How is UI updated in solidJS?
+fb The UI of a Solid application is built using JSX.
+fb JSX creates a tracking scope behind the scenes,
+fb which allows signals to be tracked within the
+fb return statement of a component.
 
 zz -state_management
 ns ..
@@ -150,6 +197,11 @@ cr Additionally, Solid's reactive system introduces
 cr fine-grained reactivity with JSX. This updates
 cr only the necessary parts of the DOM when changes
 cr occur in the underlying state.
+ff What is JSX?
+fb JSX is an extension for JavaScript. It allows you
+fb to write HTML-like code inside your JavaScript
+fb file which keeps your rendering logic and content
+fb in the same place.
 
 ns +understanding_jsx
 
@@ -191,6 +243,12 @@ ln with the passing of data and configurations to
 ln components within an application. They connect the
 ln component with the data it requires, for seamless
 ln data flows and dynamic interactions.
+ff What are JSX props?
+fb JSX properties, commonly known as "props," help
+fb with the passing of data and configurations to
+fb components within an application. They connect the
+fb component with the data it requires, for seamless
+fb data flows and dynamic interactions.
 
 ns +jsx_props
 
@@ -199,6 +257,10 @@ co $ ..
 ln Static props: In Solid's JSX, static props are
 ln integrated directly into the HTML by cloning the
 ln template and using them as attributes.
+ff What are static props?
+fb Static props: In Solid's JSX, static props are
+fb integrated directly into the HTML by cloning the
+fb template and using them as attributes.
 
 nn dynamic_props
 co $ ..
@@ -208,6 +270,13 @@ ln An example is changing the style of an element in
 ln response to interactions within an application.
 ln This can be expressed in the form of signals
 ln (value={value()}).
+ff What are dynamic props?
+fb Dynamic props: Dynamic props rely on state,
+fb allowing the content or properties to be dynamic.
+fb An example is changing the style of an element in
+fb response to interactions within an application.
+fb This can be expressed in the form of signals
+fb (value={value()}).
 
 nn data_transfer
 co $ ..
@@ -247,6 +316,10 @@ ln Components are the building blocks of Solid
 ln applications. These units are reusable and can be
 ln combined to create more complex applications.
 at ol
+ff What are components?
+fb Components are the building blocks of Solid
+fb applications. These units are reusable and can be
+fb combined to create more complex applications.
 
 ns +basics
 
@@ -261,6 +334,15 @@ ln tree. Child components are nested within the
 ln primary component, and those components can have
 ln their own child components. This nesting can
 ln continue as needed.
+ff What is a Component Tree?
+fb A web page is displayed by rendering a component
+fb tree, which is a hierarchical structure of
+fb components. At the top of the tree is the primary
+fb application component, which is the root of the
+fb tree. Child components are nested within the
+fb primary component, and those components can have
+fb their own child components. This nesting can
+fb continue as needed.
 
 nn component_lifecycles
 hl https://docs.solidjs.com/concepts/components/basics#component-lifecycles
@@ -275,6 +357,12 @@ cr A Solid component's lifecycle is different from
 cr other frameworks, as it is tied to the concept of
 cr reactivity.
 at ol
+ff What is a component lifecycle?
+fb Components have a lifecycle that defines how they
+fb are created, updated, and destroyed. A Solid
+fb component's lifecycle is different from other
+fb frameworks, as it is tied to the concept of
+fb reactivity.
 
 ns +component_lifecycles
 
@@ -382,6 +470,13 @@ ln factors like user inputs. This is useful for
 ln creating components that can adapt to different
 ln scenarios without having to create multiple
 ln versions of the same component.
+ff What is dynamic styling?
+fb Dynamic styling provides a way to change the
+fb appearance of a component based on state or other
+fb factors like user inputs. This is useful for
+fb creating components that can adapt to different
+fb scenarios without having to create multiple
+fb versions of the same component.
 
 nn classList
 hl https://docs.solidjs.com/concepts/components/class-style#classlist
@@ -405,6 +500,11 @@ ln response to specific events occurring in the
 ln browser, such as when a user clicks or taps on an
 ln element.
 at ol
+ff What are event handlers?
+fb Event handlers are functions that are called in
+fb response to specific events occurring in the
+fb browser, such as when a user clicks or taps on an
+fb element.
 
 ns +event_handlers
 
@@ -414,6 +514,11 @@ ln on: adds an event listener to the element, this is
 ln also known as a native event. Native events flow
 ln through the DOM tree, and provie more control over the
 ln behavior of the vent.
+ff What is a native event?
+fb on: adds an event listener to the element, this is
+fb also known as a native event. Native events flow
+fb through the DOM tree, and provie more control over the
+fb behavior of the vent.
 
 nn delegated_event
 co $ ..
@@ -424,6 +529,12 @@ ln the component tree, and save some resources by
 ln performing better on commonly used events.
 co ?components/basics/component_trees $
 cr delegated events flow through the component tree
+ff What is a delegated event?
+fb on__ adds an event listener to the document and
+fb dispatches it to the element. This can be referred to
+fb as a delegated event. Delegated events flow through
+fb the component tree, and save some resources by
+fb performing better on commonly used events.
 
 nn using_events
 hl https://docs.solidjs.com/concepts/components/event-handlers#using-events
@@ -457,6 +568,13 @@ ln delegation, through the on__ form . In this method
 ln event listeners are attached to the document
 ln element, and dispatch events to the relevant
 ln elements as they bubble up.
+ff What is event delegation?
+fb Instead of attaching event listeners to every
+fb individual element, Solid uses synthetic event
+fb delegation, through the on__ form . In this method
+fb event listeners are attached to the document
+fb element, and dispatch events to the relevant
+fb elements as they bubble up.
 
 ns +event_delegation
 

@@ -1,1 +1,3 @@
-solidjs.dz
++
+solidjs.dz ref.dz core.dz glossary.dz
+.

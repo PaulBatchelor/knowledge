@@ -1,0 +1,2 @@
+DZ full::full.apkg
+SolidJS:webdev/solidjs:solidjs.apkg

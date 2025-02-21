@@ -1,0 +1,128 @@
+ns webdev/solidjs
+
+nn ref
+at ol
+co $ ..
+
+ns +ref
+
+nn basic_reactivity
+ln Basic Reactivity
+co $ ..
+
+ns +basic_reactivity
+nn createMemo
+hl https://docs.solidjs.com/reference/basic-reactivity/create-memo
+co $ ..
+ln Memos let you efficiently use a derived value in
+ln many reactive computations. createMemo creates a
+ln readonly reactive value equal to the return value
+ln of the given function and makes sure that function
+ln only gets executed when its dependencies change.
+
+nn createSignal
+hl https://docs.solidjs.com/reference/basic-reactivity/create-signal
+co $ ..
+
+nn createEffect
+hl https://docs.solidjs.com/reference/basic-reactivity/create-effect
+co $ ..
+
+nn createResource
+hl https://docs.solidjs.com/reference/basic-reactivity/create-resource
+co $ ..
+
+
+zz -basic_reactivity
+ns ..
+
+
+nn component_APIs
+ln component APIs
+co $ ..
+
+nn components
+ln Components
+
+ns +components
+
+nn for
+hl https://docs.solidjs.com/reference/components/for
+co $ ..
+ln The <For> component is used to render a list of
+ln items. It is similar to the .map() function in
+ln JavaScript.
+
+nn show
+hl https://docs.solidjs.com/reference/components/show
+co $ ..
+ln The Show control flow is used to conditionally
+ln render part of the view: it renders children when
+ln when is truthy, a fallback otherwise. It is
+ln similar to the ternary operator (when ? children :
+ln fallback) but is ideal for templating JSX.
+
+nn match_switch
+hl https://docs.solidjs.com/reference/components/switch-and-match
+co $ ..
+ln Useful for when there are more than 2 mutual
+ln exclusive conditions. It is a more flexible
+ln version of the if-else-if-else-if-else-... chain.
+
+zz -components
+ns ..
+
+nn JSX_attributes
+ln JSX Attributes
+co $ ..
+
+nn lifecycle
+ln Lifecycle
+co $ ..
+
+nn reactive_utilities
+ln Reactive Utilities
+co $ ..
+at ol
+
+ns +reactive_utilities
+nn on
+hl https://docs.solidjs.com/reference/reactive-utilities/on-util
+co $ ..
+ln on is designed to be passed into a computation to
+ln make its dependencies explicit. If an array of
+ln dependencies is passed, input and prevInput are
+ln arrays.
+
+nn untrack
+hl https://docs.solidjs.com/reference/reactive-utilities/untrack
+co $ ..
+ln Ignores tracking any of the dependencies in the
+ln executing code block and returns the value. This
+ln helper is useful when a certain prop will never
+ln update and thus it is ok to use it outside of the
+ln reactive context.
+co $ on
+cr used with code example in on(), in the block of code
+cr that shows what the equivalent code is doing without on
+
+zz -reactive_utilities
+ns ..
+
+
+
+nn rendering
+ln Rendering
+co $ ..
+
+nn secondary_primitives
+ln Secondary Primitives
+co $ ..
+
+nn store_utilities
+ln Store Utilities
+co $ ..
+
+nn server_utilities
+ln Server Utiliites
+co $ ..

@@ -1,0 +1,523 @@
+ns webdev/solidjs/docs/core
+
+nn concepts
+co $ ..
+at ol
+
+ns +concepts
+
+nn intro_reactivity
+hl https://docs.solidjs.com/concepts/intro-to-reactivity
+co $ ..
+at ol
+
+ns +intro_reactivity
+
+nn importance_reactivity
+co $ ..
+
+nn reactive_principles
+co $ ..
+at ol
+
+
+ns +reactive_principles
+
+nn signals
+co $ ..
+ln Signals serve as core elements in reactive
+ln systems, playing an important role in data
+ln management and system responsiveness. They are
+ln responsible for storing and managing data, as well
+ln as triggering updates across the system. This is
+ln done through the use of getters and setters.
+co $ ?solidjs/glossary/signal
+rm similar to useState?
+co ?solidjs/ref/basic_reactivity/createSignal $
+
+nn signals/getter
+ln Getter: A function responsible for accessing the
+ln current value of the signal. You call a getter to
+ln access the data stored in a signal within a
+ln component.
+co $ ?solidjs/glossary/getter
+co $ ..
+
+nn signals/setter
+ln Setter: The function used to modify a signal's
+ln value. To trigger reactive updates across an
+ln application, you call a setter to update the value
+ln of a signal.
+co $ ?solidjs/glossary/setter
+co $ ..
+
+nn subscribers
+co $ ..
+ln Subscribers are the other core element in reactive
+ln systems. They are responsible for tracking changes
+ln in signals and updating the system accordingly.
+ln They are automated responders that keep the system
+ln up-to-date with the latest data changes.
+co ?solidjs/ref/basic_reactivity/createEffect $
+
+nn subscribers/observation
+co $ ..
+ln Observation: At their core, subscribers observe
+ln signals. This keeps the subscriber primed to pick
+ln up on any changes to the signal they are tracking.
+
+nn subscribers/response
+co $ ..
+ln Response: When a signal changes, the subscriber is
+ln notified. This triggers the subscriber to respond
+ln to the change in the signal. This can involve
+ln tasks like updating the UI or calling external
+ln functions.
+
+zz -reactive_principles
+ns ..
+
+nn state_management
+hl https://docs.solidjs.com/concepts/intro-to-reactivity#state-management
+co $ ..
+ln State management is the process of managing the
+ln state of an application. This involves storing and
+ln updating data, as well as responding to the
+ln changes in it.
+co ../reactive_principles/subscribers $
+cr With Solid, state management is handled through
+cr signals and subscribers.
+co ../reactive_principles/signals $
+cr With Solid, state management is handled through
+cr signals and subscribers.
+
+ns +state_management
+
+nn tracking_changes
+hl https://docs.solidjs.com/concepts/intro-to-reactivity#tracking-changes
+co $ ..
+ln Tracking changes involves monitoring any updates
+ln to the data and responding accordingly. This is
+ln done through the use of subscribers.
+co ../../reactive_principles/subscribers $
+
+nn updating_the_UI
+hl https://docs.solidjs.com/concepts/intro-to-reactivity#updating-the-ui
+co $ ..
+ln The UI of a Solid application is built using JSX.
+ln JSX creates a tracking scope behind the scenes,
+ln which allows signals to be tracked within the
+ln return statement of a component.
+
+zz -state_management
+ns ..
+
+nn sync_vs_async
+hl https://docs.solidjs.com/concepts/intro-to-reactivity#synchronous-vs-asynchronous
+co $ ..
+
+ns +sync_vs_async
+
+nn synchronous_reactivity
+hl https://docs.solidjs.com/concepts/intro-to-reactivity#synchronous-reactivity
+co $ ..
+
+nn asynchronous_reactivity
+hl https://docs.solidjs.com/concepts/intro-to-reactivity#asynchronous-reactivity
+co $ ..
+
+zz -sync_vs_async
+ns ..
+
+nn key_concepts
+hl https://docs.solidjs.com/concepts/intro-to-reactivity#key-concepts
+co $ ..
+
+zz -intro_reactivity
+ns ..
+
+
+nn understanding_jsx
+hl https://docs.solidjs.com/concepts/understanding-jsx
+co $ ..
+at ol
+ln JSX is an extension for JavaScript. It allows you
+ln to write HTML-like code inside your JavaScript
+ln file which keeps your rendering logic and content
+ln in the same place.
+co ../../advanced_concepts/fine_grained_reactivity $
+cr Additionally, Solid's reactive system introduces
+cr fine-grained reactivity with JSX. This updates
+cr only the necessary parts of the DOM when changes
+cr occur in the underlying state.
+
+ns +understanding_jsx
+
+nn how_solid_uses_jsx
+hl https://docs.solidjs.com/concepts/understanding-jsx#how-solid-uses-jsx
+co $ ..
+
+nn using_jsx_solid
+hl https://docs.solidjs.com/concepts/understanding-jsx#using-jsx-in-solid
+co $ ..
+at ol
+
+ns +using_jsx_solid
+
+nn return_single_root_elem
+hl https://docs.solidjs.com/concepts/understanding-jsx#return-a-single-root-element
+co $ ..
+
+nn close_all_tags
+hl https://docs.solidjs.com/concepts/understanding-jsx#close-all-tags
+co $ ..
+
+nn props_vs_attr
+hl https://docs.solidjs.com/concepts/understanding-jsx#properties-vs-attributes
+co $ ..
+at ol
+
+ns +props_vs_attr
+
+nn html_attr
+hl https://docs.solidjs.com/concepts/understanding-jsx#html-attributes
+co $ ..
+
+nn jsx_props
+hl https://docs.solidjs.com/concepts/understanding-jsx#html-attributes
+co $ ..
+ln JSX properties, commonly known as "props," help
+ln with the passing of data and configurations to
+ln components within an application. They connect the
+ln component with the data it requires, for seamless
+ln data flows and dynamic interactions.
+
+ns +jsx_props
+
+nn static_props
+co $ ..
+ln Static props: In Solid's JSX, static props are
+ln integrated directly into the HTML by cloning the
+ln template and using them as attributes.
+
+nn dynamic_props
+co $ ..
+ln Dynamic props: Dynamic props rely on state,
+ln allowing the content or properties to be dynamic.
+ln An example is changing the style of an element in
+ln response to interactions within an application.
+ln This can be expressed in the form of signals
+ln (value={value()}).
+
+nn data_transfer
+co $ ..
+ln Data transfer: Props are also used to fill
+ln components with data that comes from resources,
+ln like createResource calls. This results in
+ln components that react in real-time to data
+ln changes.
+co ?solidjs/ref/basic_reactivity/createResource $
+cr Props are also used to fill components with data
+cr that comes from resources, like createResource
+cr calls.
+
+zz -jsx_props
+ns ..
+
+
+zz -props_vs_attr
+ns ..
+
+zz -using_jsx_solid
+ns ..
+
+
+zz -understanding_jsx
+ns ..
+
+nn components
+co $ ..
+
+ns +components
+
+nn basics
+hl https://docs.solidjs.com/concepts/components/basics
+co $ ..
+ln Components are the building blocks of Solid
+ln applications. These units are reusable and can be
+ln combined to create more complex applications.
+at ol
+
+ns +basics
+
+nn component_trees
+hl https://docs.solidjs.com/concepts/components/basics#component-trees
+co $ ..
+ln A web page is displayed by rendering a component
+ln tree, which is a hierarchical structure of
+ln components. At the top of the tree is the primary
+ln application component, which is the root of the
+ln tree. Child components are nested within the
+ln primary component, and those components can have
+ln their own child components. This nesting can
+ln continue as needed.
+
+nn component_lifecycles
+hl https://docs.solidjs.com/concepts/components/basics#component-lifecycles
+co $ ..
+ln Components have a lifecycle that defines how they
+ln are created, updated, and destroyed. A Solid
+ln component's lifecycle is different from other
+ln frameworks, as it is tied to the concept of
+ln reactivity.
+co ?intro_reactivity $
+cr A Solid component's lifecycle is different from
+cr other frameworks, as it is tied to the concept of
+cr reactivity.
+at ol
+
+ns +component_lifecycles
+
+nn initialization_configuration
+hl https://docs.solidjs.com/concepts/components/basics#initialization--configuration
+co $ ..
+ln When a component is first rendered into the DOM,
+ln the component function is executed. This is where
+ln you will set up the component's state and
+ln side-effects. This includes setting up signals,
+ln stores, effects, and other reactive elements.
+ln Since the logic in the component function is not
+ln continuously visited, it is important to set up
+ln the component correctly from the outset.
+
+nn conditional_rendering
+hl https://docs.solidjs.com/concepts/components/basics#conditional-rendering
+co $ ..
+ln To display different content based on state or
+ln other criteria, you can use conditional rendering.
+ln Given that the component function is only executed
+ln once, conditional statements must be placed within
+ln the return statement. This design ensures that
+ln conditional paths are clear and immediately
+ln understood.
+
+zz -component_lifecycles
+ns ..
+
+nn importing_exporting
+hl https://docs.solidjs.com/concepts/components/basics#importing-and-exporting
+co $ ..
+at ol
+ln For components to be reusable, they need to be
+ln exported from one module and imported into
+ln another. This allows for components to be shared
+ln and used where needed.
+
+ns +importing_exporting
+
+nn exporting_components
+hl https://docs.solidjs.com/concepts/components/basics#exporting-components
+co $ ..
+
+ns +exporting_components
+
+nn named_export
+co $ ..
+
+nn default_export
+co $ ..
+
+zz -exporting_components
+ns ..
+
+nn importing_components
+hl https://docs.solidjs.com/concepts/components/basics#importing-components
+co $ ..
+
+ns +importing_components
+
+nn named_import
+co $ ..
+
+nn default_import
+co $ ..
+
+nn importing_solid_and_utils
+hl https://docs.solidjs.com/concepts/components/basics#importing-solid-and-its-utilities
+co $ ..
+
+zz -importing_components
+ns ..
+
+zz -importing_exporting
+ns ..
+
+zz -basics
+ns ..
+
+nn class_and_style
+hl https://docs.solidjs.com/concepts/components/class-style
+co $ ..
+ln Similar to HTML, Solid uses class and style
+ln attributes to style elements via CSS (Cascading
+ln Style Sheets).
+at ol
+
+ns +class_and_style
+
+nn inline_styling
+hl https://docs.solidjs.com/concepts/components/class-style#inline-styling
+co $ ..
+
+nn classes
+hl https://docs.solidjs.com/concepts/components/class-style#classes
+co $ ..
+
+nn dynamic_styling
+hl https://docs.solidjs.com/concepts/components/class-style#dynamic-styling
+co $ ..
+ln Dynamic styling provides a way to change the
+ln appearance of a component based on state or other
+ln factors like user inputs. This is useful for
+ln creating components that can adapt to different
+ln scenarios without having to create multiple
+ln versions of the same component.
+
+nn classList
+hl https://docs.solidjs.com/concepts/components/class-style#classlist
+co $ ..
+ln When you want to apply multiple classes to an
+ln element, you can use the classList attribute. To
+ln use it, you can pass either a string or an object
+ln where the keys represent the class names and the
+ln values represent a boolean expression. When the
+ln value is true, the class is applied; when false,
+ln it is removed.
+
+zz -class_and_style
+ns ..
+
+nn event_handlers
+hl https://docs.solidjs.com/concepts/components/event-handlers
+co $ ..
+ln Event handlers are functions that are called in
+ln response to specific events occurring in the
+ln browser, such as when a user clicks or taps on an
+ln element.
+at ol
+
+ns +event_handlers
+
+nn native_event
+co $ ..
+ln on: adds an event listener to the element, this is
+ln also known as a native event. Native events flow
+ln through the DOM tree, and provie more control over the
+ln behavior of the vent.
+
+nn delegated_event
+co $ ..
+ln on__ adds an event listener to the document and
+ln dispatches it to the element. This can be referred to
+ln as a delegated event. Delegated events flow through
+ln the component tree, and save some resources by
+ln performing better on commonly used events.
+co ?components/basics/component_trees $
+cr delegated events flow through the component tree
+
+nn using_events
+hl https://docs.solidjs.com/concepts/components/event-handlers#using-events
+co $ ..
+ln To add an event handler, prefix the event name
+ln with either on or on:, and assign it to the
+ln function you wish to call when the event is
+ln dispatched.
+
+nn binding_events
+hl https://docs.solidjs.com/concepts/components/event-handlers#binding-events
+co $ ..
+ln To optimize event handlers, you can pass an array
+ln as the event handler, replacing the function. When
+ln doing this, the second item passed into the array
+ln is supplied as the handler's first argument.
+ln By binding events in this way, Solid avoids the
+ln overhead of using JavaScript's bind method and
+ln adding an additional closure.
+
+nn binding_events/dynamic_handlers
+hl https://docs.solidjs.com/concepts/components/event-handlers#dynamic-handlers
+co $ ..
+
+nn event_delegation
+hl https://docs.solidjs.com/concepts/components/event-handlers#event-delegation
+co $ ..
+ln Instead of attaching event listeners to every
+ln individual element, Solid uses synthetic event
+ln delegation, through the on__ form . In this method
+ln event listeners are attached to the document
+ln element, and dispatch events to the relevant
+ln elements as they bubble up.
+
+ns +event_delegation
+
+nn considerations
+hl https://docs.solidjs.com/concepts/components/event-handlers#event-delegation-considerations
+co $ ..
+
+nn list_of_delegated_events
+hl https://docs.solidjs.com/concepts/components/event-handlers#list-of-delegated-events
+co $ ..
+
+zz -event_delegation
+ns ..
+
+zz -event_handlers
+ns ..
+
+nn props
+hl https://docs.solidjs.com/concepts/components/props
+co $ ..
+
+zz -components
+ns ..
+
+nn signals
+co $ ..
+
+nn control_flow
+co $ ..
+
+nn effects
+co $ ..
+
+nn derived_values
+co $ ..
+
+nn context
+co $ ..
+
+nn stores
+co $ ..
+
+nn refs
+co $ ..
+
+zz -concepts
+ns ..
+
+nn advanced_concepts
+co $ ..
+at ol
+
+ns +advanced_concepts
+nn fine_grained_reactivity
+hl https://docs.solidjs.com/advanced-concepts/fine-grained-reactivity
+co $ ..
+zz -advanced_concepts
+ns ..
+
+nn guides
+co $ ..
+
+nn configuration
+co $ ..

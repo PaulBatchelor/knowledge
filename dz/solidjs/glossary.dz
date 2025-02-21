@@ -1,0 +1,13 @@
+ns webdev/solidjs
+nn glossary
+
+nn glossary/signal
+co $ ..
+
+nn glossary/setter
+co $ ..
+co $ ../signal
+
+nn glossary/getter
+co $ ..
+co $ ../signal

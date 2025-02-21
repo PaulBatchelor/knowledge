@@ -1,0 +1,26 @@
+ns webdev
+nn solidjs
+hl https://www.solidjs.com/
+
+ns +solidjs
+
+nn docs
+hl https://docs.solidjs.com/
+co $ ..
+at ol
+
+ns +docs
+
+nn core
+hl https://docs.solidjs.com
+co $ ..
+
+nn router
+hl https://docs.solidjs.com/solid-router
+co $ ..
+at ol
+
+zz -docs
+ns ..
+
+ns ..

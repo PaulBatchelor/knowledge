@@ -2760,3 +2760,8 @@ tg gamedev
 nn XOR
 hl https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/xor/
 tg bitwise
+
+nn ffmpeg_asm
+hl https://github.com/FFmpeg/asm-lessons/blob/main/lesson_01/index.md
+ln FFmpeg Assembly Language Lesson
+co $ ..

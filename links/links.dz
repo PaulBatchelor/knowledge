@@ -2765,3 +2765,9 @@ nn ffmpeg_asm
 hl https://github.com/FFmpeg/asm-lessons/blob/main/lesson_01/index.md
 ln FFmpeg Assembly Language Lesson
 co $ ..
+
+nn ffmpeg_x86_SIMD
+hl https://blogs.gnome.org/rbultje/2017/07/14/writing-x86-simd-using-x86inc-asm/
+ln Writing x86 SIMD using x86inc.asm
+tg ffmpeg x86
+co $ ..

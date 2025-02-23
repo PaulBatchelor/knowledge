@@ -270,7 +270,7 @@ going to just work on building an interactive tree view.
 #! dz dagzet/dzb/tasks/outline_view
 pains in my arm. backing off.
 
-@2025-02-23 East Village
+@2025-02-23 East Village, Hub
 @12:33 Updates
 #! dz dagzet/dzb/tasks/outline_view
 I haven't really been keeping updates on this, since
@@ -299,3 +299,37 @@ be used to join data nodes to outliner nodes.
 It's possible I may need another index. Data nodes from
 dagzet will already have ID numbers. Maybe some kind
 of lookup table?
+
+@17:52 dzb hub work
+#! dz dagzet/dzb/tasks/outline_view
+
+@18:00 Planning mapping node tree #timelog:00:28:31
+#! dz dagzet/dzb/tasks/outline_view
+Subgraph data has an entry called "tree", and this is the
+thing we'd like to generate an outline tree view from.
+---
+Tree is a LISP-y data structure, made up of nested arrays.
+The only information it contains is the name of the node.
+The data for that node must be contained somewhere else.
+It would be good to build a lookup structure.
+---
+Building on top of the trie structure for keys might make
+some sense. When a subgraph is loaded, the paths can
+get populated in the trie.
+---
+The outliner view is built by doing a depth-first traversal
+of the 'tree' JSON structure. The name of the node is copied
+to the label entry. Then, a corresponding lookup entry is
+made that maps the tree node id to the node data (pointer?).
+---
+So, data flow seems to be: load nodes to path->data lookup
+table. load tree to outliner and outliner node->data lookup
+table.
+---
+Important! Nodes should be abbreviated. There needs
+to be a mechanism that allows common prefix between the
+current node and the current namespace to be truncated:
+namespace "a/b/c" for node "a/b/c/d" should be "d".
+---
+Some tree nodes are relative nodes (no slashes), while
+others are absolute (with slashes). Something to keep in mind.

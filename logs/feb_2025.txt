@@ -269,3 +269,33 @@ going to just work on building an interactive tree view.
 @20:28 quick stuff, quitting early #timelog:00:12:13
 #! dz dagzet/dzb/tasks/outline_view
 pains in my arm. backing off.
+
+@2025-02-23 East Village
+@12:33 Updates
+#! dz dagzet/dzb/tasks/outline_view
+I haven't really been keeping updates on this, since
+I haven't had much time to do work since the new job.
+No timelogs, but here's a summary of what works now.
+---
+Last week, I procedurally generated a mockup of how I wanted
+the outliner to look, and made a test that could render
+that using equivalent tree data. Well, that all works now.
+Theoretically, there is room for interaction for
+expanding/collapsing trees and selection. Pagination/scrolling
+logic has not yet been thought out yet.
+---
+I think what needs to happen directly after this is to get
+the node tree data loaded from disk rendered into the
+outliner view. This is a data translation problem: given
+a node index loaded from disk, produce an outliner view
+data structure.
+---
+The outliner node is rather simple, it contains
+all the linking variables needed for the tree structure,
+a label, and a unique ID number corresponding to the index
+in the node pool. My thinking is that this ID number could
+be used to join data nodes to outliner nodes.
+---
+It's possible I may need another index. Data nodes from
+dagzet will already have ID numbers. Maybe some kind
+of lookup table?

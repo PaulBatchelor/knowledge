@@ -333,3 +333,6 @@ namespace "a/b/c" for node "a/b/c/d" should be "d".
 ---
 Some tree nodes are relative nodes (no slashes), while
 others are absolute (with slashes). Something to keep in mind.
+
+@21:57 organizing rust standard library nodes
+nevermind... got a call.

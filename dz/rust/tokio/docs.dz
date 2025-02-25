@@ -182,9 +182,22 @@ zz -sync/modules
 ns ../..
 
 
-
 zz -modules
 ns ..
+
+
+nn macros
+co $ ..
+nn macros/select
+hl https://docs.rs/tokio/latest/tokio/macro.select.html
+co $ ..
+ln Waits on multiple concurrent branches, returning
+ln when the first branch completes, cancelling the
+ln remaining branches.
+ff What does tokio::select! do?
+fb Waits on multiple concurrent branches, returning
+fb when the first branch completes, cancelling the
+fb remaining branches.
 
 ns ..
 ns ../..

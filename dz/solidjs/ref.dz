@@ -194,8 +194,14 @@ ln Secondary Primitives
 co $ ..
 
 nn store_utilities
-ln Store Utilities
+hl https://docs.solidjs.com/reference/store-utilities/unwrap
 co $ ..
+ln unwrap returns the underlying data in the store
+ln without a proxy.
+ff What does unwrap() do in solidjs?
+fb unwrap returns the underlying data in the store
+fb without a proxy.
+
 
 nn server_utilities
 ln Server Utiliites

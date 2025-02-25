@@ -216,3 +216,17 @@ co $ declaration_files
 nn satisfies
 ln satisfies operator
 hl https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator
+
+nn record
+hl https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type
+co $ ..
+rm used to create ItemPreviewStore() type
+ln Constructs an object type whose property keys are
+ln Keys and whose property values are Type. This
+ln utility can be used to map the properties of a
+ln type to another type.
+ff What is a Record in Typescript?
+fb Constructs an object type whose property keys are
+fb Keys and whose property values are Type. This
+fb utility can be used to map the properties of a
+fb type to another type.

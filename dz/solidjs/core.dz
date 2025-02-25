@@ -616,6 +616,16 @@ co $ ..
 
 nn stores
 co $ ..
+hl https://docs.solidjs.com/concepts/stores
+ln Similar to signals, stores are a state management
+ln primitive. However, while signals manage a single
+ln piece of state, stores create a centralized
+ln location to reduce code redundancy. Within Solid,
+ln these stores can spawn a collection of reactive
+ln signals, each corresponding to a particular
+ln property which can be useful when working with
+ln complex state.
+
 
 nn refs
 co $ ..

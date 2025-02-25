@@ -1,2 +1,4 @@
 DZ full::full.apkg
 SolidJS:webdev/solidjs:solidjs.apkg
+Rust:rust:rust.apkg
+DDIA:DDIA:DDIA.apkg

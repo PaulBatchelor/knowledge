@@ -1,0 +1,9 @@
+@2025-03-01 Happy March.
+@10:36 Working on v2 ed expressions #timelog:02:05:04
+I'm thinking this will be a good time investment,
+since I've been working with a lot of tree structures.
+Being able to express trees in ed would enable me to
+write S expressions which could allow scheme code.
+---
+The current iteration of edexp is a little clumsy syntactically.
+Going to try tweaking a few things.

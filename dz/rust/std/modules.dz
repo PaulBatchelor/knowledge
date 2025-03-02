@@ -1,0 +1,380 @@
+ns rust/std
+ns +modules
+
+nn alloc
+hl https://doc.rust-lang.org/std/alloc/index.html
+co $ ..
+ln Memory allocation APIs.
+ff 'alloc' module
+fb Memory allocation APIs.
+
+nn any
+hl https://doc.rust-lang.org/std/any/index.html
+co $ ..
+ln Utilities for dynamic typing or type reflection.
+ff 'any' module
+fb Utilities for dynamic typing or type reflection.
+
+nn arch
+hl https://doc.rust-lang.org/std/arch/index.html
+co $ ..
+ln SIMD and vendor intrinsics module.
+ff 'arch' module
+fb SIMD and vendor intrinsics module.
+
+nn array
+hl https://doc.rust-lang.org/std/array/index.html
+co $ ..
+ln Utilities for the array primitive type.
+ff 'array' module
+fb Utilities for the array primitive type.
+
+nn ascii
+hl https://doc.rust-lang.org/std/ascii/index.html
+co $ ..
+ln Operations on ASCII strings and characters.
+ff 'ascii' module
+fb Operations on ASCII strings and characters.
+
+nn backtrace
+hl https://doc.rust-lang.org/std/backtrace/index.html
+co $ ..
+ln Support for capturing a stack backtrace of an
+ln OS thread
+ff 'backtrace' module
+fb Support for capturing a stack backtrace of an
+fb OS thread
+
+nn borrow
+hl https://doc.rust-lang.org/std/borrow/index.html
+co $ ..
+ln A module for working with borrowed data.
+fb 'borrow' module
+ff A module for working with borrowed data.
+
+nn boxed
+hl https://doc.rust-lang.org/std/boxed/index.html
+co $ ..
+ln The Box<T> type for heap allocation.
+ff 'boxed' module
+fb The Box<T> type for heap allocation.
+
+nn cell
+hl https://doc.rust-lang.org/std/cell/index.html
+co $ ..
+ln Shareable mutable containers.
+ff 'cell' module
+fb Shareable mutable containers.
+
+nn char
+hl https://doc.rust-lang.org/std/char/index.html
+co $ ..
+ln Utilities for the char primitive type.
+ff 'char' module
+fb Utilities for the char primitive type.
+
+nn clone
+hl https://doc.rust-lang.org/std/clone/index.html
+co $ ..
+ln The Clone trait for types that cannot be
+ln 'implicitly copied'.
+ff 'clone' module
+fb The Clone trait for types that cannot be
+fb 'implicitly copied'.
+
+nn cmp
+hl https://doc.rust-lang.org/std/cmp/index.html
+co $ ..
+ln Utilities for comparing and ordering values.
+ff 'cmp' module
+fb Utilities for comparing and ordering values.
+
+nn collections
+hl https://doc.rust-lang.org/std/collections/index.html
+co $ ..
+ln Collection types.
+ff 'collections' module
+fb Collection types.
+
+nn convert
+hl https://doc.rust-lang.org/std/convert/index.html
+co $ ..
+ln Traits for conversions between types.
+ff 'convert' module
+fb Traits for conversions between types.
+
+nn default
+hl https://doc.rust-lang.org/std/default/index.html
+co $ ..
+ln The Default trait for types with a default value.
+ff 'default' module
+fb The Default trait for types with a default value.
+
+nn env
+hl https://doc.rust-lang.org/std/env/index.html
+co $ ..
+ln Inspection and manipulation of the process’s
+ln environment.
+ff 'env' module
+fb Inspection and manipulation of the process’s
+fb environment.
+
+nn error
+hl https://doc.rust-lang.org/std/error/index.html
+co $ ..
+ln Interfaces for working with Errors.
+ff 'error' module
+fb Interfaces for working with Errors.
+
+nn f32
+hl https://doc.rust-lang.org/std/f32/index.html
+co $ ..
+ln Constants for the f32 single-precision floating
+ln point type.
+ff 'f32' module
+fb Constants for the f32 single-precision floating
+fb point type.
+
+nn f64
+hl https://doc.rust-lang.org/std/f64/index.html
+co $ ..
+ln Constants for the f64 double-precision floating
+ln point type.
+ff 'f64' module
+fb Constants for the f64 double-precision floating
+fb point type.
+
+nn ffi
+hl https://doc.rust-lang.org/std/ffi/index.html
+co $ ..
+ln Utilities related to FFI bindings.
+ff 'ffi' module
+fb Utilities related to FFI bindings.
+
+nn fmt
+hl https://doc.rust-lang.org/std/fmt/index.html
+co $ ..
+ln Utilities for formatting and printing Strings.
+ff 'fmt' module
+fb Utilities for formatting and printing Strings.
+
+nn fs
+hl https://doc.rust-lang.org/std/fs/index.html
+co $ ..
+ln Filesystem manipulation operations.
+ff 'fs' module
+fb Filesystem manipulation operations.
+
+nn future
+hl https://doc.rust-lang.org/std/future/index.html
+co $ ..
+ln Asynchronous basic functionality.
+ff 'future' module
+fb Asynchronous basic functionality.
+
+nn hash
+hl https://doc.rust-lang.org/std/hash/index.html
+co $ ..
+ln Generic hashing support.
+ff 'hash' module
+ln Generic hashing support.
+
+nn hint
+hl https://doc.rust-lang.org/std/hint/index.html
+co $ ..
+ln Hints to compiler that affects how code should
+ln be emitted or optimized.
+ff 'hint' module
+fb Hints to compiler that affects how code should
+fb be emitted or optimized.
+
+nn io
+hl https://doc.rust-lang.org/std/io/index.html
+co $ ..
+ln Traits, helpers, and type definitions for core
+ln I/O functionality.
+ff 'io' module
+fb Traits, helpers, and type definitions for core
+fb I/O functionality.
+
+nn iter
+hl https://doc.rust-lang.org/std/iter/index.html
+co $ ..
+ln Composable external iteration.
+ff 'iter' module
+fb Composable external iteration.
+
+nn marker
+hl https://doc.rust-lang.org/std/marker/index.html
+co $ ..
+ln Primitive traits and types representing basic
+ln properties of types.
+ff 'marker' module
+fb Primitive traits and types representing basic
+fb properties of types.
+
+nn mem
+hl https://doc.rust-lang.org/std/mem/index.html
+co $ ..
+ln Basic functions for dealing with memory.
+ff 'mem'
+fb Basic functions for dealing with memory.
+
+nn net
+hl https://doc.rust-lang.org/std/net/index.html
+co $ ..
+ln Networking primitives for TCP/UDP communication.
+ff 'net' module
+fb Networking primitives for TCP/UDP communication.
+
+nn num
+hl https://doc.rust-lang.org/std/num/index.html
+co $ ..
+ln Additional functionality for numerics.
+ff 'num' module
+fb Additional functionality for numerics.
+
+nn ops
+hl https://doc.rust-lang.org/std/ops/index.html
+co $ ..
+ln Overloadable operators.
+ff 'ops' module
+fb Overloadable operators.
+
+nn option
+hl https://doc.rust-lang.org/std/option/index.html
+co $ ..
+ln Optional values.
+ff 'option' module
+fb Optional values.
+
+nn os
+hl https://doc.rust-lang.org/std/os/index.html
+co $ ..
+ln OS-specific functionality.
+ff 'os' module
+fb OS-specific functionality.
+
+nn panic
+hl https://doc.rust-lang.org/std/panic/index.html
+co $ ..
+ln Panic support in the standard library.
+ff 'panic' module
+fb Panic support in the standard library.
+
+nn path
+hl https://doc.rust-lang.org/std/path/index.html
+co $ ..
+ln Cross-platform path manipulation.
+ff 'path' module
+fb Cross-platform path manipulation.
+
+nn pin
+hl https://doc.rust-lang.org/std/pin/index.html
+co $ ..
+ln Types that pin data to a location in memory.
+ff 'pin' module
+fb Types that pin data to a location in memory.
+
+nn prelude
+hl https://doc.rust-lang.org/std/prelude/index.html
+co $ ..
+ln The Rust Prelude
+ff 'prelule' module
+fb The Rust Prelude
+
+nn primitive
+hl https://doc.rust-lang.org/std/primitive/index.html
+co $ ..
+ln This module reexports the primitive types to
+ln allow usage that is not possibly shadowed by
+ln other declared types.
+ff 'primitive' module
+fb This module reexports the primitive types to
+fb allow usage that is not possibly shadowed by
+fb other declared types.
+
+nn process
+hl https://doc.rust-lang.org/std/process/index.html
+co $ ..
+ln A module for working with processes.
+ff 'process' module
+fb A module for working with processes.
+
+nn ptr
+hl https://doc.rust-lang.org/std/ptr/index.html
+co $ ..
+ln Manually manage memory through raw pointers.
+ff 'ptr' module
+fb Manually manage memory through raw pointers.
+
+nn rc
+hl https://doc.rust-lang.org/std/rc/index.html
+co $ ..
+ln Single-threaded reference-counting
+ln pointers. 'Rc' stands for 'Reference
+ln Counted'.
+ff 'rc' module
+fb Single-threaded reference-counting
+fb pointers. 'Rc' stands for 'Reference
+fb Counted'.
+
+nn result
+hl https://doc.rust-lang.org/std/result/index.html
+co $ ..
+ln Error handling with the Result type.
+ff 'result' module
+fb Error handling with the Result type.
+
+nn slice
+hl https://doc.rust-lang.org/std/slice/index.html
+co $ ..
+ln Utilities for the slice primitive type.
+ff 'slice' module
+fb Utilities for the slice primitive type.
+
+nn str
+hl https://doc.rust-lang.org/std/str/index.html
+co $ ..
+ln Utilities for the str primitive type.
+ff 'str' module
+fb Utilities for the str primitive type.
+
+nn string
+hl https://doc.rust-lang.org/std/string/index.html
+co $ ..
+ln A UTF-8–encoded, growable string.
+ff 'string' module
+fb A UTF-8–encoded, growable string.
+
+nn task
+hl https://doc.rust-lang.org/std/task/index.html
+co $ ..
+ln Types and Traits for working with asynchronous
+ln tasks.
+ff 'task' module
+fb Types and Traits for working with asynchronous
+fb tasks.
+
+nn thread
+hl https://doc.rust-lang.org/std/thread/index.html
+co $ ..
+ln Native threads.
+ff 'thread' module
+fb Native threads.
+
+nn time
+hl https://doc.rust-lang.org/std/time/index.html
+co $ ..
+ln Temporal quantification.
+ff 'time' module
+fb Temporal quantification.
+
+nn vec
+hl https://doc.rust-lang.org/std/vec/index.html
+co $ ..
+ln A contiguous growable array type with
+ln heap-allocated contents, written Vec<T>.
+ff 'vec' module
+fb A contiguous growable array type with
+fb heap-allocated contents, written Vec<T>.

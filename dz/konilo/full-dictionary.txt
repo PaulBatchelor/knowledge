@@ -1,0 +1,1499 @@
+ 0 0
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 0
+------------------------------------------------------------------------
+
+ 0 1
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 1
+------------------------------------------------------------------------
+
+ 0 2
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 2
+------------------------------------------------------------------------
+
+ 0 3
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 3
+------------------------------------------------------------------------
+
+ 0 4
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 4
+------------------------------------------------------------------------
+
+ 0 5
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 5
+------------------------------------------------------------------------
+
+ 0 6
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 6
+------------------------------------------------------------------------
+
+ 0 7
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 7
+------------------------------------------------------------------------
+
+ 0 8
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 8
+------------------------------------------------------------------------
+
+ 0 9
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 9
+------------------------------------------------------------------------
+
+ 0 10
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 10
+------------------------------------------------------------------------
+
+ 0 11
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 11
+------------------------------------------------------------------------
+
+ 0 12
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 12
+------------------------------------------------------------------------
+
+ 0 13
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 13
+------------------------------------------------------------------------
+
+ 0 14
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 14
+------------------------------------------------------------------------
+
+ 0 15
+ 2 Stack: '-
+ 4 Description:
+6 Parse to end of line. Insert into text line 15
+------------------------------------------------------------------------
+
+ 0 {{
+ 2 Stack: -
+ 4 Description:
+6 Begin a lexical scoped area. Starts the private portion.
+------------------------------------------------------------------------
+
+ 0 ---reveal---
+ 2 Stack: -
+ 4 Description:
+6 Within  lexical scoped area, switch to global scope area.
+------------------------------------------------------------------------
+
+ 0 }}
+ 2 Stack: -
+ 4 Description:
+6 Close off lexical scoped area. Hides words in the private area.
+------------------------------------------------------------------------
+
+ 0 )
+ 2 Stack: -
+ 4 Description:
+6 Ending for comments or visual grouping. Provided for readability
+7 purposes
+------------------------------------------------------------------------
+
+ 0 -eq?
+ 2 Stack: nn-f
+ 4 Description:
+6 Compare values for inequality
+------------------------------------------------------------------------
+
+ 0 -if
+ 2 Stack: fq-
+ 4 Description:
+6 Execute q if flag is zero
+------------------------------------------------------------------------
+
+ 0 ;
+ 2 Stack: -
+ 4 Description:
+6 End a definition
+------------------------------------------------------------------------
+
+ 0 ?jump
+ 2 Stack: fp-
+ 4 Description:
+6 Internal. If flag is non-zero, branch to p.
+------------------------------------------------------------------------
+
+ 0 Compiler
+ 2 Stack: -
+ 4 Description:
+6 Data. Tracks compiler state
+------------------------------------------------------------------------
+
+ 0 Dictionary
+ 2 Stack: -
+ 4 Description:
+6 Data. Pointer to most recent header in dictionary
+------------------------------------------------------------------------
+
+ 0 Free
+ 2 Stack: -
+ 4 Description:
+6 Data. Pointer to next free addr
+------------------------------------------------------------------------
+
+ 0 I
+ 2 Stack: -n
+ 4 Description:
+6 Access the loop index for the current loop. (For loops made
+7 using indexed-times)
+------------------------------------------------------------------------
+
+ 0 J
+ 2 Stack: -n
+ 4 Description:
+6 Access the parent loop index for the current loop. (For loops
+7 made using indexed-times)
+------------------------------------------------------------------------
+
+ 0 K
+ 2 Stack: -n
+ 4 Description:
+6 Access the grandparent loop index for the current loop. (For
+7 loops made using indexed-times)
+------------------------------------------------------------------------
+
+ 0 Sigils
+ 2 Stack: -
+ 4 Description:
+6 Data. Table of sigil handlers
+------------------------------------------------------------------------
+
+ 0 [
+ 2 Stack: -p
+ 4 Description:
+6 Begin a quotation
+------------------------------------------------------------------------
+
+ 0 ]
+ 2 Stack: p-p
+ 4 Description:
+6 End a quotation
+------------------------------------------------------------------------
+
+ 0 a:append
+ 2 Stack: aa-a
+ 4 Description:
+6 Create a new array with the contents of a1 followed by a2
+------------------------------------------------------------------------
+
+ 0 a:behead
+ 2 Stack: a-a
+ 4 Description:
+6 Remove first item from an array
+------------------------------------------------------------------------
+
+ 0 a:chop
+ 2 Stack: a-a
+ 4 Description:
+6 Remove last item from an array
+------------------------------------------------------------------------
+
+ 0 a:contains?
+ 2 Stack: an-f
+ 4 Description:
+6 True if array contains n. False otherwise
+------------------------------------------------------------------------
+
+ 0 a:copy
+ 2 Stack: sd-
+ 4 Description:
+6 Copy array from s to d
+------------------------------------------------------------------------
+
+ 0 a:dup
+ 2 Stack: a-a
+ 4 Description:
+6 Make a copy of an array
+------------------------------------------------------------------------
+
+ 0 a:eq?
+ 2 Stack: aa-f
+ 4 Description:
+6 Compare two arrays for equality
+------------------------------------------------------------------------
+
+ 0 a:-eq?
+ 2 Stack: aa-f
+ 4 Description:
+6 Compare two arrays for inequality
+------------------------------------------------------------------------
+
+ 0 a:fetch
+ 2 Stack: an-v
+ 4 Description:
+6 Fetch value stored at index n in array
+------------------------------------------------------------------------
+
+ 0 a:filter
+ 2 Stack: aq-a
+ 4 Description:
+6 Run q once for each value in a. If it returns true, copy value
+7 new array
+------------------------------------------------------------------------
+
+ 0 a:first
+ 2 Stack: a-n
+ 4 Description:
+6 Return the first value in an array
+------------------------------------------------------------------------
+
+ 0 a:for-each
+ 2 Stack: aq-
+ 4 Description:
+6 Run q once for each value in the array. Pushes each value prior
+7 to calling q
+------------------------------------------------------------------------
+
+ 0 a:hash
+ 2 Stack: a-n
+ 4 Description:
+6 Return the hash of an array
+------------------------------------------------------------------------
+
+ 0 a:indices
+ 2 Stack: av-a
+ 4 Description:
+6 Return array of indices for v in source array
+------------------------------------------------------------------------
+
+ 0 a:index
+ 2 Stack: av-n
+ 4 Description:
+6 Return first index of n in a
+------------------------------------------------------------------------
+
+ 0 a:last
+ 2 Stack: a-n
+ 4 Description:
+6 Return the last value in an array
+------------------------------------------------------------------------
+
+ 0 a:left
+ 2 Stack: an-a
+ 4 Description:
+6 Return left n values from array
+------------------------------------------------------------------------
+
+ 0 a:length
+ 2 Stack: a-n
+ 4 Description:
+6 Return the length of an array
+------------------------------------------------------------------------
+
+ 0 a:make
+ 2 Stack: ...n-a
+ 4 Description:
+6 Create a new permanent array from the provided values
+------------------------------------------------------------------------
+
+ 0 a:make/temp
+ 2 Stack: ...n-a
+ 4 Description:
+6 Create a new temporary array from the provided values
+------------------------------------------------------------------------
+
+ 0 a:map
+ 2 Stack: aq-a
+ 4 Description:
+6 Run q once for each value in the array. Takes the returned value
+7 and creates a new array
+------------------------------------------------------------------------
+
+ 0 a:middle
+ 2 Stack: afl-a
+ 4 Description:
+6 Return new array from f to l, inclusive
+------------------------------------------------------------------------
+
+ 0 a:prepend
+ 2 Stack: aa-a
+ 4 Description:
+6 Create a new array with the contents of a2 followed by a1
+------------------------------------------------------------------------
+
+ 0 a:reduce
+ 2 Stack: anq-n
+ 4 Description:
+6 Takes an array, a starting value, and a quote. This will apply
+7 the quote to each item in the array; the quote should consume
+8 two values and return one
+------------------------------------------------------------------------
+
+ 0 a:reverse
+ 2 Stack: a-a
+ 4 Description:
+6 Reverse the order of items in an array
+------------------------------------------------------------------------
+
+ 0 a:right
+ 2 Stack: an-a
+ 4 Description:
+6 Return right n values from array
+------------------------------------------------------------------------
+
+ 0 a:store
+ 2 Stack: van-
+ 4 Description:
+6 Store value v into array at index n
+------------------------------------------------------------------------
+
+ 0 a:temp
+ 2 Stack: a-a
+ 4 Description:
+6 Make a copy of the array in the temporary string/array space
+------------------------------------------------------------------------
+
+ 0 a:th
+ 2 Stack: an-p
+ 4 Description:
+6 Return the address of a specific index into the array
+------------------------------------------------------------------------
+
+ 0 allot
+ 2 Stack: n-
+ 4 Description:
+6 Allocate n cells of memory
+------------------------------------------------------------------------
+
+ 0 and
+ 2 Stack: nn-n
+ 4 Description:
+6 Perform a bitwise AND
+------------------------------------------------------------------------
+
+ 0 bi
+ 2 Stack: xqq-?
+ 4 Description:
+6 Execute q1 against x, then q2 against a copy of x
+------------------------------------------------------------------------
+
+ 0 bi*
+ 2 Stack: xyqq-
+ 4 Description:
+6 Execute q1 against x and q2 against y
+------------------------------------------------------------------------
+
+ 0 bi@
+ 2 Stack: xyq-
+ 4 Description:
+6 Execute q against x, execute q against y
+------------------------------------------------------------------------
+
+ 0 block:load
+ 2 Stack: na-
+ 4 Description:
+6 Read 1024 cells in block n to a
+------------------------------------------------------------------------
+
+ 0 block:save
+ 2 Stack: na-
+ 4 Description:
+6 Save 1024 cells at a to block n
+------------------------------------------------------------------------
+
+ 0 block:buffer
+ 2 Stack: -p
+ 4 Description:
+6 Return a pointer to the start of the block buffer
+------------------------------------------------------------------------
+
+ 0 bye
+ 2 Stack: -
+ 4 Description:
+6 Exit RetroForth/ilo
+------------------------------------------------------------------------
+
+ 0 c:get
+ 2 Stack: -c
+ 4 Description:
+6 Read a character from the keyboard
+------------------------------------------------------------------------
+
+ 0 c:lowercase?
+ 2 Stack: c-f
+ 4 Description:
+6 Return true if character is lowercase or false if not
+------------------------------------------------------------------------
+
+ 0 c:put
+ 2 Stack: c-
+ 4 Description:
+6 Display a single character
+------------------------------------------------------------------------
+
+ 0 c:to-lower
+ 2 Stack: c-c
+ 4 Description:
+6 Convert character to lowercase
+------------------------------------------------------------------------
+
+ 0 c:to-s
+ 2 Stack: c-s
+ 4 Description:
+6 Convert a character to a string
+------------------------------------------------------------------------
+
+ 0 c:to-upper
+ 2 Stack: c-c
+ 4 Description:
+6 Convert character to uppercase
+------------------------------------------------------------------------
+
+ 0 c:uppercase?
+ 2 Stack: c-f
+ 4 Description:
+6 Return true if character is uppercase or false if not
+------------------------------------------------------------------------
+
+ 0 call
+ 2 Stack: p-
+ 4 Description:
+6 Call a function
+------------------------------------------------------------------------
+
+ 0 choose
+ 2 Stack: fpp-
+ 4 Description:
+6 Execute p1 if flag is non-zero or p2 if zero.
+------------------------------------------------------------------------
+
+ 0 comma
+ 2 Stack: n-
+ 4 Description:
+6 Inline a value to here and increment Free
+------------------------------------------------------------------------
+
+ 0 compare
+ 2 Stack: sdn-f
+ 4 Description:
+6 Compare n cells of memory startng at s to memory starting at d.
+7 Return true if all match or false otherwise
+------------------------------------------------------------------------
+
+ 0 compiling?
+ 2 Stack: -f
+ 4 Description:
+6 True if Compiler is set, False otherwise
+------------------------------------------------------------------------
+
+ 0 compile:lit
+ 2 Stack: n-
+ 4 Description:
+6 Internal. Compile an ilo li instruction
+------------------------------------------------------------------------
+
+ 0 compile:call
+ 2 Stack: p-
+ 4 Description:
+6 Internal. Compile an ilo lica instruction
+------------------------------------------------------------------------
+
+ 0 compile:jump
+ 2 Stack: p-
+ 4 Description:
+6 Internal. Compile an ilo liju instruction
+------------------------------------------------------------------------
+
+ 0 copy
+ 2 Stack: sdc-
+ 4 Description:
+6 Copy c cells starting at s to memory starting at d. Does not
+7 support overlapping regions
+------------------------------------------------------------------------
+
+ 0 curry
+ 2 Stack: vq-q
+ 4 Description:
+6 Create a new quote pushing the value, then calling q1
+------------------------------------------------------------------------
+
+ 0 d:address
+ 2 Stack: d-p
+ 4 Description:
+6 Given a dictionary header, return a pointer to the address field
+------------------------------------------------------------------------
+
+ 0 d:create
+ 2 Stack: s-
+ 4 Description:
+6 Create a new header
+------------------------------------------------------------------------
+
+ 0 d:exists?
+ 2 Stack: s-f
+ 4 Description:
+6 Given a dictionary header,
+------------------------------------------------------------------------
+
+ 0 d:flags
+ 2 Stack: d-p
+ 4 Description:
+6 Given a dictionary header, return a pointer to the flags field
+------------------------------------------------------------------------
+
+ 0 d:hash
+ 2 Stack: d-p
+ 4 Description:
+6 Given a dictionary header, return a pointer to the hash field
+------------------------------------------------------------------------
+
+ 0 d:link
+ 2 Stack: d-p
+ 4 Description:
+6 Given a dictionary header, return a pointer to the link field
+------------------------------------------------------------------------
+
+ 0 d:lookup
+ 2 Stack: s-d
+ 4 Description:
+6 Lookup a word in the dictionary. Returns zero if not found or
+7 the dictionary header address
+------------------------------------------------------------------------
+
+ 0 depths
+ 2 Stack: -nm
+ 4 Description:
+6 Return depths of data and address stacks
+------------------------------------------------------------------------
+
+ 0 depth/data
+ 2 Stack: -n
+ 4 Description:
+6 Return the depth of the data stack
+------------------------------------------------------------------------
+
+ 0 depth/address
+ 2 Stack: -n
+ 4 Description:
+6 Return the depth of the address stack
+------------------------------------------------------------------------
+
+ 0 dip
+ 2 Stack: np-n
+ 4 Description:
+6 Push n to address stack, call p. then restore n to data stack
+------------------------------------------------------------------------
+
+ 0 drop
+ 2 Stack: n-
+ 4 Description:
+6 Discard top value on stack
+------------------------------------------------------------------------
+
+ 0 drop-pair
+ 2 Stack: nn-
+ 4 Description:
+6 Discard top two values on stack
+------------------------------------------------------------------------
+
+ 0 dtc
+ 2 Stack: -
+ 4 Description:
+6 Internal. Data following is a direct threaded address list
+------------------------------------------------------------------------
+
+ 0 dup
+ 2 Stack: n-nn
+ 4 Description:
+6 Duplicate top value on stack
+------------------------------------------------------------------------
+
+ 0 dup-pair
+ 2 Stack: nm-nmnm
+ 4 Description:
+6 Duplicate top two values
+------------------------------------------------------------------------
+
+ 0 e:Display
+ 2 Stack: -
+ 4 Description:
+6 Data. Holds a pointer to a block display word. Called by edit.
+------------------------------------------------------------------------
+
+ 0 e:erase/line
+ 2 Stack: n-
+ 4 Description:
+6 Erase line n in the block buffer
+------------------------------------------------------------------------
+
+ 0 e:insert
+ 2 Stack: n'-
+ 4 Description:
+6 Erase line n, parse to end of line, insert into line n
+------------------------------------------------------------------------
+
+ 0 e:insert-at
+ 2 Stack: lc'-
+ 4 Description:
+6 Parse to end of line. Insert text into line l at column c
+------------------------------------------------------------------------
+
+ 0 e:line
+ 2 Stack: n-
+ 4 Description:
+6 Display a single line from the current block
+------------------------------------------------------------------------
+
+ 0 e:replace
+ 2 Stack: ls-
+ 4 Description:
+6 Insert text s into line l
+------------------------------------------------------------------------
+
+ 0 e:replace-at
+ 2 Stack: lcs-
+ 4 Description:
+6 Insert text s into line l at column c
+------------------------------------------------------------------------
+
+ 0 e:to-line
+ 2 Stack: n-p
+ 4 Description:
+6 Return pointer to start of line in the block buffer
+------------------------------------------------------------------------
+
+ 0 edit
+ 2 Stack: n-
+ 4 Description:
+6 Set Block to n. Load and display block
+------------------------------------------------------------------------
+
+ 0 eq?
+ 2 Stack: nn-f
+ 4 Description:
+6 Compare values for equality
+------------------------------------------------------------------------
+
+ 0 fetch
+ 2 Stack: a-n
+ 4 Description:
+6 Fetch a value stored at address
+------------------------------------------------------------------------
+
+ 0 fetch-next
+ 2 Stack: a-an
+ 4 Description:
+6 Fetch a value stored at address Also returns the next address
+------------------------------------------------------------------------
+
+ 0 fill
+ 2 Stack: vpn-
+ 4 Description:
+6 Fill n cells of memory starting at p with value v
+------------------------------------------------------------------------
+
+ 0 forever
+ 2 Stack: p-
+ 4 Description:
+6 Run p repeatedly, in an unending loop
+------------------------------------------------------------------------
+
+ 0 gc
+ 2 Stack: q-
+ 4 Description:
+6 Run function at pointer q. Saves and restores Free to recover
+7 any memory allocated during run
+------------------------------------------------------------------------
+
+ 0 gt?
+ 2 Stack: nn-f
+ 4 Description:
+6 Compare values for n1 greater than n2
+------------------------------------------------------------------------
+
+ 0 gteq?
+ 2 Stack: nn-f
+ 4 Description:
+6 Compare two values fro greater than or equality
+------------------------------------------------------------------------
+
+ 0 here
+ 2 Stack: -a
+ 4 Description:
+6 Return the next free memory address
+------------------------------------------------------------------------
+
+ 0 if
+ 2 Stack: fp-
+ 4 Description:
+6 Execute p if flag is non-zero
+------------------------------------------------------------------------
+
+ 0 indexed-times
+ 2 Stack: nq-
+ 4 Description:
+6 Run a quote the specified number of times, tracking the loop
+7 index in I
+------------------------------------------------------------------------
+
+ 0 internal:lit
+ 2 Stack: -n
+ 4 Description:
+6 Internal. Push next value in memory to the stack
+------------------------------------------------------------------------
+
+ 0 interpret
+ 2 Stack: s-
+ 4 Description:
+6 Interpret token
+------------------------------------------------------------------------
+
+ 0 io
+ 2 Stack: ...n-
+ 4 Description:
+6 Trigger an I/O operation
+------------------------------------------------------------------------
+
+ 0 jump
+ 2 Stack: a-
+ 4 Description:
+6 Internal. Jump to an address
+------------------------------------------------------------------------
+
+ 0 list*
+ 2 Stack: -
+ 4 Description:
+6 Display the text in the block
+------------------------------------------------------------------------
+
+ 0 list#
+ 2 Stack: -
+ 4 Description:
+6 Display the block with line numbers
+------------------------------------------------------------------------
+
+ 0 list
+ 2 Stack: -
+ 4 Description:
+6 Display the block with line numbers and rules
+------------------------------------------------------------------------
+
+ 0 load
+ 2 Stack: -
+ 4 Description:
+6 (re)Load the current block
+------------------------------------------------------------------------
+
+ 0 lt?
+ 2 Stack: nn-f
+ 4 Description:
+6 Compare values for n1 less than n2
+------------------------------------------------------------------------
+
+ 0 lteq?
+ 2 Stack: nn-f
+ 4 Description:
+6 Compare two values for less than or equality
+------------------------------------------------------------------------
+
+ 0 n:abs
+ 2 Stack: n-n
+ 4 Description:
+6 Return the absolute value of n
+------------------------------------------------------------------------
+
+ 0 n:add
+ 2 Stack: nn-n
+ 4 Description:
+6 Add n1 to n2, returning n3
+------------------------------------------------------------------------
+
+ 0 n:between?
+ 2 Stack: nlu-f
+ 4 Description:
+6 True if n is between l and u, inclusive
+------------------------------------------------------------------------
+
+ 0 n:dec
+ 2 Stack: n-n
+ 4 Description:
+6 Decrement n by 1
+------------------------------------------------------------------------
+
+ 0 n:div
+ 2 Stack: nn-n
+ 4 Description:
+6 Divine n1 by n2; get result
+------------------------------------------------------------------------
+
+ 0 n:divmod
+ 2 Stack: nn-nn
+ 4 Description:
+6 Divide n1 by n2 and return the result and remainder
+------------------------------------------------------------------------
+
+ 0 n:inc
+ 2 Stack: n-n
+ 4 Description:
+6 Increment n by 1
+------------------------------------------------------------------------
+
+ 0 n:limit
+ 2 Stack: nlu-n
+ 4 Description:
+6 Constrain n to between l and u, inclusive
+------------------------------------------------------------------------
+
+ 0 n:max
+ 2 Stack: nn-n
+ 4 Description:
+6 Return the greater of two values
+------------------------------------------------------------------------
+
+ 0 n:min
+ 2 Stack: nn-n
+ 4 Description:
+6 Return the lower of two values
+------------------------------------------------------------------------
+
+ 0 n:mod
+ 2 Stack: nn-n
+ 4 Description:
+6 Divide n1 by n2; get remainder
+------------------------------------------------------------------------
+
+ 0 n:mul
+ 2 Stack: nn-n
+ 4 Description:
+6 Multiply n1 by n2, returning n3
+------------------------------------------------------------------------
+
+ 0 n:negate
+ 2 Stack: n-n
+ 4 Description:
+6 Invert the sign of n
+------------------------------------------------------------------------
+
+ 0 n:put
+ 2 Stack: n-
+ 4 Description:
+6 Display a number
+------------------------------------------------------------------------
+
+ 0 n:sub
+ 2 Stack: nn-n
+ 4 Description:
+6 Subtract n2 from n1
+------------------------------------------------------------------------
+
+ 0 n:to-s
+ 2 Stack: n-s
+ 4 Description:
+6 Convert number to a temp string
+------------------------------------------------------------------------
+
+ 0 n:zero?
+ 2 Stack: n-f
+ 4 Description:
+6 Compare n to zero. True if zero, false otherwise
+------------------------------------------------------------------------
+
+ 0 n:-zero?
+ 2 Stack: n-f
+ 4 Description:
+6 Compare n to zero. True if not zero, false otherwise
+------------------------------------------------------------------------
+
+ 0 needs
+ 2 Stack: s-
+ 4 Description:
+6 Run any blocks (in order found) with a title starting with s
+------------------------------------------------------------------------
+
+ 0 new
+ 2 Stack: -
+ 4 Description:
+6 Erase the contents of the current block
+------------------------------------------------------------------------
+
+ 0 next
+ 2 Stack: -
+ 4 Description:
+6 Switch to and load next block
+------------------------------------------------------------------------
+
+ 0 nip
+ 2 Stack: xy-y
+ 4 Description:
+6 Discard second item on stack
+------------------------------------------------------------------------
+
+ 0 nl
+ 2 Stack: -
+ 4 Description:
+6 Display a newline
+------------------------------------------------------------------------
+
+ 0 not
+ 2 Stack: n-n
+ 4 Description:
+6 Perform a logical NOT operation
+------------------------------------------------------------------------
+
+ 0 or
+ 2 Stack: nn-n
+ 4 Description:
+6 Perform a bitwise OR
+------------------------------------------------------------------------
+
+ 0 over
+ 2 Stack: nm-nmn
+ 4 Description:
+6 Put a copy of NOS on top of stack
+------------------------------------------------------------------------
+
+ 0 pop
+ 2 Stack: -n
+ 4 Description:
+6 Move top value on address stack to data stack
+------------------------------------------------------------------------
+
+ 0 prelude
+ 2 Stack: -
+ 4 Description:
+6 Load & run blocks 1 & 2 if they appear to be code. Called by
+7 default `startup`.
+------------------------------------------------------------------------
+
+ 0 prev
+ 2 Stack: -
+ 4 Description:
+6 Switch to and load previous block
+------------------------------------------------------------------------
+
+ 0 process-data
+ 2 Stack: n-?
+ 4 Description:
+6 Internal. If compiling, compile value as a literal into the
+7 word. If interpreting, leave on the stack
+------------------------------------------------------------------------
+
+ 0 push
+ 2 Stack: n-
+ 4 Description:
+6 Move TOS to the address stack
+------------------------------------------------------------------------
+
+ 0 restart
+ 2 Stack: -
+ 4 Description:
+6 Reload the image and empty stacks
+------------------------------------------------------------------------
+
+ 0 rom:save
+ 2 Stack: -
+ 4 Description:
+6 Save the current memory to disk (ilo.rom)
+------------------------------------------------------------------------
+
+ 0 rot
+ 2 Stack: abc-bca
+ 4 Description:
+6 Rotate the top three values
+------------------------------------------------------------------------
+
+ 0 run
+ 2 Stack: -
+ 4 Description:
+6 Run code in the currently loaded block
+------------------------------------------------------------------------
+
+ 0 s:append
+ 2 Stack: ss-s
+ 4 Description:
+6 Append s2 to s1, returning new temporary string
+------------------------------------------------------------------------
+
+ 0 s:behead
+ 2 Stack: s-s
+ 4 Description:
+6 Remove first item from a string
+------------------------------------------------------------------------
+
+ 0 s:chop
+ 2 Stack: s-s
+ 4 Description:
+6 Remove last item from a string
+------------------------------------------------------------------------
+
+ 0 s:contains?
+ 2 Stack: sc-f
+ 4 Description:
+6 True if string contains c. False otherwise
+------------------------------------------------------------------------
+
+ 0 s:copy
+ 2 Stack: sd-
+ 4 Description:
+6 Copy string s to memory at d
+------------------------------------------------------------------------
+
+ 0 s:dup
+ 2 Stack: s-s
+ 4 Description:
+6 Make a copy of string
+------------------------------------------------------------------------
+
+ 0 s:eq?
+ 2 Stack: ss-f
+ 4 Description:
+6 Compare two strings for equality
+------------------------------------------------------------------------
+
+ 0 s:-eq?
+ 2 Stack: ss-f
+ 4 Description:
+6 Compare two strings for inequality
+------------------------------------------------------------------------
+
+ 0 s:evaluate
+ 2 Stack: s-?
+ 4 Description:
+6 Interpret each token in a string
+------------------------------------------------------------------------
+
+ 0 s:fetch
+ 2 Stack: sn-c
+ 4 Description:
+6 Return character at index n in the string
+------------------------------------------------------------------------
+
+ 0 s:filter
+ 2 Stack: sq-s
+ 4 Description:
+6 Run q once for each value in s If it returns true, copy value
+7 new string
+------------------------------------------------------------------------
+
+ 0 s:first
+ 2 Stack: s-c
+ 4 Description:
+6 Return the first character in a string
+------------------------------------------------------------------------
+
+ 0 s:for-each
+ 2 Stack: sq-
+ 4 Description:
+6 Run q once for each character in s. Pushes each character to the
+7 stack before calling q
+------------------------------------------------------------------------
+
+ 0 s:get/line
+ 2 Stack: '-s
+ 4 Description:
+6 Read a line of input until enter is encountered. Return input as
+7 string
+------------------------------------------------------------------------
+
+ 0 s:get/token
+ 2 Stack: -s
+ 4 Description:
+6 Read a string from the keyboard ending when a whitespace is
+7 encountered
+------------------------------------------------------------------------
+
+ 0 s:hash
+ 2 Stack: s-n
+ 4 Description:
+6 Return the hash of the string
+------------------------------------------------------------------------
+
+ 0 s:index/c
+ 2 Stack: sc-f
+ 4 Description:
+6 True if string contains c, false otherwise
+------------------------------------------------------------------------
+
+ 0 s:keep
+ 2 Stack: s-s
+ 4 Description:
+6 Move string to here, allocating space and returning a pointer
+------------------------------------------------------------------------
+
+ 0 s:last
+ 2 Stack: s-c
+ 4 Description:
+6 Return the last character in a string
+------------------------------------------------------------------------
+
+ 0 s:left
+ 2 Stack: sn-s
+ 4 Description:
+6 Return left n characters of string
+------------------------------------------------------------------------
+
+ 0 s:length
+ 2 Stack: s-n
+ 4 Description:
+6 Return the length of a string
+------------------------------------------------------------------------
+
+ 0 s:map
+ 2 Stack: sq-s
+ 4 Description:
+6 Run q once for each value in the string. Takes the returned
+7 value and creates a new string
+------------------------------------------------------------------------
+
+ 0 s:middle
+ 2 Stack: sfl-s
+ 4 Description:
+6 Return substring from f to l, inclusive
+------------------------------------------------------------------------
+
+ 0 s:pool
+ 2 Stack: -p
+ 4 Description:
+6 Return the starting address of the temporary string/array pool
+------------------------------------------------------------------------
+
+ 0 s:prepend
+ 2 Stack: ss-s
+ 4 Description:
+6 Create a new string with the contents of s2 followed by s1
+------------------------------------------------------------------------
+
+ 0 s:put
+ 2 Stack: s-
+ 4 Description:
+6 Display a string
+------------------------------------------------------------------------
+
+ 0 s:reverse
+ 2 Stack: s-s
+ 4 Description:
+6 Reverse the order of values in the string. Returns a pointer to
+7 the new string
+------------------------------------------------------------------------
+
+ 0 s:rewrite
+ 2 Stack: s-s
+ 4 Description:
+6 Replace underscores in string with spaces
+------------------------------------------------------------------------
+
+ 0 s:right
+ 2 Stack: sn-s
+ 4 Description:
+6 Return right n characters of string
+------------------------------------------------------------------------
+
+ 0 s:store
+ 2 Stack: csn-
+ 4 Description:
+6 Store character into string at index n
+------------------------------------------------------------------------
+
+ 0 s:temp
+ 2 Stack: s-s
+ 4 Description:
+6 Put a copy of a string in the temporary buffers. Return a
+7 pointer to it
+------------------------------------------------------------------------
+
+ 0 s:th
+ 2 Stack: sn-a
+ 4 Description:
+6 Given a string and index, return the address
+------------------------------------------------------------------------
+
+ 0 s:to-lower
+ 2 Stack: s-s
+ 4 Description:
+6 Make all characters in string lowercase
+------------------------------------------------------------------------
+
+ 0 s:to-n
+ 2 Stack: s-n
+ 4 Description:
+6 Convert a string to a number
+------------------------------------------------------------------------
+
+ 0 s:to-upper
+ 2 Stack: s-s
+ 4 Description:
+6 Make all characters in a string uppercase
+------------------------------------------------------------------------
+
+ 0 s:trim
+ 2 Stack: s-s
+ 4 Description:
+6 Trim both leading and trailing whitespace from a string
+------------------------------------------------------------------------
+
+ 0 s:trim-right
+ 2 Stack: s-s
+ 4 Description:
+6 Trim trailing whitespace from a string
+------------------------------------------------------------------------
+
+ 0 s:trim-left
+ 2 Stack: s-s
+ 4 Description:
+6 Trim leading whitespace from a string
+------------------------------------------------------------------------
+
+ 0 shift-left
+ 2 Stack: nn-n
+ 4 Description:
+6 Shift n1 left by n2 bits
+------------------------------------------------------------------------
+
+ 0 shift-right
+ 2 Stack: nn-n
+ 4 Description:
+6 Shift n1 right by n2 bits
+------------------------------------------------------------------------
+
+ 0 sigil:(
+ 2 Stack: -
+ 4 Description:
+6 Sigil. Token is a comment
+------------------------------------------------------------------------
+
+ 0 sigil:#
+ 2 Stack: s-n
+ 4 Description:
+6 Sigil. Token is a number
+------------------------------------------------------------------------
+
+ 0 sigil:&
+ 2 Stack: s-a
+ 4 Description:
+6 Sigil. Token is a named pointer
+------------------------------------------------------------------------
+
+ 0 sigil:'
+ 2 Stack: s-s
+ 4 Description:
+6 Sigil. Token is a string.
+------------------------------------------------------------------------
+
+ 0 sigil::
+ 2 Stack: s-
+ 4 Description:
+6 Sigil. Token is name of a new word to define
+------------------------------------------------------------------------
+
+ 0 sigil:$
+ 2 Stack: s-c
+ 4 Description:
+6 Sigil. Return first character of token
+------------------------------------------------------------------------
+
+ 0 sigil:get
+ 2 Stack: c-p
+ 4 Description:
+6 Return the address of a sigil handler for character c
+------------------------------------------------------------------------
+
+ 0 sigil:set
+ 2 Stack: pc-
+ 4 Description:
+6 Assign word at address to the sigil handler for character c
+------------------------------------------------------------------------
+
+ 0 sigil:@
+ 2 Stack: s-n
+ 4 Description:
+6 Sigil. Use to fetch value from a named variable
+------------------------------------------------------------------------
+
+ 0 sigil:!
+ 2 Stack: ns-
+ 4 Description:
+6 Sigil. Use to store value into a named variable
+------------------------------------------------------------------------
+
+ 0 sigil:\
+ 2 Stack: as-
+ 4 Description:
+6 Sigil. Bind name s to function a
+------------------------------------------------------------------------
+
+ 0 sip
+ 2 Stack: nq-n
+ 4 Description:
+6 Push a copy of n to address then call p. Afterwards, restore to
+7 the data stack
+------------------------------------------------------------------------
+
+ 0 save
+ 2 Stack: -
+ 4 Description:
+6 Save the current block
+------------------------------------------------------------------------
+
+ 0 set
+ 2 Stack: n-
+ 4 Description:
+6 Set Block to n. Does not load or save the block
+------------------------------------------------------------------------
+
+ 0 sp
+ 2 Stack: -
+ 4 Description:
+6 Display a space
+------------------------------------------------------------------------
+
+ 0 startup
+ 2 Stack: -
+ 4 Description:
+6 Called on startup to prepare the system. You can replace this to
+7 have ilo start your application
+------------------------------------------------------------------------
+
+ 0 store
+ 2 Stack: na-
+ 4 Description:
+6 Store n into address a
+------------------------------------------------------------------------
+
+ 0 store-next
+ 2 Stack: na-a
+ 4 Description:
+6 Store n int address a, return address a + 1
+------------------------------------------------------------------------
+
+ 0 swap
+ 2 Stack: xy-yx
+ 4 Description:
+6 Exchange the top two stack items
+------------------------------------------------------------------------
+
+ 0 sys:info
+ 2 Stack: -
+ 4 Description:
+6 Display system information
+------------------------------------------------------------------------
+
+ 0 tab
+ 2 Stack: -
+ 4 Description:
+6 Display a tab
+------------------------------------------------------------------------
+
+ 0 times
+ 2 Stack: np-
+ 4 Description:
+6 For n iterations, execute p
+------------------------------------------------------------------------
+
+ 0 titles
+ 2 Stack: -
+ 4 Description:
+6 Display the block title lines. The output is paginated every 16
+7 lines
+------------------------------------------------------------------------
+
+ 0 tri
+ 2 Stack: xppp-?
+ 4 Description:
+6 Apply q1 against x, then q2 against a copy of x, and finally q3
+7 against another copy of x
+------------------------------------------------------------------------
+
+ 0 tri*
+ 2 Stack: xyzppp-?
+ 4 Description:
+6 Apply q1 against x, q2 against y, and q3 against z
+------------------------------------------------------------------------
+
+ 0 tri@
+ 2 Stack: xyzp-?
+ 4 Description:
+6 Apply q against x, then against y, and finally against z
+------------------------------------------------------------------------
+
+ 0 tuck
+ 2 Stack: xy-yxy
+ 4 Description:
+6 Put a copy of TOS under NOS
+------------------------------------------------------------------------
+
+ 0 until
+ 2 Stack: q-
+ 4 Description:
+6 Run a quote in a loop repeatedly The loop must return a flag.
+7 End loop when flag is not zero
+------------------------------------------------------------------------
+
+ 0 use
+ 2 Stack: n-
+ 4 Description:
+6 Load and run a specific block numbered n
+------------------------------------------------------------------------
+
+ 0 using
+ 2 Stack: nn-
+ 4 Description:
+6 Load and run blocks n1 thru n2
+------------------------------------------------------------------------
+
+ 0 v:dec
+ 2 Stack: a-
+ 4 Description:
+6 Decrement the value stored at address
+------------------------------------------------------------------------
+
+ 0 v:inc
+ 2 Stack: a-
+ 4 Description:
+6 Increment the value stored at address
+------------------------------------------------------------------------
+
+ 0 var
+ 2 Stack: s-
+ 4 Description:
+6 Create a variable with a value of zero
+------------------------------------------------------------------------
+
+ 0 var-n
+ 2 Stack: ns-
+ 4 Description:
+6 Create a variable with a value of n
+------------------------------------------------------------------------
+
+ 0 while
+ 2 Stack: q-
+ 4 Description:
+6 Run a quote in a loop repeatedly The loop must return a flag.
+7 End loop when flag is zero
+------------------------------------------------------------------------
+
+ 0 xor
+ 2 Stack: nn-n
+ 4 Description:
+6 Perform a bitwise XOR
+------------------------------------------------------------------------
+

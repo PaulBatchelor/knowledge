@@ -68,4 +68,5 @@ dz/DDIA
 dz/vim.dz
 dz/dzb.dz
 dz/solidjs
+dz/konilo
 dz/zzz

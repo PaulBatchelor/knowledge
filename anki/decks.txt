@@ -2,3 +2,5 @@ DZ full::full.apkg
 SolidJS:webdev/solidjs:solidjs.apkg
 Rust:rust:rust.apkg
 DDIA:DDIA:DDIA.apkg
+System Design Interview:system_design_interview:system_design_interview.apkg
+Konilo:forth/konilo:konilo.apkg

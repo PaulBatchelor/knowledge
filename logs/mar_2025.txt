@@ -15,3 +15,5 @@ all the items in the rust std docs, then build flashcards
 for them.
 I'll probably start with the top-level nodes.
 @13:09 first migrating to their own dz file #timelog:00:17:09
+@21:18 build some flashcards for rust std
+@22:44 done

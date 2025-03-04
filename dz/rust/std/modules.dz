@@ -177,7 +177,7 @@ hl https://doc.rust-lang.org/std/hash/index.html
 co $ ..
 ln Generic hashing support.
 ff 'hash' module
-ln Generic hashing support.
+fb Generic hashing support.
 
 nn hint
 hl https://doc.rust-lang.org/std/hint/index.html

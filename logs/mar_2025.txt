@@ -20,4 +20,6 @@ I'll probably start with the top-level nodes.
 
 @2025-03-03
 @19:46 Fixing up konilo cards. #timelog:00:17:35
-@21:21 some rust stuff. battery died on laptop and I lost my previous timestamp
+@21:21 some rust stuff. battery died on laptop and I lost my previous timestamp #timelog:00:15:10
+
+@21:38 review some flagged cards

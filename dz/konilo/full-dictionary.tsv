@@ -1,0 +1,258 @@
+.	'-	Read and discard the next 62 characters. This is used in blocks to provide line width comments.	. Text to ignore\n	This is intended for use in blocks. If placed as the first word on a line, it will ignore the rest of the line.\n\nAs Konilo does not track line lengths during evaluation, this can not be used to comment out the end of a line, only a full line.\n	(\n
+0	'-	Parse to end of line. Insert into text line 0	0 text for the top line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15\n
+1	'-	Parse to end of line. Insert into text line 1	1 text for the second line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 2 3 4 5 6 7 8 9 10 11 12 13 14 15\n
+2	'-	Parse to end of line. Insert into text line 2	2 text for the third line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 3 4 5 6 7 8 9 10 11 12 13 14 15\n
+3	'-	Parse to end of line. Insert into text line 3	3 text for the fourth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 4 5 6 7 8 9 10 11 12 13 14 15\n
+4	'-	Parse to end of line. Insert into text line 4	4 text for the fifth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 5 6 7 8 9 10 11 12 13 14 15\n
+5	'-	Parse to end of line. Insert into text line 5	5 text for the sixth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 6 7 8 9 10 11 12 13 14 15\n
+6	'-	Parse to end of line. Insert into text line 6	6 text for the seventh line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 7 8 9 10 11 12 13 14 15\n
+7	'-	Parse to end of line. Insert into text line 7	7 text for the eighth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 8 9 10 11 12 13 14 15\n
+8	'-	Parse to end of line. Insert into text line 8	8 text for the nineth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 7 9 10 11 12 13 14 15\n
+9	'-	Parse to end of line. Insert into text line 9	9 text for the tenth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 7 8 10 11 12 13 14 15\n
+10	'-	Parse to end of line. Insert into text line 10	10 text for the eleventh line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15\n
+11	'-	Parse to end of line. Insert into text line 11	11 text for the twelveth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 7 8 9 10 12 13 14 15\n
+12	'-	Parse to end of line. Insert into text line 12	12 text for the thirteenth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 7 8 9 10 11 13 14 15\n
+13	'-	Parse to end of line. Insert into text line 13	13 text for the fourteenth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 7 8 9 10 11 12 14 15\n
+14	'-	Parse to end of line. Insert into text line 14	14 text for the fifteenth line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 7 8 9 10 11 12 13 15\n
+15	'-	Parse to end of line. Insert into text line 15	15 text for the last line\n	The provided text will replace all text on the line.\n\nThis is one of a very few parsing words.\n	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14\n
+{{	-	Begin a lexical scoped area. Starts the private portion.	{{\n  'a var\n  :set &a store ;\n  :bump @a n:inc !a ;\n---reveal---\n  :foo (n-) set bump @n n:put nl\n}}\n	Scoping is lexical. This works by unlinking the dictionary headers in between the {{ and ---reveal--- from the dictionary.\n	---reveal--- }}\n
+---reveal---	-	Within  lexical scoped area, switch to global scope area.	{{\n  'a var\n  :set &a store ;\n  :bump @a n:inc !a ;\n---reveal---\n  :foo (n-) set bump @n n:put nl\n}}\n	Scoping is lexical. This works by unlinking the dictionary headers in between the {{ and ---reveal--- from the dictionary.\n	{{ }}\n
+}}	-	Close off lexical scoped area. Hides words in the private area.	{{\n  'a var\n  :set &a store ;\n  :bump @a n:inc !a ;\n---reveal---\n  :foo (n-) set bump @n n:put nl\n}}\n	Scoping is lexical. This works by unlinking the dictionary headers in between the {{ and ---reveal--- from the dictionary.\n	{{ ---reveal---\n
+)	-	Ending for comments or visual grouping. Provided for readability purposes	( #2 #2 n:add )\n	This is provided as a readability aid. Since comments (made by the `(` sigil) are ignored, you can use this to help visually group phrases in your code.\n	sigil:(\n
+-eq?	nn-f	Compare values for inequality	#100 #45 -eq?\n		eq? lt? gt? lteq? gteq?\n
+-if	fp-	Execute p if flag is zero	#6 #100 eq? [ 'condition_not_met! s:put nl ] -if\n#100 #100 eq? [ 'condition_not_met! s:put nl ] -if\n		choose if\n
+;	-	End a definition	:foo (-) ;\n		Compiler sigil::\n
+?jump	fp-	Internal. If flag is non-zero, branch to p.	(used_internally)\n		
+BaseBlock	-	Data. Holds the number of the first block.	#10 !BaseBlock\n	This variable holds a block number that is treated as the starting block. It can be used to achieve a paritioning of the blocks. For instance, you might have code in physical blocks 500-800, and data in blocks 0-499. You could set `BaseBlock` to 500, and `Blocks` to 300 to prevent words like `needs` from accessing the data blocks during a search.\n	Block Blocks\n
+Block	-	Data. Holds the current block number, relative to the value in BaseBlock.	@Block n:put\n	This variable holds the block number to be used for `load` and `save`. The value is constrained by the editor to keep in range of 0 through the value in `Blocks`.\n	Blocks BaseBlock\n
+Blocks	-	Data. Set to the number of blocks available in your system.	@Blocks n:put\n	This variable holds the number of blocks available. You will need to set this to match your local environment.\n	Block BaseBlock\n
+Compiler	-	Data. Tracks compiler state	:compiling?\n  @Compiler [ 'Compiler_active ] [ 'Interpreting ] choose\n  s:put nl ; #-1 @Dictionary d:flags store\n\ncompiling?\n[ compiling? ] drop\n	The `Compiler` state is changed by `[`, `sigil::`, `]`, and `;`. For checking state, `compiling?` is provided.\n	compiling? sigil:: ;\n
+Dictionary	-	Data. Pointer to most recent header in dictionary	(Get_address_of_most_recent_word)\n@Dictionary d:address fetch n:put\n		d:create sigil:: d:for-each\n
+Free	-	Data. Pointer to next free addr	(Display_next_free_memory_address)\n@Free n:put\n	The `Free` variable holds a pointer to the next free memory address. You can check this value by calling `here`. Various words will consume memory. The main ones are `comma` and `allot`. Dictionary headers as well as some array and string words will also consume memory at `here`.\n	here allot gc\n
+I	-n	Access the loop index for the current loop. (For loops made using indexed-times)	#10 [ I n:put ] indexed-times\n		J K indexed-times\n
+J	-n	Access the parent loop index for the current loop. (For loops made using indexed-times)	:inner [ I n:put $, c:put J n:put sp ] ;\n#10 [ #5 inner indexed-times ] indexed-times\n		I K indexed-times\n
+K	-n	Access the grandparent loop index for the current loop. (For loops made using indexed-times)	:inner [ I n:put $, c:put J n:put $, c:put K n:put sp ] ;\n:outer #3 inner indexed-times ;\n#10 [ #5 &outer indexed-times ] indexed-times\n		I J indexed-times\n
+Sigils	-	Data. Table of sigil handlers	(get_pointer_to_sigil_table)\n\n&Sigils\n	Sigils is a table holding up to 128 (the lower 7-bit ASCII space) pointers to sigil handlers. Unused sigils have the matching entries here set to zero.\n	
+[	-p	Begin a quotation	[ #45 n:put ] call\n	Quotations are anonymous, nestable functions. Konilo uses `[` to begin one.\n	]\n
+]	p-p	End a quotation	[ #45 n:put ] call\n	Quotations are anonymous, nestable functions. Konilo uses `]` to end one.\n	[\n
+a:append	aa-a	Create a new array with the contents of a1 followed by a2	(displays:_1_2_3_6_5_4)\n\n( #3 #2 #1 ) #3 a:make/temp\n( #4 #5 #6 ) #3 a:make/temp\na:append\n\n[ n:put sp ] a:for-each\n	An `a:append` operations constructs a new (temporal) array from the contents of two provided arrays.\n	a:prepend\n
+a:behead	a-a	Remove first item from an array	(remove_first_item_in_array)\n\n( #100 #200 #300 ) #3 a:make/temp a:behead\n		a:chop\n
+a:chop	a-a	Remove last item from an array	(remove_last_item_in_array)\n\n( #100 #200 #300 ) #3 a:make/temp a:chop\n	New array is allocated in the temporary pool.\n	a:behead\n
+a:contains?	an-f	True if array contains n. False otherwise	( #100 #200 #300 ) #3 a:make \data-set\n\n&data-set #300 a:contains? n:put nl\n&data-set #281 a:contains? n:put nl\n		
+a:copy	ap-	Copy array a to memory starting at pointer p	( #100 #200 #300 ) #3 a:make \data-set\nhere #4 allot \data-set-copy\n&data-set &data-set-copy a:copy\n		
+a:dup	a-a	Make a copy of an array	( #100 #200 #300 ) #3 a:make \data-set\n&data-set a:dup [ n:put sp ] a:for-each\n		
+a:eq?	aa-f	Compare two arrays for equality	( #100 #200 #300 ) #3 a:make \data-set1\n( #100 #200 #300 ) #3 a:make \data-set2\n( #10 #20 #30 ) #3 a:make \data-set3\n\n&data-set1 &data-set2 a:eq? n:put nl\n&data-set1 &data-set3 a:eq? n:put nl\n&data-set2 &data-set3 a:eq? n:put nl\n		
+a:-eq?	aa-f	Compare two arrays for inequality	( #100 #200 #300 ) #3 a:make \data-set1\n( #100 #200 #300 ) #3 a:make \data-set2\n( #10 #20 #30 ) #3 a:make \data-set3\n\n&data-set1 &data-set2 a:-eq? n:put nl\n&data-set1 &data-set3 a:-eq? n:put nl\n&data-set2 &data-set3 a:-eq? n:put nl\n		
+a:fetch	an-v	Fetch value stored at index n in array	( #100 #200 #300 ) #3 a:make \data-set\n&data-set #2 a:fetch n:put\n		a:store a:th\n
+a:filter	ap-a	Run p once for each value in a. If it returns true, copy value new array	( #1 #2 #3 #4 ) #4 a:make \data-set\n&data-set [ #2 n:mod n:zero? ] a:filter [ n:put sp ] a:for-each\n		
+a:first	a-n	Return the first value in an array	( #1 #2 #3 #4 ) #4 a:make/temp a:first n:put nl\n		
+a:for-each	ap-	Run p once for each value in the array. Pushes each value prior to calling p	( #1 #2 #3 #4 ) #4 a:make/temp [ n:put tab ] a:for-each nl\n		
+a:hash	a-n	Return the hash of an array	( #1 #2 #3 #4 ) #4 a:make/temp a:hash\n		
+a:indices	av-a	Return array of indices for v in source array	'hello_world $o a:indices [ n:put sp ] a:for-each nl\n		a:index\n
+a:index	av-n	Return first index of n in a	'hello_world $e a:index n:put nl\n		a:indices\n
+a:last	a-n	Return the last value in an array	'hello a:last c:put\n		
+a:left	an-a	Return left n values from array	( #1 #20 #13 #84 #5 ) #5 a:make/temp #3 a:left\n	New array is allocated in the temporary pool.\n	a:right a:middle\n
+a:length	a-n	Return the length of an array	(returns_3)\n\n( #100 #200 #300 ) #3 a:make/temp a:length\n		
+a:make	...n-a	Create a new permanent array from the provided values	(create_an_array_of_three_characters,_"cba")\n\n$a $b $c #3 a:make\n\n(display_it_as_a_string)\n\ns:put nl\n	This creates an array in the permanent memory area. For arrays that aren't needed long term, it may be better to use `a:make/temp` instead.\n	a:make/temp\n
+a:make/temp	...n-a	Create a new temporary array from the provided values	(create_an_array_of_three_characters,_"cba")\n\n$a $b $c #3 a:make/temp\n\n(display_it_as_a_string)\n\n s:put nl\n	This creates an array in the temporary pool. This is preferred for short lived arrays.\n	a:make\n
+a:map	ap-a	Run p once for each value in the array. Takes the returned value and creates a new array	(displays:_30_20_10)\n\n( #1 #2 #3 ) #3 a:make/temp [ #10 n:mul ] a:map [ n:put sp ] a:for-each\n		
+a:middle	afl-a	Return new array from f to l, inclusive	(__5__4__3__2__1__0_:-_value_offset)\n( #6 #5 #4 #3 #2 #1 ) #6 a:make/temp\n(_______^^__________:_-_start_at_offset_3)  #3\n(____^^_^^__________:_-_take_two_values)    #2\na:middle\n		a:left a:right\n
+a:prepend	aa-a	Create a new array with the contents of a2 followed by a1	(displays:_6_5_4_1_2_3)\n\n( #3 #2 #1 ) #3 a:make/temp\n( #4 #5 #6 ) #3 a:make/temp\n\na:prepend\n\n[ n:put sp ] a:for-each\n	An `a:prepend` operations constructs a new (temporal) array from the contents of two provided arrays. This is identical to `a:append` except for the argument ordering.\n	a:append\n
+a:reduce	anp-n	Takes an array, a starting value, and a quote. This will apply the quote to each item in the array; the quote should consume two values and return one	(sum_values_in_array)\n\n:a:sum (a-n)  #0 [ n:add ] a:reduce ;\n\n( #1 #20 #13 #84 #5 ) #5 a:make/temp a:sum\n		
+a:reverse	a-a	Reverse the order of items in an array	( #1 #20 #13 #84 #5 ) #5 a:make/temp a:reverse\n	New array is allocated in the temporary pool.\n	
+a:right	an-a	Return right n values from array	( #1 #20 #13 #84 #5 ) #5 a:make/temp #2 a:right\n	New array is allocated in the temporary pool.\n	a:left a:middle\n
+a:store	van-	Store value v into array at index n	( #1 #20 #13 #84 #5 ) #5 a:make \data-set\n\n&data-set [ n:put sp ] a:for-each\n#2000 &data-set #2 a:store\n&data-set [ n:put sp ] a:for-each\n		a:fetch a:th\n
+a:temp	a-a	Make a copy of the array in the temporary string/array space	(make_an_array)\n\n( #10 #15 #20 ) #3 a:make\n\n(put_a_copy_into_the_temporary_buffers)\n\na:temp\n	The temporary pool is shared with strings.\n	
+a:th	an-p	Return the address of a specific index into the array	( #10 #15 #20 ) #3 a:make/temp #1 a:th\n	The calculation for this is:\n\n    array-start + offset + 1\n\n`a:th` is provided to aid in readability, and is mainly an internal factor used by `a:fetch` and `a:store`.\n	a:fetch a:store\n
+allot	n-	Allocate n cells of memory	(allocate_500_cells)\n#500 allot\n\n(free_500_cells)\n#-500 allot\n	`allot` both allocates and frees (when passed a negative length) memory at `here`. The allocations are strictly linear, so take care when freeing memory. If you need to temporarily allocate memory, it's recommended to use `allot` in a `gc` quote to handle the cleanup.\n	Free here gc\n
+and	nn-n	Perform a bitwise AND	#0  #-1 and n:put nl (0)\n#-1 #-1 and n:put nl (-1)\n#-1 #0  and n:put nl (0)\n#0  #0  and n:put nl (0)\n		or xor not\n
+bi	xpp-?	Execute p1 against x, then p2 against a copy of x	#10 [ n:inc ] [ n:dec ] bi\n		bi* bi@ tri tri* tri@\n
+bi*	xypp-	Execute p1 against x and p2 against y	#10 #20 [ n:inc ] [ n:dec ] bi*\n		bi bi@ tri tri* tri@\n
+bi@	xyp-	Execute p against x, execute p against y	#10 #20 [ #10 n:div ] bi@\n		bi bi* tri tri* tri@\n
+block:load	np-	Read 1024 cells in block n to p	(load_contents_of_block_45_into_block_buffer)\n#45 block:buffer block:load\n		block:save block:buffer\n
+block:save	np-	Save 1024 cells at p to block n	(save_contents_of_block_buffer_to_block_45)\n#45 block:buffer block:save\n		block:load block:buffer\n
+block:buffer	-p	Return a pointer to the start of the block buffer	block:buffer\n		block:load block:save\n
+bye	-	Exit Konilo	(exit_konilo)\nbye\n	On a hosted system, `bye` will generally exit the system. On a native/embedded system the behaviour is left to the implementation. Consult the documentation for your local system in this case.\n	
+c:get	-c	Read a character from the keyboard	:pause 'Press_a_key... s:put c:get drop ;\n	This word may return as soon as a key is hit or buffered until a newline is entered. On a BSD or Linux, you can run `stty cbreak` prior to starting Konilo to have it return immediately. If you do this, run `stty -cbreak` when done.\n\nIf you use a Unix and prefer line buffering, it's worth considering using something like `rlwrap` to get history and line editing support.\n\n`c:get` is a hookable word. It starts with a set of two `........` instruction bundles (NOPs) that can be replaced to jump to a user-chosen word instead. If you are trying to inject data as input, this should be your starting point.\n\n	c:put\n
+c:lowercase?	c-f	Return true if character is lowercase or false if not	(returns_true)\n$c c:lowercase?\n\n(returns false)\n$D c:lowercase?\n	The case determination only works with ASCII (or the subset of UTF8 corresponding to ASCII).\n	c:uppercase?\n
+c:put	c-	Display a single character	$h c:put $e c:put $l c:put $l c:put $o c:put\n	`c:put` is a hookable word. It starts with a set of two `........` instruction bundles (NOPs) that can be replaced to jump to a user-chosen word instead. If you are trying to capture all output, this is the best bet.\n	c:get\n
+c:to-lower	c-c	Convert character to lowercase	$c c:to-lower c:put\n	The case conversion only works with ASCII (or the subset of UTF8 corresponding to ASCII).\n	c:to-upper\n
+c:to-s	c-s	Convert a character to a string	$c c:to-s\n	This create a temporary string and sets the first character to the provided one. It's useful if you need to append a character to a string.\n	s:to-n n:to-s\n
+c:to-upper	c-c	Convert character to uppercase	$c c:to-upper c:put\n	The case conversion only works with ASCII (or the subset of UTF8 corresponding to ASCII).\n	c:to-lower\n
+c:uppercase?	c-f	Return true if character is uppercase or false if not	(returns_true)\n$C c:uppercase?\n\n(returns false)\n$d c:uppercase?\n	The case determination only works with ASCII (or the subset of UTF8 corresponding to ASCII).\n	c:lowercase?\n
+call	p-	Call a function	(call_a_function_[via_pointer])\n&bye call\n\n(or_call_a_quote)\n[ bye ] call\n		jump\n
+choose	fpp-	Execute p1 if flag is non-zero or p2 if zero.	:is-one? (n-)\n  [ #1 eq? ] [ #-1 eq? ] bi or\n  [ 'Yes! ] [ 'No! ] choose s:put nl ;\n\n#10 is-one? (No!)\n#1 is-one? (Yes!)\n#-1 is-one? (Yes!)\n#-10 is-one? (No!)\n		if -if\n
+comma	n-	Inline a value to here and increment Free	(let's_make_a_manual_array)\nhere       (pointer)\n  #3 comma (length)\n  $a comma (value_0)\n  $b comma (value_1)\n  $c comma (value_2)\n\n(display it)\n[ c:put ] a:for-each nl\n		
+compare	sdn-f	Compare n cells of memory startng at s to memory starting at d. Return true if all match or false otherwise	'Hello s:keep \Test-1\n'Nevermore s:keep \Test-2\n'Hello s:keep \Test-3\n&Test-1 &Test-2 over s:length n:inc compare n:put nl (0)\n&Test-1 &Test-3 over s:length n:inc compare n:put nl (-1)\n&Test-2 &Test-3 over s:length n:inc compare n:put nl (0)\n		
+compiling?	-f	True if Compiler is set, False otherwise	:c?\n  compiling? [ 'Compiler_active ] [ 'Interpreting ] choose\n  s:put nl ; #-1 @Dictionary d:flags store\n\nc?\n[ c? ] drop\n		Compiler sigil:: ;\n
+compile:lit	n-	Internal. Compile an ilo li instruction	(used_internally)\n		
+compile:call	p-	Internal. Compile an ilo lica instruction	(used_internally)\n		
+compile:jump	p-	Internal. Compile an ilo liju instruction	(used_internally)\n		
+copy	sdc-	Copy c cells starting at s to memory starting at d. Does not support overlapping regions	'Test d:create #45 allot\n\n'Test_data &Test over s:length n:inc copy\n		
+curry	vp-p	Create a new quote pushing the value, then calling p1	#100 &n:put curry \100\n\n100 (displays_100)\n		
+d:address	d-p	Given a dictionary header, return a pointer to the address field	(get_address_of_most_recent_word)\n\n@Dictionary d:address fetch\n		d:flags d:hash d:link\n
+d:create	s-	Create a new header	(create_a_new_header_for_"foo")\n\n'foo d:create\n\n(the_address_field_is_pointing_to_`here`)\n		sigil::\n
+d:exists?	s-f	Given a dictionary header, return a flag indicating whether or not the word exists	:defined? (s-) d:exists? [ 'yes ] [ 'no ] choose s:put nl ;\n\n'drop defined?\n'dfo4j2o41oj defined?\n		
+d:flags	d-p	Given a dictionary header, return a pointer to the flags field	(get_flags_of_most_recent_word)\n\n@Dictionary d:flags fetch\n	The flags field is currently used to identify immediate words. We can extend this to support up to 32 flags, but there are no plans to do so at this time.\n	d:address d:hash d:link\n
+d:hash	d-p	Given a dictionary header, return a pointer to the hash field	(get_hash_of_most_recent_word)\n\n@Dictionary d:hash fetch\n		d:address d:flags d:link\n
+d:link	d-p	Given a dictionary header, return a pointer to the link field	(get_header_of_most_recent_word)\n\n@Dictionary\n\n(follow_d:link_to_previous_header)\n\nd:link fetch\n		d:address d:flags d:hash\n
+d:lookup	s-d	Lookup a word in the dictionary. Returns zero if not found or the dictionary header address	:defined? (s-f) d:lookup n:-zero? ;\n'sys:info defined? n:put nl (-1)\n'dj13j1gm0 defined? n:put nl (0)\n\n'bye d:lookup d:address fetch call\n		
+depths	-nm	Return depths of data and address stacks	depths n:put tab n:put nl\n	The returned depth of the data stack does not include the values being pushed by this.\n	depth/data depth/address\n
+depth/data	-n	Return the depth of the data stack	:.stk depth/data n:put '_items_on_the_stack s:put nl ;\n.stk\n	The returned depth does not include the value being pushed by this.\n	depths depth/address\n
+depth/address	-n	Return the depth of the address stack	depth/address n:put nl\n		depth/data depths\n
+dip	np-n	Push n to address stack, call p. then restore n to data stack	#1 #2 [ n:put nl ] dip n:put nl\n	This is the same as doing:\n\npush ... pop\n	sip push pop\n
+drop	n-	Discard top value on stack	#1 #2 #3 #4 #5 #6 drop\n#5 [ n:put tab ] times nl\n		drop-pair nip\n
+drop-pair	nn-	Discard top two values on stack	#1 #2 #3 #4 #5 #6 drop-pair\nn:put tab n:put nl\nn:put tab n:put nl\n	This is the same as doing `drop drop`.\n	drop nip\n
+dtc	-	Internal. Data following is a direct threaded address list	(used_internally)\n		
+dup	n-nn	Duplicate top value on stack	#13 dup n:put tab n:put nl\n		dup-pair\n
+dup-pair	nm-nmnm	Duplicate top two values	#1 #2 dup-pair\nn:put tab n:put nl\nn:put tab n:put nl\n		dup\n
+e:Display	-	Data. Holds a pointer to a block display word. Called by edit.	&list# !e:Display\n@e:Display call\n	The `e:Display` variable holds a pointer to the word used to display a block when editing starts via `edit`. It defaults to holding a pointer to `list`.\n	list list* list# sys:info\n
+e:erase/line	n-	Erase line n in the block buffer	(erase_contents_of_line_10)\n#10 e:erase/line\n		
+e:insert	n'-	Erase line n, parse to end of line, insert into line n	(replace_line_10_with_text_following_`e:insert`)\n#10 e:insert hello, world!\n		0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 e:insert-at\n
+e:insert-at	lc'-	Parse to end of line. Insert text into line l at column c	(replace_line_10,_starting_at_column_5,_with_text_following_`e:insert`)\n#10 #5 e:insert hello, world!\n		0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 e:insert\n
+e:line	n-	Display a single line from the current block	(display_line_10_of_current_block)\n#10 e:line\n		
+e:replace	ls-	Insert text s into line l	(Replace_line_10_with_"Hello_World!")\n#10 'Hello_World! e:replace list\n		0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 e:insert e:insert-at e:replace-at\n
+e:replace-at	lcs-	Insert text s into line l at column c	(Replace_text_in_line_10_with_"Hello_World!")\n(Starts_at_column_5)\n#10 #5 'Hello_World! e:replace list\n		0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 e:insert e:insert-at e:replace-at\n
+e:to-line	n-p	Return pointer to start of line in the block buffer	#10 e:to-line n:put (address_of_line_10)\n		
+edit	n-	Set Block to n. Load and display block	(begin_editing_block_0)\n\n#0 edit\n		list list* list# e:Display sys:info\n
+eq?	nn-f	Compare values for equality	#10 #10 eq? n:put nl\n #9 #10 eq? n:put nl\n		-eq? lt? gt? lteq? gteq?\n
+fetch	p-n	Fetch a value stored at address	#75 'foo var-n\n&foo fetch n:put nl\n		fetch-next\n
+fetch-next	a-an	Fetch a value stored at address Also returns the next address	#75 'foo var-n #80 comma\n&foo fetch-next n:put tab fetch n:put nl\n		fetch\n
+fill	vpn-	Fill n cells of memory starting at p with value v	'Test d:create #100 comma #100 allot\n\n(populate_string_with_100_"f"_characters)\n$f &Test n:inc #100 fill\n\n(display_100_"f"_characters_in_string)\n&Test s:put\n		
+forever	p-	Run p repeatedly, in an unending loop	[ 'hello! s:put nl ] forever\n		I J K indexed-times times while until\n
+gc	p-	Run function at pointer p. Saves and restores Free to recover any memory allocated during run	[ here n:put nl\n  #1000 allot\n  here n:put nl ] gc\n	This is a very simple form of garbage collection. Some words will allocate memory at `here`. By wrapping calls to these in a quote and passing to `gc`, this memory will be reclaimed when the quote returns.\n\nYou shouldn't use this with code that's actually allocating things you want to keep around.\n	Free here allot\n
+gt?	nn-f	Compare values for n1 greater than n2	#10 #11 gt? n:put nl\n#10 #10 gt? n:put nl\n #9 #10 gt? n:put nl\n		-eq? eq? lt? lteq? gteq?\n
+gteq?	nn-f	Compare two values for greater than or equality	#10 #11 gteq? n:put nl\n#10 #10 gteq? n:put nl\n #9 #10 gteq? n:put nl\n		-eq? eq? lt? gt? lteq?\n
+here	-a	Return the next free memory address	(print_"here")\n\nhere n:put nl\n\n(determine_length_of_allocated_data)\nhere ( #1 #2 #3 ) #3 a:make drop here swap n:sub n:put nl\n		Free allot gc\n
+if	fp-	Execute p if flag is non-zero	:check [ 'Value_is_valid_for_true_(non-zero) s:put nl ] if ;\n\n#100 check\n#0 check\n#-100 check\n		-if choose\n
+indexed-times	np-	Run a quote the specified number of times, tracking the loop index in I	#10 [ I n:put sp ] indexed-times nl\n	With `indexed-times` you can obtain the loop index with `I`. This will always count down towards zero. If you don't need the loop index, use `times` instead as it's more efficient.\n	I J K forever times until while\n
+internal:lit	-n	Internal. Push next value in memory to the stack	(used_internally)\n		
+internal:quote	-p	Internal. Skip over quote. Push address of quote to stack.	(used_internally)\n		
+interpret	s-	Interpret token	'#124 interpret\n'n:put interpret\n		s:evaluate\n
+io	...n-	Trigger an I/O operation	(used_internally)\n		
+jump	p-	Internal. Jump to an address	&bye jump\n		call\n
+list*	-	Display the text in the block	list*\n		list# list e:Display sys:info\n
+list#	-	Display the block with line numbers	list#\n		list* list e:Display sys:info\n
+list	-	Display the block with line numbers and rules	list\n		list* list# e:Display sys:info\n
+load	-	(re)Load the current block	load\n	Loads block (number taken from `Block`) into the `block:buffer`.\n	set save block:load block:save block:buffer\n
+lt?	nn-f	Compare values for n1 less than n2	#10 #11 lt? n:put nl\n#10 #10 lt? n:put nl\n #9 #10 lt? n:put nl\n		-eq? eq? gt? lteq? gteq?\n
+lteq?	nn-f	Compare two values for less than or equality	#10 #11 lteq? n:put nl\n#10 #10 lteq? n:put nl\n #9 #10 lteq? n:put nl\n		-eq? eq? lt? gt? gteq?\n
+n:abs	n-n	Return the absolute value of n	#-190 n:abs n:put nl\n#31 n:abs n:put nl\n		n:negate\n
+n:add	nn-n	Add n1 to n2, returning n3	(add_5_+_5)\n\n#5 #5 n:add\n		n:sub n:mul n:div n:divmod n:mod\n
+n:between?	nlu-f	True if n is between l and u, inclusive	#10 #1 #100 n:between? [ 'yes s:put nl ] if\n#10 #10 #100 n:between? [ 'yes s:put nl ] if\n#10 #-1 #10 n:between? [ 'yes s:put nl ] if\n#10 #50 #93 n:between? [ 'yes s:put nl ] if\n		
+n:dec	n-n	Decrement n by 1	(decrease_100_by_1)\n\n#100 n:dec\n		n:inc\n
+n:div	nn-n	Divine n1 by n2; get result	#110 #10 n:div n:put nl (11)\n		n:add n:sub n:mul n:divmod n:mod\n
+n:divmod	nn-nn	Divide n1 by n2 and return the result and remainder	#115 #10 n:divmod n:put sp n:put nl (11,_5)\n		n:add n:sub n:mul n:div n:mod\n
+n:get	'-n	Read a number from the input device			n:put\n
+n:inc	n-n	Increment n by 1	(increment_100_by_1)\n\n#100 n:inc\n		n:dec\n
+n:limit	nlu-n	Constrain n to between l and u, inclusive	#10 #1 #100 n:limit n:put nl\n#10 #1 #10 n:limit n:put nl\n#10 #1 #5 n:limit n:put nl\n		n:min n:max\n
+n:max	nn-n	Return the greater of two values	#33 #45 n:max n:put nl\n#-1 #21 n:max n:put nl\n#45 #33 n:max n:put nl\n		n:limit n:min\n
+n:min	nn-n	Return the lower of two values	#33 #45 n:min n:put nl\n#-1 #21 n:min n:put nl\n#45 #33 n:min n:put nl\n		n:limit n:max\n
+n:mod	nn-n	Divide n1 by n2; get remainder	#115 #10 n:mod n:put nl (5)\n		n:add n:sub n:mul n:div n:divmod\n
+n:mul	nn-n	Multiply n1 by n2, returning n3	#33 #10 n:mul n:put nl\n		n:add n:sub n:div n:divmod n:mod\n
+n:negate	n-n	Invert the sign of n	#21 n:negate n:put nl\n#-21 n:negate n:put nl\n		n:abs\n
+n:put	n-	Display a number	#12 n:put nl\n#-312 n:put nl\n		c:put s:put\n
+n:sub	nn-n	Subtract n2 from n1	(subtract_33_from_45)\n\n#45 #33 n:sub n:put nl\n		n:add n:mul n:div n:divmod n:mod\n
+n:to-s	n-s	Convert number to a temp string	(convert_numbers_to_temporary_strings)\n\n#124 n:to-s\n#-13 n:to-s\n		c:to-s s:to-n\n
+n:zero?	n-f	Compare n to zero. True if zero, false otherwise	:zero? n:zero? [ 'yes! s:put nl ] if ;\n#10 zero?\n#0 zero?\n		n:-zero?\n
+n:-zero?	n-f	Compare n to zero. True if not zero, false otherwise	:zero? n:-zero? [ 'no! s:put nl ] if ;\n#10 zero?\n#0 zero?\n		n:zero?\n
+needs	s-	Run any blocks (in order found) with a title starting with s	'(std-library) needs\n	This is the most common way to load a set of blocks. You pass in an identifier (the first word, separated by whitespace, in the title line). Any matching blocks are then located and loaded.\n\nIf you are editing a block, `save` it first. The block buffer (`block:buffer`) is reused when loading blocks, so any changes you have made to your current one will be lost if not first saved.\n\nBlocks can not use this to load other blocks.\n	use using\n
+new	-	Erase the contents of the current block	new\n		
+next	-	Switch to and load next block	next\n		prev set load\n
+nip	xy-y	Discard second item on stack	(will_display_3_then_1)\n#1 #2 #3 nip n:put sp n:put\n		drop drop-pair\n
+nl	-	Display a newline	'hello s:put tab 'world s:put nl\n		sp tab\n
+not	n-n	Perform a logical NOT operation	#1 #2 eq? not [ 'no_match s:put nl ] if\n		and or xor\n
+or	nn-n	Perform a bitwise OR	#1 #2 eq? #1 #2 lt? or [ 'a_condition_met s:put nl ] if\n		and xor not\n
+over	nm-nmn	Put a copy of NOS on top of stack	#2 #3 [ over n:put nl ] times nl\n	This is the same as  `&dup dip swap` or `push dup pop swap`.\n	tuck swap\n
+pop	-n	Move top value on address stack to data stack	#33 [ push #3 #4 pop ] call #3 [ n:put tab ] times nl\n		dip sip push\n
+prelude	-	Load & run blocks 1 & 2 if they appear to be code. Called by default `startup`.	prelude\n	`prelude` checks blocks 1 & 2 to see if they start with a `(` character. If so, it runs the contents of the blocks as code. This is called by the default `startup`.\n	startup\n
+prev	-	Switch to and load previous block	prev list\n		next set load\n
+process-data	n-?	Internal. If compiling, compile value as a literal into the word. If interpreting, leave on the stack	(used_internally)\n		
+push	n-	Move TOS to the address stack	#33 [ push #3 #4 pop ] call #3 [ n:put tab ] times nl\n	Use of `push` must be paired with `pop`. You can not reliably use this to obtain return addresses due to the use of direct threaded code sequences and the address interpreter.\n	dip sip pop\n
+restart	-	Reload the image and empty stacks	restart\n		
+rom:save	-	Save the current memory to disk (ilo.rom)	rom:save\n	If your ilo system supports it, this will dump the system memory (but not stacks or registers) to a physical medium for later use. This might be an image file ("ilo.rom"), physical flash media, disk, or whatever the underlying hardware best supports.\n	
+rot	xyz-yzx	Rotate the top three values	#1 #2 #3 rot n:put tab n:put tab n:put nl\n		over tuck swap push pop dip sip\n
+run	-	Run code in the currently loaded block	run\n		
+s:append	ss-s	Append s2 to s1, returning new temporary string	'hello_ 'world! s:append s:put nl\n		s:prepend\n
+s:behead	s-s	Remove first item from a string	'hello_world s:behead s:put nl\n	New string is allocated in the temporary pool.\n	s:chop\n
+s:chop	s-s	Remove last item from a string	'hello_world s:chop s:put nl\n	New string is allocated in the temporary pool.\n	s:behead\n
+s:contains?	sc-f	True if string contains c. False otherwise	'help!_I_lost_a_character. $z s:contains? n:put nl (0)\n'help!_I_lost_a_character. $a s:contains? n:put nl (-1)\n		
+s:copy	sd-	Copy string s to memory at d	'Target d:create #100 allot\n'hello &Target s:copy\n		
+s:dup	s-s	Make a copy of string	'Test_string s:dup\n		s:temp s:keep\n
+s:eq?	ss-f	Compare two strings for equality	'hello_world! 'different_string s:eq? n:put nl\n'hello_world! 'hello_world s:eq? n:put nl\n		s:-eq?\n
+s:-eq?	ss-f	Compare two strings for inequality	'hello_world! 'different_string s:-eq? n:put nl\n'hello_world! 'hello_world s:-eq? n:put nl\n		s:eq?\n
+s:evaluate	s-?	Interpret each token in a string	'#100_#200_n:add_n:put_nl s:evaluate\n		interpret\n
+s:fetch	sn-c	Return character at index n in the string	'hello_world! #4 s:fetch c:put\n		s:store s:th\n
+s:filter	sp-s	Run p once for each value in s If it returns true, copy value new string	'HeLlO_WoRlD! [ c:upper? ] s:filter s:put nl\n		
+s:first	s-c	Return the first character in a string	'hello_world! s:first c:put nl\n		s:last\n
+s:for-each	sp-	Run p once for each character in s. Pushes each character to the stack before calling p	:s:put [ c:put ] s:for-each ;\n		
+s:get/line	'-s	Read a line of input until enter is encountered. Return input as string	:input (s-s) s:put sp s:get/line s:temp ;\n'Enter_your_name: input\n		s:get/token\n
+s:get/token	-s	Read a string from the keyboard ending when a whitespace is encountered	:input (s-n) s:put sp s:get/token s:to-n ;\n'Enter_your_age: input\n		s:get/line\n
+s:hash	s-n	Return the hash of the string	'hello_world s:hash\n		
+s:index/c	sc-f	True if string contains c, false otherwise	'hello_world $e s:index/c n:put nl\n		
+s:keep	s-s	Move string to here, allocating space and returning a pointer	'banana_bread_is_good s:keep\n		s:temp\n
+s:last	s-c	Return the last character in a string	'hello a:last c:put\n		s:last\n
+s:left	sn-s	Return left n characters of string	'banana_bread_is_good #6 s:left\n	New string is allocated in the temporary pool.\n	s:right s:middle\n
+s:length	s-n	Return the length of a string	'banana_bread_is_good s:length\n		
+s:map	sp-s	Run p once for each value in the string. Takes the returned value and creates a new string	:make-uppercase [ c:to-upper ] s:map ;\n'banana_bread_is_good make-uppercase s:put nl\n		
+s:middle	sfl-s	Return substring from f to l, inclusive	(01234567890123456789)\n'banana_bread_is_good\n(_______^____________) #7 (starting_point)\n(___________^________) #5 (length)\ns:middle s:put ("bread")\n		s:left s:right\n
+s:prepend	ss-s	Create a new string with the contents of s2 followed by s1	'world! 'hello_ s:prepend s:put nl\n		s:append\n
+s:put	s-	Display a string	'banana_bread_is_good s:put nl\n		
+s:reverse	s-s	Reverse the order of values in the string. Returns a pointer to the new string	'banana_bread_is_good s:reverse\n		
+s:rewrite	s-s	Replace underscores in string with spaces	'abcdef s:rewrite\n		
+s:right	sn-s	Return right n characters of string	'banana_bread_is_good #4 s:right\n	New string is allocated in the temporary pool.\n	s:left s:middle\n
+s:store	csn-	Store character into string at index n	$H 'hello_world [ #0 s:store ] sip s:put nl\n		s:fetch s:th\n
+s:temp	s-s	Put a copy of a string in the temporary buffers. Return a pointer to it	'hello_world s:temp\n		s:keep\n
+s:th	sn-a	Given a string and index, return the address	'hello_reader! #6 s:th\n(______^________return_address_of_character_at_offset_6)\n(0123456789...)\n\n(and_display_it: fetch c:put\n		s:fetch s:store\n
+s:to-lower	s-s	Make all characters in string lowercase	'Mixed_CASE_To_LowerCase s:to-lower\n		s:to-upper\n
+s:to-n	s-n	Convert a string to a number	'341 s:to-n n:inc n:put nl\n'-33 s:to-n n:put nl\n	Conversion to numbers only supports decimal (base 10) numbers. If negative, the negative sign (-) should be the first character in the string.\n	n:to-s\n
+s:to-upper	s-s	Make all characters in a string uppercase	'Mixed_CASE_To_uPPerCase s:to-upper\n		s:to-lower\n
+s:trim	s-s	Trim both leading and trailing whitespace from a string	'___hello_world_!___ s:trim s:put '| s:put nl\n		s:trim-right s:trim-left\n
+s:trim-right	s-s	Trim trailing whitespace from a string	'___hello_world_!___ s:trim-right s:put '| s:put nl\n		s:trim s:trim-left\n
+s:trim-left	s-s	Trim leading whitespace from a string	'___hello_world_!___ s:trim-left s:put '| s:put nl\n		s:trim s:trim-right\n
+shift-left	nn-n	Shift n1 left by n2 bits	#1793 #8 shift-left n:put\n		
+shift-right	nn-n	Shift n1 right by n2 bits	#1793 #8 shift-right n:put\n		
+sigil:(	-	Sigil. Token is a comment	(comments_are_ignored)\n		
+sigil:#	s-n	Sigil. Token is a number	#-190 n:put\n#100 #200 n:add n:put\n		
+sigil:&	s-a	Sigil. Token is a named pointer	&bye call\n		
+sigil:'	s-s	Sigil. Token is a string.	'hello!\n'underscores_are_replaced_with_spaces!\n		
+sigil::	s-	Sigil. Token is name of a new word to define	:test (s-) s:put nl ;\n		Compiler compiling? d:create ;\n
+sigil:$	s-c	Sigil. Return first character of token	$9 c:put\n		
+sigil:get	c-p	Return the address of a sigil handler for character c	$@ sigil:get n:put (address_of_sigil:@)\n		
+sigil:set	pc-	Assign word at address to the sigil handler for character c	:sigil:. s:rewrite compiling?\n  [ s:keep &s:put compile:call ] [ s:put ] choose  ;\n\n&sigil:. $. sigil:set\n.Hello_World!\n		
+sigil:@	s-n	Sigil. Use to fetch value from a named variable	@Free n:put\n		
+sigil:!	ns-	Sigil. Use to store value into a named variable	'Data var\n\n#456 !Data\n		
+sigil:\	as-	Sigil. Bind name s to function a	[ 'hello! s:put nl ] \hello\n	If making an alias to another word this is preferable to wrapping the word in a colon definition. Use of the `\` sigil will result in only a header being created, with no additional wrapper code.\n	
+sip	np-n	Push a copy of n to address then call p. Afterwards, restore to the data stack	#100 [ n:put nl ] sip n:put nl\n	This is the same as doing:\n\ndup push ... pop\n\nIn general use of `sip` is preferable as it ensures the stack stays balanced. You may wish to use the above form if the logic leading up to the duplicated value would be clearer, or if you need to save some space (the dup/push/pop form saves three cells over using a quotation and sip).\n	dip dup push pop\n
+save	-	Save the current block	save\n	Writes `block:buffer` to block (number taken from `Block`)\n	set load block:load block:save block:buffer\n
+set	n-	Set Block to n. Does not load or save the block	#45 set load list\n	Assigns `Block` to the provided number.\n	
+sp	-	Display a space	'hello s:put sp 'world s:put nl\n\n:spaces (n-) &sp times ;\n		nl tab\n
+startup	-	Called on startup to prepare the system. You can replace this to have ilo start your application	startup\n	Konilo searches for this word when starting. If found, it is then run. If redefined, only the most recently created `startup` word will be run.\n	prelude\n
+store	na-	Store n into address a	'data var\n\n#102 &data store\n		store-next\n
+store-next	na-a	Store n int address a, return address a + 1	'data d:create #4 allot\n\n#102 #103 #104 #3 &data n:inc store-next store-next store\n&data [ n:put sp ] a:for-each nl\n		store\n
+swap	xy-yx	Exchange the top two stack items	#1 #2 n:put tab n:put nl\n#1 #2 swap n:put tab n:put nl\n		over tuck rot push pop dip sip\n
+sys:buffers/block	-	Data. Points to the start of the block buffer.			
+sys:buffers/loops	-	Data. Holds loop indices.			
+sys:buffers/numeric-conversion	-	Data. Used by s:to-n.			
+sys:buffers/scope	-	Data. Holds dictionary pointers for {{ ---reveal--- }}			
+sys:buffers/needs	-	Data. Used by needs			
+sys:buffers/reserved	-	Data. Reserved for future use.			
+sys:buffers/strings+arrays	-	Data. Start of the temporary string & array pool.			
+sys:buffers/input	-	Data. Holds the current input token.			
+sys:info	-	Display system information.	sys:info\n	The default `list` word for displaying the blocks looks up and runs this word to display the status line below the block. You can define a new status display word with the same name to override the default.\n	list list* list# e:Display\n
+tab	-	Display a tab	'hello s:put tab 'world s:put nl\n		sp nl\n
+times	np-	For n iterations, execute p	#10 [ $. c:put ] times nl\n		I J K forever indexed-times while until\n
+titles	-	Display the block title lines. The output is paginated every 16 lines	titles\n	The titles listing adds a break after each 16 titles. Blocks must have a non-space character as the first character in the title line (the first line) to be included in the listing.\n	
+tri	xppp-?	Apply p1 against x, then p2 against a copy of x, and finally p3 against another copy of x	#1 [ #10 n:mul ] [ #20 n:mul ] [ #30 n:mul ] tri\n	The naming of this originally derives from the Factor programming language.\n	bi bi* bi@ tri* tri@\n
+tri*	xyzppp-?	Apply p1 against x, p2 against y, and p3 against z	#1 #2 #3 [ #10 n:mul ] [ #20 n:mul ] [ #30 n:mul ] tri*\n	The naming of this originally derives from the Factor programming language.\n	bi bi* bi@ tri tri@\n
+tri@	xyzp-?	Apply p against x, then against y, and finally against z	#1 #2 #3 [ #10 n:mul ] tri@\n	The naming of this originally derives from the Factor programming language.\n	bi bi* bi@ tri tri*\n
+tuck	xy-yxy	Put a copy of TOS under NOS	#10 #20 tuck\n#3 [ n:put sp ] times\n	`tuck` is the same as `swap over`\n	over swap rot push pop dip sip\n
+until	p-	Run a quote in a loop repeatedly The loop must return a flag. End loop when flag is not zero	#100 [ dup n:put sp n:dec dup n:zero? ] until\n		I J K forever indexed-times times while\n
+use	n-	Load and run a specific block numbered n	#33 use\n	If you are editing a block, `save` it first. The block buffer (`block:buffer`) is reused when loading blocks, so any changes you have made to your current one will be lost if not first saved.\n\nBlocks can not use this to load other blocks.\n	needs using\n
+using	nn-	Load and run blocks n1 thru n2	#33 #45 using\n	If you are editing a block, `save` it first. The block buffer (`block:buffer`) is reused when loading blocks, so any changes you have made to your current one will be lost if not first saved.\n\nBlocks can not use this to load other blocks.\n	needs use\n
+v:dec	a-	Decrement the value stored at address	'Count var\n\n&Count v:inc\n		v:inc\n
+v:inc	a-	Increment the value stored at address	'Count var\n\n&Count v:dec\n		v:dec\n
+var	s-	Create a variable with a value of zero	'Count var\n	The initial value is set to zero.\n	var-n\n
+var-n	ns-	Create a variable with a value of n	#500 'Count var-n\n	This is like `var`, but sets the initial value. This is cleaner to read than doing something like:\n\n'foo var  #5 !foo\n	var\n
+while	p-	Run a quote in a loop repeatedly The loop must return a flag. End loop when flag is zero	(display_100_to_1)\n#100 [ dup n:put sp n:dec dup n:-zero? ] while drop\n		I J K forever indexed-times times until\n
+xor	nn-n	Perform a bitwise XOR	#1 #2 eq? #1 #2 lt? xor [ 'a_condition_met s:put nl ] if\n		and or not\n

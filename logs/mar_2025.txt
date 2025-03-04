@@ -17,3 +17,6 @@ I'll probably start with the top-level nodes.
 @13:09 first migrating to their own dz file #timelog:00:17:09
 @21:18 build some flashcards for rust std
 @22:44 done
+
+@2025-03-03
+@19:46 Fixing up konilo cards. #timelog:00:17:35

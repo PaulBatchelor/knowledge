@@ -6,19 +6,24 @@ nn dictionary
 zz co $ ..
 ns +dictionary
 zz prefixes
+nn a
+nn internal
 nn compile
 nn sys
-nn block
-nn v
-nn rom
-nn e
-nn internal
-nn sigil
 nn c
-nn s
-nn a
-nn d
+nn rom
 nn n
+nn sigil
+nn block
+nn s
+nn v
+nn e
+nn d
+nn dot
+co $ ..
+ln .: Read and discard the next 62 characters. This is used in blocks to provide line width comments.
+ff .
+fb .: Read and discard the next 62 characters. This is used in blocks to provide line width comments.
 nn 0
 co $ ..
 ln 0: Parse to end of line. Insert into text line 0
@@ -102,43 +107,58 @@ fb 15: Parse to end of line. Insert into text line 15
 nn _lbrace_lbrace
 co $ ..
 ln {{: Begin a lexical scoped area. Starts the private portion.
-ff _lbrace_lbrace
+ff {{
 fb {{: Begin a lexical scoped area. Starts the private portion.
 nn ___reveal___
 co $ ..
-ln ---reveal---: Within lexical scoped area, switch to global scope area.
-ff ___reveal___
-fb ---reveal---: Within lexical scoped area, switch to global scope area.
+ln ---reveal---: Within  lexical scoped area, switch to global scope area.
+ff ---reveal---
+fb ---reveal---: Within  lexical scoped area, switch to global scope area.
 nn _rbrace_rbrace
 co $ ..
 ln }}: Close off lexical scoped area. Hides words in the private area.
-ff _rbrace_rbrace
+ff }}
 fb }}: Close off lexical scoped area. Hides words in the private area.
 nn _rpar
 co $ ..
-ln ): Ending for comments or visual grouping. Provided for readability
-ff _rpar
-fb ): Ending for comments or visual grouping. Provided for readability
+ln ): Ending for comments or visual grouping. Provided for readability purposes
+ff )
+fb ): Ending for comments or visual grouping. Provided for readability purposes
 nn _eq_qst
 co $ ..
 ln -eq?: Compare values for inequality
-ff _eq_qst
+ff -eq?
 fb -eq?: Compare values for inequality
 nn _if
 co $ ..
-ln -if: Execute q if flag is zero
-ff _if
-fb -if: Execute q if flag is zero
+ln -if: Execute p if flag is zero
+ff -if
+fb -if: Execute p if flag is zero
 nn semicolon
 co $ ..
 ln ;: End a definition
-ff semicolon
+ff ;
 fb ;: End a definition
 nn _qstjump
 co $ ..
 ln ?jump: Internal. If flag is non-zero, branch to p.
-ff _qstjump
+ff ?jump
 fb ?jump: Internal. If flag is non-zero, branch to p.
+nn BaseBlock
+co $ ..
+ln BaseBlock: Data. Holds the number of the first block.
+ff BaseBlock
+fb BaseBlock: Data. Holds the number of the first block.
+nn Block
+co $ ..
+ln Block: Data. Holds the current block number, relative to the value in BaseBlock.
+ff Block
+fb Block: Data. Holds the current block number, relative to the value in BaseBlock.
+nn Blocks
+co $ ..
+ln Blocks: Data. Set to the number of blocks available in your system.
+ff Blocks
+fb Blocks: Data. Set to the number of blocks available in your system.
 nn Compiler
 co $ ..
 ln Compiler: Data. Tracks compiler state
@@ -156,19 +176,19 @@ ff Free
 fb Free: Data. Pointer to next free addr
 nn I
 co $ ..
-ln I: Access the loop index for the current loop. (For loops made
+ln I: Access the loop index for the current loop. (For loops made using indexed-times)
 ff I
-fb I: Access the loop index for the current loop. (For loops made
+fb I: Access the loop index for the current loop. (For loops made using indexed-times)
 nn J
 co $ ..
-ln J: Access the parent loop index for the current loop. (For loops
+ln J: Access the parent loop index for the current loop. (For loops made using indexed-times)
 ff J
-fb J: Access the parent loop index for the current loop. (For loops
+fb J: Access the parent loop index for the current loop. (For loops made using indexed-times)
 nn K
 co $ ..
-ln K: Access the grandparent loop index for the current loop. (For
+ln K: Access the grandparent loop index for the current loop. (For loops made using indexed-times)
 ff K
-fb K: Access the grandparent loop index for the current loop. (For
+fb K: Access the grandparent loop index for the current loop. (For loops made using indexed-times)
 nn Sigils
 co $ ..
 ln Sigils: Data. Table of sigil handlers
@@ -177,157 +197,157 @@ fb Sigils: Data. Table of sigil handlers
 nn _lbrack
 co $ ..
 ln [: Begin a quotation
-ff _lbrack
+ff [
 fb [: Begin a quotation
 nn _rbrack
 co $ ..
 ln ]: End a quotation
-ff _rbrack
+ff ]
 fb ]: End a quotation
 nn a/append
 co $ ..
 ln a:append: Create a new array with the contents of a1 followed by a2
-ff a/append
+ff a:append
 fb a:append: Create a new array with the contents of a1 followed by a2
 nn a/behead
 co $ ..
 ln a:behead: Remove first item from an array
-ff a/behead
+ff a:behead
 fb a:behead: Remove first item from an array
 nn a/chop
 co $ ..
 ln a:chop: Remove last item from an array
-ff a/chop
+ff a:chop
 fb a:chop: Remove last item from an array
 nn a/contains_qst
 co $ ..
 ln a:contains?: True if array contains n. False otherwise
-ff a/contains_qst
+ff a:contains?
 fb a:contains?: True if array contains n. False otherwise
 nn a/copy
 co $ ..
-ln a:copy: Copy array from s to d
-ff a/copy
-fb a:copy: Copy array from s to d
+ln a:copy: Copy array a to memory starting at pointer p
+ff a:copy
+fb a:copy: Copy array a to memory starting at pointer p
 nn a/dup
 co $ ..
 ln a:dup: Make a copy of an array
-ff a/dup
+ff a:dup
 fb a:dup: Make a copy of an array
 nn a/eq_qst
 co $ ..
 ln a:eq?: Compare two arrays for equality
-ff a/eq_qst
+ff a:eq?
 fb a:eq?: Compare two arrays for equality
 nn a/_eq_qst
 co $ ..
 ln a:-eq?: Compare two arrays for inequality
-ff a/_eq_qst
+ff a:-eq?
 fb a:-eq?: Compare two arrays for inequality
 nn a/fetch
 co $ ..
 ln a:fetch: Fetch value stored at index n in array
-ff a/fetch
+ff a:fetch
 fb a:fetch: Fetch value stored at index n in array
 nn a/filter
 co $ ..
-ln a:filter: Run q once for each value in a. If it returns true, copy value
-ff a/filter
-fb a:filter: Run q once for each value in a. If it returns true, copy value
+ln a:filter: Run p once for each value in a. If it returns true, copy value new array
+ff a:filter
+fb a:filter: Run p once for each value in a. If it returns true, copy value new array
 nn a/first
 co $ ..
 ln a:first: Return the first value in an array
-ff a/first
+ff a:first
 fb a:first: Return the first value in an array
 nn a/for_each
 co $ ..
-ln a:for-each: Run q once for each value in the array. Pushes each value prior
-ff a/for_each
-fb a:for-each: Run q once for each value in the array. Pushes each value prior
+ln a:for-each: Run p once for each value in the array. Pushes each value prior to calling p
+ff a:for-each
+fb a:for-each: Run p once for each value in the array. Pushes each value prior to calling p
 nn a/hash
 co $ ..
 ln a:hash: Return the hash of an array
-ff a/hash
+ff a:hash
 fb a:hash: Return the hash of an array
 nn a/indices
 co $ ..
 ln a:indices: Return array of indices for v in source array
-ff a/indices
+ff a:indices
 fb a:indices: Return array of indices for v in source array
 nn a/index
 co $ ..
 ln a:index: Return first index of n in a
-ff a/index
+ff a:index
 fb a:index: Return first index of n in a
 nn a/last
 co $ ..
 ln a:last: Return the last value in an array
-ff a/last
+ff a:last
 fb a:last: Return the last value in an array
 nn a/left
 co $ ..
 ln a:left: Return left n values from array
-ff a/left
+ff a:left
 fb a:left: Return left n values from array
 nn a/length
 co $ ..
 ln a:length: Return the length of an array
-ff a/length
+ff a:length
 fb a:length: Return the length of an array
 nn a/make
 co $ ..
 ln a:make: Create a new permanent array from the provided values
-ff a/make
+ff a:make
 fb a:make: Create a new permanent array from the provided values
 nn a/make_fslash_temp
 co $ ..
 ln a:make/temp: Create a new temporary array from the provided values
-ff a/make_fslash_temp
+ff a:make/temp
 fb a:make/temp: Create a new temporary array from the provided values
 nn a/map
 co $ ..
-ln a:map: Run q once for each value in the array. Takes the returned value
-ff a/map
-fb a:map: Run q once for each value in the array. Takes the returned value
+ln a:map: Run p once for each value in the array. Takes the returned value and creates a new array
+ff a:map
+fb a:map: Run p once for each value in the array. Takes the returned value and creates a new array
 nn a/middle
 co $ ..
 ln a:middle: Return new array from f to l, inclusive
-ff a/middle
+ff a:middle
 fb a:middle: Return new array from f to l, inclusive
 nn a/prepend
 co $ ..
 ln a:prepend: Create a new array with the contents of a2 followed by a1
-ff a/prepend
+ff a:prepend
 fb a:prepend: Create a new array with the contents of a2 followed by a1
 nn a/reduce
 co $ ..
-ln a:reduce: Takes an array, a starting value, and a quote. This will apply
-ff a/reduce
-fb a:reduce: Takes an array, a starting value, and a quote. This will apply
+ln a:reduce: Takes an array, a starting value, and a quote. This will apply the quote to each item in the array; the quote should consume two values and return one
+ff a:reduce
+fb a:reduce: Takes an array, a starting value, and a quote. This will apply the quote to each item in the array; the quote should consume two values and return one
 nn a/reverse
 co $ ..
 ln a:reverse: Reverse the order of items in an array
-ff a/reverse
+ff a:reverse
 fb a:reverse: Reverse the order of items in an array
 nn a/right
 co $ ..
 ln a:right: Return right n values from array
-ff a/right
+ff a:right
 fb a:right: Return right n values from array
 nn a/store
 co $ ..
 ln a:store: Store value v into array at index n
-ff a/store
+ff a:store
 fb a:store: Store value v into array at index n
 nn a/temp
 co $ ..
 ln a:temp: Make a copy of the array in the temporary string/array space
-ff a/temp
+ff a:temp
 fb a:temp: Make a copy of the array in the temporary string/array space
 nn a/th
 co $ ..
 ln a:th: Return the address of a specific index into the array
-ff a/th
+ff a:th
 fb a:th: Return the address of a specific index into the array
 nn allot
 co $ ..
@@ -341,73 +361,73 @@ ff and
 fb and: Perform a bitwise AND
 nn bi
 co $ ..
-ln bi: Execute q1 against x, then q2 against a copy of x
+ln bi: Execute p1 against x, then p2 against a copy of x
 ff bi
-fb bi: Execute q1 against x, then q2 against a copy of x
+fb bi: Execute p1 against x, then p2 against a copy of x
 nn bi_ast
 co $ ..
-ln bi*: Execute q1 against x and q2 against y
-ff bi_ast
-fb bi*: Execute q1 against x and q2 against y
+ln bi*: Execute p1 against x and p2 against y
+ff bi*
+fb bi*: Execute p1 against x and p2 against y
 nn bi_amp
 co $ ..
-ln bi@: Execute q against x, execute q against y
-ff bi_amp
-fb bi@: Execute q against x, execute q against y
+ln bi@: Execute p against x, execute p against y
+ff bi@
+fb bi@: Execute p against x, execute p against y
 nn block/load
 co $ ..
-ln block:load: Read 1024 cells in block n to a
-ff block/load
-fb block:load: Read 1024 cells in block n to a
+ln block:load: Read 1024 cells in block n to p
+ff block:load
+fb block:load: Read 1024 cells in block n to p
 nn block/save
 co $ ..
-ln block:save: Save 1024 cells at a to block n
-ff block/save
-fb block:save: Save 1024 cells at a to block n
+ln block:save: Save 1024 cells at p to block n
+ff block:save
+fb block:save: Save 1024 cells at p to block n
 nn block/buffer
 co $ ..
 ln block:buffer: Return a pointer to the start of the block buffer
-ff block/buffer
+ff block:buffer
 fb block:buffer: Return a pointer to the start of the block buffer
 nn bye
 co $ ..
-ln bye: Exit RetroForth/ilo
+ln bye: Exit Konilo
 ff bye
-fb bye: Exit RetroForth/ilo
+fb bye: Exit Konilo
 nn c/get
 co $ ..
 ln c:get: Read a character from the keyboard
-ff c/get
+ff c:get
 fb c:get: Read a character from the keyboard
 nn c/lowercase_qst
 co $ ..
 ln c:lowercase?: Return true if character is lowercase or false if not
-ff c/lowercase_qst
+ff c:lowercase?
 fb c:lowercase?: Return true if character is lowercase or false if not
 nn c/put
 co $ ..
 ln c:put: Display a single character
-ff c/put
+ff c:put
 fb c:put: Display a single character
 nn c/to_lower
 co $ ..
 ln c:to-lower: Convert character to lowercase
-ff c/to_lower
+ff c:to-lower
 fb c:to-lower: Convert character to lowercase
 nn c/to_s
 co $ ..
 ln c:to-s: Convert a character to a string
-ff c/to_s
+ff c:to-s
 fb c:to-s: Convert a character to a string
 nn c/to_upper
 co $ ..
 ln c:to-upper: Convert character to uppercase
-ff c/to_upper
+ff c:to-upper
 fb c:to-upper: Convert character to uppercase
 nn c/uppercase_qst
 co $ ..
 ln c:uppercase?: Return true if character is uppercase or false if not
-ff c/uppercase_qst
+ff c:uppercase?
 fb c:uppercase?: Return true if character is uppercase or false if not
 nn call
 co $ ..
@@ -426,74 +446,74 @@ ff comma
 fb comma: Inline a value to here and increment Free
 nn compare
 co $ ..
-ln compare: Compare n cells of memory startng at s to memory starting at d.
+ln compare: Compare n cells of memory startng at s to memory starting at d. Return true if all match or false otherwise
 ff compare
-fb compare: Compare n cells of memory startng at s to memory starting at d.
+fb compare: Compare n cells of memory startng at s to memory starting at d. Return true if all match or false otherwise
 nn compiling_qst
 co $ ..
 ln compiling?: True if Compiler is set, False otherwise
-ff compiling_qst
+ff compiling?
 fb compiling?: True if Compiler is set, False otherwise
 nn compile/lit
 co $ ..
 ln compile:lit: Internal. Compile an ilo li instruction
-ff compile/lit
+ff compile:lit
 fb compile:lit: Internal. Compile an ilo li instruction
 nn compile/call
 co $ ..
 ln compile:call: Internal. Compile an ilo lica instruction
-ff compile/call
+ff compile:call
 fb compile:call: Internal. Compile an ilo lica instruction
 nn compile/jump
 co $ ..
 ln compile:jump: Internal. Compile an ilo liju instruction
-ff compile/jump
+ff compile:jump
 fb compile:jump: Internal. Compile an ilo liju instruction
 nn copy
 co $ ..
-ln copy: Copy c cells starting at s to memory starting at d. Does not
+ln copy: Copy c cells starting at s to memory starting at d. Does not support overlapping regions
 ff copy
-fb copy: Copy c cells starting at s to memory starting at d. Does not
+fb copy: Copy c cells starting at s to memory starting at d. Does not support overlapping regions
 nn curry
 co $ ..
-ln curry: Create a new quote pushing the value, then calling q1
+ln curry: Create a new quote pushing the value, then calling p1
 ff curry
-fb curry: Create a new quote pushing the value, then calling q1
+fb curry: Create a new quote pushing the value, then calling p1
 nn d/address
 co $ ..
 ln d:address: Given a dictionary header, return a pointer to the address field
-ff d/address
+ff d:address
 fb d:address: Given a dictionary header, return a pointer to the address field
 nn d/create
 co $ ..
 ln d:create: Create a new header
-ff d/create
+ff d:create
 fb d:create: Create a new header
 nn d/exists_qst
 co $ ..
-ln d:exists?: Given a dictionary header,
-ff d/exists_qst
-fb d:exists?: Given a dictionary header,
+ln d:exists?: Given a dictionary header, return a flag indicating whether or not the word exists
+ff d:exists?
+fb d:exists?: Given a dictionary header, return a flag indicating whether or not the word exists
 nn d/flags
 co $ ..
 ln d:flags: Given a dictionary header, return a pointer to the flags field
-ff d/flags
+ff d:flags
 fb d:flags: Given a dictionary header, return a pointer to the flags field
 nn d/hash
 co $ ..
 ln d:hash: Given a dictionary header, return a pointer to the hash field
-ff d/hash
+ff d:hash
 fb d:hash: Given a dictionary header, return a pointer to the hash field
 nn d/link
 co $ ..
 ln d:link: Given a dictionary header, return a pointer to the link field
-ff d/link
+ff d:link
 fb d:link: Given a dictionary header, return a pointer to the link field
 nn d/lookup
 co $ ..
-ln d:lookup: Lookup a word in the dictionary. Returns zero if not found or
-ff d/lookup
-fb d:lookup: Lookup a word in the dictionary. Returns zero if not found or
+ln d:lookup: Lookup a word in the dictionary. Returns zero if not found or the dictionary header address
+ff d:lookup
+fb d:lookup: Lookup a word in the dictionary. Returns zero if not found or the dictionary header address
 nn depths
 co $ ..
 ln depths: Return depths of data and address stacks
@@ -502,12 +522,12 @@ fb depths: Return depths of data and address stacks
 nn depth_fslash_data
 co $ ..
 ln depth/data: Return the depth of the data stack
-ff depth_fslash_data
+ff depth/data
 fb depth/data: Return the depth of the data stack
 nn depth_fslash_address
 co $ ..
 ln depth/address: Return the depth of the address stack
-ff depth_fslash_address
+ff depth/address
 fb depth/address: Return the depth of the address stack
 nn dip
 co $ ..
@@ -522,7 +542,7 @@ fb drop: Discard top value on stack
 nn drop_pair
 co $ ..
 ln drop-pair: Discard top two values on stack
-ff drop_pair
+ff drop-pair
 fb drop-pair: Discard top two values on stack
 nn dtc
 co $ ..
@@ -537,47 +557,47 @@ fb dup: Duplicate top value on stack
 nn dup_pair
 co $ ..
 ln dup-pair: Duplicate top two values
-ff dup_pair
+ff dup-pair
 fb dup-pair: Duplicate top two values
 nn e/Display
 co $ ..
 ln e:Display: Data. Holds a pointer to a block display word. Called by edit.
-ff e/Display
+ff e:Display
 fb e:Display: Data. Holds a pointer to a block display word. Called by edit.
 nn e/erase_fslash_line
 co $ ..
 ln e:erase/line: Erase line n in the block buffer
-ff e/erase_fslash_line
+ff e:erase/line
 fb e:erase/line: Erase line n in the block buffer
 nn e/insert
 co $ ..
 ln e:insert: Erase line n, parse to end of line, insert into line n
-ff e/insert
+ff e:insert
 fb e:insert: Erase line n, parse to end of line, insert into line n
 nn e/insert_at
 co $ ..
 ln e:insert-at: Parse to end of line. Insert text into line l at column c
-ff e/insert_at
+ff e:insert-at
 fb e:insert-at: Parse to end of line. Insert text into line l at column c
 nn e/line
 co $ ..
 ln e:line: Display a single line from the current block
-ff e/line
+ff e:line
 fb e:line: Display a single line from the current block
 nn e/replace
 co $ ..
 ln e:replace: Insert text s into line l
-ff e/replace
+ff e:replace
 fb e:replace: Insert text s into line l
 nn e/replace_at
 co $ ..
 ln e:replace-at: Insert text s into line l at column c
-ff e/replace_at
+ff e:replace-at
 fb e:replace-at: Insert text s into line l at column c
 nn e/to_line
 co $ ..
 ln e:to-line: Return pointer to start of line in the block buffer
-ff e/to_line
+ff e:to-line
 fb e:to-line: Return pointer to start of line in the block buffer
 nn edit
 co $ ..
@@ -587,7 +607,7 @@ fb edit: Set Block to n. Load and display block
 nn eq_qst
 co $ ..
 ln eq?: Compare values for equality
-ff eq_qst
+ff eq?
 fb eq?: Compare values for equality
 nn fetch
 co $ ..
@@ -597,7 +617,7 @@ fb fetch: Fetch a value stored at address
 nn fetch_next
 co $ ..
 ln fetch-next: Fetch a value stored at address Also returns the next address
-ff fetch_next
+ff fetch-next
 fb fetch-next: Fetch a value stored at address Also returns the next address
 nn fill
 co $ ..
@@ -611,19 +631,19 @@ ff forever
 fb forever: Run p repeatedly, in an unending loop
 nn gc
 co $ ..
-ln gc: Run function at pointer q. Saves and restores Free to recover
+ln gc: Run function at pointer p. Saves and restores Free to recover any memory allocated during run
 ff gc
-fb gc: Run function at pointer q. Saves and restores Free to recover
+fb gc: Run function at pointer p. Saves and restores Free to recover any memory allocated during run
 nn gt_qst
 co $ ..
 ln gt?: Compare values for n1 greater than n2
-ff gt_qst
+ff gt?
 fb gt?: Compare values for n1 greater than n2
 nn gteq_qst
 co $ ..
-ln gteq?: Compare two values fro greater than or equality
-ff gteq_qst
-fb gteq?: Compare two values fro greater than or equality
+ln gteq?: Compare two values for greater than or equality
+ff gteq?
+fb gteq?: Compare two values for greater than or equality
 nn here
 co $ ..
 ln here: Return the next free memory address
@@ -636,14 +656,19 @@ ff if
 fb if: Execute p if flag is non-zero
 nn indexed_times
 co $ ..
-ln indexed-times: Run a quote the specified number of times, tracking the loop
-ff indexed_times
-fb indexed-times: Run a quote the specified number of times, tracking the loop
+ln indexed-times: Run a quote the specified number of times, tracking the loop index in I
+ff indexed-times
+fb indexed-times: Run a quote the specified number of times, tracking the loop index in I
 nn internal/lit
 co $ ..
 ln internal:lit: Internal. Push next value in memory to the stack
-ff internal/lit
+ff internal:lit
 fb internal:lit: Internal. Push next value in memory to the stack
+nn internal/quote
+co $ ..
+ln internal:quote: Internal. Skip over quote. Push address of quote to stack.
+ff internal:quote
+fb internal:quote: Internal. Skip over quote. Push address of quote to stack.
 nn interpret
 co $ ..
 ln interpret: Interpret token
@@ -662,12 +687,12 @@ fb jump: Internal. Jump to an address
 nn list_ast
 co $ ..
 ln list*: Display the text in the block
-ff list_ast
+ff list*
 fb list*: Display the text in the block
 nn list_hash
 co $ ..
 ln list#: Display the block with line numbers
-ff list_hash
+ff list#
 fb list#: Display the block with line numbers
 nn list
 co $ ..
@@ -682,102 +707,107 @@ fb load: (re)Load the current block
 nn lt_qst
 co $ ..
 ln lt?: Compare values for n1 less than n2
-ff lt_qst
+ff lt?
 fb lt?: Compare values for n1 less than n2
 nn lteq_qst
 co $ ..
 ln lteq?: Compare two values for less than or equality
-ff lteq_qst
+ff lteq?
 fb lteq?: Compare two values for less than or equality
 nn n/abs
 co $ ..
 ln n:abs: Return the absolute value of n
-ff n/abs
+ff n:abs
 fb n:abs: Return the absolute value of n
 nn n/add
 co $ ..
 ln n:add: Add n1 to n2, returning n3
-ff n/add
+ff n:add
 fb n:add: Add n1 to n2, returning n3
 nn n/between_qst
 co $ ..
 ln n:between?: True if n is between l and u, inclusive
-ff n/between_qst
+ff n:between?
 fb n:between?: True if n is between l and u, inclusive
 nn n/dec
 co $ ..
 ln n:dec: Decrement n by 1
-ff n/dec
+ff n:dec
 fb n:dec: Decrement n by 1
 nn n/div
 co $ ..
 ln n:div: Divine n1 by n2; get result
-ff n/div
+ff n:div
 fb n:div: Divine n1 by n2; get result
 nn n/divmod
 co $ ..
 ln n:divmod: Divide n1 by n2 and return the result and remainder
-ff n/divmod
+ff n:divmod
 fb n:divmod: Divide n1 by n2 and return the result and remainder
+nn n/get
+co $ ..
+ln n:get: Read a number from the input device
+ff n:get
+fb n:get: Read a number from the input device
 nn n/inc
 co $ ..
 ln n:inc: Increment n by 1
-ff n/inc
+ff n:inc
 fb n:inc: Increment n by 1
 nn n/limit
 co $ ..
 ln n:limit: Constrain n to between l and u, inclusive
-ff n/limit
+ff n:limit
 fb n:limit: Constrain n to between l and u, inclusive
 nn n/max
 co $ ..
 ln n:max: Return the greater of two values
-ff n/max
+ff n:max
 fb n:max: Return the greater of two values
 nn n/min
 co $ ..
 ln n:min: Return the lower of two values
-ff n/min
+ff n:min
 fb n:min: Return the lower of two values
 nn n/mod
 co $ ..
 ln n:mod: Divide n1 by n2; get remainder
-ff n/mod
+ff n:mod
 fb n:mod: Divide n1 by n2; get remainder
 nn n/mul
 co $ ..
 ln n:mul: Multiply n1 by n2, returning n3
-ff n/mul
+ff n:mul
 fb n:mul: Multiply n1 by n2, returning n3
 nn n/negate
 co $ ..
 ln n:negate: Invert the sign of n
-ff n/negate
+ff n:negate
 fb n:negate: Invert the sign of n
 nn n/put
 co $ ..
 ln n:put: Display a number
-ff n/put
+ff n:put
 fb n:put: Display a number
 nn n/sub
 co $ ..
 ln n:sub: Subtract n2 from n1
-ff n/sub
+ff n:sub
 fb n:sub: Subtract n2 from n1
 nn n/to_s
 co $ ..
 ln n:to-s: Convert number to a temp string
-ff n/to_s
+ff n:to-s
 fb n:to-s: Convert number to a temp string
 nn n/zero_qst
 co $ ..
 ln n:zero?: Compare n to zero. True if zero, false otherwise
-ff n/zero_qst
+ff n:zero?
 fb n:zero?: Compare n to zero. True if zero, false otherwise
 nn n/_zero_qst
 co $ ..
 ln n:-zero?: Compare n to zero. True if not zero, false otherwise
-ff n/_zero_qst
+ff n:-zero?
 fb n:-zero?: Compare n to zero. True if not zero, false otherwise
 nn needs
 co $ ..
@@ -826,9 +856,9 @@ ff pop
 fb pop: Move top value on address stack to data stack
 nn prelude
 co $ ..
-ln prelude: Load & run blocks 1 & 2 if they appear to be code. Called by
+ln prelude: Load & run blocks 1 & 2 if they appear to be code. Called by default `startup`.
 ff prelude
-fb prelude: Load & run blocks 1 & 2 if they appear to be code. Called by
+fb prelude: Load & run blocks 1 & 2 if they appear to be code. Called by default `startup`.
 nn prev
 co $ ..
 ln prev: Switch to and load previous block
@@ -836,9 +866,9 @@ ff prev
 fb prev: Switch to and load previous block
 nn process_data
 co $ ..
-ln process-data: Internal. If compiling, compile value as a literal into the
-ff process_data
-fb process-data: Internal. If compiling, compile value as a literal into the
+ln process-data: Internal. If compiling, compile value as a literal into the word. If interpreting, leave on the stack
+ff process-data
+fb process-data: Internal. If compiling, compile value as a literal into the word. If interpreting, leave on the stack
 nn push
 co $ ..
 ln push: Move TOS to the address stack
@@ -852,7 +882,7 @@ fb restart: Reload the image and empty stacks
 nn rom/save
 co $ ..
 ln rom:save: Save the current memory to disk (ilo.rom)
-ff rom/save
+ff rom:save
 fb rom:save: Save the current memory to disk (ilo.rom)
 nn rot
 co $ ..
@@ -867,263 +897,258 @@ fb run: Run code in the currently loaded block
 nn s/append
 co $ ..
 ln s:append: Append s2 to s1, returning new temporary string
-ff s/append
+ff s:append
 fb s:append: Append s2 to s1, returning new temporary string
 nn s/behead
 co $ ..
 ln s:behead: Remove first item from a string
-ff s/behead
+ff s:behead
 fb s:behead: Remove first item from a string
 nn s/chop
 co $ ..
 ln s:chop: Remove last item from a string
-ff s/chop
+ff s:chop
 fb s:chop: Remove last item from a string
 nn s/contains_qst
 co $ ..
 ln s:contains?: True if string contains c. False otherwise
-ff s/contains_qst
+ff s:contains?
 fb s:contains?: True if string contains c. False otherwise
 nn s/copy
 co $ ..
 ln s:copy: Copy string s to memory at d
-ff s/copy
+ff s:copy
 fb s:copy: Copy string s to memory at d
 nn s/dup
 co $ ..
 ln s:dup: Make a copy of string
-ff s/dup
+ff s:dup
 fb s:dup: Make a copy of string
 nn s/eq_qst
 co $ ..
 ln s:eq?: Compare two strings for equality
-ff s/eq_qst
+ff s:eq?
 fb s:eq?: Compare two strings for equality
 nn s/_eq_qst
 co $ ..
 ln s:-eq?: Compare two strings for inequality
-ff s/_eq_qst
+ff s:-eq?
 fb s:-eq?: Compare two strings for inequality
 nn s/evaluate
 co $ ..
 ln s:evaluate: Interpret each token in a string
-ff s/evaluate
+ff s:evaluate
 fb s:evaluate: Interpret each token in a string
 nn s/fetch
 co $ ..
 ln s:fetch: Return character at index n in the string
-ff s/fetch
+ff s:fetch
 fb s:fetch: Return character at index n in the string
 nn s/filter
 co $ ..
-ln s:filter: Run q once for each value in s If it returns true, copy value
-ff s/filter
-fb s:filter: Run q once for each value in s If it returns true, copy value
+ln s:filter: Run p once for each value in s If it returns true, copy value new string
+ff s:filter
+fb s:filter: Run p once for each value in s If it returns true, copy value new string
 nn s/first
 co $ ..
 ln s:first: Return the first character in a string
-ff s/first
+ff s:first
 fb s:first: Return the first character in a string
 nn s/for_each
 co $ ..
-ln s:for-each: Run q once for each character in s. Pushes each character to the
-ff s/for_each
-fb s:for-each: Run q once for each character in s. Pushes each character to the
+ln s:for-each: Run p once for each character in s. Pushes each character to the stack before calling p
+ff s:for-each
+fb s:for-each: Run p once for each character in s. Pushes each character to the stack before calling p
 nn s/get_fslash_line
 co $ ..
-ln s:get/line: Read a line of input until enter is encountered. Return input as
-ff s/get_fslash_line
-fb s:get/line: Read a line of input until enter is encountered. Return input as
+ln s:get/line: Read a line of input until enter is encountered. Return input as string
+ff s:get/line
+fb s:get/line: Read a line of input until enter is encountered. Return input as string
 nn s/get_fslash_token
 co $ ..
-ln s:get/token: Read a string from the keyboard ending when a whitespace is
-ff s/get_fslash_token
-fb s:get/token: Read a string from the keyboard ending when a whitespace is
+ln s:get/token: Read a string from the keyboard ending when a whitespace is encountered
+ff s:get/token
+fb s:get/token: Read a string from the keyboard ending when a whitespace is encountered
 nn s/hash
 co $ ..
 ln s:hash: Return the hash of the string
-ff s/hash
+ff s:hash
 fb s:hash: Return the hash of the string
 nn s/index_fslash_c
 co $ ..
 ln s:index/c: True if string contains c, false otherwise
-ff s/index_fslash_c
+ff s:index/c
 fb s:index/c: True if string contains c, false otherwise
 nn s/keep
 co $ ..
 ln s:keep: Move string to here, allocating space and returning a pointer
-ff s/keep
+ff s:keep
 fb s:keep: Move string to here, allocating space and returning a pointer
 nn s/last
 co $ ..
 ln s:last: Return the last character in a string
-ff s/last
+ff s:last
 fb s:last: Return the last character in a string
 nn s/left
 co $ ..
 ln s:left: Return left n characters of string
-ff s/left
+ff s:left
 fb s:left: Return left n characters of string
 nn s/length
 co $ ..
 ln s:length: Return the length of a string
-ff s/length
+ff s:length
 fb s:length: Return the length of a string
 nn s/map
 co $ ..
-ln s:map: Run q once for each value in the string. Takes the returned
-ff s/map
-fb s:map: Run q once for each value in the string. Takes the returned
+ln s:map: Run p once for each value in the string. Takes the returned value and creates a new string
+ff s:map
+fb s:map: Run p once for each value in the string. Takes the returned value and creates a new string
 nn s/middle
 co $ ..
 ln s:middle: Return substring from f to l, inclusive
-ff s/middle
+ff s:middle
 fb s:middle: Return substring from f to l, inclusive
-nn s/pool
-co $ ..
-ln s:pool: Return the starting address of the temporary string/array pool
-ff s/pool
-fb s:pool: Return the starting address of the temporary string/array pool
 nn s/prepend
 co $ ..
 ln s:prepend: Create a new string with the contents of s2 followed by s1
-ff s/prepend
+ff s:prepend
 fb s:prepend: Create a new string with the contents of s2 followed by s1
 nn s/put
 co $ ..
 ln s:put: Display a string
-ff s/put
+ff s:put
 fb s:put: Display a string
 nn s/reverse
 co $ ..
-ln s:reverse: Reverse the order of values in the string. Returns a pointer to
-ff s/reverse
-fb s:reverse: Reverse the order of values in the string. Returns a pointer to
+ln s:reverse: Reverse the order of values in the string. Returns a pointer to the new string
+ff s:reverse
+fb s:reverse: Reverse the order of values in the string. Returns a pointer to the new string
 nn s/rewrite
 co $ ..
 ln s:rewrite: Replace underscores in string with spaces
-ff s/rewrite
+ff s:rewrite
 fb s:rewrite: Replace underscores in string with spaces
 nn s/right
 co $ ..
 ln s:right: Return right n characters of string
-ff s/right
+ff s:right
 fb s:right: Return right n characters of string
 nn s/store
 co $ ..
 ln s:store: Store character into string at index n
-ff s/store
+ff s:store
 fb s:store: Store character into string at index n
 nn s/temp
 co $ ..
-ln s:temp: Put a copy of a string in the temporary buffers. Return a
-ff s/temp
-fb s:temp: Put a copy of a string in the temporary buffers. Return a
+ln s:temp: Put a copy of a string in the temporary buffers. Return a pointer to it
+ff s:temp
+fb s:temp: Put a copy of a string in the temporary buffers. Return a pointer to it
 nn s/th
 co $ ..
 ln s:th: Given a string and index, return the address
-ff s/th
+ff s:th
 fb s:th: Given a string and index, return the address
 nn s/to_lower
 co $ ..
 ln s:to-lower: Make all characters in string lowercase
-ff s/to_lower
+ff s:to-lower
 fb s:to-lower: Make all characters in string lowercase
 nn s/to_n
 co $ ..
 ln s:to-n: Convert a string to a number
-ff s/to_n
+ff s:to-n
 fb s:to-n: Convert a string to a number
 nn s/to_upper
 co $ ..
 ln s:to-upper: Make all characters in a string uppercase
-ff s/to_upper
+ff s:to-upper
 fb s:to-upper: Make all characters in a string uppercase
 nn s/trim
 co $ ..
 ln s:trim: Trim both leading and trailing whitespace from a string
-ff s/trim
+ff s:trim
 fb s:trim: Trim both leading and trailing whitespace from a string
 nn s/trim_right
 co $ ..
 ln s:trim-right: Trim trailing whitespace from a string
-ff s/trim_right
+ff s:trim-right
 fb s:trim-right: Trim trailing whitespace from a string
 nn s/trim_left
 co $ ..
 ln s:trim-left: Trim leading whitespace from a string
-ff s/trim_left
+ff s:trim-left
 fb s:trim-left: Trim leading whitespace from a string
 nn shift_left
 co $ ..
 ln shift-left: Shift n1 left by n2 bits
-ff shift_left
+ff shift-left
 fb shift-left: Shift n1 left by n2 bits
 nn shift_right
 co $ ..
 ln shift-right: Shift n1 right by n2 bits
-ff shift_right
+ff shift-right
 fb shift-right: Shift n1 right by n2 bits
 nn sigil/_lpar
 co $ ..
 ln sigil:(: Sigil. Token is a comment
-ff sigil/_lpar
+ff sigil:(
 fb sigil:(: Sigil. Token is a comment
 nn sigil/_hash
 co $ ..
 ln sigil:#: Sigil. Token is a number
-ff sigil/_hash
+ff sigil:#
 fb sigil:#: Sigil. Token is a number
 nn sigil/&
 co $ ..
 ln sigil:&: Sigil. Token is a named pointer
-ff sigil/&
+ff sigil:&
 fb sigil:&: Sigil. Token is a named pointer
 nn sigil/_singlequote
 co $ ..
 ln sigil:': Sigil. Token is a string.
-ff sigil/_singlequote
+ff sigil:'
 fb sigil:': Sigil. Token is a string.
 nn sigil/sigil
 co $ ..
 ln sigil:sigil: Sigil. Token is name of a new word to define
-ff sigil/sigil
+ff sigil:sigil
 fb sigil:sigil: Sigil. Token is name of a new word to define
 nn sigil/$
 co $ ..
 ln sigil:$: Sigil. Return first character of token
-ff sigil/$
+ff sigil:$
 fb sigil:$: Sigil. Return first character of token
 nn sigil/get
 co $ ..
 ln sigil:get: Return the address of a sigil handler for character c
-ff sigil/get
+ff sigil:get
 fb sigil:get: Return the address of a sigil handler for character c
 nn sigil/set
 co $ ..
 ln sigil:set: Assign word at address to the sigil handler for character c
-ff sigil/set
+ff sigil:set
 fb sigil:set: Assign word at address to the sigil handler for character c
 nn sigil/_amp
 co $ ..
 ln sigil:@: Sigil. Use to fetch value from a named variable
-ff sigil/_amp
+ff sigil:@
 fb sigil:@: Sigil. Use to fetch value from a named variable
 nn sigil/_exclaim
 co $ ..
 ln sigil:!: Sigil. Use to store value into a named variable
-ff sigil/_exclaim
+ff sigil:!
 fb sigil:!: Sigil. Use to store value into a named variable
 nn sigil/_bslash_
 co $ ..
 ln sigil:\: Sigil. Bind name s to function a
-ff sigil/_bslash_
+ff sigil:\
 fb sigil:\: Sigil. Bind name s to function a
 nn sip
 co $ ..
-ln sip: Push a copy of n to address then call p. Afterwards, restore to
+ln sip: Push a copy of n to address then call p. Afterwards, restore to the data stack
 ff sip
-fb sip: Push a copy of n to address then call p. Afterwards, restore to
+fb sip: Push a copy of n to address then call p. Afterwards, restore to the data stack
 nn save
 co $ ..
 ln save: Save the current block
@@ -1141,9 +1166,9 @@ ff sp
 fb sp: Display a space
 nn startup
 co $ ..
-ln startup: Called on startup to prepare the system. You can replace this to
+ln startup: Called on startup to prepare the system. You can replace this to have ilo start your application
 ff startup
-fb startup: Called on startup to prepare the system. You can replace this to
+fb startup: Called on startup to prepare the system. You can replace this to have ilo start your application
 nn store
 co $ ..
 ln store: Store n into address a
@@ -1152,18 +1177,58 @@ fb store: Store n into address a
 nn store_next
 co $ ..
 ln store-next: Store n int address a, return address a + 1
-ff store_next
+ff store-next
 fb store-next: Store n int address a, return address a + 1
 nn swap
 co $ ..
 ln swap: Exchange the top two stack items
 ff swap
 fb swap: Exchange the top two stack items
+nn sys/buffers_fslash_block
+co $ ..
+ln sys:buffers/block: Data. Points to the start of the block buffer.
+ff sys:buffers/block
+fb sys:buffers/block: Data. Points to the start of the block buffer.
+nn sys/buffers_fslash_loops
+co $ ..
+ln sys:buffers/loops: Data. Holds loop indices.
+ff sys:buffers/loops
+fb sys:buffers/loops: Data. Holds loop indices.
+nn sys/buffers_fslash_numeric_conversion
+co $ ..
+ln sys:buffers/numeric-conversion: Data. Used by s:to-n.
+ff sys:buffers/numeric-conversion
+fb sys:buffers/numeric-conversion: Data. Used by s:to-n.
+nn sys/buffers_fslash_scope
+co $ ..
+ln sys:buffers/scope: Data. Holds dictionary pointers for {{ ---reveal--- }}
+ff sys:buffers/scope
+fb sys:buffers/scope: Data. Holds dictionary pointers for {{ ---reveal--- }}
+nn sys/buffers_fslash_needs
+co $ ..
+ln sys:buffers/needs: Data. Used by needs
+ff sys:buffers/needs
+fb sys:buffers/needs: Data. Used by needs
+nn sys/buffers_fslash_reserved
+co $ ..
+ln sys:buffers/reserved: Data. Reserved for future use.
+ff sys:buffers/reserved
+fb sys:buffers/reserved: Data. Reserved for future use.
+nn sys/buffers_fslash_strings+arrays
+co $ ..
+ln sys:buffers/strings+arrays: Data. Start of the temporary string & array pool.
+ff sys:buffers/strings+arrays
+fb sys:buffers/strings+arrays: Data. Start of the temporary string & array pool.
+nn sys/buffers_fslash_input
+co $ ..
+ln sys:buffers/input: Data. Holds the current input token.
+ff sys:buffers/input
+fb sys:buffers/input: Data. Holds the current input token.
 nn sys/info
 co $ ..
-ln sys:info: Display system information
-ff sys/info
-fb sys:info: Display system information
+ln sys:info: Display system information.
+ff sys:info
+fb sys:info: Display system information.
 nn tab
 co $ ..
 ln tab: Display a tab
@@ -1176,24 +1241,24 @@ ff times
 fb times: For n iterations, execute p
 nn titles
 co $ ..
-ln titles: Display the block title lines. The output is paginated every 16
+ln titles: Display the block title lines. The output is paginated every 16 lines
 ff titles
-fb titles: Display the block title lines. The output is paginated every 16
+fb titles: Display the block title lines. The output is paginated every 16 lines
 nn tri
 co $ ..
-ln tri: Apply q1 against x, then q2 against a copy of x, and finally q3
+ln tri: Apply p1 against x, then p2 against a copy of x, and finally p3 against another copy of x
 ff tri
-fb tri: Apply q1 against x, then q2 against a copy of x, and finally q3
+fb tri: Apply p1 against x, then p2 against a copy of x, and finally p3 against another copy of x
 nn tri_ast
 co $ ..
-ln tri*: Apply q1 against x, q2 against y, and q3 against z
-ff tri_ast
-fb tri*: Apply q1 against x, q2 against y, and q3 against z
+ln tri*: Apply p1 against x, p2 against y, and p3 against z
+ff tri*
+fb tri*: Apply p1 against x, p2 against y, and p3 against z
 nn tri_amp
 co $ ..
-ln tri@: Apply q against x, then against y, and finally against z
-ff tri_amp
-fb tri@: Apply q against x, then against y, and finally against z
+ln tri@: Apply p against x, then against y, and finally against z
+ff tri@
+fb tri@: Apply p against x, then against y, and finally against z
 nn tuck
 co $ ..
 ln tuck: Put a copy of TOS under NOS
@@ -1201,9 +1266,9 @@ ff tuck
 fb tuck: Put a copy of TOS under NOS
 nn until
 co $ ..
-ln until: Run a quote in a loop repeatedly The loop must return a flag.
+ln until: Run a quote in a loop repeatedly The loop must return a flag. End loop when flag is not zero
 ff until
-fb until: Run a quote in a loop repeatedly The loop must return a flag.
+fb until: Run a quote in a loop repeatedly The loop must return a flag. End loop when flag is not zero
 nn use
 co $ ..
 ln use: Load and run a specific block numbered n
@@ -1217,12 +1282,12 @@ fb using: Load and run blocks n1 thru n2
 nn v/dec
 co $ ..
 ln v:dec: Decrement the value stored at address
-ff v/dec
+ff v:dec
 fb v:dec: Decrement the value stored at address
 nn v/inc
 co $ ..
 ln v:inc: Increment the value stored at address
-ff v/inc
+ff v:inc
 fb v:inc: Increment the value stored at address
 nn var
 co $ ..
@@ -1232,13 +1297,13 @@ fb var: Create a variable with a value of zero
 nn var_n
 co $ ..
 ln var-n: Create a variable with a value of n
-ff var_n
+ff var-n
 fb var-n: Create a variable with a value of n
 nn while
 co $ ..
-ln while: Run a quote in a loop repeatedly The loop must return a flag.
+ln while: Run a quote in a loop repeatedly The loop must return a flag. End loop when flag is zero
 ff while
-fb while: Run a quote in a loop repeatedly The loop must return a flag.
+fb while: Run a quote in a loop repeatedly The loop must return a flag. End loop when flag is zero
 nn xor
 co $ ..
 ln xor: Perform a bitwise XOR

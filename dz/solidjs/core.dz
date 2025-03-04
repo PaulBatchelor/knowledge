@@ -87,11 +87,11 @@ nn subscribers/observation
 co $ ..
 ln Observation: At their core, subscribers observe
 ln signals. This keeps the subscriber primed to pick
-ln up on any changes to the signal they are tracking.s
+ln up on any changes to the signal they are tracking.
 ff Explain observation in the context of signals. (SolidJS)
 fb Observation: At their core, subscribers observe
 fb signals. This keeps the subscriber primed to pick
-fb up on any changes to the signal they are tracking.s
+fb up on any changes to the signal they are tracking.
 
 nn subscribers/response
 co $ ..
@@ -512,13 +512,13 @@ nn native_event
 co $ ..
 ln on: adds an event listener to the element, this is
 ln also known as a native event. Native events flow
-ln through the DOM tree, and provie more control over the
-ln behavior of the vent.
+ln through the DOM tree, and provide more control over the
+ln behavior of the event.
 ff What is a native event?
 fb on: adds an event listener to the element, this is
 fb also known as a native event. Native events flow
-fb through the DOM tree, and provie more control over the
-fb behavior of the vent.
+fb through the DOM tree, and provide more control over the
+fb behavior of the event.
 
 nn delegated_event
 co $ ..

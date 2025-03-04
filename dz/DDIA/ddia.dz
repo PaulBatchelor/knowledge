@@ -415,7 +415,7 @@ co $ ../../toc/1_foundations_of_data_systems/02_data_models_query_languages
 nn glossary/OLTP
 ln OLTP: Online Transaction Processing, optimized for
 ln transaction processing.
-ff What is an OLTP databse?
+ff What is an OLTP database?
 fb Online transaction processing, optimized for transaction
 fb processing
 co $ ..

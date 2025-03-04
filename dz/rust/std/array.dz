@@ -1,0 +1,27 @@
+ns rust/std/modules/array
+
+nn structs
+hl https://doc.rust-lang.org/std/array/index.html#structs
+co $ ..
+ns +structs
+
+nn IntoIter
+hl https://doc.rust-lang.org/std/array/struct.IntoIter.html
+co $ ..
+ln A by-value array iterator.
+ff array::IntoIter
+fb A by-value array iterator.
+
+nn TryFromSliceError
+hl https://doc.rust-lang.org/std/array/struct.TryFromSliceError.html
+co $ ..
+ln The error type returned when a conversion from
+ln a slice to an array fails.
+ff array::TryFromSliceError
+fb The error type returned when a conversion from
+fb a slice to an array fails.
+
+zz -structs
+ns ..
+
+

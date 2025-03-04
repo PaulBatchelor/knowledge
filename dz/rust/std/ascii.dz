@@ -1,0 +1,18 @@
+ns rust/std/modules/ascii
+
+nn structs
+hl https://doc.rust-lang.org/std/ascii/index.html#structs
+co $ ..
+
+ns +structs
+
+nn EscapeDefault
+hl https://doc.rust-lang.org/std/ascii/struct.EscapeDefault.html
+co $ ..
+ln An iterator over the escaped version of a byte.
+ff ascii:EscapeDefault
+fb An iterator over the escaped version of a byte.
+
+zz -structs
+ns ..
+

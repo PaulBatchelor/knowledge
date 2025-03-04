@@ -1,0 +1,19 @@
+ns rust/std/modules/backtrace
+
+nn structs
+hl https://doc.rust-lang.org/std/backtrace/index.html#structs
+co $ ..
+
+ns +structs
+
+nn BackTrace
+hl https://doc.rust-lang.org/std/backtrace/struct.Backtrace.html
+co $ ..
+ln A captured OS thread stack backtrace.
+ff backtrace::BackTrace
+fb A captured OS thread stack backtrace.
+
+zz -structs
+ns ..
+
+

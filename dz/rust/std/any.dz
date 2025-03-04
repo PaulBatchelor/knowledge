@@ -1,0 +1,21 @@
+ns rust/std/modules/any
+
+nn structs
+hl https://doc.rust-lang.org/std/any/index.html#structs
+co $ ..
+ns +structs
+
+nn TypeId
+hl https://doc.rust-lang.org/std/any/struct.TypeId.html
+co $ ..
+ln A TypeId represents a globally unique identifier
+ln for a type.
+ff any::TypeId
+fb A TypeId represents a globally unique identifier
+fb for a type.
+
+
+zz -structs
+ns ..
+
+

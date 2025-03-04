@@ -1,0 +1,41 @@
+ns rust/std/modules/alloc
+
+nn structs
+hl https://doc.rust-lang.org/std/alloc/index.html#structs
+co $ ..
+at ol
+
+ns +structs
+
+nn Layout
+hl https://doc.rust-lang.org/std/alloc/struct.Layout.html
+co $ ..
+ln Layout of a block of memory.
+ff alloc::Layout
+fb Layout of a block of memory.
+
+nn LayoutError
+hl https://doc.rust-lang.org/std/alloc/struct.LayoutError.html
+co $ ..
+ln The LayoutError is returned when the parameters
+ln given to Layout::from_size_align or some other
+ln Layout constructor do not satisfy its documented
+ln constraints.
+ff alloc::LayoutError
+fb The LayoutError is returned when the parameters
+fb given to Layout::from_size_align or some other
+fb Layout constructor do not satisfy its documented
+fb constraints.
+
+nn System
+hl https://doc.rust-lang.org/std/alloc/struct.System.html
+co $ ..
+ln The default memory allocator provided by the
+ln operating system.
+fb alloc::System
+fb The default memory allocator provided by the
+fb operating system.
+
+zz -structs
+ns ..
+

@@ -1,4 +1,6 @@
 +
 tokio/tutorial.dz crates.dz tokio/refs.dz tokio/docs.dz tokio/glossary.dz
 rust.dz std.dz std/modules.dz
+std/alloc.dz std/any.dz std/array.dz std/ascii.dz
+std/borrow.dz std/boxed.dz std/backtrace.dz
 .

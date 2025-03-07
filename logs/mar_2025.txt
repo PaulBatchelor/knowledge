@@ -23,3 +23,6 @@ I'll probably start with the top-level nodes.
 @21:21 some rust stuff. battery died on laptop and I lost my previous timestamp #timelog:00:15:10
 
 @21:38 review some flagged cards
+
+@2025-03-06
+@19:45 Rust cards

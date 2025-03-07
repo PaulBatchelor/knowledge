@@ -1,0 +1,74 @@
+ns rust/std/modules/collections
+
+nn structs
+hl https://doc.rust-lang.org/std/collections/index.html#structs
+co $ ..
+
+
+ns +structs
+
+nn BTreeMap
+hl https://doc.rust-lang.org/std/collections/struct.BTreeMap.html
+co $ ..
+ln An ordered map based on a B-Tree.
+ff collections::BTreeMap
+fb An ordered map based on a B-Tree.
+
+nn BTreeSet
+hl https://doc.rust-lang.org/std/collections/struct.BTreeSet.html
+co $ ..
+ln An ordered set based on a B-Tree.
+ff collections::BTreeSet
+fb An ordered set based on a B-Tree.
+
+nn BinaryHeap
+hl https://doc.rust-lang.org/std/collections/struct.BinaryHeap.html
+co $ ..
+ln A priority queue implemented with a binary heap.
+ff collections::BinaryHeap
+fb A priority queue implemented with a binary heap.
+
+nn HashMap
+hl https://doc.rust-lang.org/std/collections/struct.HashMap.html
+co $ ..
+ln A hash map implemented with quadratic probing
+ln and SIMD lookup.
+ff collections::HashMap
+fb A hash map implemented with quadratic probing
+fb and SIMD lookup.
+
+nn HashSet
+hl https://doc.rust-lang.org/std/collections/struct.HashSet.html
+co $ ..
+ln A hash set implemented as a HashMap where the
+ln value is ().
+ff collections::HashSet
+fb A hash set implemented as a HashMap where the
+fb value is ().
+
+nn LinkedList
+hl https://doc.rust-lang.org/std/collections/struct.LinkedList.html
+co $ ..
+ln A doubly-linked list with owned nodes.
+ff collections::LinkedList
+fb A doubly-linked list with owned nodes.
+
+nn TryReserveError
+hl https://doc.rust-lang.org/std/collections/struct.TryReserveError.html
+co $ ..
+ln The error type for try_reserve methods.
+ff collections::TryReserveError
+fb The error type for try_reserve methods.
+
+nn VecDeque
+hl https://doc.rust-lang.org/std/collections/struct.VecDeque.html
+co $ ..
+ln A double-ended queue implemented with a growable
+ln ring buffer.
+ff collections::VecDeque
+fb A double-ended queue implemented with a growable
+fb ring buffer.
+
+zz -structs
+ns ..
+

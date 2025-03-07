@@ -1,0 +1,88 @@
+ns rust/std/modules/cell
+
+nn structs
+hl https://doc.rust-lang.org/std/cell/index.html#structs
+co $ ..
+
+
+ns +structs
+
+nn BorrowError
+hl https://doc.rust-lang.org/std/cell/struct.BorrowError.html
+co $ ..
+ln An error returned by RefCell::try_borrow.
+ff cell::BorrowError
+fb An error returned by RefCell::try_borrow.
+
+nn BorrowMutError
+hl https://doc.rust-lang.org/std/cell/struct.BorrowMutError.html
+co $ ..
+ln An error returned by RefCell::try_borrow_mut.
+ff cell::BorrowMutError
+fb An error returned by RefCell::try_borrow_mut.
+
+nn Cell
+hl https://doc.rust-lang.org/std/cell/struct.Cell.html
+co $ ..
+ln A mutable memory location.
+ff cell::Cell
+fb A mutable memory location.
+
+nn LazyCell
+hl https://doc.rust-lang.org/std/cell/struct.LazyCell.html
+co $ ..
+ln A value which is initialized on the first access.
+ff cell::LazyCell
+fb A value which is initialized on the first access.
+
+nn OnceCell
+hl https://doc.rust-lang.org/std/cell/struct.OnceCell.html
+co $ ..
+ln A cell which can nominally be written to only
+ln once.
+ff cell::OnceCell
+fb A cell which can nominally be written to only
+fb once.
+
+nn Ref
+hl https://doc.rust-lang.org/std/cell/struct.Ref.html
+co $ ..
+ln Wraps a borrowed reference to a value in a
+ln RefCell box. A wrapper type for an immutably
+ln borrowed value from a RefCell<T>.
+ff cell:Ref
+fb Wraps a borrowed reference to a value in a
+fb RefCell box. A wrapper type for an immutably
+fb borrowed value from a RefCell<T>.
+
+nn RefCell
+hl https://doc.rust-lang.org/std/cell/struct.RefCell.html
+co $ ..
+ln A mutable memory location with dynamically
+ln checked borrow rules
+ff cell::RefCell
+fb A mutable memory location with dynamically
+fb checked borrow rules
+
+nn RefMut
+hl https://doc.rust-lang.org/std/cell/struct.RefMut.html
+co $ ..
+ln A wrapper type for a mutably borrowed value from
+ln a RefCell<T>.
+ff cell::RefMut
+fb A wrapper type for a mutably borrowed value from
+fb a RefCell<T>.
+
+nn UnsafeCell
+hl https://doc.rust-lang.org/std/cell/struct.UnsafeCell.html
+co $ ..
+ln The core primitive for interior mutability
+ln in Rust.
+ff cell::UnsafeCell
+fb The core primitive for interior mutability
+fb in Rust.
+
+
+zz -structs
+ns ..
+

@@ -1,0 +1,20 @@
+ns rust/std/modules/boxed
+
+nn structs
+hl https://doc.rust-lang.org/std/boxed/index.html#structs
+co $ ..
+
+ns +structs
+
+nn Box
+hl https://doc.rust-lang.org/std/boxed/struct.Box.html
+co $ ..
+ln A pointer type that uniquely owns a heap
+ln allocation of type T.
+ff box::Box
+fb A pointer type that uniquely owns a heap
+fb allocation of type T.
+
+zz -structs
+ns ..
+

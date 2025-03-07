@@ -1,0 +1,18 @@
+ns rust/std/modules/cmp
+
+nn structs
+hl https://doc.rust-lang.org/std/cmp/index.html#structs
+co $ ..
+
+ns +structs
+
+nn Reverse
+hl https://doc.rust-lang.org/std/cmp/struct.Reverse.html
+co $ ..
+ln A helper struct for reverse ordering.
+ff cmp::Reverse
+fb A helper struct for reverse ordering.
+
+zz -structs
+ns ..
+

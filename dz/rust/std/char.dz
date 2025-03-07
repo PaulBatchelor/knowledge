@@ -1,0 +1,100 @@
+ns rust/std/modules/char
+
+nn structs
+hl https://doc.rust-lang.org/std/char/index.html#structs
+co $ ..
+
+ns +structs
+
+nn CharTryFromError
+hl https://doc.rust-lang.org/std/char/struct.CharTryFromError.html
+co $ ..
+ln The error type returned when a conversion from
+ln u32 to char fails.
+ff char::CharTryFromError
+fb The error type returned when a conversion from
+fb u32 to char fails.
+
+nn DecodeUtf8
+hl https://doc.rust-lang.org/std/char/struct.DecodeUtf16.html
+co $ ..
+ln An iterator that decodes UTF-16 encoded code
+ln points from an iterator of u16s.
+ff char::DecodeUtf8
+fb An iterator that decodes UTF-16 encoded code
+fb points from an iterator of u16s.
+
+nn DecodeUtf8Error
+hl https://doc.rust-lang.org/std/char/struct.DecodeUtf16Error.html
+co $ ..
+ln An error that can be returned when decoding
+ln UTF-16 code points.
+ff char::DecodeUtf8Error
+fb An error that can be returned when decoding
+fb UTF-16 code points.
+
+nn EscapeDebug
+hl https://doc.rust-lang.org/std/char/struct.EscapeDebug.html
+co $ ..
+ln An iterator that yields the literal escape code
+ln of a char.
+ff char::EscapeDebug
+fb An iterator that yields the literal escape code
+fb of a char.
+
+nn EscapeDefault
+hl https://doc.rust-lang.org/std/char/struct.EscapeDefault.html
+co $ ..
+ln An iterator that yields the literal escape code
+ln of a char.
+ff char::EscapeDefault
+fb An iterator that yields the literal escape code
+fb of a char.
+
+nn EscapeUnicode
+hl https://doc.rust-lang.org/std/char/struct.EscapeUnicode.html
+co $ ..
+ln Returns an iterator that yields the hexadecimal
+ln Unicode escape of a character, as chars.
+ff char::EscapeUnicode
+fb Returns an iterator that yields the hexadecimal
+fb Unicode escape of a character, as chars.
+
+nn ParseCharError
+hl https://doc.rust-lang.org/std/char/struct.ParseCharError.html
+co $ ..
+ln An error which can be returned when parsing
+ln a char.
+ff char::ParseCharError
+fb An error which can be returned when parsing
+fb a char.
+
+nn ToLowercase
+hl https://doc.rust-lang.org/std/char/struct.ToLowercase.html
+co $ ..
+ln Returns an iterator that yields the lowercase
+ln equivalent of a char.
+ff char::ToLowercase
+fb Returns an iterator that yields the lowercase
+fb equivalent of a char.
+
+nn ToUppercase
+hl https://doc.rust-lang.org/std/char/struct.ToUppercase.html
+co $ ..
+ln Returns an iterator that yields the uppercase
+ln equivalent of a char.
+ff char::ToUppercase
+fb Returns an iterator that yields the uppercase
+fb equivalent of a char.
+
+nn TryFromCharError
+hl https://doc.rust-lang.org/std/char/struct.TryFromCharError.html
+co $ ..
+ln The error type returned when a checked char
+ln conversion fails.
+ff char::TryFromCharError
+fb The error type returned when a checked char
+fb conversion fails.
+
+zz -strtucts
+ns ..

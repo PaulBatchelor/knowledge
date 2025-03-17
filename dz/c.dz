@@ -103,3 +103,7 @@ nn quick_hash_dynamic_arrays
 hl https://nullprogram.com/blog/2025/01/19/
 ln Examples of quick hash tables and
 ln dynamic arrays in C
+
+nn talloc
+hl https://talloc.samba.org/talloc/doc/html/libtalloc__tutorial.html
+ln Talloc is a hierarchical, reference counted memory pool system with destructors.

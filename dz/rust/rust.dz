@@ -210,3 +210,7 @@ tg books
 
 nn rust_exercises
 hl https://rust-exercises.com/
+
+nn succinct_data_structs
+hl https://blog.startifact.com/posts/succinct/
+ln Succinct data structures

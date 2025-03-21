@@ -110,3 +110,7 @@ ln view is requested. Changes applied to the data in
 ln a relevant underlying table are reflected in the
 ln data shown in subsequent invocations of the view.
 
+nn life_altering_postgres_patterns
+hl https://mccue.dev/pages/3-11-25-life-altering-postgresql-patterns
+ln Life Altering Postgresql Patterns
+tg postgres

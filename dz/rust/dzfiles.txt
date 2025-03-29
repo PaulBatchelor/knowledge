@@ -4,4 +4,6 @@ rust.dz std.dz std/modules.dz
 std/alloc.dz std/any.dz std/array.dz std/ascii.dz
 std/borrow.dz std/boxed.dz std/backtrace.dz
 std/cell.dz std/char.dz std/cmp.dz std/collections.dz
+std/env.dz std/error.dz std/ffi.dz std/fmt.dz std/fs.dz
+std/future.dz std/hash.dz
 .

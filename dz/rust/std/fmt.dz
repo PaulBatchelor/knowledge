@@ -1,0 +1,79 @@
+ns rust/std/modules/fmt
+
+nn structs
+hl https://doc.rust-lang.org/std/fmt/index.html#structs
+co $ ..
+
+ns +structs
+
+nn Arguments
+hl https://doc.rust-lang.org/std/fmt/struct.Arguments.html
+co $ ..
+ln This structure represents a safely
+ln precompiled version of a format string and
+ln its arguments. This cannot be generated at
+ln runtime because it cannot safely be done, so
+ln no constructors are given and the fields are
+ln private to prevent modification.
+ff fmt::Arguments
+fb This structure represents a safely
+fb precompiled version of a format string and
+fb its arguments. This cannot be generated at
+fb runtime because it cannot safely be done, so
+fb no constructors are given and the fields are
+fb private to prevent modification.
+
+nn DebugList
+hl https://doc.rust-lang.org/std/fmt/struct.DebugList.html
+co $ ..
+ln A struct to help with fmt::Debug implementations.
+ff fmt::DebugList
+fb A struct to help with fmt::Debug implementations.
+
+nn DebugMap
+hl https://doc.rust-lang.org/std/fmt/struct.DebugMap.html
+co $ ..
+ln A struct to help with fmt::Debug implementations.
+ff fmt::DebugMap
+fb A struct to help with fmt::Debug implementations.
+
+nn DebugSet
+hl https://doc.rust-lang.org/std/fmt/struct.DebugSet.html
+co $ ..
+ln https://doc.rust-lang.org/std/fmt/struct.DebugSet.html
+ff fmt::DebugSet
+fb https://doc.rust-lang.org/std/fmt/struct.DebugSet.html
+
+nn DebugStruct
+hl https://doc.rust-lang.org/std/fmt/struct.DebugStruct.html
+co $ ..
+ln A struct to help with fmt::Debug implementations.
+ff fmt::DebugStruct
+fb A struct to help with fmt::Debug implementations.
+
+nn DebugTuple
+hl https://doc.rust-lang.org/std/fmt/struct.DebugTuple.html
+co $ ..
+ln A struct to help with fmt::Debug implementations.
+ff fmt::DebugTuple
+ln A struct to help with fmt::Debug implementations.
+
+nn Error
+hl https://doc.rust-lang.org/std/fmt/struct.Error.html
+co $ ..
+ln The error type which is returned from formatting
+ln a message into a stream.
+ff fmt::Error
+fb The error type which is returned from formatting
+fb a message into a stream.
+
+nn Formatter
+hl https://doc.rust-lang.org/std/fmt/struct.Formatter.html
+co $ ..
+ln Configuration for formatting.
+ff fmt::Formatter
+fb Configuration for formatting.
+
+zz -structs
+ns ..
+

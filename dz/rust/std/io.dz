@@ -1,0 +1,134 @@
+ns rust/std/modules/io
+
+nn structs
+hl https://doc.rust-lang.org/std/io/index.html#structs
+co $ ..
+
+
+ns +structs
+
+nn BufReader
+hl https://doc.rust-lang.org/std/io/struct.BufReader.html
+co $ ..
+ln The BufReader<R> struct adds buffering to
+ln any reader.
+
+nn BufWriter
+hl https://doc.rust-lang.org/std/io/struct.BufWriter.html
+co $ ..
+ln Wraps a writer and buffers its output.
+
+nn Bytes
+hl https://doc.rust-lang.org/std/io/struct.Bytes.html
+co $ ..
+ln An iterator over u8 values of a reader.
+
+nn Chain
+hl https://doc.rust-lang.org/std/io/struct.Chain.html
+co $ ..
+ln Adapter to chain together two readers.
+
+nn Cursor
+hl https://doc.rust-lang.org/std/io/struct.Cursor.html
+co $ ..
+ln A Cursor wraps an in-memory buffer and provides
+ln it with a Seek implementation.
+
+nn Empty
+hl https://doc.rust-lang.org/std/io/struct.Empty.html
+co $ ..
+ln Empty ignores any data written via Write, and
+ln will always be empty (returning zero bytes)
+ln when read via Read.
+
+nn Error
+hl https://doc.rust-lang.org/std/io/struct.Error.html
+co $ ..
+ln The error type for I/O operations of the Read,
+ln Write, Seek, and associated traits.
+
+nn IntoInnerError
+hl https://doc.rust-lang.org/std/io/struct.IntoInnerError.html
+co $ ..
+ln An error returned by BufWriter::into_inner which
+ln combines an error that happened while writing
+ln out the buffer, and the buffered writer object
+ln which may be used to recover from the condition.
+
+nn IoSlice
+hl https://doc.rust-lang.org/std/io/struct.IoSlice.html
+co $ ..
+ln A buffer type used with Write::write_vectored.
+
+nn IoSliceMut
+hl https://doc.rust-lang.org/std/io/struct.IoSliceMut.html
+co $ ..
+ln A buffer type used with Read::read_vectored.
+
+nn LineWriter
+hl https://doc.rust-lang.org/std/io/struct.LineWriter.html
+co $ ..
+ln Wraps a writer and buffers output to it, flushing
+ln whenever a newline (0x0a, '\n') is detected.
+
+nn Lines
+hl https://doc.rust-lang.org/std/io/struct.Lines.html
+co $ ..
+ln An iterator over the lines of an instance
+ln of BufRead.
+
+nn Repeat
+hl https://doc.rust-lang.org/std/io/struct.Repeat.html
+co $ ..
+ln A reader which yields one byte over and over
+ln and over and over and over and…
+
+nn Sink
+hl https://doc.rust-lang.org/std/io/struct.Sink.html
+co $ ..
+ln A writer which will move data into the void.
+
+nn Split
+hl https://doc.rust-lang.org/std/io/struct.Split.html
+co $ ..
+ln An iterator over the contents of an instance of
+ln BufRead split on a particular byte.
+
+nn Stderr
+hl https://doc.rust-lang.org/std/io/struct.Stderr.html
+co $ ..
+ln A handle to the standard error stream of
+ln a process.
+
+nn StderrLock
+hl https://doc.rust-lang.org/std/io/struct.StderrLock.html
+co $ ..
+ln A locked reference to the Stderr handle.
+
+nn Stdin
+hl https://doc.rust-lang.org/std/io/struct.Stdin.html
+co $ ..
+ln A handle to the standard input stream of
+ln a process.
+
+nn StdinLock
+hl https://doc.rust-lang.org/std/io/struct.StdinLock.html
+co $ ..
+ln A locked reference to the Stdin handle.
+
+nn Stdout
+hl https://doc.rust-lang.org/std/io/struct.Stdout.html
+co $ ..
+ln A handle to the global standard output stream
+ln of the current process.
+
+nn StdoutLock
+hl https://doc.rust-lang.org/std/io/struct.StdoutLock.html
+co $ ..
+ln A locked reference to the Stdout handle.
+
+
+zz -structs
+ns ..
+
+

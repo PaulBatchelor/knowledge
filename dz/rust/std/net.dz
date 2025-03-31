@@ -1,0 +1,75 @@
+ns rust/std/modules/net
+
+nn structs
+hl https://doc.rust-lang.org/std/net/index.html#structs
+co $ ..
+
+ns +structs
+
+nn AddrParsError
+hl https://doc.rust-lang.org/std/net/struct.AddrParseError.html
+co $ ..
+ln https://doc.rust-lang.org/std/net/struct.AddrParseError.html
+ff net::AddrParsError
+fb https://doc.rust-lang.org/std/net/struct.AddrParseError.html
+
+nn Incoming
+hl https://doc.rust-lang.org/std/net/struct.Incoming.html
+co $ ..
+ln An iterator that infinitely accepts connections
+ln on a TcpListener.
+ff net::Incoming
+fb An iterator that infinitely accepts connections
+fb on a TcpListener.
+
+nn Ipv4Addr
+hl https://doc.rust-lang.org/std/net/struct.Ipv4Addr.html
+co $ ..
+ln An IPv4 address.
+ff net::Ipv4Addr
+fb An IPv4 address.
+
+nn Ipv6Addr
+hl https://doc.rust-lang.org/std/net/struct.Ipv6Addr.html
+co $ ..
+ln An IPv6 address.
+ff net::Ipv6Addr
+fb An IPv6 address.
+
+nn SocketAddrV4
+hl https://doc.rust-lang.org/std/net/struct.SocketAddrV4.html
+co $ ..
+ln An IPv4 socket address.
+ff net::SocketAddrV4
+fb An IPv4 socket address.
+
+nn SocketAddrV6
+hl https://doc.rust-lang.org/std/net/struct.SocketAddrV6.html
+co $ ..
+ln An IPv6 socket address.
+ff net::SocketAddrV6
+fb An IPv6 socket address.
+
+nn TcpListener
+hl https://doc.rust-lang.org/std/net/struct.TcpListener.html
+co $ ..
+ln A TCP socket server, listening for connections.
+ff net::TcpListener
+fb A TCP socket server, listening for connections.
+
+nn TcpStream
+hl https://doc.rust-lang.org/std/net/struct.TcpStream.html
+co $ ..
+ln A TCP stream between a local and a remote socket.
+ff net::TcpStream
+fb A TCP stream between a local and a remote socket.
+
+nn UdpSocket
+hl https://doc.rust-lang.org/std/net/struct.UdpSocket.html
+co $ ..
+ln A UDP socket.
+ff net::UdpSocket
+fb A UDP socket.
+
+zz -structs
+ns ..

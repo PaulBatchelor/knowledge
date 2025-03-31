@@ -1,0 +1,27 @@
+ns rust/std/modules/marker
+
+nn structs
+hl https://doc.rust-lang.org/std/marker/index.html#structs
+co $ ..
+
+ns +structs
+
+nn PhantomData
+hl https://doc.rust-lang.org/std/marker/struct.PhantomData.html
+co $ ..
+ln Zero-sized type used to mark things that "act
+ln like" they own a T.
+ff PhantomData
+fb Zero-sized type used to mark things that "act
+fb like" they own a T.
+
+nn PhantomPinned
+hl https://doc.rust-lang.org/std/marker/struct.PhantomPinned.html
+co $ ..
+ln https://doc.rust-lang.org/std/marker/struct.PhantomPinned.html
+ff marker::PhantomPinned
+fb https://doc.rust-lang.org/std/marker/struct.PhantomPinned.html
+
+zz -structs
+ns ..
+

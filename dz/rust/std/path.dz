@@ -1,0 +1,75 @@
+ns rust/std/modules/path
+
+nn structs
+hl https://doc.rust-lang.org/std/path/index.html#structs
+co $ ..
+
+ns +structs
+
+nn Ancestors
+hl https://doc.rust-lang.org/std/path/struct.Ancestors.html
+co $ ..
+ln An iterator over Path and its ancestors.
+ff path::Ancestors
+fb An iterator over Path and its ancestors.
+
+nn Components
+hl https://doc.rust-lang.org/std/path/struct.Components.html
+co $ ..
+ln An iterator over the Components of a Path.
+ff path::Components
+fb An iterator over the Components of a Path.
+
+nn Display
+hl https://doc.rust-lang.org/std/path/struct.Display.html
+co $ ..
+ln Helper struct for safely printing paths with
+ln format! and {}.
+ff path::Display
+fb Helper struct for safely printing paths with
+fb format! and {}.
+
+nn Iter
+hl https://doc.rust-lang.org/std/path/struct.Iter.html
+co $ ..
+ln An iterator over the Components of a Path,
+ln as OsStr slices.
+ff path::Iter
+fb An iterator over the Components of a Path,
+fb as OsStr slices.
+
+nn Path
+hl https://doc.rust-lang.org/std/path/struct.Path.html
+co $ ..
+ln A slice of a path (akin to str).
+ff path::Path
+fb A slice of a path (akin to str).
+
+nn PathBuf
+hl https://doc.rust-lang.org/std/path/struct.PathBuf.html
+co $ ..
+ln An owned, mutable path (akin to String).
+ff path::PathBuf
+fb An owned, mutable path (akin to String).
+
+nn PrefixComponent
+hl https://doc.rust-lang.org/std/path/struct.PrefixComponent.html
+co $ ..
+ln A structure wrapping a Windows path prefix as
+ln well as its unparsed string representation.
+ff path::PrefixComponent
+fb A structure wrapping a Windows path prefix as
+fb well as its unparsed string representation.
+
+nn StripPrefixError
+hl https://doc.rust-lang.org/std/path/struct.StripPrefixError.html
+co $ ..
+ln An error returned from Path::strip_prefix if
+ln the prefix was not found.
+ff path::StripPrefixError
+fb An error returned from Path::strip_prefix if
+fb the prefix was not found.
+
+zz -structs
+ns ..
+

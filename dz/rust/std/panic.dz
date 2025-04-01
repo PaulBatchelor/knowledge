@@ -1,0 +1,37 @@
+ns rust/std/modules/panic
+
+nn structs
+hl https://doc.rust-lang.org/std/panic/index.html#structs
+co $ ..
+
+ns +structs
+
+nn AssertUnwindSafe
+hl https://doc.rust-lang.org/std/panic/struct.AssertUnwindSafe.html
+co $ ..
+ln A simple wrapper around a type to assert that
+ln it is unwind safe.
+ff panic::AssertUnwindSafe
+fb A simple wrapper around a type to assert that
+fb it is unwind safe.
+
+nn Location
+hl https://doc.rust-lang.org/std/panic/struct.Location.html
+co $ ..
+ln A struct containing information about the
+ln location of a panic.
+ff panic::Location
+fb A struct containing information about the
+fb location of a panic.
+
+nn PanicHookInfo
+hl https://doc.rust-lang.org/std/panic/struct.PanicHookInfo.html
+co $ ..
+ln A struct providing information about a panic.
+ff panic::PanicHookInfo
+fb A struct providing information about a panic.
+
+
+zz -structs
+ns ..
+

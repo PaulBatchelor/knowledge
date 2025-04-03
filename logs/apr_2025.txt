@@ -1,0 +1,5 @@
+@2025-04-02
+@20:41 Create partially automated rust docs extractor #timelog:00:45:00
+Added in playground/go/htmlparse. Incomplete. I think
+I have all the raw ingredients, what is left is to generate
+properly formatted dagzet code.

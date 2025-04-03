@@ -12,4 +12,8 @@ std/marker.dz
 std/mem.dz
 std/net.dz
 std/num.dz
+std/ops.dz
+std/option.dz
+std/panic.dz
+std/path.dz
 .

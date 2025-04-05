@@ -1,5 +1,25 @@
 @2025-04-02
+
 @20:41 Create partially automated rust docs extractor #timelog:00:45:00
 Added in playground/go/htmlparse. Incomplete. I think
 I have all the raw ingredients, what is left is to generate
 properly formatted dagzet code.
+
+@2025-04-05
+@09:59 Rust Scraper/card generator work #timelog:00:45:32
+It works. I still need to do a little bit
+of manual formatting with a downloaded rust page, but
+I think it will save me some time.
+---
+Manual work involves: curling the page to an HTML page,
+running "tidy" to make it easier to edit, and then
+extracting just the section to be converted to cards,
+which are just a pile of div/li elements. Then, this file
+can be passed into the program and the resulting DZ file
+gets printed to stdout.
+
+@10:51 try out the new tool
+Okay, it broke. the HTML formatting is different on Pin
+and process. Let's see how hard it is to get this working.
+---
+working now, getting some automation tools set up

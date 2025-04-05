@@ -16,4 +16,12 @@ std/ops.dz
 std/option.dz
 std/panic.dz
 std/path.dz
+std/process.dz
+std/pin.dz
+std/ptr.dz
+std/rc.dz
+std/result.dz
+std/slice.dz
+std/str.dz
+std/string.dz
 .

@@ -18,7 +18,7 @@ which are just a pile of div/li elements. Then, this file
 can be passed into the program and the resulting DZ file
 gets printed to stdout.
 
-@10:51 try out the new tool
+@10:51 try out the new tool #timelog:01:07:50
 Okay, it broke. the HTML formatting is different on Pin
 and process. Let's see how hard it is to get this working.
 ---

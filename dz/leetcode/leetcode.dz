@@ -1124,6 +1124,10 @@ nn 0_intro/1_what_is
 ln What is dynamic programming?
 hl https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/4034/
 co $ ..
+ff What is dynamic programming?
+fb Dynamic Programming is a programming paradigm that can
+fb systematically and efficiently explore all possible
+fb solutions to a problem.
 
 ns +0_intro/1_what_is
 
@@ -1159,6 +1163,8 @@ nn 0_intro/2_top_down_bottom_up
 hl https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/4035/
 ln top down vs bottom up
 co $ ..
+ff What are the two ways to implement a DP algorithm?
+fb Top-down (aka memoization) and bottoms-up (aka tabulation).
 
 ns +0_intro/2_top_down_bottom_up
 
@@ -1182,6 +1188,9 @@ ln which is better?
 co $ ..
 co bottoms_up $
 co top_down $
+ff Which is better for DP: top-down or bottoms-up?
+fb Bottoms-up typically has a faster runtime,
+fb while top-down is typically easier to write.
 
 nn which_is_better/bottoms_up_faster_runtime
 co $ ..
@@ -1203,6 +1212,12 @@ nn 0_intro/3_when_to_use
 ln When to use DP
 hl https://leetcode.com/explore/featured/card/dynamic-programming/630/an-introduction-to-dynamic-programming/4094/
 co $ ..
+ff What are the two common characteristics of a DP problem
+ff that are easy to identify?
+fb The problem will ask for an optimum value of something,
+fb such as min cost of doing, max profit from, how many
+fb ways to, what is the longest possible, etc. The problem
+fb often has future "decisions" that depend on previous ones.
 
 ns +0_intro/3_when_to_use
 
@@ -1250,6 +1265,12 @@ hl https://leetcode.com/explore/featured/card/dynamic-programming/631/strategy-f
 ln A framework for DP problems
 co ../../../../problems/70_climbing_stairs $
 cr used as a sample problem for applying framework
+ff What is the 3-step framework used to solve a dynamic programming problem?
+fb Combine: 1. a functin or data structure that will
+fb compute/contain the answer to the problem for every given
+fb state. 2. A recurrance relation to transition between
+fb states. 3. base cases, so that our recurrance relation
+fb doesn't go on infinitely.
 
 ns +1_framework
 
@@ -1293,7 +1314,7 @@ co ../../../../problems/740_delete_and_earn $
 
 ns +2_examples
 
-zz 2_examples
+zz 2_example
 ns ..
 
 nn 3_multidimensional
@@ -1346,6 +1367,16 @@ nn 4_top_down_to_bottom_up
 hl https://leetcode.com/explore/featured/card/dynamic-programming/631/strategy-for-solving-dp-problems/4099/
 ln Top-down to bottom-up
 co $ ..
+ff How to convert a DP problem from top-down to bottoms-up?
+fb 1. Start with a completed top-down impl. 2. Initialize a DP
+fb array wth that is sized according to your state variables.
+fb 3. Set your base cases, same as the ones in your top-down function.
+fb 4. Write a for-loop(s) that iterate over your state variables.
+fb 5. Each iteration of the inner-most loop represents a given
+fb state, and is equivalent to a function call to the same
+fb state in top-down. Copy logic from your function into the
+fb for-loop and change the function calls to accessing your
+fb array.
 
 ns +4_top_down_to_bottom_up
 

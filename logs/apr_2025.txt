@@ -23,3 +23,10 @@ Okay, it broke. the HTML formatting is different on Pin
 and process. Let's see how hard it is to get this working.
 ---
 working now, getting some automation tools set up
+
+@2025-04-07
+We have to get back on interview prep.
+
+@21:41 Leetcode flashcards #leetcode-flashcards #timelog:00:29:31
+I'd like to revisit these bits of my knowledge graph,
+and attempt to turn as much as I can into flashcards.

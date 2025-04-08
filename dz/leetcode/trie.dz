@@ -40,6 +40,8 @@ nn 2_basic_operations
 hl https://leetcode.com/explore/learn/card/trie/147/basic-operations/
 co $ ..
 co ../../../problems/208_implement_trie $
+ff What are the basic operations of a Trie?
+fb Search, and Insert.
 
 ns +2_basic_operations
 nn insertion

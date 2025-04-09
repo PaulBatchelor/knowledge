@@ -30,3 +30,7 @@ We have to get back on interview prep.
 @21:41 Leetcode flashcards #leetcode-flashcards #timelog:00:29:31
 I'd like to revisit these bits of my knowledge graph,
 and attempt to turn as much as I can into flashcards.
+
+@2025-04-08
+
+@20:52 Rust flashcards #timelog:00:15:34

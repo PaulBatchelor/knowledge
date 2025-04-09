@@ -24,4 +24,7 @@ std/result.dz
 std/slice.dz
 std/str.dz
 std/string.dz
+std/sync.dz
+std/task.dz
+std/thread.dz
 .

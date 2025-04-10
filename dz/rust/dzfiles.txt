@@ -27,4 +27,6 @@ std/string.dz
 std/sync.dz
 std/task.dz
 std/thread.dz
+std/time.dz
+std/vec.dz
 .

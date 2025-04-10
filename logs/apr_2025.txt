@@ -34,3 +34,7 @@ and attempt to turn as much as I can into flashcards.
 @2025-04-08
 
 @20:52 Rust flashcards #timelog:00:15:34
+
+@2025-04-09
+
+@21:47 Rust flashcards #timelog:00:07:39

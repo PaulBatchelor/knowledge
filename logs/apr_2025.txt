@@ -38,3 +38,8 @@ and attempt to turn as much as I can into flashcards.
 @2025-04-09
 
 @21:47 Rust flashcards #timelog:00:07:39
+
+@2025-04-10
+
+@20:32 HTTP status code flashcards? #timelog:00:58:52
+Managed to get 100, 200, 300. 400 and 500 left.

@@ -69,4 +69,5 @@ dz/vim.dz
 dz/dzb.dz
 dz/solidjs
 dz/konilo
+dz/net
 dz/zzz

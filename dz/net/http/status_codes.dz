@@ -1,0 +1,320 @@
+ns net/http
+
+nn status_codes
+ns +status_codes
+
+nn 1xx_informational_response
+ln An informational response indicates that the request was received and
+ln understood. It is issued on a provisional basis while request
+ln processing continues. It alerts the client to wait for a final
+ln response. The message consists only of the status line and optional
+ln header fields, and is terminated by an empty line. As the HTTP/1.0
+ln standard did not define any 1xx status codes, servers must
+ln not send a 1xx response to an HTTP/1.0 compliant client
+ln except under experimental conditions.
+co $ ..
+ff What are 1xx http status codes?
+fb informational response. the request was received and understood.
+at ol
+
+ns +1xx_informational_response
+
+nn 100_continue
+ln 100: continue.
+ln The server has received the request headers and the client
+ln should proceed to send the request body (in the case of a
+ln request for which a body needs to be sent; for example, a
+ln [140]POST request). Sending a large request body to a server
+ln after a request has been rejected for inappropriate headers
+ln would be inefficient. To have a server check the request's
+ln headers, a client must send Expect: 100-continue as a header in
+ln its initial request and receive a 100 Continue status code in
+ln response before sending the body. If the client receives an
+ln error code such as 403 (Forbidden) or 405 (Method Not Allowed)
+ln then it should not send the request's body. The response 417
+ln Expectation Failed indicates that the request should be repeated
+ln without the Expect header as it indicates that the server does
+ln not support expectations (this is the case, for example, of
+ln HTTP/1.0 servers).^[141][1]^: §10.1.1 
+co $ ..
+ff status code 100
+fb 100: continue.
+
+nn 101_switching_protocols
+ln 101: Switching Protocols.
+ln The requester has asked the server to switch protocols and the
+ln server has agreed to do so.
+co $ ..
+ff status code 101
+fb 101: Switching Protocols.
+
+nn 102_processing
+ln 102 Processing.
+ln A WebDAV request may contain many sub-requests involving file
+ln operations, requiring a long time to complete the request. This
+ln code indicates that the server has received and is processing
+ln the request, but no response is available yet.^[143][3] This
+ln prevents the client from timing out and assuming the request was
+ln lost. The status code is deprecated.^[144][4]
+co $ ..
+ff status code 102
+fb 102: Processing.
+
+nn 103_early_hints
+ln 103 Early Hints.
+ln Used to return some response headers before final HTTP
+ln message.
+co $ ..
+ff status code 103
+fb 103: early hints.
+
+zz -1xx_informational_response
+ns ..
+
+nn 2xx_success
+ln This class of status codes indicates the action requested by the client
+ln was received, understood, and accepted.
+co $ ..
+ff What are 2xx http status codes?
+fb Success. Action requested by the client was recieved,
+fb understood, and accepted.
+
+ns +2xx_success
+
+nn 200_ok
+ln 200 OK.
+ln Standard response for successful HTTP requests. The actual
+ln response will depend on the [147]request method used. In a GET
+ln request, the response will contain an entity corresponding to
+ln the requested resource. In a POST request, the response will
+ln contain an entity describing or containing the result of the
+ln action.
+co $ ..
+ff status code 200
+fb 200: OK.
+
+nn 201_created
+ln 201 Created
+ln The request has been fulfilled, resulting in the creation of a
+ln new resource.
+co $ ..
+ff status code 201
+fb 201: Created.
+
+nn 202_accepted
+ln 202 Accepted.
+ln The request has been accepted for processing, but the processing
+ln has not been completed. The request might or might not be
+ln eventually acted upon, and may be disallowed when processing
+ln occurs.
+co $ ..
+ff status code 202
+fb 202: accepted
+
+nn 203_non_authoritative_information
+ln 203 Non-Authoritative Information.
+ln The server is a transforming proxy (e.g. a [149]Web accelerator)
+ln that received a 200 OK from its origin, but is returning a
+ln modified version of the origin's
+ln response.
+co $ ..
+ff status code 203
+fb 203: non-authorative information
+
+nn 204_no_content
+ln 204 No Content.
+ln The server successfully processed the request, and is not
+ln returning any content.
+co $ ..
+ff status cod 204
+fb 204: no content.
+
+nn 205_reset_content
+ln 205 Reset Content.
+ln The server successfully processed the request, asks that the
+ln requester reset its document view, and is not returning any
+ln content.
+co $ ..
+ff status code 205
+fb 205: reset content.
+
+nn 206_Partial_Content
+co $ ..
+ln 206 Partial Content.
+ln The server is delivering only part of the resource
+ln due to a range header sent by the client. The range
+ln header is used by HTTP clients to enable resuming of interrupted
+ln downloads, or split a download into multiple simultaneous
+ln streams.
+ff status code 206
+fb 206: partial content
+
+nn 207_multi-status
+co $ ..
+ln 207 Multi-Status.
+ln The message body that follows is by default an XML message
+ln and can contain a number of separate response codes, depending
+ln on how many sub-requests were made.
+ff status code 207
+fb 207: multi-status.
+
+nn 208_already_reported
+co $ ..
+ln 208 Already Reported.
+ln The members of a DAV binding have already been enumerated in a
+ln preceding part of the (multistatus) response, and are not being
+ln included again.
+ff status code 208
+fb 208: alreay reported.
+
+nn 226_IM_used
+co $ ..
+ln 226 IM Used.
+ln The server has fulfilled a request for the resource, and the
+ln response is a representation of the result of one or more
+ln instance-manipulations applied to the current instance.
+ff status code 226
+fb 226: IM used.
+
+zz -2xx_success
+ns ..
+
+
+nn 3xx_redirection
+ln This class of status code indicates the client must take additional
+ln action to complete the request. Many of these status codes are used in
+ln URL redirection.
+ln A user agent may carry out the additional action with no user
+ln interaction only if the method used in the second request is GET or
+ln HEAD. A user agent may automatically redirect a request. A user agent
+ln should detect and intervene to prevent cyclical
+ln redirects.
+co $ ..
+ff What are 3xx http status codes?
+fb Redirection. Indicates the client must take additional
+fb action to complete the request.
+
+ns +3xx_redirection
+nn 300_multiple_choices
+ln 300 Multiple Choices.
+ln Indicates multiple options for the resource from which the
+ln client may choose (via [159]agent-driven content negotiation).
+ln For example, this code could be used to present multiple video
+ln format options, to list files with different [160]filename
+ln extensions, or to suggest [161]word-sense disambiguation.
+co $ ..
+ff status code 300
+fb 300: multiple choices.
+
+nn 301_moved_permanently
+co $ ..
+ln 301_Moved Permanently.
+ln This and all future requests should be directed to the given
+ln URI.
+ff status code 301
+fb 301: moved permanently
+
+nn 302_found
+ln 302 Found.
+ln Tells the client to look at (browse to) another URL. The
+ln HTTP/1.0 specification required the client to perform a
+ln temporary redirect with the same method (the original describing
+ln phrase was "Moved Temporarily"),^[165][9] but popular browsers
+ln implemented 302 redirects by changing the method to GET.
+ln Therefore, HTTP/1.1 added status codes 303 and 307 to
+ln distinguish between the two behaviours.^[166][1]^: §15.4 
+co $ ..
+ff status code 302
+fb 302: found.
+
+nn 303_see_other
+co $ ..
+ln 303 See Other
+ln The response to the request can be found under another [168]URI
+ln using the GET method. When received in response to a POST (or
+ln PUT/DELETE), the client should presume that the server has
+ln received the data and should issue a new GET request to the
+ln given URI.
+ff status code 303
+fb 303: see other
+
+nn 304_not_modified
+co $ ..
+ln 304 Not Modified
+ln Indicates that the resource has not been modified since the
+ln version specified by the [169]request headers If-Modified-Since
+ln or If-None-Match. In such case, there is no need to retransmit
+ln the resource since the client still has a previously-downloaded
+ln copy.
+ff status code 304
+fb 304: not modified.
+
+nn 305_use_proxy
+co $ ..
+ln 305 Use Proxy
+ln The requested resource is available only through a proxy, the
+ln address for which is provided in the response. For security
+ln reasons, many HTTP clients (such as Mozilla Firefox and
+ln Internet Explorer) do not obey this status code
+ff status code 305
+fb 305: use proxy.
+
+nn 306_switch_proxy
+co $ ..
+ln 306 Switch Proxy.
+ln No longer used. Originally meant "Subsequent requests should use
+ln the specified proxy."
+ff status code 306
+fb 306: switch proxy. 
+
+nn 307_temporary_redirect
+co $ ..
+ln 307 Temporary Redirect.
+ln In this case, the request should be repeated with another URI;
+ln however, future requests should still use the original URI. In
+ln contrast to how 302 was historically implemented, the request
+ln method is not allowed to be changed when reissuing the original
+ln request. For example, a POST request should be repeated using
+ln another POST request.
+ff status code 307
+fb 307: temporary redirect
+
+nn 308_permanent_redirect
+co $ ..
+ln 308 Permanent Redirect.
+ln This and all future requests should be directed to the given
+ln [173]URI. 308 parallels the behavior of 301, but does not allow
+ln the HTTP method to change. So, for example, submitting a form to
+ln a permanently redirected resource may continue smoothly.
+ff status code 308
+fb 308: permanent redirect
+
+zz -3xx_redirection
+ns ..
+
+nn 4xx_client_errors
+ln This class of status code is intended for situations in which the error
+ln seems to have been caused by the client. Except when responding to a
+ln HEAD request, the server should include an entity containing an
+ln explanation of the error situation, and whether it is a temporary or
+ln permanent condition. These status codes are applicable to any
+ln request method. User agents should display any included entity to
+ln the user.
+co $ ..
+ff What are 4xx status codes?
+fb client errors. Used for situations in which the error seems
+fb to have been caused by the client.
+
+nn 5xx server errors
+ln The server failed to fulfill a request.
+ln Response status codes beginning with the digit "5" indicate cases in
+ln which the server is aware that it has encountered an error or is
+ln otherwise incapable of performing the request. Except when responding
+ln to a HEAD request, the server should include an entity containing an
+ln explanation of the error situation, and indicate whether it is a
+ln temporary or permanent condition. Likewise, user agents should display
+ln any included entity to the user. These response codes are applicable to
+ln any request method.
+co $ ..
+ff What are 5xx status codes?
+fb server errors. The server failed to fulfil a request.

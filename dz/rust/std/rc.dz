@@ -17,9 +17,9 @@ fb A single-threaded reference-counting pointer. 'Rc' stands for 'Reference Coun
 nn Weak
 hl https://doc.rust-lang.org/std/rc/struct.Weak.html
 co $ ..
-ln code
+ln Weak is a version of Rc that holds a non-owning reference to the managed allocation.
 ff rc::Weak
-fb code
+fb Weak is a version of Rc that holds a non-owning reference to the managed allocation.
 
 zz -structs
 ns ..

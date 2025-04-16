@@ -10,9 +10,9 @@ ns +structs
 nn AccessError
 hl https://doc.rust-lang.org/std/thread/struct.AccessError.html
 co $ ..
-ln An error returned by 
+ln An error returned by LocalKey::try_with.
 ff thread::AccessError
-fb An error returned by 
+fb An error returned by LocalKey::try_with.
 
 nn Builder
 hl https://doc.rust-lang.org/std/thread/struct.Builder.html

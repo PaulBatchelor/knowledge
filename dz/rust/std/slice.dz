@@ -24,30 +24,30 @@ fb An iterator over slice in (non-overlapping) mutable chunks separated by a pre
 nn Chunks
 hl https://doc.rust-lang.org/std/slice/struct.Chunks.html
 co $ ..
-ln An iterator over a slice in (non-overlapping) chunks (
+ln An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the beginning of the slice.
 ff slice::Chunks
-fb An iterator over a slice in (non-overlapping) chunks (
+fb An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the beginning of the slice.
 
 nn ChunksExact
 hl https://doc.rust-lang.org/std/slice/struct.ChunksExact.html
 co $ ..
-ln An iterator over a slice in (non-overlapping) chunks (
+ln An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the beginning of the slice.
 ff slice::ChunksExact
-fb An iterator over a slice in (non-overlapping) chunks (
+fb An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the beginning of the slice.
 
 nn ChunksExactMut
 hl https://doc.rust-lang.org/std/slice/struct.ChunksExactMut.html
 co $ ..
-ln An iterator over a slice in (non-overlapping) mutable chunks (
+ln An iterator over a slice in (non-overlapping) mutable chunks (chunk_size elements at a time), starting at the beginning of the slice.
 ff slice::ChunksExactMut
-fb An iterator over a slice in (non-overlapping) mutable chunks (
+fb An iterator over a slice in (non-overlapping) mutable chunks (chunk_size elements at a time), starting at the beginning of the slice.
 
 nn ChunksMut
 hl https://doc.rust-lang.org/std/slice/struct.ChunksMut.html
 co $ ..
-ln An iterator over a slice in (non-overlapping) mutable chunks (
+ln An iterator over a slice in (non-overlapping) mutable chunks (chunk_size elements at a time), starting at the beginning of the slice.
 ff slice::ChunksMut
-fb An iterator over a slice in (non-overlapping) mutable chunks (
+fb An iterator over a slice in (non-overlapping) mutable chunks (chunk_size elements at a time), starting at the beginning of the slice.
 
 nn EscapeAscii
 hl https://doc.rust-lang.org/std/slice/struct.EscapeAscii.html
@@ -73,30 +73,30 @@ fb Mutable slice iterator.
 nn RChunks
 hl https://doc.rust-lang.org/std/slice/struct.RChunks.html
 co $ ..
-ln An iterator over a slice in (non-overlapping) chunks (
+ln An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the end of the slice.
 ff slice::RChunks
-fb An iterator over a slice in (non-overlapping) chunks (
+fb An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the end of the slice.
 
 nn RChunksExact
 hl https://doc.rust-lang.org/std/slice/struct.RChunksExact.html
 co $ ..
-ln An iterator over a slice in (non-overlapping) chunks (
+ln An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the end of the slice.
 ff slice::RChunksExact
-fb An iterator over a slice in (non-overlapping) chunks (
+fb An iterator over a slice in (non-overlapping) chunks (chunk_size elements at a time), starting at the end of the slice.
 
 nn RChunksExactMut
 hl https://doc.rust-lang.org/std/slice/struct.RChunksExactMut.html
 co $ ..
-ln An iterator over a slice in (non-overlapping) mutable chunks (
+ln An iterator over a slice in (non-overlapping) mutable chunks (chunk_size elements at a time), starting at the end of the slice.
 ff slice::RChunksExactMut
-fb An iterator over a slice in (non-overlapping) mutable chunks (
+fb An iterator over a slice in (non-overlapping) mutable chunks (chunk_size elements at a time), starting at the end of the slice.
 
 nn RChunksMut
 hl https://doc.rust-lang.org/std/slice/struct.RChunksMut.html
 co $ ..
-ln An iterator over a slice in (non-overlapping) mutable chunks (
+ln An iterator over a slice in (non-overlapping) mutable chunks (chunk_size elements at a time), starting at the end of the slice.
 ff slice::RChunksMut
-fb An iterator over a slice in (non-overlapping) mutable chunks (
+fb An iterator over a slice in (non-overlapping) mutable chunks (chunk_size elements at a time), starting at the end of the slice.
 
 nn RSplit
 hl https://doc.rust-lang.org/std/slice/struct.RSplit.html
@@ -108,9 +108,9 @@ fb An iterator over subslices separated by elements that match a predicate funct
 nn RSplitMut
 hl https://doc.rust-lang.org/std/slice/struct.RSplitMut.html
 co $ ..
-ln An iterator over the subslices of the vector which are separated by elements that match 
+ln An iterator over the subslices of the vector which are separated by elements that match pred, starting from the end of the slice.
 ff slice::RSplitMut
-fb An iterator over the subslices of the vector which are separated by elements that match 
+fb An iterator over the subslices of the vector which are separated by elements that match pred, starting from the end of the slice.
 
 nn RSplitN
 hl https://doc.rust-lang.org/std/slice/struct.RSplitN.html
@@ -136,23 +136,23 @@ fb An iterator over subslices separated by elements that match a predicate funct
 nn SplitInclusive
 hl https://doc.rust-lang.org/std/slice/struct.SplitInclusive.html
 co $ ..
-ln An iterator over subslices separated by elements that match a predicate function. Unlike 
+ln An iterator over subslices separated by elements that match a predicate function. Unlike Split, it contains the matched part as a terminator of the subslice.
 ff slice::SplitInclusive
-fb An iterator over subslices separated by elements that match a predicate function. Unlike 
+fb An iterator over subslices separated by elements that match a predicate function. Unlike Split, it contains the matched part as a terminator of the subslice.
 
 nn SplitInclusiveMut
 hl https://doc.rust-lang.org/std/slice/struct.SplitInclusiveMut.html
 co $ ..
-ln An iterator over the mutable subslices of the vector which are separated by elements that match 
+ln An iterator over the mutable subslices of the vector which are separated by elements that match pred. Unlike SplitMut, it contains the matched parts in the ends of the subslices.
 ff slice::SplitInclusiveMut
-fb An iterator over the mutable subslices of the vector which are separated by elements that match 
+fb An iterator over the mutable subslices of the vector which are separated by elements that match pred. Unlike SplitMut, it contains the matched parts in the ends of the subslices.
 
 nn SplitMut
 hl https://doc.rust-lang.org/std/slice/struct.SplitMut.html
 co $ ..
-ln An iterator over the mutable subslices of the vector which are separated by elements that match 
+ln An iterator over the mutable subslices of the vector which are separated by elements that match pred.
 ff slice::SplitMut
-fb An iterator over the mutable subslices of the vector which are separated by elements that match 
+fb An iterator over the mutable subslices of the vector which are separated by elements that match pred.
 
 nn SplitN
 hl https://doc.rust-lang.org/std/slice/struct.SplitN.html
@@ -171,30 +171,9 @@ fb An iterator over subslices separated by elements that match a predicate funct
 nn Windows
 hl https://doc.rust-lang.org/std/slice/struct.Windows.html
 co $ ..
-ln An iterator over overlapping subslices of length 
+ln An iterator over overlapping subslices of length size.
 ff slice::Windows
-fb An iterator over overlapping subslices of length 
-
-nn ArrayChunks
-hl https://doc.rust-lang.org/std/slice/struct.ArrayChunks.html
-co $ ..
-ln An iterator over a slice in (non-overlapping) chunks (
-ff slice::ArrayChunks
-fb An iterator over a slice in (non-overlapping) chunks (
-
-nn ArrayChunksMut
-hl https://doc.rust-lang.org/std/slice/struct.ArrayChunksMut.html
-co $ ..
-ln An iterator over a slice in (non-overlapping) mutable chunks (
-ff slice::ArrayChunksMut
-fb An iterator over a slice in (non-overlapping) mutable chunks (
-
-nn ArrayWindows
-hl https://doc.rust-lang.org/std/slice/struct.ArrayWindows.html
-co $ ..
-ln A windowed iterator over a slice in overlapping chunks (
-ff slice::ArrayWindows
-fb A windowed iterator over a slice in overlapping chunks (
+fb An iterator over overlapping subslices of length size.
 
 zz -structs
 ns ..

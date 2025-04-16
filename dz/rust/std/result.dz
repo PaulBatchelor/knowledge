@@ -7,26 +7,26 @@ co $ ..
 
 ns +structs
 
-nn Into
+nn IntoIter
 hl https://doc.rust-lang.org/std/result/struct.IntoIter.html
 co $ ..
-ln An iterator over the value in a 
-ff result::Into
-fb An iterator over the value in a 
+ln An iterator over the value in a Ok variant of a Result.
+ff result::IntoIter
+fb An iterator over the value in a Ok variant of a Result.
 
 nn Iter
 hl https://doc.rust-lang.org/std/result/struct.Iter.html
 co $ ..
-ln An iterator over a reference to the 
+ln An iterator over a reference to the Ok variant of a Result.
 ff result::Iter
-fb An iterator over a reference to the 
+fb An iterator over a reference to the Ok variant of a Result.
 
 nn IterMut
 hl https://doc.rust-lang.org/std/result/struct.IterMut.html
 co $ ..
-ln An iterator over a mutable reference to the 
+ln An iterator over a mutable reference to the Ok variant of a Result.
 ff result::IterMut
-fb An iterator over a mutable reference to the 
+fb An iterator over a mutable reference to the Ok variant of a Result.
 
 zz -structs
 ns ..

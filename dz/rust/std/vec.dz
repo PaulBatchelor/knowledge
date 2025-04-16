@@ -10,30 +10,30 @@ ns +structs
 nn Drain
 hl https://doc.rust-lang.org/std/vec/struct.Drain.html
 co $ ..
-ln A draining iterator for 
+ln A draining iterator for Vec<T>.
 ff vec::Drain
-fb A draining iterator for 
+fb A draining iterator for Vec<T>.
 
-nn Into
+nn IntoIter
 hl https://doc.rust-lang.org/std/vec/struct.IntoIter.html
 co $ ..
 ln An iterator that moves out of a vector.
-ff vec::Into
+ff vec::IntoIter
 fb An iterator that moves out of a vector.
 
 nn Splice
 hl https://doc.rust-lang.org/std/vec/struct.Splice.html
 co $ ..
-ln A splicing iterator for 
+ln A splicing iterator for Vec.
 ff vec::Splice
-fb A splicing iterator for 
+fb A splicing iterator for Vec.
 
 nn Vec
 hl https://doc.rust-lang.org/std/vec/struct.Vec.html
 co $ ..
-ln A contiguous growable array type, written as 
+ln A contiguous growable array type, written as Vec<T>, short for 'vector'.
 ff vec::Vec
-fb A contiguous growable array type, written as 
+fb A contiguous growable array type, written as Vec<T>, short for 'vector'.
 
 zz -structs
 ns ..

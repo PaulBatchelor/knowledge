@@ -24,9 +24,9 @@ fb A barrier enables multiple threads to synchronize the beginning of some compu
 nn BarrierWaitResult
 hl https://doc.rust-lang.org/std/sync/struct.BarrierWaitResult.html
 co $ ..
-ln A 
+ln A BarrierWaitResult is returned by Barrier::wait() when all threads in the Barrier have rendezvoused.
 ff sync::BarrierWaitResult
-fb A 
+fb A BarrierWaitResult is returned by Barrier::wait() when all threads in the Barrier have rendezvoused.
 
 nn Condvar
 hl https://doc.rust-lang.org/std/sync/struct.Condvar.html
@@ -73,9 +73,9 @@ fb A synchronization primitive which can nominally be written to only once.
 nn OnceState
 hl https://doc.rust-lang.org/std/sync/struct.OnceState.html
 co $ ..
-ln State yielded to 
+ln State yielded to Once::call_once_force()'s closure parameter. The state can be used to query the poison status of the Once.
 ff sync::OnceState
-fb State yielded to 
+fb State yielded to Once::call_once_force()'s closure parameter. The state can be used to query the poison status of the Once.
 
 nn PoisonError
 hl https://doc.rust-lang.org/std/sync/struct.PoisonError.html
@@ -115,9 +115,9 @@ fb A type indicating whether a timed wait on a condition variable returned due t
 nn Weak
 hl https://doc.rust-lang.org/std/sync/struct.Weak.html
 co $ ..
-ln code
+ln Weak is a version of Arc that holds a non-owning reference to the managed allocation.
 ff sync::Weak
-fb code
+fb Weak is a version of Arc that holds a non-owning reference to the managed allocation.
 
 zz -structs
 ns ..

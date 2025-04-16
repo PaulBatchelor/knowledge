@@ -195,7 +195,8 @@ func extractDescriptionsV2(n *html.Node) []string {
 
 	// Check if the node is an anchor element with href
 	if n.Type == html.ElementNode && n.Data == "dd" {
-		var d = strings.ReplaceAll(n.FirstChild.Data, "\n", " ");
+		var d = getDescription(n);
+		d = strings.ReplaceAll(d, "\n", " ");
 		descs = append(descs, d)
 	}
 

@@ -10,16 +10,16 @@ ns +structs
 nn Duration
 hl https://doc.rust-lang.org/std/time/struct.Duration.html
 co $ ..
-ln A 
+ln A Duration type to represent a span of time, typically used for system timeouts.
 ff time::Duration
-fb A 
+fb A Duration type to represent a span of time, typically used for system timeouts.
 
 nn Instant
 hl https://doc.rust-lang.org/std/time/struct.Instant.html
 co $ ..
-ln A measurement of a monotonically nondecreasing clock. Opaque and useful only with 
+ln A measurement of a monotonically nondecreasing clock. Opaque and useful only with Duration.
 ff time::Instant
-fb A measurement of a monotonically nondecreasing clock. Opaque and useful only with 
+fb A measurement of a monotonically nondecreasing clock. Opaque and useful only with Duration.
 
 nn SystemTime
 hl https://doc.rust-lang.org/std/time/struct.SystemTime.html
@@ -31,16 +31,16 @@ fb A measurement of the system clock, useful for talking to external entities li
 nn SystemTimeError
 hl https://doc.rust-lang.org/std/time/struct.SystemTimeError.html
 co $ ..
-ln An error returned from the 
+ln An error returned from the duration_since and elapsed methods on SystemTime, used to learn how far in the opposite direction a system time lies.
 ff time::SystemTimeError
-fb An error returned from the 
+fb An error returned from the duration_since and elapsed methods on SystemTime, used to learn how far in the opposite direction a system time lies.
 
 nn TryFromFloatSecsError
 hl https://doc.rust-lang.org/std/time/struct.TryFromFloatSecsError.html
 co $ ..
-ln An error which can be returned when converting a floating-point value of seconds into a 
+ln An error which can be returned when converting a floating-point value of seconds into a Duration.
 ff time::TryFromFloatSecsError
-fb An error which can be returned when converting a floating-point value of seconds into a 
+fb An error which can be returned when converting a floating-point value of seconds into a Duration.
 
 zz -structs
 ns ..

@@ -43,3 +43,13 @@ and attempt to turn as much as I can into flashcards.
 
 @20:32 HTTP status code flashcards? #timelog:00:58:52
 Managed to get 100, 200, 300. 400 and 500 left.
+
+@2025-04-15
+
+@20:52 rust doc HTML parser troubleshooting #timelog:00:12:40
+It's not parsing the description text sometimes.
+---
+The "process" page looks fixed
+
+@21:06 Onto fixing my mistakes. #timelog:00:21:00
+Now, when did I start automating this process...

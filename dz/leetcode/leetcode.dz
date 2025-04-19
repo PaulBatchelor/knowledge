@@ -1678,3 +1678,11 @@ hl https://leetcode.com/problems/gas-station
 ln 134: gas station
 co $ paradigms/greedy
 co $ grind75
+
+nn problems/15_3sum
+hl https://leetcode.com/problems/3sum/description/
+ln 15: 3sum
+co ../1_two_sum $
+
+nn problems/167_two_sum_ii
+hl https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/

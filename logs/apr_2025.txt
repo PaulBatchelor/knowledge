@@ -58,8 +58,60 @@ Now, when did I start automating this process...
 @21:02 Gently dipping my toes into leetcode again
 
 @21:02 TwoSum
+#! dz leetcode/problems/1_two_sum
 I am a little rusty...
 
 @21:51 peeking at ThreeSum
+#! dz leetcode/problems/15_3sum
 I think I want to try and do all problems related to TwoSum,
 really get that pattern in my fingers.
+
+@2025-04-19
+
+@16:27 attempting ThreeSum again
+#! dz leetcode/problems/15_3sum
+The problem hints that if you keep one of the values
+constant, it turns into a TwoSum problem. So, what you
+want is to take X, and then find two values Y and Z
+that add up to -X.
+---
+We tried this a few days ago, and it didn't work
+
+@16:53 studying two-sum ii, in order to grok 3sum
+#! dz leetcode/problems/167_two_sum_ii
+Okay done. The solution was mostly spoiled already for me,
+but it involved using two-pointer
+
+@17:55 Another stab at 3sum
+#! dz leetcode/problems/15_3sum
+I started reading the editorial, and I solved two sum ii
+while I was doing this. I think it they want you to
+sort the list, and then perform it as a two-sum ii problem.
+When you find the a pair, the ordering is guaranteed.
+---
+Having problems with the uniqueness logic.
+---
+I think we can take advantage of the sorted list. We only
+want numbers in ascending order, so make sure the low
+value starts at the index after the one being checked.
+---
+edge case didn't work
+---
+Looked at the solution: the twosum problem actually
+added all three values together, not just one to get
+a target. It also had logic that skipped over duplicate
+values. The main loop also broke out early if there
+were any values greater than zero, it indicated that
+no numbers following it could sum to zero.
+
+@18:23 Valid Parentheses
+#! dz leetcode/problems/20_valid_parentheses
+I think I remember this one being a stack problem.
+You push open ones, and then if a closed one appears,
+it needs to match the last element on the stack.
+---
+Issues: got my variables wrong. Didn't check the string
+length to make sure it was a multiple of 2.
+---
+Another edge case: the stack needs to be empty at the
+end of the function.

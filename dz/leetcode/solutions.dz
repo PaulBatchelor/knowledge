@@ -6,3 +6,55 @@ nn top_down_recursion
 nn bottom_up_recursion
 
 ns ../..
+
+ns leetcode
+nn problems/1_two_sum/solution
+ln Solution: use a hashmap. If the number
+ln exists in the hashmap, a pair is found.
+ln Otherwise store h[target - n] = i.
+co $ ..
+ff What is the solution to 1: two sum?
+fb Solution: use a hashmap. If the number
+fb exists in the hashmap, a pair is found.
+fb Otherwise store h[target - n] = i.
+
+nn problems/167_two_sum_ii/solution
+ln Solution: two-pointer. The list is sorted,
+ln so add numbers and increase/decrease the
+ln ends depending on if it reaches the target
+ln or not.
+ff What is the solution to 167: two sum ii?
+fb Solution: two-pointer. The list is sorted,
+fb so add numbers and increase/decrease the
+fb ends depending on if it reaches the target
+fb or not.
+co $ ..
+
+nn problems/15_3sum/solution
+co $ ..
+ln Solution: Break this into a TwoSum problem
+ln using two-pointer. Sort the numbers.
+ln The two sum will do a check
+ln starting with idx + 1, and then have logic to
+ln skip duplicate numbers to ensure combinations
+ln are unique. The main loop can break
+ln early if the number is greater than 0 because
+ln no numbers following it will be able to sum to
+ln zero.
+ff What is the solution to 15: 3sum?
+fb Solution: Break this into a TwoSum problem
+fb using two-pointer. Sort the numbers.
+fb The two sum will do a check
+fb starting with idx + 1, and then have logic to
+fb skip duplicate numbers to ensure combinations
+fb are unique. The main loop can break
+fb early if the number is greater than 0 because
+fb no numbers following it will be able to sum to
+fb zero.
+
+nn leetcode/problems/20_valid_parentheses
+co $ ..
+ln Solution: use a stack. Push if open, otherwise
+ln pop and check. Make sure the string length is
+ln even first, and at the end make sure the stack
+ln is empty.

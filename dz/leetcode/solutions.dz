@@ -52,7 +52,7 @@ fb early if the number is greater than 0 because
 fb no numbers following it will be able to sum to
 fb zero.
 
-nn leetcode/problems/20_valid_parentheses
+nn problems/20_valid_parentheses/solution
 co $ ..
 ln Solution: use a stack. Push if open, otherwise
 ln pop and check. Make sure the string length is

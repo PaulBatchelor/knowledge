@@ -70,4 +70,5 @@ dz/dzb.dz
 dz/solidjs
 dz/konilo
 dz/net
+dz/APL.dz
 dz/zzz

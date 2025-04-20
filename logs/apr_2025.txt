@@ -115,3 +115,16 @@ length to make sure it was a multiple of 2.
 ---
 Another edge case: the stack needs to be empty at the
 end of the function.
+
+@2025-04-20
+@10:41 Looking at b
+#! dz/APL/b_study
+can't get it to compile. oh well
+---
+the guide provides an overview of each of the
+files, and provides some explanation for
+some of the terse variables.
+---
+c.h has some basic definitions for a "terser C language".
+I'm tempted to see how portable this one is, could
+be helpful for my ed coding adventures.

@@ -115,3 +115,7 @@ length to make sure it was a multiple of 2.
 ---
 Another edge case: the stack needs to be empty at the
 end of the function.
+
+@21:48 merge two sorted lists
+#! dz leetcode/problems/21_merge_two_sorted_lists
+linked list problem.

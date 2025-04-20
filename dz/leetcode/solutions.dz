@@ -58,3 +58,24 @@ ln Solution: use a stack. Push if open, otherwise
 ln pop and check. Make sure the string length is
 ln even first, and at the end make sure the stack
 ln is empty.
+ff How do you solve 20: valid parenthesis?
+fb Solution: use a stack. Push if open, otherwise
+fb pop and check. Make sure the string length is
+fb even first, and at the end make sure the stack
+fb is empty.
+
+nn problems/21_merge_two_sorted_lists/solution
+co $ ..
+ln Solution: linked list problem. Create
+ln a dummy, and initially the tail to
+ln be the dummy. While either
+ln list not-null, determine which to use next.
+ln If both lists exist, choose the smallest.
+ln Otherwise append to the only remaining list.
+ff Describe a way to solve 21: Merge Two Sorted Lists
+fb Solution: linked list problem. Create
+fb a dummy, and initially the tail to
+fb be the dummy. While either
+fb list not-null, determine which to use next.
+fb If both lists exist, choose the smallest.
+fb Otherwise append to the only remaining list.

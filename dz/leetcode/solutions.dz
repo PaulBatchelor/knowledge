@@ -79,3 +79,23 @@ fb be the dummy. While either
 fb list not-null, determine which to use next.
 fb If both lists exist, choose the smallest.
 fb Otherwise append to the only remaining list.
+
+nn problems/121_best_time_to_sell_and_buy_stock/solution
+ln Solution: Greedy heuristic. Keep track of the smallest
+ln value so far, and find the maximum value between
+ln the current value and the smallest so far.
+ff Describe a solution to 121: best time to sell and buy stock
+fb Solution: Greedy heuristic. Keep track of the smallest
+fb value so far, and find the maximum value between
+fb the current value and the smallest so far.
+
+nn problems/125_valid_palindrome/solution
+ln Solution: use two-pointer. In the loop, skip non-alpha
+ln characters (apparently alphanumeric, had to use
+ln !isalnum() instead of !isalpha). Return false if things
+ln don't match
+ff Describe a solution to  125: valid palindrome
+fb Solution: use two-pointer. In the loop, skip non-alpha
+fb characters (apparently alphanumeric, had to use
+fb !isalnum() instead of !isalpha). Return false if things
+fb don't match

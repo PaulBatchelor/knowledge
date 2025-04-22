@@ -1,0 +1,78 @@
+ns DDIA/toc/3_derived_data/11_stream_processing
+nn message_brokers
+ln Message Brokers
+co $ ..
+
+ns +message_brokers
+
+nn AMQP_JMS
+ln AMQP/JMS-style message broker.
+ln Assigns individual messages to consumers, and consumers
+ln acknowledge indvidual message when they have been
+ln successfuly processed.
+ff Describe how AMQP/JMS-styled message brokers work.
+fb Assigns individual messages to consumers, and consumers
+fb acknowledge indvidual message when they have been
+fb successfuly processed.
+co $ ..
+
+nn log_based
+ln Log-based Message Broker.
+ln Assigns all messages in a partition to the same consumer node,
+ln and always delivers messages in the same order.
+ff Describe how a log-based message broker works
+fb A Log-based messaged broker works by assigning all messages
+fb in a parition to the same consumer node, and always
+fb delivers messages in the same order.
+co $ ..
+
+zz -message_brokers
+ns ..
+
+nn joins
+ln Types of joins that may appear in stream processes
+co $ ..
+
+ns +joins
+
+nn stream_stream_joins
+co $ ..
+ln stream-stream joins: both input streams consist of
+ln activity events, and teh join operator searches for
+ln related eventse that occur within the same window.
+ff Describe stream-stream joins.
+fb stream-stream joins: both input streams consist of
+fb activity events, and teh join operator searches for
+fb related eventse that occur within the same window.
+
+nn stream_table_joins
+co $ ..
+ln stream-table joins: one input stream consists of
+ln activity events, while the other is a database
+ln changelog. the changelog keeps a local copy of
+ln the database up do date. For each activity event,
+ln he join operatr quereis the database and ouputs
+ln an enriched activity event.
+ff Describe a stream-table join
+fb One input stream consists of activity events, while
+fb the other is a database changelog, which keeps a local
+fb copy of the database up to date.
+
+nn table_table_joins
+co $ ..
+ln table-table joins: both input streams are
+ln database changelogs. Every change on one side
+ln is joined with the latest state of the other
+ln side. The result is a stream of chanages to
+ln the materialized view of the join between the
+ln two tables.
+ff Describe table-table joins
+fb Both input streams are database changelogs. Every change
+fb on one side is joined with the latest staet of the
+fb other side. The result is a stream of changes to
+fb teh materialized view of the join between the
+fb two tables.
+
+zz -joins
+ns ..
+

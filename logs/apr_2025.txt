@@ -161,3 +161,12 @@ Doesn't work either.
 ---
 Damn. I used isalpha() instead of isalnum(). That was
 my mistake.
+
+@2025-04-21
+@20:03 Peaking at DDIA again #timelog:00:04:59
+Where did we leave off?
+---
+We seemed to have left off somewhere around chapter 10
+
+@20:59 More DDIA #timelog:00:25:00
+Finally finished outlining the summaries

@@ -117,6 +117,7 @@ Another edge case: the stack needs to be empty at the
 end of the function.
 
 @2025-04-20
+
 @10:41 Looking at b
 #! dz/APL/b_study
 can't get it to compile. oh well
@@ -128,3 +129,35 @@ some of the terse variables.
 c.h has some basic definitions for a "terser C language".
 I'm tempted to see how portable this one is, could
 be helpful for my ed coding adventures.
+
+@21:48 merge two sorted lists
+#! dz leetcode/problems/21_merge_two_sorted_lists
+linked list problem.
+
+@2025-04-21
+
+@07:48 Best time to buy and sell stock #timelog:00:09:44
+#! dz leetcode/problems/121_best_time_to_sell_and_buy_stock
+this is a greedy algorithm right? Because you are choosing
+a local maximum (current minimum + next maximum)
+
+@08:01 valid palindrome #timelog:00:09:31
+#! dz leetcode/problems/125_valid_palindrome
+Fundamentally, this feels like a two-pointer problem.
+Once you filter the non-alphabetic characters, and deal
+with case sensitivity, it's a matter of checking to
+see if two ends of a string are equal. Loop ends
+when the lo/hi pointers converge.
+---
+I got tripped on "0P" edgecase. It's because it's too
+small and I'm skipping.
+---
+Attempting to set an initial palindrome flag to be false,
+set to be true at the end of the loop.
+If it breaks out of the loop without reaching the
+bottom of the check, it's false.
+---
+Doesn't work either.
+---
+Damn. I used isalpha() instead of isalnum(). That was
+my mistake.

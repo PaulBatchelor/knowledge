@@ -173,3 +173,5 @@ Finally finished outlining the summaries
 ---
 Chapter 12 doesn't really have a summary. I guess I'll
 have to actually read that.
+
+@21:41 Go through DDIA notes, try to make flashcards

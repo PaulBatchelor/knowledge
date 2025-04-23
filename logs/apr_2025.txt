@@ -225,3 +225,11 @@ Make sure the mark the start pixel as visited.
 Queue I think needs to be used because it's BFS. I think
 the order of processing matters? Flood fill should move
 outwards.
+
+@19:48 flood fill continued #timelog:00:14:58
+#! dz $
+Well, something is wrong with my implementation
+---
+return image was in the wrong place, now the base cases pass
+---
+It works!

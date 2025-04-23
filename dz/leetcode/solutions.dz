@@ -128,3 +128,25 @@ ln But mindful of the subtleties here.
 ln The lower bound
 ln can be negative, so check for that at the. The returned
 ln value is lo - 1 if it is a target.
+ff How do you solve 704: binary search?
+fb Solution: this is a divide-and-conquer. Do the
+fb lo/hi bound check while lo is less than hi, and check
+fb and see if the converged target matches the result
+fb the bounds are 0 to N, not N - 1.
+fb But mindful of the subtleties here.
+fb The lower bound
+fb can be negative, so check for that at the. The returned
+fb value is lo - 1 if it is a target.
+
+nn problems/733_flood_fill/solution
+ln Use a queue. Use a hashmap
+ln or set to keep track of visited positions. Pop a position,
+ln Iterate over 4 directions. Make sure to mark it as visited
+ln even if it is not a match. Filled colors get put onto
+ln the queue.
+ff What's a way to solve 733: flood fill?
+fb Use a queue. Use a hashmap
+fb or set to keep track of visited positions. Pop a position,
+fb Iterate over 4 directions. Make sure to mark it as visited
+fb even if it is not a match. Filled colors get put onto
+fb the queue.

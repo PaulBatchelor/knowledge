@@ -175,3 +175,74 @@ Chapter 12 doesn't really have a summary. I guess I'll
 have to actually read that.
 
 @21:41 Go through DDIA notes, try to make flashcards
+@2025-04-22
+@07:36 Invert binary tree #timelog:00:06:36
+This is a binary tree problem, and I believe the solution
+can be solved recursively. Not sure if you'd call it
+breadth first or depth first, probably depth-first.
+---
+For every node, swap the children. Then recursively go in
+and swap those children.
+
+@07:46 242 valid anagram #timelog:00:03:35
+#! dz leetcode/problems/242_valid_anagram
+Oops saw my one-liner. This is a hashmap problem, which
+can be efficiently solved using the Counter type in
+Python.
+
+@07:50 704 binary search #timelog:00:22:13
+#! dz leetcode/problems/704_binary_search
+This problem wants you to implement a divide-and-conquer
+binary search algorithm. Let's see if I can remember
+how to set this up.
+---
+I have messed it up, damn.
+---
+I forgot about adding one to the midpoint index. It solves
+some of them, but not all of them.
+---
+Say, why don't we look at the edge case that's failing,
+and see if that gives us hints. It's an array of size 1 with
+the element.
+Do we add an exception in our binary search? Hopefully,
+there's a way to adjust the algorithm to naturally compensate.
+---
+I keep getting tripped up on the subtleness of binary search.
+---
+Okay, I forget how to do binary search. Looking at the
+answer because I'm at the 15 minute mark.
+---
+tweaks: while loop is LT, not LTE, conditional check is
+LTE, the lo/hi bounds start at 0 and N, not N - 1. Do
+the loop check when you break out of the loop.
+---
+Lots and lots of little things.
+
+@08:14 Flood fill (planned, but didn't finish) #timelog:00:08:16
+#! dz leetcode/problems/733_flood_fill
+It's traversal? Use a queue (or stack?) to traverse
+directions. Use a set to keep track of where you've been
+(coordinates can work in a set because tuples are hashable).
+Get the color of the starting pixel, push
+the starting pixel onto the queue. While the queue
+has things, process.
+---
+Inside the process: check the 4 directions of the current
+position. If the pixel hasn't been visited before and
+is the color of the start pixel color, switch it to the
+new color, mark it as visited in the set, and append it
+to the queue.
+---
+Make sure the mark the start pixel as visited.
+---
+Queue I think needs to be used because it's BFS. I think
+the order of processing matters? Flood fill should move
+outwards.
+
+@19:48 flood fill continued #timelog:00:14:58
+#! dz $
+Well, something is wrong with my implementation
+---
+return image was in the wrong place, now the base cases pass
+---
+It works!

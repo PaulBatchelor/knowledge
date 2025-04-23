@@ -88,6 +88,7 @@ ff Describe a solution to 121: best time to sell and buy stock
 fb Solution: Greedy heuristic. Keep track of the smallest
 fb value so far, and find the maximum value between
 fb the current value and the smallest so far.
+co $ ..
 
 nn problems/125_valid_palindrome/solution
 ln Solution: use two-pointer. In the loop, skip non-alpha
@@ -99,3 +100,53 @@ fb Solution: use two-pointer. In the loop, skip non-alpha
 fb characters (apparently alphanumeric, had to use
 fb !isalnum() instead of !isalpha). Return false if things
 fb don't match
+
+nn problems/226_invert_binary_tree/solution
+ln Solution: recursively swap left/right children.
+ff What is a solution to 226: invert binary tree?
+fb Use recursion. Recursively swap left/right children.
+co $ ..
+
+nn problems/242_valid_anagram/solution
+co $ ..
+ln Solution: this is a hashmap problem. For each word, build
+ln a hashmap containing the frequency of each letter. Then,
+ln compare the hashmaps. Can be concisely and efficiently
+ln solved in Python using a Counter.
+ff How to solve 242: valid anagram?
+fb Solution: this is a hashmap problem. For each word, build
+fb a hashmap containing the frequency of each letter. Then,
+fb compare the hashmaps. Can be concisely and efficiently
+fb solved in Python using a Counter.
+
+nn problems/704_binary_search/solution
+ln Solution: this is a divide-and-conquer. Do the
+ln lo/hi bound check while lo is less than hi, and check
+ln and see if the converged target matches the result
+ln the bounds are 0 to N, not N - 1.
+ln But mindful of the subtleties here.
+ln The lower bound
+ln can be negative, so check for that at the. The returned
+ln value is lo - 1 if it is a target.
+ff How do you solve 704: binary search?
+fb Solution: this is a divide-and-conquer. Do the
+fb lo/hi bound check while lo is less than hi, and check
+fb and see if the converged target matches the result
+fb the bounds are 0 to N, not N - 1.
+fb But mindful of the subtleties here.
+fb The lower bound
+fb can be negative, so check for that at the. The returned
+fb value is lo - 1 if it is a target.
+
+nn problems/733_flood_fill/solution
+ln Use a queue. Use a hashmap
+ln or set to keep track of visited positions. Pop a position,
+ln Iterate over 4 directions. Make sure to mark it as visited
+ln even if it is not a match. Filled colors get put onto
+ln the queue.
+ff What's a way to solve 733: flood fill?
+fb Use a queue. Use a hashmap
+fb or set to keep track of visited positions. Pop a position,
+fb Iterate over 4 directions. Make sure to mark it as visited
+fb even if it is not a match. Filled colors get put onto
+fb the queue.

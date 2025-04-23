@@ -1686,3 +1686,12 @@ co ../1_two_sum $
 
 nn problems/167_two_sum_ii
 hl https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+ln 167: two sum ii: array is sorted
+
+nn problems/226_invert_binary_tree
+hl https://leetcode.com/problems/invert-binary-tree
+ln 226: invert binary tree
+
+nn problems/733_flood_fill
+hl https://leetcode.com/problems/flood-fill
+ln 733: Flood Fill

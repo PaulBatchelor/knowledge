@@ -246,3 +246,46 @@ Well, something is wrong with my implementation
 return image was in the wrong place, now the base cases pass
 ---
 It works!
+
+@2025-04-23
+@07:47 LCA #timelog:00:25:57
+#! dz leetcode/problems/235_lowest_common_ancestor_BST
+Binary tree problem. DFS.
+---
+"lowest" means closest to leaves.
+---
+What are the possibilities?
+---
+One is that one of the nodes is an ancestor of the other node,
+then you return the node that is highest.
+---
+Otherwise, the nodes have a common ancestor.
+---
+I guess an approach would be: find the first node in
+the tree, then search for the other node, backtracking
+if needed.
+---
+15 minutes passed. Strugglig formulating an answer. I
+don't think my thinking is right. Giving up early.
+---
+Oh, it's a binary *search* tree. Glossed over that bit.
+---
+Wrote up algorithm solution. Typing out python solution
+now to get it in my fingers.
+
+@08:18 balanced binary tree (partial) #timelog:00:03:27
+#! dz leetcode/problems/110_balanced_binary_tree
+Now *this* is a binary tree problem.
+---
+I might not have enough time to finish this.
+---
+Use DFS to find the max depth of each child node.
+If they differ by more than one, then they are not
+balanced.
+---
+Think it has to be done recursively. I get the feeling
+that there could be situations where heights are
+equal from up high, but not when you go in layer
+by layer.
+---
+To be continued...

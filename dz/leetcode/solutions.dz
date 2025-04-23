@@ -150,3 +150,17 @@ fb or set to keep track of visited positions. Pop a position,
 fb Iterate over 4 directions. Make sure to mark it as visited
 fb even if it is not a match. Filled colors get put onto
 fb the queue.
+
+
+nn problems/235_lowest_common_ancestor_BST/solution
+ff What is the solution to 235: Lowest common ancestor
+ff of a binary search tree?
+fb Algorithm: 1. start traversing from root node. 2. If both
+fb sides p and q are in right subtree, continue search
+fb with right tree starting with step 1. 3. If both nodes
+fb p and q are in left subtree, continue the search with
+fb left subtree starting step 1. If both steps 2 and
+fb 3 are not true, we have found the common node which
+fb is common to p and q's subtree. Return this node
+fb as the common subtree.
+co $ ..

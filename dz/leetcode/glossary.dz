@@ -60,5 +60,6 @@ ln a tree in which the depth of the two subtrees of
 ln every node never differs by more than one.
 co $ ../../data_structures/binary_tree
 ff What is a height-balanced binary tree?
-fb A height balanced binary tree has the property that
+fb Height-balanced: a height balanced binary tree is
+fb a tree in which the depth of the two subtrees of
 fb every node never differs by more than one.

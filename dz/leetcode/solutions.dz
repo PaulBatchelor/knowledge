@@ -164,3 +164,10 @@ fb 3 are not true, we have found the common node which
 fb is common to p and q's subtree. Return this node
 fb as the common subtree.
 co $ ..
+
+nn problems/110_balanced_binary_tree/solution
+ff What is one way to solve 110: Balanced Binary Tree
+fb Used top-down recursion. Recursively find the
+fb height of the left/right nodes. If the heights
+fb are LTE 1, and the left/right nodes themselves are
+fb balanced (recursive call), then it is balanced

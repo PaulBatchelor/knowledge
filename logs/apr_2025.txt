@@ -289,3 +289,12 @@ equal from up high, but not when you go in layer
 by layer.
 ---
 To be continued...
+
+@21:49 Let's try to finish up balanced binary tree #timelog:00:15:56
+#! dz $
+Good lord, I somehow solved it.
+---
+Looking the solution anyways.
+---
+It's pretty much the same (top-down recursion solution),
+but maybe a little more concise than mine.

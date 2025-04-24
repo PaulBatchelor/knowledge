@@ -298,3 +298,86 @@ Looking the solution anyways.
 ---
 It's pretty much the same (top-down recursion solution),
 but maybe a little more concise than mine.
+
+@2025-04-24
+@07:43 Linked list cycle #timelog:00:13:08
+#! dz leetcode/problems/141_linked_list_cycle
+Linked list problem. Floyd's algorithm. Two moving pointers,
+one fast, one slow. The trick will be making sure I can
+get the pointer stuff set up right.
+---
+It passes, but I don't like how my while loop has to check
+in three places (slow, fast, fast.next). Checking my work.
+---
+Comparing solution to my answer.
+---
+"fast" is head.next, not head
+---
+while loop is fast != slow
+---
+fast/fast.next checks are done in the while loop
+---
+It looks like it's mostly equivalent, just
+the comparisons are done in a different place?
+---
+Their function returns True, mine returns false.
+
+@07:56 232 implement queue using stacks #timelog:00:11:55
+#! dz leetcode/problems/232_implement_queue_using_stacks
+Stack: LIFO. Queue: FIFO. There's no requirements for
+efficiency
+---
+Important: instructions say to only use two stacks
+---
+There was something about popping all items then pushing
+them back on again.
+---
+Push is going to be the inefficient operation. We
+push a new item to stack 2, then drain s1 to s2, then
+populate s1 again.
+---
+Actually,more order was wrong. Drain s1 to s2 to reverse
+the order, push to s2, then drain s2 to s1 to get
+the order back.
+
+@08:09 First bad version #timelog:00:06:10
+#! dz leetcode/problems/278_first_bad_version
+This is literally git bisect isn't it?
+---
+Divide and conquer. We want to make sure we get the
+first *bad* version, not the first *good* version,
+so there migth be some n+1 things happening.
+---
+Turned out to be no +1. hi = mid, low = mid + 1 in the
+checks.
+---
+Sorry, this is called "binary search", "divide and conquer"
+is just slang I think.
+
+@08:16 Ransom Note #timelog:00:06:41
+#! dz leetcode/problems/383_ransom_note
+I do not remember what is involved in this one at all
+---
+Oh, it's not in my leetcode files either
+---
+Looks like a hashmap problem. You want to get a frequency
+map for both the magazine and the ransom letter. For each
+letter in the random letter, you want to make sure that
+the magazine has enough. If it doesn't exist in magazine
+or there's not enough, return false.
+---
+Yup, that's how you do it.
+
+@08:25 climbing stairs (partial) #timelog:00:04:28
+#! dz leetcode/problems/70_climbing_stairs
+This one I thought was the dynamic programming problem
+about stairs, but it's about counting the number of
+possibilities.
+---
+I think it still might be a dynamic programming problem.
+It has subproblems and substructure.
+---
+I'm imagining some kind of loop where you are using
+the previous answer, then tacking on more answers.
+---
+I'm out of time. Will have to think about this later

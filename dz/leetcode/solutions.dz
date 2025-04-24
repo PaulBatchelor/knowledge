@@ -171,3 +171,35 @@ fb Used top-down recursion. Recursively find the
 fb height of the left/right nodes. If the heights
 fb are LTE 1, and the left/right nodes themselves are
 fb balanced (recursive call), then it is balanced
+
+nn problems/141_linked_list_cycle/solution
+ff What is a solution to 141: linked list cycle?
+fb One could use a hashtable, but the ideal approach is
+fb to use Floyd's algorithm for cycle detection. Set up
+fb a slow pointer and a fast pointer. If they match,
+fb there's a cycle (true). If fast or fast.next is None, there
+fb is no cycle (false).
+co $ ..
+
+
+nn problems/232_implement_queue_using_stacks/solution
+ff What is a solution to 232: implement queue using stacks?
+fb You can use a stack in O(1) time for pop, peek, and
+fb empty operations. For push, drain stack A to stack B,
+fb append the value to stack B, then drain stack B back to A.
+fb The draining process reverses the ordering.
+co $ ..
+
+nn problems/278_first_bad_version/solution
+ff What is the solution to 278: first bad version?
+fb Binary search. When bounds checking, make sure hi=mid,
+fb and lo = mid + 1. mid = lo + ((hi - lo)//2). Return lo.
+
+nn problems/383_ransom_note/solution
+ff What is the solution to 383: ransom note?
+fb Hashmap. Get a frequency map/Counter for the magazine
+fb and the ransom note. Iterate through the keys in the
+fb ransomnote counter. If there aren't enough of a particular
+fb letter in magazine or it doesn't exist, it is false.
+fb Return true after the loop.
+co $ ..

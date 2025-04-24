@@ -1695,3 +1695,7 @@ ln 226: invert binary tree
 nn problems/733_flood_fill
 hl https://leetcode.com/problems/flood-fill
 ln 733: Flood Fill
+
+nn problems/383_ransom_note
+hl https://leetcode.com/problems/ransom-note/description/
+ln 383: Ransom Note

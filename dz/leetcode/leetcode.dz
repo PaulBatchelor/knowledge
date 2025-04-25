@@ -1699,3 +1699,7 @@ ln 733: Flood Fill
 nn problems/383_ransom_note
 hl https://leetcode.com/problems/ransom-note/description/
 ln 383: Ransom Note
+
+nn problems/409_longest_palindrome
+hl https://leetcode.com/problems/longest-palindrome
+ln 409 longest palindrome

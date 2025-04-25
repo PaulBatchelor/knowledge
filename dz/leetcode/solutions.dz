@@ -203,3 +203,15 @@ fb ransomnote counter. If there aren't enough of a particular
 fb letter in magazine or it doesn't exist, it is false.
 fb Return true after the loop.
 co $ ..
+
+nn problems/70_climbing_stairs/solution
+co $ ..
+ff What is the solution to 70: climbing stairs?
+fb Use dynamic programming. Realize that for any
+fb given last step, you can either come from
+fb the previous step (1 step) or the one before
+fb that one (2 steps away), with those possible
+fb combos. So the recurrene relation is s[n] =
+fb s[n - 1] + s[n - 2], which you can reduce to
+fb have memory of 2. Make sure to factor in
+fb base cases.

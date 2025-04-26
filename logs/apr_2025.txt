@@ -443,3 +443,114 @@ containing a particular letter (needs to be an even
 number of letters).
 ---
 I'm out of time. I'll have to flesh this out more later.
+
+@2025-04-26
+
+@15:50 Longest palindrome (continued) #timelog:00:22:43
+#! dz leetcode/problems/409_longest_palindrome
+I think I'm going to try using a hashmap.
+---
+Oh! I misread the problem.
+this is not a palindromatic substring. You can
+arrange the letters in any order. Oh okay, this is much
+simpler. All have to do is get a counter, sum all
+the even values, plus the largest odd value.
+---
+Hit an edge case in the submission.
+---
+oh I see. You can actually add the odd values, just make
+it odd -1. If there were any odd values, add 1 at the end.
+---
+Okay, I need to take a look at the provided
+solution for a second. It's a bit more than mine.
+---
+Starting backwards, it returns either the whole length
+of the string if there are no letters with odd counts,
+or the length of the string, minus an odd character count,
+plus 1. The loop build up the frequency map as it goes.
+If the count for that letter at that point in time is
+odd, increase the odd character count. If even, decrease it.
+---
+Actually, approach one (simpler way) is my way. Going
+to write that one down in my solution.
+
+@16:13 reverse linked list #timelog:00:26:10
+#! dz leetcode/problems/206_reverse_linked_list
+This one I think is about getting the flow right.
+---
+For any given node, their "next" pointer needs to point
+to the "previous" node. The old "next" pointer entry
+becomes the current node, and the old current node
+becomes the previous.
+---
+How to set this up? How to return properly?
+---
+I'm still trying to make prev/node setup work, but
+it's not terminating properly.
+---
+Okay, let's start again. What happens to make this
+terminate, and what do we expect?
+---
+I forget how to reverse a linked list. Going to chew
+on this for about 5 more minutes, then I look up
+the answer.
+---
+Wow, okay I did it. I blew all my work up, and started
+building it up bit by bit. First, just iterate
+through the linked list. We know we need to return
+the last value, so keep track of the previous
+value. We also know that the "next" pointer of
+the current node needs to point to the previous node.
+There's a temporary value needed to keep track of
+the next node. There done.
+
+@16:41 majority element #timelog:00:07:00
+#! dz leetcode/problems/169_majority_element
+I mean, naively. This seems to be one you can throw
+a frequency map at, right?
+---
+Okay, I solved it. But what does the solution want
+you to do? It feels like it was asking for something
+else.
+---
+nope, that's the answer. use a hashmap.
+---
+The solution was very nice and pythonic:
+===
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        counts = Counter(nums)
+        return max(counts.keys(), key=counts.get)
+===
+
+@16:48 add binary #timelog:00:22:45
+#! dz leetcode/problems/67_add_binary
+This one is silly to do in python because
+they have built-ins for this. Let me cheat
+first.
+---
+Here's the one-liner
+===
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        return bin(int(a, 2) + int(b,2))[2:]
+===
+What they probably want to do is add the bits
+one by one. Converting each one into an array
+turns them into a stack, where the last value
+for both are the ones place. You could pop values,
+add, and push the results. Use a carry, and tack on
+a one at the end if there's still a carry. Reverse
+and convert to to string.
+---
+I can never remember how to convert a list to a string
+in python
+---
+My logic is still wrong. The base cases pass though.
+---
+My carry logic was wrong. The overflow can be either
+2 (1 + 1) or 3 (1 + 1 + previous carry). When
+it's three, the current bit is set to be 1, otherwise
+2.
+
+

@@ -215,3 +215,44 @@ fb combos. So the recurrene relation is s[n] =
 fb s[n - 1] + s[n - 2], which you can reduce to
 fb have memory of 2. Make sure to factor in
 fb base cases.
+
+nn problems/409_longest_palindrome/solution
+co $ ..
+ff What is the solution to 409: longest palindrome?
+fb The core data structure is a hashmap. Build up
+fb a frequency map of all the letters. Add up all
+fb the even ones, and all the odd ones (but subtract 1).
+fb At the end of the loop, add one if an odd number
+fb was found.
+fb A more optimized solution can be done by building
+fb up the hashmap counter and keeping a "odd_freq_count"
+fb variable. When the current count for a letter is odd,
+fb increase the counter, and decrease it when even.
+fb If the counter is zero, the length of the string
+fb is the answer. Otherwise, len(s) - counter + 1.
+
+nn problems/206_reverse_linked_list/solution
+co $ ..
+ff What is the solution to 206: reverse a linked list?
+fb High level structure: iterate through a linked list,
+fb which keeps track of the previous node, and return
+fb the latest previous node. Inside the loop,
+fb the current node next pointer should be updated
+fb to the previous node, and the old value becomes
+fb the current node.
+
+nn problems/169_majority_element/solution
+ff What is the solution to 169: majority element?
+fb You can solve this with a hashmap. Build up
+fb a frequency map, and return the largest.
+
+
+nn problems/67_add_binary/solution
+ff What is the solution to 67: add binary?
+fb Convert numbers to stack. Pop and add binary
+fb bits with a carry flag. When overflow happens
+fb update the result bit: 0 when overflow is 2
+fb (1 + 1), 1 when 3 (1 + 1 + carry). When one
+fb of the stacks is exhausted, append the remaining
+fb bits while keeping track of carry flag. Append
+fb an extra bit if the carry flag is still on.

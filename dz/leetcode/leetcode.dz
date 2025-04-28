@@ -1703,3 +1703,12 @@ ln 383: Ransom Note
 nn problems/409_longest_palindrome
 hl https://leetcode.com/problems/longest-palindrome
 ln 409 longest palindrome
+
+nn problems/53_maximum_subarray
+hl https://leetcode.com/problems/maximum-subarray
+ln 53: maximum subarray
+
+nn problems/57_insert_interval
+hl https://leetcode.com/problems/insert-interval
+ln 57: Insert Interval
+

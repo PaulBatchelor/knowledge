@@ -256,3 +256,43 @@ fb (1 + 1), 1 when 3 (1 + 1 + carry). When one
 fb of the stacks is exhausted, append the remaining
 fb bits while keeping track of carry flag. Append
 fb an extra bit if the carry flag is still on.
+
+nn problems/543_diameter_of_binary_tree/solution
+ff What is a solution to 543: diameter of binary tree?
+fb This can be solved recursively using DFS. Traversal
+fb works by finding the max height of the left/right
+fb trees, and then adding those values together. Keep
+fb track of the maximum during the traversal and return
+fb that value.
+co $ ..
+
+nn problems/876_middle_of_linked_list/solution
+ff What is the solution to 876: middle of linked list?
+fb Fast/slow pointer. slow moves at 1x, fast moves at 2x.
+fb Run while slow, fast, and fast.next. Return slow.
+co $ ..
+
+nn problems/104_max_depth_binary_tree/solution
+ff What is the solution to 104: max depth of binary tree?
+fb DFS recursion. If root is none, return 0. Else,
+fb recursively call max depth on left/right, get the max
+fb value, add 1.
+co $ ..
+
+nn problems/217_contains_duplicate/solution
+ff What is the solution to 217: contains duplicate?
+fb Use a Hash Set data structure. If the length of the set
+fb is less than the length of the original array, there
+fb are duplicates.
+co $ ..
+
+nn problems/53_maximum_subarray
+ff What is the solution to 217: maximum subarray?
+fb Kadane's algorithm.
+fb 1. initialize 2 variables 2 integer variables currentSubarray
+fb and maxSubarray, set them equal to first value in subarray
+fb 2. iterate through the array starting with 2nd element.
+fb Add elemen to currentSubarray. Choose the greater value
+fb to update currentSubarray: currentSubarray, or the
+fb current value.
+fb 3. Update max value.

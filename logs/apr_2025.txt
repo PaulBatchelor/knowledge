@@ -553,4 +553,142 @@ My carry logic was wrong. The overflow can be either
 it's three, the current bit is set to be 1, otherwise
 2.
 
+@19:56 Diameter of a Binary Tree #timelog:00:29:31
+#! dz leetcode/problems/543_diameter_of_binary_tree
+Binary tree. At first it sounded like BFS, but I think
+it's actually DFS.
+---
+It feels like you should traverse to the leftmost node
+of a tree, then the rightmost node of a tree.
+---
+This feels recursive, like you can get keep getting
+the max diameter of smaller and smaller trees,
+and building up from that.
+---
+You might not be able to re-use results. They did
+say it didn't have to pass through root.
+---
+Solved! I kind of walked myself through the formula.
+The diameter is the maximum value of something, so that
+means storing some variable that gets updated through
+the traversal. Traverse starting at root, return
+that variable. A maximum diameter means adding the max
+height of the left/right child node. You can find the
+max height through recursion.
 
+@20:26 middle of a linked list #timelog:00:06:00
+#! dz leetcode/problems/876_middle_of_linked_list
+Linked list problem. I believe this is best solved
+using fast/slow pointers. Fast pointer moves at 2x speed.
+When the fast reaches the end return the slow pointer.
+---
+I had a little bit of trouble figuring where to start
+the fast pointer. fast/slow both start at head.
+
+@20:32 max depth of binary tree #timelog:00:02:56
+#! dz problems/104_max_depth_binary_tree
+I think this is just the partial bit to 543 diameter
+of binary tree. It's recursive DFS.
+
+@20:37 contains duplicate #timelog:00:02:50
+#! dz leetcode/problems/217_contains_duplicate
+Shoot, I saw the answer. It was a one-liner. You turn
+the array into a set, and compare lengths with the
+original array.
+
+@20:40 maximum subarray #timelog:00:49:26
+#! dz leetcode/problems/53_maximum_subarray
+Which one is the subarray? is that the contiguous one or
+the other one?
+---
+Oh good contiguous. That one is a little bit easier
+I think.
+---
+I'm getting a sliding window feel from this? I don't think
+it's 2-pointer. It might be greedy.
+---
+I'm trying greedy. we go left to right and have a running
+total starting with the first value, and a value indicating
+the leftmost value in the sum. Every loop we determine
+what the local optimum is based on the current value.
+If we add the value and the sum is greater, we include it.
+If it's less, we start a new sum with the current value.
+If subtracting the leftmost value makes the sum greater,
+increment the leftmost value pointer.
+---
+Not feeling great about this one. I tried the greedy
+approach and it didn't work.
+---
+oh, the topics are array, divide and conquer, and
+dynamic programming. The follow-up is divide and conquer.
+---
+Okay if it's dynamic programming, we know how to set this
+up.
+---
+It's hot. I think I'll return to this one later.
+---
+Generally you're trying to find some max start/end range.
+When the start/end are the same, there is only one value.
+---
+Tried forcing this into a 2d dynamic programming problem.
+Wrong turn. It's Kadane's algorithm. I will revisit this
+tomorrow.
+
+@2025-04-28
+@07:55 study answer to maximum subarray #timelog:00:11:39
+#! dz leetcode/problems/53_maximum_subarray
+initialize 2 variables 2 integer variables currentSubarray
+and maxSubarray, set them equal to first value in subarray
+---
+iterate through the array starting with 2nd element.
+Add elemen to currentSubarray. Choose the greater value
+to update currentSubarray: currentSubarray, or the
+current value.
+---
+Update max value.
+---
+My greedy intuition was close, but too complicated.
+
+@08:06 Insert Interval #timelog:00:20:23
+#! dz leetcode/problems/57_insert_interval
+These interval problems always seem so hyper-specific,
+which makes them feel intimidating to me.
+---
+Intervals are sorted and non-overlapping, and you
+want to insert an interval somewhere in there, and make
+sure it returns intervals that are still sorted and
+non-overlapping.
+---
+The instructions say we can make a copy, which makes
+some of the logistics easier I think.
+---
+I'm going to start by just setting up the scaffolding that
+just makes a copy of the existing intervals without copying.
+I'm going to try to add the insertion logic on top of that.
+---
+An insertion interval is about bounds checking for start
+and end times. Working backwards, we know we have passed
+the merge when the start time of the current interval is
+passed the end time of the inserted interval.
+---
+What are the possibilities for insertion? One is it
+inserts without merging, else it merges.
+---
+For merging, the inserted interval can overlap before
+or after an interval. It can be absorbed by an interval.
+It can also end up merging many intervals.
+---
+When is a merge first triggered? A merge is triggered
+when there is an initial intersection. The current
+interval overlaps with the inserted interval. The inserted
+interval starts before and ends before, starts after and
+ends before, or starts after and ends after.
+---
+If we've already started a merge, we need to determine
+if the current interval needs to be merged in as well,
+or if we are done merging.
+---
+Not sure how we are supposed to handle cases where it doesn't
+merge.
+---
+to be continued...

@@ -286,7 +286,7 @@ fb is less than the length of the original array, there
 fb are duplicates.
 co $ ..
 
-nn problems/53_maximum_subarray
+nn problems/53_maximum_subarray/solution
 ff What is the solution to 217: maximum subarray?
 fb Kadane's algorithm.
 fb 1. initialize 2 variables 2 integer variables currentSubarray
@@ -296,3 +296,19 @@ fb Add elemen to currentSubarray. Choose the greater value
 fb to update currentSubarray: currentSubarray, or the
 fb current value.
 fb 3. Update max value.
+
+
+nn problems/57_insert_interval/solution
+ff How do you solve 57: insert interval?
+fb It helps to draw a picture. Initialize a merged interval
+fb variable to the new interval. Iterate through intervals
+fb in the list. Anything before the start of the start
+fb of the merged interval can be merged normally. Insert
+fb the merged interval when there's an interval whose start
+fb time is after the merged end time. While there is still
+fb a merged interval, the merged interval is the smallest
+fb start time of the current/merged plus the largest end
+fb time of the current/merged. Insert intervals
+fb normally after the merged interval has been made.
+fb Insert the merged interval if it hasn't been inserted at
+fb the end of the loop.

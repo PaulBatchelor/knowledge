@@ -692,3 +692,30 @@ Not sure how we are supposed to handle cases where it doesn't
 merge.
 ---
 to be continued...
+
+@21:28 ...continued #timelog:00:43:04
+#! dz $
+Managed to get this working. I had to blow up my morning
+thoughts, whip out a piece of paper and pen, and draw a
+picture.
+---
+The key shift in my thinking for this was: an inserted
+interval is always going to be a merged interval. Another
+thing I did to help me was to destructure these intervals
+so I could see them labelled as start/end.
+---
+Somehow,
+I was able to see that the result of merging two intervals
+together was always going to be the smallest of the start
+times plus the largest of the end times. And you'd keep
+doing that with intervals until the start time of
+the current interval appeared after the merged interval.
+---
+A merged interval gets merged when the start time of the
+interval after it is past the end time of the merged interval,
+or there are no more intervals. Intervals after the
+merged interval can be merged normally.
+---
+It the current interval's end time is less than the start
+time of the merged interval, the merged interval has
+not yet started, and you can just intervals.

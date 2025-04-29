@@ -719,3 +719,58 @@ merged interval can be merged normally.
 It the current interval's end time is less than the start
 time of the merged interval, the merged interval has
 not yet started, and you can just intervals.
+
+@2025-04-29
+@07:48 01 Matrix #timelog:00:14:51
+#! dz leetcode/problems/542_01_matrix
+Getting BFS vibes.
+---
+The problem is asking for closest distances from 0 tile.
+If you are a 0 tile, the distance is 0. Anything sharing
+an edge with a 0 tile that is not a 0 tile will have
+a distance of 1, and then 2, 3, etc.
+---
+We can initialize the output array by iterating through
+the entire matrix, and finding all the zero tiles, marking
+them as having distance 0. These can get pushed onto a queue
+with their location, and their distance (0).
+---
+Processing happens by popping items off the queue and traversing
+in the 4 directions. If a node hasn't been visited, it's
+distance is marked based on the current distance (+ 1),
+and then that's pushed onto the queue.
+---
+Done. Pretty formulaic BFS. It's definitely a pattern
+I've learned doing this leetgrind.
+
+@08:04 K closest points to origin #timelog:00:12:50
+#! dz leetcode/problems/973_k_closest_points_origin
+This is a problem I think you can solve with a heap.
+Basically, you push points onto the heap, and take the
+first K values as the answer. You can also keep a fixed
+sized heap of K items, and pop the largest value.
+---
+python's heapq is a minheap, so I think you'd need to
+negate distances to keep the smallest ones on the queue
+the longest.
+---
+I am running into a weird edge case with one of the tests.
+---
+I was popping before pushing, and should have been pushing
+before popping.
+
+@08:22 Longest substring without repeating characters (partial attempt) #timelog:00:08:11
+#! dz leetcode/problems/3_longest_substring_without_repeating_characters
+You're not finding *which* substring, just the max,
+so this is an optimization problem. This means that keeping
+track of a max value and returning that.
+---
+Feels kinda sliding window, also hashmap. You could
+probably sweep through left to right, use the map to keep
+track of indices where the letter was previously found.
+---
+Okay, this isn't quite right. I think my hashmap thinking
+is correct, but I have the logic wrong for updating the
+start index.
+---
+I have to go.

@@ -1712,3 +1712,14 @@ nn problems/57_insert_interval
 hl https://leetcode.com/problems/insert-interval
 ln 57: Insert Interval
 
+nn problems/542_01_matrix
+ln 542: 01 matrix
+hl https://leetcode.com/problems/01-matrix
+
+nn problems/973_k_closest_points_origin
+ln 973: K closest points to origin
+hl https://leetcode.com/problems/k-closest-points-to-origin/
+
+nn problems/3_longest_substring_without_repeating_characters
+hl https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+ln 3: longest substring without repeating characters

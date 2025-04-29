@@ -312,3 +312,17 @@ fb time of the current/merged. Insert intervals
 fb normally after the merged interval has been made.
 fb Insert the merged interval if it hasn't been inserted at
 fb the end of the loop.
+
+nn problems/542_01_matrix/solution
+ff How to solve 542: 01 matrix?
+fb BFS. Initialize an output matrix and a queue. Iterate through input
+fb matrix and find all the 0 tiles. Push their positions
+fb and their distance (0) as a tuple onto the queue. Pop values
+fb off the queue, and check 4 directions for unvisited
+fb tiles. This will have a distance of "dist + 1".
+
+nn problems/973_k_closest_points_origin/solution
+ff How to solve 973: K closest points to origin?
+fb Use a heap, ordered by distance (which can be sqrt(x*x + y*y)
+fb because origin). Push, then pop to maintain K elements (order is important)
+fb Pop elements off the heap and return.

@@ -774,3 +774,24 @@ is correct, but I have the logic wrong for updating the
 start index.
 ---
 I have to go.
+
+@20:43 another stab at it #timelog:00:15:49
+#! dz $
+Another idea: use the hashmap. If there is an entry already
+there, subtract the difference. Otherwise, start from 0.
+---
+not even close. looking at the answer.
+---
+Answer is "HashMap with Sliding window" (they erroneously
+call it a HashSet, pretty sure that's wrong)
+---
+Set up an empty counter/hashmap and left/right pointers equal to 0.
+---
+Loop while right pointer is less than string length.
+---
+1: get the character at the right pointer. 2: update
+the count for that character. 3: while the count of that
+right character is greater than 1, get the value of
+the left pointer, decrease that from the counter, and increase
+the left pointer. 4: obtain the max value of right - left + 1.
+5: increment right pointer.

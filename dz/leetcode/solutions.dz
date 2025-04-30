@@ -326,3 +326,16 @@ ff How to solve 973: K closest points to origin?
 fb Use a heap, ordered by distance (which can be sqrt(x*x + y*y)
 fb because origin). Push, then pop to maintain K elements (order is important)
 fb Pop elements off the heap and return.
+
+
+nn problems/3_longest_substring_without_repeating_characters/solution
+ff What is a decent solution to 3: longest substring without repeating characters?
+fb "HashMap with Sliding window".
+fb Set up an empty counter/hashmap and left/right pointers equal to 0.
+fb Loop while right pointer is less than string length.
+fb 1: get the character at the right pointer. 2: update
+fb the count for that character. 3: while the count of that
+fb right character is greater than 1, get the value of
+fb the left pointer, decrease that from the counter, and increase
+fb the left pointer. 4: obtain the max value of right - left + 1.
+fb 5: increment right pointer.

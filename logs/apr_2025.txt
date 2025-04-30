@@ -795,3 +795,43 @@ right character is greater than 1, get the value of
 the left pointer, decrease that from the counter, and increase
 the left pointer. 4: obtain the max value of right - left + 1.
 5: increment right pointer.
+
+@2025-04-30
+@07:46 binary tree level order traversal #timelog:00:14:06
+#! dz leetcode/problems/102_binary_tree_level_order_traversal
+This is a BFS tree traversal problem, so use a queue.
+---
+I've done double queues before, which can be a little
+bit tricky to set up. A single queue keeping track of
+level should suffice.
+---
+Basically keep pushing things on the queue, children are
+always +1. append things to a list. when the next items
+level is greater than the current level, append the
+list to the output, and start a new list.
+---
+I got it working. I don't love that I have to do a last
+check at the end of the loop. I'm sure that could be
+improved, but it's good enough.
+---
+The solution just uses the level number directly in an array.
+
+@08:05 clone graph #timelog:00:23:53
+#! dz leetcode/problems/133_clone_graph
+This is some kind of traversal, probably BFS.
+---
+Starting with the first node, go through all the children.
+Use a lookup table using node values, which are unique.
+If the node has already been cloned, use that cloned value
+from the list, otherwise clone the reference, add it to
+the list, and update the node.
+---
+Right, I am scewing up the traversal here. I am trying
+to get the BFS to both initialize a node, and possibly
+the neighbor nodes, in the nodelist I am making. But
+both of them can already have been created.
+---
+The solution uses recursion, I use a queue, not sure
+why mine isn't working.
+---
+I'm out of time. Will revisit later.

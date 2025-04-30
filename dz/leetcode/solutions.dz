@@ -339,3 +339,9 @@ fb right character is greater than 1, get the value of
 fb the left pointer, decrease that from the counter, and increase
 fb the left pointer. 4: obtain the max value of right - left + 1.
 fb 5: increment right pointer.
+
+nn problems/102_binary_tree_level_order_traversal/solution
+ff What is a solution to 102: binary tree level order traversal?
+fb BFS traversal. Use a queue, and keep track of level number.
+fb Either append when the level changes (make sure to append at the end), or use the level
+fb number as an index.

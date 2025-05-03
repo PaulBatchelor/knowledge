@@ -305,6 +305,269 @@ ff What are 4xx status codes?
 fb client errors. Used for situations in which the error seems
 fb to have been caused by the client.
 
+nn 400_bad_request
+co $ ..
+ln The server cannot or will not process the request due to an
+ln apparent client error (e.g., malformed request syntax, size too
+ln large, invalid request message framing, or deceptive request
+ln routing).
+ff status code 400
+fb bad request
+
+
+nn 401_unauthorized
+co $ ..
+ln Similar to 403 Forbidden, but specifically for use when
+ln authentication is required and has failed or has not yet been
+ln provided. The response must include a WWW-Authenticate header
+ln field containing a challenge applicable to the requested
+ln resource.Basic access authentication and Digest
+ln access authentication. 401 semantically means "unauthenticated",
+ln the user does not have valid authentication credentials for the
+ln target resource.
+ff status code 401
+fb unauthorized
+
+nn 402_payment_required
+co $ ..
+ln Reserved for future use. The original intention was that this
+ln code might be used as part of some form of digital cash or
+ln GNU
+ln Taler, but that has not yet happened, and this code is
+ln not widely used. Google Developers API uses this status if
+ln a particular developer has exceeded the daily limit on
+ln requests.Sipgate uses this code if an account
+ln does not have sufficient funds to start a call.
+ln Shopify uses this code when the store has not paid their
+ln fees and is temporarily disabled.Stripe uses
+ln this code for failed payments where parameters were correct, for
+ln example blocked fraudulent payments.
+ff status code 402
+fb payment required
+
+nn 403_forbidden
+co $ ..
+ln The request contained valid data and was understood by the
+ln server, but the server is refusing action. This may be due to
+ln the user not having the necessary permissions for a resource or
+ln needing an account of some sort, or attempting a prohibited
+ln action (e.g. creating a duplicate record where only one is
+ln allowed). This code is also typically used if the request
+ln provided authentication by answering the WWW-Authenticate header
+ln field challenge, but the server did not accept that
+ln authentication. The request should not be repeated.
+ff status code 403
+fb forbidden
+
+nn 404_not_found
+co $ ..
+ln The requested resource could not be found but may be available
+ln in the future. Subsequent requests by the client are
+ln permissible.
+fb status code 404
+ff not found
+
+
+nn 405_method_not_allowed
+co $ ..
+ln A request method is not supported for the requested resource;
+ln for example, a GET request on a form that requires data to be
+ln presented via POST, or a PUT request on a read-only
+ln resource.
+ff status code 405
+fb method not allowed
+
+
+nn 406_not_acceptable
+co $ ..
+ln The requested resource is capable of generating only content not
+ln acceptable according to the Accept headers sent in the request.
+ln See Content negotiation.
+ff status code 406
+fb not acceptable
+
+nn 407_proxy_authentication_request
+co $ ..
+
+nn 408_request_timeout
+co $ ..
+ln The client must first authenticate itself with the proxy.
+ff status code 408
+fb request timeout
+
+nn 409_conflict
+co $ ..
+ln Indicates that the request could not be processed because of
+ln conflict in the current state of the resource, such as an
+ln edit conflict between multiple simultaneous updates.
+ff status code 409
+fb conflict
+
+
+nn 410_gone
+co $ ..
+ln Indicates that the resource requested was previously in use but
+ln is no longer available and will not be available again. This
+ln should be used when a resource has been intentionally removed
+ln and the resource should be purged. Upon receiving a 410 status
+ln code, the client should not request the resource in the future.
+ln Clients such as search engines should remove the resource from
+ln their indices. Most use cases do not require clients and search
+ln engines to purge the resource, and a "404 Not Found" may be used
+ln instead.
+ff status code 410
+fb gone
+
+nn 411_length_required
+co $ ..
+ln The request did not specify the length of its content, which is
+ln required by the requested resource.
+ff status code 411
+fb length required
+
+nn 412_recondition_failed
+co $ ..
+ln The server does not meet one of the preconditions that the
+ln requester put on the request header fields.
+ff status code 412
+fb recondition failed
+
+nn 413_payload_too_large
+co $ ..
+ln The request is larger than the server is willing or able to
+ln process. Previously called "Request Entity Too
+ln Large".
+ff status code 413
+fb payload too large
+
+nn 414_URI_too_long
+co $ ..
+ln The URI provided was too long for the server to process.
+ln Often the result of too much data being encoded as a
+ln query-string of a GET request, in which case it should be
+ln converted to a POST request. Called "Request-URI Too Long"
+ln previously.
+ff status code 414
+fb URI too long
+
+nn 415_unsupported_media_type
+co $ ..
+ln The request entity has a media type which the server or
+ln resource does not support. For example, the client uploads an
+ln image as image/svg+xml, but the server requires that images
+ln use a different format.
+ff status code 415
+fb unsupported media type
+
+nn 416_range_not_satisfiable
+co $ ..
+ln The client has asked for a portion of the file (byte
+ln serving), but the server cannot supply that portion. For
+ln example, if the client asked for a part of the file that lies
+ln beyond the end of the file. Called "Requested Range Not
+ln Satisfiable" previously.
+ff status code 416
+fb range not satisfiable
+
+nn 417_expectation_failed
+co $ ..
+ln The server cannot meet the requirements of the Expect
+ln request-header field.
+ff status code 417
+fb expectation failed
+
+nn 418_im_a_teapot
+co $ ..
+ln This code was defined in 1998 as one of the traditional
+ln Hyper Text
+ln Coffee Pot Control Protocol, and is not expected to be
+ln implemented by actual HTTP servers. The RFC specifies this code
+ln should be returned by teapots requested to brew
+ln coffee.Easter egg
+ln in some websites, such as Google.com's "I'm a teapot"
+ln easter egg. Sometimes, this status
+ln code is also used as a response to a blocked request, instead of
+ln the more appropriate 403 Forbidden.
+ff status code 418
+fb I'm a teapot.
+
+
+nn 421_misdirected_request
+co $ ..
+ln The request was directed at a server that is not able to produce
+ln a response (for example because of connection reuse).
+ff status code 421
+fb misdirected request
+
+nn 422_unprocessable_content
+co $ ..
+ln The request was well-formed (i.e., syntactically correct) but
+ln could not be processed.
+ff status code 422
+fb unprocessable content
+
+nn 423_locked
+co $ ..
+ln The resource that is being accessed is locked.^[218][7]
+ff status code 423
+fb locked
+
+nn 424_failed_dependency
+co $ ..
+ln The request failed because it depended on another request and
+ln that request failed (e.g., a PROPPATCH).
+ff status code 424
+fb failed dependency
+
+nn 425_too_early
+co $ ..
+ln Indicates that the server is unwilling to risk processing a
+ln request that might be replayed.
+ff status code 425
+fb too early
+
+nn 426_upgrade_required
+co $ ..
+ln The client should switch to a different protocol such as
+ln Upgrade header field.
+ff status code 426
+fb upgrade required
+
+nn 428_precondition_required
+co $ ..
+ln The origin server requires the request to be conditional.
+ln Intended to prevent the 'lost update' problem, where a client
+ln GETs a resource's state, modifies it, and PUTs it back to the
+ln server, when meanwhile a third party has modified the state on
+ln the server, leading to a conflict.
+ff status code 428
+fb precondition required
+
+nn 429_too_many_requests
+co $ ..
+ln The user has sent too many requests in a given amount of time.
+ln Intended for use with rate-limiting schemes.
+ff status code 429
+fb too many requests
+
+nn 431_request_header_fields_too_large
+co $ ..
+ln The server is unwilling to process the request because either an
+ln individual header field, or all the header fields collectively,
+ln are too large.
+ff status code 431
+fb request header fields too large
+
+nn 451_unavailable_for_legal_reasons
+co $ ..
+ln A server operator has received a legal demand to deny access to
+ln a resource or to a set of resources that includes the requested
+ln resource. The code 451 was chosen as a reference to
+ln the novel Fahrenheit 451 (see the Acknowledgements in the
+ln RFC).
+ff status code 451
+fb unavailable for legal reasons
+
 nn 5xx server errors
 ln The server failed to fulfill a request.
 ln Response status codes beginning with the digit "5" indicate cases in

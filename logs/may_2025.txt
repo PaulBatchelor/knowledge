@@ -1,0 +1,21 @@
+@2025-05-08
+@07:59 clone graph, continued #timelog:00:13:16
+#! dz leetcode/problems/133_clone_graph
+I did not finish this one
+---
+It looks like I forgot to copy over the values themselves,
+which may be why I was getting the error.
+---
+I was appending the wrong thing to the queue. I should
+have been the neighbor, not the newneighbor.
+
+@08:15 polish notation #timelog:00:13:30
+#! dz leetcode/problems/150_evaluate_polish_notation
+I remember something weird was tripping me up with this
+one. Might have been the thing that converts strings
+to numbers? Or possibly the division?
+---
+This is basically a stack problem.
+---
+I got tripped up again. divide towards zero means
+int(a/b), not a // b.

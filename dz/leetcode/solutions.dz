@@ -363,3 +363,14 @@ fb thing with this problem is dividing towards zero,
 fb which actually has subtle behavior.
 fb In python, this is done with int(a / b). a // b and
 fb math.floor(a / b) do not work.
+
+nn problems/207_course_schedule/solution
+ff What is one way to solve 207: course schedule?
+fb You can solve this with graph traversal. Create an
+fb adjacency list, where each node shows their prerequisite
+fb nodes. Use a queue, and append all the nodes that have
+fb no prerequsites. Iterate through the queue. Remove the
+fb current node entirely from the adjacency list, then
+fb append any nodes that no longer have any prerequsite
+fb nodes. Keep track of nodes visited, and compare that
+fb count with the total number of courses.

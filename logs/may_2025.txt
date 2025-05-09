@@ -63,3 +63,6 @@ oh shoot, this is the one where you can add phantom
 edges isn't it.
 ---
 Got it! Will clean up code and type up solution later
+
+@19:31 code cleanup, explanation
+

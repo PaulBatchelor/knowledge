@@ -53,3 +53,13 @@ two lists?
 or just have a counter that keeps track of the number of
 ---
 we are out of time. I can't visualize the traversal correctly.
+
+@08:43 revisiting #timelog:00:04:09
+#! dz $
+I was being do fancy, just pop dependency from set, do
+a full sweep
+---
+oh shoot, this is the one where you can add phantom
+edges isn't it.
+---
+Got it! Will clean up code and type up solution later

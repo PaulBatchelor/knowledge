@@ -1735,3 +1735,7 @@ ln 103: clone graph
 nn problems/150_evaluate_polish_notation
 ln 150: evaluate polish notation
 hl https://leetcode.com/problems/evaluate-reverse-polish-notation/
+
+nn problems/207_course_schedule
+ln 207: course schedule
+hl https://leetcode.com/problems/course-schedule/

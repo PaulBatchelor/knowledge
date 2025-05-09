@@ -19,3 +19,37 @@ This is basically a stack problem.
 ---
 I got tripped up again. divide towards zero means
 int(a/b), not a // b.
+
+@2025-05-09
+@07:59 course schedule #timelog:00:28:59
+#! dz leetcode/problems/207_course_schedule
+I remember this problem. It's a DAG problem.
+---
+This is sort of a traversal problem? You can take
+all the prereqs, and put them in an adjacency list:
+a lookup table for each node, and all their rerequisites.
+---
+after constructing the adjacency list, traverse BFS
+using a queue. Begin by adding all the courses that do
+not have prereqs onto the queue. Pop items off the queue,
+and remove that course dependency from the adjacency list.
+Add any courses that "free up".
+---
+I'm realizing I could construct my adjacency list a
+little bit differently. Originally, I wanted to have the
+list show the node and their prereqs, but the issue
+with that is that you'd need to do many updates every time
+a node is removed. It would be easier to show for each
+node, which courses are dependent on it.
+---
+With this new list, you'd need to work backwards. You'd add
+all the courses that are not dependencies for any other courses,
+which would be the last courses.... wait this isn't going
+to work.
+---
+Okay, back to the original plan I think. Maybe maintain
+two lists?
+---
+or just have a counter that keeps track of the number of
+---
+we are out of time. I can't visualize the traversal correctly.

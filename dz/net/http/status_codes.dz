@@ -305,6 +305,9 @@ ff What are 4xx status codes?
 fb client errors. Used for situations in which the error seems
 fb to have been caused by the client.
 
+ns +4xx_client_errors
+
+
 nn 400_bad_request
 co $ ..
 ln The server cannot or will not process the request due to an
@@ -568,7 +571,11 @@ ln RFC).
 ff status code 451
 fb unavailable for legal reasons
 
-nn 5xx server errors
+zz -4xx_client_errors
+ns ..
+
+
+nn 5xx_server_errors
 ln The server failed to fulfill a request.
 ln Response status codes beginning with the digit "5" indicate cases in
 ln which the server is aware that it has encountered an error or is
@@ -581,3 +588,91 @@ ln any request method.
 co $ ..
 ff What are 5xx status codes?
 fb server errors. The server failed to fulfil a request.
+
+ns +5xx_server_errors
+
+nn 500_internal_service_error
+co $ ..
+ln A generic error message, given when an unexpected condition was
+ln encountered and no more specific message is suitable.
+ff status code 500
+fb internal service error
+
+nn 501_not_implemented
+co $ ..
+ln The server either does not recognize the request method, or it
+ln lacks the ability to fulfil the request. Usually this implies
+ln future availability (e.g., a new feature of a web-service API).
+ff status code 501
+fb not implemented
+
+nn 502_bad_gateway
+co $ ..
+ln The server was acting as a gateway or proxy and received an
+ln invalid response from the upstream server.
+ff status code 502
+fb bad gateway
+
+nn 503_service_unavailable
+co $ ..
+ln The server cannot handle the request (because it is overloaded
+ln or down for maintenance). Generally, this is a temporary
+ln state.
+ff status code 503
+fb service unavailable
+
+nn 504_gateway_timeout
+co $ ..
+ln The server was acting as a gateway or proxy and did not receive
+ln a timely response from the upstream server.
+ff status code 504
+fb gateway timeout
+
+nn 505_HTTP_version_not_supported
+co $ ..
+ln The server does not support the HTTP version used in the
+ln request.
+ff status code 505
+fb HTTP version not supported
+
+nn 506_variant_also_negotiates
+co $ ..
+ln Transparent content negotiation for the request results in
+ln a circular reference.
+ff status code 506
+fb variant also negotiates
+
+nn 507_insufficient_storage
+co $ ..
+ln The server is unable to store the representation needed to
+ln complete the request.
+ff status code 507
+fb insufficient storage
+
+nn 508_loop_detected
+co $ ..
+ln The server detected an infinite loop while processing the
+ln request (sent instead of 208 Already Reported).
+ff status code 508
+fb loop detected
+
+nn 510_not_extended
+co $ ..
+ln Further extensions to the request are required for the server to
+ln fulfil it.
+ff status code 510
+fb not extended
+
+nn 511_network_authentication_required
+co $ ..
+ln The client needs to authenticate to gain network access.
+ln Intended for use by intercepting proxies used to control access
+ln to the network (e.g., "captive portals" used to require
+ln agreement to Terms of Service before granting full Internet
+ln access via a Wi-Fi hotspot).
+ff status code 511
+fb network authentication failed
+
+
+zz -5xx server errors
+ns ..

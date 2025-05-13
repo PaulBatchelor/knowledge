@@ -345,3 +345,32 @@ ff What is a solution to 102: binary tree level order traversal?
 fb BFS traversal. Use a queue, and keep track of level number.
 fb Either append when the level changes (make sure to append at the end), or use the level
 fb number as an index.
+
+nn problems/133_clone_graph/solution
+ff What is a solution to 133: clone graph?
+fb BFS, using a queue. Maintain a hashmap of created nodes
+fb using their value (unique id) as a lookup. Add the
+fb the root value to the nodelist. Inside the
+fb loop, iterate through the nodes neighbors. If a neighbor
+fb hasn't been cloned yet, clone it, and add the original
+fb neighbor to the queue. These new neighbors get appended
+fb to the neighbors list of the current node.
+
+nn leetcode/problems/150_evaluate_polish_notation
+ff How to solve 150: evaluate polish notation
+fb This a pretty conventional stack problem. The tricky
+fb thing with this problem is dividing towards zero,
+fb which actually has subtle behavior.
+fb In python, this is done with int(a / b). a // b and
+fb math.floor(a / b) do not work.
+
+nn problems/207_course_schedule/solution
+ff What is one way to solve 207: course schedule?
+fb You can solve this with graph traversal. Create an
+fb adjacency list, where each node shows their prerequisite
+fb nodes. Use a queue, and append all the nodes that have
+fb no prerequsites. Iterate through the queue. Remove the
+fb current node entirely from the adjacency list, then
+fb append any nodes that no longer have any prerequsite
+fb nodes. Keep track of nodes visited, and compare that
+fb count with the total number of courses.

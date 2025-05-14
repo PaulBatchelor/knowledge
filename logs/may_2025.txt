@@ -71,3 +71,30 @@ Got it! Will clean up code and type up solution later
 
 @19:31 code cleanup, explanation
 
+@2025-05-14
+@07:58 Implement Trie #timelog:00:07:16
+#! dz leetcode/problems/208_implement_trie
+I forget, can the Trie be a recursive structure?
+It's a node with a value, a terminal node flag, and
+a set of children in a lookup table. I think that
+can be done recursively.
+
+@08:06 coin change (initial) #timelog:00:24:22
+#! dz leetcode/problems/322_coin_change
+it's too early for coin change
+---
+this is a dynamic programming problem, optimizing for
+fewest number of coins that make up a particular amount.
+---
+We are always trying to reach a particular target amount
+using a given set of coins. If the target amount is less
+than the smallest coin, there is no possible combination.
+---
+When a coin does fit into the target amount, we subtract
+that from the target amount, and run it again, adding
+1 coin. It would look something like: nCoins(amt) = 1 + nCoins(amt - coin)
+---
+I have to go, but things that are tripping me up are:
+how to notate the recurrance relation? and how to keep
+track of the minimum? how to track the invalid (negative)
+value?

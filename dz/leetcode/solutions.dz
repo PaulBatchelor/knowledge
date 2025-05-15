@@ -374,3 +374,13 @@ fb current node entirely from the adjacency list, then
 fb append any nodes that no longer have any prerequsite
 fb nodes. Keep track of nodes visited, and compare that
 fb count with the total number of courses.
+
+nn problems/238_product_of_array_except_self/solution
+ff How to solve 238: product of array except self?
+fb Kind of like prefix sum, but with products.
+fb Initialize them all to be 1 first.
+fb Pre-calculate
+fb products going from the right, then one going from the
+fb left. left[i] = left[i - 1] * nums[i - 1],
+fb right[N - i - 1] = left[N - i] * nums[N - i]. The
+fb resulting product is out[i] = left[i] * right[i]

@@ -98,3 +98,28 @@ I have to go, but things that are tripping me up are:
 how to notate the recurrance relation? and how to keep
 track of the minimum? how to track the invalid (negative)
 value?
+
+@2025-05-15
+@07:37 more coin change attempts #timelog:00:38:42
+#! dz leetcode/problems/322_coin_change
+Working this out on pen and paper. Going to figure
+out the recurrance relation. If I can grok that, I feel like
+I'll know this problem cold.
+---
+I'm looking at the answer now.
+---
+Revisit coin change. Still struggling with setting up
+the problem and seeing the patterns.
+
+@08:17 Product of array except self #timelog:00:25:07
+#! dz leetcode/problems/238_product_of_array_except_self
+I vaguely recall needing to work this out on paper.
+I think it involves keeping track of two prefix sum arrays?
+One from left to right, the other from right to left.
+---
+The hint mentions an upper bound of 32 bits, so that
+could be a hint.
+---
+Got it, the answer involved me carefully populating
+a "left" product sum array with a "right" product sum
+array. Writing an initial solution.

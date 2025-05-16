@@ -384,3 +384,16 @@ fb products going from the right, then one going from the
 fb left. left[i] = left[i - 1] * nums[i - 1],
 fb right[N - i - 1] = left[N - i] * nums[N - i]. The
 fb resulting product is out[i] = left[i] * right[i]
+
+
+nn problems/155_min_stack/solution
+ff How to solve 155: min stack?
+fb Use two stacks, one for current minimum, one for the values
+
+
+nn problems/98_validate_binary_search_tree/solution
+ff How to solve 98: validate binary search tree?
+fb Use inorder traversal. recursively go to the leftmost
+fb node, and keep track of the previous value. If current
+fb value is less than the previous, it is not a valid
+fb binary search tree.

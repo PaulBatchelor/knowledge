@@ -123,3 +123,29 @@ could be a hint.
 Got it, the answer involved me carefully populating
 a "left" product sum array with a "right" product sum
 array. Writing an initial solution.
+
+@2025-05-16
+
+@08:06 min stack #timelog:00:04:51
+#! dz leetcode/problems/155_min_stack
+I think I remember looking this one up before. I think
+it involves 2 stacks, one for the min value, one for
+the items on the stack.
+
+@08:14 validate binary search tree #timelog:00:23:56
+#! dz leetcode/problems/98_validate_binary_search_tree
+Looks like recursive DFS.
+---
+I've hit an edge case.
+---
+Right, the issue is that for a root node "5", it has
+a right child of 6, with a left child of 3. 3 is in the
+wrong place. There needs to be a minimum boundary and a maximum
+boundary.
+---
+Looking at the answer.
+---
+oh jeez, inorder traversal. I forgot that inorder traversal
+yields nodes in order. Basically, you keep track of the
+previous value. You recursively go to the leftmost node,
+then go back.

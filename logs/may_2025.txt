@@ -149,3 +149,54 @@ oh jeez, inorder traversal. I forgot that inorder traversal
 yields nodes in order. Basically, you keep track of the
 previous value. You recursively go to the leftmost node,
 then go back.
+
+@2025-05-17
+@14:27 number of islands #timelog:00:56:59
+#! dz leetcode/problems/200_number_of_islands
+This is a BFS graph traversal problem.
+---
+My first approach was to use a queue to iterate through
+all the items in the grid. a 0 traveling to a 1 increased
+the numberof islands. This didn't work for the second
+example.
+---
+I think it might need two queues. One to traverse through
+islands, another to actually find islands.
+---
+Islands in the island queue only consume contiguous island
+bits. if it hits an edge... it pushes that onto the "sea"
+queue? When the island queue is depleted, the sea queue
+searches until it finds another island. When it finds
+one, it pushes that onto the island queue, increases the
+count, and breaks. Loop breaks when both queues are empty.
+---
+Same exact issue. I was only going down and two the right,
+maybe I need to go all 4 directions. Coding that in now.
+---
+I wasn't breaking out of the sea q loop early enough. I
+coded up an "found island" variable that gets set when
+an island is found. When the for loop breaks, it will also
+break the while loop.
+---
+Trying to rework the editorial BFS solution now.
+---
+The solution can be done by sweeping through the rows
+and columns in a for loop. If a 1 is encountered, increment
+the number of islands. put that
+on a queue and BFS the neighbors that are 1s, marking them
+as visited.
+
+@15:25 Rotting Oranges #timelog:00:19:49
+#! dz leetcode/problems/994_rotting_oranges
+I think I remember how to do this one. This is BFS.
+Initialize a queue with the first rotting oranges, their
+positions, and 0 days. When you iterate through the queue,
+traverse four directions. Keep track of the max number of
+days.
+---
+Forgot about the impossibility scenario. Gotta count
+the number of oranges traversed, and compare it with
+the total number of oranges
+---
+I was pretty sloppy this time with my code, made a lot
+of obvious bugs. But my aproach was pretty much sound.

@@ -390,10 +390,26 @@ nn problems/155_min_stack/solution
 ff How to solve 155: min stack?
 fb Use two stacks, one for current minimum, one for the values
 
-
 nn problems/98_validate_binary_search_tree/solution
 ff How to solve 98: validate binary search tree?
 fb Use inorder traversal. recursively go to the leftmost
 fb node, and keep track of the previous value. If current
 fb value is less than the previous, it is not a valid
 fb binary search tree.
+
+nn problems/200_number_of_islands/solution
+ff What's one way to solve 200: number of islands?
+fb Use BFS. Set up a for loop to iterate through rows
+fb and columns. If an unvisited 1 is found, increase the
+fb island count, and then use a queue to traverse the
+fb neighbors that are 1s, and mark those as visited.
+
+nn problems/994_rotting_oranges
+ff What's one way to solve 994: rotting oranges?
+fb Use BFS. Initialize a queue with all the rotting oranges,
+fb using their positions and the current minute (0). Keep
+fb track of the number of fresh oranges. During the iteration,
+fb when a fresh orange is found, set the global min minutes to be
+fb the maximum minutes, and decrease the fresh orange count.
+fb If there are still oranges, return -1. Otherwise, return
+fb the min minutes.

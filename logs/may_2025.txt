@@ -200,3 +200,45 @@ the total number of oranges
 ---
 I was pretty sloppy this time with my code, made a lot
 of obvious bugs. But my aproach was pretty much sound.
+
+@2025-05-20
+@07:53 Search in rotated sorted array, almost got it right #timelog:00:22:00
+#! dz leetcode/problems/33_search_in_rotated_sorted_array
+Since it's an O(log(n)), it's a divide and conquer problem.
+---
+I'd like to believe that if you segment the array, there
+will be always at least one that is in sorted order.
+We can see if the value is in range, and if it isn't,
+choose the other segment.
+---
+lol, I got all the base cases to pass quicker than I
+expected. TLE for array of size 2.
+---
+I'm at the point where I'm guessing and trying
+to tweak a solution that I believe to be mostly
+correct. time to look up the answer and see how far off
+I actually am.
+---
+Damn it. The solution involved finding the pivot and then
+searching. Didn't do that. Will need to examine this
+in more detail later. But it on the TODO list with
+coin change.
+
+@08:15 combination sum #timelog:00:17:00
+#! dz leetcode/problems/39_combination_sum
+This feels like a kind of backtracking problem. How they
+use the "candidates" terminology is a hint of that.
+---
+Candidates are distinct, so I don't need to deduplicate.
+---
+You can use candidates any number of times. The upper limit
+is they have to add to target.
+---
+I'm running into the "unique solution" issue. Trying to rework
+in such a way that each backtracking call removes candidates
+---
+There needs to be a way to say okay try none of this candidate,
+now 1, now 2, now 3. and then recursively moving through.
+If that order can be achieved, then you can solve it.
+---
+I am out of time.

@@ -2,3 +2,11 @@
 #! dz leetcode/problems/322_coin_change
 #! date 2025-05-05
 Struggled with setting up this problem. Still do not grok.
+
+@revisit_search_in_rotated_array
+#! dz leetcode/problems/33_search_in_rotated_sorted_array
+#! date 2025-05-20
+I was so close to getting this right, but the solution
+actually has something to do with finding the pivot,
+and then searching. So, I'm going to need to revisit this
+to attempt grokking.

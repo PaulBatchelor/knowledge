@@ -1,0 +1,4 @@
+ns vim
+
+nn esoteric_vim
+hl https://freestingo.com/en/programming/articles/esoteric-vim/

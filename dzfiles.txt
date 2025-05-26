@@ -65,10 +65,11 @@ dz/pydata.dz
 dz/MIT_6.824
 dz/grokking_simplicity
 dz/DDIA
-dz/vim.dz
+dz/vim
 dz/dzb.dz
 dz/solidjs
 dz/konilo
 dz/net
 dz/APL.dz
+dz/forth.dz
 dz/zzz

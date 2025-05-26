@@ -1,0 +1,582 @@
+ns vim
+
+nn motion
+
+ns +motion
+
+nn motions_operators
+ln motions and operators
+co $ ..
+
+ns +motions_operators
+
+nn yank
+co $ ..
+ln |y| y yank into register (does not change the text)
+ff |y| y
+fb yank into register (does not change the text)
+
+nn swap_case_tildeop
+co $ ..
+ln |~| ~  swap case (only if 'tildeop' is set)
+ff |~| ~
+fb swap case (only if 'tildeop' is set)
+
+nn swap_case
+co $ ..
+ln |g~|  g~ swap case
+ff |g~|
+fb g~ swap case
+
+nn make_lowercase
+co $ ..
+ln |gu|  gu make lowercase
+ff |gu|
+fb gu make lowercase
+
+nn make_uppercase
+co $ ..
+ln |gU|  gU make uppercase
+ff |gU|
+fb gU make uppercase
+
+nn filter_through_external_program
+co $ ..
+ln |!| !  filter through an external program
+ff |!| !
+fb filter through an external program
+
+nn filter_through_equalprog
+co $ ..
+ln |=| =  filter through 'equalprg' or C-indenting if empty
+ff |=| =
+fb filter through 'equalprg' or C-indenting if empty
+
+nn text_formatting
+co $ ..
+ln |gq|  gq text formatting
+ff |gq|
+fb gq text formatting
+
+nn text_formatting_no_cursor_mvt
+co $ ..
+ln |gw|  gw text formatting with no cursor movement
+ff |gw|
+fb gw text formatting with no cursor movement
+
+nn ROT13_encoding
+co $ ..
+ln |g?|  g? ROT13 encoding
+ff |g?|
+fb g? ROT13 encoding
+
+nn shift_right
+co $ ..
+ln |>| >  shift right
+ff |>| >
+fb shift right
+
+nn shift_left
+co $ ..
+ln |<| <  shift left
+ff |<| <
+fb shift left
+
+nn define_fold
+co $ ..
+ln |zf|  zf define a fold
+ff |zf|
+fb zf define a fold
+
+nn callfunc_operatorfunc
+co $ ..
+ln |g@|  g@ call function set with the 'operatorfunc' option
+ff |g@|
+fb g@ call function set with the 'operatorfunc' option
+
+zz -motions_operators
+ns ..
+
+nn left_right_motions
+ln left/right motions
+co $ ..
+ns +left_right_motions
+
+nn left
+co $ ..
+ln h  or     *h* <Left>  or     *<Left>* CTRL-H  or     *CTRL-H* *<BS>* <BS>   [count] characters to the left.  |exclusive| motion.
+ff h  or     *h* <Left>  or     *<Left>* CTRL-H  or     *CTRL-H* *<BS>* <BS>   [count]
+fb characters to the left.  |exclusive| motion.
+
+nn right
+co $ ..
+ln l  or     *l* <Right>  or     *<Right>* *<Space>* <Space>   [count] characters to the right.  |exclusive| motion.
+ff l  or     *l* <Right>  or     *<Right>* *<Space>* <Space>   [count]
+fb characters to the right.  |exclusive| motion.
+
+nn first_char_line
+co $ ..
+ln 0 To the first character of the line.  |exclusive| motion.
+ff 0
+fb To the first character of the line.  |exclusive| motion.
+
+nn first_nonblank_char_line
+co $ ..
+ln ^ To the first non-blank character of the line.
+ff ^
+fb To the first non-blank character of the line.
+
+nn end_of_line
+co $ ..
+ln $ To the end of the line.
+ff $
+fb To the end of the line.
+
+nn last_nonblank
+co $ ..
+ln g_ To the last non-blank character of the line and [count - 1] lines downward |inclusive|.
+ff g_
+fb To the last non-blank character of the line and [count - 1] lines downward |inclusive|.
+
+nn first_char_screen_line
+co $ ..
+ln g0  To the first character of the screen line.
+ff g0
+fb  To the first character of the screen line.
+
+nn first_non_blank_char_screen_line
+co $ ..
+ln g^ To the first non-blank character of the screen line.
+ff g^
+fb To the first non-blank character of the screen line.
+
+nn half_screenwidth_right
+co $ ..
+ln gm Like "g0", but half a screenwidth to the right (or as much as possible).
+ff gm
+fb Like "g0", but half a screenwidth to the right (or as much as possible).
+
+nn halfway_text_line
+co $ ..
+ln gM Like "g0", but to halfway the text of the line. With a count: to this percentage of text in the line. Thus "10gM" is near the start of the text and "90gM" is near the end of the text.
+ff gM
+fb Like "g0", but to halfway the text of the line. With a count: to this percentage of text in the line. Thus "10gM" is near the start of the text and "90gM" is near the end of the text.
+
+nn last_char_screen_line
+co $ ..
+ln g$ To the last character of the screen line and [count - 1] screen lines downward |inclusive|.
+ff g$
+fb To the last character of the screen line and [count - 1] screen lines downward |inclusive|.
+
+nn last_nonblank_char_screen
+co $ ..
+ln g<End> Like |g$| but to the last non-blank character instead of the last character.
+ff g<End>
+fb Like |g$| but to the last non-blank character instead of the last character.
+
+nn screen_column
+co $ ..
+ln | To screen column [count] in the current line. |exclusive| motion.  Ceci n'est pas une pipe.
+ff |
+fb To screen column [count] in the current line. |exclusive| motion.  Ceci n'est pas une pipe.
+
+nn char_occurence_right
+co $ ..
+ln f{char} To [count]'th occurrence of {char} to the right.
+ff f{char}
+fb To [count]'th occurrence of {char} to the right.
+
+nn char_occurence_left
+co $ ..
+ln F{char} To the [count]'th occurrence of {char} to the left.
+ff F{char}
+fb To the [count]'th occurrence of {char} to the left.
+
+nn til_before_right
+co $ ..
+ln t{char} Till before [count]'th occurrence of {char} to the right.
+ff t{char}
+fb Till before [count]'th occurrence of {char} to the right.
+
+nn til_after_left
+co $ ..
+ln T{char} Till after [count]'th occurrence of {char} to the left.
+ff T{char}
+fb Till after [count]'th occurrence of {char} to the left.
+
+nn repeat_latest_ftFT
+co $ ..
+ln ; Repeat latest f, t, F or T [count] times. See |cpo-;|
+ff ;
+fb Repeat latest f, t, F or T [count] times. See |cpo-;|
+
+nn repeat_ftFT_opposite_dir
+co $ ..
+ln , Repeat latest f, t, F or T in opposite direction [count] times.
+ff ,
+fb Repeat latest f, t, F or T in opposite direction [count] times.
+
+zz -left_right_motions
+ns ..
+
+nn up_down_motions
+ln up-down motions
+
+ns +up_down_motions
+
+nn lines_upward
+co $ ..
+ln k  or     *k* <Up> or *<Up>* *CTRL-P* CTRL-P [count] lines upward |linewise|.
+ff k  or     *k* <Up> or *<Up>* *CTRL-P* CTRL-P
+fb [count] lines upward |linewise|.
+
+nn lines_downward
+co $ ..
+ln j  or     *j* <Down> or *<Down>* CTRL-J  or     *CTRL-J* <NL>  or     *<NL>* *CTRL-N* CTRL-N [count] lines downward |linewise|.
+ff j  or     *j* <Down> or *<Down>* CTRL-J  or     *CTRL-J* <NL>  or     *<NL>* *CTRL-N* CTRL-N
+fb [count] lines downward |linewise|.
+
+nn display_lines_upward
+co $ ..
+ln gk [count] display lines upward.
+ff gk
+fb [count] display lines upward.
+
+nn display_lines_downward
+co $ ..
+ln gj [count] display lines downward.
+ff gj
+fb [count] display lines downward.
+
+nn lines_upward_nonblank
+co $ ..
+ln - [count] lines upward, on the first non-blank character
+ff -
+fb [count] lines upward, on the first non-blank character
+
+nn lines_downward_nonblank
+co $ ..
+ln + [count] lines downward, on the first non-blank character
+ff +
+fb [count] lines downward, on the first non-blank character
+
+nn lines_downward_nonblank_minusone
+co $ ..
+ln _ [count] lines downward, on the first non-blank character |linewise|.
+ff _
+fb [count] lines downward, on the first non-blank character |linewise|.
+
+nn goto_line_nonblank
+co $ ..
+ln G Goto line [count], default last line, on the first non-blank character.
+ff G
+fb Goto line [count], default last line, on the first non-blank character.
+
+nn goto_line_nonblank_first_default
+co $ ..
+ln gg Goto line [count], default first line, on the first non-blank character.
+ff gg
+fb Goto line [count], default first line, on the first non-blank character.
+
+nn set_cursor_last_line_range
+co $ ..
+ln :[range] Set the cursor on the last line number in [range].
+ff :[range]
+fb Set the cursor on the last line number in [range].
+
+nn goto_percentage
+co $ ..
+ln {count}% Go to {count} percentage in the file, on the first non-blank in the line |linewise|.
+ff {count}%
+fb Go to {count} percentage in the file, on the first non-blank in the line |linewise|.
+
+zz -up_down_motions
+ns ..
+
+nn word_motions
+ns +word_motions
+
+nn words_forward
+co $ ..
+ln w [count] words forward.  |exclusive| motion.
+ff w
+fb [count] words forward.  |exclusive| motion.
+
+nn words_forward_inclusive
+co $ ..
+ln e Forward to the end of word [count] |inclusive|.
+ff e
+fb Forward to the end of word [count] |inclusive|.
+
+nn words_backward
+co $ ..
+ln b words_backward[count] words backward.  |exclusive| motion.
+ff b
+fb words_backward[count] words backward.  |exclusive| motion.
+
+nn words_backward_inclusive
+co $ ..
+ln ge Backward to the end of word [count] |inclusive|.
+ff ge
+fb Backward to the end of word [count] |inclusive|.
+
+zz -word_motions
+ns ..
+
+nn text_object_selection
+ns +text_object_selection
+
+nn a_word
+co $ ..
+ln vaw "a word", select [count] words (see |word|).
+ff vaw
+fb "a word", select [count] words (see |word|).
+
+nn inner_word
+co $ ..
+ln viw "inner word", select [count] words (see |word|).
+ff viw
+fb "inner word", select [count] words (see |word|).
+
+nn a_WORD
+co $ ..
+ln vaW "a WORD", select [count] WORDs (see |WORD|).
+ff vaW
+fb "a WORD", select [count] WORDs (see |WORD|).
+
+nn inner_WORD
+co $ ..
+ln viW "inner WORD", select [count] WORDs (see |WORD|).
+ff viW
+fb "inner WORD", select [count] WORDs (see |WORD|).
+
+nn a_sentence
+co $ ..
+ln vas "a sentence", select [count] sentences.
+ff vas
+fb "a sentence", select [count] sentences.
+
+nn inner_sentence
+co $ ..
+ln vis "inner sentence", select [count] sentences.
+ff vis
+fb "inner sentence", select [count] sentences.
+
+nn a_paragraph
+co $ ..
+ln vap "a paragraph", select [count] paragraphs (see |paragraph|).
+ff vap
+fb "a paragraph", select [count] paragraphs (see |paragraph|).
+
+nn inner_paragraph
+co $ ..
+ln vip "inner paragraph", select [count] paragraphs (see |paragraph|).
+ff vip
+fb "inner paragraph", select [count] paragraphs (see |paragraph|).
+
+nn a_bracket_blocket
+co $ ..
+ln va[ "a [] block", select [count] '[' ']' blocks.
+ff va[
+fb "a [] block", select [count] '[' ']' blocks.
+
+nn inner_bracket_block
+co $ ..
+ln vi[ "inner [] block", select [count] '[' ']' blocks.
+ff vi[
+fb "inner [] block", select [count] '[' ']' blocks.
+
+nn a_paren_block
+co $ ..
+ln ab or a( "a block", select [count] blocks, from "[count] [(" to
+ff ab or a(
+fb "a block", select [count] blocks, from "[count] [(" to
+
+nn inner_paren_block
+co $ ..
+ln i( or ib "inner block", select [count] blocks, from "[count] [(" to the matching ')', excluding the '(' and ')'
+ff i( or ib
+fb "inner block", select [count] blocks, from "[count] [(" to the matching ')', excluding the '(' and ')'
+
+nn an_angle_block
+co $ ..
+ln a> or a< "a <> block", select [count] <> blocks, from the [count]'th unmatched '<' backwards to the matching '>', including the '<' and '>'.
+ff a> or a<
+fb "a <> block", select [count] <> blocks, from the [count]'th unmatched '<' backwards to the matching '>', including the '<' and '>'.
+
+nn inner_angle_block
+co $ ..
+ln i> or i< "inner <> block", select [count] <> blocks, from the [count]'th unmatched '<' backwards to the matching '>', excluding the '<' and '>'.
+ff i> or i<
+fb "inner <> block", select [count] <> blocks, from the [count]'th unmatched '<' backwards to the matching '>', excluding the '<' and '>'.
+
+nn a_tag_block
+co $ ..
+ln vat "a tag block", select [count] tag blocks, from the [count]'th unmatched "<aaa>" backwards to the matching "</aaa>", including the "<aaa>" and "</aaa>".
+ff vat
+fb "a tag block", select [count] tag blocks, from the [count]'th unmatched "<aaa>" backwards to the matching "</aaa>", including the "<aaa>" and "</aaa>".
+
+nn inner_tag_block
+co $ ..
+ln vit "inner tag block", select [count] tag blocks, from the [count]'th unmatched "<aaa>" backwards to the matching "</aaa>", excluding the "<aaa>" and "</aaa>".
+ff vit
+fb "inner tag block", select [count] tag blocks, from the [count]'th unmatched "<aaa>" backwards to the matching "</aaa>", excluding the "<aaa>" and "</aaa>".
+
+nn a_block
+co $ ..
+ln va} or va{ or vaB "a Block", select [count] Blocks, from "[count] [{" to the matching '}', including the '{' and '}' (see |[{|).
+ff va} or va{ or vaB
+fb "a Block", select [count] Blocks, from "[count] [{" to the matching '}', including the '{' and '}' (see |[{|).
+
+nn inner_block
+co $ ..
+ln vi} or vi{ or viB "inner Block", select [count] Blocks, from "[count] [{" to the matching '}', excluding the '{' and '}'.
+ff vi} or vi{ or viB
+fb "inner Block", select [count] Blocks, from "[count] [{" to the matching '}', excluding the '{' and '}'.
+
+nn a_quoted_string
+co $ ..
+ln va" or va' va`  "a quoted string".
+ff va" or va' va`
+fb  "a quoted string".
+
+nn inner_quoted_string
+co $ ..
+ln i" or i' or i` Like a", a' and a`, but exclude the quotes and repeating won't extend the Visual selection.
+ff i" or i' or i`
+fb Like a", a' and a`, but exclude the quotes and repeating won't extend the Visual selection.
+
+zz -text_object_selection
+ns ..
+
+nn marks
+ns +marks
+
+nn set_mark
+co $ ..
+ln m{a-zA-Z} Set mark {a-zA-Z} at cursor position (does not move the cursor, this is not a motion command).
+ff m{a-zA-Z}
+fb Set mark {a-zA-Z} at cursor position (does not move the cursor, this is not a motion command).
+
+nn set_prev_context_mark
+co $ ..
+ln m'  or  m` Set the previous context mark.  This can be jumped to with the "''" or "``" command (does not move the cursor, this is not a motion command).
+ff m'  or  m`
+fb Set the previous context mark.  This can be jumped to with the "''" or "``" command (does not move the cursor, this is not a motion command).
+
+nn set_brack_mark
+co $ ..
+ln m[  or  m] Set the |'[| or |']| mark.  Useful when an operator is to be simulated by multiple commands.  (does not move the cursor, this is not a motion command).
+ff m[  or  m]
+fb Set the |'[| or |']| mark.  Useful when an operator is to be simulated by multiple commands.  (does not move the cursor, this is not a motion command).
+
+nn set_angle_mark
+co $ ..
+ln m<  or  m> Set the |'<| or |'>| mark.  Useful to change what the `gv` command selects.  (does not move the cursor, this is not a motion command).
+ff m<  or  m>
+fb Set the |'<| or |'>| mark.  Useful to change what the `gv` command selects.  (does not move the cursor, this is not a motion command).
+
+nn set_mark_last_num_range
+co $ ..
+ln :[range]ma[rk] {a-zA-Z'} Set mark {a-zA-Z'} at last line number in [range], column 0. Default is cursor line.
+ff :[range]ma[rk] {a-zA-Z'}
+fb Set mark {a-zA-Z'} at last line number in [range], column 0. Default is cursor line.
+
+nn mark_but_without_spacve
+co $ ..
+ln :[range]k{a-zA-Z'} Same as :mark, but the space before the mark name can be omitted.
+ff :[range]k{a-zA-Z'}
+fb Same as :mark, but the space before the mark name can be omitted.
+
+nn jump_to_mark
+co $ ..
+ln '{a-z} or `{a-z} Jump to the mark {a-z} in the current buffer.
+ff '{a-z} or `{a-z}
+fb Jump to the mark {a-z} in the current buffer.
+
+nn jump_to_mark_with_file
+co $ ..
+ln '{A-Z0-9} or `{A-Z0-9} To the mark {A-Z0-9} in the file where it was set (not a motion command when in another file).
+ff '{A-Z0-9} or `{A-Z0-9}
+fb To the mark {A-Z0-9} in the file where it was set (not a motion command when in another file).
+
+nn jump_to_mark_dont_change_jumplist
+co $ ..
+ln g'{mark}  g`{mark} Jump to the {mark}, but don't change the jumplist when jumping within the current buffer.
+ff g'{mark}  g`{mark}
+fb Jump to the {mark}, but don't change the jumplist when jumping within the current buffer.
+
+nn list_all_current_marks
+co $ ..
+ln :marks List all the current marks (not a motion command).
+ff :marks
+fb List all the current marks (not a motion command).
+
+nn list_marks_mentioned_in_arg
+co $ ..
+ln :marks {arg} List the marks that are mentioned in {arg}
+ff :marks {arg}
+fb List the marks that are mentioned in {arg}
+
+nn delete_specified_marks
+co $ ..
+ln :delm[arks] {marks} Delete the specified marks.  Marks that can be deleted include A-Z and 0-9.
+ff :delm[arks] {marks}
+fb Delete the specified marks.  Marks that can be deleted include A-Z and 0-9.
+
+nn delete_all_marks
+co $ ..
+ln :delm[arks]! Delete all marks for the current buffer, but not marks A-Z or 0-9.
+ff :delm[arks]!
+fb Delete all marks for the current buffer, but not marks A-Z or 0-9.
+
+zz -marks
+ns ..
+
+nn jumps
+ns +jumps
+
+nn goto_older_pos
+co $ ..
+ln CTRL-O Go to [count] Older cursor position in jump list (not a motion command).
+ff CTRL-O
+fb Go to [count] Older cursor position in jump list (not a motion command).
+
+nn goto_newer_pos
+co $ ..
+ln <Tab> or *CTRL-I* *<Tab>* CTRL-I   Go to [count] newer cursor position in jump list (not a motion command).
+ff <Tab> or *CTRL-I* *<Tab>*
+fb CTRL-I   Go to [count] newer cursor position in jump list (not a motion command).
+
+nn print_jump_list
+co $ ..
+ln :ju[mps] Print the jump list (not a motion command).
+ff :ju[mps]
+fb Print the jump list (not a motion command).
+
+nn clear_jump_list
+co $ ..
+ln :cle[arjumps Clear the jump list of the current window.
+ff :cle[arjumps
+fb Clear the jump list of the current window.
+
+nn goto_older_pos_changelist
+co $ ..
+ln g; Go to [count] older position in change list.
+ff g;
+fb Go to [count] older position in change list.
+
+nn goto_newer_pos_changelist
+co $ ..
+ln g, Go to [count] newer position in change list.
+ff g,
+fb Go to [count] newer position in change list.
+
+nn print_change_list
+co $ ..
+ln :changes Print the change list.
+ff :changes
+fb Print the change list.
+
+zz -jumps
+ns ..

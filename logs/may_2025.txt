@@ -242,3 +242,20 @@ now 1, now 2, now 3. and then recursively moving through.
 If that order can be achieved, then you can solve it.
 ---
 I am out of time.
+
+@2025-05-27
+@07:56 leetcode: 39 combination sum #timelog:00:23:16
+#! dz leetcode/problems/39_combination_sum
+Okay, I tried to do this a few days ago. hmm. Got far
+enough where I was getting answers, but had issues with
+de-duplication.
+---
+The logic I was using wasn't quite right. But I did
+understand that it was backtracking.
+
+@08:21 Permutations #timelog:00:05:35
+#! dz leetcode/problems/46_permutations
+Another backtracking problem
+---
+hmmm. I have the scaffolding set up. But the logic isn't
+quite right. Out of time.

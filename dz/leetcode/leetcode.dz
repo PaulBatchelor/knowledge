@@ -1743,3 +1743,7 @@ hl https://leetcode.com/problems/course-schedule/
 nn problems/98_validate_binary_search_tree
 ln 98: validate binary search tree
 hl https://leetcode.com/problems/validate-binary-search-tree/
+
+nn problems/46_permutations
+ln 46: permutations
+hl https://leetcode.com/problems/permutations/

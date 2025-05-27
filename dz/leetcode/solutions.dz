@@ -413,3 +413,16 @@ fb when a fresh orange is found, set the global min minutes to be
 fb the maximum minutes, and decrease the fresh orange count.
 fb If there are still oranges, return -1. Otherwise, return
 fb the min minutes.
+
+nn problems/39_combination_sum/solution
+ff what's a way to solve 39: combination sum?
+fb This is a backtracking problem. Set up a recursive backtrack
+fb function that takes in the current combination, the start
+fb position of the candidates, and the remainder value.
+fb A remainder of zero indicates a combination was found,
+fb so append that to a "results" list somewhere.
+fb Less than zero indicates the combo exceeds target, so
+fb return early. Iterate through the candidates, starting
+fb at the start position. Append a candidate to the combo,
+fb call the backtrack function, then pop it off again.
+fb Return the results.

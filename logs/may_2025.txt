@@ -259,3 +259,41 @@ Another backtracking problem
 ---
 hmmm. I have the scaffolding set up. But the logic isn't
 quite right. Out of time.
+
+@2025-05-28
+@08:08 back to permutations #timelog:00:20:01
+#! dz leetcode/problems/46_permutations
+Okay, I'm hitting the same dead end I did yesterday morning.
+I'm getting this problem because I'm using a "start" point,
+which, restricts the ordering.
+---
+Doing a gross thing that I think will work, generate all
+the combinations, then filter the ones where the combo
+is unique.
+---
+Gross, it works.
+---
+What if we popped from nums, pushed to combok,
+then pushed back onto nums?
+---
+Didn't work either.
+---
+Okay, the solution involves backtracking, and using
+some kind of way to check if the number is in the combo
+("if x in combo" for python). Which is annoying, because
+I didn't know you could do that for lists in python.
+
+@08:30 merge intervals (I cheated) #timelog:00:08:12
+#! dz leetcode/problems/56_merge_intervals
+My previous solution was still on the screen, and it was
+so small I saw most of it. so I'm just going to type up the
+solution.
+---
+One thing I will say: you need to sort the intervals
+before processing. Python has a built-in "sorted" function,
+which knows to automatically sort by first value (start).
+That seems to do a bulk of the heavy lifting.
+---
+I did try to code this out after following my own
+instructions, and I missed a step (append at end of loop).
+So, this is tricky.

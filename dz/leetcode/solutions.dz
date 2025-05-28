@@ -426,3 +426,26 @@ fb return early. Iterate through the candidates, starting
 fb at the start position. Append a candidate to the combo,
 fb call the backtrack function, then pop it off again.
 fb Return the results.
+
+nn problems/46_permutations/solution
+ff How do you solve 46: permutations?
+fb Use backtracking. This is a pretty typical backtracking
+fb setup. The trick though is to have some way of checking
+fb if the current value in the loop is in the currently
+fb populated combination or not. In python, this can
+fb be done with "if nuns[i] in combo".
+
+nn problems/56_merge_intervals/solution
+ff How do you solve 56: merge intervals?
+fb First, sort the input intervals. In python, this is done
+fb automagically with `sorted()`.
+fb Set up a "last" variable, and have that be pointed to
+fb the first interval.
+fb iterate through the sorted intervals. If the start time
+fb of the current interval is LTE the end time of the last
+fb interval, update the end time of last to be the maximum
+fb end time between the last/current interval. Otherwise,
+fb append last to the output, and update last to be the
+fb current interval.
+fb At the end of the loop, append the last interval.
+fb Return the output

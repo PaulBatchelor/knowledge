@@ -1747,3 +1747,7 @@ hl https://leetcode.com/problems/validate-binary-search-tree/
 nn problems/46_permutations
 ln 46: permutations
 hl https://leetcode.com/problems/permutations/
+
+nn problems/56_merge_intervals
+ln 56: merge intervals
+hl https://leetcode.com/problems/merge-intervals/

@@ -297,3 +297,31 @@ That seems to do a bulk of the heavy lifting.
 I did try to code this out after following my own
 instructions, and I missed a step (append at end of loop).
 So, this is tricky.
+
+@2025-05-30
+@08:08 LCA (incomplete, struggled, looked at answer)
+#! dz leetcode/problems/236_lowest_common_ancestor_binary_tree
+I remember this one causing me issues, even after looking
+at the solution.
+---
+The editorial I believe enumerated the possible combinations.
+I think there were three?
+---
+It's some kind of DFS.
+---
+When you do DFS, at some point you'll run into either the
+p or q node. One of those will come first. Somehow, you'll
+need to find the other node, and determine if it's a child
+or not.
+---
+I think I'm missing some intuition here. Looking at the
+solution.
+---
+Damn, this is the one with the recursive solution that has
+"left", "right", and "mid" bools. This is familiar to me,
+but definitely not something I would have thought up.
+---
+I have to go, but next time I return to this, I will
+try to implement this without looking at the solution
+too closely. Something something recursion, return a bool.
+Left, right, mid. At least 2 means you've found the LCA.

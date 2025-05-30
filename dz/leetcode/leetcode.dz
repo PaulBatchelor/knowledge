@@ -1751,3 +1751,7 @@ hl https://leetcode.com/problems/permutations/
 nn problems/56_merge_intervals
 ln 56: merge intervals
 hl https://leetcode.com/problems/merge-intervals/
+
+nn problems/236_lowest_common_ancestor_binary_tree
+ln 236: lowest common ancestor of a binary tree
+hl https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/

@@ -12,3 +12,8 @@ hl https://web.archive.org/web/20190327000033/https://kparc.com/b/
 ln b.c
 rm site seems to be unavailable now, hence the IA link
 
+nn ksimple
+hl https://github.com/kparc/ksimple?tab=readme-ov-file
+ln k/simple is a bare minimum k
+ln interpreter for learning purposes by
+ln arthur whitney

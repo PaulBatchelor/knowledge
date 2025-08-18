@@ -1,1 +1,1 @@
-algos1.dz
+algos1/top.dz

@@ -57,6 +57,10 @@ programs and have no intuition for it currently.
 #! dz $
 I do not understand the question at the end, how these
 equations are all O(n^3).
+---
+Follow-up: It's a semantics thing. It's an upper bound, but
+it doesn't have to be the tightest upper bound. f(x) = 1
+can be O(n^3) even though it is O(1).
 
 @15:34 memory #timelog:00:08:14
 #! dz $

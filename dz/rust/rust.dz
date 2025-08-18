@@ -214,3 +214,7 @@ hl https://rust-exercises.com/
 nn succinct_data_structs
 hl https://blog.startifact.com/posts/succinct/
 ln Succinct data structures
+
+nn blinsay_reading_list
+hl https://blinsay.com/blog/rust-reading-list/
+ln Rust Reading List (Ben Linsay)

@@ -41,3 +41,7 @@ hl https://sdomi.pl/weblog/23-serenityos-realhw/
 nn littleosbook
 hl https://littleosbook.github.io/
 ln The little book about OS development
+
+nn r9
+hl https://github.com/r9os/r9
+ln R9 is a reimplementation of the plan9 kernel in Rust.

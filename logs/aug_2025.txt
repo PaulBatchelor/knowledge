@@ -57,3 +57,16 @@ programs and have no intuition for it currently.
 #! dz $
 I do not understand the question at the end, how these
 equations are all O(n^3).
+
+@15:34 memory #timelog:00:08:14
+#! dz $
+
+@15:45 glance at ungraded interview questions #timelog:00:09:47
+#! dz $
+3-sum in quadratic time, search in bitonic array, egg drop.
+---
+3-sum: for some reason I misremembered the problem and thought
+the inputs were triplets, but that doesn't make any sense?
+The memorized answer I have is "sort the array, then turn it
+into a 2sum problem with 2-pointer". But, it would be nice
+to explain how that is O(n^2) time.

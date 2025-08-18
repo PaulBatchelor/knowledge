@@ -1,0 +1,26 @@
+ns coursera/algos1/modules/02_union_find
+
+nn dynamic_connectivity
+co $ ..
+
+nn quick_union
+ln Quick Union
+co $ ..
+
+nn improvements
+co $ ..
+ln Improvements
+
+nn applications
+ln Applications
+co $ ..
+
+ns +quick_union
+nn union_command
+ln Union Command: connect two objects
+co $ ..
+co $ ?algos/union_find
+
+nn find
+ln Find/Connected Query: is there a path connecting the two objects?
+co $ ..

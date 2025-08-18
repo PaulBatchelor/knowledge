@@ -21,6 +21,7 @@ co $ ..
 nn 02_union_find
 ln Module 2: Union Find
 co $ ..
+at ol
 
 nn 03_analysis
 ln Module 3: Analysis of Algorithms
@@ -68,3 +69,11 @@ co $ ..
 
 zz -modules
 ns ..
+
+nn algos
+ln Various algorithms discussed in this course
+co $ ..
+
+nn algos/union_find
+ln The Union-Find algorithm
+co $ ..

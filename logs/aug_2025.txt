@@ -74,3 +74,7 @@ the inputs were triplets, but that doesn't make any sense?
 The memorized answer I have is "sort the array, then turn it
 into a 2sum problem with 2-pointer". But, it would be nice
 to explain how that is O(n^2) time.
+
+@17:42 Working through union find again #timelog:00:22:24
+#! dz coursera/algos1/modules/02_union_find
+I want to populate the knowledge graph. Gonna try ed again.

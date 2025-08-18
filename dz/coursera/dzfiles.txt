@@ -1,1 +1,1 @@
-algos1/top.dz
+algos1/top.dz algos1/02_union_find.dz

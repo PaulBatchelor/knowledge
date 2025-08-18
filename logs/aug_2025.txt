@@ -1,0 +1,44 @@
+@2025-08-18 First Day Unemployed (yet again)
+It's been about 4 months since I last did anything
+at all related to this knowledge graph. Job consumed my life,
+and what was left I put into trying to make life work
+in New York. I've quit my job, quit new york, and am now
+gearing up to pursue a CS degree in Boston.
+
+@10:56 Setting up Coursera Algorithms knowledge graph #timelog:00:32:32
+#! dz coursera/algos1/news
+Remembering how to use my knowledge graph.
+---
+I find myself wanting to build out the curriculum as
+a tree. This is something I've done before. Start with
+the provided structure (table of contents, course curriculumn,
+etc), and build emergent structures through connections.
+---
+Organizing myself. Going to get some slides downloaded,
+placed in a folder somewhere (not in this graph).
+---
+Hmmm, when I'm taking notes, I'm going to want to be
+able to make nodes on the fly. Flow needs to be append-only.
+I like logging here too.
+---
+It's hard to make connections beyond something you heard
+only a few minutes ago. Tying things to very big established
+concepts could work. an emergent tagging system could
+also be interesting.
+---
+Maybe there's just something called "stream" which is just
+raw stream of conciousness append-only nodes that I take
+during lectures. Later, I would go back and edit the nodes?
+
+@11:54 watching analysis of algorithms #timelog:00:34:46
+#! dz coursera/algos1/modules/03_analysis
+Observations: brute force, empirical analysis, an^b,
+log log plots, straight line, linear regression.
+---
+The review problem at the end had a table of values and
+their time, and they wanted you to pick which equation
+was the closest match. I worked it out by plugging
+in the number for each one, but the better way to have
+done it would have been to do it algorithmically. The
+model can be represented as $T(N) = aN^b$. It can be
+observed that b is 2, and a can be solved algebraically.

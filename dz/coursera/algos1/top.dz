@@ -1,0 +1,10 @@
+ns coursera
+
+nn algos1
+ln Algorithms, Part 1
+
+ns +algos1
+
+nn news
+ln News
+co $ ..

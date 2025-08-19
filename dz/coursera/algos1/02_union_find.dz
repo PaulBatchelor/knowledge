@@ -24,10 +24,6 @@ co $ ..
 
 ns +quick_union
 
-nn find
-ln Find/Connected Query: is there a path connecting the two objects?
-co $ ..
-
 ns ..
 nn dynamic_connectivity/operations
 ff What are the operations for dynamic connectivity?
@@ -66,3 +62,64 @@ nn dynamic_connectivity/find
 co $ ../operations
 co $ ..
 ln Find/Connected Query: is there a path connecting two objects?
+
+nn quick_union/data_structure
+ln Data structure: integer id[] of length N.
+ln Interpretation: id[i] is parent of i.
+co $ ..
+co $ ?quick_find/data_structure
+
+nn quick_union/find
+ln find: check if p and q have the same root.
+co $ ..
+co $ ?quick_find/find
+co $ ?dynamic_connectivity/find
+
+nn quick_union/union
+ln Union: to merge components containing p and q,
+ln set the id of p's root to the id of q's root.
+co $ ..
+co $ ?quick_find/union
+co $ ?dynamic_connectivity/union
+
+nn quick_union/find_too_expensive
+ln "find" operation too expensive
+co $ ../find
+co $ ?quick_find/union_too_expensive
+cr similar
+nn quick_find/flat_trees
+ln trees are flat, but too expensive to keep them flat
+co $ ../union_too_expensive
+
+nn quick_union/tall_trees
+ln trees can get tall
+co $ ?quick_find/flat_trees
+co $ ../find_too_expensive
+
+nn improvements/weighting
+co $ ..
+ln weighted quick-union
+co $ ../../quick_union
+cr improved quick union
+
+nn improvements/weighting/data_structure
+ln data structure: same as quick-union, but
+ln maintain extra array sz[i] to count number
+ln of objects in the tree rooted at i;
+co $ ?quick_union/data_structure
+cr similar, but with extra array to keep track of size
+
+nn improvements/weighting/find
+ln find: identical to quick-union
+co $ ?quick_union/find
+cr identical
+
+nn improvements/weighting/union
+ln Union: modify quick-union to: link root of smaller
+ln tree to larger tree, and update the sz array.
+co $ ?quick_find/union
+cr modified to link root of smaller tree to larger tree
+nn improvements/weighting/analysis
+ln running time: find takes proportional time to p and q.
+ln union takes constant time, given roots.
+ln Depth of any node x is at most lg(N).

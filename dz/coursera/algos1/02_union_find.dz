@@ -2,7 +2,14 @@ ns coursera/algos1/modules/02_union_find
 
 nn dynamic_connectivity
 co $ ..
+ff What is dynamic connectivity?
+fb Dynamic connectivity is a data structure that
+fb maintains information about the connected components
+fb of a graph.
 
+nn quick_find
+ln Quick Find
+co $ ..
 nn quick_union
 ln Quick Union
 co $ ..
@@ -16,11 +23,46 @@ ln Applications
 co $ ..
 
 ns +quick_union
-nn union_command
-ln Union Command: connect two objects
-co $ ..
-co $ ?algos/union_find
 
 nn find
 ln Find/Connected Query: is there a path connecting the two objects?
 co $ ..
+
+ns ..
+nn dynamic_connectivity/operations
+ff What are the operations for dynamic connectivity?
+fb find/connected (are two components connected?) and union (connect 2 objects)
+
+nn quick_find/data_structure
+ln Data structure: integer array id[] of length N.
+ln p and q are connected iff they have the same id
+co $ ..
+
+nn quick_find/find
+ln Find: check if p and q have the same id.
+co $ ..
+
+nn quick_find/union
+ln union: to merge components containing p and q,
+ln change all entries whos id equals id[p] to id[q].
+co $ ..
+
+nn quick_find/union_too_expensive
+co $ quick_find/union
+co $ ..
+ln The union in quick find is too expensive. It takes
+ln N^2 array accesses to process a sequence of N union
+ln commands on N objects.
+ff Why is quick find too slow?
+fb The union operation is too expensive, requiring N^2
+fb array accesses to process of N union commands on N objects.
+
+nn dynamic_connectivity/union
+co $ ../operations
+co $ ..
+ln Union: connect two objects
+
+nn dynamic_connectivity/find
+co $ ../operations
+co $ ..
+ln Find/Connected Query: is there a path connecting two objects?

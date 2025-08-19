@@ -78,3 +78,34 @@ to explain how that is O(n^2) time.
 @17:42 Working through union find again #timelog:00:22:24
 #! dz coursera/algos1/modules/02_union_find
 I want to populate the knowledge graph. Gonna try ed again.
+
+@2025-08-19
+@09:55 more union find knowledge graph-ing
+#! dz coursera/algos1/modules/02_union_find
+I'm going through growing pains with ed. It's very limiting
+not seeing the whole document. I just created a node,
+and accidentally added it to another tree.
+---
+The web browser view can be a little clumsy sometimes.
+---
+I need a way to navigate the knowledge graph like a directory,
+and also perform searches. FUSE is almost a little too
+tempting.
+---
+Anyways. back to dynamic connectivity.
+---
+I'm running into an impedence mismatch with how I'm trying
+to structure information (hierarchy, graphs), input system
+(ed, largely append-only lines and commands with only
+nearby context), and how the information is presented.
+---
+My workflow seems to work like this: knowledge is a hierarchy.
+Presentation always starts with a "big" concept, then
+smaller concepts that lead up to the "big" concept. Then
+those smaller concepts get broken down into smaller concepts,
+so on, so forth.
+---
+This union find submodule has a few sections. Right now,
+I'm looking at "quick find", which has a data structure,
+and find/union operations for dynamic connectivity.
+---

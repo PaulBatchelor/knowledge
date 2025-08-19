@@ -1,0 +1,25 @@
+PATH_PREFIX=''
+
+if [ "$#" -eq 0 ]
+then
+sqlite3 a.db <<EOM
+SELECT
+DISTINCT(SUBSTR(name, 1, INSTR(name, '/') - 1))
+FROM dz_nodes
+;
+EOM
+exit
+fi
+
+
+    PATH_PREFIX=$1
+sqlite3 a.db <<EOM
+SELECT
+substr(name, length('$PATH_PREFIX') + 2)
+AS subpath
+FROM dz_nodes
+WHERE name LIKE '$PATH_PREFIX/%'
+AND INSTR(subpath, '/') == 0
+AND length(subpath) > 0
+;
+EOM

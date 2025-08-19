@@ -124,3 +124,11 @@ like this just measures the total number of objects.
 
 @13:38 trying to hook this into the big graph
 #! dz coursera/news
+
+@15:19 working out a nodels command #timelog:00:40:23
+Given a namespace, list out nodes. do not include children
+of subgraphs.
+---
+good enough
+---
+oops not good enough. wanted to list top-level namespaces

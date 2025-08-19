@@ -69,11 +69,3 @@ co $ ..
 
 zz -modules
 ns ..
-
-nn algos
-ln Various algorithms discussed in this course
-co $ ..
-
-nn algos/union_find
-ln The Union-Find algorithm
-co $ ..

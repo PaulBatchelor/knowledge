@@ -80,7 +80,7 @@ to explain how that is O(n^2) time.
 I want to populate the knowledge graph. Gonna try ed again.
 
 @2025-08-19
-@09:55 more union find knowledge graph-ing
+@09:55 more union find knowledge graph-ing #timelog:01:15:42
 #! dz coursera/algos1/modules/02_union_find
 I'm going through growing pains with ed. It's very limiting
 not seeing the whole document. I just created a node,
@@ -109,3 +109,18 @@ This union find submodule has a few sections. Right now,
 I'm looking at "quick find", which has a data structure,
 and find/union operations for dynamic connectivity.
 ---
+Good enough stopping point. Still figuring out the best
+workflow for knowledge graphing.
+
+@12:39 continued knowledge-graphing #timelog:00:45:22
+#! dz $
+
+@13:25 weighted quick-union: weights are based on total number of items, not height?
+#! dz $/improvements/weighted
+I'm trying to grok the code, but my first assumption was that
+the weighted quick-union measured weights by tree "height",
+since that's a common enough performance metric. It looks
+like this just measures the total number of objects.
+
+@13:38 trying to hook this into the big graph
+#! dz coursera/news

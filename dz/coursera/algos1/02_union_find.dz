@@ -123,3 +123,16 @@ nn improvements/weighting/analysis
 ln running time: find takes proportional time to p and q.
 ln union takes constant time, given roots.
 ln Depth of any node x is at most lg(N).
+nn improvements/path_compression
+ln Path Compression: just after computing the root of
+ln p, set the id of each examined node to point to that root.
+nn improvements/path_compression/two_pass
+ln two-pass implementation: add a second loop to root() to
+ln set the id of each examined node to the root.
+
+nn improvements/path_compression/one_pass
+ln one-pass implementation: make every other node
+ln in path point to its grandparent (thereby halving path length)
+co $ ../two_pass
+cr compared to two pass, one pass is simpler to implement,
+cr in the Java implementation it's only one line of code

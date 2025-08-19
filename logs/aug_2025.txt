@@ -132,3 +132,10 @@ of subgraphs.
 good enough
 ---
 oops not good enough. wanted to list top-level namespaces
+
+@16:07 (hopefully) finish up notes #timelog:00:16:40
+#! dz coursera/algos1/modules/02_union_find
+too much too mind today trying to reduce friction for the
+mind map.
+---
+Okay, I think that's good enough for now.

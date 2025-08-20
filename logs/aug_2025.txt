@@ -139,3 +139,50 @@ too much too mind today trying to reduce friction for the
 mind map.
 ---
 Okay, I think that's good enough for now.
+
+@18:31 how am I going to work on these problemsets? #timelog:00:10:30
+#! dz coursera/algos1
+There are these open response no-credit interview questions.
+all they have is this giant textbox and you can put whatever
+you want in it and it will grade 100%. I want to make
+these problems more enriching than just grinding for hours
+meaninglessly struggling with the basics.
+---
+I sort of did 3sum by talking about it in a round-about way
+based on how I did it on leetcode. But, I felt panicked
+and rushed.
+---
+I think what I need to do, is learn how to sit with these
+problems for a while, and progressively contribute to them.
+Develop a chain of thought, kind of what I am doing here
+with the logging. Being able to document how I think about
+a problem, and then spend time later to review that thought
+process, will hopefully enable me to do better with these
+types of problems?
+
+@18:43 setting up initial scaffolding for percolation assignment #timelog:00:03:22
+#! dz coursera/algos1/modules/02_union_find/percolation_assignment
+nvm. after dinner?
+
+@19:44 continued boilerplate and setup #timelog:00:40:19
+#! dz coursera/algos1/modules/02_union_find/percolation_assignment
+There's going to be some growing pains getting java to work
+I can already tell. Downloading intellij currently (1.7 gigs? gulp)
+for mac. Hoping that I can get away with neovim.
+---
+nice, it looks like the system installed CLI stuff that
+I can run from the terminal.
+---
+Oh! good. there's a project file. I managed to find it.
+Maybe I just stick to IntelliJ for this one. Seems like
+the most frictionless path. I'm glad I have a Mac? this would
+have been murder for my weird Linux laptop.
+---
+Got vim working with IntelliJ now. Fingers feel a bit more
+comfortable now.
+---
+well, I got some initial boilerplate code set up, things
+are put into git. feels like some progress, I'm fighting
+the computer. I think I am in a good place to actually
+start thinking about the problem itself. BUT, I will
+put that aside for now.

@@ -136,3 +136,6 @@ ln in path point to its grandparent (thereby halving path length)
 co $ ../two_pass
 cr compared to two pass, one pass is simpler to implement,
 cr in the Java implementation it's only one line of code
+
+nn percolation_assignment
+ln percolation assignment

@@ -1,0 +1,43 @@
+ns palestrina
+
+nn stile_antico
+ln Stile Antico, The Prince Of Music
+ln concert on Sunday, March 29th, 7:30PM
+ln Church of St. Mary the Virgin
+at ol
+
+ns +stile_antico
+
+nn palestrina_circut_cervus
+ln Palestrina: "Circut Servus"
+
+nn the_papal_chapel
+
+ns +the_papal_chapel
+
+nn prez_salve_regina
+ln Josquin Des Prez: "Salve Regina"
+
+nn arcadelt_pater_noster
+ln Jacques Arcadelt: "Pater Noster"
+
+nn palestrina_tu_es_petrus
+ln Palestrina: Tu Es Petrus
+
+ns ..
+
+nn the_counter_reformation
+ns +the_counter_reformation
+
+nn palestrina_nigra_sum_sed_formosa
+ln Palestrina: "Nigra sum sed Formosa"
+
+nn victoria_trahe_me_post_te
+ln Tomas Luis de Victoria: Trahe Me Post Te
+ns ..
+
+nn in_praise_of_music
+
+nn palestrinas_rich_legacy
+
+ns ..

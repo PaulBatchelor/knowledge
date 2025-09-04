@@ -83,3 +83,9 @@ and all open would percolate. With any luck, this should
 be the implementation. What I'll have to do now is
 set up the PercolationStats program, and check and see
 if it works.
+
+@13:29 online workshop #bumet #timelog:00:14:54
+
+@15:19 online workshop continued #timelog:00:02:10
+
+@15:22 start the sexual harassment seminar #bumet #timelog:00:45:19

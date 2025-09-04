@@ -119,7 +119,7 @@ end of the function.
 @2025-04-20
 
 @10:41 Looking at b
-#! dz/APL/b_study
+#! dz APL/b_study
 can't get it to compile. oh well
 ---
 the guide provides an overview of each of the

@@ -1,6 +1,6 @@
 ns palestrina
 
-nn stile_antico
+nn stile_antico_2025
 ln Stile Antico, The Prince Of Music
 ln concert on Sunday, March 29th, 7:30PM
 ln Church of St. Mary the Virgin
@@ -34,10 +34,44 @@ ln Palestrina: "Nigra sum sed Formosa"
 
 nn victoria_trahe_me_post_te
 ln Tomas Luis de Victoria: Trahe Me Post Te
+
+nn palestrina_super_flumina_babylonis
+ln Palestrina: Super flumina Babylonis
+
+nn palestrina_missa_papae_marcelli_credo
+ln Palestrina: Missa Papae Marcelli: Credo
 ns ..
 
 nn in_praise_of_music
+ns +in_prase_of_music
+
+nn palestrina_cantantibus_organis
+ln Palestrina: "Cantantaibus organis"
+
+nn palestrina_exsultate_deo
+ln Palestrina: "Exsultate Deo"
+
+nn lassus_musica_dei_donum
+ln Orlande de Lassus: "Musica Dei donum"
+
+ns ..
 
 nn palestrinas_rich_legacy
+ns +palestrinas_rich_legacy
+
+nn anerio_christus_factus_est
+ln Felice Anerio: "Christus factus est"
+
+nn allegri_christus_resurgens
+ln Gregorio Allegri: "Christus Resurgens"
+
+nn hoad_a_gift_of_heaven
+ln Cheryl Frances-Hoad: "A Gift of Heaven (2024)" US premiere
+rm Commissioned for this program
+
+nn palestrina_laudate_dominum_a_12
+ln Palestrina: "Laudate Dominum a 12"
+
+ns ..
 
 ns ..

@@ -1,0 +1,33 @@
+@2025-09-04 Settling into Newton. First day of classes
+I arrived in Newton last Saturday, and have been setting
+things up for the long haul. I finally have enough of a
+workstation to get started.
+
+@08:24 settling in, setting up knowledge
+Today is my first day at my desk. Getting this ready
+to watch lecture videos. I am behind.
+
+@08:34 now, where was I
+#! dz coursera/algos1/news
+we are behind on problems. my percolation assignment is
+very overdue.
+---
+For module 3, I watched the video, but I did not take any
+notes. Or at least, I didn't seem to transcribe anything
+for the knowledge graph.
+
+@08:47 ugh. I need to see my messages. tool mind strikes again
+#! dz coursera/algos1/news
+Given a node, list the messages associated with that node.
+---
+Infrastructure pains. How do I get these logs built with
+just this knowledge graph. I guess for now we can't. Seems
+to build quickly enough.
+---
+logzet can build all my logs, apparently. That's cool.
+Now to figure out how to get the query right.
+---
+Uh-oh. Entries only have a date, but no time.
+---
+Got a query readable enough for now. Going to turn this
+into a script.

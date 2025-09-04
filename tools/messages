@@ -1,0 +1,16 @@
+if [ "$#" -eq 0 ]
+then
+    echo "Usage: $0 NODE"
+    exit 1
+fi
+
+sqlite3 a.db <<EOM
+.mode line
+SELECT node, day, title, content FROM lz_connections
+INNER JOIN lz_entries ON lz_entries.id = lz_connections.id
+INNER JOIN lz_blocks ON lz_blocks.parent = lz_entries.id
+WHERE
+node LIKE '$1'
+ORDER BY lz_entries.id, lz_blocks.id
+;
+EOM

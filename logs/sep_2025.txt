@@ -31,3 +31,55 @@ Uh-oh. Entries only have a date, but no time.
 ---
 Got a query readable enough for now. Going to turn this
 into a script.
+
+@09:28 how many days? #longwalk #timelog:00:29:00
+I think it's hard to understand time.
+---
+I am beginning a journey. A long one. Well, it feels long
+right now. This is the start. The end is somewhere around
+2027. At that point, I will have finished up this masters
+degree, and with any luck, will have found some stability.
+---
+I was going to call this "The Long Haul", but that's a little
+cliche. I'm going to call this thing "The Long Walk". I like
+walking. Also, these things take one step at a time. That's
+really the only way to think about it without going insane.
+One step at a time. But also walking towards a horizon.
+---
+I figured endpoint could be September 1st, 2027. I've written
+a little script to calculate the days until then. 726 days.
+That's about 103 weeks. I'm hoping on average to pump out
+about 4 hours a day of work, 6 days a week. So, that's about
+2,472 hours. Let's round that down to 2400 hours to give
+some breathing room. That's 2400 * 60 minutes is 1.44 * 10^5
+minutes, which is 8.64 * 10^6 seconds.
+---
+I unfortunately did not start timing things yet, but I guess
+I should. I want these hours logged.
+
+@10:18 setting up my note-taking spot #timelog:00:15:00
+
+@10:34 Percolation #timelog:01:29:21
+#! dz coursera/algos1/modules/02_union_find/percolation_assignment
+There are two classes to fill out. One models a percolation
+system. The other runs that model several times and performs
+statistics.
+---
+Might be best to go bottoms-up.
+---
+Setting up some test code. Looks like there's an option main()
+function that you can use to write little test functions.
+---
+There's also a PercolationVisualizer class? Seems to be
+included. It is not mentioned in the assignment.
+---
+I am not going to worry about that one. I think I have
+enough in place coding-wise that I can just think about
+the problem itself again.
+---
+Got some initial code working for the Percolation. As
+a sanity check, I made sure all closed wouldn't percolate,
+and all open would percolate. With any luck, this should
+be the implementation. What I'll have to do now is
+set up the PercolationStats program, and check and see
+if it works.

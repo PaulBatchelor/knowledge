@@ -73,4 +73,5 @@ dz/net
 dz/APL.dz
 dz/forth.dz
 dz/coursera
+dz/stile_antico.dz
 dz/zzz

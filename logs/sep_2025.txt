@@ -89,3 +89,33 @@ if it works.
 @15:19 online workshop continued #timelog:00:02:10
 
 @15:22 start the sexual harassment seminar #bumet #timelog:00:45:19
+
+@18:00 CS-248 BU MET #timelog:02:45:00 #bumet
+
+@2025-09-05 MFA day?
+@10:17 What the hell was that last night #bumet #timelog:00:08:42
+That was probably the worst class I've ever had in my life.
+Professor came in 25 minutes late, spent the first hour
+talking about his life, went over the incredibly unhelpful
+syllabus, and then hastily began explaning boolean logic.
+Also, he yelled at a student. He was asking for clarification on
+propositional statements, and corrected the professor by
+citing the textbook directly. It was unreal, and it was cold
+and I was shivering the whole time.
+---
+I recorded the outburst. Talked to the student after class,
+asked him if it was okay if I reported it. They didn't want
+any trouble. I am going to respect that. For now.
+---
+On the plus side, the class looks passable if I keep my head
+down. Unfortunately, I am going to have to work extra hard if I
+am going to learn anything. I'm too old to simply coast. That's
+not how the real world works.
+---
+Discrete math is one of the gaps in my knowledge,
+and it's unfortunate that I've been placed in a class that
+does not want me to learn this. Hopefully, I can keep my head
+down, and get through this class.
+
+@10:29 let's get OCW set up #timelog:00:20:29
+#! dz maths_for_cs_MIT/news

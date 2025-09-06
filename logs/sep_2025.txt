@@ -119,3 +119,9 @@ down, and get through this class.
 
 @10:29 let's get OCW set up #timelog:00:20:29
 #! dz maths_for_cs_MIT/news
+
+@19:45 TAOCP vol 1 reading #timelog:00:54:04
+
+@2025-09-06 Day 6
+@13:27 Lecture 1: predicates, sets and proofs #timelog:01:24:50
+#! dz maths_for_cs_MIT/lectures/01_predicates_sets_proofs

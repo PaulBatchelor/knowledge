@@ -136,3 +136,24 @@ down, and get through this class.
 #! dz $
 
 @15:06 finishing up #timelog:00:21:59
+#! dz $
+
+@18:29 examining assignment #timelog:00:15:53
+#! dz coursera/algos1/modules/04_stacks_queues/assignment
+Two asks. build a deque. build a randomized queue.
+---
+Dequeue is probably going to be some sort of linked list.
+I don't see this being too difficult to figure out.
+---
+each operation for deque must be constant worst-case time.
+linked list should do that.
+---
+The randomized queue has very specific constraints for
+space and time, with an emphasis on amortized costs.
+---
+48n + 192 bytes memory is the max space for randomized queue.
+---
+cost needs to be amortized to cm for worst case, where c
+is constant and m is the number of operations.
+
+@18:48 finish up nodehyperlink

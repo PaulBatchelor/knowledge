@@ -1,0 +1,12 @@
+if [ "$#" -lt 1 ]
+then
+    echo "Usage $0 node"
+fi
+
+sqlite3 a.db <<EOM
+.mode tab
+SELECT name, hyperlink FROM dz_hyperlinks
+INNER JOIN dz_nodes ON dz_nodes.id = dz_hyperlinks.node
+WHERE
+dz_nodes.name LIKE '$1';
+EOM

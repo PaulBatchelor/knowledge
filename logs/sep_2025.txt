@@ -125,3 +125,14 @@ down, and get through this class.
 @2025-09-06 Day 6
 @13:27 Lecture 1: predicates, sets and proofs #timelog:01:24:50
 #! dz maths_for_cs_MIT/lectures/01_predicates_sets_proofs
+
+@21:55 Random Gesture Thoughts Brainstorm while watching Rush Hour 2 #timelog:00:22:39 (D11)
+
+@2025-09-07 Day 7
+@08:31 Module 4: stacks and queues. lecture #timelog:00:18:38
+#! dz coursera/algos1/modules/04_stacks_queues
+
+@13:44 back at it #timelog:00:35:19
+#! dz $
+
+@15:06 finishing up #timelog:00:21:59

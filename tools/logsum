@@ -31,7 +31,8 @@ PRINTF('%02d:%02d:%02d',
     total_seconds / 3600,
     (total_seconds % 3600) / 60,
     total_seconds % 60 
-)
+),
+PRINTF('%.02f', total_seconds / (60.0 * 15))
 FROM seconds_per_day
 ;
 EOM

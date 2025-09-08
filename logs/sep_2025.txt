@@ -207,3 +207,11 @@ any better way to approach this if you want unified randomness.
 #! dz coursera/algos1/modules/02_union_find/percolation_assignment
 This code seems to work. I have not yet submitted it yet
 though.
+
+@15:22 add units in 15 minute cylces to logsum #timelog:00:05:21
+As of writing, I've hit 9 cycles. Tonight, my lecture will
+last 2 hours, 45 minutes, 11 cycles. I'll get 20 cycles.
+---
+My goal is to try to hit 15-16 cycles every day. Later,
+I'll try to break those cycles down further into type
+of activity.

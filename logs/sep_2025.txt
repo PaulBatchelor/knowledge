@@ -180,3 +180,12 @@ GSG responsibilites (C11)
 @10:23 making the knowledge graph a little less fussy #timelog:00:07:53
 This might all turn into a justfile at some point. I got
 so many one-liner shell scripts.
+
+@10:40 TAOCP knowledge graph setup #timelog:00:19:53
+#! dz TAOCP/news
+We might already have some things in place.
+---
+I needed to import my old graph from my old repo. The
+TeX equations probably were not imported properly (had
+to turn them into dagzet attributes, attributes don't have
+multiline?). It builds.

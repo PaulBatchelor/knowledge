@@ -1,0 +1,38 @@
+NODESTR='%'
+
+if [ "$#" -gt 0 ]
+then
+    NODESTR=$1
+fi
+
+sqlite3 a.db <<EOM
+.mode tabs
+WITH
+times as ( 
+SELECT id,
+CAST(SUBSTR(tag, 9, 2) AS INTEGER) * 3600 + 
+CAST(SUBSTR(tag, 12, 2) AS INTEGER) * 60 + 
+CAST(SUBSTR(tag, 15, 2) AS INTEGER) AS seconds
+
+FROM lz_tags
+WHERE
+tag LIKE 'timelog%'
+),
+
+seconds_per_node as (
+SELECT node, SUM(seconds) as total_seconds from times
+INNER JOIN lz_connections on times.id = lz_connections.id
+WHERE node LIKE '$NODESTR'
+GROUP BY node
+)
+
+SELECT node,
+PRINTF('%02d:%02d:%02d',
+    total_seconds / 3600,
+    (total_seconds % 3600) / 60,
+    total_seconds % 60 
+)
+FROM seconds_per_node
+;
+;
+EOM

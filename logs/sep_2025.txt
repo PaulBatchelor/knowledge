@@ -169,3 +169,6 @@ on that, and get an amalgamation by day. The aggregation
 only happens on entries.
 ---
 Well, it works. I have some information. Calling it "logsum".
+
+@20:52 Now I want to do it by node. #timelog:00:05:59
+Done. This is helpful.

@@ -194,3 +194,16 @@ multiline?). It builds.
 #! dz TAOCP/vol1/ch01/02
 
 @12:18 data entry #timelog:00:01:36
+
+@12:26 some random thoughts on random queue (pardon the pun) #timelog:00:04:21
+#! dz coursera/algos1/modules/04_stacks_queues/assignment
+Insertion can be O(1),
+and retrieval could be O(n). Retrieval could work by generating
+a number between O and N, diving that many times into the
+list, and popping it from that list. I don't think there's
+any better way to approach this if you want unified randomness.
+
+@14:21 back to percolation #timelog:00:53:34
+#! dz coursera/algos1/modules/02_union_find/percolation_assignment
+This code seems to work. I have not yet submitted it yet
+though.

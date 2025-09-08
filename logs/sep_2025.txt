@@ -172,3 +172,11 @@ Well, it works. I have some information. Calling it "logsum".
 
 @20:52 Now I want to do it by node. #timelog:00:05:59
 Done. This is helpful.
+
+@2025-09-08 Day 8
+@09:59 gesture brainstorming #gesture #timelog:00:15:17
+GSG responsibilites (C11)
+
+@10:23 making the knowledge graph a little less fussy #timelog:00:07:53
+This might all turn into a justfile at some point. I got
+so many one-liner shell scripts.

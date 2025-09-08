@@ -1,0 +1,2 @@
+./tools/dzimport.py dzfiles.txt a.db
+./tools/genlogs.sh

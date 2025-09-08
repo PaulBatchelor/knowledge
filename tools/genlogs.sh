@@ -9,5 +9,6 @@ DROP TABLE IF EXISTS lz_tags;
 EOM
 while read -r LOG
 do
+    echo $LOG
     logzet $LOG | sqlite3 a.db
 done < logfiles.txt

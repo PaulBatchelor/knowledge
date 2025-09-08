@@ -1,0 +1,109 @@
+ns maths_for_cs_MIT
+
+nn news
+
+nn syllabus
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/pages/syllabus/
+
+nn lectures
+at ol
+
+ns +lectures
+
+nn 01_predicates_sets_proofs
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture01-2024feb06_mp4/
+co $ ..
+
+nn 02_contradiction_induction
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture02-2024feb09_mp4/
+co $ ..
+
+nn 03_casework_and_strong_induction
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture03-2024feb20_v4_mp4/
+co $ ..
+
+nn 04_state_machines
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture04-2024feb15_v4_mp4/
+co $ ..
+
+nn 05_sums
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture05-2024feb22_mp4/
+co $ ..
+
+nn 06_asymptotics
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture06-2024feb27_mp4/
+co $ ..
+
+nn 07_recurrences
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture07-2024feb29_mp4/
+co $ ..
+
+nn 08_divisibility
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture08-2024mar05_mp4/
+co $ ..
+
+nn 09_modular_arithmetic
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture09-2024mar12_mp4/
+co $ ..
+
+nn 10_cryptography
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture10-2024mar14_mp4/
+co $ ..
+
+nn 11_graphs_and_coloring
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture11-2024mar19_mp4/
+co $ ..
+
+nn 12_matching
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture12-2024mar21_mp4/
+co $ ..
+
+nn 13_connectivity_and_trees
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture13-2024apr02_mp4/
+co $ ..
+
+nn 14_digraphs_and_DAGs
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture14-2024apr04_mp4/
+co $ ..
+
+nn 15_relations_and_counting
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture15-2024apr09_mp4/
+co $ ..
+
+nn 16_counting_techniques
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture16-2024apr11_mp4/
+co $ ..
+
+nn 17_more_counting_techniques
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture17-2024apr16_mp4/
+co $ ..
+
+nn 18_probability
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture18-2024apr23_mp4/
+co $ ..
+
+nn 19_conditional_probability
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture19-2024apr25_mp4/
+co $ ..
+
+nn 20_independence
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture20-2024apr30_mp4/
+co $ ..
+
+nn 21_random_variables
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture21-2024may02_mp4/
+co $ ..
+
+nn 22_expectation
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture22-2024may07_mp4/
+co $ ..
+
+nn 23_expectation_variance
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture23-2024may09_mp4/
+co $ ..
+
+nn 24_large_deviations
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture24-2024may14_mp4/
+co $ ..
+
+ns ..

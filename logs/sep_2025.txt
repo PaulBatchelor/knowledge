@@ -94,6 +94,7 @@ if it works.
 
 @2025-09-05 MFA day?
 @10:17 What the hell was that last night #bumet #timelog:00:08:42
+#! dz csmet/CS248
 That was probably the worst class I've ever had in my life.
 Professor came in 25 minutes late, spent the first hour
 talking about his life, went over the incredibly unhelpful
@@ -217,3 +218,33 @@ I'll try to break those cycles down further into type
 of activity.
 
 @18:00 BU MET CS 342 #bumet #timelog:02:45:00
+
+@2025-09-09 Day 9
+@09:14 Morning organizing, zybooks setup #timelog:00:42:24 #logistics
+
+@10:24 walk in woods #walking #timelog:00:36:18
+
+@11:20 BU Met homework (discrete math) #timelog:01:21:34
+#! dz csmet/CS248/discrete_math_zybook/toc/01_logic
+#! dz $/01_propositions_and_logical_operators
+1.1 Propositions and Logical Operators
+---
+I've set up the initial TOC in my knowledge graph. I did
+this because I also want to build an emegent glossary.
+This textbook is made up of keywords, and those are
+ripe for flashcards.
+---
+oof. 30 minutes later, I've barely read anything and it's
+all been setup. This better be worth it.
+
+@14:39 back to my homework #timelog:00:53:23
+#! dz $/02_evaluating_compound_propositions
+Does this website work on my thinkpad? let's find out.
+okay seems to work. Back to my mac.
+---
+jesus these are taking forever
+
+@15:33 conditional statements
+#! dz $/03_conditional_statements
+ADD 6
+

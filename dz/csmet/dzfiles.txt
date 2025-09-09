@@ -1,0 +1,2 @@
+top.dz
+cs248/discrete_math_zybook.dz

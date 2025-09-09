@@ -215,3 +215,5 @@ last 2 hours, 45 minutes, 11 cycles. I'll get 20 cycles.
 My goal is to try to hit 15-16 cycles every day. Later,
 I'll try to break those cycles down further into type
 of activity.
+
+@18:00 BU MET CS 342 #bumet #timelog:02:45:00

@@ -244,7 +244,19 @@ okay seems to work. Back to my mac.
 ---
 jesus these are taking forever
 
-@15:33 conditional statements
+@15:33 conditional statements #timelog:00:55:00
 #! dz $/03_conditional_statements
-ADD 6
 
+@20:55 scanning notes #archiving #timelog:00:58:41
+remember how my setup worked. Most of the time was remembering
+and building some new tooling.
+
+@2025-09-10 Day 10
+@11:00 Pay my BU Met Bill #bumet #timelog:00:03:44
+Okay payment sent.
+
+@11:04 back to math
+#! dz csmet/CS248/discrete_math_zybook/toc/01_logic
+
+@11:07 1.4 logical equivalence #timelog:00:55:43
+#! dz $/04_logical_equivalence

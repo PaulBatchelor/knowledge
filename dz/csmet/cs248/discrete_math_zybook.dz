@@ -37,6 +37,9 @@ ln 1.2: Evaluating Compound Propositions
 nn 03_conditional_statements
 ln 1.3: Conditional Statements
 
+nn 04_logical_equivalence
+ln 1.4: Logical Equivalence
+
 ns ..
 
 nn glossary/logic
@@ -181,7 +184,7 @@ ln Inverse statement: (!p, !q)
 ff Give the contrapositive statement of "If it is raining today, the game will be cancelled"
 fb If it is not raining today, the game will not be cancelled.
 
-nn glossary/biconditional_operation #timelog:00:51:41
+nn glossary/biconditional_operation
 co $ ?03_conditional_statements
 ln Biconditional Statement: denoted with double-arrow. 
 ln "p if and only if q". True when they have the same value,
@@ -190,3 +193,42 @@ ff What is a Biconditional Statement?
 fb Biconditional Statement: denoted with double-arrow. 
 fb "p if and only if q". True when they have the same value,
 fb false when they are different.
+
+nn glossary/tautology
+co $ ?04_logical_equivalence
+ln Tautology: a compound proposition that is always true,
+ln regardless of the truth value of the 
+ln individual propositions that occur in it.
+ff What is a tautology?
+fb Tautology: a compound proposition that is always true,
+fb regardless of the truth value of the 
+fb individual propositions that occur in it.
+
+nn glossary/contradiction
+co $ ?04_logical_equivalence
+ln Contradiction: a compound proposition that is always false,
+ln regardless of the truth value of the individual propositions
+ln that occur in it.
+ff What is a contradiction?
+fb Contradiction: a compound proposition that is always false,
+fb regardless of the truth value of the individual propositions
+fb that occur in it.
+co $ ../tautology
+
+nn glossary/logically_equivalent
+co $ ?04_logical_equivalence
+ln Logical Equivalence: when two compound propositions have
+ln the same truth value, regardless of the truth values of
+ln their individual propositions.
+ff What does it mean for something to be logically equivalent?
+fb Two compound propositions are said to be logically equivalent
+fb when they have the same truth value, regardless of the
+fb truth values in their individual propositions.
+
+nn glossary/de_morgans_laws
+co $ ?04_logical_equivalence
+ln De Morgan's Laws: laws that show how to correctly distribute
+ln a negation operation inside a parenthesized expression.
+ff What are De Morgan's Laws?
+fb De Morgan's Laws: laws that show how to correctly distribute
+fb a negation operation inside a parenthesized expression.

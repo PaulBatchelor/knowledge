@@ -48,6 +48,58 @@ ln 1.4: Logical Equivalence
 nn 05_laws_propositional_logic
 ln 1.5: Laws of Propositional Logic
 
+ns +05_laws_propositional_logic
+
+nn idempotent
+ln Idempotent Laws
+td Create Equation
+
+nn associative
+ln Associative laws
+td Create Equation
+
+nn commutative
+ln Commutative Laws
+td Create Equation
+
+nn distributive
+ln Distributive Laws
+td Create Equation
+
+nn identity
+ln Identity Laws
+td Create Equation
+
+nn domination
+ln Domination Laws
+rm AKA "annihilator"
+td Create Equation
+
+nn double_negation
+ln Double Negation Laws
+td Create Equation
+
+nn complement
+ln Complement Laws
+td Create Equation
+
+nn de_morgans
+ln De Morgan's Law
+td Create Equation
+
+nn absorption
+ln Absorption Laws
+td Create Equation
+
+nn conditional_identities
+ln Conditional Identities
+td Create Equation
+rm AKA "material conditional" or "material biconditional"
+
+zz -05_laws_propositional_logic
+ns ..
+
+
 nn 06_predicates_and_quantifiers
 ln 1.6: Predicates and Quantifiers
 
@@ -340,3 +392,7 @@ nn glossary/null_qualification_rule
 td define
 ln Null Qualification Rule
 co $ ?10_more_nested_quantifiers
+
+nn refs/boolean_algebra_laws
+hl https://en.wikipedia.org/wiki/Boolean_algebra#Laws
+co $ ?05_laws_propositional_logic

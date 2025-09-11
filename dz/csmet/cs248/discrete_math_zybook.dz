@@ -60,6 +60,9 @@ ln 1.8: De Morgan's Law for Quantified Statements
 nn 09_nested_quantifiers
 ln 1.9: Nested Quantifiers
 
+nn 10_more_nested_quantifiers
+ln 1.10: More Nested Quantifiers
+
 ns ..
 
 nn glossary/logic
@@ -330,4 +333,10 @@ fb predicate.
 
 nn refs/order_of_quantifiers
 hl https://en.wikipedia.org/wiki/Quantifier_(logic)#Order_of_quantifiers_(nesting)
+ln Order of Quantifiers (Wikipedia)
+co $ ?09_nested_quantifiers
 
+nn glossary/null_qualification_rule
+td define
+ln Null Qualification Rule
+co $ ?10_more_nested_quantifiers

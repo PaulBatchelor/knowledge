@@ -292,7 +292,7 @@ notation being stacked up against natural language.
 @01:29 Nested Quantifiers #timelog:00:17:00
 #! dz $/09_nested_quantifiers
 
-@08:30 more nested quantifiers #timelog:01:47:50
+@08:30 nested quantifiers continued #timelog:01:47:50
 #! dz $/09_nested_quantifiers
 The "two player" analogy was confusing to me early this
 morning. Let's see if it gets any better.
@@ -331,3 +331,6 @@ De Morgan's law on nested quantified statements. It feels
 like I'm missing some intermediate proof. It goes from
 $\lnot \forall x \forall y$ to $\exists x \lnot \forall y$,
 and I don't know if that was formally stated anywhere.
+
+@11:30 more nested quantifiers #timelog:00:31:06
+#! dz $/10_more_nested_quantifiers

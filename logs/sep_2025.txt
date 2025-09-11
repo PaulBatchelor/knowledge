@@ -334,3 +334,6 @@ and I don't know if that was formally stated anywhere.
 
 @11:30 more nested quantifiers #timelog:00:31:06
 #! dz $/10_more_nested_quantifiers
+
+@12:42 finish up the challenge #timelog:00:13:08
+#! dz $/10_more_nested_quantifiers

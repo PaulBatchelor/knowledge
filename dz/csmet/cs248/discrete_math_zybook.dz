@@ -6,6 +6,11 @@ ln Discrete Math Zybook
 ns +discrete_math_zybook
 
 nn glossary
+ln Glossary of keywords and terms
+
+nn refs
+ln External references
+
 nn toc
 at ol
 ln Table of Contents
@@ -322,3 +327,7 @@ ff What is a nested quantifier?
 fb Nested Quantifier: A logical expression with more than
 fb one quantifier that binds different variables in the same
 fb predicate.
+
+nn refs/order_of_quantifiers
+hl https://en.wikipedia.org/wiki/Quantifier_(logic)#Order_of_quantifiers_(nesting)
+

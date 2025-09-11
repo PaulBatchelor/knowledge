@@ -291,3 +291,43 @@ notation being stacked up against natural language.
 
 @01:29 Nested Quantifiers #timelog:00:17:00
 #! dz $/09_nested_quantifiers
+
+@08:30 more nested quantifiers #timelog:01:47:50
+#! dz $/09_nested_quantifiers
+The "two player" analogy was confusing to me early this
+morning. Let's see if it gets any better.
+---
+If I "sound out" the math $\forall x \exists y (x + y = 0)$,
+it reads "for all x, there exists a y where x + y = 0".
+When I read $\exists x \forall y (x + y = 0)$, it reads
+"there exists an x for all of y where x + y = 0". First one
+is true, second one is false.
+---
+In the player analogy, the "universal player" goes first,
+selecting a value, trying to make it false. The "existential
+player" tries to make it true, so it can provide an edge
+case. The "existential player" chooses a value, trying to make it
+true. The "universal player" chooses a value, trying to make
+it false.
+---
+I'm on wikipedia, and this was helpful:
+"For every natural number, there exists a number s such
+that $s = n^2$" which is true. When you reverse the order
+of quantifiers, it becomes "There exists a natural number
+s such that for every natural number n, $s = n^2$", which
+is false because it implies that there is a single number
+"s" that is the square of *every* natural number.
+---
+So, going back to the previous example. The reason why
+The statement "there exist an integer x for all y where
+x + y = 0" doesn't work is because a single value of
+x would need to work for all y in order to be true.
+---
+I'm trying to use this player analogy, and it's breaking
+down in this participation activity. They aren't using
+it there in the hints. I'm getting every answer wrong.
+---
+De Morgan's law on nested quantified statements. It feels
+like I'm missing some intermediate proof. It goes from
+$\lnot \forall x \forall y$ to $\exists x \lnot \forall y$,
+and I don't know if that was formally stated anywhere.

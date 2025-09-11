@@ -1,0 +1,145 @@
+ns TAOCP
+gr Donald E. Knuth: The Art of Computer Programming
+ns TAOCP/vol2
+gr Donald E. Knuth: The Art of Computer Programming, Volume 2
+ns TAOCP/vol2/ch03
+gr Donald E. Knuth: The Art of Computer Programming, Volume 2, Chapter 3
+ns TAOCP/vol2/ch03/01
+gr 3.1: Introduction
+
+nn usefulness_of_random_numbers
+ln Usefulness of Random Numbers
+
+nn simulation
+ln simulation
+co $ usefulness_of_random_numbers
+
+nn decision_making
+ln Decision Making
+co $ usefulness_of_random_numbers
+
+nn numerical_analysis
+ln Numerical Analysis
+co $ usefulness_of_random_numbers
+
+nn computer_programming
+ln Computer Programming
+co $ usefulness_of_random_numbers
+
+nn cryptography
+ln Cryptography
+co $ usefulness_of_random_numbers
+
+nn aesthetics
+ln Aesthetics
+co $ usefulness_of_random_numbers
+
+nn recreation
+ln Recreation
+co $ usefulness_of_random_numbers
+
+nn randomized_algorithms
+ln Randomized Algorithms
+co $ computer_programming
+
+nn seq_rand_num
+ln Sequence of random independent numbers
+
+nn distribution
+ln Distribution
+co $ seq_rand_num
+
+nn uniform
+ln Uniform
+co $ distribution
+
+nn equally_probable
+ln Each number equally probable
+co $ uniform
+cr description
+
+nn sequence_of_sequences
+ln Sequence of Sequences
+co $ seq_rand_num
+
+nn random_number_methods
+ln Methods to produce random numbers
+
+nn mechanical
+ln mechanical
+co $ random_number_methods
+
+nn computer
+ln computer
+co $ random_number_methods
+
+nn random_tables
+ln Random Tables
+co $ mechanical
+co $ computer
+
+nn arithmetic
+ln Arithmetic
+co $ computer
+
+nn neumann_middle_square
+ln Von Neumann's "Middle-square" method
+co $ arithmetic
+
+nn deterministic
+ln Deterministic
+co $ neumann_middle_square
+
+nn pseudorandom
+ln Pseudorandom or Quasi-random
+co $ deterministic
+
+nn appear_random
+ln only appear to be random
+co $ pseudorandom
+
+nn poor_random_source
+ln Comparatively poor source of random numbers
+co $ neumann_middle_square
+
+nn dont_trust_rng_without_testing
+ln middle-square method can give results, but it's
+ln dangerous to put much faith into until after
+ln elaborate computations have been performed
+co $ neumann_middle_square
+cr moral of the story
+rm The context here is that many people tried different
+rm variations of the middle-square method, and managed
+rm to eventually find one that worked really well. But
+rm it took lots of testing and "elaborate computations"
+rm to get it there.
+
+nn algo_k
+ln Alorithm K
+
+nn super_random
+ln "super-random" number generator
+co $ algo_k
+
+nn not_very_good
+ln Not very good at all
+co $ algo_k
+
+nn knuth_1959
+ln Constructed by Knuth in 1959
+co $ algo_k
+
+nn complicated
+ln Complicated
+co $ algo_k
+
+nn converges_6065038420
+ln Coincidentally converges on 6065038420 and transforms
+ln back into itself (AKA loops).
+co $ algo_k
+
+nn dont_use_random_methods
+ln Random Number Generators should not be generated
+ln with a random method chosen at random
+co $ algo_k
+cr lesson learned

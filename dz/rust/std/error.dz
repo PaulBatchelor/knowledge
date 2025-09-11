@@ -1,0 +1,5 @@
+ns rust/std/modules/error
+
+nn structs
+hl https://doc.rust-lang.org/std/error/index.html#structs
+co $ ..

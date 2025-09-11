@@ -4,4 +4,29 @@ rust.dz std.dz std/modules.dz
 std/alloc.dz std/any.dz std/array.dz std/ascii.dz
 std/borrow.dz std/boxed.dz std/backtrace.dz
 std/cell.dz std/char.dz std/cmp.dz std/collections.dz
+std/env.dz std/error.dz std/ffi.dz std/fmt.dz std/fs.dz
+std/future.dz std/hash.dz
+std/io.dz
+std/iter.dz
+std/marker.dz
+std/mem.dz
+std/net.dz
+std/num.dz
+std/ops.dz
+std/option.dz
+std/panic.dz
+std/path.dz
+std/process.dz
+std/pin.dz
+std/ptr.dz
+std/rc.dz
+std/result.dz
+std/slice.dz
+std/str.dz
+std/string.dz
+std/sync.dz
+std/task.dz
+std/thread.dz
+std/time.dz
+std/vec.dz
 .

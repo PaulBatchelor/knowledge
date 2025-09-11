@@ -107,3 +107,6 @@ ln dynamic arrays in C
 nn talloc
 hl https://talloc.samba.org/talloc/doc/html/libtalloc__tutorial.html
 ln Talloc is a hierarchical, reference counted memory pool system with destructors.
+
+nn scratch
+hl https://github.com/skeeto/scratch

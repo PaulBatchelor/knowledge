@@ -1,0 +1,71 @@
+ns coursera
+
+nn algos1
+ln Algorithms, Part 1
+
+ns +algos1
+
+nn news
+ln News
+co $ ..
+
+nn modules
+at ol
+
+ns +modules
+
+nn 01_intro
+ln Module 1: Course Introduction
+co $ ..
+
+nn 02_union_find
+ln Module 2: Union Find
+co $ ..
+at ol
+
+nn 03_analysis
+ln Module 3: Analysis of Algorithms
+co $ ..
+
+nn 04_stacks_queues
+ln Module 4: Stacks and Queues
+co $ ..
+
+nn 05_elementary_sorts
+ln Module 5: elementary Sorts
+co $ ..
+
+nn 06_mergesort
+ln Module 6: Mergesort
+co $ ..
+
+nn 07_quicksort
+ln Module 7: quicksort
+co $ ..
+
+nn 08_priority_queues
+ln Module 8: priority queues
+co $ ..
+
+nn 09_elementary_symbol_tables
+ln Module 9: elementary symbol tables
+co $ ..
+
+nn 10_balanced_search_trees
+ln Module 10: Balanced Search Trees
+co $ ..
+
+nn 11_geometric_BSTs
+ln Module 11: Geometric Applications of BSTs
+co $ ..
+
+nn 12_hash_tables
+ln Module 12: Hash Tables
+co $ ..
+
+nn 13_symbol_table_applications
+ln Module 13: symbol table applications
+co $ ..
+
+zz -modules
+ns ..

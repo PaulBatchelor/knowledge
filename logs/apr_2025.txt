@@ -1,0 +1,838 @@
+@2025-04-02
+
+@20:41 Create partially automated rust docs extractor #timelog:00:45:00
+Added in playground/go/htmlparse. Incomplete. I think
+I have all the raw ingredients, what is left is to generate
+properly formatted dagzet code.
+
+@2025-04-05
+@09:59 Rust Scraper/card generator work #timelog:00:45:32
+It works. I still need to do a little bit
+of manual formatting with a downloaded rust page, but
+I think it will save me some time.
+---
+Manual work involves: curling the page to an HTML page,
+running "tidy" to make it easier to edit, and then
+extracting just the section to be converted to cards,
+which are just a pile of div/li elements. Then, this file
+can be passed into the program and the resulting DZ file
+gets printed to stdout.
+
+@10:51 try out the new tool #timelog:01:07:50
+Okay, it broke. the HTML formatting is different on Pin
+and process. Let's see how hard it is to get this working.
+---
+working now, getting some automation tools set up
+
+@2025-04-07
+We have to get back on interview prep.
+
+@21:41 Leetcode flashcards #leetcode-flashcards #timelog:00:29:31
+I'd like to revisit these bits of my knowledge graph,
+and attempt to turn as much as I can into flashcards.
+
+@2025-04-08
+
+@20:52 Rust flashcards #timelog:00:15:34
+
+@2025-04-09
+
+@21:47 Rust flashcards #timelog:00:07:39
+
+@2025-04-10
+
+@20:32 HTTP status code flashcards? #timelog:00:58:52
+Managed to get 100, 200, 300. 400 and 500 left.
+
+@2025-04-15
+
+@20:52 rust doc HTML parser troubleshooting #timelog:00:12:40
+It's not parsing the description text sometimes.
+---
+The "process" page looks fixed
+
+@21:06 Onto fixing my mistakes. #timelog:00:21:00
+Now, when did I start automating this process...
+
+@2024-04-17
+@21:02 Gently dipping my toes into leetcode again
+
+@21:02 TwoSum
+#! dz leetcode/problems/1_two_sum
+I am a little rusty...
+
+@21:51 peeking at ThreeSum
+#! dz leetcode/problems/15_3sum
+I think I want to try and do all problems related to TwoSum,
+really get that pattern in my fingers.
+
+@2025-04-19
+
+@16:27 attempting ThreeSum again
+#! dz leetcode/problems/15_3sum
+The problem hints that if you keep one of the values
+constant, it turns into a TwoSum problem. So, what you
+want is to take X, and then find two values Y and Z
+that add up to -X.
+---
+We tried this a few days ago, and it didn't work
+
+@16:53 studying two-sum ii, in order to grok 3sum
+#! dz leetcode/problems/167_two_sum_ii
+Okay done. The solution was mostly spoiled already for me,
+but it involved using two-pointer
+
+@17:55 Another stab at 3sum
+#! dz leetcode/problems/15_3sum
+I started reading the editorial, and I solved two sum ii
+while I was doing this. I think it they want you to
+sort the list, and then perform it as a two-sum ii problem.
+When you find the a pair, the ordering is guaranteed.
+---
+Having problems with the uniqueness logic.
+---
+I think we can take advantage of the sorted list. We only
+want numbers in ascending order, so make sure the low
+value starts at the index after the one being checked.
+---
+edge case didn't work
+---
+Looked at the solution: the twosum problem actually
+added all three values together, not just one to get
+a target. It also had logic that skipped over duplicate
+values. The main loop also broke out early if there
+were any values greater than zero, it indicated that
+no numbers following it could sum to zero.
+
+@18:23 Valid Parentheses
+#! dz leetcode/problems/20_valid_parentheses
+I think I remember this one being a stack problem.
+You push open ones, and then if a closed one appears,
+it needs to match the last element on the stack.
+---
+Issues: got my variables wrong. Didn't check the string
+length to make sure it was a multiple of 2.
+---
+Another edge case: the stack needs to be empty at the
+end of the function.
+
+@2025-04-20
+
+@10:41 Looking at b
+#! dz APL/b_study
+can't get it to compile. oh well
+---
+the guide provides an overview of each of the
+files, and provides some explanation for
+some of the terse variables.
+---
+c.h has some basic definitions for a "terser C language".
+I'm tempted to see how portable this one is, could
+be helpful for my ed coding adventures.
+
+@21:48 merge two sorted lists
+#! dz leetcode/problems/21_merge_two_sorted_lists
+linked list problem.
+
+@2025-04-21
+
+@07:48 Best time to buy and sell stock #timelog:00:09:44
+#! dz leetcode/problems/121_best_time_to_sell_and_buy_stock
+this is a greedy algorithm right? Because you are choosing
+a local maximum (current minimum + next maximum)
+
+@08:01 valid palindrome #timelog:00:09:31
+#! dz leetcode/problems/125_valid_palindrome
+Fundamentally, this feels like a two-pointer problem.
+Once you filter the non-alphabetic characters, and deal
+with case sensitivity, it's a matter of checking to
+see if two ends of a string are equal. Loop ends
+when the lo/hi pointers converge.
+---
+I got tripped on "0P" edgecase. It's because it's too
+small and I'm skipping.
+---
+Attempting to set an initial palindrome flag to be false,
+set to be true at the end of the loop.
+If it breaks out of the loop without reaching the
+bottom of the check, it's false.
+---
+Doesn't work either.
+---
+Damn. I used isalpha() instead of isalnum(). That was
+my mistake.
+
+@2025-04-21
+@20:03 Peaking at DDIA again #timelog:00:04:59
+Where did we leave off?
+---
+We seemed to have left off somewhere around chapter 10
+
+@20:59 More DDIA #timelog:00:25:00
+Finally finished outlining the summaries
+---
+Chapter 12 doesn't really have a summary. I guess I'll
+have to actually read that.
+
+@21:41 Go through DDIA notes, try to make flashcards
+@2025-04-22
+@07:36 Invert binary tree #timelog:00:06:36
+This is a binary tree problem, and I believe the solution
+can be solved recursively. Not sure if you'd call it
+breadth first or depth first, probably depth-first.
+---
+For every node, swap the children. Then recursively go in
+and swap those children.
+
+@07:46 242 valid anagram #timelog:00:03:35
+#! dz leetcode/problems/242_valid_anagram
+Oops saw my one-liner. This is a hashmap problem, which
+can be efficiently solved using the Counter type in
+Python.
+
+@07:50 704 binary search #timelog:00:22:13
+#! dz leetcode/problems/704_binary_search
+This problem wants you to implement a divide-and-conquer
+binary search algorithm. Let's see if I can remember
+how to set this up.
+---
+I have messed it up, damn.
+---
+I forgot about adding one to the midpoint index. It solves
+some of them, but not all of them.
+---
+Say, why don't we look at the edge case that's failing,
+and see if that gives us hints. It's an array of size 1 with
+the element.
+Do we add an exception in our binary search? Hopefully,
+there's a way to adjust the algorithm to naturally compensate.
+---
+I keep getting tripped up on the subtleness of binary search.
+---
+Okay, I forget how to do binary search. Looking at the
+answer because I'm at the 15 minute mark.
+---
+tweaks: while loop is LT, not LTE, conditional check is
+LTE, the lo/hi bounds start at 0 and N, not N - 1. Do
+the loop check when you break out of the loop.
+---
+Lots and lots of little things.
+
+@08:14 Flood fill (planned, but didn't finish) #timelog:00:08:16
+#! dz leetcode/problems/733_flood_fill
+It's traversal? Use a queue (or stack?) to traverse
+directions. Use a set to keep track of where you've been
+(coordinates can work in a set because tuples are hashable).
+Get the color of the starting pixel, push
+the starting pixel onto the queue. While the queue
+has things, process.
+---
+Inside the process: check the 4 directions of the current
+position. If the pixel hasn't been visited before and
+is the color of the start pixel color, switch it to the
+new color, mark it as visited in the set, and append it
+to the queue.
+---
+Make sure the mark the start pixel as visited.
+---
+Queue I think needs to be used because it's BFS. I think
+the order of processing matters? Flood fill should move
+outwards.
+
+@19:48 flood fill continued #timelog:00:14:58
+#! dz $
+Well, something is wrong with my implementation
+---
+return image was in the wrong place, now the base cases pass
+---
+It works!
+
+@2025-04-23
+@07:47 LCA #timelog:00:25:57
+#! dz leetcode/problems/235_lowest_common_ancestor_BST
+Binary tree problem. DFS.
+---
+"lowest" means closest to leaves.
+---
+What are the possibilities?
+---
+One is that one of the nodes is an ancestor of the other node,
+then you return the node that is highest.
+---
+Otherwise, the nodes have a common ancestor.
+---
+I guess an approach would be: find the first node in
+the tree, then search for the other node, backtracking
+if needed.
+---
+15 minutes passed. Strugglig formulating an answer. I
+don't think my thinking is right. Giving up early.
+---
+Oh, it's a binary *search* tree. Glossed over that bit.
+---
+Wrote up algorithm solution. Typing out python solution
+now to get it in my fingers.
+
+@08:18 balanced binary tree (partial) #timelog:00:03:27
+#! dz leetcode/problems/110_balanced_binary_tree
+Now *this* is a binary tree problem.
+---
+I might not have enough time to finish this.
+---
+Use DFS to find the max depth of each child node.
+If they differ by more than one, then they are not
+balanced.
+---
+Think it has to be done recursively. I get the feeling
+that there could be situations where heights are
+equal from up high, but not when you go in layer
+by layer.
+---
+To be continued...
+
+@21:49 Let's try to finish up balanced binary tree #timelog:00:15:56
+#! dz $
+Good lord, I somehow solved it.
+---
+Looking the solution anyways.
+---
+It's pretty much the same (top-down recursion solution),
+but maybe a little more concise than mine.
+
+@2025-04-24
+@07:43 Linked list cycle #timelog:00:13:08
+#! dz leetcode/problems/141_linked_list_cycle
+Linked list problem. Floyd's algorithm. Two moving pointers,
+one fast, one slow. The trick will be making sure I can
+get the pointer stuff set up right.
+---
+It passes, but I don't like how my while loop has to check
+in three places (slow, fast, fast.next). Checking my work.
+---
+Comparing solution to my answer.
+---
+"fast" is head.next, not head
+---
+while loop is fast != slow
+---
+fast/fast.next checks are done in the while loop
+---
+It looks like it's mostly equivalent, just
+the comparisons are done in a different place?
+---
+Their function returns True, mine returns false.
+
+@07:56 232 implement queue using stacks #timelog:00:11:55
+#! dz leetcode/problems/232_implement_queue_using_stacks
+Stack: LIFO. Queue: FIFO. There's no requirements for
+efficiency
+---
+Important: instructions say to only use two stacks
+---
+There was something about popping all items then pushing
+them back on again.
+---
+Push is going to be the inefficient operation. We
+push a new item to stack 2, then drain s1 to s2, then
+populate s1 again.
+---
+Actually,more order was wrong. Drain s1 to s2 to reverse
+the order, push to s2, then drain s2 to s1 to get
+the order back.
+
+@08:09 First bad version #timelog:00:06:10
+#! dz leetcode/problems/278_first_bad_version
+This is literally git bisect isn't it?
+---
+Divide and conquer. We want to make sure we get the
+first *bad* version, not the first *good* version,
+so there migth be some n+1 things happening.
+---
+Turned out to be no +1. hi = mid, low = mid + 1 in the
+checks.
+---
+Sorry, this is called "binary search", "divide and conquer"
+is just slang I think.
+
+@08:16 Ransom Note #timelog:00:06:41
+#! dz leetcode/problems/383_ransom_note
+I do not remember what is involved in this one at all
+---
+Oh, it's not in my leetcode files either
+---
+Looks like a hashmap problem. You want to get a frequency
+map for both the magazine and the ransom letter. For each
+letter in the random letter, you want to make sure that
+the magazine has enough. If it doesn't exist in magazine
+or there's not enough, return false.
+---
+Yup, that's how you do it.
+
+@08:25 climbing stairs (partial) #timelog:00:04:28
+#! dz leetcode/problems/70_climbing_stairs
+This one I thought was the dynamic programming problem
+about stairs, but it's about counting the number of
+possibilities.
+---
+I think it still might be a dynamic programming problem.
+It has subproblems and substructure.
+---
+I'm imagining some kind of loop where you are using
+the previous answer, then tacking on more answers.
+---
+I'm out of time. Will have to think about this later
+
+@21:51 attempt climbing stairs (aborted)
+#! dz leetcode/problems/70_climbing_stairs
+nvm had a call
+
+@2024-04-25
+
+@08:05 climbing stairs #timelog:00:14:48
+#! dz leetcode/problems/70_climbing_stairs
+I had some time to think abou this while washing dishes
+---
+It's definitely dynamic programming. You can definitely
+build on the previous problems.
+---
+when n = 2, you have (1 + 1) or (2).
+---
+When n = 3, you have ((1 + 1) + 1), ((2) + 1), (1 + 2)
+---
+When n = 4, you have ((1 + 1) + 2)), ((2) + 2), and then
+((1 + 1) + 1) + 1), (((2) + 1) + 1), ((1 + 2) + 1).
+---
+In other words, s[n] = s[n - 1] + s[n - 2]
+---
+In other words, How you get to stair N is one of two ways:
+your last step is two steps away, or it is one step away.
+So getting to those steps is already determined from
+the last iterations.
+---
+Okay, it works! I have a weird base case in the beginning
+that checks for n == 1, I bet I could fix that, if had
+more time. But I get the gist of it. Moving on.
+
+@08:22 Longest Palindrome (partial) #timelog:00:08:27
+#! dz leetcode/problems/409_longest_palindrome
+Adding to my leetcode list.
+---
+not enough time to finish this, but will plan.
+---
+Palindromes tend to be two-pointer problems.
+This is problem about finding an optimal value.
+It asks for the size, not necessarily the palindrome
+itself.
+---
+Longest possible palindrome is N. You can do
+an initial check on the ends to see if that is possible.
+Otherwise, you know for sure it can't be N. It might
+be N - 1.
+---
+I was hoping you could whittle down two-pointer style
+iteratively, but I get the feeling you wouldn't
+be enumerating combinations properly there.
+---
+We could go through each letter and find the next
+rightmost letter. I think vaguely recall this using
+a hashmap of sorts. I still had my old solution up
+which seemed to use a counter. You might be able to
+be clever then and create a counter, and then use
+that to check if it's even possible to have a palindrome
+containing a particular letter (needs to be an even
+number of letters).
+---
+I'm out of time. I'll have to flesh this out more later.
+
+@2025-04-26
+
+@15:50 Longest palindrome (continued) #timelog:00:22:43
+#! dz leetcode/problems/409_longest_palindrome
+I think I'm going to try using a hashmap.
+---
+Oh! I misread the problem.
+this is not a palindromatic substring. You can
+arrange the letters in any order. Oh okay, this is much
+simpler. All have to do is get a counter, sum all
+the even values, plus the largest odd value.
+---
+Hit an edge case in the submission.
+---
+oh I see. You can actually add the odd values, just make
+it odd -1. If there were any odd values, add 1 at the end.
+---
+Okay, I need to take a look at the provided
+solution for a second. It's a bit more than mine.
+---
+Starting backwards, it returns either the whole length
+of the string if there are no letters with odd counts,
+or the length of the string, minus an odd character count,
+plus 1. The loop build up the frequency map as it goes.
+If the count for that letter at that point in time is
+odd, increase the odd character count. If even, decrease it.
+---
+Actually, approach one (simpler way) is my way. Going
+to write that one down in my solution.
+
+@16:13 reverse linked list #timelog:00:26:10
+#! dz leetcode/problems/206_reverse_linked_list
+This one I think is about getting the flow right.
+---
+For any given node, their "next" pointer needs to point
+to the "previous" node. The old "next" pointer entry
+becomes the current node, and the old current node
+becomes the previous.
+---
+How to set this up? How to return properly?
+---
+I'm still trying to make prev/node setup work, but
+it's not terminating properly.
+---
+Okay, let's start again. What happens to make this
+terminate, and what do we expect?
+---
+I forget how to reverse a linked list. Going to chew
+on this for about 5 more minutes, then I look up
+the answer.
+---
+Wow, okay I did it. I blew all my work up, and started
+building it up bit by bit. First, just iterate
+through the linked list. We know we need to return
+the last value, so keep track of the previous
+value. We also know that the "next" pointer of
+the current node needs to point to the previous node.
+There's a temporary value needed to keep track of
+the next node. There done.
+
+@16:41 majority element #timelog:00:07:00
+#! dz leetcode/problems/169_majority_element
+I mean, naively. This seems to be one you can throw
+a frequency map at, right?
+---
+Okay, I solved it. But what does the solution want
+you to do? It feels like it was asking for something
+else.
+---
+nope, that's the answer. use a hashmap.
+---
+The solution was very nice and pythonic:
+===
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        counts = Counter(nums)
+        return max(counts.keys(), key=counts.get)
+===
+
+@16:48 add binary #timelog:00:22:45
+#! dz leetcode/problems/67_add_binary
+This one is silly to do in python because
+they have built-ins for this. Let me cheat
+first.
+---
+Here's the one-liner
+===
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        return bin(int(a, 2) + int(b,2))[2:]
+===
+What they probably want to do is add the bits
+one by one. Converting each one into an array
+turns them into a stack, where the last value
+for both are the ones place. You could pop values,
+add, and push the results. Use a carry, and tack on
+a one at the end if there's still a carry. Reverse
+and convert to to string.
+---
+I can never remember how to convert a list to a string
+in python
+---
+My logic is still wrong. The base cases pass though.
+---
+My carry logic was wrong. The overflow can be either
+2 (1 + 1) or 3 (1 + 1 + previous carry). When
+it's three, the current bit is set to be 1, otherwise
+2.
+
+@19:56 Diameter of a Binary Tree #timelog:00:29:31
+#! dz leetcode/problems/543_diameter_of_binary_tree
+Binary tree. At first it sounded like BFS, but I think
+it's actually DFS.
+---
+It feels like you should traverse to the leftmost node
+of a tree, then the rightmost node of a tree.
+---
+This feels recursive, like you can get keep getting
+the max diameter of smaller and smaller trees,
+and building up from that.
+---
+You might not be able to re-use results. They did
+say it didn't have to pass through root.
+---
+Solved! I kind of walked myself through the formula.
+The diameter is the maximum value of something, so that
+means storing some variable that gets updated through
+the traversal. Traverse starting at root, return
+that variable. A maximum diameter means adding the max
+height of the left/right child node. You can find the
+max height through recursion.
+
+@20:26 middle of a linked list #timelog:00:06:00
+#! dz leetcode/problems/876_middle_of_linked_list
+Linked list problem. I believe this is best solved
+using fast/slow pointers. Fast pointer moves at 2x speed.
+When the fast reaches the end return the slow pointer.
+---
+I had a little bit of trouble figuring where to start
+the fast pointer. fast/slow both start at head.
+
+@20:32 max depth of binary tree #timelog:00:02:56
+#! dz problems/104_max_depth_binary_tree
+I think this is just the partial bit to 543 diameter
+of binary tree. It's recursive DFS.
+
+@20:37 contains duplicate #timelog:00:02:50
+#! dz leetcode/problems/217_contains_duplicate
+Shoot, I saw the answer. It was a one-liner. You turn
+the array into a set, and compare lengths with the
+original array.
+
+@20:40 maximum subarray #timelog:00:49:26
+#! dz leetcode/problems/53_maximum_subarray
+Which one is the subarray? is that the contiguous one or
+the other one?
+---
+Oh good contiguous. That one is a little bit easier
+I think.
+---
+I'm getting a sliding window feel from this? I don't think
+it's 2-pointer. It might be greedy.
+---
+I'm trying greedy. we go left to right and have a running
+total starting with the first value, and a value indicating
+the leftmost value in the sum. Every loop we determine
+what the local optimum is based on the current value.
+If we add the value and the sum is greater, we include it.
+If it's less, we start a new sum with the current value.
+If subtracting the leftmost value makes the sum greater,
+increment the leftmost value pointer.
+---
+Not feeling great about this one. I tried the greedy
+approach and it didn't work.
+---
+oh, the topics are array, divide and conquer, and
+dynamic programming. The follow-up is divide and conquer.
+---
+Okay if it's dynamic programming, we know how to set this
+up.
+---
+It's hot. I think I'll return to this one later.
+---
+Generally you're trying to find some max start/end range.
+When the start/end are the same, there is only one value.
+---
+Tried forcing this into a 2d dynamic programming problem.
+Wrong turn. It's Kadane's algorithm. I will revisit this
+tomorrow.
+
+@2025-04-28
+@07:55 study answer to maximum subarray #timelog:00:11:39
+#! dz leetcode/problems/53_maximum_subarray
+initialize 2 variables 2 integer variables currentSubarray
+and maxSubarray, set them equal to first value in subarray
+---
+iterate through the array starting with 2nd element.
+Add elemen to currentSubarray. Choose the greater value
+to update currentSubarray: currentSubarray, or the
+current value.
+---
+Update max value.
+---
+My greedy intuition was close, but too complicated.
+
+@08:06 Insert Interval #timelog:00:20:23
+#! dz leetcode/problems/57_insert_interval
+These interval problems always seem so hyper-specific,
+which makes them feel intimidating to me.
+---
+Intervals are sorted and non-overlapping, and you
+want to insert an interval somewhere in there, and make
+sure it returns intervals that are still sorted and
+non-overlapping.
+---
+The instructions say we can make a copy, which makes
+some of the logistics easier I think.
+---
+I'm going to start by just setting up the scaffolding that
+just makes a copy of the existing intervals without copying.
+I'm going to try to add the insertion logic on top of that.
+---
+An insertion interval is about bounds checking for start
+and end times. Working backwards, we know we have passed
+the merge when the start time of the current interval is
+passed the end time of the inserted interval.
+---
+What are the possibilities for insertion? One is it
+inserts without merging, else it merges.
+---
+For merging, the inserted interval can overlap before
+or after an interval. It can be absorbed by an interval.
+It can also end up merging many intervals.
+---
+When is a merge first triggered? A merge is triggered
+when there is an initial intersection. The current
+interval overlaps with the inserted interval. The inserted
+interval starts before and ends before, starts after and
+ends before, or starts after and ends after.
+---
+If we've already started a merge, we need to determine
+if the current interval needs to be merged in as well,
+or if we are done merging.
+---
+Not sure how we are supposed to handle cases where it doesn't
+merge.
+---
+to be continued...
+
+@21:28 ...continued #timelog:00:43:04
+#! dz $
+Managed to get this working. I had to blow up my morning
+thoughts, whip out a piece of paper and pen, and draw a
+picture.
+---
+The key shift in my thinking for this was: an inserted
+interval is always going to be a merged interval. Another
+thing I did to help me was to destructure these intervals
+so I could see them labelled as start/end.
+---
+Somehow,
+I was able to see that the result of merging two intervals
+together was always going to be the smallest of the start
+times plus the largest of the end times. And you'd keep
+doing that with intervals until the start time of
+the current interval appeared after the merged interval.
+---
+A merged interval gets merged when the start time of the
+interval after it is past the end time of the merged interval,
+or there are no more intervals. Intervals after the
+merged interval can be merged normally.
+---
+It the current interval's end time is less than the start
+time of the merged interval, the merged interval has
+not yet started, and you can just intervals.
+
+@2025-04-29
+@07:48 01 Matrix #timelog:00:14:51
+#! dz leetcode/problems/542_01_matrix
+Getting BFS vibes.
+---
+The problem is asking for closest distances from 0 tile.
+If you are a 0 tile, the distance is 0. Anything sharing
+an edge with a 0 tile that is not a 0 tile will have
+a distance of 1, and then 2, 3, etc.
+---
+We can initialize the output array by iterating through
+the entire matrix, and finding all the zero tiles, marking
+them as having distance 0. These can get pushed onto a queue
+with their location, and their distance (0).
+---
+Processing happens by popping items off the queue and traversing
+in the 4 directions. If a node hasn't been visited, it's
+distance is marked based on the current distance (+ 1),
+and then that's pushed onto the queue.
+---
+Done. Pretty formulaic BFS. It's definitely a pattern
+I've learned doing this leetgrind.
+
+@08:04 K closest points to origin #timelog:00:12:50
+#! dz leetcode/problems/973_k_closest_points_origin
+This is a problem I think you can solve with a heap.
+Basically, you push points onto the heap, and take the
+first K values as the answer. You can also keep a fixed
+sized heap of K items, and pop the largest value.
+---
+python's heapq is a minheap, so I think you'd need to
+negate distances to keep the smallest ones on the queue
+the longest.
+---
+I am running into a weird edge case with one of the tests.
+---
+I was popping before pushing, and should have been pushing
+before popping.
+
+@08:22 Longest substring without repeating characters (partial attempt) #timelog:00:08:11
+#! dz leetcode/problems/3_longest_substring_without_repeating_characters
+You're not finding *which* substring, just the max,
+so this is an optimization problem. This means that keeping
+track of a max value and returning that.
+---
+Feels kinda sliding window, also hashmap. You could
+probably sweep through left to right, use the map to keep
+track of indices where the letter was previously found.
+---
+Okay, this isn't quite right. I think my hashmap thinking
+is correct, but I have the logic wrong for updating the
+start index.
+---
+I have to go.
+
+@20:43 another stab at it #timelog:00:15:49
+#! dz $
+Another idea: use the hashmap. If there is an entry already
+there, subtract the difference. Otherwise, start from 0.
+---
+not even close. looking at the answer.
+---
+Answer is "HashMap with Sliding window" (they erroneously
+call it a HashSet, pretty sure that's wrong)
+---
+Set up an empty counter/hashmap and left/right pointers equal to 0.
+---
+Loop while right pointer is less than string length.
+---
+1: get the character at the right pointer. 2: update
+the count for that character. 3: while the count of that
+right character is greater than 1, get the value of
+the left pointer, decrease that from the counter, and increase
+the left pointer. 4: obtain the max value of right - left + 1.
+5: increment right pointer.
+
+@2025-04-30
+@07:46 binary tree level order traversal #timelog:00:14:06
+#! dz leetcode/problems/102_binary_tree_level_order_traversal
+This is a BFS tree traversal problem, so use a queue.
+---
+I've done double queues before, which can be a little
+bit tricky to set up. A single queue keeping track of
+level should suffice.
+---
+Basically keep pushing things on the queue, children are
+always +1. append things to a list. when the next items
+level is greater than the current level, append the
+list to the output, and start a new list.
+---
+I got it working. I don't love that I have to do a last
+check at the end of the loop. I'm sure that could be
+improved, but it's good enough.
+---
+The solution just uses the level number directly in an array.
+
+@08:05 clone graph #timelog:00:23:53
+#! dz leetcode/problems/133_clone_graph
+This is some kind of traversal, probably BFS.
+---
+Starting with the first node, go through all the children.
+Use a lookup table using node values, which are unique.
+If the node has already been cloned, use that cloned value
+from the list, otherwise clone the reference, add it to
+the list, and update the node.
+---
+Right, I am scewing up the traversal here. I am trying
+to get the BFS to both initialize a node, and possibly
+the neighbor nodes, in the nodelist I am making. But
+both of them can already have been created.
+---
+The solution uses recursion, I use a queue, not sure
+why mine isn't working.
+---
+I'm out of time. Will revisit later.
+

@@ -1,0 +1,4 @@
+FUTURE="2027-09-01"
+DAYS=$(echo $(( ($(gdate -d "$FUTURE" +%s) - $(date +%s)) / 86400 )))
+
+echo "$DAYS days until $FUTURE"

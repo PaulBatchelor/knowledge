@@ -1,0 +1,141 @@
+ns coursera/algos1/modules/02_union_find
+
+nn dynamic_connectivity
+co $ ..
+ff What is dynamic connectivity?
+fb Dynamic connectivity is a data structure that
+fb maintains information about the connected components
+fb of a graph.
+
+nn quick_find
+ln Quick Find
+co $ ..
+nn quick_union
+ln Quick Union
+co $ ..
+
+nn improvements
+co $ ..
+ln Improvements
+
+nn applications
+ln Applications
+co $ ..
+
+ns +quick_union
+
+ns ..
+nn dynamic_connectivity/operations
+ff What are the operations for dynamic connectivity?
+fb find/connected (are two components connected?) and union (connect 2 objects)
+
+nn quick_find/data_structure
+ln Data structure: integer array id[] of length N.
+ln p and q are connected iff they have the same id
+co $ ..
+
+nn quick_find/find
+ln Find: check if p and q have the same id.
+co $ ..
+
+nn quick_find/union
+ln union: to merge components containing p and q,
+ln change all entries whos id equals id[p] to id[q].
+co $ ..
+
+nn quick_find/union_too_expensive
+co $ quick_find/union
+co $ ..
+ln The union in quick find is too expensive. It takes
+ln N^2 array accesses to process a sequence of N union
+ln commands on N objects.
+ff Why is quick find too slow?
+fb The union operation is too expensive, requiring N^2
+fb array accesses to process of N union commands on N objects.
+
+nn dynamic_connectivity/union
+co $ ../operations
+co $ ..
+ln Union: connect two objects
+
+nn dynamic_connectivity/find
+co $ ../operations
+co $ ..
+ln Find/Connected Query: is there a path connecting two objects?
+
+nn quick_union/data_structure
+ln Data structure: integer id[] of length N.
+ln Interpretation: id[i] is parent of i.
+co $ ..
+co $ ?quick_find/data_structure
+
+nn quick_union/find
+ln find: check if p and q have the same root.
+co $ ..
+co $ ?quick_find/find
+co $ ?dynamic_connectivity/find
+
+nn quick_union/union
+ln Union: to merge components containing p and q,
+ln set the id of p's root to the id of q's root.
+co $ ..
+co $ ?quick_find/union
+co $ ?dynamic_connectivity/union
+
+nn quick_union/find_too_expensive
+ln "find" operation too expensive
+co $ ../find
+co $ ?quick_find/union_too_expensive
+cr similar
+nn quick_find/flat_trees
+ln trees are flat, but too expensive to keep them flat
+co $ ../union_too_expensive
+
+nn quick_union/tall_trees
+ln trees can get tall
+co $ ?quick_find/flat_trees
+co $ ../find_too_expensive
+
+nn improvements/weighting
+co $ ..
+ln weighted quick-union
+co $ ../../quick_union
+cr improved quick union
+
+nn improvements/weighting/data_structure
+ln data structure: same as quick-union, but
+ln maintain extra array sz[i] to count number
+ln of objects in the tree rooted at i;
+co $ ?quick_union/data_structure
+cr similar, but with extra array to keep track of size
+
+nn improvements/weighting/find
+ln find: identical to quick-union
+co $ ?quick_union/find
+cr identical
+
+nn improvements/weighting/union
+ln Union: modify quick-union to: link root of smaller
+ln tree to larger tree, and update the sz array.
+co $ ?quick_find/union
+cr modified to link root of smaller tree to larger tree
+nn improvements/weighting/analysis
+ln running time: find takes proportional time to p and q.
+ln union takes constant time, given roots.
+ln Depth of any node x is at most lg(N).
+nn improvements/path_compression
+ln Path Compression: just after computing the root of
+ln p, set the id of each examined node to point to that root.
+nn improvements/path_compression/two_pass
+ln two-pass implementation: add a second loop to root() to
+ln set the id of each examined node to the root.
+
+nn improvements/path_compression/one_pass
+ln one-pass implementation: make every other node
+ln in path point to its grandparent (thereby halving path length)
+co $ ../two_pass
+cr compared to two pass, one pass is simpler to implement,
+cr in the Java implementation it's only one line of code
+
+nn percolation_assignment
+ln percolation assignment

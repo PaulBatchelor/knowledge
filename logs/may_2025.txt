@@ -1,0 +1,327 @@
+@2025-05-03
+@19:16 create more flashcards for HTTP status codes
+
+@19:46 500 status codes now #timelog:00:10:45
+
+@2025-05-08
+@07:59 clone graph, continued #timelog:00:13:16
+#! dz leetcode/problems/133_clone_graph
+I did not finish this one
+---
+It looks like I forgot to copy over the values themselves,
+which may be why I was getting the error.
+---
+I was appending the wrong thing to the queue. I should
+have been the neighbor, not the newneighbor.
+
+@08:15 polish notation #timelog:00:13:30
+#! dz leetcode/problems/150_evaluate_polish_notation
+I remember something weird was tripping me up with this
+one. Might have been the thing that converts strings
+to numbers? Or possibly the division?
+---
+This is basically a stack problem.
+---
+I got tripped up again. divide towards zero means
+int(a/b), not a // b.
+
+@2025-05-09
+@07:59 course schedule #timelog:00:28:59
+#! dz leetcode/problems/207_course_schedule
+I remember this problem. It's a DAG problem.
+---
+This is sort of a traversal problem? You can take
+all the prereqs, and put them in an adjacency list:
+a lookup table for each node, and all their rerequisites.
+---
+after constructing the adjacency list, traverse BFS
+using a queue. Begin by adding all the courses that do
+not have prereqs onto the queue. Pop items off the queue,
+and remove that course dependency from the adjacency list.
+Add any courses that "free up".
+---
+I'm realizing I could construct my adjacency list a
+little bit differently. Originally, I wanted to have the
+list show the node and their prereqs, but the issue
+with that is that you'd need to do many updates every time
+a node is removed. It would be easier to show for each
+node, which courses are dependent on it.
+---
+With this new list, you'd need to work backwards. You'd add
+all the courses that are not dependencies for any other courses,
+which would be the last courses.... wait this isn't going
+to work.
+---
+Okay, back to the original plan I think. Maybe maintain
+two lists?
+---
+or just have a counter that keeps track of the number of
+---
+we are out of time. I can't visualize the traversal correctly.
+
+@08:43 revisiting #timelog:00:04:09
+#! dz $
+I was being do fancy, just pop dependency from set, do
+a full sweep
+---
+oh shoot, this is the one where you can add phantom
+edges isn't it.
+---
+Got it! Will clean up code and type up solution later
+
+@19:31 code cleanup, explanation
+
+@2025-05-14
+@07:58 Implement Trie #timelog:00:07:16
+#! dz leetcode/problems/208_implement_trie
+I forget, can the Trie be a recursive structure?
+It's a node with a value, a terminal node flag, and
+a set of children in a lookup table. I think that
+can be done recursively.
+
+@08:06 coin change (initial) #timelog:00:24:22
+#! dz leetcode/problems/322_coin_change
+it's too early for coin change
+---
+this is a dynamic programming problem, optimizing for
+fewest number of coins that make up a particular amount.
+---
+We are always trying to reach a particular target amount
+using a given set of coins. If the target amount is less
+than the smallest coin, there is no possible combination.
+---
+When a coin does fit into the target amount, we subtract
+that from the target amount, and run it again, adding
+1 coin. It would look something like: nCoins(amt) = 1 + nCoins(amt - coin)
+---
+I have to go, but things that are tripping me up are:
+how to notate the recurrance relation? and how to keep
+track of the minimum? how to track the invalid (negative)
+value?
+
+@2025-05-15
+@07:37 more coin change attempts #timelog:00:38:42
+#! dz leetcode/problems/322_coin_change
+Working this out on pen and paper. Going to figure
+out the recurrance relation. If I can grok that, I feel like
+I'll know this problem cold.
+---
+I'm looking at the answer now.
+---
+Revisit coin change. Still struggling with setting up
+the problem and seeing the patterns.
+
+@08:17 Product of array except self #timelog:00:25:07
+#! dz leetcode/problems/238_product_of_array_except_self
+I vaguely recall needing to work this out on paper.
+I think it involves keeping track of two prefix sum arrays?
+One from left to right, the other from right to left.
+---
+The hint mentions an upper bound of 32 bits, so that
+could be a hint.
+---
+Got it, the answer involved me carefully populating
+a "left" product sum array with a "right" product sum
+array. Writing an initial solution.
+
+@2025-05-16
+
+@08:06 min stack #timelog:00:04:51
+#! dz leetcode/problems/155_min_stack
+I think I remember looking this one up before. I think
+it involves 2 stacks, one for the min value, one for
+the items on the stack.
+
+@08:14 validate binary search tree #timelog:00:23:56
+#! dz leetcode/problems/98_validate_binary_search_tree
+Looks like recursive DFS.
+---
+I've hit an edge case.
+---
+Right, the issue is that for a root node "5", it has
+a right child of 6, with a left child of 3. 3 is in the
+wrong place. There needs to be a minimum boundary and a maximum
+boundary.
+---
+Looking at the answer.
+---
+oh jeez, inorder traversal. I forgot that inorder traversal
+yields nodes in order. Basically, you keep track of the
+previous value. You recursively go to the leftmost node,
+then go back.
+
+@2025-05-17
+@14:27 number of islands #timelog:00:56:59
+#! dz leetcode/problems/200_number_of_islands
+This is a BFS graph traversal problem.
+---
+My first approach was to use a queue to iterate through
+all the items in the grid. a 0 traveling to a 1 increased
+the numberof islands. This didn't work for the second
+example.
+---
+I think it might need two queues. One to traverse through
+islands, another to actually find islands.
+---
+Islands in the island queue only consume contiguous island
+bits. if it hits an edge... it pushes that onto the "sea"
+queue? When the island queue is depleted, the sea queue
+searches until it finds another island. When it finds
+one, it pushes that onto the island queue, increases the
+count, and breaks. Loop breaks when both queues are empty.
+---
+Same exact issue. I was only going down and two the right,
+maybe I need to go all 4 directions. Coding that in now.
+---
+I wasn't breaking out of the sea q loop early enough. I
+coded up an "found island" variable that gets set when
+an island is found. When the for loop breaks, it will also
+break the while loop.
+---
+Trying to rework the editorial BFS solution now.
+---
+The solution can be done by sweeping through the rows
+and columns in a for loop. If a 1 is encountered, increment
+the number of islands. put that
+on a queue and BFS the neighbors that are 1s, marking them
+as visited.
+
+@15:25 Rotting Oranges #timelog:00:19:49
+#! dz leetcode/problems/994_rotting_oranges
+I think I remember how to do this one. This is BFS.
+Initialize a queue with the first rotting oranges, their
+positions, and 0 days. When you iterate through the queue,
+traverse four directions. Keep track of the max number of
+days.
+---
+Forgot about the impossibility scenario. Gotta count
+the number of oranges traversed, and compare it with
+the total number of oranges
+---
+I was pretty sloppy this time with my code, made a lot
+of obvious bugs. But my aproach was pretty much sound.
+
+@2025-05-20
+@07:53 Search in rotated sorted array, almost got it right #timelog:00:22:00
+#! dz leetcode/problems/33_search_in_rotated_sorted_array
+Since it's an O(log(n)), it's a divide and conquer problem.
+---
+I'd like to believe that if you segment the array, there
+will be always at least one that is in sorted order.
+We can see if the value is in range, and if it isn't,
+choose the other segment.
+---
+lol, I got all the base cases to pass quicker than I
+expected. TLE for array of size 2.
+---
+I'm at the point where I'm guessing and trying
+to tweak a solution that I believe to be mostly
+correct. time to look up the answer and see how far off
+I actually am.
+---
+Damn it. The solution involved finding the pivot and then
+searching. Didn't do that. Will need to examine this
+in more detail later. But it on the TODO list with
+coin change.
+
+@08:15 combination sum #timelog:00:17:00
+#! dz leetcode/problems/39_combination_sum
+This feels like a kind of backtracking problem. How they
+use the "candidates" terminology is a hint of that.
+---
+Candidates are distinct, so I don't need to deduplicate.
+---
+You can use candidates any number of times. The upper limit
+is they have to add to target.
+---
+I'm running into the "unique solution" issue. Trying to rework
+in such a way that each backtracking call removes candidates
+---
+There needs to be a way to say okay try none of this candidate,
+now 1, now 2, now 3. and then recursively moving through.
+If that order can be achieved, then you can solve it.
+---
+I am out of time.
+
+@2025-05-27
+@07:56 leetcode: 39 combination sum #timelog:00:23:16
+#! dz leetcode/problems/39_combination_sum
+Okay, I tried to do this a few days ago. hmm. Got far
+enough where I was getting answers, but had issues with
+de-duplication.
+---
+The logic I was using wasn't quite right. But I did
+understand that it was backtracking.
+
+@08:21 Permutations #timelog:00:05:35
+#! dz leetcode/problems/46_permutations
+Another backtracking problem
+---
+hmmm. I have the scaffolding set up. But the logic isn't
+quite right. Out of time.
+
+@2025-05-28
+@08:08 back to permutations #timelog:00:20:01
+#! dz leetcode/problems/46_permutations
+Okay, I'm hitting the same dead end I did yesterday morning.
+I'm getting this problem because I'm using a "start" point,
+which, restricts the ordering.
+---
+Doing a gross thing that I think will work, generate all
+the combinations, then filter the ones where the combo
+is unique.
+---
+Gross, it works.
+---
+What if we popped from nums, pushed to combok,
+then pushed back onto nums?
+---
+Didn't work either.
+---
+Okay, the solution involves backtracking, and using
+some kind of way to check if the number is in the combo
+("if x in combo" for python). Which is annoying, because
+I didn't know you could do that for lists in python.
+
+@08:30 merge intervals (I cheated) #timelog:00:08:12
+#! dz leetcode/problems/56_merge_intervals
+My previous solution was still on the screen, and it was
+so small I saw most of it. so I'm just going to type up the
+solution.
+---
+One thing I will say: you need to sort the intervals
+before processing. Python has a built-in "sorted" function,
+which knows to automatically sort by first value (start).
+That seems to do a bulk of the heavy lifting.
+---
+I did try to code this out after following my own
+instructions, and I missed a step (append at end of loop).
+So, this is tricky.
+
+@2025-05-30
+@08:08 LCA (incomplete, struggled, looked at answer)
+#! dz leetcode/problems/236_lowest_common_ancestor_binary_tree
+I remember this one causing me issues, even after looking
+at the solution.
+---
+The editorial I believe enumerated the possible combinations.
+I think there were three?
+---
+It's some kind of DFS.
+---
+When you do DFS, at some point you'll run into either the
+p or q node. One of those will come first. Somehow, you'll
+need to find the other node, and determine if it's a child
+or not.
+---
+I think I'm missing some intuition here. Looking at the
+solution.
+---
+Damn, this is the one with the recursive solution that has
+"left", "right", and "mid" bools. This is familiar to me,
+but definitely not something I would have thought up.
+---
+I have to go, but next time I return to this, I will
+try to implement this without looking at the solution
+too closely. Something something recursion, return a bool.
+Left, right, mid. At least 2 means you've found the LCA.

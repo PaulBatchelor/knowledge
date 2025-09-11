@@ -1,0 +1,61 @@
+ns rust/std/modules/num
+
+nn structs
+hl https://doc.rust-lang.org/std/num/index.html#structs
+co $ ..
+
+ns +structs
+
+nn NonZero
+hl https://doc.rust-lang.org/std/num/struct.NonZero.html
+co $ ..
+ln A value that is known not to equal zero.
+ff num::NonZero
+fb A value that is known not to equal zero.
+
+nn ParseFloatError
+hl https://doc.rust-lang.org/std/num/struct.ParseFloatError.html
+co $ ..
+ln An error which can be returned when parsing
+ln a float.
+ff num::ParseFloatError
+fb An error which can be returned when parsing
+fb a float.
+
+nn ParseIntError
+hl https://doc.rust-lang.org/std/num/struct.ParseIntError.html
+co $ ..
+ln An error which can be returned when parsing
+ln an integer.
+ff num::ParseIntError
+fb An error which can be returned when parsing
+fb an integer.
+
+nn Saturating
+hl https://doc.rust-lang.org/std/num/struct.Saturating.html
+co $ ..
+ln Provides intentionally-saturating arithmetic
+ln on T.
+ff num::Saturating
+fb Provides intentionally-saturating arithmetic
+fb on T.
+
+nn TryFromIntError
+hl https://doc.rust-lang.org/std/num/struct.TryFromIntError.html
+co $ ..
+ln The error type returned when a checked integral
+ln type conversion fails.
+ff num::TryFromIntError
+fb The error type returned when a checked integral
+fb type conversion fails.
+
+nn Wrapping
+hl https://doc.rust-lang.org/std/num/struct.Wrapping.html
+co $ ..
+ln Provides intentionally-wrapped arithmetic on T.
+ff num::Wrapping
+fb Provides intentionally-wrapped arithmetic on T.
+
+zz -structs
+ns ..
+

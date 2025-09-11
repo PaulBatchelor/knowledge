@@ -1,0 +1,92 @@
+ns rust/std/modules/ffi
+
+nn structs
+hl https://doc.rust-lang.org/std/ffi/index.html#structs
+co $ ..
+
+ns +structs
+
+nn CStr
+hl https://doc.rust-lang.org/std/ffi/struct.CStr.html
+co $ ..
+ln Representation of a borrowed C string.
+ff ffi::CStr
+fb Representation of a borrowed C string.
+
+nn CString
+hl https://doc.rust-lang.org/std/ffi/struct.CString.html
+co $ ..
+ln A type representing an owned, C-compatible,
+ln nul-terminated string with no nul bytes in
+ln the middle.
+ff ffi::CString
+fb A type representing an owned, C-compatible,
+fb nul-terminated string with no nul bytes in
+fb the middle.
+
+nn FromBytesUntilNulError
+hl https://doc.rust-lang.org/std/ffi/struct.FromBytesUntilNulError.html
+co $ ..
+ln An error indicating that no nul byte was present.
+ff ffi::FromBytesUntilNulError
+fb An error indicating that no nul byte was present.
+
+nn FromBytesWithNulError
+hl https://doc.rust-lang.org/std/ffi/struct.FromBytesWithNulError.html
+co $ ..
+ln An error indicating that a nul byte was not in
+ln the expected position.
+ff ffi::FromBytesWithNulError
+fb An error indicating that a nul byte was not in
+fb the expected position.
+
+nn FromVecWithNulError
+hl https://doc.rust-lang.org/std/ffi/struct.FromVecWithNulError.html
+co $ ..
+ln An error indicating that a nul byte was not in
+ln the expected position.
+ff ffi::FromVecWithNulError
+fb An error indicating that a nul byte was not in
+fb the expected position.
+
+nn IntoStringError
+hl https://doc.rust-lang.org/std/ffi/struct.IntoStringError.html
+co $ ..
+ln An error indicating invalid UTF-8 when converting
+ln a CString into a String.
+ff ffi::IntoStringError
+fb An error indicating invalid UTF-8 when converting
+fb a CString into a String.
+
+nn NulError
+hl https://doc.rust-lang.org/std/ffi/struct.NulError.html
+co $ ..
+ln An error indicating that an interior nul byte
+ln was found.
+ff ffi::NulError
+fb An error indicating that an interior nul byte
+fb was found.
+
+nn OsStr
+hl https://doc.rust-lang.org/std/ffi/struct.OsStr.html
+co $ ..
+ln Borrowed reference to an OS string (see
+ln OsString).
+ff ffi::OsStr
+fb Borrowed reference to an OS string (see
+fb OsString).
+
+nn OsString
+hl https://doc.rust-lang.org/std/ffi/struct.OsString.html
+co $ ..
+ln A type that can represent owned, mutable
+ln platform-native strings, but is cheaply
+ln inter-convertible with Rust strings.
+ff ffi::OsString
+fb A type that can represent owned, mutable
+fb platform-native strings, but is cheaply
+fb inter-convertible with Rust strings.
+
+zz -structs
+ns ..
+

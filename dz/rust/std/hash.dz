@@ -1,0 +1,37 @@
+ns rust/std/modules/hash
+
+nn structs
+hl https://doc.rust-lang.org/std/hash/index.html#structs
+co $ ..
+
+
+ns +structs
+
+nn BuildHasherDefault
+hl https://doc.rust-lang.org/std/hash/struct.BuildHasherDefault.html
+co $ ..
+ln Used to create a default BuildHasher instance
+ln for types that implement Hasher and Default.
+ff hash::BuildHasherDefault
+fb Used to create a default BuildHasher instance
+fb for types that implement Hasher and Default.
+
+nn DefaultHasher
+hl https://doc.rust-lang.org/std/hash/struct.DefaultHasher.html
+co $ ..
+ln The default Hasher used by RandomState.
+ff hash::DefaultHasher
+fb The default Hasher used by RandomState.
+
+nn RandomState
+hl https://doc.rust-lang.org/std/hash/struct.RandomState.html
+co $ ..
+ln RandomState is the default state for HashMap
+ln types.
+ff hash::RandomState
+fb RandomState is the default state for HashMap
+fb types.
+
+zz -structs
+ns ..
+

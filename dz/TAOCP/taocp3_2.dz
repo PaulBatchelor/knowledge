@@ -1,0 +1,507 @@
+ns TAOCP/vol2/ch03/02
+gr 3.2: Generating Uniform Random Numbers
+
+nn linear_congruential_method
+ln The linear congruential method
+
+nn linear_congruential_sequence
+ln Linear Congruential sequence
+co $ linear_congruential_method
+
+nn period
+ln Period
+co $ linear_congruential_method
+
+nn repeating_cycle
+ln Repeating Cycle
+co $ period
+
+nn multiplicative_congruential_method
+ln Multiplicative Congruential Method
+co $ linear_congruential_method
+
+nn mixed_congruential_method
+ln Mixed Congruential Method
+co $ linear_congruential_method
+
+nn equation_sequence
+ln Equation for Linear Congruential Method Sequence
+zz almost certainly not doing the comma properly
+at eq X_{n + 1} = (a X_n + c) \mod m, n >= 0
+td fix equation
+co $ linear_congruential_method
+
+nn c_is_zero
+ln c is zero
+at eq c = 0
+co $ equation_sequence
+co $ multiplicative_congruential_method
+
+nn c_is_not_zero
+ln c is not zero
+td fix equation
+at eq c \notequal zero
+co $ equation_sequence
+co $ mixed_congruential_method
+
+nn b_definition
+ln b defined in terms of a
+at eq b = a - 1
+co $ equation_sequence
+
+nn generalization
+ln Generalization of Linear Congruential Sequence
+td fix equation
+at eq X_{n + k} = (a^k X_n + (a^k - 1)c/b \mod m,
+at eq k >= 0, n >= 0
+co $ equation_sequence
+cr generalization
+
+nn choice_of_modulus
+ln Choice of Modulus (m)
+co $ linear_congruential_method
+
+nn should_be_large
+ln Should be rather large
+co $ choice_of_modulus
+
+nn should_be_fast
+ln Should be fast to generate
+co $ choice_of_modulus
+
+nn word_size
+ln Word size (w)
+co $ should_be_large
+co $ should_be_fast
+
+nn word_plus_minus_1
+ln word size plus/minus one (w +/- 1)
+co $ word_size
+cr preferred
+
+nn right_hand_less_random
+ln Right-hand digits less random than lefthand digits
+co $ word_size
+ln Why not to use word size as modulus
+
+nn choice_of_multiplier
+ln Choice of Multiplier
+co $ linear_congruential_method
+
+nn period_of_max_length
+ln Period of Maximum Length
+co $ choice_of_multiplier
+
+nn theorem_a
+ln Theorem A
+co $ choice_of_multiplier
+
+nn LCS_has_period_m_iff
+ln Linear Congruent Sequence defined by, m, a, c,
+ln X_0 has period length of m if and only if
+co $ theorem_a
+
+nn c_rel_prime_m
+ln c is relative prime to m
+co $ LCS_has_period_m_iff
+
+nn b_a_minus_1_multiple_p
+ln b=a-1 is multiple of p, for every prime p dividing m
+co $ LCS_has_period_m_iff
+
+nn b_multiple_4_m_multiple_4
+ln b is multiple of 4 if m is multiple of 4
+co $ LCS_has_period_m_iff
+
+nn lemma_p
+ln Lemma P
+co $ theorem_a
+
+nn lemma_p_proof
+ln Lemma P proof
+co $ lemma_p
+
+nn binomial_formula
+ln Binomial formula
+co $ lemma_p_proof
+
+nn lemma_q
+ln Lemma Q
+co $ lemma_p
+
+nn lemma_r
+ln Lemma R
+co $ lemma_q
+
+nn pure_multiplicative_generators
+ln Pure multiplicative generators
+co $ choice_of_multiplier
+co c_is_not_zero pure_multiplicative_generators
+
+nn theorem_b
+ln Theorem B
+co $ pure_multiplicative_generators
+
+nn theorem_c
+ln Theorem C
+co $ theorem_b
+
+nn theorem_d
+ln Theorem D
+co $ theorem_c
+
+nn potency
+ln Potency (3.2.1.3)
+
+nn potency_eq1
+ln eq 1
+at eq a = z^k + 1, 2 <= k < e
+co $ potency
+
+nn multiplier_obtains_max_period
+ln Multiplier that can obtain max period (satisfies
+ln criteria)
+co $ potency_eq1
+
+nn z_is_radix
+ln z is radix (2 binary computer, 10 decimal computer)
+co $ potency_eq1
+
+nn m_is_word_size
+ln m is wordize
+co $ potency_eq1
+
+nn potency_eq2
+ln eq 2
+at eq X_{n + 1} = ((z^k + 1)X_n + 1) \mod{z^3}
+co $ potency_eq1
+
+nn take_recurrance_relation
+ln Theorem 3.2.1.2A says we may take $c=1$. Recurrance
+ln relation has the form (see equation).
+co $ potency_eq2
+
+nn avoid_multiplication
+ln Equation suggestions that multiplication can be avoided.
+ln Shifting and adding will suffice.
+co $ potency_eq2
+
+nn recurrance_relation_example
+ln example usage using recurrance relation
+at eq a = B^2 + 1
+co $ potency_eq2
+co $ avoid_multiplication
+cr example
+
+nn MIX_instructions
+ln LDA x; SLA 2; ADD x; INCA 1
+co $ recurrance_relation_example
+cr yields following MIX instructions
+
+nn reduces_exec_time
+ln Replaces instructions in 3.2.1.1. Reduces execution
+ln time from 16u to 7u
+co $ MIX_instructions
+
+nn multiplier_form_should_be_avoided
+ln While used often in practice, multipliers having
+ln this form should be avoided because
+ln they aren't random enough
+co $ potency_eq2
+
+nn bad_rng
+ln Bad RNG
+co $ potency
+
+nn potency_of_LCS_max_period
+ln Potency of linear congruent sequence with maximum
+ln period is defined to be the least positive integer
+ln $s$ such that (see eqn)
+co $ potency
+
+nn potency_eq4
+ln Potency LCS max eqn
+at eq b^s = 0 (\modulo m)
+td how to do triple equals? is this modulo right?
+co $ potency_of_LCS_max_period
+cr equation
+
+
+nn some_generators_sufficiently_awful
+ln Some generators are sufficiently awful that a
+ln comparatively simple thoery can be used to rule them out,
+ln related to the concept of potency
+co $ bad_rng
+
+nn reduction_3_2_1_6
+ln reduction of equation 3.2.1-6
+at eq x_n = ((a^-n - 1) c/b) \mod m)
+co $ potency_eq4
+cr reduction based on this assumption
+
+nn analyze_randomness_sequence
+ln Analyze randomness of sequence by takeing $X_0 = 0$,
+ln since 0 occurs somewhere in sequence. EQ 3.2.1-(6)
+ln reduces to...
+co $ reduction_3_2_1_6
+cr reduction of EQ 3.2.1-(6)
+
+nn expand_binomial_theorem
+ln Expand $((a^n - 1) = (b + 1)^n - 1$ by the binomial
+ln theorem.
+co $ reduction_3_2_1_6
+
+nn eq_reduction_var1
+at eq X_{n + 1} = cn + cb(\over{n}{2})
+td get triple equals working here and over notation as well
+rm I think this shows what a potency of 2 would look like
+
+nn potency_of_2
+ln Potency of 2
+co $ eq_reduction_var1
+
+nn eq_reduction_var2
+at eq X_{n + 1} - X_n = c + cbn
+td Get triple equals working
+co $ eq_reduction_var1
+
+nn not_very_random
+ln Not very random
+co $ eq_reduction_var2
+
+nn differences_between_simple
+ln Differences between consecutively changing numbers is
+ln simple: one value of n to the next.
+co $ potency_of_2
+
+nn point_one_of_four_plans
+ln Point $X_n$, $X_{n+1}$, $X_{n + 2}$) always lies in
+ln one of four planes.
+rm These plans are outlined in the book.
+
+nn potency_of_3
+ln Potency of 3
+co $ potency_of_2
+
+nn somewhat_more_random
+ln Somewhat more random, but high degree of dependence
+ln between ($X_n$, $X_{n + 1}$, $X_{n+2}$)
+
+nn ex_m_2_35_a_2k_plus_1
+ln ex: $m = 2^35$, $a = 2^k + 1$
+co $ potency
+
+nn b_2_k
+rm (using ln declaration in stead of eq for consistency)
+co $ ex_m_2_35_a_2k_plus_1
+
+nn b_squared_2_2_k_multiple_m
+ln $b^2 = 2^{2k}$ is a multiple of m when $k >= 18$.
+co $ b_2_k
+
+nn potency_is_2
+ln Potency is 2
+co $ b_squared_2_2_k_multiple_m
+
+nn potency_is_4_for_k
+ln potency is 4 for k=11,10,9
+co $ b_squared_2_2_k_multiple_m
+
+nn potency_is_3_for_k
+ln Potency is 3 for k=17,16,..,12
+co $ b_squared_2_2_k_multiple_m
+
+nn k_lte_8
+ln k <= 8?
+co $ b_squared_2_2_k_multiple_m
+
+nn small_multipliers_avoided
+ln a <= 257, small multipliers to be avoided
+co $ k_lte_8
+
+nn eliminated_all_forms
+ln Eliminated all forms of form $2^k + 1$ when $n=2^35$.
+co $ b_squared_2_2_k_multiple_m
+
+nn m_w_plusminus_1_high_potency_impossible
+ln When $m$ is $w += 1$, $m$ generally not divisible
+ln by high powers of primes, high potency impossible
+co $ potency
+
+nn dont_use_max_period_method
+ln Max period method should not be used
+co $ m_w_plusminus_1_high_potency_impossible
+
+nn use_pure_multiplication_method
+ln Use pure multiplication method instead
+co $ dont_use_max_period_method
+
+nn high_potency_neccessary_not_sufficient
+ln High potency is necessary but not sufficient for
+ln randomness
+co $ potency
+
+nn spectral_test
+ln Linear Congruential Sequences should pass spectral
+ln test to be considered acceptably random
+co $ high_potency_neccessary_not_sufficient
+
+
+nn other_methods
+ln Other methods (3.2.2)
+
+nn fallacy_modifying_existing_RNG
+ln Common fallacy: taking a good random number generator,
+ln and modifying a little bit can make it even more random.
+co $ other_methods
+
+nn generalization_lin_cong_meth
+ln Generalization of the linear congruential method
+co $ other_methods
+
+nn quadratic_congruential_method
+ln linear congruential method can be generalized to
+ln quadratic congruential method
+co $ other_methods
+
+nn quadratic_congruential_method_eq
+ln Quadratic Congruential Method Equation
+at eq X_{n + 1} = (dX^2 + aX_n + c) \mod m
+co $ quadratic_congruential_method
+
+nn coveyou_quadratic_method
+ln Coveyou quadratic method
+co $ quadratic_congruential_method
+
+nn coveyou_quadratic_method_eq
+ln Coveyou Quadratic Method Equation
+at eq X_0 \mode 4 = 2, X_{n + 1} = X_n(X_n{1}) \mod 2^e,
+at eq n >= 0
+td how to do commas in math tex eq?
+co $ coveyou_quadratic_method
+
+nn coveyou_middle_digits
+ln Let Y_n be $2^eX_n$ ($e$ zeroes to the right of binary
+ln representation of $X_n$), $Y_{n + 1}$ consists of the 
+ln middle $2e$ digits of $Y_n^2 + 2^e Y_n$.
+
+nn von_neumann_middle_squares
+ln Von neumann middle squares
+co $ coveyou_middle_digits
+td connect to middle squares method in previous section
+
+nn make_next_depend_cur_previous
+ln Make $X_{n + 1}$ depend on both $X_n$ and $X_(n - 1)$.
+co $ generalization_lin_cong_meth
+
+nn fibonacci
+ln Fibonacci Sequence
+co $ make_next_depend_cur_previous
+
+nn fibonacci_eq
+ln Fibonacci Sequence Equation
+at eq X_{n + 1} = (X_n + X_{n - 1}) \mod m
+co $ fibonacci
+
+nn fibonacci_eq_var
+ln Fibonacci Sequence Equation (variation) using
+ln $k$, a comparatively large value.
+at eq X_{n + 1} = (X_n + X_{n - k}) \mod m
+co $ fibonacci_eq
+
+nn not_satisfactorily_random
+ln Not satisfactorily random
+co $ fibonacci_eq
+
+nn additive_generator
+ln Additive Generator, Mitchell and Moore
+co $ make_next_depend_cur_previous
+
+nn additive_generator_eq
+ln Additive Generator Equation
+at eq X_n = (X_{n - 24} + X_{n - 55}) \mod m, n >= 55
+td make commas work properly
+
+nn algorithm_a
+ln Algorithm A: additive number generator
+co $ other_methods
+co $ additive_generator_eq
+
+nn program_a
+ln Program A
+co $ algorithm_a
+
+nn lags_24_55
+ln 24 and 55 are called lags
+co $ additive_generator_eq
+
+nn lagged_fib_seq
+ln Numbers produced form lagged fibbonacci sequence
+co $ additive_generator_eq
+
+nn fails_simple_randomness_test
+ln Fails an extremely simple non-contrived test for
+ln randomness
+co $ lagged_fib_seq
+co $ additive_generator_eq
+
+nn discard_elements_in_seq
+ln Workaround: discard appropriate elements in sequence
+co $ fails_simple_randomness_test
+cr workaround
+
+nn case_30_127
+ln case(l,k) = (30, 127) should be large enough for
+ln most applications, especially in combination with other
+ln randomness-enhancing techniques
+co $ lags_24_55
+
+nn RNG_linear_combos
+ln RNG from linear combinations, of $X_{n -1} ... X_{n - k}$
+ln for small k
+co $ other_methods
+
+nn best_results_prime_modulus
+ln Best results: modulus m is prime
+co $ RNG_linear_combos
+
+nn theory_finite_fields
+ln Theory of Finite Fields: $m=p$ prime, period length
+ln $(p^k - 1)
+co $ best_results_prime_modulus
+
+nn finite_fields_eq
+ln Finite Fields Equation
+at eq X_n = (aX_{n - 1} + ... + a_k X_{n - k}) \mod p
+co $ theory_finite_fields
+
+nn primitive_polynomial_modulo_p
+ln $a_1 ... a_k$ have desirable property if polynomial
+ln is "primitive polynomial modulo p"
+co $ finite_fields_eq
+
+nn prim_poly_mod_p_eq
+ln Primitive Polynomial Modulo P equation
+co $ primitive_polynomial_modulo_p
+at eq f(x) = x^k - a_1 x^{k - 1} - ... - a_k
+
+nn iff_poly_root_prim_elem_of_field
+ln If and only if polynomial has root that is primitive
+ln element of the field with $p^k$ elements
+co $ primitive_polynomial_modulo_p
+
+nn testing_methods_prim_mod_p
+ln Methods for Testing Primitive Polynomial Modulo P
+co $ primitive_polynomial_modulo_p
+
+nn RNG_random_bits
+ln p=2, RNG that produces random bits
+co $ finite_fields_eq
+
+nn random_bits_MIX
+ln LDA X; ADD X; JNOV *+2; XOR A; STA X
+co $ RNG_random_bits
+
+nn poor_source_random_fractions
+ln Poor source of random fractions, even though bits are
+ln individually quite random

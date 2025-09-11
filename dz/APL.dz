@@ -1,0 +1,25 @@
+ns APL
+gr APL family of programming languages
+
+nn b_study
+hl https://docs.google.com/document/d/1W83ME5JecI2hd5hAUqQ1BVF32wtCel8zxb7WPq-D4f8/edit?pli=1&tab=t.0#heading=h.moseg6gryxz1
+ln A analysis of B
+co $ b
+cr study of b
+
+nn b
+hl https://web.archive.org/web/20190327000033/https://kparc.com/b/
+ln b.c
+rm site seems to be unavailable now, hence the IA link
+
+nn ksimple
+hl https://github.com/kparc/ksimple?tab=readme-ov-file
+ln k/simple is a bare minimum k
+ln interpreter for learning purposes by
+ln arthur whitney
+
+nn what_about_k
+hl https://xpqz.github.io/kbook/Introduction.html
+
+nn growler_k
+hl https://codeberg.org/growler/k

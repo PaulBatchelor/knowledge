@@ -1,0 +1,35 @@
+ns rust/std/modules/future
+
+nn structs
+hl https://doc.rust-lang.org/std/future/index.html#structs
+co $ ..
+
+ns +structs
+
+nn pending
+hl https://doc.rust-lang.org/std/future/struct.Pending.html
+co $ ..
+ln Creates a future which never resolves,
+ln representing a computation that never FInishes.
+ff future::pending
+fb Creates a future which never resolves,
+fb representing a computation that never FInishes.
+
+nn PollFn
+hl https://doc.rust-lang.org/std/future/struct.PollFn.html
+co $ ..
+ln A Future that wraps a function returning Poll.
+ff future::PollFn
+fb A Future that wraps a function returning Poll.
+
+nn Ready
+hl https://doc.rust-lang.org/std/future/struct.Ready.html
+co $ ..
+ln A future that is immediately ready with a value.
+ff future::Ready
+fb A future that is immediately ready with a value.
+
+zz -structs
+ns ..
+
+

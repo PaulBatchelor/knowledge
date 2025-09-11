@@ -1,0 +1,278 @@
+ns rust/std/modules/iter
+
+nn structs
+hl https://doc.rust-lang.org/std/iter/index.html#structs
+co $ ..
+
+
+ns +structs
+
+nn Chain
+hl https://doc.rust-lang.org/std/iter/struct.Chain.html
+co $ ..
+ln An iterator that links two iterators together,
+ln in a chain.
+ff iter::Chain
+fb An iterator that links two iterators together,
+fb in a chain.
+
+nn Cloned
+hl https://doc.rust-lang.org/std/iter/struct.Cloned.html
+co $ ..
+ln An iterator that clones the elements of an
+ln underlying iterator.
+ff iter::Cloned
+fb An iterator that clones the elements of an
+fb underlying iterator.
+
+nn Copied
+hl https://doc.rust-lang.org/std/iter/struct.Copied.html
+co $ ..
+ln An iterator that copies the elements of an
+ln underlying iterator.
+ff iter::Copied
+fb An iterator that copies the elements of an
+fb underlying iterator.
+
+nn Cycle
+hl https://doc.rust-lang.org/std/iter/struct.Cycle.html
+co $ ..
+ln An iterator that repeats endlessly.
+ff iter::Cycle
+fb An iterator that repeats endlessly.
+
+nn Empty
+hl https://doc.rust-lang.org/std/iter/struct.Empty.html
+co $ ..
+ln An iterator that yields nothing.
+ff iter::Empty
+fb An iterator that yields nothing.
+
+nn Enumerate
+hl https://doc.rust-lang.org/std/iter/struct.Enumerate.html
+co $ ..
+ln An iterator that yields the current count and
+ln the element during iteration.
+ff iter::Enumerate
+fb An iterator that yields the current count and
+fb the element during iteration.
+
+nn Filter
+hl https://doc.rust-lang.org/std/iter/struct.Filter.html
+co $ ..
+ln An iterator that filters the elements of iter
+ln with predicate.
+ff iter::Filter
+fb An iterator that filters the elements of iter
+fb with predicate.
+
+nn FilterMap
+hl https://doc.rust-lang.org/std/iter/struct.FilterMap.html
+co $ ..
+ln An iterator that uses f to both filter and map
+ln elements from iter.
+ff iter::FilterMap
+fb An iterator that uses f to both filter and map
+fb elements from iter.
+
+nn FlatMap
+hl https://doc.rust-lang.org/std/iter/struct.FlatMap.html
+co $ ..
+ln An iterator that maps each element to an
+ln iterator, and yields the elements of the produced
+ln iterators.
+ff iter::FlatMap
+fb An iterator that maps each element to an
+fb iterator, and yields the elements of the produced
+fb iterators.
+
+nn Flatten
+hl https://doc.rust-lang.org/std/iter/struct.Flatten.html
+co $ ..
+ln An iterator that flattens one level of nesting
+ln in an iterator of things that can be turned
+ln into iterators.
+ff iter::Flatten
+fb An iterator that flattens one level of nesting
+fb in an iterator of things that can be turned
+fb into iterators.
+
+nn FromFn
+hl https://doc.rust-lang.org/std/iter/struct.FromFn.html
+co $ ..
+ln An iterator where each iteration calls the
+ln provided closure F: FnMut() -> Option<T>.
+ff iter::FromFn
+fb An iterator where each iteration calls the
+fb provided closure F: FnMut() -> Option<T>.
+
+nn Fuse
+hl https://doc.rust-lang.org/std/iter/struct.Fuse.html
+co $ ..
+ln An iterator that yields None forever after the
+ln underlying iterator yields None once.
+ff iter::Fuse
+fb An iterator that yields None forever after the
+fb underlying iterator yields None once.
+
+nn Inspect
+hl https://doc.rust-lang.org/std/iter/struct.Inspect.html
+co $ ..
+ln An iterator that calls a function with a
+ln reference to each element before yielding it.
+ff iter::Inspect
+fb An iterator that calls a function with a
+fb reference to each element before yielding it.
+
+nn Map
+hl https://doc.rust-lang.org/std/iter/struct.Map.html
+co $ ..
+ln An iterator that maps the values of iter with f.
+ff iter::Map
+fb An iterator that maps the values of iter with f.
+
+nn MapWhile
+hl https://doc.rust-lang.org/std/iter/struct.MapWhile.html
+co $ ..
+ln An iterator that only accepts elements while
+ln predicate returns Some(_).
+ff iter::MapWhile
+fb An iterator that only accepts elements while
+fb predicate returns Some(_).
+
+nn Once
+hl https://doc.rust-lang.org/std/iter/struct.Once.html
+co $ ..
+ln An iterator that yields an element exactly once.
+ff iter::Once
+fb An iterator that yields an element exactly once.
+
+nn OnceWith
+hl https://doc.rust-lang.org/std/iter/struct.OnceWith.html
+co $ ..
+ln An iterator that yields a single element of type
+ln A by applying the provided closure F: FnOnce()
+ln -> A.
+ff iter::OnceWith
+fb An iterator that yields a single element of type
+fb A by applying the provided closure F: FnOnce()
+fb -> A.
+
+nn Peekable
+hl https://doc.rust-lang.org/std/iter/struct.Peekable.html
+co $ ..
+ln An iterator with a peek() that returns an
+ln optional reference to the next element.
+ff iter::Peekable
+fb An iterator with a peek() that returns an
+fb optional reference to the next element.
+
+nn Repeat
+hl https://doc.rust-lang.org/std/iter/struct.Repeat.html
+co $ ..
+ln An iterator that repeats an element endlessly.
+ff iter::Repeat
+fb An iterator that repeats an element endlessly.
+
+nn RepeatN
+hl https://doc.rust-lang.org/std/iter/struct.RepeatN.html
+co $ ..
+ln An iterator that repeats an element an exact
+ln number of times.
+ff iter::RepeatN
+fb An iterator that repeats an element an exact
+fb number of times.
+
+nn RepeatWith
+hl https://doc.rust-lang.org/std/iter/struct.RepeatWith.html
+co $ ..
+ln An iterator that repeats elements of type A
+ln endlessly by applying the provided closure F:
+ln FnMut() -> A.
+ff iter::RepeatWith
+fb An iterator that repeats elements of type A
+fb endlessly by applying the provided closure F:
+fb FnMut() -> A.
+
+nn Rev
+hl https://doc.rust-lang.org/std/iter/struct.Rev.html
+co $ ..
+ln A double-ended iterator with the direction
+ln inverted.
+ff iter::Rev
+fb A double-ended iterator with the direction
+fb inverted.
+
+nn Scan
+hl https://doc.rust-lang.org/std/iter/struct.Scan.html
+co $ ..
+ln An iterator to maintain state while iterating
+ln another iterator.
+ff iter::Scan
+fb An iterator to maintain state while iterating
+fb another iterator.
+
+nn Skip
+hl https://doc.rust-lang.org/std/iter/struct.Skip.html
+co $ ..
+ln An iterator that skips over n elements of iter.
+ff iter::Skip
+fb An iterator that skips over n elements of iter.
+
+nn SkipWhile
+hl https://doc.rust-lang.org/std/iter/struct.SkipWhile.html
+co $ ..
+ln An iterator that rejects elements while predicate
+ln returns true.
+ff iter::SkipWhile
+fb An iterator that rejects elements while predicate
+fb returns true.
+
+nn StepBy
+hl https://doc.rust-lang.org/std/iter/struct.StepBy.html
+co $ ..
+ln An iterator for stepping iterators by a custom
+ln amount.
+ff iter::StepBy
+fb An iterator for stepping iterators by a custom
+fb amount.
+
+nn Successors
+hl https://doc.rust-lang.org/std/iter/struct.Successors.html
+co $ ..
+ln A new iterator where each successive item is
+ln computed based on the preceding one.
+ff iter::Successors
+fb A new iterator where each successive item is
+fb computed based on the preceding one.
+
+nn Take
+hl https://doc.rust-lang.org/std/iter/struct.Take.html
+co $ ..
+ln An iterator that only iterates over the first
+ln n iterations of iter.
+ff iter::Take
+fb An iterator that only iterates over the first
+fb n iterations of iter.
+
+nn TakeWhile
+hl https://doc.rust-lang.org/std/iter/struct.TakeWhile.html
+co $ ..
+ln An iterator that only accepts elements while
+ln predicate returns true.
+ff iter::TakeWhile
+fb An iterator that only accepts elements while
+fb predicate returns true.
+
+nn Zip
+hl https://doc.rust-lang.org/std/iter/struct.Zip.html
+co $ ..
+ln An iterator that iterates two other iterators
+ln simultaneously.
+ff iter::Zip
+fb An iterator that iterates two other iterators
+fb simultaneously.
+
+zz -structs
+ns ..
+

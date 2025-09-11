@@ -20,6 +20,13 @@ ln we can simply return the memoized result instead of
 ln recalculating the result
 co $ ..
 co references/memoization $
+ff What is memoization?
+fb Memoization: the process of storing
+fb the result of of a function call, usually in a hashmap
+fb or array, so that when the same call is made again,
+fb we can simply return the memoized result instead of
+fb recalculating the result
+
 
 nn glossary/recursion
 ln recursion
@@ -28,6 +35,8 @@ nn glossary/recurrence_relation
 ln Recurrance Relation: an equation that
 ln relates different states with eachother.
 co $ ..
+ff What is a recurrance relation?
+fb An equation that relates different states with eachother
 
 nn glossary/trie
 co $ ..
@@ -40,6 +49,9 @@ nn glossary/overlapping_subproblems
 ln overlapping subproblems: small versions of the original
 ln problem that can be used multiple times.
 co $ ..
+ff What are overlapping subproblems?
+fb Small versions of the original problem that can be used
+fb multiple times.
 
 nn glossary/height_balanced
 co $ ..
@@ -47,3 +59,7 @@ ln Height-balanced: a height balanced binary tree is
 ln a tree in which the depth of the two subtrees of
 ln every node never differs by more than one.
 co $ ../../data_structures/binary_tree
+ff What is a height-balanced binary tree?
+fb Height-balanced: a height balanced binary tree is
+fb a tree in which the depth of the two subtrees of
+fb every node never differs by more than one.

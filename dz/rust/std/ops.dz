@@ -1,0 +1,57 @@
+ns rust/std/modules/ops
+
+nn structs
+hl https://doc.rust-lang.org/std/ops/index.html#structs
+co $ ..
+
+ns +structs
+
+nn Range
+hl https://doc.rust-lang.org/std/ops/struct.Range.html
+co $ ..
+ln A (half-open) range bounded inclusively below
+ln and exclusively above (start..end).
+ff ops::Range
+fb A (half-open) range bounded inclusively below
+fb and exclusively above (start..end).
+
+nn RangeFrom
+hl https://doc.rust-lang.org/std/ops/struct.RangeFrom.html
+co $ ..
+ln A range only bounded inclusively below (start..).
+ff ops::RangeFrom
+fb A range only bounded inclusively below (start..).
+
+nn RangeFull
+hl https://doc.rust-lang.org/std/ops/struct.RangeFull.html
+co $ ..
+ln An unbounded range (..).
+ff ops::RangeFull
+fb An unbounded range (..).
+
+nn RangeInclusive
+hl https://doc.rust-lang.org/std/ops/struct.RangeInclusive.html
+co $ ..
+ln A range bounded inclusively below and above
+ln (start..=end).
+ff ops::RangeInclusive
+fb A range bounded inclusively below and above
+fb (start..=end).
+
+nn RangeTo
+hl https://doc.rust-lang.org/std/ops/struct.RangeTo.html
+co $ ..
+ln A range only bounded exclusively above (..end).
+ff ops::RangeTo
+fb A range only bounded exclusively above (..end).
+
+nn RangeToInclusive
+hl https://doc.rust-lang.org/std/ops/struct.RangeToInclusive.html
+co $ ..
+ln A range only bounded inclusively above (..=end).
+ff ops::angeToInclusive
+fb A range only bounded inclusively above (..=end).
+
+zz -structs
+ns ..
+

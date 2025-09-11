@@ -347,6 +347,14 @@ ln A UTF-8–encoded, growable string.
 ff 'string' module
 fb A UTF-8–encoded, growable string.
 
+nn sync
+hl https://doc.rust-lang.org/std/sync/index.html
+co $ ..
+ln Useful synchronization primitives.
+ff sync
+fb Useful synchronization primitives.
+
+
 nn task
 hl https://doc.rust-lang.org/std/task/index.html
 co $ ..

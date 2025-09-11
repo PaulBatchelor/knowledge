@@ -1,0 +1,188 @@
+@2025-08-18 First Day Unemployed (yet again)
+It's been about 4 months since I last did anything
+at all related to this knowledge graph. Job consumed my life,
+and what was left I put into trying to make life work
+in New York. I've quit my job, quit new york, and am now
+gearing up to pursue a CS degree in Boston.
+
+@10:56 Setting up Coursera Algorithms knowledge graph #timelog:00:32:32
+#! dz coursera/algos1/news
+Remembering how to use my knowledge graph.
+---
+I find myself wanting to build out the curriculum as
+a tree. This is something I've done before. Start with
+the provided structure (table of contents, course curriculumn,
+etc), and build emergent structures through connections.
+---
+Organizing myself. Going to get some slides downloaded,
+placed in a folder somewhere (not in this graph).
+---
+Hmmm, when I'm taking notes, I'm going to want to be
+able to make nodes on the fly. Flow needs to be append-only.
+I like logging here too.
+---
+It's hard to make connections beyond something you heard
+only a few minutes ago. Tying things to very big established
+concepts could work. an emergent tagging system could
+also be interesting.
+---
+Maybe there's just something called "stream" which is just
+raw stream of conciousness append-only nodes that I take
+during lectures. Later, I would go back and edit the nodes?
+
+@11:54 watching analysis of algorithms #timelog:00:34:46
+#! dz coursera/algos1/modules/03_analysis
+Observations: brute force, empirical analysis, an^b,
+log log plots, straight line, linear regression.
+---
+The review problem at the end had a table of values and
+their time, and they wanted you to pick which equation
+was the closest match. I worked it out by plugging
+in the number for each one, but the better way to have
+done it would have been to do it algorithmically. The
+model can be represented as $T(N) = aN^b$. It can be
+observed that b is 2, and a can be solved algebraically.
+
+@12:49 mathematical models #timelog:00:14:55
+#! dz $
+I just botched the analysis problem at the end of this
+last video. The last answer was literally my last guess.
+Which leads me to think, I really don't know how to analyze
+programs and have no intuition for it currently.
+
+@13:35 order of growth classifications #timelog:00:15:24
+#! dz $
+
+@13:51 analysis of algorithms #timelog:00:15:05
+#! dz $
+I do not understand the question at the end, how these
+equations are all O(n^3).
+---
+Follow-up: It's a semantics thing. It's an upper bound, but
+it doesn't have to be the tightest upper bound. f(x) = 1
+can be O(n^3) even though it is O(1).
+
+@15:34 memory #timelog:00:08:14
+#! dz $
+
+@15:45 glance at ungraded interview questions #timelog:00:09:47
+#! dz $
+3-sum in quadratic time, search in bitonic array, egg drop.
+---
+3-sum: for some reason I misremembered the problem and thought
+the inputs were triplets, but that doesn't make any sense?
+The memorized answer I have is "sort the array, then turn it
+into a 2sum problem with 2-pointer". But, it would be nice
+to explain how that is O(n^2) time.
+
+@17:42 Working through union find again #timelog:00:22:24
+#! dz coursera/algos1/modules/02_union_find
+I want to populate the knowledge graph. Gonna try ed again.
+
+@2025-08-19
+@09:55 more union find knowledge graph-ing #timelog:01:15:42
+#! dz coursera/algos1/modules/02_union_find
+I'm going through growing pains with ed. It's very limiting
+not seeing the whole document. I just created a node,
+and accidentally added it to another tree.
+---
+The web browser view can be a little clumsy sometimes.
+---
+I need a way to navigate the knowledge graph like a directory,
+and also perform searches. FUSE is almost a little too
+tempting.
+---
+Anyways. back to dynamic connectivity.
+---
+I'm running into an impedence mismatch with how I'm trying
+to structure information (hierarchy, graphs), input system
+(ed, largely append-only lines and commands with only
+nearby context), and how the information is presented.
+---
+My workflow seems to work like this: knowledge is a hierarchy.
+Presentation always starts with a "big" concept, then
+smaller concepts that lead up to the "big" concept. Then
+those smaller concepts get broken down into smaller concepts,
+so on, so forth.
+---
+This union find submodule has a few sections. Right now,
+I'm looking at "quick find", which has a data structure,
+and find/union operations for dynamic connectivity.
+---
+Good enough stopping point. Still figuring out the best
+workflow for knowledge graphing.
+
+@12:39 continued knowledge-graphing #timelog:00:45:22
+#! dz $
+
+@13:25 weighted quick-union: weights are based on total number of items, not height?
+#! dz $/improvements/weighted
+I'm trying to grok the code, but my first assumption was that
+the weighted quick-union measured weights by tree "height",
+since that's a common enough performance metric. It looks
+like this just measures the total number of objects.
+
+@13:38 trying to hook this into the big graph
+#! dz coursera/news
+
+@15:19 working out a nodels command #timelog:00:40:23
+Given a namespace, list out nodes. do not include children
+of subgraphs.
+---
+good enough
+---
+oops not good enough. wanted to list top-level namespaces
+
+@16:07 (hopefully) finish up notes #timelog:00:16:40
+#! dz coursera/algos1/modules/02_union_find
+too much too mind today trying to reduce friction for the
+mind map.
+---
+Okay, I think that's good enough for now.
+
+@18:31 how am I going to work on these problemsets? #timelog:00:10:30
+#! dz coursera/algos1
+There are these open response no-credit interview questions.
+all they have is this giant textbox and you can put whatever
+you want in it and it will grade 100%. I want to make
+these problems more enriching than just grinding for hours
+meaninglessly struggling with the basics.
+---
+I sort of did 3sum by talking about it in a round-about way
+based on how I did it on leetcode. But, I felt panicked
+and rushed.
+---
+I think what I need to do, is learn how to sit with these
+problems for a while, and progressively contribute to them.
+Develop a chain of thought, kind of what I am doing here
+with the logging. Being able to document how I think about
+a problem, and then spend time later to review that thought
+process, will hopefully enable me to do better with these
+types of problems?
+
+@18:43 setting up initial scaffolding for percolation assignment #timelog:00:03:22
+#! dz coursera/algos1/modules/02_union_find/percolation_assignment
+nvm. after dinner?
+
+@19:44 continued boilerplate and setup #timelog:00:40:19
+#! dz coursera/algos1/modules/02_union_find/percolation_assignment
+There's going to be some growing pains getting java to work
+I can already tell. Downloading intellij currently (1.7 gigs? gulp)
+for mac. Hoping that I can get away with neovim.
+---
+nice, it looks like the system installed CLI stuff that
+I can run from the terminal.
+---
+Oh! good. there's a project file. I managed to find it.
+Maybe I just stick to IntelliJ for this one. Seems like
+the most frictionless path. I'm glad I have a Mac? this would
+have been murder for my weird Linux laptop.
+---
+Got vim working with IntelliJ now. Fingers feel a bit more
+comfortable now.
+---
+well, I got some initial boilerplate code set up, things
+are put into git. feels like some progress, I'm fighting
+the computer. I think I am in a good place to actually
+start thinking about the problem itself. BUT, I will
+put that aside for now.

@@ -6,3 +6,446 @@ nn top_down_recursion
 nn bottom_up_recursion
 
 ns ../..
+
+ns leetcode
+nn problems/1_two_sum/solution
+ln Solution: use a hashmap. If the number
+ln exists in the hashmap, a pair is found.
+ln Otherwise store h[target - n] = i.
+co $ ..
+ff What is the solution to 1: two sum?
+fb Solution: use a hashmap. If the number
+fb exists in the hashmap, a pair is found.
+fb Otherwise store h[target - n] = i.
+
+nn problems/167_two_sum_ii/solution
+ln Solution: two-pointer. The list is sorted,
+ln so add numbers and increase/decrease the
+ln ends depending on if it reaches the target
+ln or not.
+ff What is the solution to 167: two sum ii?
+fb Solution: two-pointer. The list is sorted,
+fb so add numbers and increase/decrease the
+fb ends depending on if it reaches the target
+fb or not.
+co $ ..
+
+nn problems/15_3sum/solution
+co $ ..
+ln Solution: Break this into a TwoSum problem
+ln using two-pointer. Sort the numbers.
+ln The two sum will do a check
+ln starting with idx + 1, and then have logic to
+ln skip duplicate numbers to ensure combinations
+ln are unique. The main loop can break
+ln early if the number is greater than 0 because
+ln no numbers following it will be able to sum to
+ln zero.
+ff What is the solution to 15: 3sum?
+fb Solution: Break this into a TwoSum problem
+fb using two-pointer. Sort the numbers.
+fb The two sum will do a check
+fb starting with idx + 1, and then have logic to
+fb skip duplicate numbers to ensure combinations
+fb are unique. The main loop can break
+fb early if the number is greater than 0 because
+fb no numbers following it will be able to sum to
+fb zero.
+
+nn problems/20_valid_parentheses/solution
+co $ ..
+ln Solution: use a stack. Push if open, otherwise
+ln pop and check. Make sure the string length is
+ln even first, and at the end make sure the stack
+ln is empty.
+ff How do you solve 20: valid parenthesis?
+fb Solution: use a stack. Push if open, otherwise
+fb pop and check. Make sure the string length is
+fb even first, and at the end make sure the stack
+fb is empty.
+
+nn problems/21_merge_two_sorted_lists/solution
+co $ ..
+ln Solution: linked list problem. Create
+ln a dummy, and initially the tail to
+ln be the dummy. While either
+ln list not-null, determine which to use next.
+ln If both lists exist, choose the smallest.
+ln Otherwise append to the only remaining list.
+ff Describe a way to solve 21: Merge Two Sorted Lists
+fb Solution: linked list problem. Create
+fb a dummy, and initially the tail to
+fb be the dummy. While either
+fb list not-null, determine which to use next.
+fb If both lists exist, choose the smallest.
+fb Otherwise append to the only remaining list.
+
+nn problems/121_best_time_to_sell_and_buy_stock/solution
+ln Solution: Greedy heuristic. Keep track of the smallest
+ln value so far, and find the maximum value between
+ln the current value and the smallest so far.
+ff Describe a solution to 121: best time to sell and buy stock
+fb Solution: Greedy heuristic. Keep track of the smallest
+fb value so far, and find the maximum value between
+fb the current value and the smallest so far.
+co $ ..
+
+nn problems/125_valid_palindrome/solution
+ln Solution: use two-pointer. In the loop, skip non-alpha
+ln characters (apparently alphanumeric, had to use
+ln !isalnum() instead of !isalpha). Return false if things
+ln don't match
+ff Describe a solution to  125: valid palindrome
+fb Solution: use two-pointer. In the loop, skip non-alpha
+fb characters (apparently alphanumeric, had to use
+fb !isalnum() instead of !isalpha). Return false if things
+fb don't match
+
+nn problems/226_invert_binary_tree/solution
+ln Solution: recursively swap left/right children.
+ff What is a solution to 226: invert binary tree?
+fb Use recursion. Recursively swap left/right children.
+co $ ..
+
+nn problems/242_valid_anagram/solution
+co $ ..
+ln Solution: this is a hashmap problem. For each word, build
+ln a hashmap containing the frequency of each letter. Then,
+ln compare the hashmaps. Can be concisely and efficiently
+ln solved in Python using a Counter.
+ff How to solve 242: valid anagram?
+fb Solution: this is a hashmap problem. For each word, build
+fb a hashmap containing the frequency of each letter. Then,
+fb compare the hashmaps. Can be concisely and efficiently
+fb solved in Python using a Counter.
+
+nn problems/704_binary_search/solution
+ln Solution: this is a divide-and-conquer. Do the
+ln lo/hi bound check while lo is less than hi, and check
+ln and see if the converged target matches the result
+ln the bounds are 0 to N, not N - 1.
+ln But mindful of the subtleties here.
+ln The lower bound
+ln can be negative, so check for that at the. The returned
+ln value is lo - 1 if it is a target.
+ff How do you solve 704: binary search?
+fb Solution: this is a divide-and-conquer. Do the
+fb lo/hi bound check while lo is less than hi, and check
+fb and see if the converged target matches the result
+fb the bounds are 0 to N, not N - 1.
+fb But mindful of the subtleties here.
+fb The lower bound
+fb can be negative, so check for that at the. The returned
+fb value is lo - 1 if it is a target.
+
+nn problems/733_flood_fill/solution
+ln Use a queue. Use a hashmap
+ln or set to keep track of visited positions. Pop a position,
+ln Iterate over 4 directions. Make sure to mark it as visited
+ln even if it is not a match. Filled colors get put onto
+ln the queue.
+ff What's a way to solve 733: flood fill?
+fb Use a queue. Use a hashmap
+fb or set to keep track of visited positions. Pop a position,
+fb Iterate over 4 directions. Make sure to mark it as visited
+fb even if it is not a match. Filled colors get put onto
+fb the queue.
+
+
+nn problems/235_lowest_common_ancestor_BST/solution
+ff What is the solution to 235: Lowest common ancestor
+ff of a binary search tree?
+fb Algorithm: 1. start traversing from root node. 2. If both
+fb sides p and q are in right subtree, continue search
+fb with right tree starting with step 1. 3. If both nodes
+fb p and q are in left subtree, continue the search with
+fb left subtree starting step 1. If both steps 2 and
+fb 3 are not true, we have found the common node which
+fb is common to p and q's subtree. Return this node
+fb as the common subtree.
+co $ ..
+
+nn problems/110_balanced_binary_tree/solution
+ff What is one way to solve 110: Balanced Binary Tree
+fb Used top-down recursion. Recursively find the
+fb height of the left/right nodes. If the heights
+fb are LTE 1, and the left/right nodes themselves are
+fb balanced (recursive call), then it is balanced
+
+nn problems/141_linked_list_cycle/solution
+ff What is a solution to 141: linked list cycle?
+fb One could use a hashtable, but the ideal approach is
+fb to use Floyd's algorithm for cycle detection. Set up
+fb a slow pointer and a fast pointer. If they match,
+fb there's a cycle (true). If fast or fast.next is None, there
+fb is no cycle (false).
+co $ ..
+
+
+nn problems/232_implement_queue_using_stacks/solution
+ff What is a solution to 232: implement queue using stacks?
+fb You can use a stack in O(1) time for pop, peek, and
+fb empty operations. For push, drain stack A to stack B,
+fb append the value to stack B, then drain stack B back to A.
+fb The draining process reverses the ordering.
+co $ ..
+
+nn problems/278_first_bad_version/solution
+ff What is the solution to 278: first bad version?
+fb Binary search. When bounds checking, make sure hi=mid,
+fb and lo = mid + 1. mid = lo + ((hi - lo)//2). Return lo.
+
+nn problems/383_ransom_note/solution
+ff What is the solution to 383: ransom note?
+fb Hashmap. Get a frequency map/Counter for the magazine
+fb and the ransom note. Iterate through the keys in the
+fb ransomnote counter. If there aren't enough of a particular
+fb letter in magazine or it doesn't exist, it is false.
+fb Return true after the loop.
+co $ ..
+
+nn problems/70_climbing_stairs/solution
+co $ ..
+ff What is the solution to 70: climbing stairs?
+fb Use dynamic programming. Realize that for any
+fb given last step, you can either come from
+fb the previous step (1 step) or the one before
+fb that one (2 steps away), with those possible
+fb combos. So the recurrene relation is s[n] =
+fb s[n - 1] + s[n - 2], which you can reduce to
+fb have memory of 2. Make sure to factor in
+fb base cases.
+
+nn problems/409_longest_palindrome/solution
+co $ ..
+ff What is the solution to 409: longest palindrome?
+fb The core data structure is a hashmap. Build up
+fb a frequency map of all the letters. Add up all
+fb the even ones, and all the odd ones (but subtract 1).
+fb At the end of the loop, add one if an odd number
+fb was found.
+fb A more optimized solution can be done by building
+fb up the hashmap counter and keeping a "odd_freq_count"
+fb variable. When the current count for a letter is odd,
+fb increase the counter, and decrease it when even.
+fb If the counter is zero, the length of the string
+fb is the answer. Otherwise, len(s) - counter + 1.
+
+nn problems/206_reverse_linked_list/solution
+co $ ..
+ff What is the solution to 206: reverse a linked list?
+fb High level structure: iterate through a linked list,
+fb which keeps track of the previous node, and return
+fb the latest previous node. Inside the loop,
+fb the current node next pointer should be updated
+fb to the previous node, and the old value becomes
+fb the current node.
+
+nn problems/169_majority_element/solution
+ff What is the solution to 169: majority element?
+fb You can solve this with a hashmap. Build up
+fb a frequency map, and return the largest.
+
+
+nn problems/67_add_binary/solution
+ff What is the solution to 67: add binary?
+fb Convert numbers to stack. Pop and add binary
+fb bits with a carry flag. When overflow happens
+fb update the result bit: 0 when overflow is 2
+fb (1 + 1), 1 when 3 (1 + 1 + carry). When one
+fb of the stacks is exhausted, append the remaining
+fb bits while keeping track of carry flag. Append
+fb an extra bit if the carry flag is still on.
+
+nn problems/543_diameter_of_binary_tree/solution
+ff What is a solution to 543: diameter of binary tree?
+fb This can be solved recursively using DFS. Traversal
+fb works by finding the max height of the left/right
+fb trees, and then adding those values together. Keep
+fb track of the maximum during the traversal and return
+fb that value.
+co $ ..
+
+nn problems/876_middle_of_linked_list/solution
+ff What is the solution to 876: middle of linked list?
+fb Fast/slow pointer. slow moves at 1x, fast moves at 2x.
+fb Run while slow, fast, and fast.next. Return slow.
+co $ ..
+
+nn problems/104_max_depth_binary_tree/solution
+ff What is the solution to 104: max depth of binary tree?
+fb DFS recursion. If root is none, return 0. Else,
+fb recursively call max depth on left/right, get the max
+fb value, add 1.
+co $ ..
+
+nn problems/217_contains_duplicate/solution
+ff What is the solution to 217: contains duplicate?
+fb Use a Hash Set data structure. If the length of the set
+fb is less than the length of the original array, there
+fb are duplicates.
+co $ ..
+
+nn problems/53_maximum_subarray/solution
+ff What is the solution to 217: maximum subarray?
+fb Kadane's algorithm.
+fb 1. initialize 2 variables 2 integer variables currentSubarray
+fb and maxSubarray, set them equal to first value in subarray
+fb 2. iterate through the array starting with 2nd element.
+fb Add elemen to currentSubarray. Choose the greater value
+fb to update currentSubarray: currentSubarray, or the
+fb current value.
+fb 3. Update max value.
+
+
+nn problems/57_insert_interval/solution
+ff How do you solve 57: insert interval?
+fb It helps to draw a picture. Initialize a merged interval
+fb variable to the new interval. Iterate through intervals
+fb in the list. Anything before the start of the start
+fb of the merged interval can be merged normally. Insert
+fb the merged interval when there's an interval whose start
+fb time is after the merged end time. While there is still
+fb a merged interval, the merged interval is the smallest
+fb start time of the current/merged plus the largest end
+fb time of the current/merged. Insert intervals
+fb normally after the merged interval has been made.
+fb Insert the merged interval if it hasn't been inserted at
+fb the end of the loop.
+
+nn problems/542_01_matrix/solution
+ff How to solve 542: 01 matrix?
+fb BFS. Initialize an output matrix and a queue. Iterate through input
+fb matrix and find all the 0 tiles. Push their positions
+fb and their distance (0) as a tuple onto the queue. Pop values
+fb off the queue, and check 4 directions for unvisited
+fb tiles. This will have a distance of "dist + 1".
+
+nn problems/973_k_closest_points_origin/solution
+ff How to solve 973: K closest points to origin?
+fb Use a heap, ordered by distance (which can be sqrt(x*x + y*y)
+fb because origin). Push, then pop to maintain K elements (order is important)
+fb Pop elements off the heap and return.
+
+
+nn problems/3_longest_substring_without_repeating_characters/solution
+ff What is a decent solution to 3: longest substring without repeating characters?
+fb "HashMap with Sliding window".
+fb Set up an empty counter/hashmap and left/right pointers equal to 0.
+fb Loop while right pointer is less than string length.
+fb 1: get the character at the right pointer. 2: update
+fb the count for that character. 3: while the count of that
+fb right character is greater than 1, get the value of
+fb the left pointer, decrease that from the counter, and increase
+fb the left pointer. 4: obtain the max value of right - left + 1.
+fb 5: increment right pointer.
+
+nn problems/102_binary_tree_level_order_traversal/solution
+ff What is a solution to 102: binary tree level order traversal?
+fb BFS traversal. Use a queue, and keep track of level number.
+fb Either append when the level changes (make sure to append at the end), or use the level
+fb number as an index.
+
+nn problems/133_clone_graph/solution
+ff What is a solution to 133: clone graph?
+fb BFS, using a queue. Maintain a hashmap of created nodes
+fb using their value (unique id) as a lookup. Add the
+fb the root value to the nodelist. Inside the
+fb loop, iterate through the nodes neighbors. If a neighbor
+fb hasn't been cloned yet, clone it, and add the original
+fb neighbor to the queue. These new neighbors get appended
+fb to the neighbors list of the current node.
+
+nn leetcode/problems/150_evaluate_polish_notation
+ff How to solve 150: evaluate polish notation
+fb This a pretty conventional stack problem. The tricky
+fb thing with this problem is dividing towards zero,
+fb which actually has subtle behavior.
+fb In python, this is done with int(a / b). a // b and
+fb math.floor(a / b) do not work.
+
+nn problems/207_course_schedule/solution
+ff What is one way to solve 207: course schedule?
+fb You can solve this with graph traversal. Create an
+fb adjacency list, where each node shows their prerequisite
+fb nodes. Use a queue, and append all the nodes that have
+fb no prerequsites. Iterate through the queue. Remove the
+fb current node entirely from the adjacency list, then
+fb append any nodes that no longer have any prerequsite
+fb nodes. Keep track of nodes visited, and compare that
+fb count with the total number of courses.
+
+nn problems/238_product_of_array_except_self/solution
+ff How to solve 238: product of array except self?
+fb Kind of like prefix sum, but with products.
+fb Initialize them all to be 1 first.
+fb Pre-calculate
+fb products going from the right, then one going from the
+fb left. left[i] = left[i - 1] * nums[i - 1],
+fb right[N - i - 1] = left[N - i] * nums[N - i]. The
+fb resulting product is out[i] = left[i] * right[i]
+
+
+nn problems/155_min_stack/solution
+ff How to solve 155: min stack?
+fb Use two stacks, one for current minimum, one for the values
+
+nn problems/98_validate_binary_search_tree/solution
+ff How to solve 98: validate binary search tree?
+fb Use inorder traversal. recursively go to the leftmost
+fb node, and keep track of the previous value. If current
+fb value is less than the previous, it is not a valid
+fb binary search tree.
+
+nn problems/200_number_of_islands/solution
+ff What's one way to solve 200: number of islands?
+fb Use BFS. Set up a for loop to iterate through rows
+fb and columns. If an unvisited 1 is found, increase the
+fb island count, and then use a queue to traverse the
+fb neighbors that are 1s, and mark those as visited.
+
+nn problems/994_rotting_oranges/solution
+ff What's one way to solve 994: rotting oranges?
+fb Use BFS. Initialize a queue with all the rotting oranges,
+fb using their positions and the current minute (0). Keep
+fb track of the number of fresh oranges. During the iteration,
+fb when a fresh orange is found, set the global min minutes to be
+fb the maximum minutes, and decrease the fresh orange count.
+fb If there are still oranges, return -1. Otherwise, return
+fb the min minutes.
+
+nn problems/39_combination_sum/solution
+ff what's a way to solve 39: combination sum?
+fb This is a backtracking problem. Set up a recursive backtrack
+fb function that takes in the current combination, the start
+fb position of the candidates, and the remainder value.
+fb A remainder of zero indicates a combination was found,
+fb so append that to a "results" list somewhere.
+fb Less than zero indicates the combo exceeds target, so
+fb return early. Iterate through the candidates, starting
+fb at the start position. Append a candidate to the combo,
+fb call the backtrack function, then pop it off again.
+fb Return the results.
+
+nn problems/46_permutations/solution
+ff How do you solve 46: permutations?
+fb Use backtracking. This is a pretty typical backtracking
+fb setup. The trick though is to have some way of checking
+fb if the current value in the loop is in the currently
+fb populated combination or not. In python, this can
+fb be done with "if nuns[i] in combo".
+
+nn problems/56_merge_intervals/solution
+ff How do you solve 56: merge intervals?
+fb First, sort the input intervals. In python, this is done
+fb automagically with `sorted()`.
+fb Set up a "last" variable, and have that be pointed to
+fb the first interval.
+fb iterate through the sorted intervals. If the start time
+fb of the current interval is LTE the end time of the last
+fb interval, update the end time of last to be the maximum
+fb end time between the last/current interval. Otherwise,
+fb append last to the output, and update last to be the
+fb current interval.
+fb At the end of the loop, append the last interval.
+fb Return the output

@@ -1,0 +1,32 @@
+ns rust/std/modules/mem
+
+nn structs
+hl https://doc.rust-lang.org/std/mem/index.html#structs
+co $ ..
+
+ns +structs
+
+nn Discriminant
+hl https://doc.rust-lang.org/std/mem/struct.Discriminant.html
+co $ ..
+ln Opaque type representing the discriminant of
+ln an enum.
+ff Discriminant
+fb Opaque type representing the discriminant of
+fb an enum.
+
+nn ManuallyDrop
+hl https://doc.rust-lang.org/std/mem/struct.ManuallyDrop.html
+co $ ..
+ln A wrapper to inhibit the compiler from
+ln automatically calling T's destructor. This
+ln wrapper is 0-cost.
+ff ManuallyDrop
+fb A wrapper to inhibit the compiler from
+fb automatically calling T's destructor. This
+fb wrapper is 0-cost.
+
+
+zz -structs
+ns ..
+

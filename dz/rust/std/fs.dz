@@ -1,0 +1,89 @@
+ns rust/std/modules/fs
+
+nn structs
+hl https://doc.rust-lang.org/std/fs/index.html#structs
+co $ ..
+
+
+ns +structs
+
+nn DirBuilder
+hl https://doc.rust-lang.org/std/fs/struct.DirBuilder.html
+co $ ..
+ln A builder used to create directories in various
+ln manners.
+ff FS::DirBuilder
+fb A builder used to create directories in various
+fb manners.
+
+nn DirEntry
+hl https://doc.rust-lang.org/std/fs/struct.DirEntry.html
+co $ ..
+ln Entries returned by the ReadDir iterator.
+ff fs::DirEntry
+fb Entries returned by the ReadDir iterator.
+
+nn File
+hl https://doc.rust-lang.org/std/fs/struct.File.html
+co $ ..
+ln An object providing access to an open file on
+ln the filesystem.
+ff fs::File
+fb An object providing access to an open file on
+fb the filesystem.
+
+nn FileTimes
+hl https://doc.rust-lang.org/std/fs/struct.FileTimes.html
+co $ ..
+ln Representation of the various timestamps on
+ln a file.
+ff fs::FileTimes
+fb Representation of the various timestamps on
+fb a file.
+
+nn FileType
+hl https://doc.rust-lang.org/std/fs/struct.FileType.html
+co $ ..
+ln A structure representing a type of file with
+ln accessors for each file type. It is returned by
+ln Metadata::file_type method.
+ff fs::FileType
+fb A structure representing a type of file with
+fb accessors for each file type. It is returned by
+fb Metadata::file_type method.
+
+nn MetaData
+hl https://doc.rust-lang.org/std/fs/struct.Metadata.html
+co $ ..
+ln Metadata information about a file.
+ff fs::MetaData
+fb Metadata information about a file.
+
+nn OpenOptions
+hl https://doc.rust-lang.org/std/fs/struct.OpenOptions.html
+co $ ..
+ln Options and flags which can be used to configure
+ln how a file is opened.
+ff fs::OpenOptions
+fb Options and flags which can be used to configure
+fb how a file is opened.
+
+nn Permissions
+hl https://doc.rust-lang.org/std/fs/struct.Permissions.html
+co $ ..
+ln Representation of the various permissions on
+ln a file.
+ff fs::Permissions
+fb Representation of the various permissions on
+fb a file.
+
+nn ReadDir
+hl https://doc.rust-lang.org/std/fs/struct.ReadDir.html
+co $ ..
+ln Iterator over the entries in a directory.
+ff fs::ReadDir
+fb Iterator over the entries in a directory.
+
+zz -structs
+ns ..
+

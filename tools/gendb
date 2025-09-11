@@ -1,0 +1,8 @@
+./tools/dzimport.py dzfiles.txt a.db
+
+if [ ! "$?" -eq 0 ]
+then
+    exit 1
+fi
+
+./tools/genlogs.sh

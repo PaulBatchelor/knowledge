@@ -1,0 +1,37 @@
+ns rust/std/modules/option
+
+nn structs
+hl https://doc.rust-lang.org/std/option/index.html#structs
+co $ ..
+
+ns +structs
+
+nn IntoIter
+hl https://doc.rust-lang.org/std/option/struct.IntoIter.html
+co $ ..
+ln An iterator over the value in Some variant of
+ln an Option.
+ff option::IntoIter
+fb An iterator over the value in Some variant of
+fb an Option.
+
+nn Iter
+hl https://doc.rust-lang.org/std/option/struct.Iter.html
+co $ ..
+ln An iterator over a reference to the Some variant
+ln of an Option.
+ff option::Iter
+fb An iterator over a reference to the Some variant
+fb of an Option.
+
+nn IterMut
+hl https://doc.rust-lang.org/std/option/struct.IterMut.html
+co $ ..
+ln An iterator over a mutable reference to the Some
+ln variant of an Option.
+ff option::IterMut
+fb An iterator over a mutable reference to the Some
+fb variant of an Option.
+
+zz -structs
+ns ..

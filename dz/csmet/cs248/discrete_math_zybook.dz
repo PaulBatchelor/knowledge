@@ -40,6 +40,15 @@ ln 1.3: Conditional Statements
 nn 04_logical_equivalence
 ln 1.4: Logical Equivalence
 
+nn 05_laws_propositional_logic
+ln 1.5: Laws of Propositional Logic
+
+nn 06_predicates_and_quantifiers
+ln 1.6: Predicates and Quantifiers
+
+nn 07_quantified_statements
+ln 1.7: quantified statements
+
 ns ..
 
 nn glossary/logic
@@ -232,3 +241,69 @@ ln a negation operation inside a parenthesized expression.
 ff What are De Morgan's Laws?
 fb De Morgan's Laws: laws that show how to correctly distribute
 fb a negation operation inside a parenthesized expression.
+
+nn glossary/predicate
+co $ ?06_predicates_and_quantifiers
+ln Predicate: a logical statement with a truth value that is
+ln a function of one or more values.
+ff What is a predicate?
+fb A logical statement with a truth value that is a function
+fb of one or more values.
+
+nn glossary/domain
+co $ ?06_predicates_and_quantifiers
+ln Domain: the set of all possible values for the variable.
+
+nn glossary/universal_quantifier
+co $ ?06_predicates_and_quantifiers
+ln Universal Quantifier: a special symbol used in mathematics
+ln used to denote that a property or statement is true for
+ln all elements within a specified domain or set.
+ff What is a univeral quantifier?
+fb A special symbol in mathematics used to denote that a
+fb property or statement is true for all elements within a
+fb specified domain or set.
+
+nn glossary/counterexample
+co $ ?06_predicates_and_quantifiers
+ln Counterexample: an element in the domain of a universally
+ln quantified statement for which the predicate is false.
+ln A single counterexample is sufficient to show that a
+ln universally quantified statement is false.
+
+nn glossary/existential_quantifier
+co $ ?06_predicates_and_quantifiers
+ln Existential Quantifier: a special symbol used in mathematics
+ln to indicate that a property or statement is true for
+ln at least one element within a specified domain or set.
+ff What is an existential quantifier?
+fb a special symbol used in mathematics
+fb to indicate that a property or statement is true for
+fb at least one element within a specified domain or set.
+
+nn glossary/quantifier
+ln Quantifier: generic name for existential and universal
+ln quantifiers
+co $ ../existential_quantifier
+co $ ../universal_quantifier
+co $ ?07_quantified_statements
+
+nn glossary/quantified_statement
+co $ ?07_quantified_statements
+ln Quantified Statement: a logical statement that includes
+ln a universal or existential quantifier
+
+nn glossary/free_variable
+co $ ?07_quantified_statements
+ln Free Variable: a variable in a predicate that is free
+ln to take on any value in the domain.
+ff What is a "free variable"?
+fb Free Variable: a variable in a predicate that is free
+fb to take on any value in the domain.
+
+nn glossary/bound_variable
+co $ ?07_quantified_statements
+ln Bound Variable: a variable in a predicate that is bound
+ln to a quantifier.
+co $ ../free_variable
+

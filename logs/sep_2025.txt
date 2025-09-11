@@ -260,3 +260,18 @@ Okay payment sent.
 
 @11:07 1.4 logical equivalence #timelog:00:55:43
 #! dz $/04_logical_equivalence
+
+@14:19 Logical equivalence, continued #timelog:00:42:40
+#! dz $/04_logical_equivalence
+
+@15:02 laws of propositional logic #timelog:01:25:53
+#! dz $/05_laws_propositional_logic
+
+@19:58 predicates and quantifiers #timelog:00:35:11
+#! dz $/06_predicates_and_quantifiers
+
+@20:39 quantified statements #timelog:00:09:59
+#! dz $/07_quantified_statements
+Out of focus for the day. Getting sleepy. Will start
+again tomorrow. I don't think I'll be able to finish this
+chapter in time for class. But I think that's okay?

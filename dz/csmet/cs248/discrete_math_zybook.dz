@@ -49,6 +49,12 @@ ln 1.6: Predicates and Quantifiers
 nn 07_quantified_statements
 ln 1.7: quantified statements
 
+nn 08_de_morgans_law_for_quantified_statements
+ln 1.8: De Morgan's Law for Quantified Statements
+
+nn 09_nested_quantifiers
+ln 1.9: Nested Quantifiers
+
 ns ..
 
 nn glossary/logic
@@ -307,3 +313,12 @@ ln Bound Variable: a variable in a predicate that is bound
 ln to a quantifier.
 co $ ../free_variable
 
+nn glossary/nested_quantifier
+co $ ?09_nested_quantifiers
+ln Nested Quantifier: A logical expression with more than
+ln one quantifier that binds different variables in the same
+ln predicate.
+ff What is a nested quantifier?
+fb Nested Quantifier: A logical expression with more than
+fb one quantifier that binds different variables in the same
+fb predicate.

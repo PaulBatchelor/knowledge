@@ -275,3 +275,19 @@ Okay payment sent.
 Out of focus for the day. Getting sleepy. Will start
 again tomorrow. I don't think I'll be able to finish this
 chapter in time for class. But I think that's okay?
+
+@2025-09-11 Day 11
+
+@00:00 midnight work on quantified statements #timelog:00:17:05
+#! dz $/07_quantified_statements
+Word problems are really silly. Why do math educators
+do this?
+---
+Ah okay, I get it. It's pretty powerful seeing the math
+notation being stacked up against natural language.
+
+@00:16 De Morgan's law for quantified statements #timelog:01:07:09
+#! dz $/08_de_morgans_law_for_quantified_statements
+
+@01:29 Nested Quantifiers #timelog:00:17:00
+#! dz $/09_nested_quantifiers

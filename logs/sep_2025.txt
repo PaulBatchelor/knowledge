@@ -343,3 +343,9 @@ Oh good, it's due on the 15th, not the 12th
 
 @2025-09-12 Day 12
 @09:41 scanning #archiving #timelog:00:53:57
+
+@11:07 let's scope out my CS-348 assignment #bumet #timelog:00:33:54
+#! dz csmet/cs342/hw1
+Created an initial repo for this with the boilerplate.
+Code builds and runs with justfiles. I have a main function
+for LinkedList.

@@ -115,6 +115,12 @@ ln 1.9: Nested Quantifiers
 nn 10_more_nested_quantifiers
 ln 1.10: More Nested Quantifiers
 
+nn 11_logical_reasoning
+ln 1.11: Logical Reasoning
+
+nn 12_rules_of_inference_with_propositions
+ln 1.12 Rules of Inference with Propositions
+
 ns ..
 
 nn glossary/logic
@@ -396,3 +402,43 @@ co $ ?10_more_nested_quantifiers
 nn refs/boolean_algebra_laws
 hl https://en.wikipedia.org/wiki/Boolean_algebra#Laws
 co $ ?05_laws_propositional_logic
+
+nn glossary/argument
+ln Argument: a sequence of propositions, called hypotheses,
+ln followed by a final proposition, called the conclusion.
+co $ ?11_logical_reasoning
+co $ ../hypotheses
+co $ ../conclusion
+ff In logic, what is an Argument?
+fb Argument: a sequence of propositions, called hypotheses,
+fb followed by a final proposition, called the conclusion.
+
+nn glossary/hypotheses
+ln Hypotheses: a list of propositions, in the context
+ln of an argument.
+ff What are hypotheses in a logical argument?
+fb Hypotheses: a list of propositions, in the context
+fb of an argument.
+co $ ?11_logical_reasoning
+co $ ../conclusion
+
+nn glossary/conclusion
+ln Conclusion: the final proposition in an argument
+fb What is a Conclusion in a logical argument?
+ff Conclusion: the final proposition in an argument
+co $ ?11_logical_reasoning
+
+nn glossary/valid_argument
+ln Valid Argument: the conclusion is true for every truth
+ln assignment to the variables that causes all of the hypotheses
+ln to be true. Otherwise, it is invalid
+ff What is a Valid Logical Argument?
+fb Valid Argument: the conclusion is true for every truth
+fb assignment to the variables that causes all of the hypotheses
+fb to be true. Otherwise, it is invalid.
+co $ ?11_logical_reasoning
+
+nn refs/rules_of_inference
+hl https://en.wikipedia.org/wiki/List_of_rules_of_inference#Table:_Rules_of_Inference
+ln Rules of Inference
+co $ ?12_rules_of_inference_with_propositions

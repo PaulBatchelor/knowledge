@@ -18,6 +18,7 @@ ln Table of Contents
 nn toc/01_logic
 at ol
 nn toc/02_proofs
+at ol
 nn toc/03_sets
 nn toc/04_functions
 nn toc/05_boolean_algebra
@@ -124,7 +125,8 @@ ln 1.12 Rules of Inference with Propositions
 nn 13_rules_of_inference_with_quantifiers
 ln 1.13 Rules of Inference with Quantifiers
 
-ns ..
+ns ../..
+
 
 nn glossary/logic
 ln Logic: the study of formal reasoning.
@@ -471,3 +473,57 @@ fb properties not shared by the elements of the domain.
 co $ ?13_rules_of_inference_with_quantifiers
 co $ ../element
 co $ ../arbitrary_element
+
+ns +toc/02_proofs
+nn 01_mathematical_definitions 
+ns ../..
+
+nn glossary/parity
+ln Parity: indicates if a number is even or odd. If two
+ln numbers are both even or both odd, they are said to
+ln have the same parity. If one is odd and the other is even,
+ln the two numbers are said to have opposite parity.
+ff What is parity in mathematics?
+fb Parity: indicates if a number is even or odd. If two
+fb numbers are both even or both odd, they are said to
+fb have the same parity. If one is odd and the other is even,
+fb the two numbers are said to have opposite parity.
+co $ ?01_mathematical_definitions
+
+nn glossary/rational
+ln Rational: a number r is rational if there exists integers
+ln x and y such that y != 0 and x = x / y.
+ff What is the definition of a rational number?
+fb Rational: a number r is rational if there exists integers
+fb x and y such that y != 0 and x = x / y.
+co $ ?01_mathematical_definitions
+
+nn glossary/divides
+ln Divides: an integer x divides an integer y if and only
+ln if x !=0, and y = kx for some integer k. Denote $x | y$.
+co $ ?01_mathematical_definitions
+ff What is the formal definition of "divides"?
+fb Divides: an integer x divides an integer y if and only
+fb if x !=0, and y = kx for some integer k. Denote $x | y$.
+
+
+nn glossary/prime
+ln Prime: an integer n is considered prime if and only
+ln if n > 1, and the only positive integers that divide into
+ln n are 1 and n.
+co $ ?01_mathematical_definitions
+ff What is the definition of a prime number?
+fb Prime: an integer n is considered prime if and only
+fb if n > 1, and the only positive integers that divide into
+fb n are 1 and n.
+
+nn glossary/composite
+co $ ?01_mathematical_definitions
+ln Composite: An integer N is composite if and only if n > 1,
+ln and there is an integer m such that 1 < m < n and m divides
+ln n.
+ff What is the definition of a composite number?
+fb Composite: An integer N is composite if and only if n > 1,
+fb and there is an integer m such that 1 < m < n and m divides
+fb n.
+co ? ../prime

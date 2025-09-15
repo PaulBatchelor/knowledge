@@ -256,7 +256,7 @@ and building some new tooling.
 Okay payment sent.
 
 @11:04 back to math
-#! dz csmet/CS248/discrete_math_zybook/toc/01_logic
+#! dz csmet/CS248/discrete_math_zybook/toc/02_logic
 
 @11:07 1.4 logical equivalence #timelog:00:55:43
 #! dz $/04_logical_equivalence
@@ -353,7 +353,7 @@ Code builds and runs with justfiles. I have a main function
 for LinkedList.
 
 @13:56 back to math #timelog:00:57:56
-#! dz csmet/cs248/discrete_math_zybook
+#! dz csmet/cs248/discrete_math_zybook/toc/01_logic
 #! dz $/11_logical_reasoning
 
 @15:53 next chapter, rules of inference #timelog:01:11:41
@@ -374,7 +374,7 @@ figuring out asserts in java.
 #! dz csmet/cs342/hw1
 
 @17:02 Back to math, final section of chapter 1 #timelog:01:24:42
-#! dz csmet/cs248/discrete_math_zybook
+#! dz csmet/cs248/discrete_math_zybook/toc/01_logic
 #! dz $/13_rules_of_inference_with_quantifiers
 
 @2025-09-14 Day 14
@@ -391,3 +391,7 @@ At some point, I need to figure out how to efficient
 review these images and throw them into bins. Then,
 a means to make aggregations of theese notes
 and turn them into "books".
+
+@13:10 time for some math today #timelog:01:04:49
+#! dz csmet/cs248/discrete_math_zybook/toc/01_logic
+#! dz $/13_rules_of_inference_with_quantifiers

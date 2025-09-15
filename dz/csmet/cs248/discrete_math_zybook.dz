@@ -476,6 +476,7 @@ co $ ../arbitrary_element
 
 ns +toc/02_proofs
 nn 01_mathematical_definitions 
+nn 02_intro_to_proofs
 ns ../..
 
 nn glossary/parity
@@ -526,4 +527,72 @@ ff What is the definition of a composite number?
 fb Composite: An integer N is composite if and only if n > 1,
 fb and there is an integer m such that 1 < m < n and m divides
 fb n.
-co ? ../prime
+co $ ../prime
+
+nn glossary/theorem
+co $ ?02_intro_to_proofs
+ln Theorem: a statement that can be proven to be true.
+ff What is a theorem?
+fb A theorem is a statement that can be proven to be true.
+
+nn glossary/proof
+co $ ?02_intro_to_proofs
+ln Proof: a series of steps that follow logically from
+ln assumptions or from previously proven statements, with
+ln a final step that results in the statement of the
+ln theorem being proven.
+ff What is a proof?
+fb Proof: a series of steps that follow logically from
+fb assumptions or from previously proven statements, with
+fb a final step that results in the statement of the
+fb theorem being proven.
+
+nn glossary/axioms
+co $ ?02_intro_to_proofs
+ln Axiom: statements assumed to be true.
+ff What is an axiom?
+fb Statements assumed to be true.
+co $ ../proofs
+cr A proof of a theorem may use axioms
+
+nn glossary/proof_by_exhaustion
+co $ ?02_intro_to_proofs
+ln Proof By Exhaustion: Proving a statement by checking
+ln each element. Useful if the domain is small.
+ff What is proof by exhaustion?
+fb Proof By Exhaustion: Proving a statement by checking
+fb each element. Useful if the domain is small.
+
+nn glossary/universal_generalization
+co $ ?02_intro_to_proofs
+ln Universal Generalization: a proof that that names an
+ln arbitrary object in the domain, and proves the statement
+ln for that object.
+ff What is a Universal Generalization?
+fb Universal Generalization: a proof that that names an
+fb arbitrary object in the domain, and proves the statement
+fb for that object.
+
+nn glossary/counterexample
+co $ ?02_intro_to_proofs
+ln Counterexample: an assignment of values to variables that
+ln shows that a universal statement is false.
+ff What is a counterexample?
+fb Counterexample: an assignment of values to variables that
+fb shows that a universal statement is false.
+
+nn glossary/existential_proof
+co $ ?02_intro_to_proofs
+ln Existential Proof: A proof that shows an existential
+ln statement is true.
+ff What is an existential proof?
+fb Existential Proof: A proof that shows an existential
+fb statement is true.
+
+nn glossary/constructive_proof_of_existence
+co $ ?02_intro_to_proofs
+co $ ../existential_proof
+ln Constructive Proof of Existence: gives a specific
+ln example of an element in the domain or a set of
+ln directions to construct an element in the domain that
+ln has the required properties.

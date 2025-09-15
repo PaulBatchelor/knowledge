@@ -256,7 +256,7 @@ and building some new tooling.
 Okay payment sent.
 
 @11:04 back to math
-#! dz csmet/CS248/discrete_math_zybook/toc/02_logic
+#! dz csmet/CS248/discrete_math_zybook/toc/01_logic
 
 @11:07 1.4 logical equivalence #timelog:00:55:43
 #! dz $/04_logical_equivalence
@@ -393,5 +393,19 @@ a means to make aggregations of theese notes
 and turn them into "books".
 
 @13:10 time for some math today #timelog:01:04:49
-#! dz csmet/cs248/discrete_math_zybook/toc/01_logic
-#! dz $/13_rules_of_inference_with_quantifiers
+#! dz csmet/cs248/discrete_math_zybook/toc/02_proofs
+#! dz $/01_mathematical_definitions
+
+@14:29 Halls of the Damned #doom #gaming #timelog:00:15:00
+
+@12:13 Command Center #doom #gaming #timelog:00:16:58
+
+@14:45 next chapter #timelog:00:45:00
+#! dz $/02_intro_to_proofs
+Left off at 2.2.7: existential proofs participation activity.
+
+@14:29 Halls of the Damned #doom #gaming #timelog:00:15:00
+
+@12:13 Command Center #doom #gaming #timelog:00:16:58
+
+@14:45 next chapter

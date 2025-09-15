@@ -346,7 +346,7 @@ Oh good, it's due on the 15th, not the 12th
 @2025-09-12 Day 12
 @09:41 scanning #archiving #timelog:00:53:57
 
-@11:07 let's scope out my CS-348 assignment #bumet #timelog:00:33:54
+@11:07 let's scope out my CS-342 assignment #bumet #timelog:00:33:54
 #! dz csmet/cs342/hw1
 Created an initial repo for this with the boilerplate.
 Code builds and runs with justfiles. I have a main function
@@ -358,3 +358,25 @@ for LinkedList.
 
 @15:53 next chapter, rules of inference #timelog:01:11:41
 #! dz $/12_rules_of_inference_with_propositions
+
+@2025-09-13 Day 13
+@11:21 Implement CS-342 assignment: SortedInsert #timelog:00:41:02
+#! dz csmet/cs342/hw1
+Build up tests, watch them fail, then make them pass, etc.
+---
+Spent a lot of time debugging. I forgot to update the size,
+which was causing my test to crash.
+---
+Also spent some time setting up the test scaffolding and
+figuring out asserts in java.
+
+@12:10 Now to reverse this linked list. #timelog:00:26:42
+#! dz csmet/cs342/hw1
+
+@17:02 Back to math, final section of chapter 1 #timelog:01:24:42
+#! dz csmet/cs248/discrete_math_zybook
+#! dz $/13_rules_of_inference_with_quantifiers
+
+@2025-09-14 Day 14
+@10:42 submitting cs-342 assignment #timelog:00:33:21
+#! dz csmet/cs342/hw1

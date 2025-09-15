@@ -121,6 +121,9 @@ ln 1.11: Logical Reasoning
 nn 12_rules_of_inference_with_propositions
 ln 1.12 Rules of Inference with Propositions
 
+nn 13_rules_of_inference_with_quantifiers
+ln 1.13 Rules of Inference with Quantifiers
+
 ns ..
 
 nn glossary/logic
@@ -442,3 +445,29 @@ nn refs/rules_of_inference
 hl https://en.wikipedia.org/wiki/List_of_rules_of_inference#Table:_Rules_of_Inference
 ln Rules of Inference
 co $ ?12_rules_of_inference_with_propositions
+
+nn glossary/element
+co $ ?13_rules_of_inference_with_quantifiers
+ln Element: A value that can be plugged in for variable x
+ln that belongs to the domain.
+ff In logic, what is an element?
+fb An element is a value belonging to a particular domain
+fb that can be plugged into a quantifier.
+
+nn glossary/arbitrary_element
+ln Arbitrary Element: has no special properties other than
+ln those shared by all the elements of the domain.
+ff What makes an element "arbitrary"?
+fb An element is arbitrary if it has no special properties
+fb other than those shared by all the elements of the domain.
+co $ ?13_rules_of_inference_with_quantifiers
+
+nn glossary/particular_element
+ln Particular Element: may have properties not shared by
+ln the elements of the domain.
+ff What makes an element "particular"?
+fb An element that is considered to be particular may have
+fb properties not shared by the elements of the domain.
+co $ ?13_rules_of_inference_with_quantifiers
+co $ ../element
+co $ ../arbitrary_element

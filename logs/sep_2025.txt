@@ -380,3 +380,14 @@ figuring out asserts in java.
 @2025-09-14 Day 14
 @10:42 submitting cs-342 assignment #timelog:00:33:21
 #! dz csmet/cs342/hw1
+
+@12:05 C12, Block memory #ink #sonilo #timelog:00:15:01
+@13:21 C13, block stack #ink #sonilo #timelog:00:13:35
+@13:55 C14, Sonilo VM thoughts #ink #timelog:00:13:55
+
+@2025-09-15 Day 15
+@11:08 scanning #ink #archiving #timelog:00:25:29
+At some point, I need to figure out how to efficient
+review these images and throw them into bins. Then,
+a means to make aggregations of theese notes
+and turn them into "books".

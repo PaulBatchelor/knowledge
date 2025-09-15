@@ -7,3 +7,4 @@ Konilo:forth/konilo:konilo.apkg
 leetcode:leetcode:leetcode.apkg
 Networking:net:networking.apkg
 Vim:vim:vim.apkg
+Discrete Math (cs248):csmet/cs248:cs248.apkg

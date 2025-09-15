@@ -552,7 +552,7 @@ co $ ?02_intro_to_proofs
 ln Axiom: statements assumed to be true.
 ff What is an axiom?
 fb Statements assumed to be true.
-co $ ../proofs
+co $ ../proof
 cr A proof of a theorem may use axioms
 
 nn glossary/proof_by_exhaustion
@@ -573,13 +573,15 @@ fb Universal Generalization: a proof that that names an
 fb arbitrary object in the domain, and proves the statement
 fb for that object.
 
-nn glossary/counterexample
+nn glossary/counterexample/alt
 co $ ?02_intro_to_proofs
 ln Counterexample: an assignment of values to variables that
 ln shows that a universal statement is false.
 ff What is a counterexample?
 fb Counterexample: an assignment of values to variables that
 fb shows that a universal statement is false.
+co $ ..
+cr Alternative definition
 
 nn glossary/existential_proof
 co $ ?02_intro_to_proofs

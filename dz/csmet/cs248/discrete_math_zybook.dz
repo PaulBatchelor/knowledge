@@ -476,7 +476,13 @@ co $ ../arbitrary_element
 
 ns +toc/02_proofs
 nn 01_mathematical_definitions 
+
 nn 02_intro_to_proofs
+ln 2.2: Introduction to proofs
+
+nn 03_best_practices_common_errors_proofs
+ln 2.3: Best Practices and Common Errors in Proofs
+
 ns ../..
 
 nn glossary/parity

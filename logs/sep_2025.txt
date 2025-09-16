@@ -416,3 +416,11 @@ in a text file, generate dagzet code.
 @13:55 tex book experiment #archiving #timelog:01:00:34
 See: tools/inkbook.sh. This generates tex code that wraps
 ink pages, one per page.
+
+@15:44 back where we left off #timelog:00:20:00
+#! dz csmet/cs248/discrete_math_zybook/toc/02_proofs
+#! dz $/02_intro_to_proofs
+
+@16:06 section 2.3 #timelog:00:33:33
+#! dz $/03_best_practices_common_errors_proofs
+Stopped at "the Language of Proofs"

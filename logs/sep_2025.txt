@@ -424,3 +424,6 @@ ink pages, one per page.
 @16:06 section 2.3 #timelog:00:33:33
 #! dz $/03_best_practices_common_errors_proofs
 Stopped at "the Language of Proofs"
+
+@17:48 quick read #timelog:00:05:34
+#! dz $/03_best_practices_common_errors_proofs

@@ -412,3 +412,7 @@ Left off at 2.2.7: existential proofs participation activity.
 @12:46 set up sorting out ink #archiving #timelog:00:59:45
 Examine tags, throw stuff into bins. Keep track of things
 in a text file, generate dagzet code.
+
+@13:55 tex book experiment #archiving #timelog:01:00:34
+See: tools/inkbook.sh. This generates tex code that wraps
+ink pages, one per page.

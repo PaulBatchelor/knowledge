@@ -1,0 +1,325 @@
+ns ink
+nn 000
+im 2025/000.jpg
+at year 2025
+cx ink/000 coursera/algos1/ink
+nn 001
+im 2025/001.jpg
+at year 2025
+cx ink/001 csmet/cs248/ink
+nn 002
+im 2025/002.jpg
+at year 2025
+cx ink/002 csmet/cs248/ink
+nn 003
+im 2025/003.jpg
+at year 2025
+cx ink/003 TAOCP/vol1/ink
+nn 004
+im 2025/004.jpg
+at year 2025
+cx ink/004 maths_for_cs_MIT/ink
+nn 005
+im 2025/005.jpg
+at year 2025
+cx ink/005 maths_for_cs_MIT/ink
+nn 006
+im 2025/006.jpg
+at year 2025
+cx ink/006 maths_for_cs_MIT/ink
+nn 007
+im 2025/007.jpg
+at year 2025
+cx ink/007 coursera/algos1/ink
+nn 008
+im 2025/008.jpg
+at year 2025
+cx ink/008 TAOCP/vol1/ink
+nn 009
+im 2025/009.jpg
+at year 2025
+cx ink/009 csmet/cs342/ink
+nn 00A
+im 2025/00A.jpg
+at year 2025
+cx ink/00A csmet/cs342/ink
+nn 00B
+im 2025/00B.jpg
+at year 2025
+cx ink/00B csmet/cs248/ink
+nn 00C
+im 2025/00C.jpg
+at year 2025
+cx ink/00C csmet/cs248/ink
+nn 00D
+im 2025/00D.jpg
+at year 2025
+cx ink/00D csmet/cs248/ink
+nn 00E
+im 2025/00E.jpg
+at year 2025
+cx ink/00E csmet/cs248/ink
+nn 00F
+im 2025/00F.jpg
+at year 2025
+cx ink/00F csmet/cs248/ink
+nn 00G
+im 2025/00G.jpg
+at year 2025
+cx ink/00G csmet/cs248/ink
+nn 00H
+im 2025/00H.jpg
+at year 2025
+cx ink/00H csmet/cs248/ink
+nn 00I
+im 2025/00I.jpg
+at year 2025
+cx ink/00I csmet/cs248/ink
+nn 00J
+im 2025/00J.jpg
+at year 2025
+cx ink/00J csmet/cs248/ink
+nn 00K
+im 2025/00K.jpg
+at year 2025
+cx ink/00K csmet/cs248/ink
+nn 00L
+im 2025/00L.jpg
+at year 2025
+cx ink/00L csmet/cs248/ink
+nn 00M
+im 2025/00M.jpg
+at year 2025
+cx ink/00M csmet/cs248/ink
+nn 00N
+im 2025/00N.jpg
+at year 2025
+cx ink/00N csmet/cs248/ink
+nn 00O
+im 2025/00O.jpg
+at year 2025
+cx ink/00O csmet/cs248/ink
+nn 00P
+im 2025/00P.jpg
+at year 2025
+cx ink/00P csmet/cs248/ink
+nn 00Q
+im 2025/00Q.jpg
+at year 2025
+cx ink/00Q csmet/cs342/ink
+nn 00R
+im 2025/00R.jpg
+at year 2025
+cx ink/00R csmet/cs248/ink
+nn 00T
+im 2025/00T.jpg
+at year 2025
+cx ink/00T csmet/cs248/ink
+nn 00U
+im 2025/00U.jpg
+at year 2025
+cx ink/00U csmet/cs342/ink
+nn 00V
+im 2025/00V.jpg
+at year 2025
+cx ink/00V csmet/cs248/ink
+nn A00
+im 2025/A00.jpg
+at year 2025
+cx ink/A00 thoughts/ink
+nn A01
+im 2025/A01.jpg
+at year 2025
+cx ink/A01 thoughts/ink
+nn A02
+im 2025/A02.jpg
+at year 2025
+cx ink/A02 thoughts/ink
+nn A03
+im 2025/A03.jpg
+at year 2025
+cx ink/A03 thoughts/ink
+nn A04
+im 2025/A04.jpg
+at year 2025
+cx ink/A04 thoughts/ink
+nn A05
+im 2025/A05.jpg
+at year 2025
+cx ink/A05 thoughts/ink
+nn A06
+im 2025/A06.jpg
+at year 2025
+cx ink/A06 thoughts/ink
+nn A07
+im 2025/A07.jpg
+at year 2025
+cx ink/A07 thoughts/ink
+nn A08
+im 2025/A08.jpg
+at year 2025
+cx ink/A08 thoughts/ink
+nn A09
+im 2025/A09.jpg
+at year 2025
+cx ink/A09 thoughts/ink
+nn A10
+im 2025/A10.jpg
+at year 2025
+cx ink/A10 thoughts/ink
+nn A11
+im 2025/A11.jpg
+at year 2025
+cx ink/A11 thoughts/ink
+nn B01
+im 2025/B01.jpg
+at year 2025
+cx ink/B01 thoughts/ink
+nn B02
+im 2025/B02.jpg
+at year 2025
+cx ink/B02 thoughts/ink
+nn B03
+im 2025/B03.jpg
+at year 2025
+cx ink/B03 thoughts/ink
+nn B04
+im 2025/B04.jpg
+at year 2025
+cx ink/B04 thoughts/ink
+nn B05
+im 2025/B05.jpg
+at year 2025
+cx ink/B05 thoughts/ink
+nn B06
+im 2025/B06.jpg
+at year 2025
+cx ink/B06 thoughts/ink
+nn B07
+im 2025/B07.jpg
+at year 2025
+cx ink/B07 thoughts/ink
+nn B08
+im 2025/B08.jpg
+at year 2025
+cx ink/B08 thoughts/ink
+nn B09
+im 2025/B09.jpg
+at year 2025
+cx ink/B09 thoughts/ink
+nn B10
+im 2025/B10.jpg
+at year 2025
+cx ink/B10 thoughts/ink
+nn B11
+im 2025/B11.jpg
+at year 2025
+cx ink/B11 thoughts/ink
+nn C00
+im 2025/C00.jpg
+at year 2025
+cx ink/C00 thoughts/ink
+nn C01
+im 2025/C01.jpg
+at year 2025
+cx ink/C01 thoughts/ink
+nn C02
+im 2025/C02.jpg
+at year 2025
+cx ink/C02 thoughts/ink
+nn C03
+im 2025/C03.jpg
+at year 2025
+cx ink/C03 thoughts/ink
+nn C04
+im 2025/C04.jpg
+at year 2025
+cx ink/C04 thoughts/ink
+nn C05
+im 2025/C05.jpg
+at year 2025
+cx ink/C05 thoughts/ink
+nn C06
+im 2025/C06.jpg
+at year 2025
+cx ink/C06 thoughts/ink
+nn C07
+im 2025/C07.jpg
+at year 2025
+cx ink/C07 thoughts/ink
+nn C08
+im 2025/C08.jpg
+at year 2025
+cx ink/C08 thoughts/ink
+nn C09
+im 2025/C09.jpg
+at year 2025
+cx ink/C09 thoughts/ink
+nn C10
+im 2025/C10.jpg
+at year 2025
+cx ink/C10 thoughts/ink
+nn C11
+im 2025/C11.jpg
+at year 2025
+cx ink/C11 thoughts/ink
+nn C12
+im 2025/C12.jpg
+at year 2025
+cx ink/C12 thoughts/ink
+nn C13
+im 2025/C13.jpg
+at year 2025
+cx ink/C13 thoughts/ink
+nn C14
+im 2025/C14.jpg
+at year 2025
+cx ink/C14 thoughts/ink
+nn D01
+im 2025/D01.jpg
+at year 2025
+cx ink/D01 thoughts/ink
+nn D02
+im 2025/D02.jpg
+at year 2025
+cx ink/D02 thoughts/ink
+nn D03
+im 2025/D03.jpg
+at year 2025
+cx ink/D03 thoughts/ink
+nn D04
+im 2025/D04.jpg
+at year 2025
+cx ink/D04 thoughts/ink
+nn D05
+im 2025/D05.jpg
+at year 2025
+cx ink/D05 thoughts/ink
+nn D06
+im 2025/D06.jpg
+at year 2025
+cx ink/D06 thoughts/ink
+nn D07
+im 2025/D07.jpg
+at year 2025
+cx ink/D07 thoughts/ink
+nn 00S
+im 2025/00S.jpg
+at year 2025
+cx ink/00S csmet/cs248/ink
+nn D08
+im 2025/D08.jpg
+at year 2025
+cx ink/D08 thoughts/ink
+nn D09
+im 2025/D09.jpg
+at year 2025
+cx ink/D09 thoughts/ink
+nn D10
+im 2025/D10.jpg
+at year 2025
+cx ink/D10 thoughts/ink
+nn D11
+im 2025/D11.jpg
+at year 2025
+cx ink/D11 thoughts/ink

@@ -77,4 +77,6 @@ dz/stile_antico.dz
 dz/MIT_6.1200J
 dz/TAOCP
 dz/csmet
+dz/thoughts.dz
+dz/ink
 dz/zzz

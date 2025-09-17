@@ -486,6 +486,9 @@ ln 2.3: Best Practices and Common Errors in Proofs
 nn 04_writing_direct_proofs
 ln 2.4: writing direct proofs
 
+nn 05_proof_by_contrapositive
+ln 2.5: Proof by contrapositive
+
 ns ../..
 
 nn glossary/parity
@@ -629,3 +632,16 @@ ff What is a direct proof?
 fb Direct Proof: A proof where in the conditional statement,
 fb the hypothesis is assumed to be true, and the conclusion
 fb is proven as a result of the assumption.
+
+nn glossary/proof_by_contrapositive
+co $ 05_proof_by_contrapositive
+ln Proof by Contrapositive: A proof that proves a conditional
+ln theorem of the form p -> c by showing that the contrapositive
+ln !c -> !p is true. In other words, !c is true, and !p is
+ln proven as a result of !c.
+
+nn glossary/irrational_number
+co $ 05_proof_by_contrapositive
+ln Irrational Number: a real number that is not rational.
+ff What is an irrational number?
+fb Irrational Number: a real number that is not rational.

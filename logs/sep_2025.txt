@@ -457,3 +457,13 @@ Stopped at "the Language of Proofs"
 #! dz $/04_writing_direct_proofs
 Left off at 2.4.5: A direct proof that the sum of two
 rational numbers is rational.
+
+@15:01 continued on 2.4 #timelog:00:25:25
+#! dz $/04_writing_direct_proofs
+
+@15:27 2.5 proof by contrapositive #timelog:00:20:37
+#! dz $/05_proof_by_contrapositive
+Left off at 2.5.3 participation activity
+
+@16:05 2.5 continued #timelog:00:44:46
+#! dz $/05_proof_by_contrapositive

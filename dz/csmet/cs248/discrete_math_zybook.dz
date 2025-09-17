@@ -604,3 +604,15 @@ ln Constructive Proof of Existence: gives a specific
 ln example of an element in the domain or a set of
 ln directions to construct an element in the domain that
 ln has the required properties.
+
+nn glossary/existential_instantiation
+co $ ?03_best_practices_common_errors_proofs
+ln Existential Instantiation: a law of logic that says if
+ln an object is known to exist, then that object can be given
+ln a name, as long as the name is not currently being used
+ln to denote something else.
+ff What is existential instantiation
+fb Existential Instantiation: a law of logic that says if
+fb an object is known to exist, then that object can be given
+fb a name, as long as the name is not currently being used
+fb to denote something else.

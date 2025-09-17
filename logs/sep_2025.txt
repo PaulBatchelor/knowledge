@@ -433,3 +433,19 @@ Stopped at "the Language of Proofs"
 @20:00 Halls of the damned (cont) #doom #timelog:00:21:06
 
 @21:06 Halls of the damned, Spawning vats #doom #timelog:00:32:57
+
+@21:45 Block pool limits #sonilo #timelog:00:08:11
+
+@22:08 Big array lookup #sonilo #timelog:00:14:54
+
+@2025-09-17 Day 17
+
+@10:48 Yet another line lisp #ink:017 #timelog:00:08:45 #sonilo
+
+@11:02 Big Arrays #ink:018 #timelog:00:12:13 #sonilo
+
+@11:38 settling in, logging hours
+
+@11:39 Picking up where I left off #timelog:00:47:03
+#! dz $/03_best_practices_common_errors_proofs
+2/4 for challenge activity

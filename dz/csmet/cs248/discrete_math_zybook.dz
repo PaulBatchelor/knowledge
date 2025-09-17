@@ -483,6 +483,9 @@ ln 2.2: Introduction to proofs
 nn 03_best_practices_common_errors_proofs
 ln 2.3: Best Practices and Common Errors in Proofs
 
+nn 04_writing_direct_proofs
+ln 2.4: writing direct proofs
+
 ns ../..
 
 nn glossary/parity
@@ -616,3 +619,13 @@ fb Existential Instantiation: a law of logic that says if
 fb an object is known to exist, then that object can be given
 fb a name, as long as the name is not currently being used
 fb to denote something else.
+
+nn glossary/direct_proof
+co $ ?04_writing_direct_proofs
+ln Direct Proof: A proof where in the conditional statement,
+ln the hypothesis is assumed to be true, and the conclusion
+ln is proven as a result of the assumption.
+ff What is a direct proof?
+fb Direct Proof: A proof where in the conditional statement,
+fb the hypothesis is assumed to be true, and the conclusion
+fb is proven as a result of the assumption.

@@ -449,3 +449,11 @@ Stopped at "the Language of Proofs"
 @11:39 Picking up where I left off #timelog:00:47:03
 #! dz $/03_best_practices_common_errors_proofs
 2/4 for challenge activity
+
+@13:25 finish up challenge activity #timelog:00:04:16
+#! dz $/03_best_practices_common_errors_proofs
+
+@13:25 2.4: writing direct proofs #timelog:00:42:32
+#! dz $/04_writing_direct_proofs
+Left off at 2.4.5: A direct proof that the sum of two
+rational numbers is rational.

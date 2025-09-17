@@ -417,6 +417,8 @@ in a text file, generate dagzet code.
 See: tools/inkbook.sh. This generates tex code that wraps
 ink pages, one per page.
 
+@14:29 Halls of the damned #doom #timelog:00:15:00
+
 @15:44 back where we left off #timelog:00:20:00
 #! dz csmet/cs248/discrete_math_zybook/toc/02_proofs
 #! dz $/02_intro_to_proofs
@@ -427,3 +429,7 @@ Stopped at "the Language of Proofs"
 
 @17:48 quick read #timelog:00:05:34
 #! dz $/03_best_practices_common_errors_proofs
+
+@20:00 Halls of the damned (cont) #doom #timelog:00:21:06
+
+@21:06 Halls of the damned, Spawning vats #doom #timelog:00:32:57

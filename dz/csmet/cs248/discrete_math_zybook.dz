@@ -122,6 +122,54 @@ ln 1.11: Logical Reasoning
 nn 12_rules_of_inference_with_propositions
 ln 1.12 Rules of Inference with Propositions
 
+
+ns +12_rules_of_inference_with_propositions
+
+nn rules_of_inference
+
+ns +rules_of_inference
+
+nn modus_ponens
+ln modus ponens: p, p -> q | q
+ff What is modus ponens?
+fb p, p->q | q
+
+nn modus_tollens
+ln modus tollens: !q, p -> q | !p
+ff What is modus tollens?
+fb !q, p -> q | !p
+
+nn addition
+ln addition (disjunctive introduction): p | p V q
+ff what is the rule of addition (disjuncative introduction)?
+fb p | p V q
+
+nn simplification
+ln simplification: p ^ q | p
+ff what is the rule of simplification?
+fb p ^ q | p
+
+nn hypothetical_syllogism
+ln hypothetical syllogism: p -> q, q -> r | p -> r
+ff What is hypothetical syllogism?
+fb p -> q, q -> r | p -> r
+
+nn disjunctive_syllogism
+ln disjunctive_syllogism: p V q, !p | q
+ff What is disjunctive syllogism?
+fb p V q, !p | q
+
+nn resolution
+ln resolution: p V q, !p V r | q V r
+ff What is the rule of resolution?
+fb p V q, !p V r | q V r
+
+zz -rules_of_inference
+ns ..
+
+zz -12_rules_of_inference_with_propositions
+ns ..
+
 nn 13_rules_of_inference_with_quantifiers
 ln 1.13 Rules of Inference with Quantifiers
 
@@ -447,6 +495,7 @@ nn refs/rules_of_inference
 hl https://en.wikipedia.org/wiki/List_of_rules_of_inference#Table:_Rules_of_Inference
 ln Rules of Inference
 co $ ?12_rules_of_inference_with_propositions
+co $ ?12_rules_of_inference_with_propositions/rules_of_inference
 
 nn glossary/element
 co $ ?13_rules_of_inference_with_quantifiers
@@ -634,14 +683,14 @@ fb the hypothesis is assumed to be true, and the conclusion
 fb is proven as a result of the assumption.
 
 nn glossary/proof_by_contrapositive
-co $ 05_proof_by_contrapositive
+co $ ?05_proof_by_contrapositive
 ln Proof by Contrapositive: A proof that proves a conditional
 ln theorem of the form p -> c by showing that the contrapositive
 ln !c -> !p is true. In other words, !c is true, and !p is
 ln proven as a result of !c.
 
 nn glossary/irrational_number
-co $ 05_proof_by_contrapositive
+co $ ?05_proof_by_contrapositive
 ln Irrational Number: a real number that is not rational.
 ff What is an irrational number?
 fb Irrational Number: a real number that is not rational.

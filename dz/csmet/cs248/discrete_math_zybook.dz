@@ -538,6 +538,9 @@ ln 2.4: writing direct proofs
 nn 05_proof_by_contrapositive
 ln 2.5: Proof by contrapositive
 
+nn 06_proof_by_contradiction
+ln 2.6: Proof by Contradiction
+
 ns ../..
 
 nn glossary/parity
@@ -694,3 +697,9 @@ co $ ?05_proof_by_contrapositive
 ln Irrational Number: a real number that is not rational.
 ff What is an irrational number?
 fb Irrational Number: a real number that is not rational.
+
+nn glossary/indirect_proof
+co $ ?06_proof_by_contradiction
+ln Indirect Proof: another name for proof by contradiction
+ff What is an indirect proof?
+fb Another name for proof by contradiction

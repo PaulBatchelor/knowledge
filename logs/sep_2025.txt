@@ -470,3 +470,10 @@ Left off at 2.5.3 participation activity
 
 @17:40 review chapter 1 chapters #timelog:00:40:23
 #! dz csmet/cs248/discrete_math_zybook/toc/01_logic
+
+@2025-09-18 Day 18
+Dental appointment this morning. Late start.
+
+@15:01 2.6 proof by contradiction #timelog:00:31:01
+#! dz csmet/cs248/discrete_math_zybook/toc/02_proofs/05_proof_by_contrapositive
+Left off with the birthday problem

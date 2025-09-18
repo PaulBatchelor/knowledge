@@ -477,3 +477,7 @@ Dental appointment this morning. Late start.
 @15:01 2.6 proof by contradiction #timelog:00:31:01
 #! dz csmet/cs248/discrete_math_zybook/toc/02_proofs/05_proof_by_contrapositive
 Left off with the birthday problem
+
+@15:57 continued #timelog:00:16:46
+#! dz $
+Left off in the middle of 2.6.3

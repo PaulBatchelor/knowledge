@@ -519,3 +519,38 @@ Lots of inking done for problem 3
 
 @16:25 I believe I have inked up a solution #ink:01j #timelog:00:26:46
 #! dz $
+
+@2025-09-20 Day 20
+@10:41 cs 342 assignment work, now look at problem 2 (going backwards) #timelog:00:46:22 #ink:01K #ink:01L
+#! dz $
+Once I have inked up a solution for these, I will code up
+both problems 2 and 3, then probably code up problem 1
+directly.
+---
+There are 4 methods to implement for a circular list: adding
+a tail, searching for a node, removing the head, and removing
+a node.
+---
+Inkwork
+
+@13:04 more inking #timelog:00:20:02 #ink:01L
+#! dz $
+
+@14:41 code up problem 3 #timelog:00:34:43
+#! dz $
+
+@15:23 code up problem 2, addTail #timelog:00:24:31
+#! dz $
+
+@15:49 code up problem 2, search for node #timelog:00:06:01
+#! dz $
+
+@15:57 code up problem 2, remove head #timelog:00:06:12
+#! dz $
+
+@16:19 code up problem 2, remove node #timelog:00:10:14
+#! dz $
+
+@16:33 time for problem 1 #timelog:00:27:37
+#! dz $
+Did not ink this one up, will attempt on-the-fly

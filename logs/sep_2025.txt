@@ -481,3 +481,41 @@ Left off with the birthday problem
 @15:57 continued #timelog:00:16:46
 #! dz $
 Left off in the middle of 2.6.3
+
+@18:00 CS-248 class #bumet #timelog:02:45:00
+
+@2025-09-19 Day 19
+@09:10 Check on cs-342 assignment, initial thoughts #timelog:01:39:22
+#! dz csmet/cs348/hw2
+There are three assignments.
+---
+Problem 1: Implement addTail() for a doubly linked list,
+and test it to make sure it works.
+---
+Problem 2: Circular Linked List. Implement addTail(), search(),
+removeHead(), and removeNode.
+---
+Problem 3: Stack. Implement a recursive solution for reversing
+items in a stack.
+---
+Problem 1 is probably the most straight forward. Problem 2
+has the most tasks, but each individual thing doesn't seem
+terribly difficult (I will need to examine circular linked
+lists again). Problem 3 requires the most thought because
+recursion.
+---
+Problem 3 thoughts: non-recursive way would be popping from one
+stack and pushing to another stack. Recursive way would
+have a base case of an empty stack. Otherwise, pop item from
+stack, call reverse, then push back?
+---
+Lots of inking done for problem 3
+
+@13:33 Ink and paper, problem 3 #timelog:01:26:38
+#! dz $
+
+@15:10 more problem 3 thoughts #timelog:00:31:07
+#! dz $
+
+@16:25 I believe I have inked up a solution #ink:01j #timelog:00:26:46
+#! dz $

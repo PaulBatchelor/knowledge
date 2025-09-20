@@ -116,14 +116,14 @@ workflow for knowledge graphing.
 #! dz $
 
 @13:25 weighted quick-union: weights are based on total number of items, not height?
-#! dz $/improvements/weighted
+#! dz $/improvements/weighting
 I'm trying to grok the code, but my first assumption was that
 the weighted quick-union measured weights by tree "height",
 since that's a common enough performance metric. It looks
 like this just measures the total number of objects.
 
 @13:38 trying to hook this into the big graph
-#! dz coursera/news
+#! dz coursera/algos1/news
 
 @15:19 working out a nodels command #timelog:00:40:23
 Given a namespace, list out nodes. do not include children

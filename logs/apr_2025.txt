@@ -586,7 +586,7 @@ I had a little bit of trouble figuring where to start
 the fast pointer. fast/slow both start at head.
 
 @20:32 max depth of binary tree #timelog:00:02:56
-#! dz problems/104_max_depth_binary_tree
+#! dz leetcode/problems/104_max_depth_binary_tree
 I think this is just the partial bit to 543 diameter
 of binary tree. It's recursive DFS.
 

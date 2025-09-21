@@ -486,7 +486,7 @@ Left off in the middle of 2.6.3
 
 @2025-09-19 Day 19
 @09:10 Check on cs-342 assignment, initial thoughts #timelog:01:39:22
-#! dz csmet/cs348/hw2
+#! dz csmet/cs342/hw2
 There are three assignments.
 ---
 Problem 1: Implement addTail() for a doubly linked list,
@@ -559,4 +559,4 @@ Did not ink this one up, will attempt on-the-fly
 I have to move quickly if I'm going to catch any of it.
 
 @10:52 submit my assignment #timelog:00:12:50
-#! dz csmet/cs348/hw2
+#! dz csmet/cs342/hw2

@@ -555,8 +555,14 @@ Inkwork
 #! dz $
 Did not ink this one up, will attempt on-the-fly
 
+@20:56 Memory types #sonilo #ink:01M #timelog:00:24:10
+
 @2025-09-21 Day 21. MIT Flea Market day perhaps?
 I have to move quickly if I'm going to catch any of it.
 
+@10:15 Context #timelog:00:28:24 #sonilo #ink:01N
+
 @10:52 submit my assignment #timelog:00:12:50
 #! dz csmet/cs342/hw2
+
+@17:14 Scanning, cropping, and binning #timelog:00:26:16

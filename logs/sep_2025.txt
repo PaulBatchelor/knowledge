@@ -554,3 +554,9 @@ Inkwork
 @16:33 time for problem 1 #timelog:00:27:37
 #! dz $
 Did not ink this one up, will attempt on-the-fly
+
+@2025-09-21 Day 21. MIT Flea Market day perhaps?
+I have to move quickly if I'm going to catch any of it.
+
+@10:52 submit my assignment #timelog:00:12:50
+#! dz csmet/cs348/hw2

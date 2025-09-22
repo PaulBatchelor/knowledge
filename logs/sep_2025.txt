@@ -566,3 +566,6 @@ I have to move quickly if I'm going to catch any of it.
 #! dz csmet/cs342/hw2
 
 @17:14 Scanning, cropping, and binning #timelog:00:26:16
+
+@17:51 2.7: proof by cases #timelog:00:34:09
+#! dz csmet/cs248/discrete_math_zybook/toc/02_proofs/07_proof_by_cases

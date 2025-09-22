@@ -541,6 +541,9 @@ ln 2.5: Proof by contrapositive
 nn 06_proof_by_contradiction
 ln 2.6: Proof by Contradiction
 
+nn 07_proof_by_cases
+ln 2.7: Proof by Cases
+
 ns ../..
 
 nn glossary/parity
@@ -703,3 +706,29 @@ co $ ?06_proof_by_contradiction
 ln Indirect Proof: another name for proof by contradiction
 ff What is an indirect proof?
 fb Another name for proof by contradiction
+
+nn glossary/proof_by_cases
+co $ ?02_proofs/07_proof_by_cases
+ln Proof By Cases: starts with a universal statement,
+ln breaks domain down into different classes, and gives a
+ln different proof for each class.
+ff What is a Proof by Cases?
+fb Proof By Cases: starts with a universal statement,
+fb breaks domain down into different classes, and gives a
+fb different proof for each class.
+
+nn refs/theorem_on_friends_and_strangers
+hl https://en.wikipedia.org/wiki/Theorem_on_friends_and_strangers
+ln Theorem On Friends And Strangers: Suppose a party has
+ln six people. Consider any 2 of them. They might be meeting
+ln for the first time, in which case we will call them
+ln mutual strangers; or they might have met before, in which
+ln case we will call them mutual acquaintences. The theorem
+ln says: In any party of six people, at least three of them
+ln are (pairwise) mutual strangers or mutual acquaintences
+ff Summarize the theorem on friends and strangers
+fb In any party of six people, at least three of them
+fb are (pairwise) mutual strangers or mutual acquaintences
+co $ ?02_proofs/07_proof_by_cases
+cr This chapter outlines a proof by cases for a similar
+cr theorem they call "friends and enemies".

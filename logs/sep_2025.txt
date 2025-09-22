@@ -569,3 +569,13 @@ I have to move quickly if I'm going to catch any of it.
 
 @17:51 2.7: proof by cases #timelog:00:34:09
 #! dz csmet/cs248/discrete_math_zybook/toc/02_proofs/07_proof_by_cases
+
+@2025-09-21 Day 21
+@14:30 Back to math #timelog:01:05:34
+#! dz csmet/cs248/discrete_math_zybook/toc/02_proofs/07_proof_by_cases
+Getting caught up in one of the proofs that involves
+multiplying inequalities. Sometimes the inequality flips, sometimes
+it does not.
+---
+When x < 0 and y < 0, multiplying by x changes the direction,
+yielding xy > 0.

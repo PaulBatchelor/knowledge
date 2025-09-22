@@ -732,3 +732,15 @@ fb are (pairwise) mutual strangers or mutual acquaintences
 co $ ?02_proofs/07_proof_by_cases
 cr This chapter outlines a proof by cases for a similar
 cr theorem they call "friends and enemies".
+
+nn glossary/WLOG
+co $ ?02_proofs/07_proof_by_cases
+ln Without Loss of Generality (WLOG): used in mathematical
+ln proofs to narrow the scope of a proof to one special
+ln case in situations when the proof can be easily
+ln adapted to apply to the general case.
+ff What is "Without Loss of Generality"?
+fb Without Loss of Generality (WLOG): used in mathematical
+fb proofs to narrow the scope of a proof to one special
+fb case in situations when the proof can be easily
+fb adapted to apply to the general case.

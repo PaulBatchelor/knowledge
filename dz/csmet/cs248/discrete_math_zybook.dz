@@ -749,6 +749,11 @@ fb adapted to apply to the general case.
 ns +toc/03_sets
 
 nn 01_sets_and_subsets
+ln 3.1: Sets and Subsets
+
+nn 02_sets_of_sets
+ln 3.2: Sets of Subsets
+
 zz toc/03_sets
 ns ../..
 
@@ -817,3 +822,26 @@ ff What is the Universal Set?
 fb Universal Set: usually denoted with the variable U,
 fb is a set that contains all elements mentioned in a
 fb particular context.
+co $ ?01_sets_and_subsets
+
+nn glossary/subset
+ln Subset: A is said to be a subset of B if every
+ln element in A is also an element in B.
+ff What is a subset?
+fb Subset: A is said to be a subset of B if every
+fb element in A is also an element in B.
+co $ ?01_sets_and_subsets
+
+nn glossary/proper_subset
+ln Proper Subset: If A is a subset of B, and B has
+ln an element that is not in A.
+co $ ?01_sets_and_subsets
+ff What is proper subset?
+fb Proper Subset: If A is a subset of B, and B has
+fb an element that is not in A.
+
+nn glossary/power_subset
+co $ ?02_sets_of_sets
+ln Power Subset: P(A), is the set of all subsets of A.
+ff What is a power subset?
+fb Power Subset: P(A), is the set of all subsets of A.

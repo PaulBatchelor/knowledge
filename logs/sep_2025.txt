@@ -603,3 +603,9 @@ evening.
 
 @11:32 3.1 sets and subsets #timelog:00:45:07
 #! dz $/01_sets_and_subsets
+
+@14:05 3.1 continued #timelog:00:32:42
+#! dz $/01_sets_and_subsets
+
+@14:37 3.2: sets of sets #timelog:00:32:33
+#! dz $/02_sets_of_sets

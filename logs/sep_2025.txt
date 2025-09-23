@@ -570,7 +570,7 @@ I have to move quickly if I'm going to catch any of it.
 @17:51 2.7: proof by cases #timelog:00:34:09
 #! dz csmet/cs248/discrete_math_zybook/toc/02_proofs/07_proof_by_cases
 
-@2025-09-21 Day 21
+@2025-09-22 Day 22
 @14:30 Back to math #timelog:01:05:34
 #! dz csmet/cs248/discrete_math_zybook/toc/02_proofs/07_proof_by_cases
 Getting caught up in one of the proofs that involves
@@ -582,7 +582,7 @@ yielding xy > 0.
 
 @18:00 cs 342 lecture #bumet #timelog:02:45:00
 
-@2025-09-22 Day 22
+@2025-09-23 Day 23
 
 @10:36 settling in, getting e-ink display set up for maths #timelog:00:15:00
 E-ink display AND a mouse for all the clicking and dragging
@@ -595,7 +595,11 @@ I have to do. I really hate click and drag.
 #! dz csmet/cs248/discrete_math_zybook/toc/02_proofs/06_proof_by_contradiction
 
 @11:19 scoping out chapter 3: sets
+#! dz csmet/cs248/discrete_math_zybook/toc/03_sets
 Seven sections. It's tuesday. We have today, tomorrow, and thursday
 afternoon. If I push and do 3 sections today or tomorrow,
 I might be able to finish the chapter by class thursday
 evening.
+
+@11:32 3.1 sets and subsets #timelog:00:45:07
+#! dz $/01_sets_and_subsets

@@ -20,6 +20,7 @@ at ol
 nn toc/02_proofs
 at ol
 nn toc/03_sets
+at ol
 nn toc/04_functions
 nn toc/05_boolean_algebra
 nn toc/06_relations_digraphs
@@ -744,3 +745,75 @@ fb Without Loss of Generality (WLOG): used in mathematical
 fb proofs to narrow the scope of a proof to one special
 fb case in situations when the proof can be easily
 fb adapted to apply to the general case.
+
+ns +toc/03_sets
+
+nn 01_sets_and_subsets
+zz toc/03_sets
+ns ../..
+
+nn glossary/set
+co $ ?01_sets_and_subsets
+ln Set: a collection of objects
+ff What is a set?
+fb Set: a collection of objects.
+
+nn glossary/roster_notation
+co $ ?01_sets_and_subsets
+ln Roster Notation: a way to notate elements in a set,
+ln using curly braces. ex: A = {2, 4, 6, 8}
+ff What is roster notation?
+fb Roster Notation: a way to notate elements in a set,
+fb using curly braces. ex: A = {2, 4, 6, 8}
+
+nn glossary/empty_set
+co $ ?01_sets_and_subsets
+ln Empty Set: A set with no elements. Denoted with
+ln an 0 and a backslash.
+ff What is an empty set?
+fb An empty set is a set with no elements.
+
+nn glossary/null_set
+co $ ?01_sets_and_subsets
+ln Null set: another name for empty set
+co $ ../empty_set
+
+nn glossary/finite_set
+co $ ?01_sets_and_subsets
+ln finite set: a set that is either empty or
+ln whose elements can be numbered 1 through N
+ln for some positive number N.
+ff What is a finite set?
+fb finite set: a set that is either empty or
+fb whose elements can be numbered 1 through N
+fb for some positive number N.
+
+nn glossary/infinite_set
+co $ ?01_sets_and_subsets
+ln Infinite Set: A set that is not finite.
+co $ ../finite_set
+ff What is an infinite set?
+fb An infinite set is a set that is not finite.
+
+nn glossary/cardinality
+co $ ?01_sets_and_subsets
+ln Cardinality: Denoted by |A|, is the number of
+ln distinct elements in A.
+ff What is the cardinality of a set?
+fb Cardinality: Denoted by |A|, is the number of
+fb distinct elements in A.
+
+nn glossary/set_builder_notation
+co $ ?01_sets_and_subsets
+ln Set Builder Notation: A notation that defines a set
+ln by specifying that the set includes all elements
+ln in a larger set that also satisfy certain conditions.
+
+nn glossary/universal_set
+ln Universal Set: usually denoted with the variable U,
+ln is a set that contains all elements mentioned in a
+ln particular context.
+ff What is the Universal Set?
+fb Universal Set: usually denoted with the variable U,
+fb is a set that contains all elements mentioned in a
+fb particular context.

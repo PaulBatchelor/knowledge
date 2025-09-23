@@ -609,3 +609,6 @@ evening.
 
 @14:37 3.2: sets of sets #timelog:00:32:33
 #! dz $/02_sets_of_sets
+
+@16:38 Union and Intersection #timelog:00:33:54
+#! dz $/03_union_and_intersection

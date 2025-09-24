@@ -629,3 +629,5 @@ from the queue and add them back to the queue one by one,
 what will happen? Haven't done this before, but I think it's
 pretty straight forward. Something like enque, then dequeue/enqueue
 the others? I'll work it out later.
+
+@20:51 Programming interface, continued #sonilo #ink:01V #timelog:00:23:21

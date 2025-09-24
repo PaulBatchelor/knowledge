@@ -604,6 +604,8 @@ evening.
 @11:32 3.1 sets and subsets #timelog:00:45:07
 #! dz $/01_sets_and_subsets
 
+@12:38 Programming interface for memory manager #sonilo #timelog:00:18:59 #ink:01T
+
 @14:05 3.1 continued #timelog:00:32:42
 #! dz $/01_sets_and_subsets
 
@@ -612,3 +614,18 @@ evening.
 
 @16:38 Union and Intersection #timelog:00:33:54
 #! dz $/03_union_and_intersection
+
+@17:13 scope out hw3 #timelog:00:07:00
+#! dz csmet/cs342/h23
+2 problems, 2 files. one file is a queue, one file is a stack.
+---
+Problem 1: implement queue using 2 stacks. This is a leetcode
+problem that I've done.
+---
+Problem 2: implement stack using a queue. Can be done with
+only one queue. The hint provided is: if there are N items
+in the queue after you add an item, if you remove N - 1 items
+from the queue and add them back to the queue one by one,
+what will happen? Haven't done this before, but I think it's
+pretty straight forward. Something like enque, then dequeue/enqueue
+the others? I'll work it out later.

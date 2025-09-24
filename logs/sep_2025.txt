@@ -616,7 +616,7 @@ evening.
 #! dz $/03_union_and_intersection
 
 @17:13 scope out hw3 #timelog:00:07:00
-#! dz csmet/cs342/h23
+#! dz csmet/cs342/hw3
 2 problems, 2 files. one file is a queue, one file is a stack.
 ---
 Problem 1: implement queue using 2 stacks. This is a leetcode
@@ -631,3 +631,15 @@ pretty straight forward. Something like enque, then dequeue/enqueue
 the others? I'll work it out later.
 
 @20:51 Programming interface, continued #sonilo #ink:01V #timelog:00:23:21
+
+@2025-09-24 Day 24
+@10:04 settling in
+Lots of troubleshooting. My e-ink display kept flickering. I think
+the issue may have been that one of my hubs needed power (the mostly
+passive one has a micro-usb slot for power).
+
+@11:04 starting another day
+#! dz csmet/cs248/discrete_math_zybook/toc/03_sets
+
+@11:05 3.4 more set operations #timelog:00:47:47
+#! dz $/04_more_set_operations

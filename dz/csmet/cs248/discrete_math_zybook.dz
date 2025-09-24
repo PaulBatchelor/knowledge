@@ -757,6 +757,9 @@ ln 3.2: Sets of Subsets
 nn 03_union_and_intersection
 ln 3.3: Union and Intersection
 
+nn 04_more_set_operations
+ln 3.4: more set operations
+
 zz toc/03_sets
 ns ../..
 
@@ -848,3 +851,31 @@ co $ ?02_sets_of_sets
 ln Power Subset: P(A), is the set of all subsets of A.
 ff What is a power subset?
 fb Power Subset: P(A), is the set of all subsets of A.
+
+nn glossary/difference
+co $ ?04_more_set_operations
+ln Difference: the difference between 2 sets A and B,
+ln denoted A - B, is the set of elements that are in A
+ln but not in B.
+ff What is the difference between two sets?
+fb Difference: the difference between 2 sets A and B,
+fb denoted A - B, is the set of elements that are in A
+fb but not in B.
+
+nn glossary/symmetric_difference
+co $ ?04_more_set_operations
+ln Symmetric Difference: The set of elements that are in
+ln either A or B, but not in both.
+co $ ../difference
+ff What is the Symmetric Difference between two sets?
+fb For sets A and B, the symmetric difference is
+fb the set of elements that are in either A or B, but
+fb not both.
+
+nn glossary/complement
+co $ ?04_more_set_operations
+ln Set Complement: for some set A, the set of all elements
+ln in U that are not elements of A.
+ff What is the Complement of a set?
+fb Set Complement: for some set A, the set of all elements
+fb in U that are not elements of A.

@@ -646,3 +646,7 @@ passive one has a micro-usb slot for power).
 
 @13:29 3.5 set identities #timelog:01:10:14
 #! dz $/05_set_identities
+
+@16:50 3.6 Cartesian Products #timelog:00:31:44
+#! dz $/06_cartesian_products
+Made it all the way to the challenge activity

@@ -763,6 +763,9 @@ ln 3.4: more set operations
 nn 05_set_identities
 ln 3.5: Set identities
 
+nn 06_cartesian_products
+ln 3.6: Cartesian Products
+
 zz toc/03_sets
 ns ../..
 
@@ -890,3 +893,15 @@ ln regardless of the contents of the sets in the expression
 ff What is a set identity?
 fb Set Identity: an equation involving sets that true
 fb regardless of the contents of the sets in the expression
+
+nn glossary/cartesian_product
+co $ ?06_cartesian_products
+ln Cartesian Product: for two sets, A and B, the Cartesian
+ln product of A and B, denoted A x B, is the set of all
+ln ordered pairs in which the first entry in A and the second
+ln entry in B.
+ff What is the Cartesian Product?
+fb Cartesian Product: for two sets, A and B, the Cartesian
+fb product of A and B, denoted A x B, is the set of all
+fb ordered pairs in which the first entry in A and the second
+fb entry in B.

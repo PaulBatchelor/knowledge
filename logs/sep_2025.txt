@@ -643,3 +643,6 @@ passive one has a micro-usb slot for power).
 
 @11:05 3.4 more set operations #timelog:00:47:47
 #! dz $/04_more_set_operations
+
+@13:29 3.5 set identities #timelog:01:10:14
+#! dz $/05_set_identities

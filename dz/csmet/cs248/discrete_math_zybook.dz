@@ -760,6 +760,9 @@ ln 3.3: Union and Intersection
 nn 04_more_set_operations
 ln 3.4: more set operations
 
+nn 05_set_identities
+ln 3.5: Set identities
+
 zz toc/03_sets
 ns ../..
 
@@ -879,3 +882,11 @@ ln in U that are not elements of A.
 ff What is the Complement of a set?
 fb Set Complement: for some set A, the set of all elements
 fb in U that are not elements of A.
+
+nn glossary/set_identity
+co $ ?05_set_identities
+ln Set Identity: an equation involving sets that true
+ln regardless of the contents of the sets in the expression
+ff What is a set identity?
+fb Set Identity: an equation involving sets that true
+fb regardless of the contents of the sets in the expression

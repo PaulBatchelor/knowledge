@@ -650,3 +650,6 @@ passive one has a micro-usb slot for power).
 @16:50 3.6 Cartesian Products #timelog:00:31:44
 #! dz $/06_cartesian_products
 Made it all the way to the challenge activity
+
+@20:55 finish up cartesian products #timelog:00:11:48
+#! dz $/06_cartesian_products

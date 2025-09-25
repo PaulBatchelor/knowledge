@@ -766,6 +766,9 @@ ln 3.5: Set identities
 nn 06_cartesian_products
 ln 3.6: Cartesian Products
 
+nn 07_partitions
+ln 3.7: Partitions
+
 zz toc/03_sets
 ns ../..
 
@@ -905,3 +908,30 @@ fb Cartesian Product: for two sets, A and B, the Cartesian
 fb product of A and B, denoted A x B, is the set of all
 fb ordered pairs in which the first entry in A and the second
 fb entry in B.
+
+nn glossary/disjoint
+co $ ?07_partitions
+ln disjoint: two sets, A and B, are said to be disjoint
+ln if the intersections of the two sets is empty.
+ff What does it mean to be disjoint?
+fb disjoint: two sets, A and B, are said to be disjoint
+fb if the intersections of the two sets is empty.
+
+nn glossary/pairwise_disjoint
+co $ ?07_partitions
+ln pariwise disjoint: a sequence of sets is said to be pairwise
+ln disjoint if every pair of distinct sets in the sequence is disjoint.
+ff What does it mean to be pairwise disjoint?
+fb pariwise disjoint: a sequence of sets is said to be pairwise
+fb disjoint if every pair of distinct sets in the sequence is disjoint.
+co $ ../disjoint
+
+nn glossary/partition
+co $ ?07_partitions
+ln partition: a partition of a non-empty set A is a collection of
+ln non-empty subsets of A such that each element of A is in exactly
+ln one of the subsets.
+ff What is a partition?
+fb partition: a partition of a non-empty set A is a collection of
+fb non-empty subsets of A such that each element of A is in exactly
+fb one of the subsets.

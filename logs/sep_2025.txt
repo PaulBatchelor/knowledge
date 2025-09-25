@@ -653,3 +653,59 @@ Made it all the way to the challenge activity
 
 @20:55 finish up cartesian products #timelog:00:11:48
 #! dz $/06_cartesian_products
+
+@21:23 Memory allocation command language #sonilo #ink:01X #timelog:00:24:53
+
+@2025-09-25 Day 25
+@09:01 organizing my time by weeks #timelog:00:57:48
+I am trying to get through this discrete math textbook.
+There's also this weird lab they put me in that seems to be
+sort of optional? I'd like to scope that out as well.
+---
+There's already not enough weeks to do a chapter a week.
+Realistically, I probably won't be able to do the whole book.
+---
+Yikes. I have to do this for CS690 (Network and Cloud Security).
+Probably will be a few semesters before I actually in enroll
+in that, but I will eventually have to take it.
+---
+This CY100 lab (foundations of cybersecurity) has 6 units.
+Each of these units have sub units, followed by a test
+at the end. It would be nice to do a unit a week.
+---
+It seems like I can be done with this lab by before thanksgiving,
+but I should get started next week.
+---
+Some chapters of the discrete math book are going to be
+larger than others. Also, I have travel plans in october.
+I might need to study these chapters out of order. Chapters
+with more sections take more time, regardless of the difficulty
+of the topic.
+---
+4 (functions): 6 sections. 5 (boolean algebra): 6 sections.
+6 (relations/digraphs): 10 sections. 7 (computation): 6 sections.
+8 (induction and recursion): 17 sections. 9 (integer properties): 9 sections.
+10 (introduction to counting): 12 sections. 11 (advanced counting): 4 sections.
+12 (discrete probability): 8 sections. 13 (graphs): 9 sections.
+14 (trees): 6 sections.
+---
+that's 93 sections starting from chapter 4. we have about
+10-11 weeks left, so that 9.3 sections a week. Squeezing
+that into 5 days, that's about 2 sections a day.
+---
+I would like to go breadth first. Read as many introductions
+as possible.
+---
+Induction and Recursion (chapter 8) is the largest chapter.
+Would be worth starting this one early.
+---
+Less challenge activities for some of these more advanced
+chapters. Interesting.
+---
+I've got a mildly ambitious plan for the next 2 weeks.
+If I follow it, I will be a week ahead of schedule of
+my "one DM chapter a week starting now". I've also sprinkled
+in some of the later chapters to take a look at as well.
+
+@10:45 3.7: partitions #timelog:00:40:05
+#! dz $/07_partitions

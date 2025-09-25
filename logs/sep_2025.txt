@@ -709,3 +709,7 @@ in some of the later chapters to take a look at as well.
 
 @10:45 3.7: partitions #timelog:00:40:05
 #! dz $/07_partitions
+
+@13:35 4.1 definition of functions #timelog:00:42:34
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+#! dz $/01_definition_of_functions

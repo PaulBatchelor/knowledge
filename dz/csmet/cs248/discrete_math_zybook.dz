@@ -22,6 +22,7 @@ at ol
 nn toc/03_sets
 at ol
 nn toc/04_functions
+at ol
 nn toc/05_boolean_algebra
 nn toc/06_relations_digraphs
 nn toc/07_computation
@@ -935,3 +936,17 @@ ff What is a partition?
 fb partition: a partition of a non-empty set A is a collection of
 fb non-empty subsets of A such that each element of A is in exactly
 fb one of the subsets.
+
+ns +toc/04_functions
+nn 01_definition_of_functions
+ln 4.1: definition of functions
+ns ../..
+
+nn glossary/well_defined
+ln well defined: a function is said to be well-defined
+ln if every element in the domain maps to exactly one
+ln element in the target.
+ff What does it mean for a function to be well-defined?
+fb well defined: a function is said to be well-defined
+fb if every element in the domain maps to exactly one
+fb element in the target.

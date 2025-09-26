@@ -720,3 +720,7 @@ in some of the later chapters to take a look at as well.
 @11:02 Settling in
 @11:06 4.2: floor and ceiling functions #timelog:00:23:54
 #! dz $/02_floor_and_ceiling_functions
+
+@13:31 Attempting to read 8.1 #timelog:00:43:35
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion
+#! dz $/01_sequences

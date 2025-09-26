@@ -1,0 +1,88 @@
+ns +toc/08_induction_recursion
+nn 01_sequences
+ln 8.1: Sequences
+ns ../..
+
+nn glossary/sequence
+co $ ?01_sequences
+ln Sequence: A special type of function in which the domain
+ln is a set of consecutive integers.
+ff What is a sequence?
+fb Sequence: A special type of function in which the domain
+fb is a set of consecutive integers.
+
+nn glossary/finite_sequence
+ln Finite Sequence
+co $ ?01_sequences
+
+nn glossary/final_term
+ln Final Term
+co $ ?01_sequences
+
+nn glossary/initial_term
+ln Initial Term
+co $ ?01_sequences
+
+nn glossary/explicit_formula
+ln Explicit Formula
+co $ ?01_sequences
+
+nn glossary/increasing
+ln Increasing: a sequence is said to be increasing
+ln if for every two consecutive indices, k and k + 1,
+ln in the domain, a(k) < a(k + 1).
+ff What does it mean for a sequence to be increasing?
+fb Increasing: a sequence is said to be increasing
+fb if for every two consecutive indices, k and k + 1,
+fb in the domain, a(k) < a(k + 1).
+co $ ?01_sequences
+
+nn glossary/nondecreasing
+ln Nondecreasing: A sequence is said to be nondecreasing
+ln if for every two consecutive indices, k and k + 1,
+ln in the domain, a(k) <= a(k + 1)
+co $ ?01_sequences
+ff What does it mean for a sequence to be nondecreasing?
+fb Nondecreasing: A sequence is said to be nondecreasing
+fb if for every two consecutive indices, k and k + 1,
+fb in the domain, a(k) <= a(k + 1)
+
+nn glossary/decreasing
+ln Decreasing: A sequence is said to be nondecreasing
+ln if for every two consecutive indices, k and k + 1,
+ln in the domain, a(k) > a(k + 1)
+co $ ?01_sequences
+ff What does it mean for a sequence to be decreasing?
+fb a(k) > a(k + 1)
+
+nn glossary/nonincreasing
+ln Nonincreasing: A sequence is said to be nondecreasing
+ln if for every two consecutive indices, k and k + 1,
+ln in the domain, a(k) >= a(k + 1)
+co $ ?01_sequences
+ff What does it mean for a sequence to be nondecreasing?
+fb a(k) >= a(k + 1)
+
+nn glossary/geometric_sequence
+co $ ?01_sequences
+ln Geometric Sequence: a geometric sequence is a
+ln sequence of real numbers where each term after the
+ln initial term is found by taking the previous term
+ln and mulitplying it by a fixed number called the
+ln common ratio
+ff What is a geometric sequence?
+fb Geometric Sequence: a geometric sequence is a
+fb sequence of real numbers where each term after the
+fb initial term is found by taking the previous term
+fb and mulitplying it by a fixed number called the
+fb common ratio
+
+nn glossary/arithmetic_sequence
+co $ ?01_sequences
+ln Arithmetic Sequence: a sequence of real numbers where each
+ln term after the initial term is found by taking the previous
+ln term and adding a fixed number called the common difference.
+ff What is an arithmetic sequence?
+fb Arithmetic Sequence: a sequence of real numbers where each
+fb term after the initial term is found by taking the previous
+fb term and adding a fixed number called the common difference.

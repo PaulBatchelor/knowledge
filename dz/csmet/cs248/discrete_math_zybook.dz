@@ -938,8 +938,13 @@ fb non-empty subsets of A such that each element of A is in exactly
 fb one of the subsets.
 
 ns +toc/04_functions
+
 nn 01_definition_of_functions
 ln 4.1: definition of functions
+
+nn 02_floor_and_ceiling_functions
+ln 4.2: Floor and ceiling functions
+
 ns ../..
 
 nn glossary/well_defined

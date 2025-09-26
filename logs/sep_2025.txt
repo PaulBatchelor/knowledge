@@ -94,7 +94,7 @@ if it works.
 
 @2025-09-05 MFA day?
 @10:17 What the hell was that last night #bumet #timelog:00:08:42
-#! dz csmet/CS248
+#! dz csmet/cs248
 That was probably the worst class I've ever had in my life.
 Professor came in 25 minutes late, spent the first hour
 talking about his life, went over the incredibly unhelpful
@@ -225,7 +225,7 @@ of activity.
 @10:24 walk in woods #walking #timelog:00:36:18
 
 @11:20 BU Met homework (discrete math) #timelog:01:21:34
-#! dz csmet/CS248/discrete_math_zybook/toc/01_logic
+#! dz csmet/cs248/discrete_math_zybook/toc/01_logic
 #! dz $/01_propositions_and_logical_operators
 1.1 Propositions and Logical Operators
 ---
@@ -256,7 +256,7 @@ and building some new tooling.
 Okay payment sent.
 
 @11:04 back to math
-#! dz csmet/CS248/discrete_math_zybook/toc/01_logic
+#! dz csmet/cs248/discrete_math_zybook/toc/01_logic
 
 @11:07 1.4 logical equivalence #timelog:00:55:43
 #! dz $/04_logical_equivalence
@@ -724,3 +724,14 @@ in some of the later chapters to take a look at as well.
 @13:31 Attempting to read 8.1 #timelog:00:43:35
 #! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion
 #! dz $/01_sequences
+
+@15:44 HW3 boilerplate setup #timelog:00:05:46
+#! dz csmet/cs342/hw3
+
+@15:51 HW3 problem 1: work out on paper #timelog:00:29:03
+#! dz $
+
+@16:21 HW3 Problem2: ink and paper #timelog:01:01:26
+#! dz $
+
+@17:33 Attempt to fix orphan node script

@@ -734,4 +734,4 @@ in some of the later chapters to take a look at as well.
 @16:21 HW3 Problem2: ink and paper #timelog:01:01:26
 #! dz $
 
-@17:33 Attempt to fix orphan node script
+@17:33 Attempt to fix orphan node script #timelog:00:18:38

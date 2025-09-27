@@ -736,9 +736,9 @@ in some of the later chapters to take a look at as well.
 
 @17:33 Attempt to fix orphan node script #timelog:00:18:38
 
-@19:08 Program Structure #ink:022 #timelog:12:34 #sonilo
+@19:08 Program Structure #ink:022 #timelog:00:12:34 #sonilo
 
-@21:46 Program Structure (continued) #ink:022 #timelog:27:25
+@21:46 Program Structure (continued) #ink:022 #timelog:00:27:25
 
 @2025-09-27 Day 27
 @13:00 Settling in

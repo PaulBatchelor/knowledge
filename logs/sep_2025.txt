@@ -735,3 +735,38 @@ in some of the later chapters to take a look at as well.
 #! dz $
 
 @17:33 Attempt to fix orphan node script #timelog:00:18:38
+
+@19:08 Program Structure #ink:022 #timelog:12:34 #sonilo
+
+@21:46 Program Structure (continued) #ink:022 #timelog:27:25
+
+@2025-09-27 Day 27
+@13:00 Settling in
+
+@13:01 Transfering hw2 solution to notebook #timelog:00:37:17
+#! dz $
+It's inked up in my messier journal, now to give it
+a second pass.
+---
+I write really really slowly.
+
+@13:51 initial CY100 prep #timelog:00:35:00 #bumet
+#! dz csmet/cy100
+print things out, etc.
+---
+wow. it's not letting me print this stuff. they just want
+me to view this stuff in a browser. very classy.
+---
+I managed to open it up in an iframe. Printing to PDF
+doesn't work, so it looks like it'll just have to be
+screenshots.
+---
+Disabled thumbnail for screenshot (cmd+3) while in fullscreen
+(cmd + shift + f). Good enough. Hopefully they will load
+fast enough on a remarkable.
+---
+that took longer than I'd like. Lots of computer fighting.
+Sigh.
+
+@15:18 code up HW3, problem 2: stack from queues #timelog:00:36:25
+#! dz csmet/cs342/hw3

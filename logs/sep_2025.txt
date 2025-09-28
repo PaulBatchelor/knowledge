@@ -777,3 +777,7 @@ Sigh.
 
 @20:22 4.3 continued #timelog:00:29:55
 #! dz $/03_properties_of_functions
+
+@21:02 cy100 unit 1.1 slides notetaking #timelog:00:22:41
+#! dz csmet/cy100
+Made a mindmap for this thing. Felt appropriate.

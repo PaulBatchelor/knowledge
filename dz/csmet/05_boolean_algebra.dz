@@ -1,0 +1,13 @@
+nn glossary/digital_logic
+co $ 01_intro_to_boolean_algebra
+
+nn glossary/boolean_variable
+ln boolean variable: a variable that can have a value of 1 or 0
+ff what is a boolean variable?
+fb boolean variable: a variable that can have a value of 1 or 0
+co $ 01_intro_to_boolean_algebra
+
+nn glossary/boolean_expression
+ln boolean expression: expression built up by applying boolean
+ln operations to boolean variables or the constants 1 or 0.
+co $ 01_intro_to_boolean_algebra

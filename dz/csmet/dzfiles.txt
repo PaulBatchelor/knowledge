@@ -1,2 +1,6 @@
 top.dz
-cs248/discrete_math_zybook.dz cs248/08_induction_recursion.dz
++
+cs248/discrete_math_zybook.dz
+cs248/08_induction_recursion.dz
+cs248/05_boolean_algebra.dz
+.

@@ -1,0 +1,26 @@
+ns +toc/05_boolean_algebra
+nn 01_intro_to_boolean_algebra
+ln 8.1: Sequences
+ns ../..
+
+nn glossary/boolean_algebra
+ln Boolean Alegebra: a set of rules and operations for
+ln working with variables that are 0 or 1.
+ff What is boolean alebra?
+fb Boolean Alegebra: a set of rules and operations for
+fb working with variables that are 0 or 1.
+co $ ?01_intro_to_boolean_algebra
+
+nn glossary/digital_logic
+co $ ?01_intro_to_boolean_algebra
+
+nn glossary/boolean_variable
+ln boolean variable: a variable that can have a value of 1 or 0
+ff what is a boolean variable?
+fb boolean variable: a variable that can have a value of 1 or 0
+co $ ?01_intro_to_boolean_algebra
+
+nn glossary/boolean_expression
+ln boolean expression: expression built up by applying boolean
+ln operations to boolean variables or the constants 1 or 0.
+co $ ?01_intro_to_boolean_algebra

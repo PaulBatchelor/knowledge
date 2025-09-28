@@ -791,3 +791,18 @@ Made a mindmap for this thing. Felt appropriate.
 #! dz csmet/cs342/hw3
 
 @10:48 scanning, cropping, binning. also card scanning #archiving #timelog:00:52:02
+
+@14:35 5.1: prep and reading #timelog:01:08:57
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra/01_intro_to_boolean_algebra
+Trying something new today for this chapter. Going
+to get the PDF and put it on my RM instead of using the
+e-ink screen. I'll read the text, take notes, then go
+back and do all the problems.
+---
+The e-ink screen is too finicky with my mac. I think it's
+a USB C power issue. Possibly fixable, but it was never
+a perfect solution anyways.
+---
+It's the second HDMI switch that is introducing issues. I'm
+getting the blinking here too without the e-ink. Ran into
+this last year.

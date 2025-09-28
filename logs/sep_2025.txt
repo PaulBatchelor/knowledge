@@ -789,3 +789,5 @@ Made a mindmap for this thing. Felt appropriate.
 
 @10:21 submit assignment #timelog:00:12:43
 #! dz csmet/cs342/hw3
+
+@10:48 scanning, cropping, binning #archiving

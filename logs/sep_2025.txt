@@ -770,3 +770,10 @@ Sigh.
 
 @15:18 code up HW3, problem 2: stack from queues #timelog:00:36:25
 #! dz csmet/cs342/hw3
+
+@18:55 4.3: properties of functions #timelog:00:22:45
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+#! dz $/03_properties_of_functions
+
+@20:22 4.3 continued #timelog:00:29:55
+#! dz $/03_properties_of_functions

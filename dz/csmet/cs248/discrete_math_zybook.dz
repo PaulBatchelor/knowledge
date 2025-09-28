@@ -945,6 +945,9 @@ ln 4.1: definition of functions
 nn 02_floor_and_ceiling_functions
 ln 4.2: Floor and ceiling functions
 
+nn 03_properties_of_functions
+ln 4.3: Properties of functions
+
 ns ../..
 
 nn glossary/well_defined
@@ -955,3 +958,45 @@ ff What does it mean for a function to be well-defined?
 fb well defined: a function is said to be well-defined
 fb if every element in the domain maps to exactly one
 fb element in the target.
+
+nn glossary/injective
+co $ ?03_properties_of_functions
+ln injective: a function maps different elements in
+ln the domain to different elements in the target.
+ff What does it mean for a function to be injective/one-to-one?
+fb injective: a function maps different elements in
+fb the domain to different elements in the target.
+
+nn glossary/one-to-one
+co $ ?03_properties_of_functions
+co $ ../injective
+cr AKA
+ln one-to-one mapping
+
+nn glossary/surjective
+co $ ?03_properties_of_functions
+ln surjective: a function whose range is equal to the
+ln target.
+ff What does it mean for a function to be surjective/onto?
+fb surjective: a function whose range is equal to the
+fb target.
+
+nn glossary/onto
+co $ ?03_properties_of_functions
+co $ ../surjective
+cr AKA
+ln "onto" mapping
+
+nn glossary/bijective
+co $ ?03_properties_of_functions
+ln Bijective: a function is both surjective (onto)
+ln and injective (one-to-one).
+ff What does it mean for a function to be bijective?
+fb Bijective: a function is both surjective (onto)
+fb and injective (one-to-one).
+
+nn glossary/one_to_one_correspondence
+ln One-to-one correspondence
+co $ ../bijective
+cr AKA
+co $ ?03_properties_of_functions

@@ -830,3 +830,15 @@ to correct my mistakes. Maybe Claude can help?
 Claude seems to be able to assist with some of these.
 The problems seem like they'll take longer. Pen and paper,
 and all that.
+
+@12:30 4.4 #timelog:00:17:18
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions/04_inverse_of_function
+
+@13:36 4.4 continued #timelog:00:15:13
+#! dz $
+
+@14:08 4.4 continued #timelog:00:14:08
+#! dz $
+
+@14:24 cy100 1.2: security terminology #timelog:00:18:51
+#! dz csmet/cy100

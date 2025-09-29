@@ -806,3 +806,27 @@ a perfect solution anyways.
 It's the second HDMI switch that is introducing issues. I'm
 getting the blinking here too without the e-ink. Ran into
 this last year.
+
+@19:00 Fragment structure #ink:027 #timelog:00:10:16 #sonilo
+
+@20:35 Array structure #ink:027 #timelog:00:16:43
+
+@2025-09-29 Day 29
+@10:53 screenshot curate all slides for unit 1 #timelog:00:07:48
+#! dz csmet/cy100
+
+@11:02 print out chapter 4, transfer to RM tablet #timelog:00:16:39
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+#! dz csmet/cs248
+I've decided that I need to "slow down" from the perspective
+of the instructor. I don't want to draw attention to the
+fact that I am trying to read this book cover to cover.
+Moving forward, I will only read and do the manual exersizes,
+rather than the interactive web crap. That will keep me
+under the radar, and honestly, maybe will be better in
+the long run. The trouble is, there's no one there
+to correct my mistakes. Maybe Claude can help?
+---
+Claude seems to be able to assist with some of these.
+The problems seem like they'll take longer. Pen and paper,
+and all that.

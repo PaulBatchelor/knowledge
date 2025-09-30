@@ -948,6 +948,12 @@ ln 4.2: Floor and ceiling functions
 nn 03_properties_of_functions
 ln 4.3: Properties of functions
 
+nn 04_inverse_of_function
+ln 4.4: the inverse of a function
+
+nn 05_composition_of_functions
+ln 4.5: Composition of Functions
+
 ns ../..
 
 nn glossary/well_defined
@@ -1000,3 +1006,19 @@ ln One-to-one correspondence
 co $ ../bijective
 cr AKA
 co $ ?03_properties_of_functions
+
+nn glossary/composition
+co $ ?05_composition_of_functions
+ln Composition: the proces of applying a function to
+ln the result of another function.
+ff What is function composition?
+fb Composition: the proces of applying a function to
+fb the result of another function.
+
+nn glossry/identity_function
+co $ ?05_composition_of_functions
+ln Identity Function: always maps a set onto itself and
+ln maps every element onto itself.
+ff Describe the identity function
+fb Identity Function: always maps a set onto itself and
+fb maps every element onto itself.

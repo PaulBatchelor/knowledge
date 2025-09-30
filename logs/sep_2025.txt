@@ -867,3 +867,11 @@ problem 3: create a method copyTree that returns a copy of
 the current tree.
 ---
 Once again, these seem to be ordered by difficulty.
+
+@10:30 4.5 reading #timelog:00:46:42
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions/05_composition_of_functions
+
+@11:26 CY100: attacks and malware #timelog:00:26:16
+#! dz csmet/cy100
+
+@14:23 CY100: attacks and malware (continued) #timelog:00:28:00

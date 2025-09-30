@@ -842,3 +842,28 @@ and all that.
 
 @14:24 cy100 1.2: security terminology #timelog:00:18:51
 #! dz csmet/cy100
+
+@18:00 cs342 #bumet #timelog:02:45:00
+
+@2025-09-30 Day 30
+@09:50 settling in
+Got a new USB dongle for HDMI output. Set that up with
+some trial and error. m1 mac air is finnicky. there's a bit
+of a song and dance you have to do to get it right. it needs
+to be plugged in, sometimes you need to log in/out again
+to get the mouse/keyboard to unfreeze, etc. We'll see if
+this helps with some of the flashing issues I had before.
+
+@09:52 cs-342 hw4 review #timelog:00:12:46
+#! dz csmet/cs342/hw4
+3 problems.
+---
+problem 1: create a method that inserts a node into a tree
+using an iterative method (not recursion).
+---
+problem 2: BFS tree traversal. (hint: use queue)
+---
+problem 3: create a method copyTree that returns a copy of
+the current tree.
+---
+Once again, these seem to be ordered by difficulty.

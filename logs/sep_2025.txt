@@ -874,4 +874,16 @@ Once again, these seem to be ordered by difficulty.
 @11:26 CY100: attacks and malware #timelog:00:26:16
 #! dz csmet/cy100
 
-@14:23 CY100: attacks and malware (continued) #timelog:00:28:00
+@13:34 Addressing #ink:02F #sonilo #timelog:00:30:04
+
+@14:23 CY100: attacks and malware (continued) #timelog:00:28:05
+#! dz csmet/cy100
+
+@20:00 Block Writer #ink:02H #sonilo #timelog:00:07:24
+
+@21:40 Block writer, continued #ink:02H #sonilo #timelog:00:28:34
+
+@2025-10-01 Day 31
+@09:10 Settling in, logging times, etc #timelog:00:15:52
+@09:27 examine hw4, problem 3
+#! dz csmet/cs342/hw4

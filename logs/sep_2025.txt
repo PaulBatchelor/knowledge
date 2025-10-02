@@ -917,3 +917,5 @@ Once again, these seem to be ordered by difficulty.
 
 @09:24 code up hw4, problem 2 #timelog:00:18:35
 #! dz $
+
+@10:21 scanning, cropping, binning #archiving

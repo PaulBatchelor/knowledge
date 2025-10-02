@@ -954,6 +954,9 @@ ln 4.4: the inverse of a function
 nn 05_composition_of_functions
 ln 4.5: Composition of Functions
 
+nn 06_logarithms_and_exponents
+ln 4.6: Logarithms and exponents
+
 ns ../..
 
 nn glossary/well_defined

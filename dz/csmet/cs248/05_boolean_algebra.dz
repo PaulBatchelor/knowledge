@@ -1,8 +1,11 @@
 ns +toc/05_boolean_algebra
 nn 01_intro_to_boolean_algebra
-ln 8.1: Sequences
-ns ../..
+ln 5.1: Introduction to Boolean Algebra
 
+nn 02_boolean_functions
+ln 5.2 Boolean Functions
+
+ns ../..
 nn glossary/boolean_algebra
 ln Boolean Alegebra: a set of rules and operations for
 ln working with variables that are 0 or 1.

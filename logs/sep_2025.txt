@@ -892,14 +892,14 @@ Once again, these seem to be ordered by difficulty.
 #! dz csmet/cs248/discrete_math_zybook/toc/04_functions/04_inverse_of_function
 
 @14:34 4.6 logarithms and exponents #timelog:00:48:49
-#! dz cmset/cs248/discrete_math_zybook/toc/04_functions/06_logarithms_and_exponents
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions/06_logarithms_and_exponents
 
 @15:34 5.1 and 5.2 #timelog:00:23:39
-#! dz cmset/cs248/discrete_math_zybook/toc/05_boolean_algebra/01_intro_to_boolean_algebra
-#! dz cmset/cs248/discrete_math_zybook/toc/05_boolean_algebra/02_boolean_functions
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra/01_intro_to_boolean_algebra
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra/02_boolean_functions
 
 @20:12 5.2 #timelog:00:30:23
-#! dz cmset/cs248/discrete_math_zybook/toc/05_boolean_algebra/02_boolean_functions
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra/02_boolean_functions
 
 @20:45 1.4 security model #timelog:00:27:34
 #! dz csmet/cy100
@@ -918,4 +918,4 @@ Once again, these seem to be ordered by difficulty.
 @09:24 code up hw4, problem 2 #timelog:00:18:35
 #! dz $
 
-@10:21 scanning, cropping, binning #archiving
+@10:21 scanning, cropping, binning #archiving #timelog:00:30:00

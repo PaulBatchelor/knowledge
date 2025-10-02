@@ -1,0 +1,13 @@
+ns +toc/06_relations_digraphs
+nn 01_intro_binary_relations
+zz 1 introduction to binary relations
+zz 2 properties of binary relations
+zz 3 directed graphs, paths, and cycles
+zz 4 comparison of relations
+zz 5 graph powers and the transitive closure
+zz 6 matrix multiplication and graph powers
+zz 7 partial orders
+zz 8 strict orders and directed acyclic graphs
+zz 9 equivalence relations
+zz 10 N-ary relations and relational databases
+ns ../..

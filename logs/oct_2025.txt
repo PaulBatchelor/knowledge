@@ -53,3 +53,7 @@ up on scans). I like the control of it, but it will take
 some getting used to. Hopefully I will be less slow at it.
 
 @12:44 bookkeeping. setting up october #timelog:00:05:38
+
+@13:40 scan, crop, bin #archiving #timelog:00:17:30
+
+@13:57 making some inkbook scripts #timelog:00:13:00

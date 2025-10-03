@@ -67,3 +67,7 @@ I have passed unit 1!
 
 @15:32 cs342 problem 1, code up solution and test it #timelog:00:11:52
 #! dz csmet/cs342/hw4
+
+@15:51 memwrite examples #ink:02T #sonilo #timelog:00:56:58
+
+@17:01 attempts to implement initial memory writer commands #timelog:01:13:56 #sonilo

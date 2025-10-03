@@ -5,6 +5,9 @@ ln 5.1: Introduction to Boolean Algebra
 nn 02_boolean_functions
 ln 5.2 Boolean Functions
 
+nn 03_disjunctive_conjunctive_normal_form
+ln 5.3 Disjunctive and Conjunctive Normal Form
+
 ns ../..
 nn glossary/boolean_algebra
 ln Boolean Alegebra: a set of rules and operations for

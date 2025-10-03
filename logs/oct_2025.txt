@@ -57,3 +57,13 @@ some getting used to. Hopefully I will be less slow at it.
 @13:40 scan, crop, bin #archiving #timelog:00:17:30
 
 @13:57 making some inkbook scripts #timelog:00:13:00
+
+@14:23 cy100 test/quiz thing? what's that like #timelog:00:08:42
+#! dz csmet/cy100
+I have passed unit 1!
+
+@14:37 cs342 problem 1, initial ink #timelog:00:54:20
+#! dz csmet/cs342/hw4
+
+@15:32 cs342 problem 1, code up solution and test it #timelog:00:11:52
+#! dz csmet/cs342/hw4

@@ -74,3 +74,17 @@ I have passed unit 1!
 
 @21:06 7.1 an introduction to algorithms #timelog:00:54:21
 #! dz csmet/cs241/discrete_math_zybook/toc/07_computation/01_intro_to_algos
+
+@2025-10-04 Day 34. Bow Market RC Meetup
+I got a lot of biking in today on this uncharacteristically
+warm october day. However, no loggable work was accomplished.
+
+@2025-10-05 Day 35
+@10:05 double check and submit cs342 assignment #timelog:00:10:45
+
+@10:24 screenshot slides for unit 2 of CY100
+#! dz csmet/cy100
+All uploaded and ready to be read
+
+@10:47 write down glosszary terms
+#! dz csmet/cs248

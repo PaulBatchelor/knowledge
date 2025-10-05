@@ -10,3 +10,8 @@ zz 8 strict orders and directed acyclic graphs
 zz 9 equivalence relations
 zz 10 N-ary relations and relational databases
 ns ../..
+
+nn glossary/binary_relation
+ln Binary Relation: a way of expressing a relationship
+ln between two sets. A binary relation between two sets
+ln A and B is a subet R of AxB.

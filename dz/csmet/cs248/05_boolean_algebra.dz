@@ -12,7 +12,7 @@ ns ../..
 nn glossary/boolean_algebra
 ln Boolean Alegebra: a set of rules and operations for
 ln working with variables that are 0 or 1.
-ff What is boolean alebra?
+ff What is boolean algebra?
 fb Boolean Alegebra: a set of rules and operations for
 fb working with variables that are 0 or 1.
 co $ ?01_intro_to_boolean_algebra
@@ -30,3 +30,38 @@ nn glossary/boolean_expression
 ln boolean expression: expression built up by applying boolean
 ln operations to boolean variables or the constants 1 or 0.
 co $ ?01_intro_to_boolean_algebra
+
+nn glossary/literal
+ln literal: boolean variable or complement of boolean
+ln variable.
+ff What is a (boolean) literal?
+fb literal: boolean variable or complement of boolean
+fb variable.
+co $ ?02_boolean_functions
+
+nn glossary/minterm
+ln minterm: in a boolean function with input variables
+ln v1, v2, ... , v3, a minterm is a product of
+ln literals u1, u2, ... uk such that uj is either vj or !vj.
+ff What is a minterm?
+fb minterm: in a boolean function with input variables
+fb v1, v2, ... , v3, a minterm is a product of
+fb literals u1, u2, ... uk such that uj is either vj or !vj.
+co $ ?02_boolean_functions
+
+nn glossary/disjunctive_normal_form
+ln Disjunctive Normal Form (DNF): a boolean expression that
+ln is a sum of products of literals.
+ff What is Disjunctive Normal Form?
+fb Disjunctive Normal Form (DNF): a boolean expression that
+fb is a sum of products of literals.
+co ?03_disjunctive_conjunctive_normal_form
+
+nn glossary/conjunctive_normal_form
+ln Conjunctive Normal Form: A boolean expression that is
+ln a product of sums of literals. Each term in the product that is
+ln a sum of literals is called a clause.
+ff What is conjunctive normal form?
+fb Conjunctive Normal Form: A boolean expression that is
+fb a product of sums of literals. Each term in the product that is
+fb a sum of literals is called a clause.

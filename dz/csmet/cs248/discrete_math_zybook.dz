@@ -191,7 +191,7 @@ fb Logic: the study of formal reasoning.
 nn glossary/proposition
 ln Proposition: a statement that is either true or false.
 ff Define "Proposition"
-ff Proposition: a statement that is either true or false.
+fb Proposition: a statement that is either true or false.
 co $ ../logic
 cr The most basic element in logic is a proposition
 co $ ?01_propositions_and_logical_operators
@@ -321,7 +321,7 @@ fb If the game is not cancelled, then it is not raining today
 nn glossary/inverse
 co $ ?03_conditional_statements
 ln Inverse statement: (!p, !q)
-ff Give the contrapositive statement of "If it is raining today, the game will be cancelled"
+ff Give the inverse statement of "If it is raining today, the game will be cancelled"
 fb If it is not raining today, the game will not be cancelled.
 
 nn glossary/biconditional_operation
@@ -483,8 +483,8 @@ co $ ../conclusion
 
 nn glossary/conclusion
 ln Conclusion: the final proposition in an argument
-fb What is a Conclusion in a logical argument?
-ff Conclusion: the final proposition in an argument
+ff What is a Conclusion in a logical argument?
+fb Conclusion: the final proposition in an argument
 co $ ?11_logical_reasoning
 
 nn glossary/valid_argument
@@ -980,7 +980,7 @@ ff What does it mean for a function to be injective/one-to-one?
 fb injective: a function maps different elements in
 fb the domain to different elements in the target.
 
-nn glossary/one-to-one
+nn glossary/one_to_one
 co $ ?03_properties_of_functions
 co $ ../injective
 cr AKA

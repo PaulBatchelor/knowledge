@@ -86,5 +86,5 @@ warm october day. However, no loggable work was accomplished.
 #! dz csmet/cy100
 All uploaded and ready to be read
 
-@10:47 write down glosszary terms
+@10:47 write down glosszary terms #timelog:00:13:01
 #! dz csmet/cs248

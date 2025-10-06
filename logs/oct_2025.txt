@@ -88,3 +88,34 @@ All uploaded and ready to be read
 
 @10:47 write down glosszary terms #timelog:00:13:01
 #! dz csmet/cs248
+
+@11:14 triptych #ink:02V #timelog:01:07:17
+
+@12:30 5.4 functional completeness #timelog:00:17:19
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra/04_functional_completeness
+
+@13:48 5.4 continued #timelog:00:17:41
+#! dz $
+
+@17:15 5.4 continued again #timelog:00:43:05
+#! dz $
+
+@18:07 5.4 wrapup #timelog:00:23:31
+#! dz $
+
+@18:38 5.5 boolean satisfiability #timelog:00:32:23
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra/05_boolean_satisfiability
+
+@19:13 CY100 2.1 Intro to Symmetric Encryption #timelog:00:16:10
+#! dz csmet/cy100
+
+@21:23 5.5 wrap-up #timelog:00:39:54
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra/05_boolean_satisfiability
+
+@20:48 CY100 2.1 continued #timelog:00:28:25
+#! dz csmet/cy100
+
+@2025-10-06 Day 36
+@11:13 updating logs, some knowledge graph updates #timelog:00:17:13
+
+@11:35 back to sonilo coding #sonilo #timelog:01:15:19

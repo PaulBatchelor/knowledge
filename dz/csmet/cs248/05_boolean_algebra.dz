@@ -7,6 +7,11 @@ ln 5.2 Boolean Functions
 
 nn 03_disjunctive_conjunctive_normal_form
 ln 5.3 Disjunctive and Conjunctive Normal Form
+nn 04_functional_completeness
+ln 5.4 functional completeness
+
+nn 05_boolean_satisfiability
+ln 5.5 boolean satisfiability
 
 ns ../..
 nn glossary/boolean_algebra
@@ -55,7 +60,7 @@ ln is a sum of products of literals.
 ff What is Disjunctive Normal Form?
 fb Disjunctive Normal Form (DNF): a boolean expression that
 fb is a sum of products of literals.
-co ?03_disjunctive_conjunctive_normal_form
+co $ ?03_disjunctive_conjunctive_normal_form
 
 nn glossary/conjunctive_normal_form
 ln Conjunctive Normal Form: A boolean expression that is
@@ -65,3 +70,28 @@ ff What is conjunctive normal form?
 fb Conjunctive Normal Form: A boolean expression that is
 fb a product of sums of literals. Each term in the product that is
 fb a sum of literals is called a clause.
+co $ ?03_disjunctive_conjunctive_normal_form
+
+nn glossary/functional_completeness
+ln Functional Completeness: a set of operations is functionally
+ln complete if any Boolean function can be expression using
+ln only operations from the set.
+ff What is "functional completeness"?
+fb Functional Completeness: a set of operations is functionally
+fb complete if any Boolean function can be expression using
+fb only operations from the set.
+co $ ?04_functional_completeness
+
+nn glossary/boolean_satisfiability
+ln Boolean Satisfiability (aka SAT): takes a boolean
+ln expression as input and asks whether the values of
+ln the variables can be set so that the epxression evaluates
+ln to 1. If it can, the expression is said to be satisfiable.
+ln Otherwise, it is said to be unsatisfiable.
+ff What is boolean satisfiability?
+fb Boolean Satisfiability (aka SAT): takes a boolean
+fb expression as input and asks whether the values of
+fb the variables can be set so that the epxression evaluates
+fb to 1. If it can, the expression is said to be satisfiable.
+fb Otherwise, it is said to be unsatisfiable.
+co $ ?05_boolean_satisfiability

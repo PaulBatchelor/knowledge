@@ -13,6 +13,9 @@ ln 5.4 functional completeness
 nn 05_boolean_satisfiability
 ln 5.5 boolean satisfiability
 
+nn 06_gates_and_circuits
+ln 5.6 Gates and Circuits
+
 ns ../..
 nn glossary/boolean_algebra
 ln Boolean Alegebra: a set of rules and operations for
@@ -95,3 +98,21 @@ fb the variables can be set so that the epxression evaluates
 fb to 1. If it can, the expression is said to be satisfiable.
 fb Otherwise, it is said to be unsatisfiable.
 co $ ?05_boolean_satisfiability
+
+nn glossary/gate
+co $ ?06_gates_and_circuits
+ln Gate: electrical devices that build up circuits.
+ln A gate implements a simple boolean function, receiving
+ln Boolean values as input and producing a value based on
+ln the inputs.
+ff What is a gate?
+fb Gate: electrical devices that build up circuits.
+fb A gate implements a simple boolean function, receiving
+fb Boolean values as input and producing a value based on
+fb the inputs.
+
+nn glossary/combinatorial_circuit
+co $ ?06_gates_and_circuits
+ln Combinatorial Circuit: the output of the circuit that
+ln depends only on the present combination of input values
+ln not the state of the circuit.

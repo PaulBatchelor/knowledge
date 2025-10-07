@@ -119,3 +119,35 @@ All uploaded and ready to be read
 @11:13 updating logs, some knowledge graph updates #timelog:00:17:13
 
 @11:35 back to sonilo coding #sonilo #timelog:01:15:19
+
+@14:00 5.6 Gates and Circuits #timelog:00:06:19
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra/06_gates_and_circuits
+
+@15:24 5.6 continued #timelog:00:16:24
+#! dz $
+
+@18:00 cs-342 lecture #bumet #timelog:02:45:00
+
+@21:23 5.6 Continued again #timelog:00:38:13
+#! dz $
+
+@22:11 6.2 properties of binary relations #timelog:00:31:35
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/02_props_of_binary_relations
+
+@2025-10-07 Day 37
+
+@10:38 Linked List Stack thoughts (again) #ink:032 #timelog:00:41:14
+
+@11:43 6.3 Direct graphs, paths, and cycles #timelog:00:19:55
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/03_digraphs_paths_cycles
+
+@13:10 6.3 continued #timelog:00:22:25
+#! dz $
+
+@13:37 Sound vs Interaction in Sonilo #sonilo #tinmelog:00:18:59
+
+@14:05 CY100 2.2 Block vs Stream Cipher #timelog:00:49:53
+#! dz csmet/cy100
+
+@15:01 logging stuff, adding vocab to cs248 #timelog:00:20:28
+#! dz csmet/cs248

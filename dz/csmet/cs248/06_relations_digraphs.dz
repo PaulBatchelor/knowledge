@@ -1,7 +1,13 @@
 ns +toc/06_relations_digraphs
 nn 01_intro_binary_relations
-zz 2 properties of binary relations
-zz 3 directed graphs, paths, and cycles
+ln 6.1 Introduction to Binary Relations
+
+nn 02_props_of_binary_relations
+ln 6.2 Properties of Binary Relations
+
+nn 03_digraphs_paths_cycles
+ln 6.3 Directed Graphs, Paths, and Cycles
+
 zz 4 comparison of relations
 zz 5 graph powers and the transitive closure
 zz 6 matrix multiplication and graph powers
@@ -15,3 +21,43 @@ nn glossary/binary_relation
 ln Binary Relation: a way of expressing a relationship
 ln between two sets. A binary relation between two sets
 ln A and B is a subet R of AxB.
+
+nn glossary/reflexive
+ln Reflexive: for binary relation R on set A,
+ln R is reflexive iff for every x belonging to A, xRx.
+ff Define "reflesive"
+fb Reflexive: for binary relation R on set A,
+fb R is reflexive iff for every x belonging to A, xRx.
+co $ ?02_props_of_binary_relations
+
+nn glossary/anti_reflexive
+ln anti-reflexive: not reflexive
+td give example of anti-reflexive
+co $ ?02_props_of_binary_relations
+co $ ../reflexive
+
+nn glossary/symmetric
+ln symmetric: for binary relation R on set A,
+ln R is symmetric iff for every pair x and y in set A,
+ln xRy iff yRx.
+ff Define "symmetric"
+fb symmetric: for binary relation R on set A,
+fb R is symmetric iff for every pair x and y in set A,
+fb xRy iff yRx.
+co $ ?02_props_of_binary_relations
+
+nn glossary/anti_symmetric
+ln anti-symmetric: if x != y, then xRy and yRx can't both
+ln be true. see symmetric.
+co $ ../symmetric
+co $ ?02_props_of_binary_relations
+
+nn glossary/transitive
+ln transitive: R is transitive iff for every three elements
+ln x, y, z belonging to A, if xRy and yRz, then xRz must
+ln be true.
+ff Define "transitive"
+fb transitive: R is transitive iff for every three elements
+fb x, y, z belonging to A, if xRy and yRz, then xRz must
+fb be true.
+co $ ?02_props_of_binary_relations

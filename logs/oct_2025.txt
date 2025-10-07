@@ -151,3 +151,17 @@ All uploaded and ready to be read
 
 @15:01 logging stuff, adding vocab to cs248 #timelog:00:20:28
 #! dz csmet/cs248
+
+@17:18 scoping out cs342 HW5, some boilerplate #timelog:00:09:33
+#! dz csmet/cs342/hw5
+Problem 1: write a function called isMinHeap that
+checks if the input array is a minHeap.
+---
+Problem 2: least common ancestor BST. This is a leetcode
+problem that I can never get quite right. Make sure to
+identify the edge cases.
+---
+Most of the work for both of these I imagine will be
+coming up with examples to test. I vaguely remember Knuth
+talking about the challenges of coming up with good
+examples for trees in textbooks, though I may be misremembering.

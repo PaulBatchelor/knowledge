@@ -73,7 +73,7 @@ I have passed unit 1!
 @17:01 attempts to implement initial memory writer commands #timelog:01:13:56 #sonilo
 
 @21:06 7.1 an introduction to algorithms #timelog:00:54:21
-#! dz csmet/cs241/discrete_math_zybook/toc/07_computation/01_intro_to_algos
+#! dz csmet/cs248/discrete_math_zybook/toc/07_computation/01_intro_to_algos
 
 @2025-10-04 Day 34. Bow Market RC Meetup
 I got a lot of biking in today on this uncharacteristically

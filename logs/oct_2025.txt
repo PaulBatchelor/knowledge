@@ -176,3 +176,9 @@ examples for trees in textbooks, though I may be misremembering.
 
 @2025-10-08 Day 38
 @09:56 Settling in, logging #timelog:00:04:41
+
+@10:09 cs248 midterm review: chapter 1 #timelog:01:04:26
+#! dz csmet/cs248/discrete_math_zybook/toc/01_logic
+
+@13:08 more chapter 1 review #timelog:00:59:37
+#! dz $

@@ -152,6 +152,9 @@ All uploaded and ready to be read
 @15:01 logging stuff, adding vocab to cs248 #timelog:00:20:28
 #! dz csmet/cs248
 
+@16:45 6.3 continued #timelog:00:16:48
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/03_digraphs_paths_cycles
+
 @17:18 scoping out cs342 HW5, some boilerplate #timelog:00:09:33
 #! dz csmet/cs342/hw5
 Problem 1: write a function called isMinHeap that
@@ -165,3 +168,11 @@ Most of the work for both of these I imagine will be
 coming up with examples to test. I vaguely remember Knuth
 talking about the challenges of coming up with good
 examples for trees in textbooks, though I may be misremembering.
+
+@19:57 6.4 the composition of relations #timelog:00:15:59
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/04_composition_of_relations
+
+@21:20 Sonilo: sound vs interaction #ink:033 #sonilo #timelog:00:28:15
+
+@2025-10-08 Day 38
+@09:56 Settling in, logging #timelog:00:04:41

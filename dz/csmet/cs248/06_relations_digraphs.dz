@@ -8,7 +8,11 @@ ln 6.2 Properties of Binary Relations
 nn 03_digraphs_paths_cycles
 ln 6.3 Directed Graphs, Paths, and Cycles
 
-zz 4 comparison of relations
+zz 4 composition of relations
+
+nn 04_composition_of_relations
+ln 6.4 Composition of Relations
+
 zz 5 graph powers and the transitive closure
 zz 6 matrix multiplication and graph powers
 zz 7 partial orders

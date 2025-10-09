@@ -183,6 +183,12 @@ examples for trees in textbooks, though I may be misremembering.
 @13:08 more chapter 1 review #timelog:00:59:37
 #! dz $
 
+@14:05 2.3 Modern Symmetric Encryption Algorithms #timelog:00:31:08
+#! dz csmet/cy100
+
+#15:57 8.2 Recurrence Relations #timelog:00:33:50
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/02_recurrence_relations
+
 @20:34 sonilo-ing #timelog:01:39:09 #sonilo
 I think I have a block list working finally. I initially
 had this tricky where I would use memory offsets to calculate
@@ -192,3 +198,14 @@ of the packing scheme. So, we're back to each node being
 a word, with 16 bits being wasted on empty data (for now),
 and the block number being computed as an offset from the
 linked list.
+
+@2025-10-09 Day 39
+@11:27 cache #ink:029 #timelog:00:30:37 #sonilo
+
+@12:28 logging in. updating logs. #timelog:00:05:13
+
+@12:35 Chapter 3 review #timelog:00:09:34
+#! dz csmet/cs248/discrete_math_zybook/toc/03_sets
+
+@14:37 more chapter 3 #timelog:00:39:45
+#! dz $

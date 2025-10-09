@@ -1,6 +1,8 @@
 ns +toc/08_induction_recursion
 nn 01_sequences
 ln 8.1: Sequences
+
+nn 02_recurrence_relations
 ns ../..
 
 nn glossary/sequence
@@ -86,3 +88,11 @@ ff What is an arithmetic sequence?
 fb Arithmetic Sequence: a sequence of real numbers where each
 fb term after the initial term is found by taking the previous
 fb term and adding a fixed number called the common difference.
+
+nn glossary/recurrence_relation
+co $ ?02_recurrence_relations
+ln Recurrence Relation: A rule that defines a term a_n as
+ln a function of previous terms in the sequence.
+ff What is a recurrence relation?
+fb Recurrence Relation: A rule that defines a term a_n as
+fb a function of previous terms in the sequence.

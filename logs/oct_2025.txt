@@ -182,3 +182,13 @@ examples for trees in textbooks, though I may be misremembering.
 
 @13:08 more chapter 1 review #timelog:00:59:37
 #! dz $
+
+@20:34 sonilo-ing #timelog:01:39:09 #sonilo
+I think I have a block list working finally. I initially
+had this tricky where I would use memory offsets to calculate
+block value and I was going to save some space by packing
+2 nodes to a word, but then I realize I lose the elegance
+of the packing scheme. So, we're back to each node being
+a word, with 16 bits being wasted on empty data (for now),
+and the block number being computed as an offset from the
+linked list.

@@ -240,3 +240,39 @@ do I want to have done by then? I leave on the 24th.
 
 @20:14 try to pass unit 2 of CY100 #timelog:00:16:16
 #! dz csmet/cy100
+
+@2025-10-11 Day 41
+@10:24 Sonilo Coding Day. Cache structure? #sonilo #timelog:01:15:41
+A cache in sonilo is a structure that makes it easier
+to manage blocks from the blockstack.
+---
+Primarily, a cache represents a set of blocks allocated.
+One would be able to allocate a block from the blockstack,
+and then add it to the cache.
+---
+When a cache is cleared, all the blocks in the set get freed
+and returned to the blockstack for reuse.
+---
+Eventually, Sonilo will be composed out of smaller programs
+called fragments. Fragments can belong to a context. Blocks
+can be allocated and owned by a context. There can be multiple
+contexts in Sonilo.
+A cache is associated with a particular
+context (referenced via a number known as a resource id).
+---
+The render thread of Sonilo can free a context by sending
+a message containing the resource id to the memory manager.
+The memory manager looks up this cache, clears the cache,
+and frees the cache itself.
+---
+The set of blocks can be represented in a 1024-bit number,
+which is half a block. Each bit represents a block id.
+---
+The other half of a block may be used for a block mapping
+list. I don't think I want to articulate all of what this
+is yet, but it's a list that maps local block id values to
+renderer block id values to copy over. But, I'm still thinking
+about that. It could also be a quick stack for convenient
+block re-use. For now, it's just free space.
+---
+Working on the bitset.

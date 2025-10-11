@@ -209,3 +209,34 @@ linked list.
 
 @14:37 more chapter 3 #timelog:00:39:45
 #! dz $
+
+@18:00 cs248 (midterms) #timelog:02:45:00
+
+@2025-10-10 Day 40
+@09:38 logging in. planning.
+@09:48 I need to start scheduling in times to work on sonilo #sonilo #timelog:00:25:15
+If I don't, it's going to slip through my fingers.
+---
+I've become pretty reliant on a calendar (of the Google variety
+currently) to distribute my academic workload. Why stop
+there?
+---
+This sounds very very much against the spirit of "passionate work".
+But, if I only worked music when I felt like it, I'd never
+get anything done.
+---
+Thoughts for today: I would like to bring Sonilo to NY. What
+do I want to have done by then? I leave on the 24th.
+
+@10:19 CS-342 HW5 problem 2 inking #timelog:01:11:32
+#! dz csmet/cs342/hw5
+
+@13:35 6.5 graph powers and the transitive closure #timelog:01:03:07
+
+@15:38 CY100 2.4 #timelog:00:48:27
+#! dz csmet/cy100
+
+@16:55 cs248 6.5 continue
+
+@20:14 try to pass unit 2 of CY100 #timelog:00:16:16
+#! dz csmet/cy100

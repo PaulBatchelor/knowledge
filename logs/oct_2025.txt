@@ -276,3 +276,21 @@ about that. It could also be a quick stack for convenient
 block re-use. For now, it's just free space.
 ---
 Working on the bitset.
+
+@12:46 inking up hw5, problem 2 #timelog:00:41:59
+#! dz csmet/cs342/hw5
+
+@13:45 coding up hw5, problem 2 (attempting, at least) #timelog:00:16:54
+#! dz $
+The textbook I'm using is a maxheap. I will test and make
+sure that works, then build the minheap version.
+---
+Actually, coding this up in Python first to make sure the
+logic works. I don't want to deal with learning how to Java main
+functions from scratch just yet.
+---
+whipped up what seems to be a working max heap checker.
+I generated some min heaps. Not sure if they are actually min
+heaps. Will need to visualize them (draw them out?). I might
+actually give a crack at drawing then and then making the arrays
+myself.

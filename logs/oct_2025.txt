@@ -340,3 +340,7 @@ Not my best work, but it works. Oh well, gotta move forward.
 @15:27 submit assignment #timelog:00:13:36
 #! dz $
 They work, they could be better. But, they work.
+
+@16:58 cs 248 8.5 more inductive patterns #timelog:01:19:47
+
+@17:33 scanning, cropping, binning #archiving #timelog:00:36:48

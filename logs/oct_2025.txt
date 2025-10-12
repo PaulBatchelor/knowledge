@@ -293,4 +293,50 @@ whipped up what seems to be a working max heap checker.
 I generated some min heaps. Not sure if they are actually min
 heaps. Will need to visualize them (draw them out?). I might
 actually give a crack at drawing then and then making the arrays
-myself.
+myself
+
+@16:20 CS 248 8.3 Summations #timelog:01:05:20
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/03_summations
+
+@17:53 cs 248 8.4 mathematical induction #timelog:00:34:00
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/04_mathematical_induction
+
+@20:26 8.4 continued #timelog:00:48:03
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/04_mathematical_induction
+
+@2025-10-12 Day 42
+@10:02 cs 342 homework inking #timelog:00:20:44
+#! dz csmet/cs342/hw5
+Working on building max/min heaps from scratch
+
+@12:36 settling in, updating logs #timelog:00:07:34
+
+@12:45 test out my maxheaps and minheaps #timelog:00:05:25
+#! dz $
+I already have the maxheap validator working as expected
+in python. But, the code in java is a minheap so I need
+to build my own. I already built another maxheap, and if
+that works, then I can confirm I can build heaps manually,
+and can start working on a minheap implementation.
+---
+Okay, the logic seems to be sound... for my python implementation.
+Now I just gotta port all of this to Java
+
+@12:52 work on tree LCA problem #timelog:00:18:32
+#! dz csmet/cs342/hw5
+
+@14:14 code up problem 2 (LCA) #timelog:00:46:28
+Handling the edge case feels a little messy to me. I went
+with adding funcitionality so that if the nodes match,
+it effectively turns into search. I could have just used
+the supplied "find" method to check ahead of time. This
+might be *slightly* faster.
+---
+Not my best work, but it works. Oh well, gotta move forward.
+
+@15:03 code up problem 1 (minHeapCheck) #timelog:00:19:09
+#! dz $
+
+@15:27 submit assignment #timelog:00:13:36
+#! dz $
+They work, they could be better. But, they work.

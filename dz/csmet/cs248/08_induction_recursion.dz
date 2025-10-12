@@ -3,7 +3,15 @@ nn 01_sequences
 ln 8.1: Sequences
 
 nn 02_recurrence_relations
+ln 8.2 Recurrence Relations
+
+nn 03_summations
+ln 8.3 Summations
+
+nn 04_mathematical_induction
+ln 8.4 Mathematical Induction
 ns ../..
+
 
 nn glossary/sequence
 co $ ?01_sequences

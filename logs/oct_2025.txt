@@ -232,11 +232,13 @@ do I want to have done by then? I leave on the 24th.
 #! dz csmet/cs342/hw5
 
 @13:35 6.5 graph powers and the transitive closure #timelog:01:03:07
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/05_graph_powers_transitive_closure
 
 @15:38 CY100 2.4 #timelog:00:48:27
 #! dz csmet/cy100
 
-@16:55 cs248 6.5 continue
+@16:55 cs248 6.5 continued #timelog:00:46:12
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/05_graph_powers_transitive_closure
 
 @20:14 try to pass unit 2 of CY100 #timelog:00:16:16
 #! dz csmet/cy100
@@ -341,6 +343,31 @@ Not my best work, but it works. Oh well, gotta move forward.
 #! dz $
 They work, they could be better. But, they work.
 
-@16:58 cs 248 8.5 more inductive patterns #timelog:01:19:47
+@16:58 cs 248 8.5 more inductive proofs #timelog:01:19:47
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/05_more_inductive_proofs
+
+@21:02 cs 248 8.6 Strong induction and well ordering #timelog:00:40:40
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/06_strong_induction_well_ordering
 
 @17:33 scanning, cropping, binning #archiving #timelog:00:36:48
+
+@2025-10-13 Day 43
+
+@11:11 8.6 continued #timelog:00:46:27
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/06_strong_induction_well_ordering
+
+@14:22 more 8.6 #timelog:01:06:20
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/06_strong_induction_well_ordering
+
+@17:20 6.6 Matrix multiplication and graph powers #timelog:00:34:04
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/06_matrix_multiplication_graph_powers
+
+@20:10 cs-248 6.6 continued #timelog:01:16:39
+#! dz $
+
+@2025-10-14 Day 44
+@09:43 logging oct 13, updates to oct 12 #timelog:00:26:17
+
+@09:53 I need better wildcard matching for nodes
+These strings are getting ridiculous. Something like
+?discrete_math_zybook?08_induction%/06% would be excellent.

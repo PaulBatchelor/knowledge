@@ -3,15 +3,21 @@ nn 01_sequences
 ln 8.1: Sequences
 
 nn 02_recurrence_relations
-ln 8.2 Recurrence Relations
+ln 8.2: Recurrence Relations
 
 nn 03_summations
-ln 8.3 Summations
+ln 8.3: Summations
 
 nn 04_mathematical_induction
-ln 8.4 Mathematical Induction
-ns ../..
+ln 8.4: Mathematical Induction
 
+nn 05_more_inductive_proofs
+ln 8.5: More Inductive Proofs
+
+nn 06_strong_induction_well_ordering
+ln 8.6: Strong Induction and Well Ordreing
+
+ns ../..
 
 nn glossary/sequence
 co $ ?01_sequences
@@ -104,3 +110,38 @@ ln a function of previous terms in the sequence.
 ff What is a recurrence relation?
 fb Recurrence Relation: A rule that defines a term a_n as
 fb a function of previous terms in the sequence.
+
+nn glossary/strong_induction
+co $ ?06_strong_induction_well_ordering
+ln Principle of Strong Induction: assumes fact to be
+ln proven holds for all values less than or equal to k, and
+ln proves fact holds for k + 1.
+ff What is the principle of strong induction?
+fb Principle of Strong Induction: assumes fact to be
+fb proven holds for all values less than or equal to k, and
+fb proves fact holds for k + 1.
+
+nn glossary/well_ordering
+co $ ?06_strong_induction_well_ordering
+ln Well-Ordering Principle: any non-empty subset of the
+ln non-negative integers has a smallest element
+ff What is the Well-Ordering Principle?
+fb Well-Ordering Principle: any non-empty subset of the
+fb non-negative integers has a smallest element
+
+nn glossary/mathematical_induction
+ln Principle of Mathematical Induction: if the base case
+ln for (n = 1) is true and the inductive step is true,
+ln then the theorem holds for all postive integers.
+co $ ?04_mathematical_induction
+ff What is the Principle of Mathematical Induction?
+fb Principle of Mathematical Induction: if the base case
+fb for (n = 1) is true and the inductive step is true,
+fb then the theorem holds for all postive integers.
+
+nn glossary/inductive_hypotheses
+ln Inductive Hypotheses: the supposition that S(k) is
+ln true.
+ff What is the inductive hypotheses?
+fb Inductive Hypotheses: the supposition that S(k) is
+fb true.

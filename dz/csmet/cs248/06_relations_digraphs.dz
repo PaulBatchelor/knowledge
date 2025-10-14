@@ -1,20 +1,22 @@
 ns +toc/06_relations_digraphs
 nn 01_intro_binary_relations
-ln 6.1 Introduction to Binary Relations
+ln 6.1: Introduction to Binary Relations
 
 nn 02_props_of_binary_relations
-ln 6.2 Properties of Binary Relations
+ln 6.2: Properties of Binary Relations
 
 nn 03_digraphs_paths_cycles
-ln 6.3 Directed Graphs, Paths, and Cycles
-
-zz 4 composition of relations
+ln 6.3: Directed Graphs, Paths, and Cycles
 
 nn 04_composition_of_relations
-ln 6.4 Composition of Relations
+ln 6.4: Composition of Relations
 
-zz 5 graph powers and the transitive closure
-zz 6 matrix multiplication and graph powers
+nn 05_graph_powers_transitive_closure
+ln 6.5: Graph Powers and the transitive closure
+
+nn 06_matrix_multiplication_graph_powers
+ln 6.6 Matrix Multiplication and Graph Powers
+
 zz 7 partial orders
 zz 8 strict orders and directed acyclic graphs
 zz 9 equivalence relations
@@ -65,3 +67,13 @@ fb transitive: R is transitive iff for every three elements
 fb x, y, z belonging to A, if xRy and yRz, then xRz must
 fb be true.
 co $ ?02_props_of_binary_relations
+
+nn glossary/graph_power_theorem
+co $ ?05_graph_powers_transitive_closure
+ln Graph Power Theorem: let G be a directed graph.
+ln let u and v be any two vertices in G. THere is an edge
+ln from u to v in G^k if and only if there is a walk of
+ln length k from u to v in G.
+ff What is the Graph Power theorem?
+fb For any k >=1, there is an edge(u,v) in G^k if and only
+fb if ther eis a walk from u to v of length k in G.

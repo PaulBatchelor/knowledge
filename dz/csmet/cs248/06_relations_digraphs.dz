@@ -17,7 +17,8 @@ ln 6.5: Graph Powers and the transitive closure
 nn 06_matrix_multiplication_graph_powers
 ln 6.6 Matrix Multiplication and Graph Powers
 
-zz 7 partial orders
+nn 07_partial_orders
+ln 6.7 Partial Orders
 zz 8 strict orders and directed acyclic graphs
 zz 9 equivalence relations
 zz 10 N-ary relations and relational databases
@@ -77,3 +78,25 @@ ln length k from u to v in G.
 ff What is the Graph Power theorem?
 fb For any k >=1, there is an edge(u,v) in G^k if and only
 fb if ther eis a walk from u to v of length k in G.
+
+nn glossary/square_matrix
+ln Square Matrix: matrix where number of rows and columns are equal.
+ff What is a Square Matrix?
+fb Square Matrix: matrix where number of rows and columns are equal.
+co $ ?06_matrix_multiplication_graph_powers
+
+nn glossary/adjacency_matrix
+ln Adjacency Matrix: nxn matrix of set 0,1, representing
+ln a digraph n vertices. A_{i,j} = 1 if G contains an edge
+ln from vertex i to j, otherwise A_{i,j} = 0.
+ff What is an Adjacency Matrix?
+fb Adjacency Matrix: nxn matrix of set 0,1, representing
+fb a digraph n vertices. A_{i,j} = 1 if G contains an edge
+fb from vertex i to j, otherwise A_{i,j} = 0.
+co $ ?06_matrix_multiplication_graph_powers
+
+zz glossary/boolean_matrix
+ln Boolean Matrix: a matrix with entries from the set 0,1
+ff What is a Boolean Matrix?
+fb Boolean Matrix: a matrix with entries from the set 0,1
+co $ ?06_matrix_multiplication_graph_powers

@@ -1,3 +1,8 @@
 ns +toc/07_computation
 nn 01_intro_to_algos
+ln 7.1: Introduction To Algorithms
+
+nn 02_asymptotic_growth
+ln 7.2: Asymptotic Growth of Functions
+
 ns ../..

@@ -353,6 +353,9 @@ They work, they could be better. But, they work.
 
 @2025-10-13 Day 43
 
+@09:33 TAOCP reading, chap vol 1, 2.5: The Buddy System #timelog:01:15:52
+#! dz TAOCP/vol1/ch02/05
+
 @11:11 8.6 continued #timelog:00:46:27
 #! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/06_strong_induction_well_ordering
 
@@ -371,3 +374,20 @@ They work, they could be better. But, they work.
 @09:53 I need better wildcard matching for nodes
 These strings are getting ridiculous. Something like
 ?discrete_math_zybook?08_induction%/06% would be excellent.
+
+@11:35 6.7 Partial Orders #timelog:00:19:57
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/07_partial_orders
+
+@13:00 6.7 continued #timelog:00:21:13
+#! dz $
+
+@15:14 7.2 Asymptotic growth of functions #timelog:00:48:07
+#! dz csmet/cs248/discrete_math_zybook/toc/07_computation/02_asymptotic_growth
+
+@18:00 cs342 class (on a tuesday instead of monday because of holiday) #bumet #timelog:02:45:00
+
+@22:20 7.2 continued #timelog:01:08:46
+#! dz $
+
+@2025-10-15 Day 45
+@11:58 logging #timelog:00:14:06

@@ -391,3 +391,22 @@ These strings are getting ridiculous. Something like
 
 @2025-10-15 Day 45
 @11:58 logging #timelog:00:14:06
+
+@13:00 More Buddy System studying #timelog:00:56:27
+#! dz TAOCP/vol1/ch02/05
+
+@14:35 8.9 Loop Invariants #timelog:01:08:24
+#! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/07_loop_invariants
+
+@16:32 6.8 Strict Orders and Directed Acyclic Graphs #timelog:00:33:13
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/08_strict_orders_DAGs
+
+@19:17 6.8 continued #timelog:00:17:36
+#! dz $
+
+@2025-10-16 Day 46
+@08:49 logging, scanning, binning, tagging #archiving
+Ugh, duplicate node woes. Trying to add more description
+to dagzet.
+---
+Okay, fixed it. oof. Progress though?

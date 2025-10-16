@@ -17,6 +17,9 @@ ln 8.5: More Inductive Proofs
 nn 06_strong_induction_well_ordering
 ln 8.6: Strong Induction and Well Ordreing
 
+nn 07_loop_invariants
+ln 8.7 Loop Invariants
+
 ns ../..
 
 nn glossary/sequence
@@ -138,6 +141,7 @@ ff What is the Principle of Mathematical Induction?
 fb Principle of Mathematical Induction: if the base case
 fb for (n = 1) is true and the inductive step is true,
 fb then the theorem holds for all postive integers.
+co $ ?06_strong_induction_well_ordering
 
 nn glossary/inductive_hypotheses
 ln Inductive Hypotheses: the supposition that S(k) is
@@ -145,3 +149,19 @@ ln true.
 ff What is the inductive hypotheses?
 fb Inductive Hypotheses: the supposition that S(k) is
 fb true.
+co $ ?06_strong_induction_well_ordering
+
+nn glossary/program_verification
+co $ ?07_loop_invariants
+ln Program Verification: field concerned with formally
+ln proving that programs perform correctly
+ff What is program verification?
+fb Program Verification: field concerned with formally
+fb proving that programs perform correctly
+
+nn glossary/loop_invariant
+ln Loop Invariant: An assertion that is true before each iteration
+ln of a loop.
+ff What is a Loop Invariant?
+fb Loop Invariant: An assertion that is true before each iteration
+fb of a loop.

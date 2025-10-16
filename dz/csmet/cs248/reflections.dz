@@ -1,0 +1,17 @@
+ns reflections
+
+nn prove_digraph_theorem
+ln What does 6.8.1 mean and how can it be proven?
+ln "G has no cycles iff G+ is a strict order".
+td examine proof of 6.8.1
+co $ ?08_strict_orders_DAGs
+
+nn DAG_acyclic_not_strict_order
+co $ ?08_strict_orders_DAGs
+ln Can a DAG be acyclic but not a strict order?
+td Answer, and explain why or why not. Show examples.
+
+nn TODO_8_7
+ln TODO: 8.7.6, 8.7.7, 8.7.1, Proof 8.7.1, 8.7.8
+td Flesh these out into actual follow-ups
+co $ ?07_loop_invariants

@@ -19,7 +19,10 @@ ln 6.6 Matrix Multiplication and Graph Powers
 
 nn 07_partial_orders
 ln 6.7 Partial Orders
-zz 8 strict orders and directed acyclic graphs
+
+nn 08_strict_orders_DAGs
+ln 6.8: Strict Orders and Direct Acyclic Graphs
+
 zz 9 equivalence relations
 zz 10 N-ary relations and relational databases
 ns ../..
@@ -95,8 +98,36 @@ fb a digraph n vertices. A_{i,j} = 1 if G contains an edge
 fb from vertex i to j, otherwise A_{i,j} = 0.
 co $ ?06_matrix_multiplication_graph_powers
 
-zz glossary/boolean_matrix
+nn glossary/boolean_matrix
 ln Boolean Matrix: a matrix with entries from the set 0,1
 ff What is a Boolean Matrix?
 fb Boolean Matrix: a matrix with entries from the set 0,1
 co $ ?06_matrix_multiplication_graph_powers
+
+nn glossary/strict_order
+ln Strict Order: a relation R is a strict order if R is
+ln anti-reflexive and transient. Strict order acts like
+ln the "<" operator, whereas the partial ordering acts like
+ln "<=" operator.
+ff What is a strict order?
+fb Strict Order: a relation R is a strict order if R is
+fb anti-reflexive and transient. Strict order acts like
+fb the "<" operator, whereas the partial ordering acts like
+fb "<=" operator.
+co $ ?08_strict_orders_DAGs
+
+nn glossary/DAG
+ln Directed Acyclic Graph (DAG): a directed graph that
+ln has no cycles.
+co $ ?08_strict_orders_DAGs
+ff What is a DAG?
+fb Directed Acyclic Graph (DAG): a directed graph that
+fb has no cycles.
+
+nn glossary/topological_sort
+co $ ?08_strict_orders_DAGs
+ln Topological Sort: ordering of vertices that is consistent
+ln with the edges of a graph.
+ff What is a topological sort?
+fb Topological Sort: ordering of vertices that is consistent
+fb with the edges of a graph.

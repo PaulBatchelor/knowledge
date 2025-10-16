@@ -2773,3 +2773,7 @@ tg ffmpeg x86
 nn my_ed_toolbox
 hl https://aartaka.me/my-ed.html
 ln my ed toolbox
+
+nn uunatek_idraw_linux
+hl https://github.com/bbaudry/swart-studio/blob/main/penplotting/README.md
+ln idraw on linux

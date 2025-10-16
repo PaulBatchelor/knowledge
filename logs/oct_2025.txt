@@ -405,8 +405,13 @@ These strings are getting ridiculous. Something like
 #! dz $
 
 @2025-10-16 Day 46
-@08:49 logging, scanning, binning, tagging #archiving
+@08:49 logging and dagzetting #timelog:00:50:27
 Ugh, duplicate node woes. Trying to add more description
 to dagzet.
 ---
 Okay, fixed it. oof. Progress though?
+
+@10:28 cs342 hw scoping, save slides to PDF
+#! dz cs342/hw6
+HW is just to re-implement sorting algorithms.
+I can bang that out quickly if I wanted to.

@@ -1,0 +1,22 @@
+ns csmet/cs342/slides
+
+nn 01_complexity_analysis_array_linked_list
+ln Lecture 1: Complexity, Linked List
+
+nn 02_linked_list_stack
+ln Lecture 2: Linked List, Stack
+
+nn 03_queue_tree
+ln Lecture 3: Queue, Tree
+
+nn 04_tree
+ln Lecture 4: Tree
+
+nn 05_AVL_RB_tree
+ln Lecture 5: AVL, Red/Black Tree
+
+nn 06_priority_queue
+ln Lecture 6: Priority Queue
+
+nn 07_sorting
+ln Lecture 7: Sorting

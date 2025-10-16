@@ -6,4 +6,6 @@ cs248/05_boolean_algebra.dz
 cs248/06_relations_digraphs.dz
 cs248/07_computation.dz
 cs248/reflections.dz
+cs342/slides.dz
+cs342/snippets.dz
 .

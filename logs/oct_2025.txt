@@ -411,7 +411,7 @@ to dagzet.
 ---
 Okay, fixed it. oof. Progress though?
 
-@10:28 cs342 hw scoping, save slides to PDF
+@10:28 cs342 hw scoping, save slides to PDF #timelog:00:58:08
 #! dz cs342/hw6
 HW is just to re-implement sorting algorithms.
 I can bang that out quickly if I wanted to.

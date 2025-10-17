@@ -564,3 +564,19 @@ for this class).
 
 @16:20 Attempt to complete chapter 4 online exercises #timelog:00:46:56
 #! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+
+@17:10 back to Sorts, selection sort #timelog:00:06:23
+#! dz csmet/cs342/hw6
+
+@17:16 heapsort
+#! dz $
+Don't want to build a Heap data structure right now. Will
+circle back to this one.
+
+@17:21 MergeSort #timelog:00:14:50
+#! dz $
+
+@17:54 QuickSort #timelog:00:08:13
+#! dz $
+I got the ascending version transcribed. Gotta work out
+how to make it descending though.

@@ -91,3 +91,208 @@ nn stack_impl_array
 ln Stack Implementation using Array
 co $ ?02_linked_list_stack
 td code
+
+nn stack_array_push_pop_top
+ln Stack Implemenation (array): Push, pop, top
+td code
+co $ ?02_linked_list_stack
+
+nn stack_ll_impl
+ln Stack Implementation using Linked List
+td code
+co $ ?02_linked_list_stack
+
+nn stack_bottominsert
+ln Stack: BottomInsert
+td code
+co $ ?02_linked_list_stack
+
+nn stack_balanced_parens
+ln Stack Problem: Balanced Parentheses
+co $ ?02_linked_list_stack
+td code up solution
+
+nn queue_array_impl
+co $ ?03_queue_tree
+ln Queue Implementation: array version
+td code
+
+nn queue_array_add
+ln Queue (Array): add
+co $ ?03_queue_tree
+td code
+
+nn queue_array_remove
+ln Queue (Array): remove
+co $ ?03_queue_tree
+td code
+
+nn queue_array_traverse
+ln Queue (Array): traverse
+co $ ?03_queue_tree
+td code
+
+nn queue_ll_impl
+ln Queue Implementation: circular linked list
+co $ ?03_queue_tree
+td code
+
+nn queue_ll_add
+ln Queue (Linked List): Add
+co $ ?03_queue_tree
+td code
+
+nn queue_ll_remove
+co $ ?03_queue_tree
+ln Queue (Linked List): Remove
+td code
+
+nn josephus_problem
+co $ ?03_queue_tree
+ln Josephus Problem
+td code
+
+nn steps_of_knight
+ln Steps of Knight Problem
+co $ ?03_queue_tree
+td code
+
+nn binary_tree
+co $ ?04_tree
+ln Binary Tree
+td code
+
+nn BST_insertion
+co $ ?04_tree
+ln Binary Search Tree: Insertion
+td code
+
+nn BST_traversal_preorder
+co $ ?04_tree
+ln Binary Search Tree: preorder traversal
+td code
+
+nn BST_traversal_inorder
+co $ ?04_tree
+ln Binary Search Tree: in-order traversal
+td code
+
+nn BST_traversal_postorder
+co $ ?04_tree
+ln Binary Search Tree: post-order traversal
+td code
+
+nn BST_number_of_nodes
+co $ ?04_tree
+ln Binary Search Tree: find number of nodes
+td code
+
+nn BST_find_node
+co $ ?04_tree
+ln Binary Search Tree: find node
+td code
+
+nn BST_find_mind
+co $ ?04_tree
+ln Binary Search Tree: find min
+td code
+
+nn BST_delete
+co $ ?04_tree
+ln Binary Search Tree: delete a node
+td code
+
+nn AVL_basic
+ln AVL Tree: Basic Implementation
+co $ ?05_AVL_RB_tree
+td code
+
+nn AVL_left_rotate_fix_right_right
+ln AVL: left rotation to fix right-right case
+co $ ?05_AVL_RB_tree
+td code
+
+nn AVL_right_rotation_fix_left_left
+ln AVL: right rotation to fix left-left case
+co $ ?05_AVL_RB_tree
+td code
+
+nn AVL_left_right_rotation_fix_left_right
+ln AVL: left-right rotation to fix left-right case
+co $ ?05_AVL_RB_tree
+td code
+
+nn AVL_right_left_rotation_fix_right_left
+ln AVL: right-left rotation to fix right-left case
+co $ ?05_AVL_RB_tree
+td code
+
+nn AVL_insertion
+ln AVL: insertion
+co $ ?05_AVL_RB_tree
+td code
+
+nn AVL_deletion
+ln AVL: deletion
+co $ ?05_AVL_RB_tree
+td code
+
+nn redblack_basic
+ln redblack tree: basic implementation
+co $ ?05_AVL_RB_tree
+td code
+
+nn redblack_insertion
+ln redblack tree: insertion
+co $ ?05_AVL_RB_tree
+td code
+
+nn heap_impl_basic
+ln Heap Implementation (Basic)
+co $ ?06_priority_queue
+td code
+
+nn heap_enqueue_add
+ln Heap: enqueue/add
+co $ ?06_priority_queue
+td code
+
+nn heap_dequeue_remove
+ln Heap: dequeue/remove
+co $ ?06_priority_queue
+td code
+
+nn heap_traversal
+ln Heap: traversal
+co $ ?06_priority_queue
+td code
+
+nn bubble_sort
+ln BubbleSort: Implementation
+co $ ?07_sorting
+td code
+
+nn selection_sort
+ln SelectionSort: Implementation
+co $ ?07_sorting
+td code
+
+nn heapify
+ln Heapify: Implementation
+co $ ?07_sorting
+td code
+
+nn heap_sort
+ln heap sort
+co $ ?07_sorting
+td code
+
+nn merge_sort
+ln merge sort
+co $ ?07_sorting
+td code
+
+nn quick_sort
+ln quick sort
+co $ ?07_sorting
+td code

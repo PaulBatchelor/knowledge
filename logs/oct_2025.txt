@@ -518,3 +518,24 @@ good enough to ever be finished.
 ---
 More thining required. But at least I got some stuff on
 the calendar.
+
+@13:55 cs-342 hw6 scaffolding, BubbleSort #timelog:00:14:39
+#! dz csmet/cs342/hw6
+I don't have time to do this the "right" way, which
+would be trying to do this by hand first. I just typed up
+BubbleSort based on the slides, but simplified. I'll write
+it by hand later if I have time.
+---
+I need to write a class for each one. But, I have the
+scaffolding in place with BubbleSort. Just a theme on
+variations.
+
+@14:20 Onto more slides outlining for studying #timelog:00:56:21
+#! dz csmet/cs342
+I indulged a little bit, and created a TODO item for
+all the "code" tasks I made. 58 tasks. That means if we
+timebox things to 5 minutes each task, that's 232 minutes,
+which is a little under 4 hours for full coverage. 3 hours
+gives us 75 percent coverage. If I can rally another hour
+today, 1.5-2 hours tomorrow, I'll feel good. I will use
+a hard timer and tokens.

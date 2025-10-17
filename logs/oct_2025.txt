@@ -541,3 +541,26 @@ today, 1.5-2 hours tomorrow, I'll feel good. I will use
 a hard timer and tokens.
 
 @15:24 log fixes #timelog:00:02:16
+
+@15:58 I have decided I am done with zybooks. Research for alts #timelog:00:18:50
+#! csmet/cs248/news
+I've never loved this textbook. I've done the first 6 chapters
+(well, 6.10 is unread). And I've sort of grit my teeth on this
+content. I don't like the interactive excercises. I think
+I'm learning anything this way.
+---
+I found a discrete math textbook, and already I can tell
+it's a much better textbook for this stuff. It's open source,
+it's approved by some math associated, and it has solutions.
+I can download it as a PDF and read it from my remarkable.
+---
+So, here's what I'm going to do. For everything that is
+covered in the zybooks, I'm going to find alternative sources.
+---
+I think this discrete math textbook I found by Oscar Levin
+covers enough that I'll have some things to chew on.
+Definitely for the rest of the semester (plus the bare minimum
+for this class).
+
+@16:20 Attempt to complete chapter 4 online exercises #timelog:00:46:56
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions

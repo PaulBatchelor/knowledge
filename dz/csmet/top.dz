@@ -1,5 +1,6 @@
 ns csmet
 nn cs248
+nn cs248/news
 nn cs342
 nn cs342/hw1
 nn cs248/ink
@@ -10,3 +11,4 @@ nn cy100
 nn cy100/ink
 nn cs342/hw4
 nn cs342/hw5
+nn cs342/hw6

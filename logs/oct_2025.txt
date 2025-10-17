@@ -412,18 +412,18 @@ to dagzet.
 Okay, fixed it. oof. Progress though?
 
 @10:28 cs342 hw scoping, save slides to PDF #timelog:00:58:08
-#! dz cs342/hw6
+#! dz csmet/cs342/hw6
 HW is just to re-implement sorting algorithms.
 I can bang that out quickly if I wanted to.
 
 @13:03 6.9 Equivalence Relations #timelog:00:56:03
-#! dz csmet/cs248/toc/06_relations_digraphs/09_equivalence_relations
+#! dz csmet/cs248/discrete_math_zybook/toc/06_relations_digraphs/09_equivalence_relations
 
 @15:07 6.9 continued #timelog:00:14:12
 #! dz $
 
 @15:25 7.3 Analysis of Algorithms #timelog:00:25:34
-#! csmet/toc/07_computation/03_analysis_of_algorithms
+#! dz csmet/cs248/discrete_math_zybook/toc/07_computation/03_analysis_of_algorithms
 
 @18:00 CS-248 lecture #bumet #timelog:02:45:00
 
@@ -539,3 +539,5 @@ which is a little under 4 hours for full coverage. 3 hours
 gives us 75 percent coverage. If I can rally another hour
 today, 1.5-2 hours tomorrow, I'll feel good. I will use
 a hard timer and tokens.
+
+@15:24 log fixes

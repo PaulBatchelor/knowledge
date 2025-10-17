@@ -5,4 +5,48 @@ ln 7.1: Introduction To Algorithms
 nn 02_asymptotic_growth
 ln 7.2: Asymptotic Growth of Functions
 
+nn 03_analysis_of_algorithms
+ln 7.3 Analysis of Algorithms
+
 ns ../..
+
+nn glossary/computational_complexity
+co $ ?03_analysis_of_algorithms
+ln Computation Complexity: the amount of resources an
+ln algorithm uses.
+ff What is computation complexity?
+fb Computation Complexity: the amount of resources an
+fb algorithm uses.
+
+nn glossary/space_complexity
+co $ ?03_analysis_of_algorithms
+ln Space Complexity: the amount of memory an algorithm uses
+ff What is Space Complexity?
+fb Space Complexity: the amount of memory an algorithm uses
+
+nn glossary/time_complexity
+co $ ?03_analysis_of_algorithms
+ln Time Complexity: defined by a function that maps positive
+ln ints to positive ints such that f(n) is the maximum number
+ln of atomic operations  performed by the laogirhtm on any input
+ln of size n
+ff What is time complexity?
+fb Time Complexity: defined by a function that maps positive
+fb ints to positive ints such that f(n) is the maximum number
+fb of atomic operations  performed by the laogirhtm on any input
+fb of size n
+
+nn glossary/asymptotic_time_complexity
+ln Asymptotic Time Complexity: the rate of asymptotic growth
+ln of the algorithms time complexity function
+co $ ?03_analysis_of_algorithms
+ff What is Asymptotic Time Complexity?
+fb Asymptotic Time Complexity: the rate of asymptotic growth
+fb of the algorithms time complexity function
+
+nn glossary/worst_case_analysis
+ln Worst-case Analysis: evaluates time complexity of algorithm
+ln on input of particular size that takes longest time
+ff What is worst-case analysis?
+fb Worst-case Analysis: evaluates time complexity of algorithm
+fb on input of particular size that takes longest time.

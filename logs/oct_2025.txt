@@ -415,3 +415,20 @@ Okay, fixed it. oof. Progress though?
 #! dz cs342/hw6
 HW is just to re-implement sorting algorithms.
 I can bang that out quickly if I wanted to.
+
+@13:03 6.9 Equivalence Relations #timelog:00:56:03
+#! dz csmet/cs248/toc/06_relations_digraphs/09_equivalence_relations
+
+@15:07 6.9 continued #timelog:00:14:12
+#! dz $
+
+@15:25 7.3 Analysis of Algorithms #timelog:00:25:34
+#! csmet/toc/07_computation/03_analysis_of_algorithms
+
+@18:00 CS-248 lecture #bumet #timelog:02:45:00
+
+@2025-10-17 Day 47
+@11:23 Log updates #timelog:00:19:12
+
+@11:42 redoing reading schedule #planning
+#! dz csmet/cs248/news

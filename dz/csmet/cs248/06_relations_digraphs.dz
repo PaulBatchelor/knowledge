@@ -24,6 +24,10 @@ nn 08_strict_orders_DAGs
 ln 6.8: Strict Orders and Direct Acyclic Graphs
 
 zz 9 equivalence relations
+
+nn 09_equivalence_relations
+ln 6.9 Equivalence Relations
+
 zz 10 N-ary relations and relational databases
 ns ../..
 
@@ -131,3 +135,34 @@ ln with the edges of a graph.
 ff What is a topological sort?
 fb Topological Sort: ordering of vertices that is consistent
 fb with the edges of a graph.
+
+nn glossary/equivalence_relation
+co $ ?09_equivalence_relations
+ln Equivalence Relation: a relation R is an equivalence relation if
+ln R is reflexive, symmetric, and transitive.
+ff What is an Equivalence Relation?
+fb Equivalence Relation: a relation R is an equivalence relation if
+fb R is reflexive, symmetric, and transitive.
+
+nn reflections/TRS_combos_have_names?
+co $ ?09_equivalence_relations
+ln Does every combo of reflexive, transitive, and symmetric
+ln have names? If something is X, Y, Z then it is blah.
+td answer
+
+nn glossary/equivalence_class
+ln Equivalence Class: Set [a] is all x belongs to A such
+ln that a ~ x, where A is the domain of an equivalence
+ln relation, and a belongs A.
+co $ ?09_equivalence_relations
+td rewrite definition
+
+nn reflections/tilde_symbol_meaning
+ln What does the tilde symbol mean for a ~ x?
+co $ ?09_equivalence_relations
+co $ ?glossary/equivalence_class
+
+nn reflections/proof_structure_equivalence_relations
+ln TODO: study proof for 6.9.1: structure of equivalence
+ln relations.
+td study proof

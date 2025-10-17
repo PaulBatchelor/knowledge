@@ -580,3 +580,10 @@ circle back to this one.
 #! dz $
 I got the ascending version transcribed. Gotta work out
 how to make it descending though.
+
+@18:05 deleting my reading schedule for zybooks #timelog:00:05:44
+#! dz cs248/discrete_math_zybook
+#! dz cs248/news
+Good riddance.
+
+@18:16 ...and now to set up a new reading schedule for the new textbook #timelog:00:10:43

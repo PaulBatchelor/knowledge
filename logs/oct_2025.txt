@@ -587,3 +587,6 @@ how to make it descending though.
 Good riddance.
 
 @18:16 ...and now to set up a new reading schedule for the new textbook #timelog:00:10:43
+
+@21:06 address some of the TODOs I made
+#! dz csmet/cs342

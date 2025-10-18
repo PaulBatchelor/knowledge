@@ -8,114 +8,92 @@ co $ ?01_complexity_analysis_array_linked_list
 nn ll_insert_at_head
 ln Linked List: Insert Element at Head
 co $ ?01_complexity_analysis_array_linked_list
-td Code
 
 nn ll_insert_at_end
 ln Linked List: Insert Element at End
 co $ ?01_complexity_analysis_array_linked_list
-td Code
 
 nn ll_traverse
 ln Traverse a Linked List
 co $ ?01_complexity_analysis_array_linked_list
-td Code
 
 nn ll_delete
 ln Delete a node from a linked list
 co $ ?01_complexity_analysis_array_linked_list
-td Code
 
 nn ll_delete_entirely
 ln Delete an entire linked list
 co $ ?01_complexity_analysis_array_linked_list
-td Code
 
 nn dll_basic_impl
 ln Doubly Linked List: Basic Implementation
 co $ ?02_linked_list_stack
-td code
 
 nn dll_insert_head
 ln Doubly Linked List: insert at head
 co $ ?02_linked_list_stack
-td code
 
 nn dll_remove_head
 ln Doubly Linked List: remove head
 co $ ?02_linked_list_stack
-td code
 
 nn dll_delete_node
 ln Doubly Linked List: delete a node
 co $ ?02_linked_list_stack
-td code
 
 nn cll_basic_impl
 ln Circular Linked List: basic implementation
 co $ ?02_linked_list_stack
-td code
 
 nn cll_insert_element_front
 ln Circular Linked List: Insert Element at the Front
 co $ ?02_linked_list_stack
-td code
 
 nn cll_traverse
 ln Circular Linked List: Traverse
 co $ ?02_linked_list_stack
-td code
 
 nn cll_insert_element_tail
 ln Circular Linked List: insert element at tail
 co $ ?02_linked_list_stack
-td code
 
 nn cll_search_element
 ln Circular Linked List: search for element in the list
 co $ ?02_linked_list_stack
 rm homework, no code
-td code
 
 nn cll_remove_head_node
-ln Circular Linked List: Remove Head NODe
-td code
+ln Circular Linked List: Remove Head Node
 rm no code, hw assignment
 co $ ?02_linked_list_stack
 
 nn cll_find_and_remove
 ln Circular Linked List: find and remove value
 co $ ?02_linked_list_stack
-td code
 
 nn stack_impl_array
 ln Stack Implementation using Array
 co $ ?02_linked_list_stack
-td code
 
 nn stack_array_push_pop_top
 ln Stack Implemenation (array): Push, pop, top
-td code
 co $ ?02_linked_list_stack
 
 nn stack_ll_impl
 ln Stack Implementation using Linked List
-td code
 co $ ?02_linked_list_stack
 
 nn stack_bottominsert
 ln Stack: BottomInsert
-td code
 co $ ?02_linked_list_stack
 
 nn stack_balanced_parens
 ln Stack Problem: Balanced Parentheses
 co $ ?02_linked_list_stack
-td code up solution
 
 nn queue_array_impl
 co $ ?03_queue_tree
 ln Queue Implementation: array version
-td code
 
 nn queue_array_add
 ln Queue (Array): add

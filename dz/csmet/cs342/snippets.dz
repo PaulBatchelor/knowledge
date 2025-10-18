@@ -113,7 +113,6 @@ td code
 nn queue_ll_impl
 ln Queue Implementation: circular linked list
 co $ ?03_queue_tree
-td code
 
 nn queue_ll_add
 ln Queue (Linked List): Add
@@ -123,57 +122,46 @@ td code
 nn queue_ll_remove
 co $ ?03_queue_tree
 ln Queue (Linked List): Remove
-td code
 
 nn josephus_problem
 co $ ?03_queue_tree
 ln Josephus Problem
-td code
 
 nn steps_of_knight
 ln Steps of Knight Problem
 co $ ?03_queue_tree
-td code
 
 nn binary_tree
 co $ ?04_tree
 ln Binary Tree
-td code
 
 nn BST_insertion
 co $ ?04_tree
 ln Binary Search Tree: Insertion
-td code
 
 nn BST_traversal_preorder
 co $ ?04_tree
 ln Binary Search Tree: preorder traversal
-td code
 
 nn BST_traversal_inorder
 co $ ?04_tree
 ln Binary Search Tree: in-order traversal
-td code
 
 nn BST_traversal_postorder
 co $ ?04_tree
 ln Binary Search Tree: post-order traversal
-td code
 
 nn BST_number_of_nodes
 co $ ?04_tree
 ln Binary Search Tree: find number of nodes
-td code
 
 nn BST_find_node
 co $ ?04_tree
 ln Binary Search Tree: find node
-td code
 
-nn BST_find_mind
+nn BST_find_min
 co $ ?04_tree
 ln Binary Search Tree: find min
-td code
 
 nn BST_delete
 co $ ?04_tree

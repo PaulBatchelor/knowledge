@@ -542,8 +542,11 @@ a hard timer and tokens.
 
 @15:24 log fixes #timelog:00:02:16
 
+@15:42 some brief work on 7.3 #timelog:00:03:56
+#! dz csmet/cs248/discrete_math_zybook/toc/07_computation/03_analysis_of_algorithms
+
 @15:58 I have decided I am done with zybooks. Research for alts #timelog:00:18:50
-#! csmet/cs248/news
+#! dz csmet/cs248/news
 I've never loved this textbook. I've done the first 6 chapters
 (well, 6.10 is unread). And I've sort of grit my teeth on this
 content. I don't like the interactive excercises. I think
@@ -588,5 +591,10 @@ Good riddance.
 
 @18:16 ...and now to set up a new reading schedule for the new textbook #timelog:00:10:43
 
-@21:06 address some of the TODOs I made
+@21:06 address some of the TODOs I made #timelog:00:24:04
 #! dz csmet/cs342
+
+@2025-10-18 Day 48
+@11:41 settling in, logs #timelog:00:07:57
+
+@11:49 scanning #archiving #timelog:00:07:19

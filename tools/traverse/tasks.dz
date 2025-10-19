@@ -1,0 +1,34 @@
+ns project
+
+nn top
+ln this is the top-level task
+
+nn A
+ln this is task A
+
+nn B
+ln this is task B
+
+nn C
+ln this is task C
+
+nn D
+ln this is task D
+
+co B A
+co C A
+co D C
+
+nn E
+ln task E
+
+nn F
+ln task F
+
+nn G
+ln task G
+
+co G B
+co E D
+co A top
+co F top

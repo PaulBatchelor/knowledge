@@ -4,6 +4,7 @@
 #include <sqlite3.h>
 #define MEMSIZE (1 << 16)
 #define MAX_ENTRIES 512
+#define MAX_CONNECTIONS 1024
 
 #if 0
 static int callback(void *NotUsed, int argc, char **argv, char **azColName){
@@ -32,11 +33,17 @@ const char *query =
         "rightnode.id = dz_connections.right "
         "WHERE rightnode.name IS ?1";
 
+typedef struct connection {
+    int left, right;
+} connection;
+
 typedef struct state {
     char *strings;
     size_t spos;
     node_entry *ent;
     size_t ep;
+    connection *con;
+    size_t cp;
 } state;
 
 typedef struct queue {
@@ -45,7 +52,7 @@ typedef struct queue {
     int sz, cap;
 } queue;
 
-void append_entry(struct state *st, int id, const char *path)
+int append_entry(struct state *st, int id, const char *path)
 {
     size_t len;
     len = strlen((const char *)path);
@@ -53,7 +60,7 @@ void append_entry(struct state *st, int id, const char *path)
     st->ent[st->ep].id = id;
     st->ent[st->ep].path = &st->strings[st->spos];
     st->spos += (len + 1);
-    st->ep++;
+    return ++st->ep;
 }
 
 void queue_init(queue *q) {
@@ -83,10 +90,30 @@ int queue_pop(queue *q) {
     return x;
 }
 
-void append_node_to_queue(state *st, queue *q, int id, const char *path)
+int append_node_to_queue(state *st, queue *q, int id, const char *path)
 {
-    append_entry(st, id, path);
+    int eid;
+    eid = append_entry(st, id, path);
     queue_add(q, st->ep);
+    return eid;
+}
+
+void add_connection(state *st, int left, int right) {
+    connection *c;
+    c = &st->con[st->cp];
+    c->left = left;
+    c->right = right;
+    st->cp++;
+}
+
+int find_entry(state *st, int id) {
+    int i;
+
+    for (i = 0; i < st->ep; i++) {
+        if (st->ent[i].id == id) return i;
+    }
+
+    return -1;
 }
 
 int traverse_node(sqlite3 *db, state *st, queue *q, const char *top_node)
@@ -95,7 +122,6 @@ int traverse_node(sqlite3 *db, state *st, queue *q, const char *top_node)
     /* const char *top_node = "project/top"; */
     int rc;
     rc = sqlite3_prepare_v2(db, query, -1, &stmt, NULL);
-    /* append_entry(st, -1, top_node); */
 
     if (rc) {
         fprintf(stderr, "Can't prepare: %s\n", sqlite3_errmsg(db));
@@ -107,16 +133,17 @@ int traverse_node(sqlite3 *db, state *st, queue *q, const char *top_node)
 
     while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
         int id_l, id_r;
-        const unsigned char *name_l, *name_r;
+        int eid;
+        const unsigned char *name_l;
 
         id_l = sqlite3_column_int(stmt, 0);
         id_r = sqlite3_column_int(stmt, 2);
         name_l = sqlite3_column_text(stmt, 1);
-        name_r = sqlite3_column_text(stmt, 3);
         /* append_entry(st, id_l, (const char *)name_l); */
-        append_node_to_queue(st, q, id_l, (const char *)name_l);
+        eid = append_node_to_queue(st, q, id_l, (const char *)name_l);
 
-        printf("%d:%s -> %d:%s\n", id_l, name_l, id_r, name_r);
+        /* TODO: find_node() only needs to be calculated once */
+        add_connection(st, eid, find_entry(st, id_r));
     }
 
     sqlite3_finalize(stmt);
@@ -141,6 +168,8 @@ int main(int argc, char **argv){
     st.strings = malloc(MEMSIZE);
     memset(st.strings, 0, MEMSIZE);
     st.ent = malloc(MAX_ENTRIES);
+    st.cp = 0;
+    st.con = malloc(MAX_CONNECTIONS);
 
     rc = sqlite3_open(dbpath, &db);
 
@@ -160,8 +189,18 @@ int main(int argc, char **argv){
         traverse_node(db, &st, &q, ent->path);
     }
 
+    printf("i %ld %ld\n", st.ep, st.cp);
+
     for (i = 0; i < st.ep; i++) {
-        printf("%d: %s\n", st.ent[i].id, st.ent[i].path);
+        printf("n %ld %s\n", i, st.ent[i].path);
+    }
+
+    for (i = 0; i < st.cp; i++) {
+        int r = st.con[i].right;
+        /* most likely root, but could be error */
+        /* TODO: handle more elegantly */
+        if (r < 0) r = 0;
+        printf("c %d %d\n", st.con[i].left, r);
     }
 
     free(st.strings);

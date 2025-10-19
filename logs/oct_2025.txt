@@ -601,3 +601,28 @@ Good riddance.
 
 @15:30 cs342 studying #timelog:00:53:43
 #! dz csmet/cs342
+
+@2025-10-19 Day 49
+@10:59 Work out Quick Sort by hand #ink:03G #timelog:01:05:25
+#! dz csmet/cs342
+
+@13:06 Copy stuff to ink #ink:03G #timelog:00:15:03
+#! dz $
+
+@13:25 Figure out how to do QuickSort backwards #timelog:00:13:50
+
+@13:51 logging in, updating logs #timelog:00:02:50
+
+@13:58 let's see if this adjustment for quicksort works... #timelog:00:00:49
+#! dz csmet/cs342/hw6
+nailed it, I think
+
+@14:03 onto heapsort #timelog:01:17:05
+#! dz csmet/cs342/hw6
+This ended up being quite the ordeal. I tried working through
+the slide code. I didn't like their implementation, didn't
+care to copy it, and ended up just using the implementation
+out of CLRS.
+
+@15:45 submitted
+#! dz $

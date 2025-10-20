@@ -79,4 +79,5 @@ dz/TAOCP
 dz/csmet
 dz/thoughts.dz
 dz/ink
+dz/dmoi
 dz/zzz

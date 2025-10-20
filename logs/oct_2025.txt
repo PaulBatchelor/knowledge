@@ -585,8 +585,8 @@ I got the ascending version transcribed. Gotta work out
 how to make it descending though.
 
 @18:05 deleting my reading schedule for zybooks #timelog:00:05:44
-#! dz cs248/discrete_math_zybook
-#! dz cs248/news
+#! dz csmet/cs248/discrete_math_zybook
+#! dz csmet/cs248/news
 Good riddance.
 
 @18:16 ...and now to set up a new reading schedule for the new textbook #timelog:00:10:43
@@ -628,3 +628,18 @@ out of CLRS.
 #! dz $
 
 @17:43 initial dagzet parser needed for task scheduler #timelog:01:53:58
+
+@21:06 1.1 Mathematical Statements #timelog:00:56:06
+#! dz dmoi/toc/01_logic_and_proofs/01_mathematic_statements
+
+@2025-10-20 Day 50. cs342 midterm
+6.8 percent done with my 2 years
+@09:25 settling in, updating logs #timelog:00:04:37
+
+@09:28 started reading this textbook yesterday
+#! dz dmoi/news
+
+@09:35 what is left for studying cs342 #timelog:00:05:41
+#! dz csmet/cs342/news
+13 tasks. tempted to put these on a cheat sheet, and
+call it a day.

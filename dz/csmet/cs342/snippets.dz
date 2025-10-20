@@ -98,17 +98,14 @@ ln Queue Implementation: array version
 nn queue_array_add
 ln Queue (Array): add
 co $ ?03_queue_tree
-td code
 
 nn queue_array_remove
 ln Queue (Array): remove
 co $ ?03_queue_tree
-td code
 
 nn queue_array_traverse
 ln Queue (Array): traverse
 co $ ?03_queue_tree
-td code
 
 nn queue_ll_impl
 ln Queue Implementation: circular linked list
@@ -122,6 +119,7 @@ td code
 nn queue_ll_remove
 co $ ?03_queue_tree
 ln Queue (Linked List): Remove
+td code
 
 nn josephus_problem
 co $ ?03_queue_tree
@@ -216,17 +214,14 @@ td code
 nn heap_impl_basic
 ln Heap Implementation (Basic)
 co $ ?06_priority_queue
-td code
 
 nn heap_enqueue_add
 ln Heap: enqueue/add
 co $ ?06_priority_queue
-td code
 
 nn heap_dequeue_remove
 ln Heap: dequeue/remove
 co $ ?06_priority_queue
-td code
 
 nn heap_traversal
 ln Heap: traversal
@@ -236,29 +231,23 @@ td code
 nn bubble_sort
 ln BubbleSort: Implementation
 co $ ?07_sorting
-td code
 
 nn selection_sort
 ln SelectionSort: Implementation
 co $ ?07_sorting
-td code
 
 nn heapify
 ln Heapify: Implementation
 co $ ?07_sorting
-td code
 
 nn heap_sort
 ln heap sort
 co $ ?07_sorting
-td code
 
 nn merge_sort
 ln merge sort
 co $ ?07_sorting
-td code
 
 nn quick_sort
 ln quick sort
 co $ ?07_sorting
-td code

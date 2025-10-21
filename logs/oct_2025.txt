@@ -643,3 +643,17 @@ out of CLRS.
 #! dz csmet/cs342/news
 13 tasks. tempted to put these on a cheat sheet, and
 call it a day.
+
+@18:00 cs342 class #timelog:02:45:00 #bumet
+
+@21:28 DMOI 1.1.4 #timelog:00:35:24
+#! dz dmoi/toc/01_logic_and_proofs/01_mathematic_statements
+
+@2025-10-21 Day 51
+@09:44 logging in #timelog:00:01:28
+
+@09:46 buddy system implementation #sonilo #timelog:01:32:56
+Implemented readblock 'rb' command, go to block 'gb',
+and some scaffolding for the memory allocator system.
+I set up a failing test, with some notes on what
+the expected results should look like.

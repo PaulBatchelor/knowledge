@@ -657,3 +657,26 @@ Implemented readblock 'rb' command, go to block 'gb',
 and some scaffolding for the memory allocator system.
 I set up a failing test, with some notes on what
 the expected results should look like.
+
+@13:20 1.2 Implications #timelog:00:24:06
+#! dz dmoi/toc/01_mathematic_statements/02_implications
+
+@15:00 (estimated time) Task Graph #timelog:00:38:14 #ink:03K
+
+@21:01 Sonilo Task Graph #sonilo #ink:03L #timelog:00:41:54
+
+@2025-10-22 Day 52
+
+@13:59 logging in, updating logs #timelog:00:05:01
+
+@13:00 Sonilo Task Graphing #sonilo #ink:03M #timelog:00:36:43
+
+@14:04 Transcribing Task Graphs for Sonilo #sonilo #timelog:01:03:24
+#! dz thoughts/projects/sonilo
+It needs to be fleshed out more, but I want real data to
+work with for this task graphing utility I am going
+to build for scheduling tasks and generating daily agendas.
+---
+I ended up building the high-level "artist purpose" knowledge
+graph I started building yesterday, which outline
+artistic purpose. The actual tasks have yet to be made.

@@ -680,3 +680,5 @@ to build for scheduling tasks and generating daily agendas.
 I ended up building the high-level "artist purpose" knowledge
 graph I started building yesterday, which outline
 artistic purpose. The actual tasks have yet to be made.
+
+@15:47 back to tasks for sonilo (hopefully)

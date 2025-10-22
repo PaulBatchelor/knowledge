@@ -31,7 +31,9 @@ const char *query =
         "leftnode.id = dz_connections.left "
         "INNER JOIN dz_nodes AS rightnode ON "
         "rightnode.id = dz_connections.right "
-        "WHERE rightnode.name IS ?1";
+        "WHERE rightnode.name IS ?1 "
+        "ORDER BY leftnode.name "
+        ";";
 
 typedef struct connection {
     int left, right;
@@ -90,9 +92,21 @@ int queue_pop(queue *q) {
     return x;
 }
 
+int path_exists(state *st, int id) {
+    size_t i;
+
+    for (i = 0; i < st->ep; i++) {
+        if (st->ent[i].id == id) return i;
+    }
+
+    return -1;
+}
+
 int append_node_to_queue(state *st, queue *q, int id, const char *path)
 {
     int eid;
+    eid = path_exists(st, id);
+    if (eid >= 0) return eid;
     eid = append_entry(st, id, path);
     queue_add(q, st->ep);
     return eid;
@@ -121,6 +135,7 @@ int traverse_node(sqlite3 *db, state *st, queue *q, const char *top_node)
     sqlite3_stmt *stmt;
     /* const char *top_node = "project/top"; */
     int rc;
+    int is_root;
     rc = sqlite3_prepare_v2(db, query, -1, &stmt, NULL);
 
     if (rc) {
@@ -130,6 +145,7 @@ int traverse_node(sqlite3 *db, state *st, queue *q, const char *top_node)
     }
 
     rc = sqlite3_bind_text(stmt, 1, top_node, -1, NULL);
+    is_root = !strcmp(st->ent[0].path, top_node);
 
     while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
         int id_l, id_r;
@@ -142,8 +158,8 @@ int traverse_node(sqlite3 *db, state *st, queue *q, const char *top_node)
         /* append_entry(st, id_l, (const char *)name_l); */
         eid = append_node_to_queue(st, q, id_l, (const char *)name_l);
 
-        /* TODO: find_node() only needs to be calculated once */
-        add_connection(st, eid, find_entry(st, id_r));
+        if (is_root) add_connection(st, eid, 0);
+        else add_connection(st, eid, find_entry(st, id_r));
     }
 
     sqlite3_finalize(stmt);
@@ -159,6 +175,14 @@ int main(int argc, char **argv){
     state st;
     size_t i;
     queue q;
+    const char *top_node;
+
+    if (argc < 2) {
+        fprintf(stderr, "Usage: %s top_node\n", argv[0]);
+        return -1;
+    }
+
+    top_node = argv[1];
 
     queue_init(&q);
 
@@ -179,7 +203,7 @@ int main(int argc, char **argv){
         return(1);
     }
   
-    append_node_to_queue(&st, &q, -1, "project/top");
+    append_node_to_queue(&st, &q, -1, top_node);
 
     while (q.sz > 0) {
         int e;
@@ -199,7 +223,6 @@ int main(int argc, char **argv){
         int r = st.con[i].right;
         /* most likely root, but could be error */
         /* TODO: handle more elegantly */
-        if (r < 0) r = 0;
         printf("c %d %d\n", st.con[i].left, r);
     }
 

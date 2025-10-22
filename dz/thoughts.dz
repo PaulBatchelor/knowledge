@@ -1,2 +1,152 @@
 ns thoughts
 nn ink
+nn atom
+nn molecule
+nn ideas
+nn projects
+co projects ideas
+cr a project is a manifestation of an idea
+
+co atom molecule
+cr "atomic" thoughts can be fused together to build up more complex "molecular" thoughts
+
+nn phrases
+ln Thought-molecules and thought-atoms can come together
+ln to build up english prose, which will be called a "phrase".
+co phrases ideas
+cr sometimes phrases are ideas
+
+nn atom/as
+nn atom/an
+co atom/an atom/as
+nn atom/i_want
+co $ ?artist
+nn atom/create
+ln to create
+co $ ?i_want
+nn atom/meaningful
+co $ ?create
+nn atom/things
+
+nn atom/artist
+nn atom/data
+nn molecule/meaningful_data
+ln Meaningful Data
+co ?meaningful $
+co ?data $
+nn phrases/artists_create_meaningful_things
+ln As an artist, I want to create meaningful things
+co ?meaningful $
+co ?artist $
+co ?create $
+co ?things $
+
+co atom/data atom/things
+nn atom/computer
+nn molecule/computer_artist
+ln Computer Arist, computer-based artist,
+ln Artist working with the medium of computers
+ln and computation
+co ?computer $
+co ?artist $
+nn phrases/computer_artist_meaningful_data
+ln As a computer artist, I wish to create
+ln meaningful data.
+co ?computer_artist $
+co ?meaningful_data $
+co ?artist $
+co ?create $
+nn atom/longterm
+nn molecule/things_that_last
+co ?longterm $
+co ?things $
+nn projects/sonilo
+nn projects/sonilo/why
+nn projects/sonilo/what
+nn atom/input
+nn atom/output
+nn molecule/IO
+co ?input $
+co ?output $
+nn atom/grid
+nn atom/peripheral_device
+ln A peripheral device (for a computer).
+ln ex: mouse, keyboard, etc
+co $ ?output
+nn molecule/monome_grid
+ln The Monome Grid controller
+co ?grid $
+co ?musical_interface $
+nn molecule/musical_interface
+co ?interface $
+co ?music $
+nn atom/music
+nn atom/interface
+co $ ?input
+nn atom/sound
+co ?music ?sound
+nn molecule/resonator_speaker
+ln Floating Resonator Speaker
+co ?sound $
+co ?output $
+nn atom/structure
+nn molecule/musical_structure
+co ?music $
+co ?structure $
+nn phrases/musical_structure_as_data
+co ?musical_structure_as_data ?sonilo/what
+nn atom/roms
+co $ ?data
+co $ ?things_that_last
+nn atom/virtual_machine
+nn atom/permacomputing
+co ?virtual_machine ?permacomputing
+co ?permacomputing ?things_that_last
+nn atom/explore
+co ?musical_structure $
+co ?data $
+nn atom/gesture
+nn molecule/gestural_sound
+co ?gesture $
+co ?sound $
+co ?gestural_sound ?explore
+nn molecule/sound_artist
+co ?sound $
+co ?artist $
+nn phrases/sound_artist_explores_gesture
+ln As a sound artist, I wish to explore the
+ln concept of "gestural sound".
+co ?sound_artist $
+co ?explore $
+nn atom/a
+co ?sound_artist ?a
+co ?a ?as
+nn atom/synthesis
+nn molecule/gesture_synthesis
+co ?gesture $
+co ?synthesis $
+nn atom/DSP
+ln Digital Signal Processing
+nn atom/design
+nn atom/researcher
+co $ ?a
+nn phrases/computer_musician_research_gesture_synthesis
+ln As a computer musician and researcher, I wish to explore
+ln and design DSP algorithms for synthesizing gesture
+ln in computer performed sounds.
+co ?computer_musician $
+co ?researcher $
+co ?gesture_synthesis $
+co ?DSP $
+co ?algorithm $
+co ?computer_performed $
+nn atom/musician
+nn molecule/computer_musician
+co ?musician $
+co ?computer $
+nn atom/algorithm
+nn atom/perform
+nn molecule/computer_performed
+ln Computer Performed: the concept of a computer doing
+ln a performance or activity, such as performing music.
+ln The computer is performing (verb).

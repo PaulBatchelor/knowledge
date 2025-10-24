@@ -1,0 +1,96 @@
+ns thoughts/projects/sonilo
+nn tasks
+nn tasks/mem
+ln Memory Allocation
+nn tasks/buddy_system
+ln Create buddy system allocator
+co $ ?mem
+nn tasks/phasor
+ln Implement phasor DSP algorithm
+nn tasks/blsaw
+ln Implement blsaw DSP algorithm
+nn tasks/butlp
+ln Implement buttwerworth DSP algorithm
+co $ ?initial_dsp
+nn tasks/initial_dsp
+ln Implement some intial DSP algorithms
+co $ ?dsp_demo
+nn tasks/dsp_demo
+ln DSP Demo: create a small program that will perform DSP algorithms
+ln using the memory allocation system
+co ?mem $
+co ?mem ?initial_dsp
+nn tasks/ugens
+ln Create unit generator instruction in ILO
+co ?ilo_interpreter $
+nn tasks/ilo_interpreter
+ln Create ilo bytecode VM interpreter
+co ?dsp_demo ?ugens
+nn tasks/live_coding_sound_demo
+ln Demo: Live Coding With Sound (via Konilo?)
+nn tasks/konilo_sonilo_communication
+co $ ?live_coding_sound_demo
+ln Establish communication protocol for Konilo and Sonilo
+nn tasks/realtime_audio
+ln Set up realtime audio
+co $ ?live_coding_sound_demo
+nn tasks/hotswapping
+ln Set up on-the-fly patch hotswapping
+co $ ?live_coding_sound_demo
+nn tasks/interactive_sound_grid
+ln Interactive sound design and composition with grid
+co ?live_coding_sound_demo $
+nn tasks/offline_patch
+ln Offline patch demo: Create an offline rendered patch
+ln using Ilo instructions
+co ?ilo_interpreter $
+nn tasks/singing_voices_in_a_room
+ln Demo: singing voice(s) in a room
+co ?offline_patch $
+nn tasks/voxbox
+ln Create VoxBox singing synthesizer
+nn tasks/voxbox_dsp
+ln Implement voxbox dsp
+co ?offline_patch $
+co $ ?voxbox
+nn tasks/morphing_tube_shapes
+ln Vocal tract tube shapes should be able to change
+ln via gesture.
+co $ ?voxbox
+co ?GSG $
+nn tasks/GSG
+ln Create Gesture Signal Generator ugen
+co ?offline_patch $
+nn tasks/offline_gesture
+ln Demo: patch that uses a gesture signal generator
+ln to control sound in a (somewhat) musical way
+co ?GSG $
+co ?offline_patch $
+co $ ?morphing_tube_shapes
+nn tasks/convolution_reverb
+ln Implement convolution reverb
+co ?ugens $
+co $ ?singing_voices_in_a_room
+nn tasks/sequencing_voice_with_grid_controller
+ln Demo: sequencing a virtual singing voice
+ln using a grid controller
+co ?interactive_sound_grid $
+nn tasks/grid_demo
+ln Demo: control the grid from Konilo
+co ?konilo_sonilo_communication $
+nn tasks/meaningful_sounds
+ln Create meaningful sounds using Sonilo
+co ?singing_voices_in_a_room $
+co ?voxbox ?singing_voices_in_a_room
+co ?sequencing_voice_with_grid_controller ?singing_voices_in_a_room
+co ?grid_demo ?interactive_sound_grid
+co ?phasor ?initial_dsp
+co ?blsaw ?initial_dsp
+zz TODO: it would be nice to implicitly have this dep
+co ?mem ?butlp
+co ?mem ?blsaw
+co ?mem ?phasor
+co ?realtime_audio ?hotswapping
+co ?offline_patch ?realtime_audio
+co ?initial_dsp ?offline_patch
+co ?mem ?konilo_sonilo_communication

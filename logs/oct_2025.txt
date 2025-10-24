@@ -692,6 +692,10 @@ have top level task in Sonilo that just reads "make meaningful
 sounds with sonilo".
 
 @2025-10-23 Day 53
+@11:40 Task Graph Program Flow sketches #ink:03N #timelog:00:28:52
+@14:37 Imagining how merging would work for task graphing #ink:03N #timelog:00:51:34
+@17:00 Task Algebra #ink:03O #timelog:00:40:02
+@18:55 More Task Alegrab #ink:03O #timelog:00:22:06
 @20:30 There's a topological sort unix utility?!
 This whole time. This whole damn time. It's just been here.
 It turns out that this does many of the bits I need for
@@ -702,3 +706,8 @@ scripts can do the trick.
 anyways. I made some bugfixes to the traverse utilty,
 and added some tools to make it work with tsort to generate
 a topologically sorted list.
+
+@21:22 Using tsort to tweak the initial ordering
+More explicit edges needed for the ordering to make
+logical sense. It's nice to figure that out now and not
+2 weeks from now.

@@ -690,3 +690,15 @@ artistic purpose. The actual tasks have yet to be made.
 Also used this time to clean up the task graph. I now
 have top level task in Sonilo that just reads "make meaningful
 sounds with sonilo".
+
+@2025-10-23 Day 53
+@20:30 There's a topological sort unix utility?!
+This whole time. This whole damn time. It's just been here.
+It turns out that this does many of the bits I need for
+this task manager I'm trying to whip up. So, this saves
+some time. Why do it in Rust, when a few awk and shell
+scripts can do the trick.
+---
+anyways. I made some bugfixes to the traverse utilty,
+and added some tools to make it work with tsort to generate
+a topologically sorted list.

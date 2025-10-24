@@ -62,7 +62,7 @@ int append_entry(struct state *st, int id, const char *path)
     st->ent[st->ep].id = id;
     st->ent[st->ep].path = &st->strings[st->spos];
     st->spos += (len + 1);
-    return ++st->ep;
+    return (++st->ep) - 1;
 }
 
 void queue_init(queue *q) {
@@ -155,7 +155,6 @@ int traverse_node(sqlite3 *db, state *st, queue *q, const char *top_node)
         id_l = sqlite3_column_int(stmt, 0);
         id_r = sqlite3_column_int(stmt, 2);
         name_l = sqlite3_column_text(stmt, 1);
-        /* append_entry(st, id_l, (const char *)name_l); */
         eid = append_node_to_queue(st, q, id_l, (const char *)name_l);
 
         if (is_root) add_connection(st, eid, 0);
@@ -220,10 +219,7 @@ int main(int argc, char **argv){
     }
 
     for (i = 0; i < st.cp; i++) {
-        int r = st.con[i].right;
-        /* most likely root, but could be error */
-        /* TODO: handle more elegantly */
-        printf("c %d %d\n", st.con[i].left, r);
+        printf("c %d %d\n", st.con[i].left, st.con[i].right);
     }
 
     free(st.strings);

@@ -131,6 +131,11 @@ impl State {
         self.tasks[idx].state = TaskState::DONE;
     }
 
+    fn todo(&mut self, idx: Option<usize>) {
+        let idx = idx.unwrap_or_else(|| self.selected);
+        self.tasks[idx].state = TaskState::TODO;
+    }
+
     fn goto(&mut self, idx: usize) {
         self.selected = idx;
     }
@@ -143,6 +148,7 @@ impl State {
         }
     }
 }
+
 
 fn main() -> io::Result<()> {
     let input = io::stdin();
@@ -192,6 +198,12 @@ fn main() -> io::Result<()> {
             }
         } else if *cmd == "ag" {
             st.agenda();
+        } else if *cmd == "td" {
+            if args.len() >= 2 {
+                st.todo(Some(args[1].parse().unwrap_or_default()));
+            } else {
+                st.todo(None)
+            }
         }
     }
 

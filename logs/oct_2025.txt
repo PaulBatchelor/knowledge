@@ -695,7 +695,7 @@ sounds with sonilo".
 @11:40 Task Graph Program Flow sketches #ink:03N #timelog:00:28:52
 @14:37 Imagining how merging would work for task graphing #ink:03N #timelog:00:51:34
 @17:00 Task Algebra #ink:03O #timelog:00:40:02
-@18:55 More Task Alegrab #ink:03O #timelog:00:22:06
+@18:55 More Task Algebra #ink:03O #timelog:00:22:06
 @20:30 There's a topological sort unix utility?!
 This whole time. This whole damn time. It's just been here.
 It turns out that this does many of the bits I need for
@@ -711,3 +711,12 @@ a topologically sorted list.
 More explicit edges needed for the ordering to make
 logical sense. It's nice to figure that out now and not
 2 weeks from now.
+
+@2025-10-27 Day 57. Travel from Brooklyn to Boston.
+@18:00 cs342 #timelog:02:45:00
+
+@2025-10-28 Day 58. Getting back into things.
+@09:36 logging #timelog:00:01:54
+Looks like I got mostly everything.
+
+@09:39 cropping and tagging #archiving #timelog:00:15:06

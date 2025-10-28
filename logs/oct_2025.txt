@@ -734,3 +734,6 @@ to write a program that can load this data and process it.
 @13:51 more work on the command language, added agenda #timelog:02:24:05
 This seems like mostly bare functionality. Dare I say it
 might even be usable?
+
+@16:33 Making PDF for Unit 3 #timelog:00:08:46
+#! dz csmet/cy100

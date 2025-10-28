@@ -40,7 +40,7 @@ impl From<&str> for TaskState {
 #[allow(dead_code)]
 struct Task {
     path: String,
-    day: u16,
+    day: usize,
     state: TaskState,
 }
 
@@ -50,6 +50,7 @@ struct State {
     tasks: Vec<Task>,
     schedule: BTreeMap<usize,Vec<usize>>,
     selected: usize,
+    day: usize,
 }
 
 impl State {
@@ -133,6 +134,14 @@ impl State {
     fn goto(&mut self, idx: usize) {
         self.selected = idx;
     }
+
+    fn agenda(&self) {
+        for (idx, task) in self.tasks.iter().enumerate() {
+            if task.day <= self.day && !matches!(task.state, TaskState::DONE) {
+                println!("{}\t{}[{}]", task.day as i16 - self.day as i16, task.path, idx);
+            }
+        }
+    }
 }
 
 fn main() -> io::Result<()> {
@@ -177,6 +186,12 @@ fn main() -> io::Result<()> {
             } else {
                 st.done(None)
             }
+        } else if *cmd == "d" {
+            if args.len() >= 2 {
+                st.day = args[1].parse().unwrap_or_default();
+            }
+        } else if *cmd == "ag" {
+            st.agenda();
         }
     }
 

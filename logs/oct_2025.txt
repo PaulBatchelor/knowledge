@@ -745,6 +745,6 @@ might even be usable?
 @19:05 debugging. great. #timelog:00:04:16
 Ah, I forgot to add sizeof to mallc().
 
-@19:10 Back to toc and plannign
+@19:10 Back to toc and planning #timelog:00:15:05
 #! dz dmoi/news
 #! dz dmoi/toc

@@ -737,3 +737,14 @@ might even be usable?
 
 @16:33 Making PDF for Unit 3 #timelog:00:08:46
 #! dz csmet/cy100
+
+@17:55 Set up toc, make it suitable for tasks #timelog:01:05:22
+#! dz dmoi/news
+#! dz dmoi/toc
+
+@19:05 debugging. great. #timelog:00:04:16
+Ah, I forgot to add sizeof to mallc().
+
+@19:10 Back to toc and plannign
+#! dz dmoi/news
+#! dz dmoi/toc

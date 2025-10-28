@@ -4,6 +4,153 @@ gr Textbook notes for Discrete Mathematics: an Open Introduction
 nn news
 
 nn toc
+nn toc/01_logic_and_proofs
+ln Chapter 1: Logic and Proofs
+co $ ..
 
-nn toc/01_logic_and_proofs/01_mathematic_statements
-nn toc/01_logic_and_proofs/02_implications
+nn toc/02_graph_theory
+co $ ..
+co ../01_logic_and_proofs $
+ln Chapter 2: Graph Theory
+
+nn toc/03_counting
+co $ ..
+ln Chapter 3: Counting
+co ../02_graph_theory $
+
+nn toc/04_sequences
+ln Chapter 4: Sequences
+co ../03_counting $
+
+nn toc/05_discrete_structures_revisited
+co $ ..
+co ../04_sequences $
+ln Chapter 5: Discrete Structures Revisited
+
+nn toc/06_additional_topics
+co $ ..
+co ../05_discrete_structures_revisited $
+ln Chapter 6: Additional Topics
+
+ns +toc/01_logic_and_proofs
+nn 01_mathematic_statements
+co $ ..
+nn 02_implications
+co $ ..
+co 01_mathematic_statements $
+nn 03_rules_of_logic
+co $ ..
+co 02_implications $
+nn 04_proofs
+co $ ..
+co 03_rules_of_logic $
+nn 05_proofs_about_discrete_structures
+co $ ..
+co 04_proofs $
+ns ../..
+
+ns +toc/02_graph_theory
+nn 01_problems_and_definitions
+co $ ..
+zz don't read first chapter until chapter 1 is done
+co ../../01_logic_and_proofs $
+nn 02_trees
+co $ ..
+co ../01_problems_and_definitions $
+nn 03_planar_graphs
+co $ ..
+co ../02_trees $
+nn 04_euler_trails_circuits
+co $ ..
+co ../03_planar_graphs $
+nn 05_coloring
+co $ ..
+co ../04_euler_trails_circuits $
+nn 06_relations_and_graphs
+co $ ..
+co ../05_coloring $
+nn 07_matching_bipartite_graphs
+co $ ..
+co ../06_relations_and_graphs $
+ns ../..
+
+ns +toc/03_counting
+nn 01_pascals_arithmetical_triangle
+co $ ..
+zz Start this chapter after reading 2.2 (Trees)
+zz Maybe interleaving is helpful?
+co ../../02_graph_theory/02_trees $
+nn 02_combining_outcomes
+co $ ..
+co ../01_pascals_arithmetical_triangle $
+nn 03_non_disjoint_outcomes
+co $ ..
+co ../02_combining_outcomes $
+nn 04_combinations_and_permutations
+co $ ..
+co ../03_non_disjoint_outcomes $
+nn 05_counting_multisets
+co $ ..
+co ../04_combinations_and_permutations $
+nn 06_combinatorial_proofs
+co $ ..
+co ../05_counting_multisets $
+nn 07_applications_to_probability
+co $ ..
+co ../06_combinatorial_proofs $
+nn 08_advanced_counting_PIE
+co $ ..
+co ../07_applications_to_probability $
+ns ../..
+
+ns +toc/04_sequences
+nn 01_describing_sequences
+co $ ..
+zz about halfway through chapter 3, maybe start to read this?
+co ../../03_counting/05_counting_multisets $
+cr start reading chapter 4 halfway through chapter 3
+
+nn 02_rate_of_growth
+co $ ..
+co ../01_describing_sequences $
+
+nn 03_polynomial_sequences
+co $ ..
+co ../02_rate_of_growth $
+
+nn 04_exponential_sequences
+co $ ..
+co ../03_polynomial_sequences $
+
+nn 05_proof_by_induction
+co $ ..
+co ../04_exponential_sequences $
+
+nn 06_strong_induction
+co $ ..
+co ../05_proof_by_induction $
+
+ns ../..
+
+ns +toc/05_discrete_structures_revisited
+nn 01_sets
+co ../../01_logic_and_proofs $
+cr this seems pretty basic and could be done after chapter 1
+co $ ..
+
+nn 02_functions
+co $ ..
+co ../../01_logic_and_proofs $
+cr Seems self contained and straight forward 
+
+ns ../..
+
+ns +toc/06_additional_topics
+nn 01_generating_functions
+co $ ..
+co ../../03_counting $
+nn 02_introduction_to_number_theory
+co ../../03_counting $
+co ../01_generating_functions $
+co $ ..
+ns ../..

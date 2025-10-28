@@ -721,7 +721,12 @@ Looks like I got mostly everything.
 
 @09:39 cropping and tagging #archiving #timelog:00:15:06
 
-@10:06 Try to get task to work in AWK
+@10:06 Try to get task distribution to work in AWK #timelog:01:04:38
 I've managed to create a set of tasks and sort them. Now,
 I need to schedule them. I think I can do a proof of
 concept in Awk to bootstrap the initial data.
+---
+got some initial data being generated. I think I need
+to write a program that can load this data and process it.
+
+@11:13 initial scaffolding for an ed-like command language in rust

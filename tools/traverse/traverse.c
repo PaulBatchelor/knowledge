@@ -6,17 +6,6 @@
 #define MAX_ENTRIES 512
 #define MAX_CONNECTIONS 1024
 
-#if 0
-static int callback(void *NotUsed, int argc, char **argv, char **azColName){
-    int i;
-    for(i=0; i<argc; i++){
-        printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-    }
-    printf("\n");
-    return 0;
-}
-#endif
-
 typedef struct node_entry {
     int id;
     const char *path;
@@ -170,7 +159,7 @@ int main(int argc, char **argv){
     sqlite3 *db;
     /* char *zErrMsg = 0; */
     int rc;
-    const char *dbpath = "a.db";
+    const char *dbpath;
     state st;
     size_t i;
     queue q;
@@ -179,6 +168,12 @@ int main(int argc, char **argv){
     if (argc < 2) {
         fprintf(stderr, "Usage: %s top_node\n", argv[0]);
         return -1;
+    }
+
+    if (argc > 2) {
+        dbpath = argv[2]; 
+    } else {
+        dbpath = "a.db";
     }
 
     top_node = argv[1];

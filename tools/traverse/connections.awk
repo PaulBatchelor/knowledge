@@ -1,3 +1,4 @@
+#! /usr/bin/awk -f
 /^n/ {
     node[$2] = $3
 }

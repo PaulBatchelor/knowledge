@@ -1,0 +1,5 @@
+rule sh
+    command = sh $in
+
+build tasks.txt: sh sonilo.sh
+build schedule.txt: sh distribute.sh | distribute.awk tasks.txt

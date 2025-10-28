@@ -1,0 +1,18 @@
+A few words to myself on what I am doing here.
+
+This is a prototype for a project management system.
+The idea is to create a set of tasks in order, and then
+distribute them over a set of days.
+
+Run "samu" to generate all the data. It will do the
+following:
+
+Generate tasks.txt: this is a script that generates an
+topologically sorted list of tasks, which are nodes in
+the knowledge graph. See "sonilo.sh".
+
+Generate schedule.txt: once the task list has been generated
+"tasks.txt", the schedule is made. This creates a list
+of pairs (colon-delimited) indicating the task, and the
+relative day to start the task. The number of days is
+hard coded a the moment in "distribute.sh".

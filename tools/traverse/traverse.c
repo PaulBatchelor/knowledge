@@ -47,6 +47,14 @@ int append_entry(struct state *st, int id, const char *path)
 {
     size_t len;
     len = strlen((const char *)path);
+    if (st->spos >= MEMSIZE) {
+        fprintf(stderr, "Out of memory\n");
+        exit(1);
+    }
+    if (st->ep >= MAX_ENTRIES) {
+        fprintf(stderr, "Ran out of entries\n");
+        exit(1);
+    }
     memcpy(&st->strings[st->spos], path, len + 1);
     st->ent[st->ep].id = id;
     st->ent[st->ep].path = &st->strings[st->spos];
@@ -103,6 +111,10 @@ int append_node_to_queue(state *st, queue *q, int id, const char *path)
 
 void add_connection(state *st, int left, int right) {
     connection *c;
+    if (st->cp >= MAX_CONNECTIONS) {
+        fprintf(stderr, "Out of connection memory\n");
+        exit(1);
+    }
     c = &st->con[st->cp];
     c->left = left;
     c->right = right;
@@ -160,10 +172,12 @@ int main(int argc, char **argv){
     /* char *zErrMsg = 0; */
     int rc;
     const char *dbpath;
-    state st;
+    state *st;
     size_t i;
     queue q;
     const char *top_node;
+
+    st = malloc(sizeof(state));
 
     if (argc < 2) {
         fprintf(stderr, "Usage: %s top_node\n", argv[0]);
@@ -180,14 +194,14 @@ int main(int argc, char **argv){
 
     queue_init(&q);
 
-    st.spos = 0;
-    st.ep = 0;
+    st->spos = 0;
+    st->ep = 0;
 
-    st.strings = malloc(MEMSIZE);
-    memset(st.strings, 0, MEMSIZE);
-    st.ent = malloc(MAX_ENTRIES);
-    st.cp = 0;
-    st.con = malloc(MAX_CONNECTIONS);
+    st->strings = malloc(MEMSIZE);
+    memset(st->strings, 0, MEMSIZE);
+    st->ent = malloc(sizeof(node_entry) * MAX_ENTRIES);
+    st->cp = 0;
+    st->con = malloc(sizeof(connection) * MAX_CONNECTIONS);
 
     rc = sqlite3_open(dbpath, &db);
 
@@ -197,28 +211,30 @@ int main(int argc, char **argv){
         return(1);
     }
   
-    append_node_to_queue(&st, &q, -1, top_node);
+    append_node_to_queue(st, &q, -1, top_node);
 
     while (q.sz > 0) {
         int e;
         node_entry *ent;
         e = queue_pop(&q);
-        ent = &st.ent[e - 1];
-        traverse_node(db, &st, &q, ent->path);
+        ent = &st->ent[e - 1];
+        traverse_node(db, st, &q, ent->path);
     }
 
-    printf("i %ld %ld\n", st.ep, st.cp);
+    printf("i %ld %ld\n", st->ep, st->cp);
 
-    for (i = 0; i < st.ep; i++) {
-        printf("n %ld %s\n", i, st.ent[i].path);
+    for (i = 0; i < st->ep; i++) {
+        printf("n %ld %s\n", i, st->ent[i].path);
     }
 
-    for (i = 0; i < st.cp; i++) {
-        printf("c %d %d\n", st.con[i].left, st.con[i].right);
+    for (i = 0; i < st->cp; i++) {
+        printf("c %d %d\n", st->con[i].left, st->con[i].right);
     }
 
-    free(st.strings);
-    free(st.ent);
+    free(st->strings);
+    free(st->ent);
+    free(st->con);
+    free(st);
 
     sqlite3_close(db);
 

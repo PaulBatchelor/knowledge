@@ -731,4 +731,6 @@ to write a program that can load this data and process it.
 
 @11:13 initial scaffolding for an ed-like command language in rust #timelog:00:17:27
 
-@13:51 more work on the command language: loading data
+@13:51 more work on the command language, added agenda #timelog:02:24:05
+This seems like mostly bare functionality. Dare I say it
+might even be usable?

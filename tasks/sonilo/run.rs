@@ -3,6 +3,7 @@ use std::io::prelude::*;
 use std::io::BufReader;
 use std::fs::File;
 use std::collections::BTreeMap;
+use std::env;
 
 #[allow(dead_code)]
 enum TaskState {
@@ -147,12 +148,75 @@ impl State {
             }
         }
     }
-}
 
+    fn command(&mut self, args: Vec<&str>) {
+        let cmd = &args[0];
+        if cmd.parse::<usize>().is_ok() {
+            self.goto(cmd.parse().unwrap_or_default());
+        } else if *cmd == "ls" {
+            if args.len() >= 2 {
+                self.load_schedule(args[1]);
+            }
+        } else if *cmd == "ps" {
+            self.print_schedule();
+        } else if *cmd == "ss" {
+            if args.len() >= 2 {
+                self.save_schedule(args[1]);
+            }
+        } else if *cmd == "ft" {
+            if args.len() >= 2 {
+                self.find_task(args[1]);
+            }
+        } else if *cmd == "p" {
+            self.print_selected_task();
+        } else if *cmd == "do" {
+            if args.len() >= 2 {
+                self.done(Some(args[1].parse().unwrap_or_default()));
+            } else {
+                self.done(None)
+            }
+        } else if *cmd == "d" {
+            if args.len() >= 2 {
+                self.day = args[1].parse().unwrap_or_default();
+            }
+        } else if *cmd == "ag" {
+            self.agenda();
+        } else if *cmd == "td" {
+            if args.len() >= 2 {
+                self.todo(Some(args[1].parse().unwrap_or_default()));
+            } else {
+                self.todo(None)
+            }
+        }
+    }
+}
 
 fn main() -> io::Result<()> {
     let input = io::stdin();
     let mut st = State::default();
+
+    for arg in env::args().skip(1) {
+        let f = match File::open(&arg) {
+            Ok(f) => f,
+            Err(_) => {
+                panic!("Could not load file: {}", arg);
+            }
+        };
+
+        let reader = BufReader::new(f);
+        for line in reader.lines() {
+            // TODO: error handling
+            let line = line.unwrap();
+            let args: Vec<_> = line.split_whitespace().collect();
+            if args.is_empty() {
+                continue;
+            }
+            if args[0] == "q" {
+                break;
+            }
+            st.command(args);
+        }
+    }
 
     for line in input.lines() {
         // TODO: error handling
@@ -161,50 +225,10 @@ fn main() -> io::Result<()> {
         if args.is_empty() {
             continue;
         }
-
-        let cmd = &args[0];
-
-        if cmd.parse::<usize>().is_ok() {
-            st.goto(cmd.parse().unwrap_or_default());
-        }
-
-        if *cmd == "q" {
+        if args[0] == "q" {
             break;
-        } else if *cmd == "ls" {
-            if args.len() >= 2 {
-                st.load_schedule(args[1]);
-            }
-        } else if *cmd == "ps" {
-            st.print_schedule();
-        } else if *cmd == "ss" {
-            if args.len() >= 2 {
-                st.save_schedule(args[1]);
-            }
-        } else if *cmd == "ft" {
-            if args.len() >= 2 {
-                st.find_task(args[1]);
-            }
-        } else if *cmd == "p" {
-            st.print_selected_task();
-        } else if *cmd == "do" {
-            if args.len() >= 2 {
-                st.done(Some(args[1].parse().unwrap_or_default()));
-            } else {
-                st.done(None)
-            }
-        } else if *cmd == "d" {
-            if args.len() >= 2 {
-                st.day = args[1].parse().unwrap_or_default();
-            }
-        } else if *cmd == "ag" {
-            st.agenda();
-        } else if *cmd == "td" {
-            if args.len() >= 2 {
-                st.todo(Some(args[1].parse().unwrap_or_default()));
-            } else {
-                st.todo(None)
-            }
         }
+        st.command(args);
     }
 
     Ok(())

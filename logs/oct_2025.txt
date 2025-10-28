@@ -729,4 +729,4 @@ concept in Awk to bootstrap the initial data.
 got some initial data being generated. I think I need
 to write a program that can load this data and process it.
 
-@11:13 initial scaffolding for an ed-like command language in rust
+@11:13 initial scaffolding for an ed-like command language in rust #timelog:00:17:27

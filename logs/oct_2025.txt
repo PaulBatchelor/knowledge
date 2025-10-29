@@ -755,3 +755,6 @@ Ah, I forgot to add sizeof to mallc().
 @11:28 Work on the buddy system some more #timelog:00:45:12
 #! dz %/buddy_system
 Also, trying on this task management system.
+
+@15:19 more buddy system #timelog:01:01:43
+#! dz $

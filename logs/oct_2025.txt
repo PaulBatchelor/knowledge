@@ -659,7 +659,7 @@ I set up a failing test, with some notes on what
 the expected results should look like.
 
 @13:20 1.2 Implications #timelog:00:24:06
-#! dz dmoi/toc/01_mathematic_statements/02_implications
+#! dz dmoi/toc/01_logic_and_proofs/02_implications
 
 @15:00 (estimated time) Task Graph #timelog:00:38:14 #ink:03K
 
@@ -748,3 +748,10 @@ Ah, I forgot to add sizeof to mallc().
 @19:10 Back to toc and planning #timelog:00:15:05
 #! dz dmoi/news
 #! dz dmoi/toc
+
+@20:39 3.1 RSA #timelog:00:45:39
+
+@2025-10-29 Day 59
+@11:28 Work on the buddy system some more #timelog:00:45:12
+#! dz %/buddy_system
+Also, trying on this task management system.

@@ -780,3 +780,6 @@ of groups, and importing.
 #! dz dmoi/news
 Hoping to combine this with the sonilo schedule and build
 a unified agenda
+
+@11:21 computer organization and design: initial outlining
+#! coad/news

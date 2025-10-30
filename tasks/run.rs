@@ -63,6 +63,56 @@ struct State {
 }
 
 impl State {
+    fn import_schedule(&mut self, filename: &str) {
+        let f = match File::open(filename) {
+            Ok(f) => f,
+            Err(_) => {
+                println!("Could not load file.");
+                return;
+            }
+        };
+
+        let reader = BufReader::new(f);
+
+        for line in reader.lines() {
+            match line {
+                Ok(line) => self.parse_entry(&line),
+                Err(_) => continue,
+            };
+        }
+
+    }
+
+    fn parse_entry(&mut self, line: &str) {
+        let fields: Vec<_> = line.split(":").collect();
+        let path = fields[0].to_string();
+        let state = if fields.len() >= 3 {
+            fields[2].into()
+        } else {
+            TaskState::default() 
+        };
+
+        let day = if fields.len() >= 2 {
+            fields[1].parse().unwrap_or_default()
+        } else {
+            0
+        };
+
+        let group = if fields.len() >= 4 {
+            fields[3].parse().unwrap_or_default()
+        } else {
+            self.group
+        };
+
+        let task = Task {
+            path,
+            day,
+            state,
+            group
+        };
+        self.tasks.push(task);
+    }
+
     fn load_schedule(&mut self, filename: &str) {
         let f = match File::open(filename) {
             Ok(f) => f,
@@ -77,35 +127,7 @@ impl State {
         self.tasks = Vec::new();
         for line in reader.lines() {
             match line {
-                Ok(line) => {
-                    let fields: Vec<_> = line.split(":").collect();
-                    let path = fields[0].to_string();
-                    let state = if fields.len() >= 3 {
-                        fields[2].into()
-                    } else {
-                        TaskState::default() 
-                    };
-
-                    let day = if fields.len() >= 2 {
-                        fields[1].parse().unwrap_or_default()
-                    } else {
-                        0
-                    };
-
-                    let group = if fields.len() >= 4 {
-                        fields[3].parse().unwrap_or_default()
-                    } else {
-                        self.group
-                    };
-
-                    let task = Task {
-                        path,
-                        day,
-                        state,
-                        group
-                    };
-                    self.tasks.push(task);
-                }
+                Ok(line) => self.parse_entry(&line),
                 Err(_) => continue,
             };
         }
@@ -113,6 +135,7 @@ impl State {
 
     fn print_schedule(&self) {
         for (idx, task) in self.tasks.iter().enumerate() {
+            if !task.active(self.group) { continue }
             let state: String = (&task.state).into();
             println!("{}\t{}\t{}\t{}", idx, task.path, task.day, state);
         }
@@ -220,6 +243,10 @@ impl State {
             if args.len() >= 2 {
                 let ndays = args[1].parse().unwrap_or_else(|_| 1);
                 self.distribute(ndays);
+            }
+        } else if *cmd == "is" {
+            if args.len() >= 2 {
+                self.import_schedule(args[1]);
             }
         }
     }

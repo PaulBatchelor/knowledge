@@ -1,13 +1,14 @@
-SCHEDULE="state.txt"
-START="2025-10-31"
-
+. ./env
 DATE_TODAY=$(date +%s)
 DATE_START=$(date -d $START +%s)
 DAY=$(((DATE_TODAY - DATE_START)/86400))
+DEADLINE=$(date -d "$START + $TOTAL_DAYS days" +%Y-%m-%d)
 agenda () {
+    echo "gr 0 1"
     echo "ls $SCHEDULE"
     echo "d $DAY"
     echo "ag"
 }
-echo "Day $DAY"
+echo "Day $DAY of $TOTAL_DAYS"
+echo "Deadline: $DEADLINE"
 agenda | ./run

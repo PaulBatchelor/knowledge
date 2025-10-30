@@ -775,3 +775,8 @@ fully yet. Will need to troubleshoot at another time.
 For this to be helpful, I need to be able to manage multiple
 schedules at once. So, I'll need to introduce the concept
 of groups, and importing.
+
+@10:38 Generating initial reading schedule for DMOI #timelog:00:36:44
+#! dz dmoi/news
+Hoping to combine this with the sonilo schedule and build
+a unified agenda

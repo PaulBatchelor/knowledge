@@ -1,0 +1,2 @@
+gr 0 1
+ls state.txt

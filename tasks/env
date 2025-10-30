@@ -1,0 +1,8 @@
+# file containing state data
+SCHEDULE="state.txt"
+
+# start date
+START="2025-10-31"
+
+# total days (approximate)
+TOTAL_DAYS=80

@@ -783,3 +783,27 @@ a unified agenda
 
 @11:21 computer organization and design: initial outlining #timelog:00:43:12
 #! coad/news
+
+@12:10 figuring out ordering problem #timelog:01:36:14
+I am running into an issue where I want a strict ordering
+using implicit connections with a DAG. Trying to figure
+out if this structure is possible.
+---
+I think I'm going to need some additional logic. The
+partial ordering of a graph isn't enough. I think there
+needs to be some kind of atomicity. If X comes before Y,
+atomicity would say that X and all the subtasks must come
+before Y. A graph needs to explicitly make every subtask of
+X come before Y, which is a lot of manual work in dagzet,
+plus it makes a ton of edges.
+---
+Ah, I think I got it. Claude helped me out. I'm just going
+Need anchor nodes start/end. All subtasks go after the start,
+and before the end. Then I only have think in terms of
+start/end points.
+---
+I am filtering out anchor points using a META node, and
+this seems be clean enough. This might be a good thing to
+pursue in practice. Making the anchor nodes might be
+something to think about automating. I was thinking of
+using some kind preprocessor. Awk? Lil?

@@ -782,7 +782,7 @@ Hoping to combine this with the sonilo schedule and build
 a unified agenda
 
 @11:21 computer organization and design: initial outlining #timelog:00:43:12
-#! coad/news
+#! dz coad/news
 
 @12:10 figuring out ordering problem #timelog:01:36:14
 I am running into an issue where I want a strict ordering
@@ -807,3 +807,6 @@ this seems be clean enough. This might be a good thing to
 pursue in practice. Making the anchor nodes might be
 something to think about automating. I was thinking of
 using some kind preprocessor. Awk? Lil?
+
+@14:26 indulging myself. building a quick macro pre-processor for tasks #timelog:00:43:10
+#! dz coad/news

@@ -1,0 +1,60 @@
+ns coad
+gr Computer Organization and Design, sixth edition, MIPS
+gr by David A. Patterson and John L Hennessy
+nn news
+nn toc
+nn toc/01_computer_abstractions_and_technology
+ln Chapter 1: computer abstractions and technology
+nn toc/02_instructions_language_of_the_computer
+ln Chapter 2: Instructions; the language of the computer
+ln toc/03_arithmetic_for_computers
+ln Chapter 3: Arithmetic For Computers
+nn toc/04_the_processor
+ln Chapter 4: The Processor
+ln toc/05_large_and_fast_exploiting_memory_hierarchy
+ln Chapter 5: Large and Fast: exploting memory hierarchy
+ln toc/06_parallel_processors_client_to_cloud
+ln Chapter 6: parallel processors from client to cloud
+nn tasks
+nn tasks/META/read_the_book
+nn tasks/META/read_chapter_1_start
+nn tasks/META/read_chapter_1_end
+nn tasks/META/read_chapter_1
+co tasks/META/read_chapter_1_start tasks/META/read_chapter_1_end
+co tasks/META/read_chapter_1_start tasks/META/read_chapter_1
+co tasks/META/read_chapter_1_end tasks/META/read_chapter_1
+co $ ?read_the_book
+nn tasks/META/read_chapter_2_start
+nn tasks/META/read_chapter_2_end
+nn tasks/META/read_chapter_2
+co tasks/META/read_chapter_2_start tasks/META/read_chapter_2_end
+co tasks/META/read_chapter_2_start tasks/META/read_chapter_2
+co tasks/META/read_chapter_2_end tasks/META/read_chapter_2
+co $ ?read_the_book
+co tasks/META/read_chapter_1_end tasks/META/read_chapter_2_start
+ns +toc/01_computer_abstractions_and_technology
+nn 01_introduction
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 02_seven_great_ideas_computer_architecture
+co 01_introduction $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 03_below_your_program
+co 02_seven_great_ideas_computer_architecture $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+ns ../..
+ns +toc/02_instructions_language_of_the_computer
+nn 01_introduction
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 02_operations_of_the_computer_hardware
+co 01_introduction $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 03_operands_of_the_computer_hardware
+co 02_operations_of_the_computer_hardware $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+ns ../..

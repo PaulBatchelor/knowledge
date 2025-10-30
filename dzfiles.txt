@@ -80,4 +80,5 @@ dz/csmet
 dz/thoughts
 dz/ink
 dz/dmoi
+dz/coad
 dz/zzz

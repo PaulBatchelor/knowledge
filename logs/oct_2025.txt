@@ -758,3 +758,14 @@ Also, trying on this task management system.
 
 @15:19 more buddy system #timelog:01:01:43
 #! dz $
+
+@19:25 pre-buddy system, buddy system proto-type? #timelog:00:55:55
+#! dz $
+I am running into constraints due to the fact that the buddy
+system needs to be pre-initialized because it's modified
+to fit entirely on a single block. It would be easier
+to do this closer to the "regular" way, and then refactor
+into the block system.
+---
+It was a good idea to build this, but it isn't working
+fully yet. Will need to troubleshoot at another time.

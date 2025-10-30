@@ -769,3 +769,9 @@ into the block system.
 ---
 It was a good idea to build this, but it isn't working
 fully yet. Will need to troubleshoot at another time.
+
+@2025-10-30 Day 60
+@09:56 More task graph utility set up: one agenda for everything #timelog:00:38:56
+For this to be helpful, I need to be able to manage multiple
+schedules at once. So, I'll need to introduce the concept
+of groups, and importing.

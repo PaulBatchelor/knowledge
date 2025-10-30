@@ -43,15 +43,23 @@ struct Task {
     path: String,
     day: usize,
     state: TaskState,
+    group: u64,
 }
 
-#[derive(Default)]
+impl Task {
+    pub fn active(&self, group: u64) -> bool {
+        group == 0 || (self.group & group) > 0
+    }
+}
+
 #[allow(dead_code)]
+#[derive(Default)]
 struct State {
     tasks: Vec<Task>,
     schedule: BTreeMap<usize,Vec<usize>>,
     selected: usize,
     day: usize,
+    group: u64,
 }
 
 impl State {
@@ -71,16 +79,30 @@ impl State {
             match line {
                 Ok(line) => {
                     let fields: Vec<_> = line.split(":").collect();
+                    let path = fields[0].to_string();
                     let state = if fields.len() >= 3 {
                         fields[2].into()
                     } else {
                         TaskState::default() 
                     };
 
+                    let day = if fields.len() >= 2 {
+                        fields[1].parse().unwrap_or_default()
+                    } else {
+                        0
+                    };
+
+                    let group = if fields.len() >= 4 {
+                        fields[3].parse().unwrap_or_default()
+                    } else {
+                        self.group
+                    };
+
                     let task = Task {
-                        path: fields[0].to_string(),
-                        day: fields[1].parse().unwrap_or_default(),
+                        path,
+                        day,
                         state,
+                        group
                     };
                     self.tasks.push(task);
                 }
@@ -107,7 +129,7 @@ impl State {
 
         for task in &self.tasks {
             let state: String = (&task.state).into();
-            let _ = write!(buffer, "{}:{}:{}\n", task.path, task.day, state);
+            let _ = write!(buffer, "{}:{}:{}:{}\n", task.path, task.day, state, task.group);
         }
     }
 
@@ -143,7 +165,8 @@ impl State {
 
     fn agenda(&self) {
         for (idx, task) in self.tasks.iter().enumerate() {
-            if task.day <= self.day && !matches!(task.state, TaskState::DONE) {
+            if task.active(self.group) && task.day <= self.day && !matches!(task.state, TaskState::DONE)
+            {
                 println!("{}\t{}[{}]", task.day as i16 - self.day as i16, task.path, idx);
             }
         }
@@ -186,6 +209,38 @@ impl State {
                 self.todo(Some(args[1].parse().unwrap_or_default()));
             } else {
                 self.todo(None)
+            }
+        } else if *cmd == "gr" {
+            self.group = 0;
+            for i in 1 .. args.len() {
+                let g: u8 = args[i].parse().unwrap_or_default();
+                self.group |= 1 << g;
+            }
+        } else if *cmd == "ds" {
+            if args.len() >= 2 {
+                let ndays = args[1].parse().unwrap_or_else(|_| 1);
+                self.distribute(ndays);
+            }
+        }
+    }
+
+    pub fn distribute(&mut self, ndays: u16) {
+        let mut ntasks = 0;
+
+        for task in &self.tasks {
+            if (task.group & self.group) > 0 || self.group == 0 {
+                ntasks += 1;
+            }
+        }
+
+        let spread = ndays as f32 / ntasks as f32;
+
+        let mut n = 0;
+
+        for task in &mut self.tasks {
+            if (task.group & self.group) > 0 || self.group == 0 {
+                task.day = (n as f32 * spread) as usize;
+                n += 1;
             }
         }
     }

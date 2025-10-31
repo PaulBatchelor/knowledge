@@ -6,3 +6,5 @@ START="2025-10-31"
 
 # total days (approximate)
 TOTAL_DAYS=80
+
+DATE=gdate

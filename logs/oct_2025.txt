@@ -780,3 +780,71 @@ of groups, and importing.
 #! dz dmoi/news
 Hoping to combine this with the sonilo schedule and build
 a unified agenda
+
+@15:32 CY100 3.2
+#! dz csmet/cy100
+
+@18:00 wow, what bad day #timelog:02:45:00
+#! dz csmet/cs248/news
+(Writing this the following day)
+---
+I failed the midterm. And, I failed it on a technicality.
+I did my logical proofs differently than how it was done
+in class, and it completely through my professor off. He
+didn't understand what I was doing. Objectively, he is bad
+at logic.
+---
+A valid argument is an argument whose conclusion is always
+true whenever the hypotheses is true. To prove that a logic
+is valid, you need to show that it can never be false.
+My approach was to try and find a counter-example. You set
+initial truth values so the conclusion is false (usually,
+there is only one combination), and then try to make the
+hypothesis true. By the end, usually you can show that there
+is no combination where the truth values are all true.
+---
+The way the professor taught it was this: assume that the
+argument is valid, and show *why* it is valid. The exercise
+involved just looking at the hypothesis, and incrementally
+finding a combination of truth values until all the propositions
+worked out to be true. This was something of a constraint
+problem. The issue is, you don't actually prove that the
+argument is valid this way because there can be a situation
+where the truth values are set to yield a hypothesis that
+is true and a conclusion that is false, making it an invalid
+argument.
+---
+Luckily, I had an opportunity in class to challenge my grade,
+I think I can get this back up to at least a B. But damn,
+that left some bitterness in my mouth. I really wanted this
+to be a class about learning, but really it's going to be
+a class about appeasing the professor and doing things his
+way, even if it is the "wrong" way. It's now a waste of my
+time.
+
+@2025-10-31 Day 61. happy halloween.
+@10:31 cy100 3.2 continued #timelog:00:22:53
+#! dz csmet/cy100
+
+@11:22 logging in and logging #timelog:00:10:00
+
+@11:36 scope out homework, intial scaffolding #timelog:00:18:07
+#! dz csmet/cs342/hw7
+You need a method that removes duplicate characters from
+a string. But, I need clarification on if duplicate
+characters mean repeating characters or characters in
+the entire string. If I have "hello world",
+is the result "helo world" or "helo wrd"? It's probably
+the former, and I will work that way.
+---
+The hint says to use a hashset, not a hashtable, so actually
+it might be "helo wrd" as the output. The algorithm would work
+by going through each character of the string, and only appending
+to the new string if the character wasn't previously used.
+---
+Using a hashmap, one would store indices, and use that to
+check if the previous index was that particular character.
+---
+While I wait for a reply from the email...
+I could probably do both. One would be removeDuplicate,
+the other would be removeRepeating.

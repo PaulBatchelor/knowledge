@@ -881,4 +881,13 @@ the other would be removeRepeating.
 
 @2025-11-01 Day 62
 @07:29 pre-coffee puttering, hack on buddy system #timelog:00:10:50
-#! dz ?buddy_system
+#! dz %buddy_system
+
+@11:29 more buddy system #timelog:01:10:12
+#! dz $
+I think alloc() works now? Two mistakes made: had to be
+more explicit with what LOC(AVAIL[j]) was doing. I was
+using virtual pointers for everything, which made things
+interesting. There was also (x<-y<-z) notation used,
+which I thought would be intermediate assignments like
+"x = y, y = z", but I think it meant "set x = y = z".

@@ -920,3 +920,11 @@ as-is for the remainder of the lifetime.
 The avail list has quirky behavior. when m = 6 it's a bool,
 otherwise, it's an actual location. This logic needs to be
 abstracted away cleanly.
+
+@18:26 email from the prof: it's the "helo wrd" way #timelog:00:14:40
+#! dz csmet/cs342/hw7
+That makes it pretty easy.
+---
+Annnd we're done. Most of the time was spent just fighting
+Java the language (generics, str.equals instead of ==), but
+the algorithm was very simple.

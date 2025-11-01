@@ -1,8 +1,8 @@
 . ./env
-DATE_TODAY=$(date +%s)
-DATE_START=$(date -d $START +%s)
+DATE_TODAY=$($DATE +%s)
+DATE_START=$($DATE -d $START +%s)
 DAY=$(((DATE_TODAY - DATE_START)/86400))
-DEADLINE=$(date -d "$START + $TOTAL_DAYS days" +%Y-%m-%d)
+DEADLINE=$($DATE -d "$START + $TOTAL_DAYS days" +%Y-%m-%d)
 agenda () {
     echo "gr 0 1"
     echo "ls $SCHEDULE"

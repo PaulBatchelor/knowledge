@@ -7,4 +7,10 @@ START="2025-10-31"
 # total days (approximate)
 TOTAL_DAYS=80
 
-DATE=gdate
+DATE=date
+OS=$(uname -s)
+
+if [ "$OS" == "Linux" ]
+then
+    date=gdate
+fi

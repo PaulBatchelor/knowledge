@@ -891,3 +891,32 @@ using virtual pointers for everything, which made things
 interesting. There was also (x<-y<-z) notation used,
 which I thought would be intermediate assignments like
 "x = y, y = z", but I think it meant "set x = y = z".
+
+@15:46 onto block "liberation" #timelog:01:31:35
+#! dz $
+For the record, the last bug was found by claude. It was
+so subtle, only 1 line, I transcribed it wrong,
+and knowing me it probably saved me about an hour of debugging
+and careful checking.
+
+@17:23 what's next for this #timelog:00:06:52
+#! dz $
+I gotta adapt the algorithm to work with a 64-sized block.
+And, I gotta remove the gotos.
+---
+I've learned a few things writing this out. I've got things
+set up in a way the algorithm is broken down into core operations
+that I can re-implement without too much trouble. Then,
+I can re-use the rest of the bits.
+---
+I need a way to bootstrap the initial block, and permanently
+allocate a region of size 1 for the avail list, and a region
+of size 2 for the tags. Those should predictably appear
+in the first 3 words of the block. The temporary memory storying
+locations for the avail list and the tags can then be copied
+over to those memory locations, and the block can be used
+as-is for the remainder of the lifetime.
+---
+The avail list has quirky behavior. when m = 6 it's a bool,
+otherwise, it's an actual location. This logic needs to be
+abstracted away cleanly.

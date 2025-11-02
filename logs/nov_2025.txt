@@ -138,3 +138,10 @@ Added it to the reading list. It might be too much, we'll
 see.
 
 @17:00 scanning, cropping, binning #archiving #timelog:00:28:40
+
+@18:39 more of this buddy system #timelog:00:11:26
+#! dz %buddy_system
+I flipped around the ordering of LINKF,LINKB,and KVAL
+so that LINKF and LINKB are in the lower bits. My hope is
+that the AVAIL table only needs those two values, and
+I can just re-use the linkf/linkb routines.

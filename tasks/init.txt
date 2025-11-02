@@ -1,2 +1,3 @@
 gr 0 1
-ls state.txt
+f state.txt
+ls

@@ -1,0 +1,15 @@
+ls: load schedule
+ps: print schedule
+ss: save schedule
+ft: find task
+p: print selected task
+[number]: select task N
+do: set selected task as done
+d: select day
+ag: print agenda for currently selected day
+td: set selected task state to TODO
+gr: set active groups
+ds: distribute selected task groups over N days
+is: import a schedule (appends to existing schedule)
+f: set default save file
+w: save schedule (similar to ss, but can be blank)

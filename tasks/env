@@ -10,7 +10,7 @@ TOTAL_DAYS=80
 DATE=date
 OS=$(uname -s)
 
-if [ "$OS" == "Linux" ]
+if [ "$OS" == "Darwin" ]
 then
-    date=gdate
+    DATE=gdate
 fi

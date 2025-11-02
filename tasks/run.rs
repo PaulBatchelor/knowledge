@@ -1,14 +1,14 @@
+use std::collections::BTreeMap;
+use std::env;
+use std::fs::File;
 use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
-use std::fs::File;
-use std::collections::BTreeMap;
-use std::env;
 
 #[allow(dead_code)]
 enum TaskState {
     TODO,
-    DONE
+    DONE,
 }
 
 impl Default for TaskState {
@@ -56,10 +56,11 @@ impl Task {
 #[derive(Default)]
 struct State {
     tasks: Vec<Task>,
-    schedule: BTreeMap<usize,Vec<usize>>,
+    schedule: BTreeMap<usize, Vec<usize>>,
     selected: usize,
     day: usize,
     group: u64,
+    statefile: Option<String>,
 }
 
 impl State {
@@ -80,7 +81,6 @@ impl State {
                 Err(_) => continue,
             };
         }
-
     }
 
     fn parse_entry(&mut self, line: &str) {
@@ -89,7 +89,7 @@ impl State {
         let state = if fields.len() >= 3 {
             fields[2].into()
         } else {
-            TaskState::default() 
+            TaskState::default()
         };
 
         let day = if fields.len() >= 2 {
@@ -108,12 +108,20 @@ impl State {
             path,
             day,
             state,
-            group
+            group,
         };
         self.tasks.push(task);
     }
 
-    fn load_schedule(&mut self, filename: &str) {
+    fn load_schedule(&mut self, filename: Option<&str>) {
+        let filename = if let Some(filename) = filename {
+            filename
+        } else if let Some(statefile) = &self.statefile {
+            statefile
+        } else {
+            return;
+        };
+
         let f = match File::open(filename) {
             Ok(f) => f,
             Err(_) => {
@@ -135,7 +143,9 @@ impl State {
 
     fn print_schedule(&self) {
         for (idx, task) in self.tasks.iter().enumerate() {
-            if !task.active(self.group) { continue }
+            if !task.active(self.group) {
+                continue;
+            }
             let state: String = (&task.state).into();
             println!("{}\t{}\t{}\t{}", idx, task.path, task.day, state);
         }
@@ -152,7 +162,11 @@ impl State {
 
         for task in &self.tasks {
             let state: String = (&task.state).into();
-            let _ = write!(buffer, "{}:{}:{}:{}\n", task.path, task.day, state, task.group);
+            let _ = write!(
+                buffer,
+                "{}:{}:{}:{}\n",
+                task.path, task.day, state, task.group
+            );
         }
     }
 
@@ -188,9 +202,16 @@ impl State {
 
     fn agenda(&self) {
         for (idx, task) in self.tasks.iter().enumerate() {
-            if task.active(self.group) && task.day <= self.day && !matches!(task.state, TaskState::DONE)
+            if task.active(self.group)
+                && task.day <= self.day
+                && !matches!(task.state, TaskState::DONE)
             {
-                println!("{}\t{}[{}]", task.day as i16 - self.day as i16, task.path, idx);
+                println!(
+                    "{}\t{}[{}]",
+                    task.day as i16 - self.day as i16,
+                    task.path,
+                    idx
+                );
             }
         }
     }
@@ -201,7 +222,9 @@ impl State {
             self.goto(cmd.parse().unwrap_or_default());
         } else if *cmd == "ls" {
             if args.len() >= 2 {
-                self.load_schedule(args[1]);
+                self.load_schedule(Some(args[1]));
+            } else {
+                self.load_schedule(None);
             }
         } else if *cmd == "ps" {
             self.print_schedule();
@@ -235,7 +258,7 @@ impl State {
             }
         } else if *cmd == "gr" {
             self.group = 0;
-            for i in 1 .. args.len() {
+            for i in 1..args.len() {
                 let g: u8 = args[i].parse().unwrap_or_default();
                 self.group |= 1 << g;
             }
@@ -247,6 +270,14 @@ impl State {
         } else if *cmd == "is" {
             if args.len() >= 2 {
                 self.import_schedule(args[1]);
+            }
+        } else if *cmd == "f" {
+            if args.len() >= 2 {
+                self.statefile = Some(args[1].to_string());
+            }
+        } else if *cmd == "w" {
+            if let Some(statefile) = &self.statefile {
+                self.save_schedule(statefile);
             }
         }
     }

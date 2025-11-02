@@ -24,7 +24,7 @@ thoughts/projects/sonilo/tasks/sequencing_voice_with_grid_controller:61:TODO:1
 thoughts/projects/sonilo/tasks/singing_voices_in_a_room:64:TODO:1
 thoughts/projects/sonilo/tasks/meaningful_sounds:67:TODO:1
 dmoi/toc/01_logic_and_proofs/01_mathematic_statements:0:DONE:2
-dmoi/toc/01_logic_and_proofs/02_implications:2:TODO:2
+dmoi/toc/01_logic_and_proofs/02_implications:2:DONE:2
 dmoi/toc/01_logic_and_proofs/03_rules_of_logic:4:TODO:2
 dmoi/toc/01_logic_and_proofs/04_proofs:6:TODO:2
 dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures:8:TODO:2

@@ -31,7 +31,39 @@ co tasks/META/read_chapter_2_start tasks/META/read_chapter_2_end
 co tasks/META/read_chapter_2_start tasks/META/read_chapter_2
 co tasks/META/read_chapter_2_end tasks/META/read_chapter_2
 co $ ?read_the_book
+nn tasks/META/read_chapter_3_start
+nn tasks/META/read_chapter_3_end
+nn tasks/META/read_chapter_3
+co tasks/META/read_chapter_3_start tasks/META/read_chapter_3_end
+co tasks/META/read_chapter_3_start tasks/META/read_chapter_3
+co tasks/META/read_chapter_3_end tasks/META/read_chapter_3
+co $ ?read_the_book
+nn tasks/META/read_chapter_4_start
+nn tasks/META/read_chapter_4_end
+nn tasks/META/read_chapter_4
+co tasks/META/read_chapter_4_start tasks/META/read_chapter_4_end
+co tasks/META/read_chapter_4_start tasks/META/read_chapter_4
+co tasks/META/read_chapter_4_end tasks/META/read_chapter_4
+co $ ?read_the_book
+nn tasks/META/read_chapter_5_start
+nn tasks/META/read_chapter_5_end
+nn tasks/META/read_chapter_5
+co tasks/META/read_chapter_5_start tasks/META/read_chapter_5_end
+co tasks/META/read_chapter_5_start tasks/META/read_chapter_5
+co tasks/META/read_chapter_5_end tasks/META/read_chapter_5
+co $ ?read_the_book
+nn tasks/META/read_chapter_6_start
+nn tasks/META/read_chapter_6_end
+nn tasks/META/read_chapter_6
+co tasks/META/read_chapter_6_start tasks/META/read_chapter_6_end
+co tasks/META/read_chapter_6_start tasks/META/read_chapter_6
+co tasks/META/read_chapter_6_end tasks/META/read_chapter_6
+co $ ?read_the_book
 co tasks/META/read_chapter_1_end tasks/META/read_chapter_2_start
+co tasks/META/read_chapter_2_end tasks/META/read_chapter_3_start
+co tasks/META/read_chapter_3_end tasks/META/read_chapter_4_start
+co tasks/META/read_chapter_4_end tasks/META/read_chapter_5_start
+co tasks/META/read_chapter_5_end tasks/META/read_chapter_6_start
 ns +toc/01_computer_abstractions_and_technology
 nn 01_introduction
 co ?tasks/META/read_chapter_1_start $
@@ -42,6 +74,58 @@ co ?tasks/META/read_chapter_1_start $
 co $ ?tasks/META/read_chapter_1_end
 nn 03_below_your_program
 co 02_seven_great_ideas_computer_architecture $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 04_under_the_covers
+co 03_below_your_program $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 05_tech_for_building_processors_and_memory
+co 04_under_the_covers $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 06_performance
+co 05_tech_for_building_processors_and_memory $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 07_the_power_wall
+co 06_performance $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 08_the_sea_change
+co 07_the_power_wall $
+ln Chapter 8: the Sea Change: The switch from uniprocessors
+ln to multiprocessors
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 09_benchmark_core_i7
+co 08_the_sea_change $
+ln 1.9: real stuff: benchmarking the Intel Core i7
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 10_matrix_multiply_python
+co 09_benchmark_core_i7 $
+ln 1.10: Going Faster: Matrix Multiply in Python
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 11_fallacies_and_pitfalls
+co 10_matrix_multiply_python $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 12_concluding_remarks
+co 11_fallacies_and_pitfalls $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 13_historical_perspective_and_further_reading
+co 12_concluding_remarks $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 14_self_study
+co 13_historical_perspective_and_further_reading $
+co ?tasks/META/read_chapter_1_start $
+co $ ?tasks/META/read_chapter_1_end
+nn 15_exercises
+co 14_self_study $
 co ?tasks/META/read_chapter_1_start $
 co $ ?tasks/META/read_chapter_1_end
 ns ../..
@@ -57,4 +141,375 @@ nn 03_operands_of_the_computer_hardware
 co 02_operations_of_the_computer_hardware $
 co ?tasks/META/read_chapter_2_start $
 co $ ?tasks/META/read_chapter_2_end
+nn 04_signed_unsigned_numbers
+co 03_operands_of_the_computer_hardware $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 05_represetning_instructions_in_computer
+co 04_signed_unsigned_numbers $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 06_logical_operations
+co 05_represetning_instructions_in_computer $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 07_instructions_for_making_decisions
+co 06_logical_operations $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 08_supporting_procedures_in_computer_hardware
+co 07_instructions_for_making_decisions $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 09_communicating_with_people
+co 08_supporting_procedures_in_computer_hardware $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 10_MIPs_addressing_32_bit_immediates_addresses
+co 09_communicating_with_people $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 11_parallelism_and_instructions_synchronization
+co 10_MIPs_addressing_32_bit_immediates_addresses $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 12_translating_and_starting_a_program
+co 11_parallelism_and_instructions_synchronization $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 13_C_sort
+co 12_translating_and_starting_a_program $
+ln Chapter 13: A C sort Example to Put it All Together
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 14_arrays_vs_pointers
+co 13_C_sort $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 15_advanced_material_compiling_c_and_interpreting_java
+co 14_arrays_vs_pointers $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 16_armv7_instructions
+co 15_advanced_material_compiling_c_and_interpreting_java $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 17_armv8_instructions
+co 16_armv7_instructions $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 18_riscv_instructions
+co 17_armv8_instructions $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 19_x86_instructions
+co 18_riscv_instructions $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 20_matrix_multiply_c
+co 19_x86_instructions $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 21_fallacies_pitfalls
+co 20_matrix_multiply_c $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 22_concluding_remarks
+co 21_fallacies_pitfalls $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 23_historical_perspective_further_reading
+co 22_concluding_remarks $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 24_self_study
+co 23_historical_perspective_further_reading $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+nn 25_exercises
+co 24_self_study $
+co ?tasks/META/read_chapter_2_start $
+co $ ?tasks/META/read_chapter_2_end
+ns ../..
+ns +toc/03_arithmetic_for_computers
+nn 01_introduction
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 02_addition_subtraction
+co 01_introduction $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 03_multiplication
+co 02_addition_subtraction $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 04_division
+co 03_multiplication $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 05_floating_point
+co 04_division $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 06_subword_parallelism
+co 05_floating_point $
+ln 3.6: Parallelism and Computer Arithmetic: subword parallelism
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 07_streaming_SIMD_extensions_advanced_vector_extensions_x86
+co 06_subword_parallelism $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 08_subword_parallelism_and_matrix_multiply
+co 07_streaming_SIMD_extensions_advanced_vector_extensions_x86 $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 09_fallacies_and_pitfalls
+co 08_subword_parallelism_and_matrix_multiply $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 10_concluding_remarks
+co 09_fallacies_and_pitfalls $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 11_historical_perspective_further_reading
+co 10_concluding_remarks $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 12_self_study
+co 11_historical_perspective_further_reading $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+nn 13_exercises
+co 12_self_study $
+co ?tasks/META/read_chapter_3_start $
+co $ ?tasks/META/read_chapter_3_end
+ns ../..
+ns +toc/04_the_processor
+nn 01_introduction
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 02_logic_design_conventions
+co 01_introduction $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 03_building_a_datapath
+co 02_logic_design_conventions $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 04_a_simple_implementation_scheme
+co 03_building_a_datapath $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 05_a_multicycle_implementation
+co 04_a_simple_implementation_scheme $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 06_an_overview_of_pipelining
+co 05_a_multicycle_implementation $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 07_pipelined_datapath_and_control
+co 06_an_overview_of_pipelining $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 08_forwarding_vs_stalling
+co 07_pipelined_datapath_and_control $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 09_control_hazards
+co 08_forwarding_vs_stalling $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 10_exceptions
+co 09_control_hazards $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 12_core_i7_core_a53
+co 10_exceptions $
+ln Putting it all together: the Intel core i7 and
+ln the ARM Cortex A53
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 13_instruction_level_parallelism_and_matrix_multiply
+co 12_core_i7_core_a53 $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 14_intro_to_digital_design
+co 13_instruction_level_parallelism_and_matrix_multiply $
+ln 4.14: Advanced topic: an introduction to digital design
+ln using a hardware design langauge to describe and model
+ln a pipeline and more pipelining instructions
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 15_fallacies_pitfalls
+co 14_intro_to_digital_design $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 16_concluding_remarks
+co 15_fallacies_pitfalls $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 17_historical_perspective_and_further_reading
+co 16_concluding_remarks $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 18_self_study
+co 17_historical_perspective_and_further_reading $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+nn 19_exercises
+co 18_self_study $
+co ?tasks/META/read_chapter_4_start $
+co $ ?tasks/META/read_chapter_4_end
+ns ../..
+ns +toc/05_large_and_fast_exploiting_memory_hierarchy
+nn 01_introduction
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 02_memory_technolgoies
+co 01_introduction $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 03_basics_of_caches
+co 02_memory_technolgoies $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 04_measuring_improving_cache_performance
+co 03_basics_of_caches $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 05_dependable_memory_hierarchy
+co 04_measuring_improving_cache_performance $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 06_virtual_nmachines
+co 05_dependable_memory_hierarchy $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 07_virtual_memory
+co 06_virtual_nmachines $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 08_common_framework_memory_hierarchy
+co 07_virtual_memory $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 09_finite_state_machine_simple_cache
+co 08_common_framework_memory_hierarchy $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 10_cache_coherence
+co 09_finite_state_machine_simple_cache $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 11_redundant_arrays_of_inexpensive_disks
+co 10_cache_coherence $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 12_implementing_cache_controllers
+co 11_redundant_arrays_of_inexpensive_disks $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 13_cortex_A8_core_i7_memory_hierarchies
+co 12_implementing_cache_controllers $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 14_cache_blocking_matrix_multiply
+co 13_cortex_A8_core_i7_memory_hierarchies $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 15_fallacies_pitfalls
+co 14_cache_blocking_matrix_multiply $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 16_concluding_remarks
+co 15_fallacies_pitfalls $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 17_historical_perspective_further_reading
+co 16_concluding_remarks $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 18_self_study
+co 17_historical_perspective_further_reading $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+nn 19_exercises
+co 18_self_study $
+co ?tasks/META/read_chapter_5_start $
+co $ ?tasks/META/read_chapter_5_end
+ns ../..
+ns +toc/06_parallel_processors_client_to_cloud
+nn 01_introduction
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 02_difficulty_of_creating_parallel_processing_programs
+co 01_introduction $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 03_SISD_MIMD_SIMD_SPMD_Vector
+co 02_difficulty_of_creating_parallel_processing_programs $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 04_hardware_multithreading
+co 03_SISD_MIMD_SIMD_SPMD_Vector $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 05_multicore_other_shared_memory_processors
+co 04_hardware_multithreading $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 06_intro_to_graphics_processing_units
+co 05_multicore_other_shared_memory_processors $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 07_domain_specific_architectures
+co 06_intro_to_graphics_processing_units $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 08_clusters_warehouse_scale_comptuers_other
+co 07_domain_specific_architectures $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 09_intro_to_mlutiprocessor_network_topologies
+co 08_clusters_warehouse_scale_comptuers_other $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 10_cluster_networking
+co 09_intro_to_mlutiprocessor_network_topologies $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 11_multiprocessor_benchmarks_performance_models
+co 10_cluster_networking $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 12_benchmarking_TPUv3_Volta_GPU
+co 11_multiprocessor_benchmarks_performance_models $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 13_multiple_processors_and_matrix_multiply
+co 12_benchmarking_TPUv3_Volta_GPU $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 14_fallacies_pitfalls
+co 13_multiple_processors_and_matrix_multiply $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 15_concluding_remarks
+co 14_fallacies_pitfalls $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 16_hsitorical_perspective_further_reading
+co 15_concluding_remarks $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 17_self_study
+co 16_hsitorical_perspective_further_reading $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
+nn 18_exercises
+co 17_self_study $
+co ?tasks/META/read_chapter_6_start $
+co $ ?tasks/META/read_chapter_6_end
 ns ../..

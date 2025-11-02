@@ -32,7 +32,23 @@ co $ ?read_the_book
 !task read_chapter_2
 co $ ?read_the_book
 
+!task read_chapter_3
+co $ ?read_the_book
+
+!task read_chapter_4
+co $ ?read_the_book
+
+!task read_chapter_5
+co $ ?read_the_book
+
+!task read_chapter_6
+co $ ?read_the_book
+
 !seq read_chapter_1 read_chapter_2
+!seq read_chapter_2 read_chapter_3
+!seq read_chapter_3 read_chapter_4
+!seq read_chapter_4 read_chapter_5
+!seq read_chapter_5 read_chapter_6
 
 ns +toc/01_computer_abstractions_and_technology
 
@@ -44,6 +60,47 @@ ns +toc/01_computer_abstractions_and_technology
 
 !node 03_below_your_program
 !connect read_chapter_1
+
+!node 04_under_the_covers
+!connect read_chapter_1
+
+!node 05_tech_for_building_processors_and_memory
+!connect read_chapter_1
+
+!node 06_performance
+!connect read_chapter_1
+
+!node 07_the_power_wall
+!connect read_chapter_1
+
+!node 08_the_sea_change
+ln Chapter 8: the Sea Change: The switch from uniprocessors
+ln to multiprocessors
+!connect read_chapter_1
+
+!node 09_benchmark_core_i7
+ln 1.9: real stuff: benchmarking the Intel Core i7
+!connect read_chapter_1
+
+!node 10_matrix_multiply_python
+ln 1.10: Going Faster: Matrix Multiply in Python
+!connect read_chapter_1
+
+!node 11_fallacies_and_pitfalls
+!connect read_chapter_1
+
+!node 12_concluding_remarks
+!connect read_chapter_1
+
+!node 13_historical_perspective_and_further_reading
+!connect read_chapter_1
+
+!node 14_self_study
+!connect read_chapter_1
+
+!node 15_exercises
+!connect read_chapter_1
+
 !clear
 
 ns ../..
@@ -58,5 +115,300 @@ ns +toc/02_instructions_language_of_the_computer
 !node 03_operands_of_the_computer_hardware
 !connect read_chapter_2
 
+!node 04_signed_unsigned_numbers
+!connect read_chapter_2
+
+!node 05_represetning_instructions_in_computer
+!connect read_chapter_2
+
+!node 06_logical_operations
+!connect read_chapter_2
+
+!node 07_instructions_for_making_decisions
+!connect read_chapter_2
+
+!node 08_supporting_procedures_in_computer_hardware
+!connect read_chapter_2
+
+!node 09_communicating_with_people
+!connect read_chapter_2
+
+!node 10_MIPs_addressing_32_bit_immediates_addresses
+!connect read_chapter_2
+
+!node 11_parallelism_and_instructions_synchronization
+!connect read_chapter_2
+
+!node 12_translating_and_starting_a_program
+!connect read_chapter_2
+
+!node 13_C_sort
+ln Chapter 13: A C sort Example to Put it All Together
+!connect read_chapter_2
+
+!node 14_arrays_vs_pointers
+!connect read_chapter_2
+
+!node 15_advanced_material_compiling_c_and_interpreting_java
+!connect read_chapter_2
+
+!node 16_armv7_instructions
+!connect read_chapter_2
+
+!node 17_armv8_instructions
+!connect read_chapter_2
+
+!node 18_riscv_instructions
+!connect read_chapter_2
+
+!node 19_x86_instructions
+!connect read_chapter_2
+
+!node 20_matrix_multiply_c
+!connect read_chapter_2
+
+!node 21_fallacies_pitfalls
+!connect read_chapter_2
+
+!node 22_concluding_remarks
+!connect read_chapter_2
+
+!node 23_historical_perspective_further_reading
+!connect read_chapter_2
+
+!node 24_self_study
+!connect read_chapter_2
+
+!node 25_exercises
+!connect read_chapter_2
+
 !clear
+
+ns ../..
+
+ns +toc/03_arithmetic_for_computers
+
+!node 01_introduction
+!connect read_chapter_3
+
+!node 02_addition_subtraction
+!connect read_chapter_3
+
+!node 03_multiplication
+!connect read_chapter_3
+
+!node 04_division
+!connect read_chapter_3
+
+!node 05_floating_point
+!connect read_chapter_3
+
+!node 06_subword_parallelism
+ln 3.6: Parallelism and Computer Arithmetic: subword parallelism
+!connect read_chapter_3
+
+!node 07_streaming_SIMD_extensions_advanced_vector_extensions_x86
+!connect read_chapter_3
+
+!node 08_subword_parallelism_and_matrix_multiply
+!connect read_chapter_3
+
+!node 09_fallacies_and_pitfalls
+!connect read_chapter_3
+
+!node 10_concluding_remarks
+!connect read_chapter_3
+
+!node 11_historical_perspective_further_reading
+!connect read_chapter_3
+
+!node 12_self_study
+!connect read_chapter_3
+
+!node 13_exercises
+!connect read_chapter_3
+
+!clear
+ns ../..
+
+ns +toc/04_the_processor
+!node 01_introduction
+!connect read_chapter_4
+
+!node 02_logic_design_conventions
+!connect read_chapter_4
+
+!node 03_building_a_datapath
+!connect read_chapter_4
+
+!node 04_a_simple_implementation_scheme
+!connect read_chapter_4
+
+!node 05_a_multicycle_implementation
+!connect read_chapter_4
+
+!node 06_an_overview_of_pipelining
+!connect read_chapter_4
+
+!node 07_pipelined_datapath_and_control
+!connect read_chapter_4
+
+!node 08_forwarding_vs_stalling
+!connect read_chapter_4
+
+!node 09_control_hazards
+!connect read_chapter_4
+
+!node 10_exceptions
+!connect read_chapter_4
+
+!node 12_core_i7_core_a53
+ln Putting it all together: the Intel core i7 and
+ln the ARM Cortex A53
+!connect read_chapter_4
+
+!node 13_instruction_level_parallelism_and_matrix_multiply
+!connect read_chapter_4
+
+!node 14_intro_to_digital_design
+ln 4.14: Advanced topic: an introduction to digital design
+ln using a hardware design langauge to describe and model
+ln a pipeline and more pipelining instructions
+!connect read_chapter_4
+
+!node 15_fallacies_pitfalls
+!connect read_chapter_4
+
+!node 16_concluding_remarks
+!connect read_chapter_4
+
+!node 17_historical_perspective_and_further_reading
+!connect read_chapter_4
+
+!node 18_self_study
+!connect read_chapter_4
+
+!node 19_exercises
+!connect read_chapter_4
+
+!clear
+ns ../..
+
+ns +toc/05_large_and_fast_exploiting_memory_hierarchy
+!node 01_introduction
+!connect read_chapter_5
+
+!node 02_memory_technolgoies
+!connect read_chapter_5
+
+!node 03_basics_of_caches
+!connect read_chapter_5
+
+!node 04_measuring_improving_cache_performance
+!connect read_chapter_5
+
+!node 05_dependable_memory_hierarchy
+!connect read_chapter_5
+
+!node 06_virtual_nmachines
+!connect read_chapter_5
+
+!node 07_virtual_memory
+!connect read_chapter_5
+
+!node 08_common_framework_memory_hierarchy
+!connect read_chapter_5
+
+!node 09_finite_state_machine_simple_cache
+!connect read_chapter_5
+
+!node 10_cache_coherence
+!connect read_chapter_5
+
+!node 11_redundant_arrays_of_inexpensive_disks
+!connect read_chapter_5
+
+!node 12_implementing_cache_controllers
+!connect read_chapter_5
+
+!node 13_cortex_A8_core_i7_memory_hierarchies
+!connect read_chapter_5
+
+!node 14_cache_blocking_matrix_multiply
+!connect read_chapter_5
+
+!node 15_fallacies_pitfalls
+!connect read_chapter_5
+
+!node 16_concluding_remarks
+!connect read_chapter_5
+
+!node 17_historical_perspective_further_reading
+!connect read_chapter_5
+
+!node 18_self_study
+!connect read_chapter_5
+
+!node 19_exercises
+!connect read_chapter_5
+
+!clear
+ns ../..
+
+ns +toc/06_parallel_processors_client_to_cloud
+
+!node 01_introduction
+!connect read_chapter_6
+
+!node 02_difficulty_of_creating_parallel_processing_programs
+!connect read_chapter_6
+
+!node 03_SISD_MIMD_SIMD_SPMD_Vector
+!connect read_chapter_6
+
+!node 04_hardware_multithreading
+!connect read_chapter_6
+
+!node 05_multicore_other_shared_memory_processors
+!connect read_chapter_6
+
+!node 06_intro_to_graphics_processing_units
+!connect read_chapter_6
+
+!node 07_domain_specific_architectures
+!connect read_chapter_6
+
+!node 08_clusters_warehouse_scale_comptuers_other
+!connect read_chapter_6
+
+!node 09_intro_to_mlutiprocessor_network_topologies
+!connect read_chapter_6
+
+!node 10_cluster_networking
+!connect read_chapter_6
+
+!node 11_multiprocessor_benchmarks_performance_models
+!connect read_chapter_6
+
+!node 12_benchmarking_TPUv3_Volta_GPU
+!connect read_chapter_6
+
+!node 13_multiple_processors_and_matrix_multiply
+!connect read_chapter_6
+
+!node 14_fallacies_pitfalls
+!connect read_chapter_6
+
+!node 15_concluding_remarks
+!connect read_chapter_6
+
+!node 16_hsitorical_perspective_further_reading
+!connect read_chapter_6
+
+!node 17_self_study
+!connect read_chapter_6
+
+!node 18_exercises
+!connect read_chapter_6
+
 ns ../..

@@ -131,3 +131,5 @@ streams.
 ---
 Wrote a dumb little program to print a character and multiply
 some numbers, with some jump logic. Good enough for now.
+
+@15:25 COAD logging and tasks continued

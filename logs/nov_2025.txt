@@ -1,0 +1,111 @@
+@2025-11-01 Day 62
+@07:29 pre-coffee puttering, hack on buddy system #timelog:00:10:50
+#! dz %buddy_system
+
+@11:29 more buddy system #timelog:01:10:12
+#! dz $
+I think alloc() works now? Two mistakes made: had to be
+more explicit with what LOC(AVAIL[j]) was doing. I was
+using virtual pointers for everything, which made things
+interesting. There was also (x<-y<-z) notation used,
+which I thought would be intermediate assignments like
+"x = y, y = z", but I think it meant "set x = y = z".
+
+@15:46 onto block "liberation" #timelog:01:31:35
+#! dz $
+For the record, the last bug was found by claude. It was
+so subtle, only 1 line, I transcribed it wrong,
+and knowing me it probably saved me about an hour of debugging
+and careful checking.
+
+@17:23 what's next for this #timelog:00:06:52
+#! dz $
+I gotta adapt the algorithm to work with a 64-sized block.
+And, I gotta remove the gotos.
+---
+I've learned a few things writing this out. I've got things
+set up in a way the algorithm is broken down into core operations
+that I can re-implement without too much trouble. Then,
+I can re-use the rest of the bits.
+---
+I need a way to bootstrap the initial block, and permanently
+allocate a region of size 1 for the avail list, and a region
+of size 2 for the tags. Those should predictably appear
+in the first 3 words of the block. The temporary memory storying
+locations for the avail list and the tags can then be copied
+over to those memory locations, and the block can be used
+as-is for the remainder of the lifetime.
+---
+The avail list has quirky behavior. when m = 6 it's a bool,
+otherwise, it's an actual location. This logic needs to be
+abstracted away cleanly.
+
+@18:26 email from the prof: it's the "helo wrd" way #timelog:00:14:40
+#! dz csmet/cs342/hw7
+That makes it pretty easy.
+---
+Annnd we're done. Most of the time was spent just fighting
+Java the language (generics, str.equals instead of ==), but
+the algorithm was very simple.
+
+@20:57 buddy system initial refactoring #timelog:01:28:45
+#! dz %buddy_system
+I need to get this ready for my block system approach.
+---
+Some initial refactoring is done. I'm trying to pull out
+the tag and AVAIL list logic. I'm now at the point where
+I'm getting the AVAIL list reworked so it can be external.
+I think I've run into a small problem: I've assumed that
+the AVAIL list can fit into 32 bits, and I don't think
+that's true. I think each entry needs to be at least 12
+bits, not 6 bits because it needs LINKF/LINKB addresses.
+Also, I think I need 7 slots, not 6. So that's 84 bits,
+which can fit onto 3 words. So that's 5 words total instead
+of 3. So that's 58 words available, ~90% capacity self-contained.
+---
+I am hoping we don't need kval for this, otherwise that's
+another word required. Each entry becomes 15 bits of information,
+and that's 105 bits.
+---
+Alternatively, the state could be managed on another temp
+block, which can be returned after the memory is set. Ideally,
+I'll have enough flexibility to support both.
+
+@2025-11-02 Day 63
+@09:06 Logging in, some agenda cleanup and tweaks
+
+@09:27 double check and then submit hw assignment #timelog:00:08:19
+#! dz csmet/cs342/hw7
+
+@09:37 let's try to pass unit 3 of CY100 #timelog:00:33:54
+#! dz csmet/cy100
+I think the test is graded wrong. The question is "ECC is
+more efficient and suitable for environments with limited resources
+compared to RSA." I answered "true" because that's what the slides said,
+and I got it wrong.
+---
+The next question I got wrong was: "DSA is used exclusively for ___, not encryption".
+I put down "verification" and "authentication", and neither of
+those answers were correct.
+
+@10:11 follow-ups with professor #timelog:00:10:12
+#! dz csmet/cy100
+His slides are still quite wrong to the point where I need
+clarification.
+---
+I guess I'm going to be a stick in the mud now, huh?
+
+@10:56 shopping for courses, planning ahead #timelog:00:34:48
+#! dz csmet/news
+Spring is another part time course. Next year will be all
+full time, and the bulk of the price. On the order of about
+87 percent of the tuition will be in fall 2026 and spring
+2027. So this means, if I needed to, I could get out fairly
+unscathed and pivot, without too much harm done other than
+my sacrifice of leaving new york city and a year of time.
+---
+I'm getting the sense that I'm going to have to fight a
+little bit if I'm going to stay in good academic standing
+with this program. I don't know if it's worth the trouble.
+I'm thinking about alternative options. Gonna have to start
+talking to people.

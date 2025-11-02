@@ -136,3 +136,5 @@ some numbers, with some jump logic. Good enough for now.
 #! dz coad/toc
 Added it to the reading list. It might be too much, we'll
 see.
+
+@17:00 scanning, cropping, binning #archiving #timelog:00:28:40

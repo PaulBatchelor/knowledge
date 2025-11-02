@@ -109,3 +109,25 @@ little bit if I'm going to stay in good academic standing
 with this program. I don't know if it's worth the trouble.
 I'm thinking about alternative options. Gonna have to start
 talking to people.
+
+@13:43 initial exploration #timelog:00:39:19
+#! dz %sonilo/tasks/ilo_interpreter
+I think this is mainly about adapting the existing ilo
+byte code interpreter and pali assembler as much as possible.
+---
+The VM code seems like it'll mostly do the trick. I'll
+probably want to simplify it a bit. I do not need or want
+disk I/O so the blocks file should be optional.
+---
+pali seems to be a system mostly designed to produce a singular
+ilo.rom file. I'm wondering if I could adapt the TAL
+assembler to work with ILO opcodes instead of Uxn.
+---
+hang on, my 1-line test program works with pali. I might
+be able to work with this in the very short-term.
+---
+At some point, I'll need more of an API for reading ILO
+streams.
+---
+Wrote a dumb little program to print a character and multiply
+some numbers, with some jump logic. Good enough for now.

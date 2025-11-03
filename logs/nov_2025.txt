@@ -145,3 +145,27 @@ I flipped around the ordering of LINKF,LINKB,and KVAL
 so that LINKF and LINKB are in the lower bits. My hope is
 that the AVAIL table only needs those two values, and
 I can just re-use the linkf/linkb routines.
+
+@20:15 back to it #timelog:01:49:33
+#! dz $
+It's a lot of work to cram this all in one block, especially
+considering that there will be some kind of wasted space.
+Having a temporary block for bookkeeping seems like the
+best option.
+---
+6 words will be needed (rounded up to 8, who knows
+this temp block could be broken off from another buddy system).
+---
+4 words are needed for the AVAIL list. the LINKF/LINKB entries
+will be pointers for a 6-bit address space with an extra bit
+to indicate addresses on the temporary block. Each entry is
+14 bits, that's 2 bits a word with padding, 4 words to get
+7 entries.
+---
+tags will need 64 bits, so that's the remaining 2 words.
+---
+I've created availf/b v2 functions. They seem to work in
+isolation, but when I put them in the program, it causes
+an infinite loop to happen when the checksums. I'm guessing
+it's some kind of addressing issue. I'll have to give it a look
+another time.

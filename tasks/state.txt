@@ -60,9 +60,9 @@ dmoi/toc/04_sequences:71:TODO:2
 dmoi/toc/05_discrete_structures_revisited:73:TODO:2
 dmoi/toc/06_additional_topics:75:TODO:2
 dmoi/toc:77:TODO:2
-coad/toc/01_computer_abstractions_and_technology/01_introduction:0:TODO:4
-coad/toc/01_computer_abstractions_and_technology/02_seven_great_ideas_computer_architecture:1:TODO:4
-coad/toc/01_computer_abstractions_and_technology/03_below_your_program:3:TODO:4
+coad/toc/01_computer_abstractions_and_technology/01_introduction:0:DONE:4
+coad/toc/01_computer_abstractions_and_technology/02_seven_great_ideas_computer_architecture:1:DONE:4
+coad/toc/01_computer_abstractions_and_technology/03_below_your_program:3:DONE:4
 coad/toc/01_computer_abstractions_and_technology/04_under_the_covers:5:TODO:4
 coad/toc/01_computer_abstractions_and_technology/05_tech_for_building_processors_and_memory:6:TODO:4
 coad/toc/01_computer_abstractions_and_technology/06_performance:8:TODO:4

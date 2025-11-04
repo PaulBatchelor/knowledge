@@ -169,3 +169,6 @@ isolation, but when I put them in the program, it causes
 an infinite loop to happen when the checksums. I'm guessing
 it's some kind of addressing issue. I'll have to give it a look
 another time.
+
+@2025-11-03 Day 64. Happy birthday to me.
+@14:14 attempting to settle in

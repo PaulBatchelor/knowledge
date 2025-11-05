@@ -179,3 +179,50 @@ another time.
 @18:00 cs342 #timelog:02:45:00
 
 @2025-11-04 Day 65
+@15:10 CY100 4.1: error detecting and message digest
+
+@17:03 1.3 Rules of logic #timelog:00:47:54
+#! dz dmoi/toc/01_logic_and_proofs/03_rules_of_logic
+
+@2025-11-05 Day 66
+@09:49 Update logs #timelog:00:01:31
+
+@09:50 more buddy system #timelog:00:45:51
+#! dz thoughts/projects/sonilo/tasks/buddy_system
+Last time, I got some initial availf/availb v2 logic coded up,
+which allows the avail list to be external. However,
+when I coded it up, the program got caught in a loop.
+I think it was where the traversal logic happened.
+---
+The checksums are wrong as well, so I'm overlooking something.
+---
+I'm writing a test program for AVAILF/AVAILB to see if
+there are differents in output.
+---
+It looks like AVAILF is not being set properly. It doesn't
+seem to be being set at all. It is being initialized correctly.
+It's only after allocating a block that the AVAILF fields
+start to misalign.
+---
+To be continued...
+
+@16:55 AVAIL investigations continued #timelog:00:31:59
+#! dz thoughts/projects/sonilo/tasks/buddy_system
+In the first allocation AVAILF(k) is supposed to be set to
+be 70, but it never seems to be set, staying at 0. The availf
+never explicitly sets itself to be 70. So linkf is making
+that call I think.
+---
+I'm starting to see the issues. This new system needs
+to create an abstraction for converting virtual memory
+addresses into actual memory addresses. This algorithm
+currently assumes AVAIL is contiguously after the block
+(0-63 are the block address, 64-70 are the AVAIL entries).
+---
+I'm thinking of going back to one word to one entry. Space
+is not an issue anymore because it's only temporarily
+allocated. Then, there needs to be some kind of virtual
+to physical memory resolver. So, anything that is between
+0-63 gets an address from the block, anything greater than
+that gets an address from the temp block. I think if we
+do that, it's going to get much simpler.

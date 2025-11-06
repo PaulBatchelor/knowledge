@@ -25,7 +25,7 @@ thoughts/projects/sonilo/tasks/singing_voices_in_a_room:64:TODO:1
 thoughts/projects/sonilo/tasks/meaningful_sounds:67:TODO:1
 dmoi/toc/01_logic_and_proofs/01_mathematic_statements:0:DONE:2
 dmoi/toc/01_logic_and_proofs/02_implications:2:DONE:2
-dmoi/toc/01_logic_and_proofs/03_rules_of_logic:4:TODO:2
+dmoi/toc/01_logic_and_proofs/03_rules_of_logic:4:DONE:2
 dmoi/toc/01_logic_and_proofs/04_proofs:6:TODO:2
 dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures:8:TODO:2
 dmoi/toc/01_logic_and_proofs:10:TODO:2
@@ -63,8 +63,8 @@ dmoi/toc:77:TODO:2
 coad/toc/01_computer_abstractions_and_technology/01_introduction:0:DONE:4
 coad/toc/01_computer_abstractions_and_technology/02_seven_great_ideas_computer_architecture:1:DONE:4
 coad/toc/01_computer_abstractions_and_technology/03_below_your_program:3:DONE:4
-coad/toc/01_computer_abstractions_and_technology/04_under_the_covers:5:TODO:4
-coad/toc/01_computer_abstractions_and_technology/05_tech_for_building_processors_and_memory:6:TODO:4
+coad/toc/01_computer_abstractions_and_technology/04_under_the_covers:5:DONE:4
+coad/toc/01_computer_abstractions_and_technology/05_tech_for_building_processors_and_memory:6:DONE:4
 coad/toc/01_computer_abstractions_and_technology/06_performance:8:TODO:4
 coad/toc/01_computer_abstractions_and_technology/07_the_power_wall:10:TODO:4
 coad/toc/01_computer_abstractions_and_technology/08_the_sea_change:11:TODO:4

@@ -285,3 +285,13 @@ weirdly the papers got wet, but there was no water damage.
 
 @13:10 hw8 problem 2 initial work #timelog:00:26:00
 #! dz $
+
+@2025-11-08 Day 69
+@11:36 transfer cs342 slides to remarkable, also print code? #timelog:00:16:12
+#! dz csmet/cs342/hw8
+I just want to study this outside of my computer area.
+---
+Learned about "enscript"
+===
+enscript -p - Graph.java | ps2pdf - Graph.pdf
+===

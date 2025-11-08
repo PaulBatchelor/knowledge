@@ -295,3 +295,19 @@ Learned about "enscript"
 ===
 enscript -p - Graph.java | ps2pdf - Graph.pdf
 ===
+
+@13:39 fill in problems in lecture notes #timelog:00:34:12
+#! dz csmet/cs248
+
+@14:06 work out problem 2 on ink #timelog:00:34:12
+#! dz csmet/cs342/hw8
+
+@15:12 initial attempt implementing problem 2 #timelog:00:03:00
+#! dz csmet/cs342/hw8
+I think I got it? I think it was basically the same as the
+directed graph, but just an extra check for the parent.
+Copy pasted most of it.
+
+@15:21 looking into problem 1 now #timelog:00:21:17
+#! dz $
+Seems to work. I'll double check this later.

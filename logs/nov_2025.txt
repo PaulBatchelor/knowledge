@@ -236,7 +236,7 @@ do that, it's going to get much simpler.
 @20:30 COAD 1.4 #timelog:00:47:43
 #! dz coad/toc/01_computer_abstractions_and_technology/04_under_the_covers
 
-@2025-11-06
+@2025-11-06 Day 67
 @09:45 CY100 4.2 Hash Algorithms
 #! dz csmet/cy100
 
@@ -251,5 +251,37 @@ do that, it's going to get much simpler.
 
 @14:38 4.3 data integrity protection #timelog:00:22:50
 #! dz csmet/cy100
-
 @15:05 logging #timelog:00:08:50
+
+@18:00 cs248 #bumet #timelog:02:45:00
+This class was boring, not terrifying. So, an improvement.
+At this point, I'm thinking about my other options.
+
+@2025-11-07 Day 68
+@11:44 cs342 hw scoping #timelog:00:10:00
+#! dz csmet/cs342/hw8
+I glanced at this once, I'm going to look at it again.
+---
+2 problems
+---
+problem 1: use BFS to see if there is a path from source
+to target in a graph.
+---
+problem 2: check to see if there is a cycle in an undirected
+graph using Depth-First Search algorithm
+---
+Okay, might need to think on these. I only know kahn's algorithm
+for cycle detection, but there was another way in class that
+I'll need to review. BFS path/source doesn't seem too bad.
+I think it's mostly about bookkeeping and using the right
+data structure (queue instead of stack).
+
+@12:49 cs342 hw8 initial work. interrupted. #timelog:00:04:13
+#! dz $
+My water bottle opened in my bag. My leather taschenbegleiter
+is damaged. Shoot. Hopefully the damage isn't permanent.
+---
+weirdly the papers got wet, but there was no water damage.
+
+@13:10 hw8 problem 2 initial work #timelog:00:26:00
+#! dz $

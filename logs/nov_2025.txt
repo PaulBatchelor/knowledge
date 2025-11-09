@@ -395,7 +395,7 @@ information, then apply any updates to the fields. It's
 done this way because the ordering is important (handled
 externally by tsort).
 
-@11:35 I think it might be worth adding a "sort"
+@11:35 I think it might be worth adding a "sort" #timelog:00:14:40
 This will make it so the "state" file has less shuffling.
 ---
 Added a "garbage collect" function that removes things

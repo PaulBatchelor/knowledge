@@ -94,3 +94,5 @@ co ?realtime_audio ?hotswapping
 co ?offline_patch ?realtime_audio
 co ?initial_dsp ?offline_patch
 co ?mem ?konilo_sonilo_communication
+nn tasks/sonilo_command_language
+co $ ?konilo_sonilo_communication

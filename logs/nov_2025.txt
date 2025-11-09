@@ -341,3 +341,43 @@ We are approaching the 10% mark of the 730 day plan.
 #! dz dmoi/toc/01_logic_and_proofs/04_proofs
 
 @10:13 Logging #timelog:00:07:31
+
+@10:21 quick words about konilo-sonilo communication #timelog:00:19:24
+#!  thoughts/projects/sonilo/tasks/konilo_sonilo_communication
+This has popped up in my agenda, but I am behind because
+of the buddy memory allocator. To keep momentum going, I'm
+going to write down what I'm thinking about today.
+---
+I'm not 100% sold on using Konilo. I am a bit more
+committed to using Ilo.
+---
+Communication, sonilo or otherwise, is going to boil down
+to being a serial communication format. In Konilo, this would
+be done using IO commands.
+---
+My initial thinking with using Konilo was that since both
+systems used Ilo, there could be some convenience there.
+It also seemed like Konilo had a pretty good self-contained
+ecosystem in place already as an editor. The interactive
+aspect of a Forth also seems in line with the aspect of
+composing music.
+---
+So, developing a serial command language is going to be
+more important than hooking things up to Konilo. It would
+make sense to focus on this more, than actually hooking
+it up to Konilo. Actually, it's a prerequisite. By the time
+things are ready to actual integrate with Konilo, the serial
+command language should already be in place.
+---
+Working on this task should mostly be about working with
+the ergonomics of the Konilo ecosystem and making it work
+with Sonilo command language.
+---
+I am developing a new task now.
+---
+Well, I've made a new task, but I think I need code in functionality
+to re-import tasks into a grouped schedule.
+
+@10:47 scheduler adjustments: add a "delete".
+Select a group. Mark all selected items as "DELETED", import
+the schedule again. Save.

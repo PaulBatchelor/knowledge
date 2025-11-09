@@ -14,3 +14,4 @@ is: import a schedule (appends to existing schedule)
 f: set default save file
 w: save schedule (similar to ss, but can be blank)
 up: update task list. (simlar to is, but checks for existing data first)
+sr: sort task list by group

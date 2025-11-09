@@ -378,7 +378,7 @@ I am developing a new task now.
 Well, I've made a new task, but I think I need code in functionality
 to re-import tasks into a grouped schedule.
 
-@10:47 scheduler adjustments: add a "delete".
+@10:47 scheduler adjustments: update #timelog:00:50:39
 Select a group. Mark all selected items as "DELETED", import
 the schedule again. Save.
 ---
@@ -394,3 +394,6 @@ check to see for existing node by that name, copy that
 information, then apply any updates to the fields. It's
 done this way because the ordering is important (handled
 externally by tsort).
+
+@11:35 I think it might be worth adding a "sort"
+This will make it so the "state" file has less shuffling.

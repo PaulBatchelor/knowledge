@@ -296,6 +296,8 @@ impl State {
             if args.len() >= 2 {
                 self.update(args[1]);
             }
+        } else if *cmd == "sr" {
+            self.tasksort();
         }
     }
 
@@ -366,6 +368,10 @@ impl State {
             self.mark_deleted(id);
             self.append_task(task);
         }
+    }
+
+    pub fn tasksort(&mut self) {
+        self.tasks.sort_by_key(|t| t.group);
     }
 }
 

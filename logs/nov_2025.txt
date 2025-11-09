@@ -312,6 +312,9 @@ Copy pasted most of it.
 #! dz $
 Seems to work. I'll double check this later.
 
+@20:47 1.6 Performance #timelog:00:49:58
+#! dz coad/toc/01_computer_abstractions_and_technology/06_performance
+
 @21:43 yup, buddy system #timelog:00:33:12
 #! dz thoughts/projects/sonilo/tasks/buddy_system
 I got the v2 system to match! Now to see if it lines up
@@ -330,3 +333,11 @@ I should probably also simulate the memory of sonilo by
 using 2 blocks (2*64 = 128 words) of pre-allocated memory.
 ---
 progress is slow, but it is still progress.
+
+@2025-11-09 Day 70
+We are approaching the 10% mark of the 730 day plan.
+
+@09:08 DMOI 1.4 #timelog:00:48:30
+#! dz dmoi/toc/01_logic_and_proofs/04_proofs
+
+@10:13 Logging

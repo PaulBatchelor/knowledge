@@ -26,7 +26,7 @@ thoughts/projects/sonilo/tasks/meaningful_sounds:67:TODO:1
 dmoi/toc/01_logic_and_proofs/01_mathematic_statements:0:DONE:2
 dmoi/toc/01_logic_and_proofs/02_implications:2:DONE:2
 dmoi/toc/01_logic_and_proofs/03_rules_of_logic:4:DONE:2
-dmoi/toc/01_logic_and_proofs/04_proofs:6:TODO:2
+dmoi/toc/01_logic_and_proofs/04_proofs:6:DONE:2
 dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures:8:TODO:2
 dmoi/toc/01_logic_and_proofs:10:TODO:2
 dmoi/toc/05_discrete_structures_revisited/02_functions:12:TODO:2

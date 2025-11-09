@@ -1,0 +1,25 @@
+Steps for importing:
+
+1. Scan images into "ink", using scan.sh utility.
+
+2. Crop images in Gimp, save as ABC.jpg, where ABC is the
+unique alphanumeric ID.
+
+3. Verify that all the scans are correct.
+
+4. Copy files into into ink/YYYY folder.
+
+5. Add new entries to bins.txt. `fossil extras . | feh -. -Z`
+works pretty well for browsing.
+
+6. Run the generate.sh script in this folder.
+
+7. Verify that it all works (gendb).
+
+8. commit inks.
+
+9. commit to this repo
+
+10. Update book tex files: books/generate.sh
+
+11. Optionally, render the books: books/render.sh

@@ -2,3 +2,5 @@ cs248:csmet/cs248%
 thoughts:thoughts%
 cs342:csmet/cs342%
 cy100:csmet/cy100%
+dmoi:dmoi%
+coad:coad%

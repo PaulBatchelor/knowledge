@@ -513,3 +513,4 @@ co 17_self_study $
 co ?tasks/META/read_chapter_6_start $
 co $ ?tasks/META/read_chapter_6_end
 ns ../..
+nn ink

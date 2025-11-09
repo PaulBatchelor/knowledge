@@ -1,0 +1,25 @@
+\pdfoutput=1
+\input graphicx
+\def\imgbox#1{
+\null
+\vfill
+\centerline{
+    \vbox{%
+        \hrule height 1pt
+        \hbox{%
+            \vrule width 1pt
+            \includegraphics[width=130mm]{ink/#1}%
+            \vrule width 1pt
+        }%
+        \hrule height 1pt
+    }
+}
+\vfill\break
+}
+\imgbox{2025/03H.jpg}
+\imgbox{2025/03I.jpg}
+\imgbox{2025/03J.jpg}
+\imgbox{2025/03Z.jpg}
+\imgbox{2025/04L.jpg}
+\imgbox{2025/04U.jpg}
+\bye

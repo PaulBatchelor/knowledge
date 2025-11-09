@@ -343,7 +343,7 @@ We are approaching the 10% mark of the 730 day plan.
 @10:13 Logging #timelog:00:07:31
 
 @10:21 quick words about konilo-sonilo communication #timelog:00:19:24
-#!  thoughts/projects/sonilo/tasks/konilo_sonilo_communication
+#! dz thoughts/projects/sonilo/tasks/konilo_sonilo_communication
 This has popped up in my agenda, but I am behind because
 of the buddy memory allocator. To keep momentum going, I'm
 going to write down what I'm thinking about today.
@@ -412,3 +412,10 @@ group, update, garbage collect, distribute, sort, save.
 
 @13:46 print unit 5 to pdef #timelog:00:05:25
 #! dz csmet/cy100
+
+@15:01 scanning, cropping, binning #archiving #timelog:00:33:49
+I've documented this process in ink/README
+
+@15:35 New books! COAD, DMOI
+#! dz coad/news
+#! dz dmoi/news

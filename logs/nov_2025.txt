@@ -424,3 +424,11 @@ I've documented this process in ink/README
 #! dz dmoi/news
 
 #15:59 oops forgot to log the times for today's scanned inks #timelog:00:02:57
+
+@18:02 refactoring sonilo buddy system to use virtual pointers #timelog:00:19:50
+This will make it one step closer towards being compatible
+with the Sonilo memory model.
+---
+So close to being done. I need the pointers themselves to
+be in the memory. From there, I'll need to be able to create
+new functions that work with the chunk of memory directly.

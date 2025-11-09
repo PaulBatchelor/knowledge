@@ -340,4 +340,4 @@ We are approaching the 10% mark of the 730 day plan.
 @09:08 DMOI 1.4 #timelog:00:48:30
 #! dz dmoi/toc/01_logic_and_proofs/04_proofs
 
-@10:13 Logging
+@10:13 Logging #timelog:00:07:31

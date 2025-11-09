@@ -311,3 +311,22 @@ Copy pasted most of it.
 @15:21 looking into problem 1 now #timelog:00:21:17
 #! dz $
 Seems to work. I'll double check this later.
+
+@21:43 yup, buddy system #timelog:00:33:12
+#! dz thoughts/projects/sonilo/tasks/buddy_system
+I got the v2 system to match! Now to see if it lines up
+with the first test I made.
+---
+Yup, it works now.
+---
+What is going to happen next is, I need to refactor this
+to use an external block of memory. If TAGS and AVAIL
+are lumped together, that's 9 words in a 16 word block (rounded up).
+If TAGS and AVAIL are two separate blocks, that's 2 words (TAGS, 2 words),
+and 8 words (AVAIL, 7 words). So, I'm going to allocate
+AVAIL and TAGS separately in my buddy system.
+---
+I should probably also simulate the memory of sonilo by
+using 2 blocks (2*64 = 128 words) of pre-allocated memory.
+---
+progress is slow, but it is still progress.

@@ -1,6 +1,7 @@
 TRAVERSE=../../tools/traverse/traverse
 CONNECTIONS=../../tools/traverse/connections.awk
-DB=../../a.db
+#DB=../../a.db
+DB=a.db
 TOP_NODE=thoughts/projects/sonilo/tasks/meaningful_sounds
 OUT=tasks.txt
 

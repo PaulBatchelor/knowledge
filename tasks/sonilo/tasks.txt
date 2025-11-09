@@ -1,5 +1,6 @@
 thoughts/projects/sonilo/tasks/buddy_system
 thoughts/projects/sonilo/tasks/ilo_interpreter
+thoughts/projects/sonilo/tasks/sonilo_command_language
 thoughts/projects/sonilo/tasks/mem
 thoughts/projects/sonilo/tasks/konilo_sonilo_communication
 thoughts/projects/sonilo/tasks/phasor

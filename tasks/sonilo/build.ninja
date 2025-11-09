@@ -2,7 +2,10 @@ rule sh
     command = sh $in
 rule rustc
     command = rustc $in
+rule dz
+    command = >a.db ; dagzet $in | sqlite3 $out
 
-build tasks.txt: sh sonilo.sh
-build schedule.txt: sh distribute.sh | distribute.awk tasks.txt
-build run: rustc run.rs
+build a.db: dz ../../dz/thoughts/sonilo.dz
+build tasks.txt: sh sonilo.sh | a.db
+# build schedule.txt: sh distribute.sh | distribute.awk tasks.txt
+# build run: rustc run.rs

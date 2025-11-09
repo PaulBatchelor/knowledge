@@ -413,9 +413,14 @@ group, update, garbage collect, distribute, sort, save.
 @13:46 print unit 5 to pdef #timelog:00:05:25
 #! dz csmet/cy100
 
+@14:15 1.5 proofs about discrete structures #timelog:00:39:33
+#! dz dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures
+
 @15:01 scanning, cropping, binning #archiving #timelog:00:33:49
 I've documented this process in ink/README
 
 @15:35 New books! COAD, DMOI
 #! dz coad/news
 #! dz dmoi/news
+
+#15:59 oops forgot to log the times for today's scanned inks #timelog:00:02:57

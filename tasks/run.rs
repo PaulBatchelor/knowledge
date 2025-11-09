@@ -5,10 +5,11 @@ use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
 
-#[allow(dead_code)]
+#[derive(Clone)]
 enum TaskState {
     TODO,
     DONE,
+    DELETED,
 }
 
 impl Default for TaskState {
@@ -22,6 +23,7 @@ impl From<&TaskState> for String {
         match x {
             TaskState::TODO => return "TODO".to_string(),
             TaskState::DONE => return "DONE".to_string(),
+            TaskState::DELETED => return "DELETED".to_string(),
         }
     }
 }
@@ -32,6 +34,8 @@ impl From<&str> for TaskState {
             return TaskState::TODO;
         } else if s == "DONE" {
             return TaskState::DONE;
+        } else if s == "DELETED" {
+            return TaskState::DELETED;
         }
         TaskState::TODO
     }
@@ -48,6 +52,9 @@ struct Task {
 
 impl Task {
     pub fn active(&self, group: u64) -> bool {
+        if matches!(self.state, TaskState::DELETED) {
+            return false;
+        }
         group == 0 || (self.group & group) > 0
     }
 }
@@ -77,13 +84,19 @@ impl State {
 
         for line in reader.lines() {
             match line {
-                Ok(line) => self.parse_entry(&line),
+                Ok(line) => self.parse_and_append_entry(&line),
                 Err(_) => continue,
             };
         }
     }
 
-    fn parse_entry(&mut self, line: &str) {
+    fn parse_and_append_entry(&mut self, line: &str)
+    {
+        let task = self.parse_entry(line);
+        self.tasks.push(task);
+    }
+
+    fn parse_entry(&self, line: &str) -> Task {
         let fields: Vec<_> = line.split(":").collect();
         let path = fields[0].to_string();
         let state = if fields.len() >= 3 {
@@ -104,13 +117,12 @@ impl State {
             self.group
         };
 
-        let task = Task {
+        Task {
             path,
             day,
             state,
             group,
-        };
-        self.tasks.push(task);
+        }
     }
 
     fn load_schedule(&mut self, filename: Option<&str>) {
@@ -135,7 +147,7 @@ impl State {
         self.tasks = Vec::new();
         for line in reader.lines() {
             match line {
-                Ok(line) => self.parse_entry(&line),
+                Ok(line) => self.parse_and_append_entry(&line),
                 Err(_) => continue,
             };
         }
@@ -161,6 +173,7 @@ impl State {
         };
 
         for task in &self.tasks {
+            if matches!(task.state, TaskState::DELETED) { continue };
             let state: String = (&task.state).into();
             let _ = write!(
                 buffer,
@@ -279,6 +292,10 @@ impl State {
             if let Some(statefile) = &self.statefile {
                 self.save_schedule(statefile);
             }
+        } else if *cmd == "up" {
+            if args.len() >= 2 {
+                self.update(args[1]);
+            }
         }
     }
 
@@ -286,7 +303,7 @@ impl State {
         let mut ntasks = 0;
 
         for task in &self.tasks {
-            if (task.group & self.group) > 0 || self.group == 0 {
+            if task.active(self.group) {
                 ntasks += 1;
             }
         }
@@ -296,10 +313,58 @@ impl State {
         let mut n = 0;
 
         for task in &mut self.tasks {
-            if (task.group & self.group) > 0 || self.group == 0 {
+            if task.active(self.group) {
                 task.day = (n as f32 * spread) as usize;
                 n += 1;
             }
+        }
+    }
+
+    fn find_existing_task(&self, path: &str) -> (usize, Option<&Task>) {
+        for (id, task) in self.tasks.iter().enumerate() {
+            if task.path == path {
+                return (id, Some(task))
+            }
+        }
+        (0, None)
+    }
+
+    pub fn mark_deleted(&mut self, id: usize) {
+        self.tasks[id].state = TaskState::DELETED;
+    }
+
+    pub fn append_task(&mut self, task: Task) {
+        self.tasks.push(task);
+    }
+
+    pub fn update(&mut self, filename: &str) {
+        let f = match File::open(filename) {
+            Ok(f) => f,
+            Err(_) => {
+                println!("Could not load file.");
+                return;
+            }
+        };
+
+        let reader = BufReader::new(f);
+
+        for line in reader.lines() {
+            let mut task = match line {
+                Ok(line) => self.parse_entry(&line),
+                Err(_) => continue,
+            };
+
+            let (id, existing) = self.find_existing_task(&task.path);
+
+            if let Some(existing) = existing {
+                // existing task clobbers any imported data
+                task.day = existing.day;
+                task.state = existing.state.clone();
+                task.group = existing.group;
+            }
+
+            self.mark_deleted(id);
+            self.append_task(task);
         }
     }
 }

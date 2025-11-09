@@ -381,3 +381,16 @@ to re-import tasks into a grouped schedule.
 @10:47 scheduler adjustments: add a "delete".
 Select a group. Mark all selected items as "DELETED", import
 the schedule again. Save.
+---
+Well, that doesn't work as well as I expected. when you mark
+for full deletion, you lose all the state that goes with it.
+So if you have 99 out of 100 tasks done and you delete and
+reload, all those 99 tasks get marked as TODO by default.
+---
+It needs to be an "update" operation, but make it work
+append-only because it's simpler. Internally, it will work
+like "import" which appends to schedules, but, it will
+check to see for existing node by that name, copy that
+information, then apply any updates to the fields. It's
+done this way because the ordering is important (handled
+externally by tsort).

@@ -397,3 +397,9 @@ externally by tsort).
 
 @11:35 I think it might be worth adding a "sort"
 This will make it so the "state" file has less shuffling.
+---
+Added a "garbage collect" function that removes things
+marked for deletion in the task list.
+---
+Now, the procedure is like this: load everything, select
+group, update, garbage collect, distribute, sort, save.

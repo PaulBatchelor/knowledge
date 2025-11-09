@@ -41,7 +41,7 @@ impl From<&str> for TaskState {
     }
 }
 
-#[derive(Default)]
+#[derive(Default, Clone)]
 #[allow(dead_code)]
 struct Task {
     path: String,
@@ -298,6 +298,8 @@ impl State {
             }
         } else if *cmd == "sr" {
             self.tasksort();
+        } else if *cmd == "gc" {
+            self.garbage();
         }
     }
 
@@ -372,6 +374,10 @@ impl State {
 
     pub fn tasksort(&mut self) {
         self.tasks.sort_by_key(|t| t.group);
+    }
+
+    pub fn garbage(&mut self) {
+        self.tasks.retain(|t| !matches!(t.state, TaskState::DELETED))
     }
 }
 

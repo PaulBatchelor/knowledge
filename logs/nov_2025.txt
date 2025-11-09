@@ -403,3 +403,12 @@ marked for deletion in the task list.
 ---
 Now, the procedure is like this: load everything, select
 group, update, garbage collect, distribute, sort, save.
+
+@13:14 double check problems, and then submit #timelog:00:06:44
+#! dz csmet/cs342/hw8
+
+@13:21 complete unit 4 test #timelog:00:22:31
+#! dz csmet/cy100
+
+@13:46 print unit 5 to pdef #timelog:00:05:25
+#! dz csmet/cy100

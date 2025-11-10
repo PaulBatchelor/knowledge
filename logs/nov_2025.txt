@@ -437,3 +437,6 @@ new functions that work with the chunk of memory directly.
 @18:26 wrap in the virtual pointers into the memory block #timelog:00:43:13
 #! dz thoughts/projects/sonilo/tasks/buddy_system
 To be continued...
+
+@21:00 ...continued #timelog:00:47:03
+#! dz $

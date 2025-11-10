@@ -11,7 +11,7 @@ ln Chapter 1: computer abstractions and technology
 nn toc/02_instructions_language_of_the_computer
 ln Chapter 2: Instructions; the language of the computer
 
-ln toc/03_arithmetic_for_computers
+nn toc/03_arithmetic_for_computers
 ln Chapter 3: Arithmetic For Computers
 
 nn toc/04_the_processor

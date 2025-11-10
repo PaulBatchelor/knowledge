@@ -443,8 +443,16 @@ To be continued...
 
 @2025-11-10 Day 71
 @09:50 CY100 5.1 #timelog:01:28:30
-@12:17 DMOI 1.5 #timelog:50:53
-@14:20 DMOI 1.5 continued #timelog:05:37
+#! dz csmet/cy100
+
+@12:17 DMOI 1.5 #timelog:00:50:53
+#! dz dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures
+
+@14:20 DMOI 1.5 continued #timelog:00:05:37
+#! dz $
+
 @14:30 COAD 1.7 #timelog:00:37:54
+#! dz coad/toc/01_computer_abstractions_and_technology/07_the_power_wall
 @15:07 COAD 1.7 #timelog:00:23:43
+
 @16:06 logging for today, task completion #timelog:00:02:59

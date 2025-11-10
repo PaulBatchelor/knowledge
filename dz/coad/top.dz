@@ -7,7 +7,7 @@ nn toc/01_computer_abstractions_and_technology
 ln Chapter 1: computer abstractions and technology
 nn toc/02_instructions_language_of_the_computer
 ln Chapter 2: Instructions; the language of the computer
-ln toc/03_arithmetic_for_computers
+nn toc/03_arithmetic_for_computers
 ln Chapter 3: Arithmetic For Computers
 nn toc/04_the_processor
 ln Chapter 4: The Processor
@@ -513,4 +513,3 @@ co 17_self_study $
 co ?tasks/META/read_chapter_6_start $
 co $ ?tasks/META/read_chapter_6_end
 ns ../..
-nn ink

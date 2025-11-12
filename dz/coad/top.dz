@@ -2,6 +2,7 @@ ns coad
 gr Computer Organization and Design, sixth edition, MIPS
 gr by David A. Patterson and John L Hennessy
 nn news
+nn ink
 nn toc
 nn toc/01_computer_abstractions_and_technology
 ln Chapter 1: computer abstractions and technology
@@ -11,9 +12,9 @@ nn toc/03_arithmetic_for_computers
 ln Chapter 3: Arithmetic For Computers
 nn toc/04_the_processor
 ln Chapter 4: The Processor
-ln toc/05_large_and_fast_exploiting_memory_hierarchy
+nn toc/05_large_and_fast_exploiting_memory_hierarchy
 ln Chapter 5: Large and Fast: exploting memory hierarchy
-ln toc/06_parallel_processors_client_to_cloud
+nn toc/06_parallel_processors_client_to_cloud
 ln Chapter 6: parallel processors from client to cloud
 nn tasks
 nn tasks/META/read_the_book

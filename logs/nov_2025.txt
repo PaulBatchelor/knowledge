@@ -456,3 +456,30 @@ To be continued...
 @15:07 COAD 1.7 #timelog:00:23:43
 
 @16:06 logging for today, task completion #timelog:00:02:59
+
+@18:00 cs342 lecture #timelog:02:45:00 #bumet
+
+@2025-11-11 Day 72. Mt Auburn cemetary
+Highlight of this day: finding a hawk during a walk
+around mt. auburn cemetary. Got a great shot of it on a
+cross.
+
+@13:48 CY100 5.2 #timelog:00:18:52
+#! dz csmet/cy100
+
+@14:17 COAD 1.8 #timelog:00:27:52
+#! dz coad/toc/01_computer_abstractions_and_technology/08_the_sea_change
+
+@15:35 CY100 6.2 #timelog:00:30:31
+
+@16:50 sonilo: serial protocol concepts, penciling #timelog:00:19:47 #ink:052
+#! dz thoughts/projects/sonilo/tasks/konilo_sonilo_communication
+
+@20:25 sonilo: serial protocol concepts, inking #timelog:00:25:33 #ink:052
+#! dz thoughts/projects/sonilo/tasks/konilo_sonilo_communication
+
+@21:12 DMOI 1.5 #timelog:01:05:56
+#! dz dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures
+
+@2025-11-12 Day 73
+@08:57 updating logs and tasks #timelog:00:10:29

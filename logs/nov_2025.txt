@@ -483,3 +483,17 @@ cross.
 
 @2025-11-12 Day 73
 @08:57 updating logs and tasks #timelog:00:10:29
+
+@09:09 trying to get grafx2 to compile on my alpine box #timelog:00:25:09
+Lots of packaging woes and makefile debugging. Needed
+to install lua, and manually specify SDL2 with "API=sdl2".
+---
+it's looking for something called "tiffio" no idea what
+that is.
+---
+"tiffio.h" is libtiff, or tiff-dev.
+---
+it builds and runs! 'q' is quit
+
+@10:22 the xp-pen drawing tablet could maybe work with grafx2?
+it's a better motion than the mouse

@@ -497,3 +497,136 @@ it builds and runs! 'q' is quit
 
 @10:22 the xp-pen drawing tablet could maybe work with grafx2?
 it's a better motion than the mouse
+
+@11:20 CS-248 chapter 4 review #timelog:00:47:05
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+
+@13:17 more chapter 4 review #timelog:00:16:30
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+
+@15:17 chapter 4 review #timelog:00:57:07
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+
+@16:52 chapter 4 review #timelog:00:21:34
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+
+@17:25 chapter 4 review #timelog:00:19:11
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+
+@21:38 chapter 4 review #timelog:00:18:39
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+
+@2025-11-13 Day 74
+@10:10 logs #timelog:00:08:16
+
+@10:19 writing updates for sonilo #sonilo #timelog:00:23:53
+
+@10:20 buddy system: almost done
+#! dz thoughts/projects/sonilo/tasks/buddy_system
+I think this is almost done. The algorithm works, the initial
+API has been written for the most part. I'd like to get
+this working in my growing test suite.
+
+@10:21 ilo interpreter: try to port uxntal?
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+Today, I am hoping to put some time into studying the source
+code for uxntal. It's not many lines. I think it could be
+reworked to generate ilo roms instead of uxn roms.
+---
+For the initial prototyping stage, I imagine I'll have
+a bunch of ad-hoc programs generating ilo bytecode. pali,
+the assembler used to generate ilo.rom, is really only
+designed to genenerate that one rom file. I need smaller
+programs.
+---
+enscript is a neat little tool I learned about that turns
+textfiles into postscript. Postscript to PDF means I can
+put it on my RM. I'm hoping this workflow will help me
+better study code more deeply.
+
+@10:25 memory allocation: core components close to done, how to tie together?
+#! dz thoughts/projects/sonilo/tasks/mem
+The buddy system is close to being done. The block stack API
+is finished. The cache is is finished. These are components
+that need to work together to build a cohesive memory
+allocation system.
+---
+For the small memory allocation system to work, the buddy
+system needs to automatically request new blocks under
+the hood.
+---
+The block-level allocation system will be used for allocating
+output blocks.
+---
+More thoughts needed here.
+
+@10:33 msgpack, what is the initial command set?
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+I'm decided to use msgpack as a communicaiton protocol. Or
+a subset of msgpack at least. Using something that has a spec
+already written out has advantages. Having data types like
+arrays and objects could come in handy down the line.
+---
+The truth is, I don't know exactly where this is headed,
+and I need to design with some flexibility in mind.
+---
+msgpack is also handy because I can write intermediate
+programs to read (and possibly generate, provided it fits
+the subset of msgpack I'll support) msgpack programs.
+---
+msgpack programs might be the low-level layer for generating
+the first sonilo sounds.
+
+@10:37 Konilo feels very far off tbh. best I can do is IO experiments
+#! dz thoughts/projects/sonilo/tasks/konilo_sonilo_communication
+There's just so much I don't know about the konilo ecosystem.
+how does it load files? can I use source control? is it the
+right langauge abstraction? can it handle all the ugens I
+want to use?
+---
+It looks like ultimately I'll be building
+programs to generate basic msgpack structures. So, maybe
+that can be a focus.
+
+@10:39 technically this is today's task, ha. I am so behind
+#! dz thoughts/projects/sonilo/tasks/phasor
+The DSP algorithm for this is already available in sonilo.
+The work involved here will reworking the memory so it
+reads from sonilo's fixed memory system.
+---
+The DSP data will have single entry point, a memory address
+represented by a virtual pointer. In this address will be
+data containing pointers to inputs (constants
+or blocks), and outputs (blocks). There will also maybe
+a word or two for storing state the current phase.
+---
+I can probably write most of this without needed the actual
+DSP memory fully done.
+
+@10:45 printing uxntal to PDF #timelog:00:05:47
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+command:
+===
+enscript -o - uxnasm.c | ps2pdf - uxnasm.pdf
+===
+
+@10:52 experiment: transcribing a page from DMOI that used my new graph system #timelog:00:15:00
+#! dz dmoi/news
+This is a new handwritten knowledge graph system that
+divides the page into to parts: a list of nodes with a symbol,
+and a graph, that connects nodes (symbols only) with wires.
+---
+I'm going to open up ed, and attemp to transcribe this.
+Making this up as I go. Timeboxing to 15 minutes.
+---
+Interesting experiment. I got halfway done with a page
+in 15 minutes. Translating the text was tricky. The graph
+traversal I did left to write top to bottom. I used a ruler
+and another paper to limit visibility to only the nodes
+I needed to input.
+---
+30-45 minutes processing time per page I'm guessing? Things
+that have more math symbols will take more time.
+---
+parsing this data will come next. it needs to be a very
+permissive parser.

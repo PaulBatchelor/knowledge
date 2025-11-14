@@ -30,7 +30,7 @@ dmoi/toc/01_logic_and_proofs/03_rules_of_logic:4:DONE:2
 dmoi/toc/01_logic_and_proofs/04_proofs:6:DONE:2
 dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures:8:TODO:2
 dmoi/toc/01_logic_and_proofs:10:TODO:2
-dmoi/toc/05_discrete_structures_revisited/02_functions:12:TODO:2
+dmoi/toc/05_discrete_structures_revisited/02_functions:12:DONE:2
 dmoi/toc/05_discrete_structures_revisited/01_sets:15:TODO:2
 dmoi/toc/02_graph_theory/01_problems_and_definitions:17:TODO:2
 dmoi/toc/02_graph_theory/02_trees:19:TODO:2
@@ -69,7 +69,7 @@ coad/toc/01_computer_abstractions_and_technology/05_tech_for_building_processors
 coad/toc/01_computer_abstractions_and_technology/06_performance:8:DONE:4
 coad/toc/01_computer_abstractions_and_technology/07_the_power_wall:10:DONE:4
 coad/toc/01_computer_abstractions_and_technology/08_the_sea_change:11:DONE:4
-coad/toc/01_computer_abstractions_and_technology/09_benchmark_core_i7:13:TODO:4
+coad/toc/01_computer_abstractions_and_technology/09_benchmark_core_i7:13:DONE:4
 coad/toc/01_computer_abstractions_and_technology/10_matrix_multiply_python:15:TODO:4
 coad/toc/01_computer_abstractions_and_technology/11_fallacies_and_pitfalls:16:TODO:4
 coad/toc/01_computer_abstractions_and_technology/12_concluding_remarks:18:TODO:4

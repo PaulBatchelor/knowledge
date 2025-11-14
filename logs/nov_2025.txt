@@ -630,3 +630,44 @@ that have more math symbols will take more time.
 ---
 parsing this data will come next. it needs to be a very
 permissive parser.
+
+@13:00 1.9 reading #timelog:00:18:30
+#! dz coad/toc/01_computer_abstractions_and_technology/09_benchmark_core_i7
+
+@13:17 more reading #timelog:00:27:43
+#! dz coad/toc/01_computer_abstractions_and_technology/09_benchmark_core_i7
+
+@14:28 DMOI 5.2 functions #timelog:01:30:00
+#! dz dmoi/toc/05_discrete_structures_revisited/02_functions
+
+@18:00 cs-248 #timelog:02:45:00 #bumet
+Oof. That was a painful quiz. I am having more doubts
+about this program.
+
+@2025-11-14 Day 75
+@07:12 I have ordered a GRE prep textbook
+Guess we are doing this thing again...
+
+@13:34 log updates
+
+@13:40 what a waste of time
+#! dz csmet/cs248/news
+#! dz csmet/cs248/discrete_math_zybook/toc/04_functions
+#! dz dmoi/toc/05_discrete_structures_revisited/02_functions
+I read this chapter in preparation for the quiz the following
+day. In hindsight, it did not help with the quiz.
+---
+Between re-reading the zybooks chapter that the quiz was
+supposed to be on, and reading the DMOI chapter that was
+related to the material in the zybooks chapter, I logged
+3+ hours. over the course of 2 days. The fact that I showed
+up and none of it helped makes me really upset. The quiz
+had nothing from the chapter it was all off book. It
+was open book too, and I still probably failed.
+---
+I don't think this was my fault. The quiz literally had
+nothing from the textbook, and used completely different
+vocabulary. Considering that up to this point, this has
+been a rote math class, I was pretty shocked by the quiz.
+---
+I want my hours of studying back. What a waste.

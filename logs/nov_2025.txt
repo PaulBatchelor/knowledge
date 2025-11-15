@@ -672,6 +672,9 @@ been a rote math class, I was pretty shocked by the quiz.
 ---
 I want my hours of studying back. What a waste.
 
+@15:33 DMOI 1.5: almost done reading the chapter #timelog:01:03:27
+#! dz dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures
+
 @16:46 finish up transcribing ink as test page #ink:053 #timelog:00:10:07
 
 @16:57 type up names for ink #ink:053 #timelog:00:09:26
@@ -681,3 +684,38 @@ so the path doesn't look like jargon
 next steps: make a parser for this data, and generate a dagzet
 graph! Generate a node list (output to TeX?). this can be
 an index lookup
+
+@17:35 uxnasm studying #ink:05a #tiemlog:01:19:08
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+I'm thinking trying to work uxnasm to output ilo code
+of uxn code. To prep for this, I thought it would be a good
+exercise to try and build a graph around the program. I put
+a monochrome version of uxnasm.c on my remarkable, and started
+drawing a graph of the program using this new graph system
+I've been developing. It was very time consuming.
+
+@21:25 wrapping up uxnasm knowledge graph #ink:05a #timelog:01:06:40
+#! dz $
+While I don't understand the details of this program, I have
+a pretty good sense of what all the components of the program
+are and where they are in the file. The "parse" function
+is the most heavily loaded. I also need to somehow rework
+"ops" as well.
+@2025-11-15 Day 76
+@09:00 update time logs #timelog:00:09:00
+@09:09 work towards wrapping up this buddy system lol #timelog:00:59:54
+#! dz thoughts/projects/sonilo/tasks/buddy_system
+oh, right. this blocker is a bit of a ridiculous situation.
+I'm trying to get this into my test program, by my test
+program isn't variadic. I need multiple arguments to initialize
+the buddy system, but I only have one I/O register, and
+an address register.
+---
+time to yak shave a stack?
+---
+Set up some test code for an array with append and pop
+operations. Will need to write out code later.
+---
+I need to tell myself this will help me later. It is interesting
+getting into the groove of this little system I build
+for myself.

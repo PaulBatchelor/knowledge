@@ -724,4 +724,7 @@ for myself.
 #! dz thoughts/projects/sonilo/tasks/buddy_system
 
 @14:40 now, use this stack in the tests for the memory system #timelog:00:20:07
-TBD.
+#! dz thoughts/projects/sonilo/tasks/buddy_system
+
+@15:56 continue setting up the tests #timelog:01:16:27
+#! dz thoughts/projects/sonilo/tasks/buddy_system

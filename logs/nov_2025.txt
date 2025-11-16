@@ -814,3 +814,6 @@ Works now, nice! I think we're done.
 #! csmet/cs342/hw9
 
 @14:50 quick warning fixes
+
+@17:47 dumping sonilo work into git repo #timelog:00:36:28
+Also, spent some time writing about it on mastodon, zulip

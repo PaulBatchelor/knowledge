@@ -671,3 +671,9 @@ vocabulary. Considering that up to this point, this has
 been a rote math class, I was pretty shocked by the quiz.
 ---
 I want my hours of studying back. What a waste.
+
+@14:02 examining cs342 assignment
+#! dz csmet/cs342/hw9
+The assignment is to print all the permutations of an array
+(using backtracking). They want you to swap things in place
+so that's interesting.

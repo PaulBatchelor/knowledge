@@ -780,3 +780,32 @@ code up the function
 ---
 and we're done. seems to work. I'll return later after lunch
 and submit it.
+
+@10:46 buddy implementation continued #timelog:01:20:55
+#! dz thoughts/projects/sonilo/tasks/buddy_system
+Damn, I'm not storing these addresses anywhere, so freeing
+may be tricky for this test. I'd have to invent variables.
+No time for this today.
+---
+Maybe I can the input address be the relative block offset?
+This guarantees that the address belongs to the block. Getting
+the offset from a word address is just a matter of calculating
+the offset from the word address of the start of the block.
+---
+I could also just compute the address. I know the base
+address of memory, so I just add the offset to it. 'ad'
+could be used for 'addition'. and 'sb', 'di', and 'mu'
+could be reserved for subtract, multiply, divide.
+---
+the checksummer is hanging again. I think my problem has
+to do with address space. I think the buddy allocator
+uses local offset addresses, not word memory addresses.
+I'm passing in full word addresses.
+---
+So actually, I think the local offsets are the expected
+arguments?
+---
+Works now, nice! I think we're done.
+
+@12:17 this is completed. finally
+#! dz $

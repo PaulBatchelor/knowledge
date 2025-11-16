@@ -1,4 +1,4 @@
-thoughts/projects/sonilo/tasks/buddy_system:0:TODO:1
+thoughts/projects/sonilo/tasks/buddy_system:0:DONE:1
 thoughts/projects/sonilo/tasks/ilo_interpreter:2:TODO:1
 thoughts/projects/sonilo/tasks/sonilo_command_language:5:TODO:1
 thoughts/projects/sonilo/tasks/mem:8:TODO:1

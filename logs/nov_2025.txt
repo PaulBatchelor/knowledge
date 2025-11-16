@@ -809,3 +809,8 @@ Works now, nice! I think we're done.
 
 @12:17 this is completed. finally
 #! dz $
+
+@13:16 submitting
+#! csmet/cs342/hw9
+
+@14:50 quick warning fixes

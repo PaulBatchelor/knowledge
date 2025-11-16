@@ -707,6 +707,7 @@ a pretty good sense of what all the components of the program
 are and where they are in the file. The "parse" function
 is the most heavily loaded. I also need to somehow rework
 "ops" as well.
+
 @2025-11-15 Day 76
 @09:00 update time logs #timelog:00:09:00
 @09:09 work towards wrapping up this buddy system lol #timelog:00:59:54
@@ -725,6 +726,9 @@ operations. Will need to write out code later.
 I need to tell myself this will help me later. It is interesting
 getting into the groove of this little system I build
 for myself.
+
+@12:55 DMOI 1.5 wrapping up #timelog:00:25:46
+#! dz dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures
 
 @13:35 implement the stack #timelog:01:03:22
 #! dz thoughts/projects/sonilo/tasks/buddy_system
@@ -748,7 +752,31 @@ oh, also, had to do some non-trivial debugging of the system
 for the first time. The test suite with the diffed output
 and gdb were a great combo.
 
+@17:55 working out the problem with pen and paper
+#! dz csmet/cs342/hw9
+
+@19:18 more pen and paper work
+#! dz csmet/cs342/hw9
+
 @21:52 more test scaffolding #timelog:01:13:25
 #! dz thoughts/projects/sonilo/tasks/buddy_system
 The expected test output has been written out, now
 I need to implement the programs, and then the commands.
+
+@2025-11-16 Day 77
+@09:56 log updates #timelog:00:04:45
+
+@10:09 It looks like my HDMI switch is failing. Bummer.
+It doesn't seem to want to display the correct resolution.
+Plugging things directly into the monitor fixes things.
+---
+I will troubleshoot a bit more later.
+
+@10:10 initial attempt implementing backtracking permutation with swaps problem #timelog:00:09:20
+#! dz csmet/cs342/hw9
+initial scaffolding
+---
+code up the function
+---
+and we're done. seems to work. I'll return later after lunch
+and submit it.

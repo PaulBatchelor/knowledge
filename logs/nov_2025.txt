@@ -728,3 +728,21 @@ for myself.
 
 @15:56 continue setting up the tests #timelog:01:16:27
 #! dz thoughts/projects/sonilo/tasks/buddy_system
+It's been slow going because I'm dogfooding this test system,
+and learning how to use it, filling in missing parts along
+the way.
+---
+I'm hoping things will get a bit faster? I'm reaching
+a pretty good stride with ed. the interactive test system
+also works pretty well with gdb. I can run components of
+the program in a very adhoc way, and then use gdb to add
+breakpoints and step through the program.
+---
+oh, also, had to do some non-trivial debugging of the system
+for the first time. The test suite with the diffed output
+and gdb were a great combo.
+
+@21:52 more test scaffolding #timelog:01:13:25
+#! dz thoughts/projects/sonilo/tasks/buddy_system
+The expected test output has been written out, now
+I need to implement the programs, and then the commands.

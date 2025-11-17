@@ -811,9 +811,21 @@ Works now, nice! I think we're done.
 #! dz $
 
 @13:16 submitting
-#! csmet/cs342/hw9
+#! dz csmet/cs342/hw9
 
 @14:50 quick warning fixes
 
 @17:47 dumping sonilo work into git repo #timelog:00:36:28
 Also, spent some time writing about it on mastodon, zulip
+
+@20:05 cy100 5.2 wrap-up #timelog:00:40:13
+#! dz csmet/cy100
+
+@21:17 writing out pipeline for knowledge graph transcription #ink:50d #timelog:00:13:54
+
+@2025-11-17 Day 78
+@10:27 logging in, logging times #timelog:00:03:19
+
+@10:31 scanning, cropping, tagging, binning #archiving #timelog:00:39:56
+Also added a new script today: books/upload_pdfs.sh for quickly
+uploading all book PDFs to the remarkable

@@ -845,3 +845,6 @@ going to see if I can process that further in a quick
 python script
 ---
 okay, the grouping is wrong, but I gotta bail.
+
+@15:43 unit 5 completed, test not taken. printing unit 6 now. #timelog:00:06:37
+#! dz csmet/cy100

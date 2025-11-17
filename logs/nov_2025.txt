@@ -829,3 +829,19 @@ Also, spent some time writing about it on mastodon, zulip
 @10:31 scanning, cropping, tagging, binning #archiving #timelog:00:39:56
 Also added a new script today: books/upload_pdfs.sh for quickly
 uploading all book PDFs to the remarkable
+
+@11:19 re-examine the wiki #timelog:00:18:39
+The biggest pain point was that mkdb.janet always had strange
+non-determinstic results. It would be nice to make that better.
+---
+gah. it's a weird thing. It keeps adding a linebreak, but
+the function doing the dumping has that coming from SQLite.
+So, whatever is updating that entry is adding an extra line
+break. Going to have to chase that down at some point maybe.
+
+@11:44 I need a better way to display logs tied to nodes #timelog:01:00:00
+I have some JSON output working with the messages tool,
+going to see if I can process that further in a quick
+python script
+---
+okay, the grouping is wrong, but I gotta bail.

@@ -50,24 +50,38 @@ def title(txt):
 def header1(txt):
     #return "# " + txt
     return "{" + \
+        "\\medskip" +\
         "\\noindent" + \
         "\\bf" + \
         "\\font" + \
-        "\\titlefont=cmr17 at 20pt" + \
+        "\\titlefont=cmss17 at 20pt" + \
         "\\titlefont " + txt + \
         "}" + \
-        "\\vskip 0.1in"
+        "\\medskip"
 
 def header2(txt):
     # return "## " + txt
     return "{" + \
+        "\\medskip" +\
         "\\noindent" + \
         "\\bf" + \
         "\\font" + \
-        "\\titlefont=cmr17 at 14pt" + \
+        "\\titlefont=cmitt12 at 17pt" + \
         "\\titlefont " + txt + \
         "}" + \
-        "\\vskip 0.1in"
+        "\\medskip"
+
+def header3(txt):
+    # return "### " + txt
+    return "{" + \
+        "\\smallskip" +\
+        "\\noindent" + \
+        "\\bf" + \
+        "\\font" + \
+        "\\titlefont=cmr12 at 13pt" + \
+        "\\titlefont $\\bullet$ " + txt + \
+        "}" + \
+        "\\smallskip"
 
 def strip(node):
     return " ".join(node.split("/")[-1].split("_"))
@@ -101,7 +115,7 @@ for node in node_list:
     for d in dates:
         print(header2(d))
         for dob in date_objs[d]:
-            print(header2(dob["time"] + ": " + dob["title"]))
+            print(header3(dob["time"] + ": " + dob["title"]))
             for p in dob["content"]:
                 print(par(p))
 

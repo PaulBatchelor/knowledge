@@ -869,3 +869,5 @@ okay, the grouping is wrong, but I gotta bail.
 
 @2025-11-19 Day 80
 @10:28 updating logs #timelog:00:07:36
+
+@11:36 some quick work building a parser #timelog:00:05:41

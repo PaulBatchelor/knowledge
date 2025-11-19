@@ -856,4 +856,16 @@ okay, the grouping is wrong, but I gotta bail.
 @2025-11-18 Day 79
 @13:47 update logs #timelog:00:02:31
 
-@13:51 tweaks
+@13:51 tweaks to message printer
+
+@15:10 CY100 6.1 user authentication #timelog:00:39:28
+#! dz csmet/cy100
+
+@16:10 DMOI 5.1: Sets #timelog:00:27:38
+#! dz dmoi/toc/05_discrete_structures_revisited/01_sets
+
+@20:25 DMOI 5.1 continued #timelog:00:44:17
+#! dz dmoi/toc/05_discrete_structures_revisited/01_sets
+
+@2025-11-19 Day 80
+@10:28 updating logs #timelog:00:07:36

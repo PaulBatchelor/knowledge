@@ -913,3 +913,6 @@ I had to report so many errors that were getting in the way
 of getting me a passing grade. If this is the kind of fighting
 I'm to expect in this program, I'm going to ditch it and
 try to aim a little higher.
+
+@11:54 MIT engineering classes #timelog:00:16:01
+#! dz MIT_course_6_3/news

@@ -81,4 +81,5 @@ dz/thoughts
 dz/dmoi
 dz/coad
 dz/ink
+dz/MIT_course_6_3.dz
 dz/zzz

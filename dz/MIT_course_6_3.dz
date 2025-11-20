@@ -1,0 +1,84 @@
+ns MIT_course_6_3
+
+nn news
+
+nn homepage
+hl https://catalog.mit.edu/degree-charts/computer-science-engineering-course-6-3/
+
+nn 6_1000
+ln introduction to computer science
+
+nn 6_100A
+ln introduction to computer science programming
+
+nn 6_1010
+ln fundamentals of computer programming
+
+nn 6_1020
+ln software construction
+
+nn 6_1200
+ln mathematics for computer_science
+
+nn 6_1200/ocw
+hl https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/
+
+nn 6_1210
+ln introduction to algorithms
+
+nn 6_1800
+ln computer systems engineering
+
+nn 6_1800/ocw
+hl https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/
+rm same name, different number
+
+nn 6_1903
+ln introduction to low-level programming in C and assembly
+
+nn 6_1910
+ln computational structures
+nn 6_1910/ocw
+hl https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/
+rm different course number, same name
+
+
+nn 6_18_C06
+ln Linear Algebra and Optimization
+
+nn 18_06
+ln LInear algebra
+
+nn 18_06/ocw
+hl https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/
+
+
+nn 6_2000
+ln Electrical Circuits: Modeling and Design of Physical Systems
+
+nn 6_2000/ocw
+hl https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/
+
+nn 6_3000
+ln Signal Processing
+
+nn 6_3000/ocw
+hl https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/
+
+nn 6_3700
+ln introduction to probability
+
+nn 6_3800
+ln introduction to inference
+
+nn 6_3800/ocw
+hl https://ocw.mit.edu/courses/6-011-signals-systems-and-inference-spring-2018/
+co $ ..
+
+nn 18_05
+ln introduction to probability and statistics
+
+nn 18_05/ocw
+hl https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/
+co $ ..
+

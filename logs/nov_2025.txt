@@ -873,3 +873,14 @@ okay, the grouping is wrong, but I gotta bail.
 @11:36 some quick work building a parser #timelog:00:05:41
 
 @17:42 more work on parser #timelog:00:15:00
+
+@19:12 more work on parser #timelog:00:38:02
+
+@19:52 attempting to transcribe another page of notes #ink:05H #timelog:00:46:58
+#! dz dmoi/news
+#! dz dmoi/toc/05_discrete_structures_revisited/01_sets
+It's a non-trivial effort still. but, I have a feeling I'll get
+faster at it. The parser does seem to work!
+---
+I've added my parsing utility to "tools", and my transcription
+of 05H to a new folder.

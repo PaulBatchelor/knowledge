@@ -1,0 +1,29 @@
+@00 5.1 sets @01 notation @02 A = {1, 2, 3} @03 $a \belongs {a, b, c}
+@04 A is the set containing... @05 is an element of @06 A = {0, 2, 4, 6, ...}
+@07 $A = {x \belongs N: there exists n \belongs N such that n = 2n}$.
+@08 $N$: natural numbers @09 ":": such that @0A $A = {x \belongs N: x is even}$.
+@0b set builder notation
+@0c describes precisely the condition elems must meet to gain access
+@0d ex 5.1.1 [390] @0e ex 5.1.2 [391]
+@0f $Z$: set of integers @0g special sets chart [392]
+@0h set theory notation chart @0i relationships between sets [393]
+@0j $A \subset B$: A is a subset of B @0k subset @0l power set: set of all
+subsets, written $P(A).
+@0m compare sets by size
+@0n cardinality: size of set
+@0q union of 2 sets: $C = A \union B$
+@0p operations on sets
+@0o ex 5.1.5 [395]
+@0r intersection: $A \intersect B$
+@0s universe: "everything", denoted $u$.
+@0t complement: $B = \overline{A}$
+@0u $A \intersect \overline{B}$: start with set
+A, remove elements of set B.
+@0v set difference: $A \intersect \overline{B} = A \\ B$
+@0w ex 5.1.6 [397]
+@0x ex 5.1.7 [397]
+@0y cartesian product: AxB
+@0z ex 5.1.8 [397]
+@10 venn diagrams
+@11 a venn diagram displays sets as intersecting circles
+@12 excersizes [399]

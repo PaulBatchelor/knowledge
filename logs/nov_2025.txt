@@ -884,3 +884,32 @@ faster at it. The parser does seem to work!
 ---
 I've added my parsing utility to "tools", and my transcription
 of 05H to a new folder.
+
+@2025-11-20 Day 81
+Let's put this cybersecurity lab behind us today.
+@10:15 finish CY100 unit 6 #timelog:00:11:47
+#! dz csmet/cy100
+100/120, 83 percent. good enough
+
+@10:26 finish CY100 unit 5 #timelog:00:34:00
+#! dz csmet/cy100
+This one I'm a bit more worried about. I think it's the
+most complicated unit, and I've had some time away from it.
+---
+Good lord. The "fill in the blanks" answer for one was "secure enclave".
+Literally everywhere in the slides, it was written "secure-enclave".
+I did that first, and it failed me.
+
+@11:03 WE ARE DONE
+#! dz csmet/cy100/news
+this feels great. I am so glad to have this behind me.
+---
+I really lost motivation for this course by the end. The tests
+had no flexibility whatsoever. Fill in the blanks
+were a crapshoot, and the language barrier made things worse.
+---
+Overall, I'm pretty disappointed in how this was organized.
+I had to report so many errors that were getting in the way
+of getting me a passing grade. If this is the kind of fighting
+I'm to expect in this program, I'm going to ditch it and
+try to aim a little higher.

@@ -916,3 +916,7 @@ try to aim a little higher.
 
 @11:54 MIT engineering classes #timelog:00:16:01
 #! dz MIT_course_6_3/news
+
+@2025-11-21 Day 82
+@14:25 scanning ink, making write-up #timelog:01:34:26
+#! dz csmet/cs342/hw10

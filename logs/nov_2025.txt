@@ -916,3 +916,6 @@ try to aim a little higher.
 
 @11:54 MIT engineering classes #timelog:00:16:01
 #! dz MIT_course_6_3/news
+
+@14:34 cs342 hw10
+#! dz csmet/hw10

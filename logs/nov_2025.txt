@@ -917,5 +917,17 @@ try to aim a little higher.
 @11:54 MIT engineering classes #timelog:00:16:01
 #! dz MIT_course_6_3/news
 
-@14:34 cs342 hw10
-#! dz csmet/hw10
+@18:00 cs-248 class #timelog:02:45:00 #bumet
+
+@2025-11-21 Day 82
+
+@10:45 cs-248 work, updating notes from yesterday #timelog:00:09:34
+
+@11:04 cs342 inking hw 10 #timelog:00:45:25
+#! dz csmet/cs342/hw10
+
+@14:25 scanning ink, making write-up #timelog:01:34:26
+#! dz csmet/cs342/hw10
+
+@16:09 submitting #timelog:00:03:20
+#! dz csmet/cs342/hw10

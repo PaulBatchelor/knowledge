@@ -969,3 +969,51 @@ the ilo interpeter working now.
 ---
 I'm going to say this is "done", just for the sake of
 progress.
+
+@11:27 writing out pseudo-code for an ILO program computing phasor #timelog:01:01:41
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+#! dz thoughts/projects/sonilo/tasks/initial_dsp
+This exercise is exposing some points of friction for me.
+---
+The hard part is memory structure, once again. The ILO bits
+are very straight forward, once the memory structure is
+set up.
+---
+Point of friction: I started this task wanting to just
+write out pseudo-assembler code for ILO. Then I realized,
+I need memory addresses. How do I generate those things?
+I'd need to allocate and initialize data for the phasor
+struct, in addition to the parameter.
+---
+So, to make a program is really a collaboration between
+the memory writer and the ilo assembler. I'd use the memory
+writer to set up the memory structure, and the assembler to
+generate ilo bytecode.
+---
+Ideally, it would be nice for programs to use the original
+ilo C implementation to start. I can make it so the ilo
+program is at the start of the file, with all the special
+memory after it. The program would terminate by a goto that
+goes beyond the ilo bounds.
+---
+ilo programs are going to be very small, and the address
+space localized to just a handful of blocks. This phasor
+program would exist on one block.
+---
+What does this phasor program do? It opens a file for
+writing, runs a loop writing stuff to that file, then
+closes that file. In the loop, the phasor ugen is called
+to generate a block of signal. That signal then gets
+written to disk. It is assumed that the phasor data is written
+to disk pre-initialized.
+---
+Okay, this is clearly more work than I expected.
+
+@12:39 Small C program it is #timelog:00:02:17
+#! dz thoughts/projects/sonilo/tasks/phasor
+I've spent the last hour brainstorming the ILO code. The
+problem is more complex than I thought, requiring me to
+implement many moving parts. The DSP code does not need
+that yet. It's going to be way faster just to write the
+silly C program. Later, it can be rewritten to be an ilo
+ROM.

@@ -936,3 +936,36 @@ try to aim a little higher.
 I've been on the road these past few days. have not looked
 at computer.
 @10:01 booting up my thinkpad
+
+@10:13 let's try porting phasor today #timelog:00:50:41
+#! dz thoughts/projects/sonilo/tasks/phasor
+I am so behind on the fundamental memory IO and bytecode
+interpreter stuff (AKA the "hard bits"). Phasor is mostly
+just moving pre-existing code around and setting up the
+scaffolding.
+---
+Got some initial phasor DSP code added. untested, but
+it's mostly a copy-paste port.
+---
+A phasor exists in a 4 word block. The first 2 words are
+the ports. It has one input port for frequency, and
+one output port for the returned signal.
+---
+I don't have a great way to hook this up to anything at
+the moment. It would be trivial to write a small C program
+for this, but that's not too useful. Building towards ILO
+is going to be more useful because it will allow me to
+write small test programs that compose different unit
+generators together.
+---
+Creating a function `ugen_phasor`, which should emulate
+the behavior of the phasor unit generator, popping a parameter
+off the stack to set the input port, and then pushing a
+parameter back onto the stack.
+---
+The abstractions don't feel quite there yet, but I think
+it's good enough. I really do need to working on getting
+the ilo interpeter working now.
+---
+I'm going to say this is "done", just for the sake of
+progress.

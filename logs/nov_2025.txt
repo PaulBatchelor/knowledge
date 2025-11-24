@@ -1017,3 +1017,17 @@ implement many moving parts. The DSP code does not need
 that yet. It's going to be way faster just to write the
 silly C program. Later, it can be rewritten to be an ilo
 ROM.
+
+@12:49 writing a silly C program #timelog:01:22:41
+#! dz thoughts/projects/sonilo/tasks/phasor
+I'm so behind on things, I just gotta confirm these
+small bits work.
+---
+Wow, this blows up again in complexity. My basic stack struct
+has bugs? ugh.
+---
+Ah, I see. Phasor needed to know what the output pointer was
+going to be. Initialization functions need to take in
+variables.
+---
+That's all the time we have, unfortunately. 

@@ -1,6 +1,6 @@
 @2025-11-01 Day 62
 @07:29 pre-coffee puttering, hack on buddy system #timelog:00:10:50
-#! dz %buddy_system
+#! dz thoughts/projects/sonilo/tasks/buddy_system
 
 @11:29 more buddy system #timelog:01:10:12
 #! dz $
@@ -49,7 +49,7 @@ Java the language (generics, str.equals instead of ==), but
 the algorithm was very simple.
 
 @20:57 buddy system initial refactoring #timelog:01:28:45
-#! dz %buddy_system
+#! dz thoughts/projects/sonilo/tasks/buddy_system
 I need to get this ready for my block system approach.
 ---
 Some initial refactoring is done. I'm trying to pull out
@@ -111,7 +111,7 @@ I'm thinking about alternative options. Gonna have to start
 talking to people.
 
 @13:43 initial exploration #timelog:00:39:19
-#! dz %sonilo/tasks/ilo_interpreter
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
 I think this is mainly about adapting the existing ilo
 byte code interpreter and pali assembler as much as possible.
 ---
@@ -140,7 +140,7 @@ see.
 @17:00 scanning, cropping, binning #archiving #timelog:00:28:40
 
 @18:39 more of this buddy system #timelog:00:11:26
-#! dz %buddy_system
+#! dz thoughts/projects/sonilo/tasks/buddy_system
 I flipped around the ordering of LINKF,LINKB,and KVAL
 so that LINKF and LINKB are in the lower bits. My hope is
 that the AVAIL table only needs those two values, and
@@ -931,3 +931,8 @@ try to aim a little higher.
 
 @16:09 submitting #timelog:00:03:20
 #! dz csmet/cs342/hw10
+
+@2025-11-24 Day 85. Greensboro.
+I've been on the road these past few days. have not looked
+at computer.
+@10:01 booting up my thinkpad

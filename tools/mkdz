@@ -1,0 +1,1 @@
+./tools/dzimport.py dzfiles.txt a.db

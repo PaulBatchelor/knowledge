@@ -3,7 +3,7 @@ thoughts/projects/sonilo/tasks/ilo_interpreter:2:TODO:1
 thoughts/projects/sonilo/tasks/sonilo_command_language:5:TODO:1
 thoughts/projects/sonilo/tasks/mem:8:TODO:1
 thoughts/projects/sonilo/tasks/konilo_sonilo_communication:10:TODO:1
-thoughts/projects/sonilo/tasks/phasor:13:TODO:1
+thoughts/projects/sonilo/tasks/phasor:13:DONE:1
 thoughts/projects/sonilo/tasks/butlp:16:TODO:1
 thoughts/projects/sonilo/tasks/blsaw:18:TODO:1
 thoughts/projects/sonilo/tasks/grid_demo:21:TODO:1

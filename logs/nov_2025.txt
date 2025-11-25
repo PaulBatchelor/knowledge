@@ -1031,3 +1031,27 @@ going to be. Initialization functions need to take in
 variables.
 ---
 That's all the time we have, unfortunately. 
+
+@2025-11-25 Day 86. Greensboro
+@09:21 more work with the bits surrounding phasor #timelog:00:27:00
+#! dz thoughts/projects/sonilo/tasks/phasor
+DSP code took about 5 minutes, designing a flexible interface
+took up the remaining time.
+---
+Converting the bytes in floats to ints is proving to take
+some time. I really just need a helper function for this.
+---
+we got a working phasor written to disk finally
+
+@10:03 cleanup: build out APIs, phasor init/compute should use stack interface #timelog:00:30:51
+#! dz $
+arrays (for stack), and parameters. oh, also float/int
+conversion
+---
+I'm not going to try and over-categorize. I'm throwing
+everything into a "util" file for the being, and this will
+live in the DSP folder because only DSP utilities are going
+to be using this stuff (at least in the short term).
+
+@10:38 phasor, officially done
+#! dz $

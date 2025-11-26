@@ -1055,3 +1055,23 @@ to be using this stuff (at least in the short term).
 
 @10:38 phasor, officially done
 #! dz $
+
+@2025-11-26 Day 87. Greensboro
+@09:45 today's ilo interpreter thoughts #timelog:00:20:02
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+Current difficulty: memory structure vs ilo VM. These are
+two separate systems, each with their own command space.
+How does one bridge the two systems?
+---
+When I was writing pseudo-code for the phasor, there
+were two explicit steps: setting up memory, and then
+setting up the ILO instructions. The memory was set up
+using my ad-hoc memory language, which then resulted in
+a single top-level memory address. The ILO code would push
+a constant parameter to a stack, push the pointer to the DSP
+to the stack, then call the DSP.
+---
+It's a little bumpy at the moment.
+---
+Well, the family is calling. that's the show. Might bring
+pen and paper with me today to the house.

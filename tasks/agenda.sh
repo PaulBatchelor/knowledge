@@ -1,4 +1,5 @@
 . ./env
+TOTAL_DAYS=$(echo "md" | ./run init.txt)
 DATE_TODAY=$($DATE +%s)
 DATE_START=$($DATE -d $START +%s)
 DAY=$(((DATE_TODAY - DATE_START)/86400))

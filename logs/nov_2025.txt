@@ -1108,3 +1108,32 @@ calculate a "due date" from the agenda.
 @09:35 redistributing days #timelog:00:10:00
 Adding 10 days reduces task load from 26 to 23. I think
 I'm just going to have to do catch-up when I get back.
+
+@09:47 new computed deadline: May 7th, 2026
+If I can keep slogging away, I'll be done with COAD, DMOI,
+and I'll have a working demo of Sonilo.
+
+@09:49 custom bytecode language for DSP?
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+I'm starting to think IO calls in ILO are going to have too
+much overhead for the ugen related things. I think it would
+be better to have a bytecode interpreter more specialized
+for the DSP code, optimized to fit on 64-word blocks.
+---
+I'm imagining something similar to the command-packing format
+of the ILO VM, except that there'd only be 16 opcodes (4-bit,
+8 commands/word). Most of the functionality needed is pushing
+constant values calling hard-coded subroutines.
+---
+Memory initialization could also probably happen using
+this system as well. There will need to be memory primitives
+for allocating small chunks of memory, as well as allocating
+full blocks (to write audio to). DSP unit generators would
+then have an initialization function that could set up
+the data in memory.
+
+@09:59 memory primitives: alloc, block, cleanup
+#! dz thoughts/projects/sonilo/tasks/mem
+alloc: allocate N words (N < 64) block: allocate a block
+---
+cleanup: frees all memory in the current context

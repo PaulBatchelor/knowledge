@@ -1075,3 +1075,36 @@ It's a little bumpy at the moment.
 ---
 Well, the family is calling. that's the show. Might bring
 pen and paper with me today to the house.
+
+@2025-11-28 Day 89. Post-thanksgiving
+
+@09:17 addressing the agenda overflow #timelog:00:11:38
+#! dz coad/news
+#! dz dmoi/news
+#! dz thoughts/projects/sonilo
+As of today, there are 26 tasks total.
+---
+9 of those tasks are related to sonilo. I am stuck.
+Memory allocators have taken time. Ilo has taken time.
+Trying to get the moving parts right is taking time.
+Sonilo ilo interpreter is about 26 days overdue, that's
+the most overdue task.
+---
+COAD also has 9 tasks, surprisingly. I guess this makes
+a little more sense. I'll have gone about 10 days without
+doing any reading. The most overdue task is 13 days, so
+I'm about 3-5 days overdue factoring in this trip.
+---
+DMOI is 11 days overdue for the latest. That means I'm
+about 1-3 days overdue factoring vacation. Not too bad.
+---
+I am going to add in a way to get the max day for selected
+groups, then shift sonilo and COAD back 10 days. Once
+I have this "max days" functionality, I should be able to
+calculate a "due date" from the agenda.
+
+@09:29 implement "max days" functionality (md?) #timelog:00:14:48
+
+@09:35 redistributing days #timelog:00:10:00
+Adding 10 days reduces task load from 26 to 23. I think
+I'm just going to have to do catch-up when I get back.

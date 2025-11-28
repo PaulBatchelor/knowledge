@@ -300,6 +300,8 @@ impl State {
             self.tasksort();
         } else if *cmd == "gc" {
             self.garbage();
+        } else if *cmd == "md" {
+            println!("{}", self.maxdays());
         }
     }
 
@@ -378,6 +380,19 @@ impl State {
 
     pub fn garbage(&mut self) {
         self.tasks.retain(|t| !matches!(t.state, TaskState::DELETED))
+    }
+
+    pub fn maxdays(&self) -> usize {
+        let mut max = 0;
+        for task in &self.tasks {
+            if task.active(self.group) {
+                if task.day > max {
+                    max = task.day;
+                }
+            }
+        }
+
+        max
     }
 }
 

@@ -1137,3 +1137,9 @@ the data in memory.
 alloc: allocate N words (N < 64) block: allocate a block
 ---
 cleanup: frees all memory in the current context
+
+@2025-11-29 On the road. Day 90.
+@08:39 blsaw initial code #timelog:00:38:03
+#! dz thoughts/projects/sonilo/tasks/blsaw
+Just porting the initial code and getting it in
+using some of the conventions established in phasor.

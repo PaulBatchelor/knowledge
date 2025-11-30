@@ -958,7 +958,7 @@ is going to be more useful because it will allow me to
 write small test programs that compose different unit
 generators together.
 ---
-Creating a function `ugen_phasor`, which should emulate
+Creating a function `ugen\_phasor`, which should emulate
 the behavior of the phasor unit generator, popping a parameter
 off the stack to set the input port, and then pushing a
 parameter back onto the stack.
@@ -1167,3 +1167,10 @@ and less IO overhead.
 ---
 The proposed format is also more data than executable code, which
 is good at this stage.
+
+@10:01 make task for memory allocator #timelog:00:33:42
+#! dz thoughts/projects/sonilo/tasks/allocator
+This will be a high-level allocator, wrapping the
+block list, bitset, and the buddy allocator.
+---
+got caught up with printing it to a PDF

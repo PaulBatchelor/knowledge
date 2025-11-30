@@ -99,3 +99,12 @@ co tasks/ugen_bytecode tasks/ugens
 ln Build a bytecode interpeter for running ugens
 co tasks/ugen_bytecode tasks/offline_patch
 co tasks/mem tasks/ugen_bytecode
+nn tasks/allocator
+ln create a high-level memory allocator,
+ln wrapping the blocklist, bitset, and buddy
+ln allocator.
+nn tasks/buddy_slots
+ln create a block dedicated to keeping track of multiple
+ln blocks. An allocator would be able to attempt to allocate
+ln a block by checking through all the available slots.
+co tasks/buddy_slots tasks/allocator

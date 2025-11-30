@@ -31,7 +31,8 @@ for entry in obj:
 # pprint(node_list)
 
 def begin():
-    pass
+    print("\\pdfpagewidth=148mm")
+    print("\\pdfpageheight=210")
 
 def bye():
     print("\\bye")

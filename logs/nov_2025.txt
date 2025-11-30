@@ -1179,3 +1179,13 @@ got caught up with printing it to a PDF
 #! dz thoughts/projects/sonilo/tasks/docgen
 I need a better way to read a review this stuff. attempting
 to generate tex for this
+
+@14:00 onto this cs-342 homework #timelog:00:31:25
+#! dz csmet/cs342/hw11
+I've worked it out on paper I think, now to see how close
+I was.
+---
+Got tripped up on where the origin was. And, I mixed up
+X and Y axis (but it didn't really matter). Things work.
+---
+Submitted

@@ -1,0 +1,13 @@
+if [ "$#" -lt 1 ]
+then
+    echo "Usage: $0 node"
+    exit 1
+fi
+
+sqlite3 a.db <<EOM
+SELECT rightcon.name FROM dz_connections
+INNER JOIN dz_nodes as leftcon on leftcon.id = dz_connections.left
+INNER JOIN dz_nodes as rightcon on rightcon.id = dz_connections.right
+WHERE leftcon.name LIKE '$1'
+;
+EOM

@@ -1143,3 +1143,27 @@ cleanup: frees all memory in the current context
 #! dz thoughts/projects/sonilo/tasks/blsaw
 Just porting the initial code and getting it in
 using some of the conventions established in phasor.
+
+@2025-11-30 On the road again. Day 91
+@08:59 ilo interpreter can wait, use custom bytecode format instead
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+#! dz thoughts/projects/sonilo/tasks/ugen_bytecode
+I think the DSP is specialized enough that I can
+get away with it.
+---
+Ilo, on the other hand, is going to be more important
+in situtaions where small, inline executable programs are
+desirable. I'm mainly thinking this could be used for 
+gesture iterators.
+
+@09:02 reworking some of the tasks #timelog:00:47:56
+#! dz thoughts/projects/sonilo/tasks
+
+@09:50 New task created #timelog:00:06:03
+#! dz thoughts/projects/sonilo/tasks/ugen_bytecode
+Instead of trying to use ILO, I'm going to make my
+own format. It will be more compact, simpler to build,
+and less IO overhead.
+---
+The proposed format is also more data than executable code, which
+is good at this stage.

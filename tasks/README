@@ -1,0 +1,18 @@
+How to update tasks.
+
+Generate a new foo/tasks.txt in the subfolder.
+
+In this folder, run ./run init.txt to load the current
+state.
+
+Select the group to load into: 'gr 0'
+
+Update the task list: 'up foo/tasks.txt'
+
+Redistribute over days: 'ds 90'
+
+Garbage collect, remove deleted tasks: 'gc'
+
+Sort tasks by group: 'sr'
+
+Save: 'w'.

@@ -302,6 +302,8 @@ impl State {
             self.garbage();
         } else if *cmd == "md" {
             println!("{}", self.maxdays());
+        } else {
+            println!("unknown command: {}", *cmd);
         }
     }
 
@@ -429,6 +431,9 @@ fn main() -> io::Result<()> {
         let args: Vec<_> = line.split_whitespace().collect();
         if args.is_empty() {
             continue;
+        }
+        if args[0] == "#" {
+            continue
         }
         if args[0] == "q" {
             break;

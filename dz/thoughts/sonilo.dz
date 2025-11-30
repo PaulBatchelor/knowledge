@@ -21,8 +21,7 @@ ln using the memory allocation system
 co ?mem $
 co ?mem ?initial_dsp
 nn tasks/ugens
-ln Create unit generator instruction in ILO
-co ?ilo_interpreter $
+ln Create unit generator interface
 nn tasks/ilo_interpreter
 ln Create ilo bytecode VM interpreter
 co ?dsp_demo ?ugens
@@ -42,8 +41,6 @@ ln Interactive sound design and composition with grid
 co ?live_coding_sound_demo $
 nn tasks/offline_patch
 ln Offline patch demo: Create an offline rendered patch
-ln using Ilo instructions
-co ?ilo_interpreter $
 nn tasks/singing_voices_in_a_room
 ln Demo: singing voice(s) in a room
 co ?offline_patch $
@@ -96,3 +93,9 @@ co ?initial_dsp ?offline_patch
 co ?mem ?konilo_sonilo_communication
 nn tasks/sonilo_command_language
 co $ ?konilo_sonilo_communication
+nn tasks/ugen_bytecode
+co tasks/ugen_bytecode tasks/initial_dsp
+co tasks/ugen_bytecode tasks/ugens
+ln Build a bytecode interpeter for running ugens
+co tasks/ugen_bytecode tasks/offline_patch
+co tasks/mem tasks/ugen_bytecode

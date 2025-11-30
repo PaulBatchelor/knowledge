@@ -369,9 +369,13 @@ impl State {
                 task.day = existing.day;
                 task.state = existing.state.clone();
                 task.group = existing.group;
+
+                if matches!(existing.state, TaskState::DELETED) {
+                    panic!("this shouldn't happen: {}", id);
+                }
+                self.mark_deleted(id);
             }
 
-            self.mark_deleted(id);
             self.append_task(task);
         }
     }

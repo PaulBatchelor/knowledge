@@ -110,3 +110,13 @@ ln a block by checking through all the available slots.
 co tasks/buddy_slots tasks/allocator
 nn tasks/docgen
 ln Create a simple documentation generator for input.txt
+co tasks/docgen tasks/allocator
+cr docgen seemed nice to have to better visualize
+cr tests
+co tasks/allocator tasks/mem
+nn tasks/GSG_demo
+ln Create small demo showcasing the Gesture Signal
+ln Generator
+co tasks/GSG tasks/GSG_demo
+co tasks/ilo_interpreter tasks/GSG_demo
+co tasks/GSG_demo tasks/offline_gesture

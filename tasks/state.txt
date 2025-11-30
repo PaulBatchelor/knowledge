@@ -5,7 +5,7 @@ thoughts/projects/sonilo/tasks/mem:10:TODO:1
 thoughts/projects/sonilo/tasks/konilo_sonilo_communication:13:TODO:1
 thoughts/projects/sonilo/tasks/phasor:16:DONE:1
 thoughts/projects/sonilo/tasks/butlp:20:TODO:1
-thoughts/projects/sonilo/tasks/blsaw:23:TODO:1
+thoughts/projects/sonilo/tasks/blsaw:23:DONE:1
 thoughts/projects/sonilo/tasks/ugen_bytecode:26:TODO:1
 thoughts/projects/sonilo/tasks/grid_demo:30:TODO:1
 thoughts/projects/sonilo/tasks/initial_dsp:33:TODO:1

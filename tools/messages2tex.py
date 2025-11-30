@@ -32,7 +32,14 @@ for entry in obj:
 
 def begin():
     print("\\pdfpagewidth=148mm")
-    print("\\pdfpageheight=210")
+    print("\\pdfpageheight=210mm")
+    print("\\hsize=128mm")
+    print("\\vsize=190mm")
+    print("")
+    print("\\pdfhorigin=0pt")
+    print("\\pdfvorigin=0pt")
+    print("\\hoffset=10mm")
+    print("\\voffset=10mm")
 
 def bye():
     print("\\bye")

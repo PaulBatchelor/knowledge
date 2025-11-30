@@ -108,3 +108,5 @@ ln create a block dedicated to keeping track of multiple
 ln blocks. An allocator would be able to attempt to allocate
 ln a block by checking through all the available slots.
 co tasks/buddy_slots tasks/allocator
+nn tasks/docgen
+ln Create a simple documentation generator for input.txt

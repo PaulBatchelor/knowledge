@@ -1174,3 +1174,8 @@ This will be a high-level allocator, wrapping the
 block list, bitset, and the buddy allocator.
 ---
 got caught up with printing it to a PDF
+
+@10:57 creating a docgen for my sonilo input.txt file #timelog:00:53:32
+#! dz thoughts/projects/sonilo/tasks/docgen
+I need a better way to read a review this stuff. attempting
+to generate tex for this

@@ -1188,4 +1188,18 @@ I was.
 Got tripped up on where the origin was. And, I mixed up
 X and Y axis (but it didn't really matter). Things work.
 ---
-Submitted
+Submitted.
+
+@2025-12-01 Day 92. Getting back into things
+@10:23 COAD 1.10, 1.11 #timelog:00:53:19
+#! dz coad/toc/01_computer_abstractions_and_technology/10_matrix_multiply_python
+#! dz coad/toc/01_computer_abstractions_and_technology/11_fallacies_and_pitfalls
+
+@13:36 1.11, 1.12 #timelog:01:01:19
+#! dz coad/toc/01_computer_abstractions_and_technology/12_concluding_remarks
+#! dz coad/toc/01_computer_abstractions_and_technology/11_fallacies_and_pitfalls
+
+@15:06 started chapter 2, 2.1 #timelog:00:52:03
+#! dz dmoi/toc/02_graph_theory/01_problems_and_definitions
+
+@16:01 timelogging #timelog:00:02:41

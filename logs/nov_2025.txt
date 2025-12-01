@@ -1203,3 +1203,10 @@ Submitted.
 #! dz dmoi/toc/02_graph_theory/01_problems_and_definitions
 
 @16:01 timelogging #timelog:00:02:41
+
+@16:08 skipping these last chapters
+#! dz coad/toc/01_computer_abstractions_and_technology/13_historical_perspective_and_further_reading
+#! dz coad/toc/01_computer_abstractions_and_technology/14_self_study
+#! dz coad/toc/01_computer_abstractions_and_technology/15_exercises
+
+

@@ -37,7 +37,7 @@ dmoi/toc/01_logic_and_proofs/05_proofs_about_discrete_structures:8:DONE:2
 dmoi/toc/01_logic_and_proofs:10:DONE:2
 dmoi/toc/05_discrete_structures_revisited/02_functions:12:DONE:2
 dmoi/toc/05_discrete_structures_revisited/01_sets:15:DONE:2
-dmoi/toc/02_graph_theory/01_problems_and_definitions:17:TODO:2
+dmoi/toc/02_graph_theory/01_problems_and_definitions:17:DONE:2
 dmoi/toc/02_graph_theory/02_trees:19:TODO:2
 dmoi/toc/03_counting/01_pascals_arithmetical_triangle:21:TODO:2
 dmoi/toc/02_graph_theory/03_planar_graphs:23:TODO:2

@@ -178,3 +178,4 @@ logs/aug_2025.txt
 logs/sep_2025.txt
 logs/oct_2025.txt
 logs/nov_2025.txt
+logs/dec_2025.txt

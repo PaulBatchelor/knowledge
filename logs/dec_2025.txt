@@ -1,0 +1,114 @@
+@2025-12-01 Day 92. Getting back into things
+@10:23 COAD 1.10, 1.11 #timelog:00:53:19
+#! dz coad/toc/01_computer_abstractions_and_technology/10_matrix_multiply_python
+#! dz coad/toc/01_computer_abstractions_and_technology/11_fallacies_and_pitfalls
+
+@13:36 1.11, 1.12 #timelog:01:01:19
+#! dz coad/toc/01_computer_abstractions_and_technology/12_concluding_remarks
+#! dz coad/toc/01_computer_abstractions_and_technology/11_fallacies_and_pitfalls
+
+@15:06 started chapter 2, 2.1 #timelog:00:52:03
+#! dz dmoi/toc/02_graph_theory/01_problems_and_definitions
+
+@16:01 timelogging #timelog:00:02:41
+
+@16:08 skipping these last chapters
+#! dz coad/toc/01_computer_abstractions_and_technology/13_historical_perspective_and_further_reading
+#! dz coad/toc/01_computer_abstractions_and_technology/14_self_study
+#! dz coad/toc/01_computer_abstractions_and_technology/15_exercises
+
+@2025-12-02 Day 93
+@09:22 writing a course review. this should be interesting #timelog:01:39:20
+#! dz csmet/cs248/news
+Damn, it's multiple choice. not much room for writing a response.
+---
+I've outlining and thinking about this one for a while.
+---
+Here is my essay:
+---
+In the spirit of leaving things in a better place than when I found
+them, I'd like to offer some constructive criticism for CS-248.
+There are two key areas that I believe could use some improvement,
+and I'd like to offer some suggestions for improvement.
+---
+The first key area of improvement is structure. Prof. Shahossini
+made it very clear from the beginning that he wanted to make this
+class flexible enough so as to adapt to the pace of the class. I
+respect this choice very much. However, there is a double edged
+sword here: make it too flexible, and you lose structural integrity.
+I would argue that an empty syllabus is too much flexibility,
+especially for a subject like mathematics. It was never clear when
+we had to do homework, or if we had to do homework. I struggled
+with quizes and midterms, despite having studied for them and having
+it be open book. For example, one particular quiz introduced entirely
+new terms without any definition which could not be found anywhere
+in any chapter of the textbook (let alone the assigned chapter),
+which I found unfair and disproportionately compared to the
+expectations I had come to understand from the class. Challenging
+exams are a hallmark of university-level math courses, but the
+difference between those courses and this one is that these students
+are well supported; a typically undergraduate mathematics course
+has TAs and official office hours. We were given neither.
+---
+My suggestion to improve the overall structure is to make CS-248
+more of what is trying to be: a remedial course on discrete mathematics
+using rote learning. In rote learning, there is a contract between
+teachers and students: follow the textbook, and you will succeed.
+For this to work, the textbook (in this case, zybooks) must be a
+source of truth. I believe there will be a significant bump in
+student performance if the tests and quizes more closely resembled
+the problems and assignments we did in homework. Zybooks has plenty
+of exercises to choose from. Choose a couple from the textbook,
+maybe modify them a little bit, and that's your quiz.
+---
+The second area of improvement is classroom environment. To put it
+bluntly: it was hostile. On the very first day of class, Professor
+Shahossini blew up at a student for asking a clarifying question.
+The student made the mistake of saying the professor was wrong,
+citing the textbook that he had just downloaded minutes ago. Instead
+of trying to foster a discussion, the Professor called it a disruption,
+and proceeded to get into a shouting match for 15 minutes. This
+pattern occurred again a few classes later, where a student found
+a mistake on the board (a counter-example to what was supposedly a
+valid argument), and proceeded to spend the rest of class trying
+to prove that the student was incorrect. I do not know if the student
+was correct. What I do know is this: it took up the rest of the
+class, we went overtime (the only time this ever happened), and the
+manner of proving him wrong (building up a massive truth table),
+was precisely what we were told not to do minutes prior. The class
+after our midterm, the Professor was visibly very unsettled and
+upset, and took it out on the class by yelling at us as went over
+the midterm. I have not had a teacher this volatile in about 20
+years. I've been very anxious coming into classes.
+---
+I want to make something very, very, clear: Professor Shahossini
+is a kind man. All my interactions outside of class have been lovely.
+He remembers my name, takes an interest in my life, and genuinely
+seems passionate about teaching. On these metrics, he has been an
+excellent professor, better than all the professors I've had up to
+this point during my time at CSMET.
+---
+So, what is going on here? Why is a kind man yelling at a class of
+students? I can only make guesses based on observation. I do know
+he works 6 full days a week. We have a night class that ends at
+8:45pm after a full day of classes, and it's not even his last class
+of the day. This man is overworked. How could anyone teach with
+those hours? In the industry, we would call this burnout. The first
+day of class when he got into a heated argument with a student, I
+recall he was also late to class. His reason for the tardiness had
+to do with his attempt to get a replacement laptop, which apparently
+was a struggle. I know he also had to move a fair bit to get to
+this classroom, and wanted to switch classrooms (we never switched
+classrooms, so either the request was never made, or the request
+was denied). Things like this lead me to ask: is the school
+administration providing the necessary resources for professors to
+succeed? Are they treating professors well? If the teachers are
+unable to teach, the students are unable to learn; this is a logical
+implication I learned in CS-248. What is my motivation for giving
+money to this administration if they have failed to support the
+educators which form the backbone of the institution? If you are
+an administrator, my plea is this: take care of your teachers. They
+are precious.
+---
+The clock in our classroom is broken, and has been since the first
+day of class. Fix it.

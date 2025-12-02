@@ -17,6 +17,11 @@
 #! dz coad/toc/01_computer_abstractions_and_technology/14_self_study
 #! dz coad/toc/01_computer_abstractions_and_technology/15_exercises
 
+@18:00 cs-342 #timelog:02:45:00 #bumet
+
+@21:10 More 2.1 #timelog:00:13:27
+#! dz dmoi/toc/02_graph_theory/01_problems_and_definitions
+
 @2025-12-02 Day 93
 @09:22 writing a course review. this should be interesting #timelog:01:39:20
 #! dz csmet/cs248/news
@@ -112,3 +117,11 @@ are precious.
 ---
 The clock in our classroom is broken, and has been since the first
 day of class. Fix it.
+
+@14:00 2.1 wrap-up #timelog:00:59:41
+#! dz dmoi/toc/02_graph_theory/01_problems_and_definitions
+
+@15:12 logs #timelog:00:08:00
+
+@15:17 spreading out reading stuff more, agenda is too piled up
+#! dz dmoi/news

@@ -125,3 +125,7 @@ day of class. Fix it.
 
 @15:17 spreading out reading stuff more, agenda is too piled up
 #! dz dmoi/news
+
+@15:21 finish zybooks chapter 5 online #timelog:00:57:32
+#! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra
+I hate click and drag so much.

@@ -129,3 +129,10 @@ day of class. Fix it.
 @15:21 finish zybooks chapter 5 online #timelog:00:57:32
 #! dz csmet/cs248/discrete_math_zybook/toc/05_boolean_algebra
 I hate click and drag so much.
+
+@21:30 2.2 Trees #timelog:00:59:41
+#! dz dmoi/toc/02_graph_theory/02_trees
+
+@2025-12-03 Day 94
+@10:17 Logging
+@10:30 scanning, cropping, binning #archiving #timelog:00:28:07

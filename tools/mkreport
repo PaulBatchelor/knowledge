@@ -1,0 +1,18 @@
+# generates a PDF report of logs and tasks, given a top
+# level node, or wildcard
+
+if [ "$#" -lt 2 ]
+then
+    echo "Usage $0 node report_name"
+    exit 1
+fi
+
+NODE=$1
+REPORT=$2
+
+TMPDIR=$(mktemp -d --suffix knowledge)
+./tools/messages $NODE | ./tools/messages2tex.py > $TMPDIR/$REPORT.tex
+cd $TMPDIR
+pdftex $REPORT
+cd -
+mv $TMPDIR/$REPORT.pdf .

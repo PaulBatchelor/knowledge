@@ -125,6 +125,7 @@ for node in node_list:
         for dob in date_objs[d]:
             print(header3(dob["time"] + ": " + dob["title"]))
             for p in dob["content"]:
-                print(par(p))
+                if p != None:
+                    print(par(p))
 
 bye()

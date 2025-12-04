@@ -186,7 +186,7 @@ examples for trees in textbooks, though I may be misremembering.
 @14:05 2.3 Modern Symmetric Encryption Algorithms #timelog:00:31:08
 #! dz csmet/cy100
 
-#15:57 8.2 Recurrence Relations #timelog:00:33:50
+@15:57 8.2 Recurrence Relations #timelog:00:33:50
 #! dz csmet/cs248/discrete_math_zybook/toc/08_induction_recursion/02_recurrence_relations
 
 @20:34 sonilo-ing #timelog:01:39:09 #sonilo

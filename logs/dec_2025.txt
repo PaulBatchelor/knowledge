@@ -151,3 +151,8 @@ reader.
 #! dz coad/news
 The distribution count is already at 188 days. After finals,
 I should have some time to play catch up (hopefully).
+
+@21:49 initial buddy slots work #timelog:00:52:27
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+
+@22:26 hang on debugging my messages system my buddy slots stuff isn't showing up

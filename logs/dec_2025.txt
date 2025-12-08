@@ -183,8 +183,27 @@ to do, and I still didn't finish it.
 #! dz csmet/cs248/finals
 
 @2025-12-08 Day 99
+@10:02 cs342 cheatsheet prep #timelog:00:15:52
+#! dz csmet/cs342/finals
+
+@11:15 more cheatsheet prep #timelog:00:52:50
+#! dz csmet/cs342/finals
+
 @10:24 Logging in, updating logs #timelog:00:06:25
 After my quiz on Thursday, I really needed to decompress
 
 @10:37 downloading slides for cs342 #timelog:00:08:19
 #! dz csmet/cs342/finals
+
+@13:08 more keyword curation
+#! dz csmet/cs248/finals
+
+@13:22 created redux versions of zybooks for easier access #timelog:00:45:12
+#! dz csmet/cs248/finals
+I spend too much time with lookup. I need to clear out some
+pages to make it easier to navigate the text.
+---
+In addition, I'd like to tackle some problem sets, and attempt
+to have AI try to verify my work (yikes, but the math is simple
+enough that I don't think it'll be too far astray. no better
+than the inaccuracies of the prof).

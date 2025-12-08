@@ -156,3 +156,35 @@ I should have some time to play catch up (hopefully).
 #! dz thoughts/projects/sonilo/tasks/buddy_slots
 
 @22:26 hang on debugging my messages system my buddy slots stuff isn't showing up
+
+@2025-12-04 Day 95
+
+@18:00 cs248 class. fairly brutal quiz #bumet #timelog:02:45:00
+#! dz csmet/cs248/news
+These quizes pull no punches. My strategy for study was to
+simply review class notes, but the quiz had things not covered
+in class. So I didn't do great on those parts. It was also very
+tedious work, converting expressions to only be NAND, and then
+NOR. I couldn't do it. I was so drained by the other problems.
+---
+The quiz absolutely took all 2 hours and 45 mintues for me
+to do, and I still didn't finish it.
+
+@2025-12-05 Day 96
+
+@2025-12-06 Day 97
+
+@2025-12-07 Day 98
+
+@15:24 cs342 finals studying #timelog:00:14:00
+#! dz csmet/cs342/finals
+
+@15:38 cs248 studying #timelog:00:24:24
+#! dz csmet/cs248/finals
+
+@2025-12-08 Day 99
+@10:24 Logging in, updating logs #timelog:00:06:25
+After my quiz on Thursday, I really needed to decompress
+
+@10:37 downloading slides for cs342 #timelog:00:08:19
+#! dz csmet/cs342/finals

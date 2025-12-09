@@ -186,13 +186,13 @@ to do, and I still didn't finish it.
 @10:02 cs342 cheatsheet prep #timelog:00:15:52
 #! dz csmet/cs342/finals
 
-@11:15 more cheatsheet prep #timelog:00:52:50
-#! dz csmet/cs342/finals
-
 @10:24 Logging in, updating logs #timelog:00:06:25
 After my quiz on Thursday, I really needed to decompress
 
 @10:37 downloading slides for cs342 #timelog:00:08:19
+#! dz csmet/cs342/finals
+
+@11:15 more cheatsheet prep #timelog:00:52:50
 #! dz csmet/cs342/finals
 
 @13:08 more keyword curation
@@ -207,3 +207,30 @@ In addition, I'd like to tackle some problem sets, and attempt
 to have AI try to verify my work (yikes, but the math is simple
 enough that I don't think it'll be too far astray. no better
 than the inaccuracies of the prof).
+
+@15:26 cs342 studying #timelog:00:46:16
+
+@16:50 cs248 problemset curation #timelog:00:57:26
+#! dz csmet/cs248/finals
+
+@17:50 more curation #timelog:00:30:18
+#! dz $
+
+@20:49 studying the "correct" way: problem sets
+#! dz csmet/cs248/finals
+I've figured out the issue with this class. It was always
+about the (lack of) problem sets for homework. The quizes
+and tests sourced problems the traditional exersizes at the end
+of each chapter. These were the "real" problems, and considerably
+more challenging than the online problems that we were doing.
+---
+We were never told to do the handwritten exercises. We never
+got homework. The instruction we got was to just do the online
+interactive exercises.
+---
+So, I'm going to do the problem sets I was supposed to do during
+the semester. I went through all the chapters we did and collected
+all the problems. 150 of them. Of those, I found the likely candidates
+for problems to show up on the final. 38. Tomorrow, there will
+be 10 days between now and the final. That means, I'd need to do
+4 problems a day at least.

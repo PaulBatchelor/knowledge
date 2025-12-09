@@ -174,7 +174,16 @@ to do, and I still didn't finish it.
 
 @2025-12-06 Day 97
 
+@16:50 knowledge graph rules (inking) #ink:057 #timelog:00:27:34
+
 @2025-12-07 Day 98
+
+@17:46 COAD 2.1, 2.2 #timelog:00:18:17
+#! dz coad/toc/02_instructions_language_of_the_computer/01_introduction
+
+@21:22 COAD 2.2, 2.3
+#! dz coad/toc/02_instructions_language_of_the_computer/02_operations_of_the_computer_hardware
+#! dz coad/toc/02_instructions_language_of_the_computer/03_operands_of_the_computer_hardware
 
 @15:24 cs342 finals studying #timelog:00:14:00
 #! dz csmet/cs342/finals

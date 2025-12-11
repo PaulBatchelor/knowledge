@@ -243,3 +243,50 @@ all the problems. 150 of them. Of those, I found the likely candidates
 for problems to show up on the final. 38. Tomorrow, there will
 be 10 days between now and the final. That means, I'd need to do
 4 problems a day at least.
+
+@2025-12-09 Day 10
+@07:45 psets #timelog:01:05:10
+#! dz csmet/cs248/finals
+
+@10:30 psets #timelog:00:29:23
+#! dz csmet/cs248/finals
+
+@10:47 cs342 cheat sheet building #timelog:00:36:52
+#! dz csmet/cs342/finals
+
+@11:35 cs342 cheat sheet #timelog:00:36:14
+#! dz csmet/cs342/finals
+
+@13:00 psets #timelog:00:33:47
+#! dz csmet/cs248/finals
+
+@15:48 cs342 cheat sheet #timelog:00:45:41
+#! dz csmet/cs342/finals
+
+@2025-12-10 Day 101
+@09:50 psets #timelog:01:25:12
+#! dz csmet/cs248/finals
+
+@13:48 cheatsheet #timelog:00:29:05
+#! dz csmet/cs342/finals
+
+@14:26 psets #timelog:00:58:39
+#! dz csmet/cs248/finals
+
+@17:47 cheatsheet #timelog:00:39:48
+#! dz csmet/cs342/finals
+
+@20:06 cheatsheet, studying, etc #timelog:00:55:01
+#! dz csmet/cs342/finals
+
+@2025-12-11 Day ??
+@09:50 more cheat sheet, consolidating code examples from slides #timelog:01:04:25
+#! dz csmet/cs342/finals
+
+@11:05 psets #timelog:1:01:57
+#! dz csmet/cs248/finals
+
+@13:12 psets #timelog:00:38:31
+#! dz csmet/cs248/finals
+
+@14:31 updating logs. been a few days. lots of studying AFK #timelog:00:12:46

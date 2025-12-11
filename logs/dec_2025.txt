@@ -290,3 +290,192 @@ be 10 days between now and the final. That means, I'd need to do
 #! dz csmet/cs248/finals
 
 @14:31 updating logs. been a few days. lots of studying AFK #timelog:00:12:46
+
+@14:45 code review #timelog:00:56:07
+#! dz csmet/cs342/finals
+#! dz csmet/cs342/code
+I find myself wondering, is this stuff actually sinking in?
+My study sheet has had me seeingt a lot of very abstract
+pseudo code over the past few days. It's very easy to gloss
+over it without thinking too deeply about it. Similar to
+what I did with the zybooks and psets, I've consolidated
+all the slides with code on them into one PDF. 90 slides
+total. I will now begin systematically going through
+every slide. The process will be: create a node for each
+major code example, and then add comments to that node
+about that code example. If I can talk my way through
+every piece of code with a certain level of confidence,
+I think I will have studied enough.
+
+@14:51 doubly linked list
+#! dz $/doubly_linked_list
+Pretty straightahead. I can work out doubly linked lists
+from first principles.
+
+@14:52 circular linked list
+#! dz $/circular_linked_list
+Key insight: the head is the next pointer in tail. Only
+the tail pointer is kept. The rest can be derived.
+
+@14:53 stack
+#! dz $/stack
+A stack has push, pop operations. Can be implemented using
+a array or linked list.
+
+@14:53 bottomInsert
+#! dz $/bottomInsert
+I have this code in my cheatsheet. The goal of this
+function is to put something at the bottom of the stack
+using only stack operations. Done with recursion.
+The base case is the empty stack. Otherwise, you just keep
+popping, and calling.
+
+@14:57 queue with array
+#! dz $/queue_array
+The tricky bit here is getting the wraparound right when adding
+values. There are separate variables for capacity and size.
+---
+front and back pointers.
+
+@15:00 queue with LL
+#! dz $/queue_circular_linked_list
+add: addTail, remove: removeHead
+
+@15:01 josephus
+#! dz $/josephus
+code isn't too bad, once you understand the problem. reconstructing
+the problem from the code is the difficult bit.
+---
+Add things to a queue. Then start removing things from the queue.
+First in line to back of line for k - 1 items, then remove
+the last item completely. Repeat only one item is left.
+
+@15:12 steps of knight
+#! dz $/steps_of_knight
+I remember this is a BFS problem using a queue. I forget
+the exact problem.
+---
+I think it's about the smallest number of moves to get
+from one position to another position, based on the movements
+of a knight |(2, 1)| or |(1, 2)|.
+---
+Almost feels like the minimum cost path problem. The queue
+is used because the first items in the queue are always
+going to be the smallest cost.
+
+@15:17 isBalancedParenthesis
+#! dz $/isBalancedParenthesis
+We briefly went over this in class. It's a leetcode problem,
+I've done it a few times. The stack is used to keep track
+of left parens. Right parens do the popping. Paren order
+is FIFO like a stack, so checking that the parens match
+after popping is what ensures that things are balanced.
+
+@15:19 binary tree
+#! dz $/binary_tree
+There's not a lot to the actual data structure. It's a thing
+data and two children left and right.
+
+@15:21 binary search tree: insertion
+#! dz $/BST_insert
+I can probably work this out from first principles.
+---
+This is a recursive function. The base case is if the node
+is empty, this means create a new node, set the value,
+and return that. Otherwise, you're comparing the value with
+the value of the current node. Call insert on left or right
+accordingly.
+
+@15:25 preorder traversal
+#! dz $/preorder
+parent, left, right
+
+@15:28 inorder traversal
+#! dz $/inorder
+left, parent, right
+
+@15:29 postorder
+#! dz $/postorder
+left, right, parent
+
+@15:29 count number of nodes
+#! dz $/numNodes
+This is a recursive problem using some kind of traversal.
+---
+Without looking at code: address the base case, node is
+empty, return 0. Otherwise, 1 plus the number of nodes
+in left and right child.
+
+@15:31 find a node in binary search tree
+#! dz $/BST_find_node
+The key insight with this is that search is log(n) because
+it's a binary tree. Recursively descend into the tree
+based on comparing the target value with the current value.
+---
+The base case is reaching an empty node or finding
+the node. If empty, no node found. Otherwise found.
+---
+This function should really be called "exists" not find,
+as it returns a boolean. But that's another matter...
+
+@15:34 BST: find min node
+#! dz $/findMin
+The smallest node in a BST is the leftmost node. It can
+be done recursively I think, but this code implementation
+does it iteratively using a while loop which I think is
+cleaner.
+
+@15:36 BST: delete a node
+There's a fair bit of code here. I think I remember being
+able to work this out by drawing a picture.
+---
+There are three levels of conditional checks.
+---
+The first (outermost) check is to ensure that the node
+is not null. This could be refactored to just return early,
+and it'd save a level of indentation.
+---
+The second conditional is to check if the current node
+is the node to be deleted (value match).
+---
+If this is indeed the node to be deleted, then it checks
+to see if is a leaf node or not. If it's a leaf node, one
+can very easily return null. If it's not a leaf node, it
+checks to see if there is only one child, and that returns
+early. If both children exist, it finds the smallest node
+on the right of the current node, sets that to take the
+place of the deleted node, then updates the new right node
+by deleting the previous position of the updated node.
+---
+If this is not the node to be deleted, it continues searching
+the left and right nodes trying to find the nodes. These
+are the recursive calls.
+---
+So really, the meat of this is groking the "inner most"
+part of deletion, which is finding a replacement, updating
+the node, then deleting the old version. A little bit tricky
+to think about, especially getting the edge cases right.
+
+@15:47 AVL Tree
+#! dz $/AVLTree
+I don't think we're really expected to understand this one
+too deeply. This uses a concept of height to keep things
+self-balancing.
+---
+Rotation code is unintuitive. The picture makes a little
+more sense. It's a lot to think about. I'd rather not
+dive too deeply into this right now.
+---
+Insertion is a recursive insert into BST, followed by
+a balancing act.
+---
+Deletion is deletion, then self-balancing. There are 4 edge
+cases on balancing, each requiring a particular kind of
+rotation.
+
+@15:51 RedBlack Tree
+#! dz $/RBTree
+Something something rules about red to black or black to red.
+Somehow when these properties hold, the tree is balanced. Which
+is kind of spooky if you think about it. That's not exactly
+an intuitive thing.

@@ -8,4 +8,5 @@ cs248/07_computation.dz
 cs248/reflections.dz
 cs342/slides.dz
 cs342/snippets.dz
+cs342/code.dz
 .

@@ -279,7 +279,7 @@ be 10 days between now and the final. That means, I'd need to do
 @20:06 cheatsheet, studying, etc #timelog:00:55:01
 #! dz csmet/cs342/finals
 
-@2025-12-11 Day ??
+@2025-12-11 Day 102
 @09:50 more cheat sheet, consolidating code examples from slides #timelog:01:04:25
 #! dz csmet/cs342/finals
 
@@ -479,3 +479,9 @@ Something something rules about red to black or black to red.
 Somehow when these properties hold, the tree is balanced. Which
 is kind of spooky if you think about it. That's not exactly
 an intuitive thing.
+
+@2025-12-12 Day 103
+@09:17 psets
+#! dz csmet/cs248/finals
+
+@13:40 updating logs

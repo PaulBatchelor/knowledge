@@ -40,3 +40,29 @@ nn deleteNode
 nn AVLTree
 
 nn RBTree
+
+nn heap
+
+nn BubbleSort
+
+nn SelectionSort
+
+nn QuickSort
+
+nn HashMap
+
+nn GraphAM
+
+nn Graph
+
+nn countAllPathsDFS
+
+nn rootVertex
+
+nn isCyclePresent
+
+nn isAnagram
+
+nn perm01_nchars
+
+nn nQueens

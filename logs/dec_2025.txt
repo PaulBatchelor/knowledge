@@ -481,7 +481,226 @@ is kind of spooky if you think about it. That's not exactly
 an intuitive thing.
 
 @2025-12-12 Day 103
-@09:17 psets
+@09:17 psets #timelog:01:35:39
 #! dz csmet/cs248/finals
 
 @13:40 updating logs
+
+@13:50 back to code review #timelog:00:31:17
+#! dz csmet/cs342/finals
+#! dz csmet/cs342/code
+
+@13:51 heap
+#! dz $/heap
+parent is ((child - 1) / 2).
+---
+percolation is the tricky bit that I had to derive from
+first principles on the last final.
+---
+percolate up: takes a child, looks at the parent, and swaps
+with the parent if they aren't in order (min heap means
+the parent is larger than the child)
+---
+percolate down: a bit more lines of code. left child is
+2*i + 1, and rchild is +1. one of these children can be chosen.
+And if they are chosen, and that child is out of order
+with the parent. they swap, and percolate is called
+again on the child.
+---
+Not sure I entirely grok the rChild logic here tbh. Might
+want to circle back.
+
+@14:15 bubble sort
+#! dz $/BubbleSort
+two loops. outer loop iterates over all items right to left.
+Inner loop goes left to right up to the the current position.
+Look at the two items, and if they are in the wrong order,
+swap em.
+
+@14:19 selection sort
+#! dz $/SelectionSort
+Two loops. Outer loop counts backwards right to left. inner
+loop starts at 1 and goes up to the current position. in
+the kernel, it finds the index containing the largest
+item. after the inner loop, it swaps the current index with
+the max index.
+
+@14:21 heapify
+#! dz $/heap
+You're starting halfway through the array, and working
+backwards to 0, calling percolateDown. High-level I know
+it keeps swapping things recursively to maintain the properties
+of a heap. I can sort of believe that you only need to do it
+for half, but I'd need to think about this harder to really
+grok it. Again, this percolateDown code isn't something
+I truly fully get. I don't understand the rChild conditional.
+The compare code is too opaque.
+
+@14:29 heapsort
+#! dz $/heap
+this one is clever. You build a heap using the array itself,
+and then pop items off the heap and insert it back into itself,
+right to left.
+
+@14:30 mergeSort. gotta write this one down.
+#! dz $/heap
+There are 3 parts. 1 is the top-level sort function, which
+sets up the array and calls the entry point into merge sort.
+the merge sort algorithm sets up a midpoint, and calls itself
+into two parts, then merges the results together. Merge is the
+logic I have difficulty grokking. Working backwards, the operation
+copies a selection from the temp array back to the main array. the
+addresses are 1:1. Before this, the temp array copies things
+from the main array into itself. The LHS has a increasing
+counter, and the RHS has a pointer (lower, and upper pointers).
+---
+I worked this out before, but sorting algorithms have a way
+of not staying in my head for long. Maybe it's cuz my understanding
+relies on simulation which is a bunch of steps.
+
+@14:36 quicksort
+#! dz $/quicksort
+pretty self contained thing, mostly recursively defined with
+a swap primitive required. I think I remember working this
+out for a homework assignment and it made sense. It is hard
+to grok this just looking at the code.
+
+@15:47 continuing #timelog:00:39:59
+#! dz csmet/cs342/finals
+#! dz csmet/cs342/code
+
+@15:48 linear probing
+#! $/HashMap
+The gist of this is: get the hash, and if that slot isn't
+available, choose the next available slot.
+---
+For finding, you need to compute the hash, and find a non-empty
+slot that matches the key (sweep through).
+---
+This implementation has marks the value entry in the hash
+table with an 'empty' marker.
+
+@15:51 separate chaining
+#! dz $/HashMap
+this I think is how I approached hashmaps: a list of lists.
+I actually like the elegance of the linear probing version.
+
+@15:53 Graph Adjacency Matrix
+#! dz $/GraphAM
+I think the prof said this wasn't going to be on the final,
+so I'm not going to be too invested in understanding this one.
+---
+the API seems pretty much the same as the adjacency list
+version, it's just the underlying data structure used is
+different
+
+@15:55 adjacency list
+#! dz $/Graph
+this seems pretty straight forward. a list of lists. "source"
+is the index of the list, and then the "destintation" is appended
+to the list stored in that slot. It really should be a list of
+sets no? We're shouldn't be allowing duplicate connections right?
+
+@15:58 DFS
+#! dz $/Graph
+Pretty straight forward traversal. BFS uses a Queue in a similar
+way. Both rely on while loops with the condition that there
+is stuff left to do. Both need a way of marking visited nodes.
+
+@15:59 pathExists
+#! dz $/Graph
+Performs DFS from initial starting node. This populates a boolean
+"visited" list. Seeing if there's a path to a particular destination
+is a matter of checking the list after the DFS has been performed.
+
+@16:00 countAllPathsDFS
+#! dz $/countAllPathsDFS
+The tricky bit: why is visited marked as false at the end?
+It's backtracking.
+---
+The problem: Count all possible unique paths from a source
+node to a destination.
+---
+This algorithm works recursively, with the stack of "DFS"
+being implicit via the call stack. It starts at the source,
+then iterates the adjacent nodes, seeing how many paths
+are from that node to the destination. It ends with the base
+case of the source being the destination (that's one path).
+It also ends when all the nodes are traversed. It then unwinds.
+---
+The reason why it unmarks a visited node is that has to do
+with the "unwinding" logic, kind of like a car backing up
+and trying another road. It's possible for those vertices
+to be re-used again.
+---
+Side note: it's very hard for my brain to simulate examples
+that show this, but I'm certain it is true. This is a pattern
+that feels similar to sorting algorithms.
+
+@16:07 rootVertex
+#! $/rootVertex
+This ones a bit silly. A root vertex apparently means, a node
+where all other nodes can be reached. In a DAG, I am pretty
+sure there can only be one of these. So, the algorithm is just
+"keep doing DFS on every node until you find a node where
+it can reach every node". In this case, a boolean array
+is used to keep track of visited nodes, and is cleared
+at the start of each iteration.
+
+@16:10 finding cycles in a DAG
+#! $/isCyclePresent
+I remember going over this in class with some examples to
+showcase why you need two marking systems: a "visited"
+structure to indicate that there are no cycles from this node,
+and "marked" structure used to keep track of duplicate nodes
+found during a traversal.
+---
+The "visited" node is marked off only when a DFS search
+is done with that node as the starting node. "marked" is
+set on at the beginning of a call, and then off at the end.
+---
+Okay, so my logic feels a little shakey on this.
+
+@16:16 anagram checker
+#! dz $/isAnagram
+I've done a version of this algorithm on leetcode that
+involved using two python Counters. This one is a little
+bit more clever, only utilizing one hashmap. I will attempt
+to break this down.
+---
+It starts by building a letter frequency map of the first
+string. The second string is compared to this frequency map,
+and updates it as well (the tricky bit).
+---
+If the second string
+has a character that the first string doesn't have, obviously
+that's not an anagram.
+---
+Then there's the issue of frequency.  If a letter does exist,
+it will subtract from that counter. Eventually, this will
+burn down to 0. If it goes to zero and there are more characters,
+it is not an anagram.
+---
+I wonder if you could express this as like a set difference
+operation? A total match would make every entry 0. Otherwise
+it wouldn't be a match.
+
+@16:23 printing permutations via backtracking
+#! dz $/perm01_nchars
+It's backtracking using recursion. You keep adding
+either a zero or a 1 to the end of a string, and if it
+is long enough, you print it. When it unwinds, it falls out in
+such a way that you keep adding new combinations.
+
+@16:24 n Queens problem
+#! dz $/nQueens
+I get the overall backtracking structure to this. It's
+a form of recursion with candidates being printed after
+a certain condition, and some kind of function determining
+feasibility. I don't play chess, so I don't remember how
+Queens behavior works. Something about putting them on the
+board in such a way that none of them attacks the others.
+---
+Maybe I should learn chess or go. That might help with
+mental visualizations. Because I can't think beyond a certain
+level of detail.

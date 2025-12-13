@@ -704,3 +704,12 @@ board in such a way that none of them attacks the others.
 Maybe I should learn chess or go. That might help with
 mental visualizations. Because I can't think beyond a certain
 level of detail.
+
+@21:18 checking in buddy slots #timelog:00:14:32
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+Tonight I feel like my abstractions are sloppy. I'm building
+up to a more sophisticated allocator, but things like the
+block list and the parameter stack need to be more out of
+the way.
+---
+No real work done. I feel stuck.

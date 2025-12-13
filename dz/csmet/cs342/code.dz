@@ -1,4 +1,4 @@
-ns csmet/cs342/codeg
+ns csmet/cs342/code
 gr code samples from slides
 
 nn doubly_linked_list
@@ -66,3 +66,15 @@ nn isAnagram
 nn perm01_nchars
 
 nn nQueens
+
+nn primsMST
+
+nn unionFind
+
+nn kruskalMST
+
+nn dijkstra
+
+nn tsp
+
+nn quicksort

@@ -755,3 +755,151 @@ and then initializing a zero page with the address of the
 block list as the first item on the zero page. From there,
 you could set up a blockset and a stack to be addresses
 on the zero page. So on and so forth.
+
+@15:28 back to code study #timelog:00:44:46
+#! dz csmet/cs342/finals
+#! dz csmet/cs342/code
+
+@15:29 primsMST
+#! dz $/primsMST
+I vaguely recall how this algorithm works. I will attempt
+to explain this line by line, then from the innermost
+kernel outwards.
+---
+Line by line.
+---
+Setting up some things to maintain state. "previous", "dist",
+and "visited". "previous" probably refers to the previous
+node (pointing to the node id?). "dist" stores the smallest
+distance found. visited keeps track of if things are visited.
+---
+Source is hardcoded to be node 0. previous, distance updated
+accordingly.
+---
+A priority queue is used to store the edges.
+---
+The first edge added to the queue is a phantom edge.
+---
+Now to get inside the main loop, which keeps going while
+a priority queue has things inside of it.
+---
+An edge is removed from the queue.
+---
+The outgoing destination node is marked as visited.
+---
+The outgoing node becomes the new source node.
+---
+Iterate over all adjacent nodes from this new source.
+---
+We examine the cost of each one. Unvisited nodes with a smaller
+cost get added to the queue as an edge from source to this
+node with this node.
+---
+The rest of this code deals with printing the results, which
+I'm going to skip.
+---
+Okay. Now to re-think this another way: this is a loop with
+an inner kernel, study the kernel, and work backwards.
+---
+The inner kernel adds edges to the queue. It also updates
+the states of two components "dist" and "previous".
+---
+"previous[A] = B" says that vert A was reached to last
+via vert B.
+---
+"dist[A] = 4" says that the cost of going to some vertex A
+from some other vertex has a cost of 4. This only gets
+updated when a smaller cost has been found.
+---
+so, the "dist" and "previous" states are used together to
+tell you information. if "dist[A] = 4" and "previous[A] = B",
+it tells us that the smallest edge so far to get to A is B,
+with a cost of 4.
+---
+Since this edge is added to the queue, it will get marked
+as when it becomes the smallest edge in the queue.
+---
+destination verts are iterated over from the last edge
+removed from the queue.
+---
+The destination is looked at. The source was already visited
+in a prior iteration.
+
+@15:50 unionFind
+#! dz $/unionFind
+The tree is represented as an array. I recently skimmed
+an article from Lobsters about Tree processing in J, which
+stores trees in this way. Each index is a node, and the
+value is the parent. Somehow, this works, and I will
+believe it.
+---
+The extra wrinkle here is this "rank", which I believe is
+the height of the tree. An initialized node has a parent
+of itself, and a rank of 0 IIRC.
+---
+find is probably short for "find root". A tree node whose
+parent is itself is by definition a root. so, "find(i)" means
+find the root of the tree that belongs to index i.
+---
+For union: the key thing to know is that it is assumed that
+x and y are both roots already.
+---
+the smaller rank gets merged into the larger rank. what
+I don't quite grok here is why the rank doesn't need
+to be updated.
+---
+Probably because the rank of the root is the only thing
+that is read. Once you merge trees, the child nodes are
+no longer examined.
+---
+So, a tree with rank 1 connects to a tree with rank 2.
+No height increase happens.
+---
+When they are the same size, there is always going to be
+a 1 node difference. This can be seen visually.
+
+@16:01 kruskalMST
+#! dz $/kruskalMST
+Starting with inside out first instead of line-by-line.
+Similar to Prim's, this uses a loop, and so there is a kernel.
+---
+The kernel here adds edges to an output, adds to a running
+total, and performs a union of two roots x and y.
+---
+These kernel operations are only performed when x and y differ.
+---
+x and y are roots for the source and destination. I believe
+it was mentioned that union-find is used for cycle detection.
+I guess I'll just have to believe this is true for now.
+---
+The loop iterates over pre-sorted edges. Smallest edges first.
+---
+The first edge is the smallest edge in the entire graph. It
+will not have any cycles, so it is added to the output. This
+makes sense. If you're trying to find a MST, it is probably
+going to need to contain the smallest edge in the graph. (will
+this always be true then?)
+---
+The next edge is the second smallest edge, and if it doesn't
+produce a cycle, it is by definition the smallest path you
+can have in this graph.
+
+@16:08 dijkstra
+#! dz $/dijkstra
+I liked looking at the inner kernel first. Going to try
+that again.
+---
+Similar to Prim's algorithm, edges are added to a queue
+in the inner loop. What makes it different from Prim's
+is that the cost is a running total from a source destination,
+rather than the smallest edge cost found.
+---
+That as far as I can tell seems to be the biggest difference.
+Interesting.
+
+@16:12 Travelling salesman
+#! dz $/tsp
+pass for now. we barely talked about it, and this code needs
+a fresher pair of eyes. it's got more branches and loops,
+and the function is polymorphic, and it has a few variables
+to consider.

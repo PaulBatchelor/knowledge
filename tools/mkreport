@@ -10,7 +10,7 @@ fi
 NODE=$1
 REPORT=$2
 
-TMPDIR=$(mktemp -d --suffix knowledge)
+TMPDIR=$(mktemp -d -t knowledge)
 ./tools/messages $NODE | ./tools/messages2tex.py > $TMPDIR/$REPORT.tex
 cd $TMPDIR
 pdftex $REPORT

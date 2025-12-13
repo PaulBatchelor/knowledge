@@ -570,7 +570,7 @@ to grok this just looking at the code.
 #! dz csmet/cs342/code
 
 @15:48 linear probing
-#! $/HashMap
+#! dz $/HashMap
 The gist of this is: get the hash, and if that slot isn't
 available, choose the next available slot.
 ---
@@ -638,7 +638,7 @@ that show this, but I'm certain it is true. This is a pattern
 that feels similar to sorting algorithms.
 
 @16:07 rootVertex
-#! $/rootVertex
+#! dz $/rootVertex
 This ones a bit silly. A root vertex apparently means, a node
 where all other nodes can be reached. In a DAG, I am pretty
 sure there can only be one of these. So, the algorithm is just
@@ -648,7 +648,7 @@ is used to keep track of visited nodes, and is cleared
 at the start of each iteration.
 
 @16:10 finding cycles in a DAG
-#! $/isCyclePresent
+#! dz $/isCyclePresent
 I remember going over this in class with some examples to
 showcase why you need two marking systems: a "visited"
 structure to indicate that there are no cycles from this node,

@@ -713,3 +713,45 @@ block list and the parameter stack need to be more out of
 the way.
 ---
 No real work done. I feel stuck.
+
+@2025-12-13 Day 104
+@10:11 morning thoughts: missing abstractions #timelog:00:21:01
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+This morning, I still feel that the "multi-buddy" allocator
+is missing abstractions. The point of friction is with
+my current system there is no way to build up abstractions.
+Something like this allocator needs to be able to have a
+pointer to one "thing", which in turn is a collection of
+pointers to a few other "things". To do this, you need
+an allocator, but this is what is built, and thus there
+is a circular dependency.
+---
+So, memory needs to be allocated for the allocator. This
+is a bootstrapping problem. So, I'm thinking there may be
+an incoming intermediate abstraction required between
+the global block list and this multi-buddy allocator.
+---
+My test system uses a single "cursor" as a pointer in memory.
+This has an issue with abstractions. Say I have a cursor
+pointing to a compound data structure containing
+a list of pointers to many things, with
+one pointing to a block of memory. I may have an operation
+that needs to set that cursor to that block of memory. Once
+I do the operation, I need a way to jump back to that
+compound data structure.
+---
+A design I think I remember reading about in the Elements
+of Computing Systems is the idea of having two values that
+can be swapped, with only the active one being able to
+be set.
+---
+So, for this hypothetical block operation, the commands
+would look like: set word register to be desired block address,
+swap cursors, set cursor from word, do block operation, swap
+back.
+---
+Bootstrapping would involve setting up the block list,
+and then initializing a zero page with the address of the
+block list as the first item on the zero page. From there,
+you could set up a blockset and a stack to be addresses
+on the zero page. So on and so forth.

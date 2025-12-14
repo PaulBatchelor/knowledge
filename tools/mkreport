@@ -14,10 +14,10 @@ REPORT=$2
 #TMPDIR=$(mktemp -d -t knowledge)
 
 # Linux version
-TMPDIR=$(mktemp -d -t knowledge)
+#TMPDIR=$(mktemp -d --suffix knowledge)
 
 # fine, nobody is happy
-#TMPDIR=$(mktemp -d)
+TMPDIR=$(mktemp -d)
 ./tools/messages $NODE | ./tools/messages2tex.py > $TMPDIR/$REPORT.tex
 cd $TMPDIR
 pdftex $REPORT

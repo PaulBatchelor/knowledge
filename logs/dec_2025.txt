@@ -985,7 +985,7 @@ semantically similar to the implementation on the slides.
 Their version uses recursion, while mine does not.
 
 @11:09 minimum stairs
-#! $/minStairCost
+#! dz $/minStairCost
 One of those instances where there's so little code, defining
 the problem it's trying to solve seems like it's more work.
 ---
@@ -1041,7 +1041,7 @@ house and prior houses, or ignoring it. One of these is
 will be larger (or equal?). That is the answer.
 
 @11:28 fibonacci
-#! $/fibonacciTD
+#! dz $/fibonacciTD
 A classic DP problem. They are calling this a top-down solution,
 which contradicts my previous understanding of top-down vs
 bottoms-up. On leetcode, bottoms-up was synonymous with memoization,
@@ -1059,7 +1059,7 @@ build up larger problems until finding the largest problem
 to be solved.
 
 @11:34 well, that's it
-#! $
+#! dz $
 Time to consolidate and print these to a PDF using my
 weird script. I'm going to read all these over. At that
 point, I have no choice but to say this is probably as good

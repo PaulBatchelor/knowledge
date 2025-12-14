@@ -10,7 +10,14 @@ fi
 NODE=$1
 REPORT=$2
 
-TMPDIR=$(mktemp -d -t knowledge)
+# OSX version
+#TMPDIR=$(mktemp -d -t knowledge)
+
+# Linux version
+#TMPDIR=$(mktemp -d -t knowledge)
+
+# fine, nobody is happy
+TMPDIR=$(mktemp -d)
 ./tools/messages $NODE | ./tools/messages2tex.py > $TMPDIR/$REPORT.tex
 cd $TMPDIR
 pdftex $REPORT

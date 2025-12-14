@@ -1150,3 +1150,98 @@ made the most sense to look at was not Q to not P, which
 is contrapositive. Remember, if you converse it, then invert it,
 it's the contrapositive. And these truth tables are equivalent.
 Which is why proof by contrapositive is a thing.
+
+@13:35 cs342 cheat sheet #timelog:00:15:00
+#! dz csmet/cs342/finals
+
+@16:12 cheat sheet #timelog:00:36:29
+#! dz csmet/cs342/finals
+
+@17:01 more cs248 reflections #timelog:00:24:34
+#! dz csmet/cs248/finals
+#! dz csmet/cs248/exercises
+
+@17:02 3.7.1 Recognizing partitions: small finite sets
+#! dz $/3_7_1
+Gives you sets notated in different ways, and asks questions
+related to which ones form a set, and if not, why.
+---
+These were small enough to write out by hand in roster notation
+(where applicable). From there, it was a matter of minding
+the details.
+
+@17:04 3.7.2 finding a partition of a set
+#! dz $/3_7_2
+You are working with binary strings here, and you need to
+work out 2 combinations of sets that form a full partition.
+for a binary string of length 3.
+---
+Similar to 7.1, I expanded them all to roster notation,
+and chose carefully. At first, I thought there were less
+options because some of the sets looked like they were
+the right length, but then I noticed the exponent.
+
+@17:06 3.6.7 cartesian products, power sets, and set operations
+#! dz $/3_6_7
+Three sets are defined, and you have to write out in roster
+notation the results of various set operations and power
+sets. Like many of these problems, it's pretty mechanical.
+Just expand in a systematic way, and for things like intersection,
+have a method of "bookkeeping". It's easy to mess up small things
+doing it by hand.
+---
+Having an order for writing out power sets is useful.
+
+@17:10 3.6.6 Roster notation for sets defined using set builder notation and the Cartesian product
+#! dz $/3_6_6
+You are given notation, and you need to work things out to expand
+them in roster notation. I believe a 0 exponent is an empty
+set, which lead to mildly interesting set behaviors.
+---
+Again, mostly about being mechanical and methodical. The syntax
+isn't terribly trying.
+
+@17:13 3.4.3 Set operations
+#! dz $/3_4_3
+You're given sets, both infinite and finite. The job is to
+determine if statements are true and false.
+---
+Most of this is about knowing the notation and possibly
+expanding some things into roster notation. There was a small
+gotcha at problem 'g', with sets vs elements.
+
+@17:16 3.3.4 power sets and operations
+#! dz $/3_3_4
+This is all about writing power sets, with a little bit
+of set operations. What's nice about these problems is
+they highlight the subtle differences between order
+of operations.
+---
+For writing power sets, I tend to put dots under elements
+to keep track of what I've written so far. I started doing
+this sort of pattern more and more. It's especially helpful
+when expanding very long equations. Good bookkeeping is what
+this kind of rote math is about.
+
+@17:19 3.2.6 power sets of power sets
+#! dz $/3_2_6
+This exists to demonstrate that a power set of any order
+on an empty set always has a cardinality of 1.
+
+@17:20 3.2.3 cardinality of a power set
+#! dz $/3_2_6
+"what is the cardinality of this power set?" it asks. To
+find it, count the elements in the set (6). The number of
+elements is $2^6 = 64$.
+
+@17:22 3.2.4 subset of a power set
+#! dz $/3_2_4
+The goal of this problem is to sprinkle in power set notation
+with set builder notation. You don't need to write out the
+entire power set to do this.
+---
+Many of these sorts problems fall into enumeration and ordering
+problems, where it's really about having a system for easily
+writing out large number of items without mistakes. They
+don't teach that, that's just something you're supposed to
+pick up after a while. Ah well.

@@ -756,6 +756,12 @@ block list as the first item on the zero page. From there,
 you could set up a blockset and a stack to be addresses
 on the zero page. So on and so forth.
 
+@11:07 psets #timelog:00:44:34
+#! dz csmet/cs248/finals
+
+@13:03 psets #timelog:01:03:02
+#! dz csmet/cs248/finals
+
 @15:28 back to code study #timelog:00:44:46
 #! dz csmet/cs342/finals
 #! dz csmet/cs342/code
@@ -904,6 +910,22 @@ a fresher pair of eyes. it's got more branches and loops,
 and the function is polymorphic, and it has a few variables
 to consider.
 
+@16:54 the last of the psets #timelog:00:18:38
+#! dz csmet/cs248/finals
+38 problem sets done over the last few days. Later,
+I'm going to put entries of each problem into my knowledge
+graph, and I'm going to talk through the problems and
+my approaches to solving them.
+---
+If I can do that, and re-read my thoughts at least once
+before the exam, I think I'll be okay.
+
+@17:35 zero page thoughts #ink:061 #timelog:00:15:14
+
+@18:26 more zero page inking #ink:061 #timelog:00:33:33
+
+@20:15 more zero page thoughts and inking #ink:061 #timelog:01:02:16
+
 @21:15 rework integer parsing to insert at LSB #timelog:00:15:00
 #! dz thoughts/projects/sonilo/tasks/buddy_slots
 Emerged from my work on zero pages. Basically, I found
@@ -914,3 +936,131 @@ it'd need at least two args). The approach requires storing
 input from the LSB instead of from the MSB.
 ---
 huzzah done
+
+@2025-12-14 Day 105
+@10:46 update logs #timelog:00:06:58
+
+@10:56 now to finish up this code review #timelog:00:37:43
+#! dz csmet/cs342/finals
+#! dz csmet/cs342/code
+
+@10:57 minimum coin change
+#! dz $/minCoinsDP
+A year ago I had issues with problem during my leetgrind.
+I still found myself running into similar roadblocks.
+---
+Mainly, the issue for me has been expressing the problem
+mathematically. How do you handle the impossible scenarios?
+In the leetcode version, you needed to return -1, but
+this caused problems with min. I realized I could use inf
+while making this, and in my first pass I did use it.
+---
+Once I worked out a bit of how the recurrence relation
+could work (note that I did not express it well, I want
+to look that up), the bottoms up implementation felt a
+little more solid.
+---
+It's very helpful for these DP problems to treat the state
+as an abstract data type, rather than "dp array". that's just
+an implentation detail. The important thing is that you have
+a combination of state variables and a result.
+---
+Getting that initial base case correct first
+was critical for me. If the total is zero, no coins required.
+Then you can go on to say, if the total is less than the smallest
+coin denomination, there is no possible solution. From there,
+you can surmize that if the total is equal to one of the
+coin denominations, the smallest possible number of coins
+for that problem is 1. Can't get smaller than 1.
+---
+At this point,
+it's important to realize that every problem for this has
+been solved from a total of zero, to the smallest coin
+denomination. Those become the building blocks to the
+problems with larger totals, since those solutions are
+combinations of the smaller solutions.
+---
+My solution I did by hand (which I think is correct?) seems
+semantically similar to the implementation on the slides.
+Their version uses recursion, while mine does not.
+
+@11:09 minimum stairs
+#! $/minStairCost
+One of those instances where there's so little code, defining
+the problem it's trying to solve seems like it's more work.
+---
+Okay, so you need to reach the top, and each step has
+a particular cost. Find the smallest cost.
+---
+From the top, the last step will either be one before
+or two before.
+---
+The base cases are the first two steps. Otherwise, you
+are recursively finding the min cost between n - 1 and n - 2.
+---
+(n == 1) is always going to be cost[1] because otherwise it
+is cost[1] + cost[0].
+
+@11:13 stairUniqueWays
+#! dz $/stairUniqueWays
+How many ways can you climb a set of stairs when you can go
+by 2 steps or 1 step. Base cases are: if n = 0, only one
+possibility. if n = 1, two possibilities. From there, it's
+a combination of n - 1 and n - 2.
+
+@11:16 house robber
+#! dz $/maxRobbery
+8 lines of code to solve this, and it uses "dp" which
+completely obfuscates the problem domain.
+---
+I think the problem basically goes you have a set of houses
+you want to rob, but you can't rob consecutive
+houses. The problem to solve is to find the maximum value
+given the constraint.
+---
+The state stores the results of a decision tree. The robber
+moves left to right, robbing houses as they go. At each
+house, the robber makes a decision to rob it or not. Choosing
+to rob includes the current house, but not the previous house
+and the permitted choices leading up to that previous hose.
+Choosing not to rob the current house excludes the current house,
+but you get the accumulated spoils that came from robbing the
+previous house.
+---
+Actually, choosing NOT to rob DOESN'T automatically mean
+rob the previous house. According to this code, it actually
+means choosing the bigger of the two situations: robbing
+the previous house or not.
+---
+Base cases are robbing that first house. If you don't rob
+it, you get nothing. If you do, you get the cost of that house.
+---
+At the end of the robbing spree, the robber has one house
+left. There are two decisions: the spoils of robbing the
+house and prior houses, or ignoring it. One of these is
+will be larger (or equal?). That is the answer.
+
+@11:28 fibonacci
+#! $/fibonacciTD
+A classic DP problem. They are calling this a top-down solution,
+which contradicts my previous understanding of top-down vs
+bottoms-up. On leetcode, bottoms-up was synonymous with memoization,
+but this uses memoization.
+---
+So, I think this is called top-down because it starts with
+attempting to solve the largest problem, which is fib(n),
+and then recursively breaks it down into smaller components
+which need to be solved. The fact that it uses memoization
+is just an implementation detail to speed up performance.
+---
+A bottoms-up solution, on the otherhand, would identify
+the smallest subproblems first and solve those, and systematically
+build up larger problems until finding the largest problem
+to be solved.
+
+@11:34 well, that's it
+#! $
+Time to consolidate and print these to a PDF using my
+weird script. I'm going to read all these over. At that
+point, I have no choice but to say this is probably as good
+as I'll get for studying.

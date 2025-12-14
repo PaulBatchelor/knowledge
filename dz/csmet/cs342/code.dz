@@ -78,3 +78,13 @@ nn dijkstra
 nn tsp
 
 nn quicksort
+
+nn minCoinsDP
+
+nn minStairCost
+
+nn stairUniqueWays
+
+nn maxRobbery
+
+nn fibonacciTD

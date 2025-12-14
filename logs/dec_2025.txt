@@ -903,3 +903,14 @@ pass for now. we barely talked about it, and this code needs
 a fresher pair of eyes. it's got more branches and loops,
 and the function is polymorphic, and it has a few variables
 to consider.
+
+@21:15 rework integer parsing to insert at LSB #timelog:00:15:00
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+Emerged from my work on zero pages. Basically, I found
+a clever way to write words to specific slots in a block
+without the need for a stack (a stack would have been
+necessary for an explicit write word to block operation because
+it'd need at least two args). The approach requires storing
+input from the LSB instead of from the MSB.
+---
+huzzah done

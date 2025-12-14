@@ -1,0 +1,150 @@
+@1.1.1:Identifying propositions
+@1.1.2:Expressing english sentences using logical notation
+@1.1.3:Applying logical operations
+@1.1.4:Truth values for statements with inclusive and exclusive or
+@1.2.1:Truth values for compound English sentences
+@1.2.2:Translating english sentences into logic
+@1.2.3:Truth values for compound propositions
+@1.2.4:Writing truth tables
+@1.2.5:Translating compoiund propositions into English sentences
+@1.2.6:Multiple Disjunction or conjunction Operations
+@1.2.7:Expressing a set of conditions using logical operations
+@1.2.8:Finding truth values to make two logical expressions evaluate to different values
+@1.2.9:Boolean expression to expression a condition on the input variables
+@1.3.1:Truth values for conditional statements in english
+@1.3.2:The inverse, converse, and contrapositive of conditional statements in English
+@1.3.3:Truth values for the inverse, contrapositive, and converse of a conditional statement
+@1.3.4:Truth tables for logical expressions with conditional operations
+@1.3.5:Expressing conditional statements in English using logic
+@1.3.6:Expressing Englishing sentences in if-then form
+@1.3.7:Expressing Conditional Statments in English using logic
+@1.3.8:Translating logical expressions into English
+@1.3.9:Translating English propositions into logical Expressions
+@1.3.10:Determining if a truth value of a compound expression is known given a partial truth assignment
+@1.3.11:finding logical expressions to match a truth table
+@1.4.1:Proving tautologies and contradictions
+@1.4.2:Truth tables to prove logical equivalence
+@1.4.3:Proving two logical expressions are not logically equivalent
+@1.4.4:Proving whether two logical expressions are equivalent
+@1.4.5:Logical equivalence of two English statements
+@1.4.6:Applying De Morgan's Laws
+@1.5.1:Label the steps in a proof of logical equivalence
+@1.5.2:Using the laws of logic to prove logical equivalence
+@1.5.3:Using the laws of logic to prove tautologies
+@1.5.4:Logical relationships between the inverse, converse, and contrapositive
+@1.5.5:Logical equivalence of two mathematical statements
+@1.11.1:Valid and invalid arguments expressed in logical notation
+@1.11.2:Converse and inverse errors
+@1.11.3:Valid and invalid arguments in English
+@1.11.4:Valid arguments with false conclusions and invalid arguments with true conclusions
+@1.12.1:Determing wheter an argument in english is valid or invalid
+@1.12.2:Proving arguments are valid using rules of inference
+@1.12.3:Proving the rules of inference using other rules
+@1.12.4:Proving arguments in English are valid using rules of inference
+@1.12.5:Proving arguments in English are valid or :invalid
+@3.1.1:Set membership and subets: true or false
+@3.1.2:Set membership and subsets: true or false, continued
+@3.1.3:Subset relationships between common numerical sets
+@3.1.4:sets, subsets, and set equality
+@3.1.5:expressing sets in set builder notation
+@3.1.6:Which statements are true for all sets?
+@3.2.1:Sets of sets
+@3.2.2:Write out a power set in roster notation
+@3.2.3:The cardinality of a power set
+@3.2.4:A subset of a power set
+@3.2.5:Facts about power sets
+@3.2.6:Power sets of power sets
+@3.3.1:Unions and intersections of sets
+@3.3.2:Unions and intersections of sequences of sets
+@3.3.3:Unions and intersections of sequences of sets, part 2
+@3.3.4:Power sets and set operations
+@3.4.1:Set subtraction is not associative
+@3.4.2:Symmetric difference applied to many sets
+@3.4.3:Set operations
+@3.4.4:Set operations, part 2
+@3.4.5:Reasoning about the symmetric difference equation
+@3.5.1:Name the set identity
+@3.5.2:Proving set identities
+@3.5.3:Showing set equations that are not identities
+@3.5.4:Proving set identities with the set difference operation
+@3.6.1:Cartesian product of three small sets
+@3.6.2:Cartesian product of two small sets
+@3.6.3:Cartesian product of true or false
+@3.6.4:Expressing sets defined by Cartesian products in roster notation
+@3.6.5:Cardinality of a set defined by a Cartesian product
+@3.6.6:Roster notation for sets defined by using set builder notation and the Cartesian Product
+@3.6.7:Cartesian prducts, power sets, and set operations
+@3.6.8:Proving set identities with Cartesian Products
+@3.6.9:Cartesian products and the empty set
+@3.7.1:Recognizing partitions: small finite sets
+@3.7.2:Finding a partition of a set
+@3.7.3:Recognizing Partitions, the real numbers
+@3.7.4:Recognizing partitions: sets of strings
+@4.1.1:Function basics
+@4.1.2:Drawing arrow diagrams
+@4.1.3:recognizing well defined algebraic functions and their ranges
+@4.1.4:function of an ordered pair
+@4.1.5:range of a function
+@4.1.6:determining whether two functions are equal
+@4.2.1:mystery functions
+@4.2.2:applying the floor and ceiling functions
+@4.2.3:floor and ceiling functions
+@4.2.4:proving facts about the floor and ceiling functions
+@4.3.1:properties of functions that map ordered pairs of integers to integers
+@4.3.2:properties of algebraic functions
+@4.3.3:function properties and the relative sizes of the domain and targert
+@4.3.4:properties of functions on strings and power sets
+@4.3.5:functions on integers with particular properties
+@4.3.6:proving statements about bijections
+@4.4.1:arrow diagrams for inverses of functions
+@4.4.2:finding inverses of functions
+@4.4.3:finding the inverse of the cube of a bijective function
+@4.5.1:Function composition from arrow diagrams
+@4.5.2:Composition of functions on integers
+@4.5.3:Function composition and the identity function
+@4.5.4:Composition of onto and one-to-one functions
+@4.5.5:Composition of functions defined by arrow diagrams
+@4.5.6:Composition of functions on sets of strings
+@4.5.7:Composition of functions on sets of strings, part 2
+@4.5.8:Explicit formulas for compositions of functions
+@4.6.1:Find and equivalent expression: exponents
+@4.6.2:Find an equivalent expression: logarithms
+@4.6.3:find an equivalent expression: exponents and logarithms
+@4.6.4:approximating the log function
+@4.6.5:repeated division
+@5.1.1:evaluating boolean expressions
+@5.1.2:applying de morgans law to boolean expressions
+@5.1.3:using the laws of boolean algebra to prove that two expressions are equivalent
+@5.2.1:boolean functions
+@5.2.2:representing a boolean function by a sum of minterms
+@5.2.3:boolean expressions to input/output tables
+@5.2.4:finding the difference between two boolean functions
+@5.2.5:properties of minterms
+@5.3.1:DNF and CNF expressions
+@5.3.2:Recognizing DNF and CNF expressions
+@5.3.3:Using th elasws of boolean algebra to convert a Boolean expression to DNF
+@5.3.4:CNF expressions satisfying given constraints
+@5.3.5:CNF expressions for functions defined by an input/output table
+@5.4.1:input/output tables to boolean expressions using a limited set of operations
+@5.4.2:input/output tables to boolean expressions using only NAND or only NOR
+@5.4.3:Equivalent expressions using a limited set of operations
+@5.4.4:Equivalent expressions using only NOR or only NAND operations
+@5.4.5:Show a set of operations is functionally complete
+@5.5.1:Which CNF expressions are satisfiable?
+@5.5.2:Satisfying as many clauses as possible
+@5.5.3:Scheduling classes in two periods expressed using SAT, part 1
+@5.5.4:Scheduling classes in two periods expressed using SAT, part 2
+@5.5.5:Scheduling classes in three periods expressed using SAT
+@5.6.1:Expressions to circuits
+@5.6.2:input/output table to circuit
+@5.6.3:Circuit to boolean expression
+@5.6.4:Design a circuit from a description of the circuit in English
+@6.1.1:Matrices to arrow diagrams and sets
+@6.1.2:Arrow diagrams to matrices and sets
+@6.1.3:Matrices and arrow diagrams for relations expressed as sets of pairs
+@6.1.4:Arrow diagrams for relations on small finite sets
+@6.2.1:identifying properties of relations
+@6.2.2:Properties of relations: dependence on the domain
+@6.2.3:Relations that are both relfexive and anti-reflesive or both symmetric and anti-symmetric
+@6.2.4:Identifying properties of relations, continued
+@6.2.5:Identifying properties of relations on a power set

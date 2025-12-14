@@ -9,4 +9,5 @@ cs248/reflections.dz
 cs342/slides.dz
 cs342/snippets.dz
 cs342/code.dz
+cs248/exercises.dz
 .

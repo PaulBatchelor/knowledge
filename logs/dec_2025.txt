@@ -1064,3 +1064,8 @@ Time to consolidate and print these to a PDF using my
 weird script. I'm going to read all these over. At that
 point, I have no choice but to say this is probably as good
 as I'll get for studying.
+
+@11:43 getting pset problems into the knowledge graph #timelog:00:27:15
+#! dz csmet/cs248/finals
+
+@12:11 debugging the Tex generator

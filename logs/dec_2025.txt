@@ -1248,4 +1248,4 @@ pick up after a while. Ah well.
 
 @2025-12-15 Day 106
 @09:41 finishing touches on my cheatsheet #timelog:00:15:34
-@09:53 logging and scanning #timelog:00:45:00
+@09:53 logging and scanning #timelog:00:30:00

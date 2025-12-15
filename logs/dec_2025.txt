@@ -1245,3 +1245,7 @@ problems, where it's really about having a system for easily
 writing out large number of items without mistakes. They
 don't teach that, that's just something you're supposed to
 pick up after a while. Ah well.
+
+@2025-12-15 Day 106
+@09:41 finishing touches on my cheatsheet #timelog:00:15:34
+@09:53 logging and scanning #timelog:00:45:00

@@ -1420,7 +1420,7 @@ or $X_{A1} + X_{A2}$. But, we also need to make sure they both
 can't exist. In other words, it CAN'T be A in period 1 AND
 in period 2. That's a conjection that's been negated, or
 $\overline{X_{A1}X_{A2}}$. Both these terms need to be multiplied
-together to get $(X_{A1} + X_{A2})(\overline{X_{A1}X_{A2})$.
+together to get $(X_{A1} + X_{A2})(\overline{X_{A1}X_{A2})}$.
 Repeat for every class.
 ---
 Now, to address the conflicts. If classes E and B can't be
@@ -1465,7 +1465,7 @@ each clause. If it's not true, the whole thing isn't true and
 it all is 0. So it goes quickly.
 
 @15:54 5.4.4 equivalent expressions using NOR and NAND
-#! $/5_4_4
+#! dz $/5_4_4
 Problem is to convert some multiply/add arithmetic to use
 only NAND operations, then only NOR operations
 ---
@@ -1636,7 +1636,7 @@ these. They were small enough that I could ask claude for
 some help on these.
 
 @16:54 6.2.1: Identifying properties of relations
-#! $/6_2_1
+#! dz $/6_2_1
 A bunch of subproblems describing some kind of relation.
 Sometimes it's an operator, sometimes it's an expression,
 and they gradually turn into word problems. The task is
@@ -1702,3 +1702,7 @@ feels a bit more messy. You don't really know ahead of time
 where to place the arrows. Some problems, like problem a,
 greatly benefit from knowing the relationships before hand before
 placing them in an arrow diagram.
+
+@17:18 turning this into a PDF, uploading to RM and phone #timelog:00:06:32
+#! dz csmet/cs248/finals
+Adding corrections where needed.

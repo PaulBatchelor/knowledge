@@ -1249,3 +1249,456 @@ pick up after a while. Ah well.
 @2025-12-15 Day 106
 @09:41 finishing touches on my cheatsheet #timelog:00:15:34
 @09:53 logging and scanning #timelog:00:30:00
+@18:00 cs342 final #bumet #timelog:02:45:00
+Overall, it didn't feel too bad. I put in the time studying,
+which was a good thing. The cheat sheet came in handy. One
+question (dijkstras algorithm) I didn't prepare for, but
+since it was a homework assignment, I had the muscle memory
+and could sus it out. One problem involved coding out
+selection sort. Fortunately, I wrote that one down. The
+hashmap one was trivial. There was a variation on the
+"perm01" problem that was just a modification of that program.
+
+@2025-12-16 Day 107
+@14:16 more pset review/reflections #timelog:02:54:08
+#! dz csmet/cs248/finals
+#! dz csmet/cs248/exercises
+
+@14:18 4.6.4 approximating the log function
+#! dz $/4_6_4
+Problem: you are given a table of exponents $x^3$, and ask
+to solve for approximations of log values, either floored
+or ceilinged.
+---
+Given a value, determine which numbers it is between.
+Then, depending on if it's ceiling or floor, choose the
+upper or lower bound.
+
+@14:22 4.6.3 Find an equivalent expression: exponents and logarithms
+#! dz $/4_6_3
+You are given expressions involving log, and you're supposed
+to rework them to not use log. Usually they are log2, sometimes
+it's log4.
+---
+This one was tricky for me. The hint this problem gave was
+to set it as an expression equal to y, and then solve.
+
+@14:27 4.5.8 explicit formulas for the composition of functions
+#! dz $/4_5_8
+You're given 3 functions, and then you're supposed to turn
+some combination of composed functions into a single equation.
+---
+First, remember that $f \circ g = f(g(x))$. rewrite it in
+this form, then expand from the inside out.
+
+@14:31 4.5.6 Composition of functions on sets of strings
+#! dz $/4_5_6
+these are functions with domain and target defined using
+binary strings of size 3. their function is described in
+english. the problems ask to compose with these functions,
+and then find the range of the composed functions.
+---
+getting the order correct is important. inner, then outer.
+for the ranges, I made a table. The range is going to be
+a set of all outputs.
+
+@14:37 4.5.2 composition of functions on integers
+#! dz $/4_5_2
+You're given some functions, and asked to perform function
+composition on actual values.
+---
+Compute things in the right order. Similar to 4.5.8, except
+with concrete values instead of variables, so the input (sorry
+sorry PREIMAGE) is always going to be a number.
+
+@14:39 4.4.2 finding inverses of functions
+#! dz $/4_4_2
+This function asks to find an inverse, if the inverse exists.
+---
+Not every function is going to be well defined. For
+example $f(x) = 2x + 34$ isn't going to have a well defined
+inverse if the domain and target are integers. This function
+is not surjective (onto), as domain only maps to even numbers
+in the codomain. There's no way to find the inverse for an
+odd number like 3, without the use of fractional values.
+---
+So, just be mindful of surjective/injective tests.
+---
+Oh yeah, this problem went on for a bit. There were also
+problems involving set notation. This took me a moment to
+parse out. Once you get what it is asking, you can apply
+surjective and injective tests. For example, problem d
+doesn't have a well defined inverse because it's not injective.
+$(2, 3)$ and $(4, 5)$ have the same output value of 2.
+problem is well defined because it's defining negation.
+---
+Yeah the rest of these are just a matter of testing injectivity
+or surjectivity. I think since these are finite, you can
+get a way with writing these out brute force worst case.
+---
+The last problem is a little bit funky since you are solving
+for two variables. Function is $f(x, y) = (1 - y, x)$. The
+variables are flipped so how does one find the inverse? The
+trick to finding the inverse is to set the function up with
+variables $u$ and $v$ like so $f(x, y) = (u, v)$, and then
+solve for $x$ and $y$ to get the inverse $f^{-1}(u, v) = (x, y)$.
+This ends up being $f^{-1}(u, v) = (v, 1 - u)$. Name your
+variables well. Don't overload x and y.
+
+@15:06 4.3.2 properties of algebraic functions
+#! dz $/4_3_2
+The problems show some expressions, and it asks to identify
+if they are onto, one-to-one, neither, or both.
+---
+Figuring out if something is onto or one-to-one involves
+looking at the target and looking backwards into the domain.
+One-to-one values means that there's only one value able to
+get the result. If there's two, it's not one-to-one. Onto
+means that for every value in the domain, one can come up
+with at least one input from the target.
+---
+Making a table helps with this. I did that for the cubed
+problems. With things like floor/ceiling functions, it's
+easy to quickly rule out one-to-one. Multiplication on
+variables can mess up onto.
+
+@15:14 Properties of functions that map ordered paris of integers to integers
+#! dz $/4_3_1
+Given a set of functions, determine which ones are onto.
+---
+Similar to 4.3.2, but only for onto functions. These are
+all integer functions, so the idea is to figure out situations
+where no combination could produce an integer. Multiplication
+is a pretty obvious one. With exponents, setting the exponent
+to be 1 means that the other variable can be any value, positive
+or negative. I guess this comes down to understanding the
+properties of these arithmetic operations? I wish it was
+less hand-wavey. But the idea is to come up with an edge case,
+if there is one.
+
+@15:18 4.2.3 floor and ceiling functions
+#! dz $/4_2_3
+The problem just wants you to apply floor and ceiling
+to real numbers. Negative numbers are always counter-intuitive
+to me. Floor always rounds to the smallest number, so
+floor(-3.7) becomes -4, floor(3.7) becomes 3.
+
+@15:20 4.1.3 recognizing well-defined algebraic functions and their ranges
+#! dz $/4_1_3
+given a function, it asks which ones map a real to a real,
+and to supply their ranges.
+---
+I think the idea with this is to supply caveats for what
+the domain and targets can be. The first problem is a square
+root. A square root can't produce negative real numbers,
+so the range here is limited to only positive reals. The
+domain must supply positive reals to satisfy this range.
+---
+The second problem has a 1/0 issue. So that's a restriction
+on the domain.
+---
+The last problem is just the idenitfy function in disguise.
+
+@15:26 5.5.4 scheduling classes in two periods expressing using SAT, part 2
+#! dz $/5_5_4
+The scheduling problem: 2 periods, schedule classes so each
+class appears in exactly one, and doesn't have conflicts. Then,
+turn it into CNF form. It also asks if the problem is satisfiable,
+which I didn't bother checking.
+---
+This is a fairly tedious problem due to all the terms you have
+to write out. I found it helpful to think about this from
+first principles. There are two parts to this equation: the
+part ensuring that each class appears exactly once in one
+of the periods, and ensuring that there are no scheduling conflicts.
+---
+First to address: How to make sure class A appears at least once?
+The notation used here is important. $X_{A1}$ means "class A
+schedule in period 1".
+that's (A in period 1 or period 2), a disjunction operation,
+or $X_{A1} + X_{A2}$. But, we also need to make sure they both
+can't exist. In other words, it CAN'T be A in period 1 AND
+in period 2. That's a conjection that's been negated, or
+$\overline{X_{A1}X_{A2}}$. Both these terms need to be multiplied
+together to get $(X_{A1} + X_{A2})(\overline{X_{A1}X_{A2})$.
+Repeat for every class.
+---
+Now, to address the conflicts. If classes E and B can't be
+scheduled at the same time. That means, E and B can't be
+in period 1 together, and E and B can't be in period 2 together.
+Those are 2 negated conjunctions. Using the notation previous
+defined: $(\overline{X_{E1}X_{B1}})(\overline{X_{E2}X_{B2}})$.
+Repeat for every conflict.
+---
+De Morgan's laws are required to get some of the negated bits
+into CNF form, otherwise it is pretty much set up for CNF.
+---
+Determining satisfiability case would probably involve
+finding a combination where there aren't any scheduling
+conflicts, then filling out the rest. I'm sure doing it that
+way cuts down on all the possibilities to try out.
+
+@15:40 5.5.2 satisfying as many clauses as possible
+#! dz $/5_5_2
+The problem gives a bunch of CNF expressions, and your job
+is to satisfy as many as possible.
+---
+I had a janky approach to solving these first, which was
+more or less a systematic guess and check. I would have
+gone about this a different way given the chance.
+---
+Setting up a table could be helpful? You can kind of use
+process of elimination to help with some of the choices.
+But I didn't love doing this kind of work by hand. I don't
+have a great handle on a good system for doing this manually.
+---
+Maybe working out table, and working out the clauses one by
+one with counts can help? Every row starts with 0 entries,
+and as clauses are discovered, cross out the previous value, add that amount.
+
+@15:50 5.5.1 which CNF expressions are satisfiable?
+#! dz $/5_5_1
+You're given an expression, and it asks which ones are satisfiable.
+---
+A table is good to build for these. You can work with
+each clause. If it's not true, the whole thing isn't true and
+it all is 0. So it goes quickly.
+
+@15:54 5.4.4 equivalent expressions using NOR and NAND
+#! $/5_4_4
+Problem is to convert some multiply/add arithmetic to use
+only NAND operations, then only NOR operations
+---
+these problems suck. Either you're stuck writing a long
+equation that is error prone, or you just happen to see
+a small shortcut that isn't covered in the textbook. Either
+way, it's bookkeeping.
+---
+First things first, some identities need to be defined
+from first principles.
+---
+NOT from NAND. Negation in NAND is NAND-ing itself, NAND(A, A).
+---
+AND/multiply from NAND and NOT.
+After getting NOT from NAND, you can get multiplication, which
+is just binary AND, by negating a NAND:
+XY = AND(X,Y) = NOT(NAND(X, Y)) = NAND(NAND(X, Y), NAND(X, Y)).
+---
+Add/OR from NAND, NOT, and De Morgan's law. This one is tricky
+to derive under pressure, so pay attention. getting OR(x, y),
+or X + Y with a NAND requires use of De Morgan's laws. However,
+those only work with negation. So, the expression needs
+to be double negated like so NOT(NOT(X + Y)). From there
+the inner loop can be converted to multiplication using
+De Morgan's Law, using AND for boolean multplication:
+NOT(AND(NOT(X), NOT(Y)))). Look at that, there's a NOT and
+an AND in the outer layer. It becomes NAND(NOT(X), NOT(Y)),
+which becomes NAND(NAND(X, X), NAND(Y, Y)).
+---
+Notice the paterns in NAND. AND in AND is XYXY, OR is XXYY.
+---
+NOT from NOR. It ends up being a similar thing to NAND:
+NOR(A, A). Use the truth tables to confirm this.
+---
+OR/addition from NOR. Negating a NOR yields OR, or boolean
+addition: OR(X, Y) = NOT(NOR(X, Y)) = NOR(NOR(X, Y), NOR(X, Y)).
+---
+AND/addition from NOR via DM and NOT. De Morgan's law again, the inverse of
+OR from NAND: AND(X, Y) = NOT(NOT(X, Y)) = NOT(OR(NOT(X), NOT(Y)) =
+NOR(NOT(X), NOT(Y)) = NOR(NOR(X, X), NOR(Y, Y)).
+---
+Again the patterns: OR with NOR is XYXY, AND with NOR is XXYY.
+---
+Identities derived, my process for getting these into NAND
+and NOR was an iterative top-down approach. I addressed
+the arithmetic operations first, then did the negation last.
+Each time I rewrote a version of the equation. I pretended
+I was a compiler, and used dots to keep track of where I was.
+It stopped being a meaningful expression very quickly, and just
+turned into a substitution problem with bookkeeping.
+
+@16:15 5.4.3 equivalent expressions using a limited set of operations
+#! dz $/5_4_3
+You're asked to convert between using only multiplication and negation,
+then addition and negation.
+---
+I always distributed the parentheses, then used generalized
+DM law to go between multiplication and addition. It did
+not ask for CNF/DNF form so I left the multiple negations in.
+
+@16:17 5.4.2 Input/output tables to boolean expressions using only NAND and NOR
+#! dz $/5_4_2
+You have an input/output table, they want you to build up an
+expression, then convert it to NAND/NOR operations.
+---
+Again, tedious work. We are not compilers. I hated that
+these problems were on the quiz. These would have been
+great homework assignments that you could have taken your time on.
+But no, no explicit homework assignments or guidance of any
+kind.
+---
+So, a lot of this is similar to 5.4.4 for converting
+things to NAND/NOR. Then it becomes mechanical substitution
+with book-keeping. Getting the equation from the table
+is a matter of creating a DNF equation from the minterms.
+
+@16:22 5.4.1 input/output tables to boolean expressions using limited set of operations
+#! dz $/5_4_1
+You are given an input/output table, they want you to create
+an expression from it, one using only multiplication/negation,
+the other using addition/negation.
+---
+The trick here is to used generalized forms of de morgan's
+laws. A DNF equation is naturally derived from the tables.
+
+@16:24 5.3.5 CNF expressions for functions defined by an input/output tbale
+#! dz $/5_3_5
+This is a 5 part problem. Part 1 asks you to convert a given
+fully neaged expression to CNF using generalized DM's law.
+Part 2 is a I/O table for a function. It asks you to negate
+that function and create DNF expression for that. In part
+3, it turns out that the DNF expression in part 2 is the expression
+being fully negated in part 1. The CNF expression has already
+been written. So, this shows you how to get a CNF expression
+from a I/O table: negate the function, get the DNF from that,
+negate that function again, then use DM to get it into CNF.
+---
+The last two parts ask you do get a CNF from the I/O table,
+presumably from the process just learned from the first 3
+parts. The last problem just asks you to summarize what you
+learned.
+---
+It's actually like the structure of this problem, and this
+very carefully crafted approach learning by doing.
+
+@16:35 5.3.3 Using the laws of boolean algebra to convert a boolean expression
+#! dz $/5_3_3
+It's a pile of problems, and you can use various laws defined
+in this section to rewrite the equations in DNF form: no parens,
+only multiplications, adds, and single negation.
+---
+I found myself looking back at the table a little bit for
+some of these. DM law was doing most of the heavy lifting.
+I think this had the occasional distribution FOIL-ing, so
+I got to use that muscle again.
+
+@16:38 5.1.2 Applying De Morgan's law to boolean expressions
+#! dz $/5_1_2
+You have expressions with multiple negation, they want you
+to reduce things so that there is only single negation.
+---
+Apply DM law correctly. Knowing generalized DM law is a good
+shortcut for these problems. When we first did these in class,
+we didn't go over that yet.
+
+@16:40 6.2.4 Identifying properties of relations, continued
+#! dz $/6_2_4
+You have finite sets of elements for a domain, and then
+a relation. The goal is to determine reflexsive, symmetric,
+and transitive properties for each.
+---
+I liked using abbreviations for these answers.
+Reflexive (R), Anti-reflexive (AR), not reflexive (NR),
+symmetric (S), anti-symmetric (AS), not symmetric (NS),
+transitive (T), not transitive (NT).
+---
+Reflexive was pretty easy to pick out. You just need to see
+if there are any pairs of themselves. If there aren't any,
+it's AR. If there's some, it's NR. If there's one for every
+element, it's R.
+---
+Symmetric is about going through each pair where the
+elements are different, and seeing if the reverse is there
+as well. Similar pattern to R. No matches: AS, some matches NS,
+all matches: S.
+---
+Transitive took me a while longer to grok, because I wasn't
+confident on what it meant for every element to be satisified.
+Transitive doesn't mean that every element is transitive
+with every other element, which is the kind of property that
+R and S had. Instead, the process goes kind of like this:
+Find a pair (a, b). If there is any pair where the first
+value is b, like (b, c), there must be a corresponding (a, c).
+---
+If there is (a, b) but no pair where b is first, that
+doesn't disqualify it from being transitive I think?
+---
+Tricky thing. If there's an (a, b) and a (b, a), there needs
+to be an (a, a). Transitive property is if (x, y) and (y, z),
+then (x, z). x and z happen to both be a, which is okay.
+in fact, x, y, and z can all be the same, so a relation with
+the pair (a, a) is both reflexive and transitive (it is not
+symmetrical, those need to be different, otherwise every
+reflexive function would be symmetric).
+---
+So this is a pretty good way to warm up intuition on
+these. They were small enough that I could ask claude for
+some help on these.
+
+@16:54 6.2.1: Identifying properties of relations
+#! $/6_2_1
+A bunch of subproblems describing some kind of relation.
+Sometimes it's an operator, sometimes it's an expression,
+and they gradually turn into word problems. The task is
+to determine what degree of reflexive and symmetric they
+are, and if it is transitive or not.
+---
+It's weird that this came before 6.2.4. That problem
+did a much better job sharpening my understanding. Some of
+these needed a few moments to understand the problem. Then
+it's a matter of potential edge cases to disprove.
+---
+At the moment, these properties aren't intuitive yet, so
+I find it helpful that when I'm trying to determine a property,
+to repeat what the property is asking. Then it comes to,
+does it ever work? Does it ever not work? Yes No means R and
+S. No and Yes means AR and AS. Yes and Yes means NR and NS.
+No and No is a contradiction.
+---
+Transitive proofs feel like a chain. You start with an existing pair,
+then another pair that exists where yet another pair doesn't
+exist. If there's a YES YES NO chain, NT. YYY with no YYN
+is T. YNY and YNN don't matter, something can still be YYY
+with those (I think). I think this one is usually logically
+pretty well spelled out.
+
+@17:07 6.1.1 Matrices to arrow diagrams and sets
+#! dz $/6_1_1
+given binary matrices, make arrow diagrams and relation
+sets as ordered pairs.
+---
+Each row, that's a source, each column, that's a destination.
+That's the orientation of the arrows. Personally, I just
+use the matrix again to derive the set. It's messier and
+less precise/mechanical interpreting the arrow diagram.
+
+@17:09 6.1.3 matrices and arrow diagrams for relations expressed as sets of pairs
+#! dz $/6_1_3
+A relation is given, and you must supply a matrix and arrow diagram representation
+---
+Start with the matrix, then the arrow diagram.
+---
+The first problem matched letters and words. The way our brains read,
+we don't actually parse every letter inside of a word. So those
+are easy to miss when making the matrix. Just something to
+keep in mind.
+
+@17:12 6.1.4 arrow diagrams for relationson small finite sets
+#! dz $/6_1_4
+This is a bunch of small problems. The problem wants you to
+draw arrow diagrams given some kind of description.
+---
+Each one has some method
+for describing a finite set of items in a domain, then some
+way of explaining the relation.
+---
+The task has two parts, understanding and expanding
+the items in the domain, and understanding and determining
+how the relations are formed.
+---
+I ended up making an adjacency list for these, then converted
+that to an arrow diagram. Going right to an arrow diagram
+feels a bit more messy. You don't really know ahead of time
+where to place the arrows. Some problems, like problem a,
+greatly benefit from knowing the relationships before hand before
+placing them in an arrow diagram.

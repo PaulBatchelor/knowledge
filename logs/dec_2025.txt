@@ -1706,3 +1706,97 @@ placing them in an arrow diagram.
 @17:18 turning this into a PDF, uploading to RM and phone #timelog:00:06:32
 #! dz csmet/cs248/finals
 Adding corrections where needed.
+
+@21:02 before buddy slots, a zero page
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+A buddy slots system is going to need a stack to handle
+multi-variable function calls. I need to get enough
+of a system working so that there is a stack to use.
+
+@21:10 setting up zero page task #timelog:00:14:00
+#! dz thoughts/projects/sonilo/tasks/zero_page
+
+@21:16 writing initial words on zero page #ink:061 #timelog:00:51:47
+#! dz $
+I'm going to roughly transcribe some of what I was thinking
+a few days ago with this zero page.
+---
+A zero page is like some kind of boot sector. The idea is
+that there's this top-level block that can be used to read
+and write data.
+---
+The thinking is this can bootstrap an initial system for
+memory allocation. So that means it stores a pointer to
+the global block stack, sets of blocks it has allocated,
+a stack, amongst other possible things.
+---
+What's of particular importance is getting a stack working.
+When that happens, I can build up commands that take
+more than one argument. This is needed for my buddy system,
+amongst other things.
+---
+So this bootstrapping process. How does it work? Set
+up the block stack. Allocate a zero page from the block
+stack. Set up a bitset for memory, place in block 1.
+Allocate a stack (make sure to save it in the bitset), place
+in block 2.
+---
+I don't know if the bitset and the block stack are working
+together yet.
+---
+These are 16-bit addresses in a 32-bit word space. Might
+be worth putting the bitset and the block stack together.
+That way, I can have a function that in one go pops a block
+and stores it in a bitset.
+---
+The first thing that needs to be made is something that
+initializes a zero page, "zp". ZP will take in the address
+of a block stack, use that to allocate a new block, zero it
+out, and set the first words to be the address of the block
+stack. That roughly would look like "#b go bi zp go" where
+"#b" is the address of the block stack (address 0?).
+---
+After that, the process of setting up bitset, and storing
+that in the zero page.
+---
+The cursor is currently set to the
+zero page, and it it needs to read the address of the block
+stack from slot 0. To do this, a "switch cursor" functionality
+is needed, "sc". This allows the system to jump between
+two cursors. Once the block stack is selected, it can
+allocate a new block and use that to be a set to store blocks.
+The commands to do this are "rd sc go ba go si".
+---
+With the set initialized it must be stored in slot 1 of 
+the zero page. To do this, the memory address for slot 1 must
+be computed. We assume that blocks are memory aligned, so the
+start of the block points to slot 0, the next block points to
+slot 1, etc. So, go to the zero page, move forward 1. write
+the data, jump back (different from what I was thinking about
+a few days ago). "cf" and "cb" for cursor forward and cursor
+back aren't taken, so we'll use these. Code I believe works
+out to be "sc $1 cf sc rc sc wr $1 cb".
+---
+Get the stack initialized, write to slot 2.
+"rd sc go ba ai go sc $2 cf rc sc wr $2 cb"
+---
+I'm thinking by necessity, the set will need to be
+written into the unused MSB half of slot 0, and to create
+another function, say "bb" that allocates a block and stores
+that address in the register. Maybe "aa" is some kind of
+function that merges the address in the cursor and the address
+in the word register together. After allocating
+the bitset and jumping to that address, but before
+switching back to the zero page: "rc sc aa wr" will copy
+the set addr to the word, switch to the zero page address
+containing the block stack, merge the addresses, and then
+write back to that top slot. Allocating the stack would
+use "bb" instead of "ba", and store in slot 1 instead of 2:
+"rd sc go bb ai go sc $1 cf rc sc wr $1 cb"
+---
+That's enough rambling for today.
+
+@21:29 Ugh, what are the arguments need to initialize this multi-buddy system?
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+It needs to be able to allocate new blocks when needed.
+So, that requires the block stack, probably via the bitset.

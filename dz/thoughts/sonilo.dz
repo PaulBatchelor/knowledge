@@ -120,3 +120,5 @@ ln Generator
 co tasks/GSG tasks/GSG_demo
 co tasks/ilo_interpreter tasks/GSG_demo
 co tasks/GSG_demo tasks/offline_gesture
+nn tasks/zero_page
+co tasks/zero_page tasks/buddy_slots

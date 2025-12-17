@@ -1753,8 +1753,8 @@ The first thing that needs to be made is something that
 initializes a zero page, "zp". ZP will take in the address
 of a block stack, use that to allocate a new block, zero it
 out, and set the first words to be the address of the block
-stack. That roughly would look like "#b go bi zp go" where
-"#b" is the address of the block stack (address 0?).
+stack. That roughly would look like "\#b go bi zp go" where
+"\#b" is the address of the block stack (address 0?).
 ---
 After that, the process of setting up bitset, and storing
 that in the zero page.
@@ -1775,10 +1775,10 @@ slot 1, etc. So, go to the zero page, move forward 1. write
 the data, jump back (different from what I was thinking about
 a few days ago). "cf" and "cb" for cursor forward and cursor
 back aren't taken, so we'll use these. Code I believe works
-out to be "sc $1 cf sc rc sc wr $1 cb".
+out to be "sc \$1 cf sc rc sc wr \$1 cb".
 ---
 Get the stack initialized, write to slot 2.
-"rd sc go ba ai go sc $2 cf rc sc wr $2 cb"
+"rd sc go ba ai go sc \$2 cf rc sc wr \$2 cb"
 ---
 I'm thinking by necessity, the set will need to be
 written into the unused MSB half of slot 0, and to create
@@ -1792,7 +1792,7 @@ the set addr to the word, switch to the zero page address
 containing the block stack, merge the addresses, and then
 write back to that top slot. Allocating the stack would
 use "bb" instead of "ba", and store in slot 1 instead of 2:
-"rd sc go bb ai go sc $1 cf rc sc wr $1 cb"
+"rd sc go bb ai go sc \$1 cf rc sc wr \$1 cb"
 ---
 That's enough rambling for today.
 
@@ -1800,3 +1800,24 @@ That's enough rambling for today.
 #! dz thoughts/projects/sonilo/tasks/buddy_slots
 It needs to be able to allocate new blocks when needed.
 So, that requires the block stack, probably via the bitset.
+
+@2025-12-17 Day 108
+@08:24 set up some initial zero page stuff #timelog:01:01:56
+#! dz thoughts/projects/sonilo/tasks/zero_page
+New commands: {\tt zp} for "zero page", {\tt cf} and
+{\tt cb} (alt: {\tt jf} and {\tt jb}) for "cursor jump forward/backward",
+{\tt sc} for "switch cursor", {\tt aa} for "merge two 16-bit
+addresses into one word", {\tt bb} for "for 32-bit word (MSB, LSB),
+allocate a block off the stack in address in LSB, then
+mark the address in the bitset in MSB".
+---
+Writing up some initial TODOs in my test suite.
+---
+Some potential tests written out in my input.txt file.
+Another command I'm going to add: "sn".
+---
+This is why things take so long. Tasks here cascade into
+smaller tasks that individually don't warrant building
+a subtask for (currently too much overhead required to
+build a task). My TDD mindset is slowing things down too.
+But I think it'll be worth it when I port this to rust.

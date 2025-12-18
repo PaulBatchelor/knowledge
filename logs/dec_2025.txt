@@ -244,7 +244,7 @@ for problems to show up on the final. 38. Tomorrow, there will
 be 10 days between now and the final. That means, I'd need to do
 4 problems a day at least.
 
-@2025-12-09 Day 10
+@2025-12-09 Day 100
 @07:45 psets #timelog:01:05:10
 #! dz csmet/cs248/finals
 
@@ -1247,6 +1247,7 @@ don't teach that, that's just something you're supposed to
 pick up after a while. Ah well.
 
 @2025-12-15 Day 106
+@08:40 Digrpah classifications #timelog:00:47:43 #ink:062
 @09:41 finishing touches on my cheatsheet #timelog:00:15:34
 @09:53 logging and scanning #timelog:00:30:00
 @18:00 cs342 final #bumet #timelog:02:45:00
@@ -1821,3 +1822,23 @@ smaller tasks that individually don't warrant building
 a subtask for (currently too much overhead required to
 build a task). My TDD mindset is slowing things down too.
 But I think it'll be worth it when I port this to rust.
+
+@09:54 review ramblings, initial draft of knowledge graph #timelog:01:15:10
+#! dz csmet/cs248/finals
+
+@11:31 inking out "a structured interpretation of cs248" #timelog:14:41 #ink:063
+#! dz $
+
+@13:05 more inking #timelog:00:48:04 #ink:063
+#! dz $
+
+@15:21 finishing touches of cs248 graph #timelog:00:05:54 #ink:063
+#! dz $
+
+@15:58 inking up index #ink:064 #timelog:00:38:26
+#! dz $
+
+@19:40 DAG layout patterns #timelog:01:28:54 #ink:065
+
+@2025-12-18 Day 109
+@09:45 logging in, updating logs #timelog:00:06:42

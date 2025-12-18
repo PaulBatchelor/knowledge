@@ -1843,7 +1843,7 @@ But I think it'll be worth it when I port this to rust.
 @2025-12-18 Day 109
 @09:45 logging in, updating logs #timelog:00:06:42
 
-@09:55 implement zero page command 'zp'. blocklist blockers.
+@09:55 implement zero page command 'zp'. blocklist blockers. #timelog:01:15:58
 #! dz thoughts/projects/sonilo/tasks/zero_page
 #! dz thoughts/projects/sonilo/tasks/blockstack_improvements
 the zero page has been implemented, but there are some blockers

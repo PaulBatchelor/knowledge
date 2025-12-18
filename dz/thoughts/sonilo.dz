@@ -122,3 +122,5 @@ co tasks/ilo_interpreter tasks/GSG_demo
 co tasks/GSG_demo tasks/offline_gesture
 nn tasks/zero_page
 co tasks/zero_page tasks/buddy_slots
+nn tasks/blockstack_improvements
+co tasks/blockstack_improvements tasks/zero_page

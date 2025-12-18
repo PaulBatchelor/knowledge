@@ -1842,3 +1842,53 @@ But I think it'll be worth it when I port this to rust.
 
 @2025-12-18 Day 109
 @09:45 logging in, updating logs #timelog:00:06:42
+
+@09:55 implement zero page command 'zp'. blocklist blockers.
+#! dz thoughts/projects/sonilo/tasks/zero_page
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+the zero page has been implemented, but there are some blockers
+related to the blocklist. Words to follow
+---
+This block list addressing scheme is going to need to get
+looked at again.
+---
+Currently I've been assuming that the block list is initialized
+at address 0. Addresses are stored as memory aligned block
+addresses. When I run 'gb', it assumes that block '0' is
+the first free block available. so, it skips the words used
+to make the blocklist. However, my test doesn't have
+that assumption.
+---
+I think it'll work out okay for today, but yeah, may want
+to think again about what this block list is doing.
+---
+oof. I think there's weird overflow bugs happening.
+I think my first address to be returned is block 0x400, the last block
+in memory. it works backwards. When I add a bias to that, it
+overflows. The issue is the stack assumes all 1024 blocks
+are available, but by definition, they are not because some
+of those blocks (16 of them) are used for this block list.
+---
+Okay, so if a block list can be initialized to any address,
+what exactly are those 10-bit numbers mapping to? You
+can't just turn that into a memory address by multiplying
+by 64 and adding a 1024 bias, that only works when the
+memory is 0.
+---
+So, the so-called "block addresses" need to be thought
+of as a mapping from a 10-bit number to a 16-bit word address.
+---
+Those 10-bit numbers are offsets local to the address
+of the block stack. Brute force, the mapping could be a
+lookup table. 1024 16 bit numbers packed into 32 words
+means 512 words, which would be 8 blocks.
+Perhaps there's a better way.
+---
+If we assume the mapping is mostly linear, but skip the
+16 blocks used for the block stack, that mapping could be
+realized as a closed-form expression.
+---
+It'll never be 1024 blocks, only 1008. That's 15 blocks
+exactly, not 16. Might be worth thinking about.
+---
+making a task for this.

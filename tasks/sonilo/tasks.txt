@@ -1,3 +1,4 @@
+thoughts/projects/sonilo/tasks/blockstack_improvements
 thoughts/projects/sonilo/tasks/buddy_system
 thoughts/projects/sonilo/tasks/docgen
 thoughts/projects/sonilo/tasks/ilo_interpreter

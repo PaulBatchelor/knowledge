@@ -86,7 +86,7 @@ coad/toc/01_computer_abstractions_and_technology/15_exercises:24:DONE:4
 coad/toc/02_instructions_language_of_the_computer/01_introduction:26:DONE:4
 coad/toc/02_instructions_language_of_the_computer/02_operations_of_the_computer_hardware:28:DONE:4
 coad/toc/02_instructions_language_of_the_computer/03_operands_of_the_computer_hardware:29:DONE:4
-coad/toc/02_instructions_language_of_the_computer/04_signed_unsigned_numbers:31:TODO:4
+coad/toc/02_instructions_language_of_the_computer/04_signed_unsigned_numbers:31:DONE:4
 coad/toc/02_instructions_language_of_the_computer/05_represetning_instructions_in_computer:33:TODO:4
 coad/toc/02_instructions_language_of_the_computer/06_logical_operations:35:TODO:4
 coad/toc/02_instructions_language_of_the_computer/07_instructions_for_making_decisions:36:TODO:4

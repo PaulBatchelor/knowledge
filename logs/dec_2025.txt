@@ -1892,3 +1892,16 @@ It'll never be 1024 blocks, only 1008. That's 15 blocks
 exactly, not 16. Might be worth thinking about.
 ---
 making a task for this.
+
+@2025-12-19 Day 110
+@10:00 block stack v2 thoughts #timelog:01:11:06 #ink:066
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+
+@12:15 COAD 2.4 signed and unsigned numbers #timelog:00:10:54
+#! dz coad/toc/02_instructions_language_of_the_computer/04_signed_unsigned_numbers
+
+@13:20 2.4 continued #timelog:00:54:04
+#! dz coad/toc/02_instructions_language_of_the_computer/04_signed_unsigned_numbers
+
+@2025-12-20 Day 111
+@09:35 updating logs #timelog:00:05:36

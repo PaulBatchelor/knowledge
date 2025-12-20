@@ -1905,3 +1905,16 @@ making a task for this.
 
 @2025-12-20 Day 111
 @09:35 updating logs #timelog:00:05:36
+
+@15:27 graph tool: reverse the flow #timelog:00:20:13
+The adjaceny list actually works better in reverse.
+It's easier to list all the outgoing nodes for a node than
+the incoming nodes. Most nodes have more incoming nodes
+than outgoing nodes.
+---
+seems to work? The ergonomics of my tooling needs some work.
+---
+doesn't look like I'm including generated transcriptions yet.
+very much still an experiment.
+---
+It takes in CLI args now, added script in ink folder

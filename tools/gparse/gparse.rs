@@ -2,6 +2,7 @@ use std::io;
 use std::fs;
 use std::collections::{BTreeMap, HashMap, BTreeSet};
 use std::error::Error;
+use std::env;
 
 fn load_nodes(filename: &str) -> Result<BTreeMap<String, String>, Box<dyn Error>> {
     let mut nodes: BTreeMap<String, String> = BTreeMap::new();
@@ -62,8 +63,14 @@ fn load_edges(filename: &str) -> Result<BTreeSet<(String, String)>, Box<dyn Erro
 }
 
 fn main() -> io::Result<()> {
-    let namespace = "dmoi/notes";
-    let page = "05h";
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() < 3 {
+        panic!("usage: {} namespace page", args[0]);
+    }
+
+    let namespace = args[1].clone();
+    let page = args[2].clone();
     let nodes_file = format!("{}.nodes", page);
     let names_file = format!("{}.names", page);
     let edges_file = format!("{}.edges", page);
@@ -82,7 +89,7 @@ fn main() -> io::Result<()> {
     for edge in edges {
         let a = names.get(&edge.0).unwrap_or(&edge.0);
         let b = names.get(&edge.1).unwrap_or(&edge.1);
-        println!("co {} {}", a, b);
+        println!("co {} {}", b, a);
     }
 
     Ok(())

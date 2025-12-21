@@ -1,5 +1,5 @@
 cs248:csmet/cs248%
-thoughts:thoughts%
+thoughts:thoughts/ink%
 cs342:csmet/cs342%
 cy100:csmet/cy100%
 dmoi:dmoi%

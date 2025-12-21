@@ -1930,3 +1930,22 @@ It takes in CLI args now, added script in ink folder
 
 @2025-12-21 Day 112
 @08:53 logging stuff in #timelog:00:04:45
+
+@08:59 cropping and binning dec15 scans #archiving
+
+@09:15 045 collision. how to handle? #ink:045 #ink:04J
+Found a collision at 045. One is cs248 lecture notes,
+the other is the buddy system.
+---
+Oh! it's actually 04J. I inked it in wrong, but it's penciled
+in at the bottom.
+
+@09:21 03K might actually be a collision #ink:03K #ink:06C
+This might have to do with the time when I was indexing
+wrong and had to backtrack. the 03Ks are about a month
+apart.
+---
+Assigning a new index in post: 06c.
+
+@09:34 sonilo now has an ink node
+#! dz thoughts/projects/sonilo/ink

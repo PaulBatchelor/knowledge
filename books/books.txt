@@ -4,3 +4,4 @@ cs342:csmet/cs342%
 cy100:csmet/cy100%
 dmoi:dmoi%
 coad:coad%
+sonilo:thoughts/projects/sonilo%

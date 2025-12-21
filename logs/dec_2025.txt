@@ -1906,6 +1906,15 @@ making a task for this.
 @2025-12-20 Day 111
 @09:35 updating logs #timelog:00:05:36
 
+@10:55 knowledge graph PDF page setup #timelog:00:04:54 #ink:068
+
+@11:02 graph drawing DSL page setup #ink:069 #timelog:00:04:54
+
+@11:10 tile DSL initial page setup #ink:06A #timelog:00:05:12
+
+@12:52 2.5 reading #timelog:00:36:28
+#! dz coad/toc/02_instructions_language_of_the_computer/05_represetning_instructions_in_computer
+
 @15:27 graph tool: reverse the flow #timelog:00:20:13
 The adjaceny list actually works better in reverse.
 It's easier to list all the outgoing nodes for a node than
@@ -1918,3 +1927,6 @@ doesn't look like I'm including generated transcriptions yet.
 very much still an experiment.
 ---
 It takes in CLI args now, added script in ink folder
+
+@2025-12-21 Day 112
+@08:53 logging stuff in #timelog:00:04:45

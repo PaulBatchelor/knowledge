@@ -1930,3 +1930,6 @@ It takes in CLI args now, added script in ink folder
 
 @2025-12-21 Day 112
 @08:53 logging stuff in #timelog:00:04:45
+
+@2025-12-22 Day 113. On the road.
+@12:50 export node data as JSON data #timelog:03:46:53

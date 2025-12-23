@@ -1974,7 +1974,7 @@ I need to set up some PDF tooling with what I have now.
 Set up namespace(s), and the name of the output file. Set
 up a list of pre-made "maps".
 
-@11:22 grouping nodes by namespaces
+@11:22 grouping nodes by namespaces #timleog:02:10:24
 This is the next higher level index after the raw
 alphabetical index list.
 ---

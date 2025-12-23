@@ -1,0 +1,729 @@
+\pdfpagewidth=148mm
+\pdfpageheight=210mm
+\hsize=128mm
+\vsize=190mm
+
+\pdfhorigin=0pt
+\pdfvorigin=0pt
+\hoffset=10mm
+\voffset=10mm
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-10-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:04: Transcribing Task Graphs for Sonilo}\smallskip
+It needs to be fleshed out more, but I want real data to work with for this task graphing utility I am going to build for scheduling tasks and generating daily agendas.
+\par
+
+I ended up building the high-level "artist purpose" knowledge graph I started building yesterday, which outline artistic purpose. The actual tasks have yet to be made.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-28}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:17: addressing the agenda overflow}\smallskip
+As of today, there are 26 tasks total.
+\par
+
+9 of those tasks are related to sonilo. I am stuck. Memory allocators have taken time. Ilo has taken time. Trying to get the moving parts right is taking time. Sonilo ilo interpreter is about 26 days overdue, that's the most overdue task.
+\par
+
+COAD also has 9 tasks, surprisingly. I guess this makes a little more sense. I'll have gone about 10 days without doing any reading. The most overdue task is 13 days, so I'm about 3-5 days overdue factoring in this trip.
+\par
+
+DMOI is 11 days overdue for the latest. That means I'm about 1-3 days overdue factoring vacation. Not too bad.
+\par
+
+I am going to add in a way to get the max day for selected groups, then shift sonilo and COAD back 10 days. Once I have this "max days" functionality, I should be able to calculate a "due date" from the agenda.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-03}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:02: shifting goalposts again for sonilo project, dmoi}\smallskip
+I need these tasks to go down, so I'm redistributing the days. I'm disappointed at velocity, but at least I'm measuring it. the number is now 180 days
+\par
+
+stretching the reading for dmoi so only 2 tasks appear right now the reading takes a while. I am a thorough (read: slow) reader.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont tasks}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-10-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:47: back to tasks for sonilo (hopefully)}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:40: finish the initial graph traversal program}\smallskip
+Also used this time to clean up the task graph. I now have top level task in Sonilo that just reads "make meaningful sounds with sonilo".
+\par
+
+Also used this time to clean up the task graph. I now have top level task in Sonilo that just reads "make meaningful sounds with sonilo".
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:02: reworking some of the tasks}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont buddy system}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-10-29}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:28: Work on the buddy system some more}\smallskip
+Also, trying on this task management system.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:19: more buddy system}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:25: pre-buddy system, buddy system proto-type?}\smallskip
+I am running into constraints due to the fact that the buddy system needs to be pre-initialized because it's modified to fit entirely on a single block. It would be easier to do this closer to the "regular" way, and then refactor into the block system.
+\par
+
+It was a good idea to build this, but it isn't working fully yet. Will need to troubleshoot at another time.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-01}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 07:29: pre-coffee puttering, hack on buddy system}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:29: more buddy system}\smallskip
+I think alloc() works now? Two mistakes made: had to be more explicit with what LOC(AVAIL[j]) was doing. I was using virtual pointers for everything, which made things interesting. There was also (x<-y<-z) notation used, which I thought would be intermediate assignments like "x = y, y = z", but I think it meant "set x = y = z".
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:46: onto block "liberation"}\smallskip
+For the record, the last bug was found by claude. It was so subtle, only 1 line, I transcribed it wrong, and knowing me it probably saved me about an hour of debugging and careful checking.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:23: what's next for this}\smallskip
+I gotta adapt the algorithm to work with a 64-sized block. And, I gotta remove the gotos.
+\par
+
+I've learned a few things writing this out. I've got things set up in a way the algorithm is broken down into core operations that I can re-implement without too much trouble. Then, I can re-use the rest of the bits.
+\par
+
+I need a way to bootstrap the initial block, and permanently allocate a region of size 1 for the avail list, and a region of size 2 for the tags. Those should predictably appear in the first 3 words of the block. The temporary memory storying locations for the avail list and the tags can then be copied over to those memory locations, and the block can be used as-is for the remainder of the lifetime.
+\par
+
+The avail list has quirky behavior. when m = 6 it's a bool, otherwise, it's an actual location. This logic needs to be abstracted away cleanly.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:57: buddy system initial refactoring}\smallskip
+I need to get this ready for my block system approach.
+\par
+
+Some initial refactoring is done. I'm trying to pull out the tag and AVAIL list logic. I'm now at the point where I'm getting the AVAIL list reworked so it can be external. I think I've run into a small problem: I've assumed that the AVAIL list can fit into 32 bits, and I don't think that's true. I think each entry needs to be at least 12 bits, not 6 bits because it needs LINKF/LINKB addresses. Also, I think I need 7 slots, not 6. So that's 84 bits, which can fit onto 3 words. So that's 5 words total instead of 3. So that's 58 words available, ~90% capacity self-contained.
+\par
+
+I am hoping we don't need kval for this, otherwise that's another word required. Each entry becomes 15 bits of information, and that's 105 bits.
+\par
+
+Alternatively, the state could be managed on another temp block, which can be returned after the memory is set. Ideally, I'll have enough flexibility to support both.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-02}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:39: more of this buddy system}\smallskip
+I flipped around the ordering of LINKF,LINKB,and KVAL so that LINKF and LINKB are in the lower bits. My hope is that the AVAIL table only needs those two values, and I can just re-use the linkf/linkb routines.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:15: back to it}\smallskip
+It's a lot of work to cram this all in one block, especially considering that there will be some kind of wasted space. Having a temporary block for bookkeeping seems like the best option.
+\par
+
+6 words will be needed (rounded up to 8, who knows this temp block could be broken off from another buddy system).
+\par
+
+4 words are needed for the AVAIL list. the LINKF/LINKB entries will be pointers for a 6-bit address space with an extra bit to indicate addresses on the temporary block. Each entry is 14 bits, that's 2 bits a word with padding, 4 words to get 7 entries.
+\par
+
+tags will need 64 bits, so that's the remaining 2 words.
+\par
+
+I've created availf/b v2 functions. They seem to work in isolation, but when I put them in the program, it causes an infinite loop to happen when the checksums. I'm guessing it's some kind of addressing issue. I'll have to give it a look another time.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-05}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:50: more buddy system}\smallskip
+Last time, I got some initial availf/availb v2 logic coded up, which allows the avail list to be external. However, when I coded it up, the program got caught in a loop. I think it was where the traversal logic happened.
+\par
+
+The checksums are wrong as well, so I'm overlooking something.
+\par
+
+I'm writing a test program for AVAILF/AVAILB to see if there are differents in output.
+\par
+
+It looks like AVAILF is not being set properly. It doesn't seem to be being set at all. It is being initialized correctly. It's only after allocating a block that the AVAILF fields start to misalign.
+\par
+
+To be continued...
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:55: AVAIL investigations continued}\smallskip
+In the first allocation AVAILF(k) is supposed to be set to be 70, but it never seems to be set, staying at 0. The availf never explicitly sets itself to be 70. So linkf is making that call I think.
+\par
+
+I'm starting to see the issues. This new system needs to create an abstraction for converting virtual memory addresses into actual memory addresses. This algorithm currently assumes AVAIL is contiguously after the block (0-63 are the block address, 64-70 are the AVAIL entries).
+\par
+
+I'm thinking of going back to one word to one entry. Space is not an issue anymore because it's only temporarily allocated. Then, there needs to be some kind of virtual to physical memory resolver. So, anything that is between 0-63 gets an address from the block, anything greater than that gets an address from the temp block. I think if we do that, it's going to get much simpler.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-08}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:43: yup, buddy system}\smallskip
+I got the v2 system to match! Now to see if it lines up with the first test I made.
+\par
+
+Yup, it works now.
+\par
+
+What is going to happen next is, I need to refactor this to use an external block of memory. If TAGS and AVAIL are lumped together, that's 9 words in a 16 word block (rounded up). If TAGS and AVAIL are two separate blocks, that's 2 words (TAGS, 2 words), and 8 words (AVAIL, 7 words). So, I'm going to allocate AVAIL and TAGS separately in my buddy system.
+\par
+
+I should probably also simulate the memory of sonilo by using 2 blocks (2*64 = 128 words) of pre-allocated memory.
+\par
+
+progress is slow, but it is still progress.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-09}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:02: refactoring sonilo buddy system to use virtual pointers}\smallskip
+This will make it one step closer towards being compatible with the Sonilo memory model.
+\par
+
+So close to being done. I need the pointers themselves to be in the memory. From there, I'll need to be able to create new functions that work with the chunk of memory directly.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:26: wrap in the virtual pointers into the memory block}\smallskip
+To be continued...
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:00: ...continued}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:20: buddy system: almost done}\smallskip
+I think this is almost done. The algorithm works, the initial API has been written for the most part. I'd like to get this working in my growing test suite.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-15}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:09: work towards wrapping up this buddy system lol}\smallskip
+oh, right. this blocker is a bit of a ridiculous situation. I'm trying to get this into my test program, by my test program isn't variadic. I need multiple arguments to initialize the buddy system, but I only have one I/O register, and an address register.
+\par
+
+time to yak shave a stack?
+\par
+
+Set up some test code for an array with append and pop operations. Will need to write out code later.
+\par
+
+I need to tell myself this will help me later. It is interesting getting into the groove of this little system I build for myself.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:35: implement the stack}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:40: now, use this stack in the tests for the memory system}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:56: continue setting up the tests}\smallskip
+It's been slow going because I'm dogfooding this test system, and learning how to use it, filling in missing parts along the way.
+\par
+
+I'm hoping things will get a bit faster? I'm reaching a pretty good stride with ed. the interactive test system also works pretty well with gdb. I can run components of the program in a very adhoc way, and then use gdb to add breakpoints and step through the program.
+\par
+
+oh, also, had to do some non-trivial debugging of the system for the first time. The test suite with the diffed output and gdb were a great combo.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:52: more test scaffolding}\smallskip
+The expected test output has been written out, now I need to implement the programs, and then the commands.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-16}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:46: buddy implementation continued}\smallskip
+Damn, I'm not storing these addresses anywhere, so freeing may be tricky for this test. I'd have to invent variables. No time for this today.
+\par
+
+Maybe I can the input address be the relative block offset? This guarantees that the address belongs to the block. Getting the offset from a word address is just a matter of calculating the offset from the word address of the start of the block.
+\par
+
+I could also just compute the address. I know the base address of memory, so I just add the offset to it. 'ad' could be used for 'addition'. and 'sb', 'di', and 'mu' could be reserved for subtract, multiply, divide.
+\par
+
+the checksummer is hanging again. I think my problem has to do with address space. I think the buddy allocator uses local offset addresses, not word memory addresses. I'm passing in full word addresses.
+\par
+
+So actually, I think the local offsets are the expected arguments?
+\par
+
+Works now, nice! I think we're done.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:17: this is completed. finally}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ilo interpreter}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-02}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:43: initial exploration}\smallskip
+I think this is mainly about adapting the existing ilo byte code interpreter and pali assembler as much as possible.
+\par
+
+The VM code seems like it'll mostly do the trick. I'll probably want to simplify it a bit. I do not need or want disk I/O so the blocks file should be optional.
+\par
+
+pali seems to be a system mostly designed to produce a singular ilo.rom file. I'm wondering if I could adapt the TAL assembler to work with ILO opcodes instead of Uxn.
+\par
+
+hang on, my 1-line test program works with pali. I might be able to work with this in the very short-term.
+\par
+
+At some point, I'll need more of an API for reading ILO streams.
+\par
+
+Wrote a dumb little program to print a character and multiply some numbers, with some jump logic. Good enough for now.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:21: ilo interpreter: try to port uxntal?}\smallskip
+Today, I am hoping to put some time into studying the source code for uxntal. It's not many lines. I think it could be reworked to generate ilo roms instead of uxn roms.
+\par
+
+For the initial prototyping stage, I imagine I'll have a bunch of ad-hoc programs generating ilo bytecode. pali, the assembler used to generate ilo.rom, is really only designed to genenerate that one rom file. I need smaller programs.
+\par
+
+enscript is a neat little tool I learned about that turns textfiles into postscript. Postscript to PDF means I can put it on my RM. I'm hoping this workflow will help me better study code more deeply.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:45: printing uxntal to PDF}\smallskip
+command: === enscript -o - uxnasm.c | ps2pdf - uxnasm.pdf ===
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:35: uxnasm studying}\smallskip
+I'm thinking trying to work uxnasm to output ilo code of uxn code. To prep for this, I thought it would be a good exercise to try and build a graph around the program. I put a monochrome version of uxnasm.c on my remarkable, and started drawing a graph of the program using this new graph system I've been developing. It was very time consuming.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:25: wrapping up uxnasm knowledge graph}\smallskip
+While I don't understand the details of this program, I have a pretty good sense of what all the components of the program are and where they are in the file. The "parse" function is the most heavily loaded. I also need to somehow rework "ops" as well.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:27: writing out pseudo-code for an ILO program computing phasor}\smallskip
+This exercise is exposing some points of friction for me.
+\par
+
+The hard part is memory structure, once again. The ILO bits are very straight forward, once the memory structure is set up.
+\par
+
+Point of friction: I started this task wanting to just write out pseudo-assembler code for ILO. Then I realized, I need memory addresses. How do I generate those things? I'd need to allocate and initialize data for the phasor struct, in addition to the parameter.
+\par
+
+So, to make a program is really a collaboration between the memory writer and the ilo assembler. I'd use the memory writer to set up the memory structure, and the assembler to generate ilo bytecode.
+\par
+
+Ideally, it would be nice for programs to use the original ilo C implementation to start. I can make it so the ilo program is at the start of the file, with all the special memory after it. The program would terminate by a goto that goes beyond the ilo bounds.
+\par
+
+ilo programs are going to be very small, and the address space localized to just a handful of blocks. This phasor program would exist on one block.
+\par
+
+What does this phasor program do? It opens a file for writing, runs a loop writing stuff to that file, then closes that file. In the loop, the phasor ugen is called to generate a block of signal. That signal then gets written to disk. It is assumed that the phasor data is written to disk pre-initialized.
+\par
+
+Okay, this is clearly more work than I expected.
+\par
+
+This exercise is exposing some points of friction for me.
+\par
+
+The hard part is memory structure, once again. The ILO bits are very straight forward, once the memory structure is set up.
+\par
+
+Point of friction: I started this task wanting to just write out pseudo-assembler code for ILO. Then I realized, I need memory addresses. How do I generate those things? I'd need to allocate and initialize data for the phasor struct, in addition to the parameter.
+\par
+
+So, to make a program is really a collaboration between the memory writer and the ilo assembler. I'd use the memory writer to set up the memory structure, and the assembler to generate ilo bytecode.
+\par
+
+Ideally, it would be nice for programs to use the original ilo C implementation to start. I can make it so the ilo program is at the start of the file, with all the special memory after it. The program would terminate by a goto that goes beyond the ilo bounds.
+\par
+
+ilo programs are going to be very small, and the address space localized to just a handful of blocks. This phasor program would exist on one block.
+\par
+
+What does this phasor program do? It opens a file for writing, runs a loop writing stuff to that file, then closes that file. In the loop, the phasor ugen is called to generate a block of signal. That signal then gets written to disk. It is assumed that the phasor data is written to disk pre-initialized.
+\par
+
+Okay, this is clearly more work than I expected.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:45: today's ilo interpreter thoughts}\smallskip
+Current difficulty: memory structure vs ilo VM. These are two separate systems, each with their own command space. How does one bridge the two systems?
+\par
+
+When I was writing pseudo-code for the phasor, there were two explicit steps: setting up memory, and then setting up the ILO instructions. The memory was set up using my ad-hoc memory language, which then resulted in a single top-level memory address. The ILO code would push a constant parameter to a stack, push the pointer to the DSP to the stack, then call the DSP.
+\par
+
+It's a little bumpy at the moment.
+\par
+
+Well, the family is calling. that's the show. Might bring pen and paper with me today to the house.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-28}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:49: custom bytecode language for DSP?}\smallskip
+I'm starting to think IO calls in ILO are going to have too much overhead for the ugen related things. I think it would be better to have a bytecode interpreter more specialized for the DSP code, optimized to fit on 64-word blocks.
+\par
+
+I'm imagining something similar to the command-packing format of the ILO VM, except that there'd only be 16 opcodes (4-bit, 8 commands/word). Most of the functionality needed is pushing constant values calling hard-coded subroutines.
+\par
+
+Memory initialization could also probably happen using this system as well. There will need to be memory primitives for allocating small chunks of memory, as well as allocating full blocks (to write audio to). DSP unit generators would then have an initialization function that could set up the data in memory.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:59: ilo interpreter can wait, use custom bytecode format instead}\smallskip
+I think the DSP is specialized enough that I can get away with it.
+\par
+
+Ilo, on the other hand, is going to be more important in situtaions where small, inline executable programs are desirable. I'm mainly thinking this could be used for  gesture iterators.
+\par
+
+I think the DSP is specialized enough that I can get away with it.
+\par
+
+Ilo, on the other hand, is going to be more important in situtaions where small, inline executable programs are desirable. I'm mainly thinking this could be used for  gesture iterators.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont konilo sonilo communication}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-09}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:21: quick words about konilo-sonilo communication}\smallskip
+This has popped up in my agenda, but I am behind because of the buddy memory allocator. To keep momentum going, I'm going to write down what I'm thinking about today.
+\par
+
+I'm not 100% sold on using Konilo. I am a bit more committed to using Ilo.
+\par
+
+Communication, sonilo or otherwise, is going to boil down to being a serial communication format. In Konilo, this would be done using IO commands.
+\par
+
+My initial thinking with using Konilo was that since both systems used Ilo, there could be some convenience there. It also seemed like Konilo had a pretty good self-contained ecosystem in place already as an editor. The interactive aspect of a Forth also seems in line with the aspect of composing music.
+\par
+
+So, developing a serial command language is going to be more important than hooking things up to Konilo. It would make sense to focus on this more, than actually hooking it up to Konilo. Actually, it's a prerequisite. By the time things are ready to actual integrate with Konilo, the serial command language should already be in place.
+\par
+
+Working on this task should mostly be about working with the ergonomics of the Konilo ecosystem and making it work with Sonilo command language.
+\par
+
+I am developing a new task now.
+\par
+
+Well, I've made a new task, but I think I need code in functionality to re-import tasks into a grouped schedule.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-11}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:50: sonilo: serial protocol concepts, penciling}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:25: sonilo: serial protocol concepts, inking}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:37: Konilo feels very far off tbh. best I can do is IO experiments}\smallskip
+There's just so much I don't know about the konilo ecosystem. how does it load files? can I use source control? is it the right langauge abstraction? can it handle all the ugens I want to use?
+\par
+
+It looks like ultimately I'll be building programs to generate basic msgpack structures. So, maybe that can be a focus.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont mem}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:25: memory allocation: core components close to done, how to tie together?}\smallskip
+The buddy system is close to being done. The block stack API is finished. The cache is is finished. These are components that need to work together to build a cohesive memory allocation system.
+\par
+
+For the small memory allocation system to work, the buddy system needs to automatically request new blocks under the hood.
+\par
+
+The block-level allocation system will be used for allocating output blocks.
+\par
+
+More thoughts needed here.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-28}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:59: memory primitives: alloc, block, cleanup}\smallskip
+alloc: allocate N words (N < 64) block: allocate a block
+\par
+
+cleanup: frees all memory in the current context
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo command language}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:33: msgpack, what is the initial command set?}\smallskip
+I'm decided to use msgpack as a communicaiton protocol. Or a subset of msgpack at least. Using something that has a spec already written out has advantages. Having data types like arrays and objects could come in handy down the line.
+\par
+
+The truth is, I don't know exactly where this is headed, and I need to design with some flexibility in mind.
+\par
+
+msgpack is also handy because I can write intermediate programs to read (and possibly generate, provided it fits the subset of msgpack I'll support) msgpack programs.
+\par
+
+msgpack programs might be the low-level layer for generating the first sonilo sounds.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont phasor}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:39: technically this is today's task, ha. I am so behind}\smallskip
+The DSP algorithm for this is already available in sonilo. The work involved here will reworking the memory so it reads from sonilo's fixed memory system.
+\par
+
+The DSP data will have single entry point, a memory address represented by a virtual pointer. In this address will be data containing pointers to inputs (constants or blocks), and outputs (blocks). There will also maybe a word or two for storing state the current phase.
+\par
+
+I can probably write most of this without needed the actual DSP memory fully done.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:13: let's try porting phasor today}\smallskip
+I am so behind on the fundamental memory IO and bytecode interpreter stuff (AKA the "hard bits"). Phasor is mostly just moving pre-existing code around and setting up the scaffolding.
+\par
+
+Got some initial phasor DSP code added. untested, but it's mostly a copy-paste port.
+\par
+
+A phasor exists in a 4 word block. The first 2 words are the ports. It has one input port for frequency, and one output port for the returned signal.
+\par
+
+I don't have a great way to hook this up to anything at the moment. It would be trivial to write a small C program for this, but that's not too useful. Building towards ILO is going to be more useful because it will allow me to write small test programs that compose different unit generators together.
+\par
+
+Creating a function `ugen\_phasor`, which should emulate the behavior of the phasor unit generator, popping a parameter off the stack to set the input port, and then pushing a parameter back onto the stack.
+\par
+
+The abstractions don't feel quite there yet, but I think it's good enough. I really do need to working on getting the ilo interpeter working now.
+\par
+
+I'm going to say this is "done", just for the sake of progress.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:39: Small C program it is}\smallskip
+I've spent the last hour brainstorming the ILO code. The problem is more complex than I thought, requiring me to implement many moving parts. The DSP code does not need that yet. It's going to be way faster just to write the silly C program. Later, it can be rewritten to be an ilo ROM.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:49: writing a silly C program}\smallskip
+I'm so behind on things, I just gotta confirm these small bits work.
+\par
+
+Wow, this blows up again in complexity. My basic stack struct has bugs? ugh.
+\par
+
+Ah, I see. Phasor needed to know what the output pointer was going to be. Initialization functions need to take in variables.
+\par
+
+That's all the time we have, unfortunately. 
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-25}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:21: more work with the bits surrounding phasor}\smallskip
+DSP code took about 5 minutes, designing a flexible interface took up the remaining time.
+\par
+
+Converting the bytes in floats to ints is proving to take some time. I really just need a helper function for this.
+\par
+
+we got a working phasor written to disk finally
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:03: cleanup: build out APIs, phasor init/compute should use stack interface}\smallskip
+arrays (for stack), and parameters. oh, also float/int conversion
+\par
+
+I'm not going to try and over-categorize. I'm throwing everything into a "util" file for the being, and this will live in the DSP folder because only DSP utilities are going to be using this stuff (at least in the short term).
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:38: phasor, officially done}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blsaw}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-29}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:39: blsaw initial code}\smallskip
+Just porting the initial code and getting it in using some of the conventions established in phasor.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen bytecode}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:50: New task created}\smallskip
+Instead of trying to use ILO, I'm going to make my own format. It will be more compact, simpler to build, and less IO overhead.
+\par
+
+The proposed format is also more data than executable code, which is good at this stage.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont allocator}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:01: make task for memory allocator}\smallskip
+This will be a high-level allocator, wrapping the block list, bitset, and the buddy allocator.
+\par
+
+got caught up with printing it to a PDF
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont docgen}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:57: creating a docgen for my sonilo input.txt file}\smallskip
+I need a better way to read a review this stuff. attempting to generate tex for this
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont buddy slots}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-03}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:49: initial buddy slots work}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-12}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:18: checking in buddy slots}\smallskip
+Tonight I feel like my abstractions are sloppy. I'm building up to a more sophisticated allocator, but things like the block list and the parameter stack need to be more out of the way.
+\par
+
+No real work done. I feel stuck.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:11: morning thoughts: missing abstractions}\smallskip
+This morning, I still feel that the "multi-buddy" allocator is missing abstractions. The point of friction is with my current system there is no way to build up abstractions. Something like this allocator needs to be able to have a pointer to one "thing", which in turn is a collection of pointers to a few other "things". To do this, you need an allocator, but this is what is built, and thus there is a circular dependency.
+\par
+
+So, memory needs to be allocated for the allocator. This is a bootstrapping problem. So, I'm thinking there may be an incoming intermediate abstraction required between the global block list and this multi-buddy allocator.
+\par
+
+My test system uses a single "cursor" as a pointer in memory. This has an issue with abstractions. Say I have a cursor pointing to a compound data structure containing a list of pointers to many things, with one pointing to a block of memory. I may have an operation that needs to set that cursor to that block of memory. Once I do the operation, I need a way to jump back to that compound data structure.
+\par
+
+A design I think I remember reading about in the Elements of Computing Systems is the idea of having two values that can be swapped, with only the active one being able to be set.
+\par
+
+So, for this hypothetical block operation, the commands would look like: set word register to be desired block address, swap cursors, set cursor from word, do block operation, swap back.
+\par
+
+Bootstrapping would involve setting up the block list, and then initializing a zero page with the address of the block list as the first item on the zero page. From there, you could set up a blockset and a stack to be addresses on the zero page. So on and so forth.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:15: rework integer parsing to insert at LSB}\smallskip
+Emerged from my work on zero pages. Basically, I found a clever way to write words to specific slots in a block without the need for a stack (a stack would have been necessary for an explicit write word to block operation because it'd need at least two args). The approach requires storing input from the LSB instead of from the MSB.
+\par
+
+huzzah done
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-16}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:02: before buddy slots, a zero page}\smallskip
+A buddy slots system is going to need a stack to handle multi-variable function calls. I need to get enough of a system working so that there is a stack to use.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:29: Ugh, what are the arguments need to initialize this multi-buddy system?}\smallskip
+It needs to be able to allocate new blocks when needed. So, that requires the block stack, probably via the bitset.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont zero page}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-16}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:10: setting up zero page task}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:16: writing initial words on zero page}\smallskip
+I'm going to roughly transcribe some of what I was thinking a few days ago with this zero page.
+\par
+
+A zero page is like some kind of boot sector. The idea is that there's this top-level block that can be used to read and write data.
+\par
+
+The thinking is this can bootstrap an initial system for memory allocation. So that means it stores a pointer to the global block stack, sets of blocks it has allocated, a stack, amongst other possible things.
+\par
+
+What's of particular importance is getting a stack working. When that happens, I can build up commands that take more than one argument. This is needed for my buddy system, amongst other things.
+\par
+
+So this bootstrapping process. How does it work? Set up the block stack. Allocate a zero page from the block stack. Set up a bitset for memory, place in block 1. Allocate a stack (make sure to save it in the bitset), place in block 2.
+\par
+
+I don't know if the bitset and the block stack are working together yet.
+\par
+
+These are 16-bit addresses in a 32-bit word space. Might be worth putting the bitset and the block stack together. That way, I can have a function that in one go pops a block and stores it in a bitset.
+\par
+
+The first thing that needs to be made is something that initializes a zero page, "zp". ZP will take in the address of a block stack, use that to allocate a new block, zero it out, and set the first words to be the address of the block stack. That roughly would look like "\#b go bi zp go" where "\#b" is the address of the block stack (address 0?).
+\par
+
+After that, the process of setting up bitset, and storing that in the zero page.
+\par
+
+The cursor is currently set to the zero page, and it it needs to read the address of the block stack from slot 0. To do this, a "switch cursor" functionality is needed, "sc". This allows the system to jump between two cursors. Once the block stack is selected, it can allocate a new block and use that to be a set to store blocks. The commands to do this are "rd sc go ba go si".
+\par
+
+With the set initialized it must be stored in slot 1 of  the zero page. To do this, the memory address for slot 1 must be computed. We assume that blocks are memory aligned, so the start of the block points to slot 0, the next block points to slot 1, etc. So, go to the zero page, move forward 1. write the data, jump back (different from what I was thinking about a few days ago). "cf" and "cb" for cursor forward and cursor back aren't taken, so we'll use these. Code I believe works out to be "sc \$1 cf sc rc sc wr \$1 cb".
+\par
+
+Get the stack initialized, write to slot 2. "rd sc go ba ai go sc \$2 cf rc sc wr \$2 cb"
+\par
+
+I'm thinking by necessity, the set will need to be written into the unused MSB half of slot 0, and to create another function, say "bb" that allocates a block and stores that address in the register. Maybe "aa" is some kind of function that merges the address in the cursor and the address in the word register together. After allocating the bitset and jumping to that address, but before switching back to the zero page: "rc sc aa wr" will copy the set addr to the word, switch to the zero page address containing the block stack, merge the addresses, and then write back to that top slot. Allocating the stack would use "bb" instead of "ba", and store in slot 1 instead of 2: "rd sc go bb ai go sc \$1 cf rc sc wr \$1 cb"
+\par
+
+That's enough rambling for today.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-17}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:24: set up some initial zero page stuff}\smallskip
+New commands: {\tt zp} for "zero page", {\tt cf} and {\tt cb} (alt: {\tt jf} and {\tt jb}) for "cursor jump forward/backward", {\tt sc} for "switch cursor", {\tt aa} for "merge two 16-bit addresses into one word", {\tt bb} for "for 32-bit word (MSB, LSB), allocate a block off the stack in address in LSB, then mark the address in the bitset in MSB".
+\par
+
+Writing up some initial TODOs in my test suite.
+\par
+
+Some potential tests written out in my input.txt file. Another command I'm going to add: "sn".
+\par
+
+This is why things take so long. Tasks here cascade into smaller tasks that individually don't warrant building a subtask for (currently too much overhead required to build a task). My TDD mindset is slowing things down too. But I think it'll be worth it when I port this to rust.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-18}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:55: implement zero page command 'zp'. blocklist blockers.}\smallskip
+the zero page has been implemented, but there are some blockers related to the blocklist. Words to follow
+\par
+
+This block list addressing scheme is going to need to get looked at again.
+\par
+
+Currently I've been assuming that the block list is initialized at address 0. Addresses are stored as memory aligned block addresses. When I run 'gb', it assumes that block '0' is the first free block available. so, it skips the words used to make the blocklist. However, my test doesn't have that assumption.
+\par
+
+I think it'll work out okay for today, but yeah, may want to think again about what this block list is doing.
+\par
+
+oof. I think there's weird overflow bugs happening. I think my first address to be returned is block 0x400, the last block in memory. it works backwards. When I add a bias to that, it overflows. The issue is the stack assumes all 1024 blocks are available, but by definition, they are not because some of those blocks (16 of them) are used for this block list.
+\par
+
+Okay, so if a block list can be initialized to any address, what exactly are those 10-bit numbers mapping to? You can't just turn that into a memory address by multiplying by 64 and adding a 1024 bias, that only works when the memory is 0.
+\par
+
+So, the so-called "block addresses" need to be thought of as a mapping from a 10-bit number to a 16-bit word address.
+\par
+
+Those 10-bit numbers are offsets local to the address of the block stack. Brute force, the mapping could be a lookup table. 1024 16 bit numbers packed into 32 words means 512 words, which would be 8 blocks. Perhaps there's a better way.
+\par
+
+If we assume the mapping is mostly linear, but skip the 16 blocks used for the block stack, that mapping could be realized as a closed-form expression.
+\par
+
+It'll never be 1024 blocks, only 1008. That's 15 blocks exactly, not 16. Might be worth thinking about.
+\par
+
+making a task for this.
+\par
+
+the zero page has been implemented, but there are some blockers related to the blocklist. Words to follow
+\par
+
+This block list addressing scheme is going to need to get looked at again.
+\par
+
+Currently I've been assuming that the block list is initialized at address 0. Addresses are stored as memory aligned block addresses. When I run 'gb', it assumes that block '0' is the first free block available. so, it skips the words used to make the blocklist. However, my test doesn't have that assumption.
+\par
+
+I think it'll work out okay for today, but yeah, may want to think again about what this block list is doing.
+\par
+
+oof. I think there's weird overflow bugs happening. I think my first address to be returned is block 0x400, the last block in memory. it works backwards. When I add a bias to that, it overflows. The issue is the stack assumes all 1024 blocks are available, but by definition, they are not because some of those blocks (16 of them) are used for this block list.
+\par
+
+Okay, so if a block list can be initialized to any address, what exactly are those 10-bit numbers mapping to? You can't just turn that into a memory address by multiplying by 64 and adding a 1024 bias, that only works when the memory is 0.
+\par
+
+So, the so-called "block addresses" need to be thought of as a mapping from a 10-bit number to a 16-bit word address.
+\par
+
+Those 10-bit numbers are offsets local to the address of the block stack. Brute force, the mapping could be a lookup table. 1024 16 bit numbers packed into 32 words means 512 words, which would be 8 blocks. Perhaps there's a better way.
+\par
+
+If we assume the mapping is mostly linear, but skip the 16 blocks used for the block stack, that mapping could be realized as a closed-form expression.
+\par
+
+It'll never be 1024 blocks, only 1008. That's 15 blocks exactly, not 16. Might be worth thinking about.
+\par
+
+making a task for this.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blockstack improvements}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:00: block stack v2 thoughts}\smallskip
+\bye

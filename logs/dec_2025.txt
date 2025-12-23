@@ -1942,7 +1942,7 @@ children/parent. python loaded JSON and generated
 tex document with page references. It could look better, but
 it it's a start.
 ---
-TODO: try to get JSON export working faster (FULL JOINs are slow?)
+note to self: try to get JSON export working faster (FULL JOINs are slow?)
 Configure the tooling to work with any nodes.
 ---
 First attempt to speed up this query.
@@ -1961,7 +1961,7 @@ subset of the graph nodes. Take the namespace nodes, then
 find the outgoing nodes, then incoming nodes. The incoming/outgoing
 nodes not in the namespace won't be traversed.
 
-@10:12 back to query optimizations
+@10:12 back to query optimizations #timelog:01:05:34
 Continuing with my attempt at building a subquery
 ---
 Okay, seems to work. Lots of ideas on features to add.
@@ -1973,3 +1973,23 @@ into the graph a little bit better.
 I need to set up some PDF tooling with what I have now.
 Set up namespace(s), and the name of the output file. Set
 up a list of pre-made "maps".
+
+@11:22 grouping nodes by namespaces
+This is the next higher level index after the raw
+alphabetical index list.
+---
+Okay, after remembering some more python, I got everything
+in a trie. Now to process them.
+---
+Visually, each subpath should be printed. The ones with
+the least amount of subpaths should go first. Under each
+of those subpaths, the direct children. Some of them will
+be smaller subpaths, others will be terminal nodes.
+---
+Could I do this with a queue? Pop it off the queue, then
+iterate over children. The output should be a list? the
+name of the subgraph.
+---
+Lots of things work. Grouping behavior works as expected,
+and I got dotted lines working to make it easier to track
+page numbers.

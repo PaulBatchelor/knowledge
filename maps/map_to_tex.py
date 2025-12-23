@@ -201,9 +201,21 @@ def mknsidx(namespaces):
 
     return nsidx, nsref
 
+def begin():
+    print("\\input eplain")
+    print("\\pdfpagewidth=148mm")
+    print("\\pdfpageheight=210mm")
+    print("\\hsize=128mm")
+    print("\\vsize=190mm")
+    print("")
+    print("\\pdfhorigin=0pt")
+    print("\\pdfvorigin=0pt")
+    print("\\hoffset=10mm")
+    print("\\voffset=10mm")
+
 nsidx, nsref = mknsidx(namespaces)
 
-print("\\input eplain")
+begin()
 
 # print namespace index
 

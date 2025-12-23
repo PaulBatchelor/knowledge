@@ -63,11 +63,17 @@ def basename(s):
 def path_to_label(name):
     return name.replace("/","-").replace("_", "")
 
-def xrdef(name):
-    return "\\xrdef{" + refs[name] + "}"
+def xrdef(name, r=None):
+    id = None
+    if r: id = r[name]
+    else: id = refs[name]
+    return "\\xrdef{" + id + "}"
 
-def xref(name):
-    return "\\xref{" + refs[name] + "}"
+def xref(name, r=None):
+    id = None
+    if r: id = r[name]
+    else: id = refs[name]
+    return "\\xref{" + id + "}"
 
 def process_node(s):
     return f"{basename(s)}[{xref(s)}]"
@@ -133,8 +139,8 @@ def node_index_ref(name):
     #return escape(name) + " \\hfill " + xref(name)
     return hpair(escape(name), xref(name))
 
-def node_index_ref_abbr(name):
-    return hpair(basename(name), xref(name))
+def node_index_ref_abbr(name, ref=None):
+    return hpair(basename(name), xref(name, ref))
 
 namespaces = Trie()
 
@@ -146,8 +152,9 @@ class NamespaceIndex:
         self.children = []
         self.nodes = []
 
-    def display(self):
+    def display(self, refs=None):
         if len(self.nodes) == 0 and len(self.children) == 0: return
+        print(xrdef(self.name, refs))
         print(escape(self.name))
         print("\\par\\begingroup")
         leftskip("2em")
@@ -155,7 +162,8 @@ class NamespaceIndex:
         smallskip()
         for child in self.children:
             # TODO: create page index
-            print(basename(child))
+            #print(basename(child))
+            print(node_index_ref_abbr(child, refs))
             smallskip()
 
         medskip()
@@ -174,6 +182,7 @@ def mknsidx(namespaces):
     q.append(namespaces)
 
     nsidx = []
+    nsref = {}
 
     while q:
         node = q.popleft()
@@ -187,17 +196,18 @@ def mknsidx(namespaces):
             q.append(v)
         ni.nodes = nodes
         ni.children = children
+        nsref[node.path] = 'g' + str(len(nsref))
         nsidx.append(ni)
 
-    return nsidx
+    return nsidx, nsref
 
-nsidx = mknsidx(namespaces)
+nsidx, nsref = mknsidx(namespaces)
 
 print("\\input eplain")
 
 # print namespace index
 
-for ni in nsidx: ni.display()
+for ni in nsidx: ni.display(nsref)
 
 # print index
 for name in names:

@@ -1993,3 +1993,5 @@ name of the subgraph.
 Lots of things work. Grouping behavior works as expected,
 and I got dotted lines working to make it easier to track
 page numbers.
+
+@14:39 add subgraph page numbers #timelog:00:11:32

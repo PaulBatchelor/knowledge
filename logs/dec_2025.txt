@@ -1933,3 +1933,43 @@ It takes in CLI args now, added script in ink folder
 
 @2025-12-22 Day 113. On the road.
 @12:50 export node data as JSON data #timelog:03:46:53
+
+@2025-12-23 Day 114. More road
+@08:57 more node export work #timelog:01:05:35
+yesterday, I managed to get some initial PDF generation working.
+query configured to export JSON of nodes with metadata and
+children/parent. python loaded JSON and generated
+tex document with page references. It could look better, but
+it it's a start.
+---
+TODO: try to get JSON export working faster (FULL JOINs are slow?)
+Configure the tooling to work with any nodes.
+---
+First attempt to speed up this query.
+---
+Whoah, just creating a subquery on dz_nodes changed the
+speed from 2 seconds to 0.1 seconds. I'm skeptical if that
+actually worked.
+---
+ah, I'm already having trouble resolving certain nodes.
+My sample code scoped to "thoughts"
+references nodes from "ink", which isn't in
+---
+Reverting. But it feels like the write step.
+I'm trying something else. I want to try to buid up a full
+subset of the graph nodes. Take the namespace nodes, then
+find the outgoing nodes, then incoming nodes. The incoming/outgoing
+nodes not in the namespace won't be traversed.
+
+@10:12 back to query optimizations
+Continuing with my attempt at building a subquery
+---
+Okay, seems to work. Lots of ideas on features to add.
+There should be a namespace browser. Each subpath should
+list nodes, as well as any subpaths inside of the namespace.
+It'll act as a more helpful high-level map to get me jumping
+into the graph a little bit better.
+---
+I need to set up some PDF tooling with what I have now.
+Set up namespace(s), and the name of the output file. Set
+up a list of pre-made "maps".

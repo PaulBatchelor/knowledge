@@ -2010,3 +2010,10 @@ like the notes for COAD continue for several pages. Ideally,
 one would want to batch these all together.
 ---
 and I have been summoned
+
+@09:26 quick transcription #ink:04v
+I'm thinking about a file format. Probably going to be
+a binning system similar to what I'm using for inks.
+---
+need to finish nodes.
+

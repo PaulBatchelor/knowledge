@@ -1,0 +1,14 @@
+@00 we have run into the practical power limit
+for cooling commodity microprocessors
+@01 in the post-PC era the critical resource is energy
+@02 measuring time is a safer performance metric than
+a rate like MIPS
+@04 the energy metric joules is a better metric than watts
+@05 watts = joules/sec
+006 CMOS: complementary metal oxide semiconductor
+@07 dominant tech for IC
+@08 dynamic energy: energy that is consumed when transistors
+switch state and vice versa
+@09 CMOS primary source of energy consumption is dynamic energy
+@0a Energy OL capacity load x voltage^2
+@0b energy of a pulse during logic transition

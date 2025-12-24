@@ -1997,3 +1997,16 @@ page numbers.
 @14:39 add subgraph page numbers #timelog:00:11:32
 
 @15:17 set up log rendering infrastructures #timelog:00:11:00
+
+@2025-12-24 115. Greensboro #timelog:00:04:03
+@08:49 Looking into transcribing some of my graph-notes
+#! dz coad/news
+At the same time, I also need to think about the tooling
+for transcribing graphs in general.
+---
+My approach up to this point is to transcribe by ink
+page, then group the data in another step. Indexed digraphs
+like the notes for COAD continue for several pages. Ideally,
+one would want to batch these all together.
+---
+and I have been summoned

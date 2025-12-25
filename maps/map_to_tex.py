@@ -55,7 +55,7 @@ def bigskip():
     print("\\bigskip")
 
 def escape(s):
-    return s.replace("_","\\_")
+    return s.replace("_"," ")
 
 def basename(s):
     return escape(s.split("/")[-1])
@@ -75,8 +75,12 @@ def xref(name, r=None):
     else: id = refs[name]
     return "\\xref{" + id + "}"
 
+def underbar(s):
+    return "\\underbar{" + s + "}"
+    #return s
+
 def process_node(s):
-    return f"{basename(s)}[{xref(s)}]"
+    return f"{basename(s)} [{xref(s)}]"
 
 def leftskip(x):
     print("\\leftskip=" + x)
@@ -85,7 +89,7 @@ def display(name, node):
     print(xrdef(name))
     print(basename(name))
     smallskip()
-    print("{")
+    print("\\par\\begingroup")
     leftskip("2em")
     print("path:", escape(name))
     smallskip()
@@ -105,7 +109,7 @@ def display(name, node):
         smallskip()
 
     leftskip("0em")
-    print("}")
+    print("\\par\\endgroup")
     bigskip()
 
 # generate subgraph trie
@@ -203,11 +207,11 @@ def mknsidx(namespaces):
 
 def begin():
     print("\\input eplain")
+    print("\\parindent=0pt")
     print("\\pdfpagewidth=148mm")
     print("\\pdfpageheight=210mm")
     print("\\hsize=128mm")
     print("\\vsize=190mm")
-    print("")
     print("\\pdfhorigin=0pt")
     print("\\pdfvorigin=0pt")
     print("\\hoffset=10mm")

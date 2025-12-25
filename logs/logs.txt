@@ -1,1 +1,4 @@
 sonilo:thoughts/projects/sonilo%
+thoughts:thoughts/%
+dmoi:thoughts/%
+coad:coad/%

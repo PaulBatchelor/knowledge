@@ -2017,3 +2017,75 @@ a binning system similar to what I'm using for inks.
 ---
 need to finish nodes.
 
+@2025-12-25 Day 116. Christmas
+
+@2025-12-26 Day 117.
+
+@2025-12-27 Day 118.
+
+@2025-12-28 Day 119. Back on the road
+@11:14 begin work implementing this graph drawing algo
+#! dz thoughts/projects/dagdraw/tasks/initial_parser
+Lots of time with pencil and paper these past few days,
+working out a way to transcribe these knowledge graphs
+I've drawing by hand.
+---
+I think I managed to figure out a way to get a low-level
+representation of a graph using a system of weighted
+edges connecting quad trees.
+---
+A drawn graph is made up of vertices that are quad trees.
+Each vertice has 4 ports labeled north, south, east, west.
+Visually, these correspond to the cardinal directions.
+---
+An edge is used to connect two vertices together.
+There are two types of edges: horiztonal and vertical.
+---
+A horizontal edge creates a directed edge from one nodes
+east port to another nodes west port. A vertical edge goes
+south to north. This makes graphs flow left to right, top
+down.
+---
+An edge has a weight, which indicates how much space to
+add between the node. The amount to move is some kind
+of unit, like a tile.
+---
+Defined edges are primarily used to draw connections
+between two vertices, but they can also be used for alignment
+and traversal purposes. In these cases, the edge can be
+marked to be invisible.
+---
+Vertices can be of two types: a node or a junction.
+A node is the thing that contains the actual bit of information
+in the knowledge graph. The junction is used to make right
+angle bends for cables.
+
+@11:38 some initial parser work
+#! dz $
+
+@14:05 Okay, I have made an adjacency list, next steps
+#! dz $
+It's pretty cool to see what I wrote down on paper
+show up properly on the computer.
+---
+What needs to happen next is traversal and drawing.
+Traversal might be a little bit faster to get to first,
+I can just print drawing commands to standard output.
+---
+Needed: a queue, a "visited" list. Queue needs to
+take in a cursor position and pointer to a vertice.
+
+@14:13 make a "visited" list
+#! dz $
+I think I'm just going to add an entry to the vertice
+list.
+
+@14:16 onto a queue
+#! dz $
+
+@14:40 back to queue
+#! dz $
+
+@15:56 traversal works, the cursor offsets are wrong
+#! dz $
+Will need to troubleshoot later

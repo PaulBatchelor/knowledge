@@ -2103,3 +2103,88 @@ command, something that overlays stuff in node slots.
 Another thing that's kind of neat is that these draw commands
 can be run in arbitrary order. So, overlay commands can happen
 last.
+
+@2025-12-29 Day 120. More road.
+@08:48 adding overlay drawing commands
+#! dz thoughts/projects/dagdraw/tasks/initial_parser
+How I am imagining it will go: two overlays happen for
+every line. A line always connects two vertices together.
+Vertices can either be a junction (+) or a node ($).
+---
+The
+vertice type determines the kind of overlay to draw. Nodes
+will have dots drawn on the eastern and southern ports to
+indicate arrowheads (these are input ports), and they will
+possibly have some lines to draw as well, depending on how
+much whitespace there is. Junctions will have lines from
+the port to the center of the tile.
+---
+Overlay commands will
+need to specify which direction to draw (N, S, E, W).
+As the name implies, the overlay commands should be able
+to write on top of previously drawn items in that tile.
+---
+So, overlay data needed: position (tile X, Y), type
+(junction, node), and port to draw (N, S, E, W).
+---
+This could be good pseudocode: OVERLAY: J 1 2 E
+
+@09:33 overlays seem to look right. now to plan for drawing
+#! dz $
+I'm actually thinking about making another small program
+for drawing 1-bit graphics. I can then take the output
+commands from dagdraw and turn them into these lower level
+commands.
+---
+The intermediate program could be an awk script
+---
+So what will these commands consist of?
+---
+Rectangles (outline and filled), hlines, vlines.
+I think that's all that's required for now (ignoring text).
+---
+rectangle (rc)/filled rectangle (rf): x, y, w, h
+---
+vline (lv): x, y, length. positive length is downward,
+negative is upward (positive only for now)
+---
+hline (lh): x, y, length: positive length is eastward,
+negative westword (positive only for now)
+---
+wr: write file to disk
+---
+sz: size (w, h) of output
+
+@09:42 okay testing this out
+
+@11:06 "bitr" command language seems to work, writing initial command generator
+
+@11:31 VLINE/HLINE/NODE commands seem to work, onto OVERLAY
+Uh oh, I tihnk my overlay code might be wrong.
+I don't think it's correctly calculating coordinates.
+---
+Ah, I think it was an off-by-one thing with weights.
+---
+I think the issues are more rotten than I expected. the junctions
+are sometimes off-by-one, sometimes not in the dagdraw output.
+---
+Huh. Maybe it's just off-by-one? It's possible I might not be
+computing the overlays correctly.
+--
+Rendering just west edges: J1w, J5w, J6w looks good. But
+hang on, there are other edges here that shoulnd't be
+here.
+---
+Ah, typo when getting the type for "b". Let's see if that
+clears things up.
+---
+Okay, that works now! phew.
+---
+Onto node overlays now.
+---
+It works! Amazing.
+
+@12:37 going to add CLI args, test ex1
+seems to work! I'll need to do more tweaks for things
+like configuring the initial origin, and calculating
+dimensions for the final output. But, it does what I want.

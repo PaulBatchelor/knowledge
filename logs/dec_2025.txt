@@ -2089,3 +2089,17 @@ list.
 @15:56 traversal works, the cursor offsets are wrong
 #! dz $
 Will need to troubleshoot later
+
+@20:35 quick troubleshooting
+#! dz $
+I got it working! Drawing logic needs a bit more work.
+I am using weight to calculate the length of the line,
+but it doesn't account for the last little bits of the line.
+For junctions, the lines extend into the center point.
+For nodes, it might extend? Certainly there will be dots
+drawn to represent lines. So, maybe that's another drawing
+command, something that overlays stuff in node slots.
+---
+Another thing that's kind of neat is that these draw commands
+can be run in arbitrary order. So, overlay commands can happen
+last.

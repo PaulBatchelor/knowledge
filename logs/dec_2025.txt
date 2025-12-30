@@ -2185,6 +2185,32 @@ Onto node overlays now.
 It works! Amazing.
 
 @12:37 going to add CLI args, test ex1
+#! dz $
 seems to work! I'll need to do more tweaks for things
 like configuring the initial origin, and calculating
 dimensions for the final output. But, it does what I want.
+
+@18:11 work on auto-scaling canvas size
+#! dz $
+I think the way I'll do this is to keep track of the max/min
+x and y coordinates, and then use that to determine the bounds.
+---
+So, it'll be a two-pass traversal. Traverse it once to get
+the bounds, starting at (0, 0). Then run it again and
+add some kind of offset.
+---
+well, it doesn't work yet.
+
+@21:36 taking another swing at it
+#! dz $
+Hey, it works. The canvas will auto-adjust to fit the
+boundary.
+
+@22:00 figure out one level higher
+#! dz $
+Something that can generate the edge code a little
+bit easier
+---
+I got my "arch" design, parallel, and sequence configurations
+working in a macro language I built in awk. More intuitive
+than I expectred.

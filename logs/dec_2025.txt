@@ -2264,3 +2264,7 @@ And we are centered. Excellent.
 I'll need to work out the "fig" language a bit more,
 but the fundamentals are in place to transcribe these
 knowledge graphs.
+
+@12:04 More transcription #ink:04v
+
+@12:07 get this thing hooked up

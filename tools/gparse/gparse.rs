@@ -1,11 +1,17 @@
 use std::io;
+use std::io::prelude::*;
 use std::fs;
 use std::collections::{BTreeMap, HashMap, BTreeSet};
 use std::error::Error;
 use std::env;
+use fs::File;
+use std::io::BufReader;
 
-fn load_nodes(filename: &str) -> Result<BTreeMap<String, String>, Box<dyn Error>> {
-    let mut nodes: BTreeMap<String, String> = BTreeMap::new();
+type EdgeSet = BTreeSet<(String, String)>;
+type NodeMap = BTreeMap<String, String>;
+type NameMap = HashMap<String, String>;
+
+fn load_nodes(filename: &str, mut nodes: NodeMap) -> Result<NodeMap, Box<dyn Error>> {
     let data = fs::read(filename)?;
     let str = match String::from_utf8(data) {
         Ok(s) => s,
@@ -26,8 +32,7 @@ fn load_nodes(filename: &str) -> Result<BTreeMap<String, String>, Box<dyn Error>
     Ok(nodes)
 }
 
-fn load_names(filename: &str) -> Result<HashMap<String, String>, Box<dyn Error>> {
-    let mut names: HashMap<String, String> = HashMap::new();
+fn load_names(filename: &str, mut names: NameMap) -> Result<NameMap, Box<dyn Error>> {
     let data = fs::read(filename)?;
     let str = match String::from_utf8(data) {
         Ok(s) => s,
@@ -43,13 +48,12 @@ fn load_names(filename: &str) -> Result<HashMap<String, String>, Box<dyn Error>>
     Ok(names)
 }
 
-fn load_edges(filename: &str) -> Result<BTreeSet<(String, String)>, Box<dyn Error>> {
+fn load_edges(filename: &str, mut con: EdgeSet) -> Result<EdgeSet, Box<dyn Error>> {
     let data = fs::read(filename)?;
     let str = match String::from_utf8(data) {
         Ok(s) => s,
         Err(_) => panic!("oops"),
     };
-    let mut con = BTreeSet::new();
 
     for line in str.lines() {
         let vals: Vec<_> = line.split_whitespace().collect();
@@ -69,14 +73,31 @@ fn main() -> io::Result<()> {
         panic!("usage: {} namespace page", args[0]);
     }
 
+
     let namespace = args[1].clone();
-    let page = args[2].clone();
-    let nodes_file = format!("{}.nodes", page);
-    let names_file = format!("{}.names", page);
-    let edges_file = format!("{}.edges", page);
-    let nodes = load_nodes(&nodes_file).unwrap();
-    let names = load_names(&names_file).unwrap();
-    let edges = load_edges(&edges_file).unwrap();
+    let pagesfile = args[2].clone();
+
+    let fp = File::open(pagesfile)?;
+    let pages = BufReader::new(fp);
+
+    let mut edges = EdgeSet::new();
+    let mut nodes = NodeMap::new();
+    let mut names = NameMap::new();
+
+    for pg in pages.lines() {
+        if let Some(pg) = pg.ok() {
+            let nodes_file = format!("{}/{}.nodes", pg, pg);
+            let names_file = format!("{}/{}.names", pg, pg);
+            let edges_file = format!("{}/{}.edges", pg, pg);
+
+            nodes = load_nodes(&nodes_file, nodes).unwrap();
+            names = load_names(&names_file, names).unwrap();
+            edges = load_edges(&edges_file, edges).unwrap();
+        }
+
+    }
+
+
 
     println!("ns {}", namespace);
     for (key, val) in nodes {

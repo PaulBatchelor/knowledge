@@ -2266,5 +2266,8 @@ but the fundamentals are in place to transcribe these
 knowledge graphs.
 
 @12:04 More transcription #ink:04v
+#! dz coad/news
 
-@12:07 get this thing hooked up
+@12:07 get this thing hooked up, pagelist
+
+@12:43 transcribe next coad page

@@ -1,0 +1,38 @@
+@0h energy and thus power can be reduced
+by lowering the voltage
+@0i voltage lowering occured with each new generation
+of tech
+@0j power is function of voltage squared. $P=V^2$
+@0k 20 years, voltage has gone from 5v -> 1v, hence power
+increase 30x
+@0l problem today: further lowering of voltage makes
+transistors too leaky
+@0m 40% power consumption due to leakage
+@0n to address power problem, designers add large devices
+to increase cooling
+@0o static cenergy consumption occurs because of leakage
+current, even when a transistor is off
+@0p increasing number of transistors increases power
+dissipation, even when transistors are off
+@0q why is power a challenge for IC? @0r power must
+be brought in and distributed around chip
+@0s power is dissipated as heatand must be removed
+@0t microprocessor vs processor
+@0u processors = "cores"
+@0v microprocessors = multicore microprocessors
+@0w "quadcore" microprocessor: chip that contains
+4 processors/cores.
+@0x since 2006, companies ship microprocessors
+with multiple processors per chip
+@0y benefit: often more on throughpu than response time
+@0z programmers now need to improve response time
+in programs by rewrite to take advantage of
+multiple processors
+@10 why is it difficult for programmers to explicitly
+write parallel programs?
+@11 parsing is by definition performance programming,
+which increases difficulty
+@12 fast for parallel hw means programmer must divide
+app so that each processor has roughly same amount to
+do same time, overhead of scheduling/coordinatoin doesn't
+"fritter away" perf benefits of parallel

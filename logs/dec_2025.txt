@@ -2017,7 +2017,7 @@ a binning system similar to what I'm using for inks.
 ---
 need to finish nodes.
 
-@2025-12-25 Day 116. Christmas
+@2025-12-25 Day 116. Christmas.
 
 @2025-12-26 Day 117.
 
@@ -2156,10 +2156,13 @@ wr: write file to disk
 sz: size (w, h) of output
 
 @09:42 okay testing this out
+#! dz $
 
 @11:06 "bitr" command language seems to work, writing initial command generator
+#! dz $
 
 @11:31 VLINE/HLINE/NODE commands seem to work, onto OVERLAY
+#! dz $
 Uh oh, I tihnk my overlay code might be wrong.
 I don't think it's correctly calculating coordinates.
 ---
@@ -2191,7 +2194,7 @@ like configuring the initial origin, and calculating
 dimensions for the final output. But, it does what I want.
 
 @18:11 work on auto-scaling canvas size
-#! dz $
+#! dz thoughts/projects/dagdraw/tasks/autoscaling
 I think the way I'll do this is to keep track of the max/min
 x and y coordinates, and then use that to determine the bounds.
 ---
@@ -2202,15 +2205,62 @@ add some kind of offset.
 well, it doesn't work yet.
 
 @21:36 taking another swing at it
-#! dz $
+#! dz thoughts/projects/dagdraw/tasks/autoscaling
 Hey, it works. The canvas will auto-adjust to fit the
 boundary.
 
 @22:00 figure out one level higher
-#! dz $
+#! dz thoughts/projects/dagdraw/tasks/fig_prototype
 Something that can generate the edge code a little
 bit easier
 ---
 I got my "arch" design, parallel, and sequence configurations
 working in a macro language I built in awk. More intuitive
 than I expectred.
+
+@2025-12-30 Day 121. Ganoga Lake
+007:24 label support
+#! dz thoughts/projects/dagdraw/tasks/labels
+The last thing I need to get this actually usuable is
+to add labels for nodes.
+---
+I don't really want strings in bitr, so I think I'm
+going to stick with the 6-bit encoding system I used in
+dagdraw to encode the text.
+---
+The bitmap font will be embedded in the binary. I've selected
+a few to try out. 8x8 fonts.
+---
+rectangles are going to need to be stretched a bit to
+fit the text. I'm thinking I'll make it a 2 character
+label max for now (that's ~1300 nodes in base 36, which
+I use for indexed nodes. plenty for this scale).
+
+@07:32 stretch the grid size in draw.awk
+#! dz $
+Make it so 2 characters can fit.
+---
+Okay that mostly seems to work. Took some fiddly recalculations.
+pixel accurate centering takes a bit of thought. Lots of
+odd integers.
+
+@08:30 get a pixel font working... with centering?
+#! dz $
+Pristine seems to be the current winner.
+---
+I got a glyph printed, but I need to adjust spacing
+for the boxes because the letters won't fit.
+
+@09:13 making the boxes a little bit bigger
+#! dz $
+
+@08:37 initial text rendering works!
+#! dz $
+This is good enough for display purposes. However,
+the text ideally should be horizontally centered.
+---
+And we are centered. Excellent.
+---
+I'll need to work out the "fig" language a bit more,
+but the fundamentals are in place to transcribe these
+knowledge graphs.

@@ -1,3 +1,6 @@
 ns thoughts/projects/dagdraw
 nn tasks
-nn initial_parser
+nn tasks/initial_parser
+nn tasks/autoscaling
+nn tasks/fig_prototype
+nn tasks/labels

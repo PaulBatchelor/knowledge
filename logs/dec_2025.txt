@@ -2219,7 +2219,7 @@ working in a macro language I built in awk. More intuitive
 than I expectred.
 
 @2025-12-30 Day 121. Ganoga Lake
-007:24 label support
+@07:24 label support
 #! dz thoughts/projects/dagdraw/tasks/labels
 The last thing I need to get this actually usuable is
 to add labels for nodes.

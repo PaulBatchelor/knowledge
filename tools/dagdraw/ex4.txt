@@ -1,0 +1,23 @@
+H $1Q $1T 1
+SREFT $1Q $1R
+PAR $1T $1U $1V
+H $1U $1V 1
+V $1T $22 1
+SEQ $1V $1W $1X
+VSEQ $1V $1Y $1Z
+VSEQ $1Z $20 $21
+v $1R $23 1
+PAR $23 $24 $25
+V $23 $27 1
+VPAR $25 $26 $28
+VSEQ $28 $29 $2B
+H $29 $2A 1
+H $2B $2H 1
+h $2A $2G 2
+PAR3 $2G $2D $2E $2F
+H $2E $2F 1
+H $2D $2E 1
+# PAR $2F $2H $2I
+# H $2H $2I 1
+# VSEQ $2I $2J $2K
+V $2D +x1 0

@@ -9,3 +9,4 @@ render2() {
 render1 ex2
 render1 ex1
 render2 ex3
+render2 ex4

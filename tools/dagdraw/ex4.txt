@@ -13,11 +13,25 @@ VPAR $25 $26 $28
 VSEQ $28 $29 $2B
 H $29 $2A 1
 H $2B $2H 1
-h $2A $2G 2
+h $2A $2G 1
 PAR3 $2G $2D $2E $2F
-H $2E $2F 1
 H $2D $2E 1
 PAR $2F $2H.0 $2I
 H $2H.0 $2I 1
 VSEQ $2I $2J $2K
 V $2D +x1 0
+V $2E +x2 0
+H +x1 +x3 2
+V +x4 +x3 0
+H +x4 $2F 0
+V +2G.0 $2G 0
+H +2G.1 +2G.0 3
+V $2F +2F.0 3
+H +2F.0 $2K 3
+H $2J +2J.0 0
+V +2J.0 +2J.1 2
+H +2J.2 +2J.1 2
+V +2J.3 +2J.2 0
+V $2G +2G.2 0
+H +2G.3 +2G.2 1
+V +2G.3 $2H 0

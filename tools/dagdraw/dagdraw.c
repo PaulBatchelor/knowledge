@@ -112,6 +112,8 @@ uint32_t stok(const char *str, int len)
             p = 37;
         } else if (c == '+') {
             p = 38;
+        } else if (c == '.') {
+            p = 39;
         }
 
         x <<= 6;
@@ -123,7 +125,7 @@ uint32_t stok(const char *str, int len)
 
 static const char *ktos_lookup =
     "_ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    "0123456789$+";
+    "0123456789$+.";
 
 void ktos(uint32_t k, char *s)
 {
@@ -340,6 +342,21 @@ void print_overlay(gd_ctx *ctx, gd_edge *e, int x, int y)
     printf("OVERLAY %s %c %d %d %c\n", kb, tb, bx, by, dir[1]);
 }
 
+void mklabel(const char *input, char *output)
+{
+    int i;
+    int p;
+    p = 0;
+    for (i = 0; i < 5; i++) {
+        if (input[i] == 0) break;
+        if (input[i] == '.') break;
+        if (input[i] == '$') continue;
+        output[p] = input[i];
+        p++;
+    }
+    output[p] = 0;
+}
+
 void draw(gd_ctx *ctx, gd_vert *v, int cx, int cy)
 {
     int i;
@@ -355,10 +372,12 @@ void draw(gd_ctx *ctx, gd_vert *v, int cx, int cy)
     cy -= ctx->ymin;
 
     if (tmp[0] == '$') {
+        char label[8];
         int klen;
-        klen = strlen(&tmp[1]);
+        mklabel(tmp, label);
+        klen = strlen(label);
         /* draw node */
-        printf("NODE %d %d %d %d\n", stok(&tmp[1], klen), klen, cx, cy);
+        printf("NODE %d %d %d %d\n", stok(label, klen), klen, cx, cy);
     }
 
     /* draw lines */

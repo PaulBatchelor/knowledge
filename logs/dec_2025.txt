@@ -2271,3 +2271,15 @@ knowledge graphs.
 @12:07 get this thing hooked up, pagelist
 
 @12:43 transcribe next coad page
+
+@2025-12-31 Day 122. Ganoga Lake
+@12:22 Duplicate node support #ink:05q
+#! dz thoughts/projects/dagdraw/tasks/duplicate_node
+Needed for a graph I was trying to transcribe yesterday.
+
+@13:11 Working out a strategy
+#! dz $
+The strategy I have in mind is to denote duplicate
+nodes in the following way: {\tt \$XY.A} That is to say,
+there is a node XY and this has a unique identifier of "A".
+When the drawing commands get produced, this will go away.

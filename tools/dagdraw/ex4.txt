@@ -17,7 +17,7 @@ h $2A $2G 2
 PAR3 $2G $2D $2E $2F
 H $2E $2F 1
 H $2D $2E 1
-# PAR $2F $2H $2I
-# H $2H $2I 1
-# VSEQ $2I $2J $2K
+PAR $2F $2H.0 $2I
+H $2H.0 $2I 1
+VSEQ $2I $2J $2K
 V $2D +x1 0

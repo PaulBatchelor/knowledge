@@ -2301,3 +2301,11 @@ straightforward to build.
 @11:51 transcribing figure for 057 #ink:057
 
 @13:02 back to transcribing figure 057 #ink:057
+
+@13:19 04y.fig #ink:047
+This one has been tricky to transcribe. It's a very
+messy graph, one that I made before adopting the the
+orthogonal layout. I wonder what was going through my
+head while I was making this. It seems like there's
+a portion with non-trivial relations. Many nodes have
+two parents.

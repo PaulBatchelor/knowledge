@@ -226,8 +226,18 @@ BEGIN {
     print "H", B, C, 1
 }
 
-# NWSEQ: northwest sequence. create a sequence ABC
-# such that B is norththeast of A and C
+# NWSEQ: southwest sequence. create a sequence ABC
+# such that B is northwest of A and C
+/^NWSEQ / {
+    A=$2
+    B=$3
+    C=$4
+    print "V", B, A, 1
+    print "H", B, C, 1
+}
+
+# NESEQ: northwest sequence. create a sequence ABC
+# such that B is northeast of A and C
 /^NESEQ / {
     A=$2
     B=$3

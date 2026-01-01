@@ -2283,3 +2283,10 @@ The strategy I have in mind is to denote duplicate
 nodes in the following way: {\tt \$XY.A} That is to say,
 there is a node XY and this has a unique identifier of "A".
 When the drawing commands get produced, this will go away.
+
+@2026-01-01 Day 123
+
+@10:38 Transcribing knowledge graphs using dagdraw. Some infra.
+I need to establish a precedent for transcribing these
+graphs. maybe call them "figures" to disambiguate from
+the other graphs here.

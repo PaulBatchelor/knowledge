@@ -2296,4 +2296,8 @@ Last night, I took some time rewriting a few graphs,
 including this one. Hopefully it will be somewhat
 straightforward to build.
 
-@11:39 transcribing figure for 04z #ink:04z
+@11:39 transcribing figure for 04z #ink:04Z
+
+@11:51 transcribing figure for 057 #ink:057
+
+@13:02 back to transcribing figure 057 #ink:057

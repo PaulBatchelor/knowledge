@@ -89,6 +89,31 @@ BEGIN {
     print "V", j4, D, 0
 }
 
+/^PAR4 / {
+    A=$2
+    B=$3
+    C=$4
+    D=$5
+    E=$6
+    j1="j"p;p++
+    j2="j"p;p++
+    j3="j"p;p++
+    j4="j"p;p++
+    j5="j"p;p++
+    print "H", A, j1, 0
+    print "H", j1, B, 0
+    print "h", B, C, 1 
+    print "V", j2, j1, 0
+    print "H", j2, j3, 2
+    print "V", j3, C, 0
+    print "h", C, D, 1
+    print "H", j3, j4, 1
+    print "V", j4, D, 0
+    print "h", D, E, 1
+    print "H", j4, j5, 1
+    print "V", j5, E, 0
+}
+
 /^VPAR / {
     A=$2
     B=$3
@@ -155,4 +180,68 @@ BEGIN {
     print "H", j1, j2, 1
     print "V", j2, C, 0
 
+}
+
+# VRPAR: A flat vertical parallel arrangement, where
+# the child nodes swing to the right
+/^VRPAR / {
+    A=$2
+    B=$3
+    C=$4
+    j1="j"p;p++
+    j2="j"p;p++
+    print "V", A, B, 1
+    print "V", j1, C, 0
+    print "H", j2, j1, 1
+    print "V", j2, B, 0
+
+}
+
+# VRPAR: A flat vertical parallel arrangement, where
+# the child nodes swing to the right
+/^VRPAR3 / {
+    A=$2
+    B=$3
+    C=$4
+    D=$5
+    j1="j"p;p++
+    j2="j"p;p++
+    j3="j"p;p++
+    print "V", A, B, 1
+    print "V", j1, C, 0
+    print "H", j2, j1, 1
+    print "V", j2, B, 0
+    print "V", j3, D, 0
+    print "H", j1, j3, 1
+
+}
+
+# SWSEQ: southwest sequence. create a sequence ABC
+# such that B is southwest of A and C
+/^SWSEQ / {
+    A=$2
+    B=$3
+    C=$4
+    print "V", A, B, 1
+    print "H", B, C, 1
+}
+
+# NWSEQ: northwest sequence. create a sequence ABC
+# such that B is norththeast of A and C
+/^NESEQ / {
+    A=$2
+    B=$3
+    C=$4
+    print "V", A, B, 1
+    print "H", C, B, 1
+}
+
+/^EWV / {
+    A=$2
+    B=$3
+    j1="j"p;p++
+    j2="j"p;p++
+    print "H", A, j1, 0
+    print "V", j1, j2, 1
+    print "H", j2, B, 0
 }

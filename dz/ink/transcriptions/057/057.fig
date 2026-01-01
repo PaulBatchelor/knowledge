@@ -1,0 +1,17 @@
+PAR4 $13 $15 $18 $19 $1J
+WEV $13 $14
+SWSEQ $15 $16 $17
+NESEQ $18 $17 $16
+EWV $18 $1A
+VRPAR3 $19 $1a $1b $1l
+VRPAR3 $1b $1c $1d $1h
+VSEQ $1c $1e $1f
+VSEQ $1e $1f $1g
+H $1e $1i 3
+V $1h $1i 1
+H $1j +1j.0 4
+V +1j.0 +1j.1 4
+H +1j.2 +1j.1 0
+H $1h $1m 1
+VSEQ $1m $1n $1o
+VRPAR $1n $1o $1p

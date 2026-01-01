@@ -2290,3 +2290,8 @@ When the drawing commands get produced, this will go away.
 I need to establish a precedent for transcribing these
 graphs. maybe call them "figures" to disambiguate from
 the other graphs here.
+
+@11:06 attempting to transribe ink 04v #ink:04v
+Last night, I took some time rewriting a few graphs,
+including this one. Hopefully it will be somewhat
+straightforward to build.

@@ -122,3 +122,37 @@ BEGIN {
     print "V", j4, j5, 0
     print "H", B, j5, 0
 }
+
+# SSH: Go from west port to east port in vertical
+# configuration
+/^WEV / {
+    A=$2
+    B=$3
+    j1="j"p;p++
+    j2="j"p;p++
+    j3="j"p;p++
+    j4="j"p;p++
+    j5="j"p;p++
+
+    print "H", j1, A, 0
+    print "V", j1, j2, 0
+    print "H", j2, j3, 1
+    print "V", j3, j4, 0
+    print "H", B, j4, 0
+}
+
+# VLPAR: A flat vertical parallel arrangement, where
+# the child nodes swing to the left
+/^VLPAR / {
+    A=$2
+    B=$3
+    C=$4
+    j1="j"p;p++
+    j2="j"p;p++
+    j3="j"p;p++
+    print "V", A, C, 1
+    print "V", j1, B, 0
+    print "H", j1, j2, 1
+    print "V", j2, C, 0
+
+}

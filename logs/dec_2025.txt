@@ -2302,10 +2302,12 @@ straightforward to build.
 
 @13:02 back to transcribing figure 057 #ink:057
 
-@13:19 04y.fig #ink:047
+@13:19 04y.fig #ink:04Y
 This one has been tricky to transcribe. It's a very
 messy graph, one that I made before adopting the the
 orthogonal layout. I wonder what was going through my
 head while I was making this. It seems like there's
 a portion with non-trivial relations. Many nodes have
 two parents.
+
+@14:33 continuing 04y.fig #ink:04Y

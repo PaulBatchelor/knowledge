@@ -2295,3 +2295,5 @@ the other graphs here.
 Last night, I took some time rewriting a few graphs,
 including this one. Hopefully it will be somewhat
 straightforward to build.
+
+@11:39 transcribing figure for 04z #ink:04z

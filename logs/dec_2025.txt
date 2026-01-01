@@ -2286,7 +2286,7 @@ When the drawing commands get produced, this will go away.
 
 @2026-01-01 Day 123
 
-@10:38 Transcribing knowledge graphs using dagdraw. Some infra.
+@10:38 setting up an initial "figure" script
 I need to establish a precedent for transcribing these
 graphs. maybe call them "figures" to disambiguate from
 the other graphs here.

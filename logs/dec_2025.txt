@@ -2311,3 +2311,13 @@ a portion with non-trivial relations. Many nodes have
 two parents.
 
 @14:33 continuing 04y.fig #ink:04Y
+
+@21:37 misc. utilities and tweaks
+well huh. now I want to make a "notes" generator.
+---
+the idea would be create some kind of table ordered
+by key id for a given namespace.
+---
+mildly regretting the choice to store text as JSON array
+of text. it usually means I need to rely on some external
+program to concatenate it

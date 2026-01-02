@@ -70,7 +70,12 @@ void bt_write(bt_context *ctx, const char *filename)
 {
     FILE *fp;
     int x, y;
-    fp = fopen(filename, "w");
+
+    if (filename[0] == '-') {
+        fp = stdout;
+    } else {
+        fp = fopen(filename, "w");
+    }
 
     fprintf(fp, "P1\n");
     fprintf(fp, "# generated with bitr\n");

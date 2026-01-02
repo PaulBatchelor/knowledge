@@ -2321,3 +2321,9 @@ by key id for a given namespace.
 mildly regretting the choice to store text as JSON array
 of text. it usually means I need to rely on some external
 program to concatenate it
+---
+some initial boilerplate made
+---
+now, I'm going to alter bitr so that if '-' is supplied
+as file name, it writes to stdout instead of a file.
+that way, I can generate PNG files directly using imagemagick

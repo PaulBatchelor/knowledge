@@ -113,3 +113,60 @@ stuff only).
 
 @14:58 I gotta make a table of contents for logs #timelog:00:16:36
 There, much better.
+
+@15:21 more sonilo check-ins #timelog:00:21:26
+#! dz thoughts/projects/sonilo/tasks
+
+@15:26 check-in: zero page, still blocked by blocklist
+#! dz thoughts/projects/sonilo/tasks/zero_page
+Apparently, my zero page unit tests are breaking because
+the blocklist is broken, so that component is getting
+rewritten. Not much more to say right now.
+
+@15:31 buddy-slots check-in
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+still blocked. this is a more complex function made up
+smaller parts (a sonilo first), so some
+more complex components are needed (a zero page).
+
+@15:33 check-in
+#! dz thoughts/projects/sonilo/tasks/allocator
+since writing this, I've gotten a more formed idea of what
+an "allocator" is going to be. I will articulate what
+I know now.
+---
+Memory management is a layered ordeal. The memory to be
+managed is $2^16$ words of 32-bit. Memory is broken up
+into chunks of 64-words, called blocks. Free blocks are
+maintained on a stack. Allocation is a matter of popping
+the block, and pushing the block back is freeing the memory.
+---
+Entire blocks are typically
+used as audio buffers to store signals. Hence the 64 size,
+which is a pretty common block size for audio systems.
+---
+A special allocator is used to allocate small
+segments of memory from the buddy system. This is a buddy
+allocator. Typically, this is used to allocate memory
+for unit generators.
+---
+Multiple buddy allocators are used together to form the
+main allocator used for small allocations.
+---
+When a block is retrieved from the block stack, it is
+stored in a set of blocks. This makes it easier to free
+memory later, because it frees everything at once.
+
+@15:43 check-in
+#! dz thoughts/projects/sonilo/tasks/konilo_sonilo_communication
+Ilo probably won't be used for constructing ugen chains, due
+to the memory overhead. But, Konilo is going to be important
+for building abstractions. There's not much more to say
+that hasn't been said already. Ilo has the ability to do
+I/O commands, and getting it to work with sonilo would mean
+making a virtual serial device, and then calling those
+commands from Konilo.
+
+@15:48 this is a doable self-contained task
+#! dz thoughts/projects/sonilo/tasks/butlp
+It'll mostly be copy-paste work from sndkit.

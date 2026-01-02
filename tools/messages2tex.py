@@ -31,6 +31,7 @@ for entry in obj:
 # pprint(node_list)
 
 def begin():
+    print("\\input eplain")
     print("\\pdfpagewidth=148mm")
     print("\\pdfpageheight=210mm")
     print("\\hsize=128mm")
@@ -97,8 +98,37 @@ def strip(node):
 def par(txt):
     return txt + "\n\\par\n"
 
+def mkreflookup(nodes):
+    id = 0
+    lookup = {}
+    for node in nodes:
+        lookup[node] = "node" + str(id)
+        id += 1
+    return lookup
+
+def xrdef(ref):
+    return "\\xrdef{" + ref + "}"
+
+def xref(ref):
+    return "\\xref{" + ref + "}"
+
+def hpair(a, b):
+    return a + " \\leaders\\hbox to 10pt {\\hss.\\hss} " + " \\hfill " + b 
+
+def toc(nodes, refs):
+    for node in nodes:
+        print(hpair(strip(node), xref(refs[node])))
+        print("\\smallskip")
+    print("\\vfill \\break")
+
+refs = mkreflookup(node_list)
+
 begin()
+
+toc(node_list, refs)
+
 for node in node_list:
+    print(xrdef(refs[node]))
     print(header1(strip(node)))
     objs = node_objs[node]
     dates = []

@@ -2,117 +2,155 @@ ns coad/notes
 nn practical_power_limit
 ln we have run into the practical power limit for cooling commodity microprocessors
 at id 00
+at pg 04v
 nn postpc_critical_resource_energy
 ln in the post-PC era the critical resource is energy
 at id 01
+at pg 04v
 nn time_safer_metric
 ln measuring time is a safer performance metric than a rate like MIPS
 at id 02
+at pg 04v
 nn joules_better_than_watts
 ln the energy metric joules is a better metric than watts
 at id 04
+at pg 04v
 nn watts_eqn
 ln watts = joules/sec
 at id 05
+at pg 04v
 nn CMOS
 ln CMOS: complementary metal oxide semiconductor
 at id 06
+at pg 04v
 nn dominant_tech_IC
 ln dominant tech for IC
 at id 07
+at pg 04v
 nn dynamic_energy
 ln dynamic energy: energy that is consumed when transistors switch state and vice versa
 at id 08
+at pg 04v
 nn CMOS_dynamic_energy
 ln CMOS primary source of energy consumption is dynamic energy
 at id 09
+at pg 04v
 nn energy_eqn
 ln Energy OL capacity load x voltage$^2$
 at id 0a
+at pg 04v
 nn energy_pulse_transition
 ln energy of a pulse during logic transition 0 to 1 to 0, or 1 to 0 to 1
 at id 0b
+at pg 04v
 nn energy_single_transition
 ln energy of single transition
 at id 0c
+at pg 04v
 nn energy_eqn_2
 ln energy 1/2 x Cap x V$^2$ x freq switched
 at id 0d
+at pg 04v
 nn freq_switched
 ln frequency switched: func of clock rate
 at id 0e
+at pg 04v
 nn cap_load_transfer
 ln cap load/transfer: func of number transistors (?) connected to output, and technology
 at id 0f
+at pg 04v
 nn tech_wires_transistors
 ln tech: determines number of wires/transistors
 at id 0g
+at pg 04v
 nn lower_voltage_reduces_energy_power
 ln energy and thus power can be reduced by lowering the voltage
 at id 0h
+at pg 04z
 nn voltage_lowered_every_gen
 ln voltage lowering occured with each new generation of tech
 at id 0i
+at pg 04z
 nn power_voltage_squared
 ln power is function of voltage squared. $P=V^2$
 at id 0j
+at pg 04z
 nn 20_years_5v_to_1v
 ln 20 years, voltage has gone from 5v -> 1v, hence power increase 30x
 at id 0k
+at pg 04z
 nn low_volt_leaky_transistor
 ln problem today: further lowering of voltage makes transistors too leaky
 at id 0l
+at pg 04z
 nn leakage_40_percent_power
 ln 40\% power consumption due to leakage
 at id 0m
+at pg 04z
 nn add_large_devices_increase_cooling
 ln to address power problem, designers add large devices to increase cooling
 at id 0n
+at pg 04z
 nn static_energy_leakage_current
 ln static cenergy consumption occurs because of leakage current, even when a transistor is off
 at id 0o
+at pg 04z
 nn increase_transistor_increase_power_dissipation
 ln increasing number of transistors increases power dissipation, even when transistors are off
 at id 0p
+at pg 04z
 nn power_challenge_IC
 ln why is power a challenge for IC?
 at id 0q
+at pg 04z
 nn power_distributed_chip
 ln power must be brought in and distributed around chip
 at id 0r
+at pg 04z
 nn power_dissipated_removed
 ln power is dissipated as heatand must be removed
 at id 0s
+at pg 04z
 nn microprocessor_vs_processor
 ln microprocessor vs processor
 at id 0t
+at pg 04z
 nn processors_cores
 ln processors = "cores"
 at id 0u
+at pg 04z
 nn microprocessor_multicore_microprocessors
 ln microprocessors = multicore microprocessors
 at id 0v
+at pg 04z
 nn quadcore
 ln "quadcore" microprocessor: chip that contains 4 processors/cores.
 at id 0w
+at pg 04z
 nn multiple_processors_chip
 ln since 2006, companies ship microprocessors with multiple processors per chip
 at id 0x
+at pg 04z
 nn benefits_throughput_not_response
 ln benefit: often more on throughpu than response time
 at id 0y
+at pg 04z
 nn programmers_improve_response_time
 ln programmers now need to improve response time in programs by rewrite to take advantage of multiple processors
 at id 0z
+at pg 04z
 nn parallel_programming_difficult
 ln why is it difficult for programmers to explicitly write parallel programs?
 at id 10
+at pg 04z
 nn parallel_performance_programming
 ln parsing is by definition performance programming, which increases difficulty
 at id 11
+at pg 04z
 nn divide_app_over_processors
 ln fast for parallel hw means programmer must divide app so that each processor has roughly same amount to do same time, overhead of scheduling/coordinatoin doesn't "fritter away" perf benefits of parallel
 at id 12
+at pg 04z
 co postpc_critical_resource_energy practical_power_limit
 co joules_better_than_watts postpc_critical_resource_energy
 co dynamic_energy postpc_critical_resource_energy

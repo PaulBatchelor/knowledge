@@ -7,11 +7,16 @@ use std::env;
 use fs::File;
 use std::io::BufReader;
 
+struct Node {
+    body: String,
+    page: String,
+}
+
 type EdgeSet = BTreeSet<(String, String)>;
-type NodeMap = BTreeMap<String, String>;
+type NodeMap = BTreeMap<String, Node>;
 type NameMap = HashMap<String, String>;
 
-fn load_nodes(filename: &str, mut nodes: NodeMap) -> Result<NodeMap, Box<dyn Error>> {
+fn load_nodes(page: &str, filename: &str, mut nodes: NodeMap) -> Result<NodeMap, Box<dyn Error>> {
     let data = fs::read(filename)?;
     let str = match String::from_utf8(data) {
         Ok(s) => s,
@@ -25,7 +30,12 @@ fn load_nodes(filename: &str, mut nodes: NodeMap) -> Result<NodeMap, Box<dyn Err
     for tok in tokens.skip(1) {
         if let Some(vals) = tok.split_once(" ") {
             //println!("{}: {}", vals.0, vals.1.trim());
-            nodes.insert(vals.0.to_lowercase(), vals.1.trim().to_string());
+            let nd = Node {
+                body: vals.1.trim().to_string(),
+                page: page.to_string(),
+            };
+            //nodes.insert(vals.0.to_lowercase(), vals.1.trim().to_string());
+            nodes.insert(vals.0.to_lowercase(), nd);
         }
     }
 
@@ -90,7 +100,7 @@ fn main() -> io::Result<()> {
             let names_file = format!("{}/{}.names", pg, pg);
             let edges_file = format!("{}/{}.edges", pg, pg);
 
-            nodes = load_nodes(&nodes_file, nodes).unwrap();
+            nodes = load_nodes(&pg, &nodes_file, nodes).unwrap();
             names = load_names(&names_file, names).unwrap();
             edges = load_edges(&edges_file, edges).unwrap();
         }
@@ -101,8 +111,9 @@ fn main() -> io::Result<()> {
     for (key, val) in nodes {
         let name = names.get(&key).unwrap_or(&key);
         println!("nn {}", name);
-        println!("ln {}", val);
+        println!("ln {}", val.body);
         println!("at id {}", key);
+        println!("at pg {}", val.page);
     }
 
     for edge in edges {

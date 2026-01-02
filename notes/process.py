@@ -20,7 +20,11 @@ def basename(name):
 
 def render(data):
     for row in data:
-        print("{\\tt" + row.id.upper() + "}: ", basename(row.name))
+        print("{\\tt" +\
+                row.id.upper() +\
+                "}: ",\
+                basename(row.name))
+        print("[" + row.page + "]")
         print("\\smallskip")
         print(row.body)
         print("\\bigskip")
@@ -29,16 +33,20 @@ def parse(objs):
     data = []
     for o in objs:
         body = " ".join(json.loads(o["lines"]))
-        txo = TextObject(o["value"], o["name"], body)
+        txo = TextObject(o["value"], \
+                o["name"], \
+                body, \
+                o["page"])
         data.append(txo)
     return data
 
 
 class TextObject:
-    def __init__(self, id, name, body):
+    def __init__(self, id, name, body, page):
         self.body = body
         self.id = id 
         self.name = name
+        self.page = page
 
 all_input = sys.stdin.read()
 objs = json.loads(all_input)

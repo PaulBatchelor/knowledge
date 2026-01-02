@@ -97,8 +97,6 @@ fn main() -> io::Result<()> {
 
     }
 
-
-
     println!("ns {}", namespace);
     for (key, val) in nodes {
         let name = names.get(&key).unwrap_or(&key);

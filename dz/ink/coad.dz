@@ -12,7 +12,7 @@ nn joules_better_than_watts
 ln the energy metric joules is a better metric than watts
 at id 04
 nn watts_eqn
-ln watts = joules/sec 006 CMOS: complementary metal oxide semiconductor
+ln watts = joules/sec
 at id 05
 nn CMOS
 ln CMOS: complementary metal oxide semiconductor
@@ -27,16 +27,16 @@ nn CMOS_dynamic_energy
 ln CMOS primary source of energy consumption is dynamic energy
 at id 09
 nn energy_eqn
-ln Energy OL capacity load x voltage^2
+ln Energy OL capacity load x voltage$^2$
 at id 0a
 nn energy_pulse_transition
-ln energy of a pulse during logic transition 0->1->0 or 1->0->1.
+ln energy of a pulse during logic transition 0 to 1 to 0, or 1 to 0 to 1
 at id 0b
 nn energy_single_transition
 ln energy of single transition
 at id 0c
 nn energy_eqn_2
-ln energy 1/2 x Cap x V^2 x freq switched
+ln energy 1/2 x Cap x V$^2$ x freq switched
 at id 0d
 nn freq_switched
 ln frequency switched: func of clock rate
@@ -63,7 +63,7 @@ nn low_volt_leaky_transistor
 ln problem today: further lowering of voltage makes transistors too leaky
 at id 0l
 nn leakage_40_percent_power
-ln 40% power consumption due to leakage
+ln 40\% power consumption due to leakage
 at id 0m
 nn add_large_devices_increase_cooling
 ln to address power problem, designers add large devices to increase cooling

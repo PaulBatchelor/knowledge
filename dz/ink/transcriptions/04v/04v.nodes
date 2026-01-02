@@ -5,16 +5,15 @@ for cooling commodity microprocessors
 a rate like MIPS
 @04 the energy metric joules is a better metric than watts
 @05 watts = joules/sec
-006 CMOS: complementary metal oxide semiconductor
 @07 dominant tech for IC
 @08 dynamic energy: energy that is consumed when transistors
 switch state and vice versa
 @09 CMOS primary source of energy consumption is dynamic energy
-@0a Energy OL capacity load x voltage^2
+@0a Energy OL capacity load x voltage$^2$
 @0b energy of a pulse during logic transition
-0->1->0 or 1->0->1.
+0 to 1 to 0, or 1 to 0 to 1
 @0c energy of single transition
-@0d energy 1/2 x Cap x V^2 x freq switched
+@0d energy 1/2 x Cap x V$^2$ x freq switched
 @0e frequency switched: func of clock rate
 @0f cap load/transfer: func of number transistors (?)
 connected to output, and technology

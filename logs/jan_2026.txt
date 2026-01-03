@@ -42,7 +42,7 @@ now, I'm going to alter bitr so that if '-' is supplied
 as file name, it writes to stdout instead of a file.
 that way, I can generate PNG files directly using imagemagick
 
-@2025-01-02 Day 124. On the road.
+@2026-01-02 Day 124. On the road.
 
 @11:24 working on my notes generator
 Working off of what I did yesterday, I want to create an
@@ -199,3 +199,12 @@ ink, and then connected to a figs source node and the ink.
 ---
 A notes generator would have some way of traversing the child
 nodes of some figs namespace.
+
+@2026-01-03 Day 125
+@13:03 trying a landscape phone size for notes
+Most likely, this will be a reference card for my phone,
+or something that appears on my pocket reform laptop.
+Those have smaller screens in landscape orientation.
+---
+my phone seems to be about 750mmx550mm, measuring the rectangle
+before the bevels. We'll start there and see what happens.

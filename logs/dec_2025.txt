@@ -1931,6 +1931,29 @@ It takes in CLI args now, added script in ink folder
 @2025-12-21 Day 112
 @08:53 logging stuff in #timelog:00:04:45
 
+@08:59 cropping and binning dec15 scans #archiving #timelog:00:43:15
+this one took more time because of all the indexing conflicts.
+
+@09:15 045 collision. how to handle? #ink:045 #ink:04J
+Found a collision at 045. One is cs248 lecture notes,
+the other is the buddy system.
+---
+Oh! it's actually 04J. I inked it in wrong, but it's penciled
+in at the bottom.
+
+@09:21 03K might actually be a collision #ink:03K #ink:06C
+This might have to do with the time when I was indexing
+wrong and had to backtrack. the 03Ks are about a month
+apart.
+---
+Assigning a new index in post: 06c.
+
+@09:34 sonilo now has an ink node
+#! dz thoughts/projects/sonilo/ink
+
+@09:44 re-binning pages to be in sonilo ink #timelog:00:17:28
+#! dz $
+
 @2025-12-22 Day 113. On the road.
 @12:50 export node data as JSON data #timelog:03:46:53
 

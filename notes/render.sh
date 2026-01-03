@@ -1,3 +1,4 @@
+export TEXINPUTS=$(pwd)/tex/: 
 while read -r LINE
 do
     OUTPUT=$(echo $LINE | cut -f 1 -d ':')

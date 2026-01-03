@@ -206,5 +206,8 @@ Most likely, this will be a reference card for my phone,
 or something that appears on my pocket reform laptop.
 Those have smaller screens in landscape orientation.
 ---
-my phone seems to be about 750mmx550mm, measuring the rectangle
+my phone seems to be about 155mmx65mm, measuring the rectangle
 before the bevels. We'll start there and see what happens.
+---
+155x75 works pretty well for my phone, and does okay for
+my pocket (readable, but some wasted space).

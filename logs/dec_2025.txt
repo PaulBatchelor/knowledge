@@ -1953,3 +1953,356 @@ Assigning a new index in post: 06c.
 
 @09:44 re-binning pages to be in sonilo ink #timelog:00:17:28
 #! dz $
+
+@2025-12-22 Day 113. On the road.
+@12:50 export node data as JSON data #timelog:03:46:53
+
+@2025-12-23 Day 114. More road
+@08:57 more node export work #timelog:01:05:35
+yesterday, I managed to get some initial PDF generation working.
+query configured to export JSON of nodes with metadata and
+children/parent. python loaded JSON and generated
+tex document with page references. It could look better, but
+it it's a start.
+---
+note to self: try to get JSON export working faster (FULL JOINs are slow?)
+Configure the tooling to work with any nodes.
+---
+First attempt to speed up this query.
+---
+Whoah, just creating a subquery on dz_nodes changed the
+speed from 2 seconds to 0.1 seconds. I'm skeptical if that
+actually worked.
+---
+ah, I'm already having trouble resolving certain nodes.
+My sample code scoped to "thoughts"
+references nodes from "ink", which isn't in
+---
+Reverting. But it feels like the write step.
+I'm trying something else. I want to try to buid up a full
+subset of the graph nodes. Take the namespace nodes, then
+find the outgoing nodes, then incoming nodes. The incoming/outgoing
+nodes not in the namespace won't be traversed.
+
+@10:12 back to query optimizations #timelog:01:05:34
+Continuing with my attempt at building a subquery
+---
+Okay, seems to work. Lots of ideas on features to add.
+There should be a namespace browser. Each subpath should
+list nodes, as well as any subpaths inside of the namespace.
+It'll act as a more helpful high-level map to get me jumping
+into the graph a little bit better.
+---
+I need to set up some PDF tooling with what I have now.
+Set up namespace(s), and the name of the output file. Set
+up a list of pre-made "maps".
+
+@11:22 grouping nodes by namespaces #timleog:02:10:24
+This is the next higher level index after the raw
+alphabetical index list.
+---
+Okay, after remembering some more python, I got everything
+in a trie. Now to process them.
+---
+Visually, each subpath should be printed. The ones with
+the least amount of subpaths should go first. Under each
+of those subpaths, the direct children. Some of them will
+be smaller subpaths, others will be terminal nodes.
+---
+Could I do this with a queue? Pop it off the queue, then
+iterate over children. The output should be a list? the
+name of the subgraph.
+---
+Lots of things work. Grouping behavior works as expected,
+and I got dotted lines working to make it easier to track
+page numbers.
+
+@14:39 add subgraph page numbers #timelog:00:11:32
+
+@15:17 set up log rendering infrastructures #timelog:00:11:00
+
+@2025-12-24 115. Greensboro #timelog:00:04:03
+@08:49 Looking into transcribing some of my graph-notes
+#! dz coad/news
+At the same time, I also need to think about the tooling
+for transcribing graphs in general.
+---
+My approach up to this point is to transcribe by ink
+page, then group the data in another step. Indexed digraphs
+like the notes for COAD continue for several pages. Ideally,
+one would want to batch these all together.
+---
+and I have been summoned
+
+@09:26 quick transcription #ink:04v
+I'm thinking about a file format. Probably going to be
+a binning system similar to what I'm using for inks.
+---
+need to finish nodes.
+
+@2025-12-25 Day 116. Christmas.
+
+@2025-12-26 Day 117.
+
+@2025-12-27 Day 118.
+
+@2025-12-28 Day 119. Back on the road
+@11:14 begin work implementing this graph drawing algo
+#! dz thoughts/projects/dagdraw/tasks/initial_parser
+Lots of time with pencil and paper these past few days,
+working out a way to transcribe these knowledge graphs
+I've drawing by hand.
+---
+I think I managed to figure out a way to get a low-level
+representation of a graph using a system of weighted
+edges connecting quad trees.
+---
+A drawn graph is made up of vertices that are quad trees.
+Each vertice has 4 ports labeled north, south, east, west.
+Visually, these correspond to the cardinal directions.
+---
+An edge is used to connect two vertices together.
+There are two types of edges: horiztonal and vertical.
+---
+A horizontal edge creates a directed edge from one nodes
+east port to another nodes west port. A vertical edge goes
+south to north. This makes graphs flow left to right, top
+down.
+---
+An edge has a weight, which indicates how much space to
+add between the node. The amount to move is some kind
+of unit, like a tile.
+---
+Defined edges are primarily used to draw connections
+between two vertices, but they can also be used for alignment
+and traversal purposes. In these cases, the edge can be
+marked to be invisible.
+---
+Vertices can be of two types: a node or a junction.
+A node is the thing that contains the actual bit of information
+in the knowledge graph. The junction is used to make right
+angle bends for cables.
+
+@11:38 some initial parser work
+#! dz $
+
+@14:05 Okay, I have made an adjacency list, next steps
+#! dz $
+It's pretty cool to see what I wrote down on paper
+show up properly on the computer.
+---
+What needs to happen next is traversal and drawing.
+Traversal might be a little bit faster to get to first,
+I can just print drawing commands to standard output.
+---
+Needed: a queue, a "visited" list. Queue needs to
+take in a cursor position and pointer to a vertice.
+
+@14:13 make a "visited" list
+#! dz $
+I think I'm just going to add an entry to the vertice
+list.
+
+@14:16 onto a queue
+#! dz $
+
+@14:40 back to queue
+#! dz $
+
+@15:56 traversal works, the cursor offsets are wrong
+#! dz $
+Will need to troubleshoot later
+
+@20:35 quick troubleshooting
+#! dz $
+I got it working! Drawing logic needs a bit more work.
+I am using weight to calculate the length of the line,
+but it doesn't account for the last little bits of the line.
+For junctions, the lines extend into the center point.
+For nodes, it might extend? Certainly there will be dots
+drawn to represent lines. So, maybe that's another drawing
+command, something that overlays stuff in node slots.
+---
+Another thing that's kind of neat is that these draw commands
+can be run in arbitrary order. So, overlay commands can happen
+last.
+
+@2025-12-29 Day 120. More road.
+@08:48 adding overlay drawing commands
+#! dz thoughts/projects/dagdraw/tasks/initial_parser
+How I am imagining it will go: two overlays happen for
+every line. A line always connects two vertices together.
+Vertices can either be a junction (+) or a node (\$).
+---
+The
+vertice type determines the kind of overlay to draw. Nodes
+will have dots drawn on the eastern and southern ports to
+indicate arrowheads (these are input ports), and they will
+possibly have some lines to draw as well, depending on how
+much whitespace there is. Junctions will have lines from
+the port to the center of the tile.
+---
+Overlay commands will
+need to specify which direction to draw (N, S, E, W).
+As the name implies, the overlay commands should be able
+to write on top of previously drawn items in that tile.
+---
+So, overlay data needed: position (tile X, Y), type
+(junction, node), and port to draw (N, S, E, W).
+---
+This could be good pseudocode: OVERLAY: J 1 2 E
+
+@09:33 overlays seem to look right. now to plan for drawing
+#! dz $
+I'm actually thinking about making another small program
+for drawing 1-bit graphics. I can then take the output
+commands from dagdraw and turn them into these lower level
+commands.
+---
+The intermediate program could be an awk script
+---
+So what will these commands consist of?
+---
+Rectangles (outline and filled), hlines, vlines.
+I think that's all that's required for now (ignoring text).
+---
+rectangle (rc)/filled rectangle (rf): x, y, w, h
+---
+vline (lv): x, y, length. positive length is downward,
+negative is upward (positive only for now)
+---
+hline (lh): x, y, length: positive length is eastward,
+negative westword (positive only for now)
+---
+wr: write file to disk
+---
+sz: size (w, h) of output
+
+@09:42 okay testing this out
+#! dz $
+
+@11:06 "bitr" command language seems to work, writing initial command generator
+#! dz $
+
+@11:31 VLINE/HLINE/NODE commands seem to work, onto OVERLAY
+#! dz $
+Uh oh, I tihnk my overlay code might be wrong.
+I don't think it's correctly calculating coordinates.
+---
+Ah, I think it was an off-by-one thing with weights.
+---
+I think the issues are more rotten than I expected. the junctions
+are sometimes off-by-one, sometimes not in the dagdraw output.
+---
+Huh. Maybe it's just off-by-one? It's possible I might not be
+computing the overlays correctly.
+--
+Rendering just west edges: J1w, J5w, J6w looks good. But
+hang on, there are other edges here that shoulnd't be
+here.
+---
+Ah, typo when getting the type for "b". Let's see if that
+clears things up.
+---
+Okay, that works now! phew.
+---
+Onto node overlays now.
+---
+It works! Amazing.
+
+@12:37 going to add CLI args, test ex1
+#! dz $
+seems to work! I'll need to do more tweaks for things
+like configuring the initial origin, and calculating
+dimensions for the final output. But, it does what I want.
+
+@18:11 work on auto-scaling canvas size
+#! dz thoughts/projects/dagdraw/tasks/autoscaling
+I think the way I'll do this is to keep track of the max/min
+x and y coordinates, and then use that to determine the bounds.
+---
+So, it'll be a two-pass traversal. Traverse it once to get
+the bounds, starting at (0, 0). Then run it again and
+add some kind of offset.
+---
+well, it doesn't work yet.
+
+@21:36 taking another swing at it
+#! dz thoughts/projects/dagdraw/tasks/autoscaling
+Hey, it works. The canvas will auto-adjust to fit the
+boundary.
+
+@22:00 figure out one level higher
+#! dz thoughts/projects/dagdraw/tasks/fig_prototype
+Something that can generate the edge code a little
+bit easier
+---
+I got my "arch" design, parallel, and sequence configurations
+working in a macro language I built in awk. More intuitive
+than I expectred.
+
+@2025-12-30 Day 121. Ganoga Lake
+@07:24 label support
+#! dz thoughts/projects/dagdraw/tasks/labels
+The last thing I need to get this actually usuable is
+to add labels for nodes.
+---
+I don't really want strings in bitr, so I think I'm
+going to stick with the 6-bit encoding system I used in
+dagdraw to encode the text.
+---
+The bitmap font will be embedded in the binary. I've selected
+a few to try out. 8x8 fonts.
+---
+rectangles are going to need to be stretched a bit to
+fit the text. I'm thinking I'll make it a 2 character
+label max for now (that's ~1300 nodes in base 36, which
+I use for indexed nodes. plenty for this scale).
+
+@07:32 stretch the grid size in draw.awk
+#! dz $
+Make it so 2 characters can fit.
+---
+Okay that mostly seems to work. Took some fiddly recalculations.
+pixel accurate centering takes a bit of thought. Lots of
+odd integers.
+
+@08:30 get a pixel font working... with centering?
+#! dz $
+Pristine seems to be the current winner.
+---
+I got a glyph printed, but I need to adjust spacing
+for the boxes because the letters won't fit.
+
+@09:13 making the boxes a little bit bigger
+#! dz $
+
+@08:37 initial text rendering works!
+#! dz $
+This is good enough for display purposes. However,
+the text ideally should be horizontally centered.
+---
+And we are centered. Excellent.
+---
+I'll need to work out the "fig" language a bit more,
+but the fundamentals are in place to transcribe these
+knowledge graphs.
+
+@12:04 More transcription #ink:04v
+#! dz coad/news
+
+@12:07 get this thing hooked up, pagelist
+
+@12:43 transcribe next coad page
+
+@2025-12-31 Day 122. Ganoga Lake
+@12:22 Duplicate node support #ink:05q
+#! dz thoughts/projects/dagdraw/tasks/duplicate_node
+Needed for a graph I was trying to transcribe yesterday.
+
+@13:11 Working out a strategy
+#! dz $
+The strategy I have in mind is to denote duplicate
+nodes in the following way: {\tt \$XY.A} That is to say,
+there is a node XY and this has a unique identifier of "A".
+When the drawing commands get produced, this will go away.

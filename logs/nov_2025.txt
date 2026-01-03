@@ -423,7 +423,7 @@ I've documented this process in ink/README
 #! dz coad/news
 #! dz dmoi/news
 
-#15:59 oops forgot to log the times for today's scanned inks #timelog:00:02:57
+@15:59 oops forgot to log the times for today's scanned inks #timelog:00:02:57
 
 @18:02 refactoring sonilo buddy system to use virtual pointers #timelog:00:19:50
 #! dz thoughts/projects/sonilo/tasks/buddy_system

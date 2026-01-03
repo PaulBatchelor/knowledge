@@ -1,0 +1,16 @@
+00 practical_power_limit
+01 postpc_critical_resource_energy
+02 time_safer_metric
+04 joules_better_than_watts
+05 watts_eqn
+06 CMOS
+07 dominant_tech_IC
+08 dynamic_energy
+09 CMOS_dynamic_energy
+0a energy_eqn
+0b energy_pulse_transition
+0c energy_single_transition
+0d energy_eqn_2
+0e freq_switched
+0f cap_load_transfer
+0g tech_wires_transistors

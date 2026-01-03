@@ -1,0 +1,201 @@
+@2026-01-01 Day 123
+
+@10:38 setting up an initial "figure" script
+I need to establish a precedent for transcribing these
+graphs. maybe call them "figures" to disambiguate from
+the other graphs here.
+
+@11:06 attempting to transribe ink 04v #ink:04v
+Last night, I took some time rewriting a few graphs,
+including this one. Hopefully it will be somewhat
+straightforward to build.
+
+@11:39 transcribing figure for 04z #ink:04Z
+
+@11:51 transcribing figure for 057 #ink:057
+
+@13:02 back to transcribing figure 057 #ink:057
+
+@13:19 04y.fig #ink:04Y
+This one has been tricky to transcribe. It's a very
+messy graph, one that I made before adopting the the
+orthogonal layout. I wonder what was going through my
+head while I was making this. It seems like there's
+a portion with non-trivial relations. Many nodes have
+two parents.
+
+@14:33 continuing 04y.fig #ink:04Y
+
+@21:37 misc. utilities and tweaks
+well huh. now I want to make a "notes" generator.
+---
+the idea would be create some kind of table ordered
+by key id for a given namespace.
+---
+mildly regretting the choice to store text as JSON array
+of text. it usually means I need to rely on some external
+program to concatenate it
+---
+some initial boilerplate made
+---
+now, I'm going to alter bitr so that if '-' is supplied
+as file name, it writes to stdout instead of a file.
+that way, I can generate PNG files directly using imagemagick
+
+@2025-01-02 Day 124. On the road.
+
+@11:24 working on my notes generator
+Working off of what I did yesterday, I want to create an
+index that maps the note ID to the text, and also the
+name.
+
+@12:12 I should link page indexes to notes
+that way it'll be easier to track notes back to the
+source material
+
+@14:07 reflecting on tasks #timelog:00:50:44
+#! dz thoughts/projects/sonilo/tasks
+
+@14:10 check-in
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+I'm not sure where I'm at here. My logs are blank. I think
+I added some tests.
+---
+hang on, docgen is busted... 
+---
+okay looking at the zero page task. lots of rambling there
+---
+I think this is what the blockstack improvements are:
+changing the data to use packed 10-bit numbers, and
+creating a way to turn those numbers to memory addresses.
+---
+the problem of packing 10-bit ints into 32-bit word memory
+is tricky due to alignment. I'm wondering if it might
+be beneficial to generalize this problem. It turns out
+that the entire memory can be addressable as a bit array.
+Sonilo memory has $2^16$ 32-bit words, which means
+that there are $2^16 2^5 = 2^21$ addressable bits, which
+fits inside of a 32-bit number.
+---
+There needs to be a way to convert blockstack addresses
+to word addresses. It's a kind of linear mapping, but it
+skips the range of addresses needed for the block stack.
+---
+The 'ba' command returns block addresses, which are just
+those 10 bit numbers. Another utility factoring, in the
+block stack address should be used for conversion.
+Not sure what that looks like though.
+
+@14:39 check-in: how useful is ilo?
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+Since I originally wrote this task, the role I had in mind
+for Ilo has changed. Initially, I was going to use it for
+constructing DSP chains, but I've been reconsidering that.
+---
+I think ilo will become more useful for more highlevel
+structures like gesture. Though, to be honest, I haven't
+thought that far ahead beyond how it'd be used.
+
+@14:50 check-in
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+More recently, I've found this to be a more important
+task. This is going to be the way I get sonilo into other
+systems like Konilo.
+---
+I've been wondering if maybe I should just get my silly
+test language working as a protocol, just to get a feel
+for the system and working with Konilo.
+---
+I'm still somewhat optimistic about working with Konilo.
+I think I may want to build an SDL backend for Konilo
+at some point to allow for primitive drawing (1-bit
+stuff only).
+
+@14:58 I gotta make a table of contents for logs #timelog:00:16:36
+There, much better.
+
+@15:21 more sonilo check-ins #timelog:00:21:26
+#! dz thoughts/projects/sonilo/tasks
+
+@15:26 check-in: zero page, still blocked by blocklist
+#! dz thoughts/projects/sonilo/tasks/zero_page
+Apparently, my zero page unit tests are breaking because
+the blocklist is broken, so that component is getting
+rewritten. Not much more to say right now.
+
+@15:31 buddy-slots check-in
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+still blocked. this is a more complex function made up
+smaller parts (a sonilo first), so some
+more complex components are needed (a zero page).
+
+@15:33 check-in
+#! dz thoughts/projects/sonilo/tasks/allocator
+since writing this, I've gotten a more formed idea of what
+an "allocator" is going to be. I will articulate what
+I know now.
+---
+Memory management is a layered ordeal. The memory to be
+managed is $2^16$ words of 32-bit. Memory is broken up
+into chunks of 64-words, called blocks. Free blocks are
+maintained on a stack. Allocation is a matter of popping
+the block, and pushing the block back is freeing the memory.
+---
+Entire blocks are typically
+used as audio buffers to store signals. Hence the 64 size,
+which is a pretty common block size for audio systems.
+---
+A special allocator is used to allocate small
+segments of memory from the buddy system. This is a buddy
+allocator. Typically, this is used to allocate memory
+for unit generators.
+---
+Multiple buddy allocators are used together to form the
+main allocator used for small allocations.
+---
+When a block is retrieved from the block stack, it is
+stored in a set of blocks. This makes it easier to free
+memory later, because it frees everything at once.
+
+@15:43 check-in
+#! dz thoughts/projects/sonilo/tasks/konilo_sonilo_communication
+Ilo probably won't be used for constructing ugen chains, due
+to the memory overhead. But, Konilo is going to be important
+for building abstractions. There's not much more to say
+that hasn't been said already. Ilo has the ability to do
+I/O commands, and getting it to work with sonilo would mean
+making a virtual serial device, and then calling those
+commands from Konilo.
+
+@15:48 this is a doable self-contained task
+#! dz thoughts/projects/sonilo/tasks/butlp
+It'll mostly be copy-paste work from sndkit.
+
+@15:54 batch rendering for notes
+
+@16:16 dagdraw notes integration: initial thoughts #timelog:00:15:00
+#! dz thoughts/projects/dagdraw/tasks/notes_integration
+I'm building a TeX generator for viewing my transcribed
+reading notes, and I think it would make sense to include
+these generated figures.
+---
+To best read the figure, it needs an index. Ideally,
+the figure and index should be on the same page. These
+typically take up a page written by hand, so this shouldn't
+be too difficult.
+---
+figures need to have the same pixel ratio, otherwise
+things will look too stretched out. Generate some kind of
+metrics file? That way, I won't need to parse the image
+files in the tex generator.
+---
+the index doesn't necessarily need to have all the text,
+just the ID, the abbreviation, and page number.
+---
+How to get figures into the note? They need to get
+imported into the dag. Maybe a figs namespace? They are
+still tied to ink IDs, so maybe the figs are located in
+ink, and then connected to a figs source node and the ink.
+---
+A notes generator would have some way of traversing the child
+nodes of some figs namespace.

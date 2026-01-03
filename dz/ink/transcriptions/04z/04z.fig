@@ -1,0 +1,17 @@
+SEQ $0H $0I $0J
+WEV $0I $0G
+PAR3 $0I $0J $0K $0L
+H $0J $0K 1
+PAR $0L $0N $0M
+SEQ $0M $0O $0P
+PAR $0O $0P $09
+v $0H $01 3
+PAR $0Q $0R $0S
+H $01 $0Q 1
+v $01 $0x 1
+PAR3 $0X $0Y $0Z $0T
+PAR $0T $0U $0V
+V $0U $0W 1
+H $0U $0V 1
+V $0Z $10 3
+PAR $10 $11 $12

@@ -1,0 +1,6 @@
+To render individual figures: go into the page directory 000,
+and run ../fig 000.
+
+To render all the figures: in ink directory, run ./transcriptions/mkfigs.sh.
+This will make a directory called "figs" and place all the
+generated figures in there. The figure list is populated in figs.txt

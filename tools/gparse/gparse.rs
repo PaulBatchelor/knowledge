@@ -1,11 +1,22 @@
 use std::io;
+use std::io::prelude::*;
 use std::fs;
 use std::collections::{BTreeMap, HashMap, BTreeSet};
 use std::error::Error;
 use std::env;
+use fs::File;
+use std::io::BufReader;
 
-fn load_nodes(filename: &str) -> Result<BTreeMap<String, String>, Box<dyn Error>> {
-    let mut nodes: BTreeMap<String, String> = BTreeMap::new();
+struct Node {
+    body: String,
+    page: String,
+}
+
+type EdgeSet = BTreeSet<(String, String)>;
+type NodeMap = BTreeMap<String, Node>;
+type NameMap = HashMap<String, String>;
+
+fn load_nodes(page: &str, filename: &str, mut nodes: NodeMap) -> Result<NodeMap, Box<dyn Error>> {
     let data = fs::read(filename)?;
     let str = match String::from_utf8(data) {
         Ok(s) => s,
@@ -19,15 +30,19 @@ fn load_nodes(filename: &str) -> Result<BTreeMap<String, String>, Box<dyn Error>
     for tok in tokens.skip(1) {
         if let Some(vals) = tok.split_once(" ") {
             //println!("{}: {}", vals.0, vals.1.trim());
-            nodes.insert(vals.0.to_lowercase(), vals.1.trim().to_string());
+            let nd = Node {
+                body: vals.1.trim().to_string(),
+                page: page.to_string(),
+            };
+            //nodes.insert(vals.0.to_lowercase(), vals.1.trim().to_string());
+            nodes.insert(vals.0.to_lowercase(), nd);
         }
     }
 
     Ok(nodes)
 }
 
-fn load_names(filename: &str) -> Result<HashMap<String, String>, Box<dyn Error>> {
-    let mut names: HashMap<String, String> = HashMap::new();
+fn load_names(filename: &str, mut names: NameMap) -> Result<NameMap, Box<dyn Error>> {
     let data = fs::read(filename)?;
     let str = match String::from_utf8(data) {
         Ok(s) => s,
@@ -43,13 +58,12 @@ fn load_names(filename: &str) -> Result<HashMap<String, String>, Box<dyn Error>>
     Ok(names)
 }
 
-fn load_edges(filename: &str) -> Result<BTreeSet<(String, String)>, Box<dyn Error>> {
+fn load_edges(filename: &str, mut con: EdgeSet) -> Result<EdgeSet, Box<dyn Error>> {
     let data = fs::read(filename)?;
     let str = match String::from_utf8(data) {
         Ok(s) => s,
         Err(_) => panic!("oops"),
     };
-    let mut con = BTreeSet::new();
 
     for line in str.lines() {
         let vals: Vec<_> = line.split_whitespace().collect();
@@ -69,21 +83,37 @@ fn main() -> io::Result<()> {
         panic!("usage: {} namespace page", args[0]);
     }
 
+
     let namespace = args[1].clone();
-    let page = args[2].clone();
-    let nodes_file = format!("{}.nodes", page);
-    let names_file = format!("{}.names", page);
-    let edges_file = format!("{}.edges", page);
-    let nodes = load_nodes(&nodes_file).unwrap();
-    let names = load_names(&names_file).unwrap();
-    let edges = load_edges(&edges_file).unwrap();
+    let pagesfile = args[2].clone();
+
+    let fp = File::open(pagesfile)?;
+    let pages = BufReader::new(fp);
+
+    let mut edges = EdgeSet::new();
+    let mut nodes = NodeMap::new();
+    let mut names = NameMap::new();
+
+    for pg in pages.lines() {
+        if let Some(pg) = pg.ok() {
+            let nodes_file = format!("{}/{}.nodes", pg, pg);
+            let names_file = format!("{}/{}.names", pg, pg);
+            let edges_file = format!("{}/{}.edges", pg, pg);
+
+            nodes = load_nodes(&pg, &nodes_file, nodes).unwrap();
+            names = load_names(&names_file, names).unwrap();
+            edges = load_edges(&edges_file, edges).unwrap();
+        }
+
+    }
 
     println!("ns {}", namespace);
     for (key, val) in nodes {
         let name = names.get(&key).unwrap_or(&key);
         println!("nn {}", name);
-        println!("ln {}", val);
+        println!("ln {}", val.body);
         println!("at id {}", key);
+        println!("at pg {}", val.page);
     }
 
     for edge in edges {

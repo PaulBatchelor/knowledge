@@ -211,3 +211,14 @@ before the bevels. We'll start there and see what happens.
 ---
 155x75 works pretty well for my phone, and does okay for
 my pocket (readable, but some wasted space).
+
+@15:00 graph draw DSL #ink:069 #timelog:00:27:57
+
+@2026-01-04 Day 125
+
+@12:50 reading 2.6 and 2.7 #timelog:01:01:25
+#! dz coad/toc/02_instructions_language_of_the_computer/06_logical_operations
+#! dz coad/toc/02_instructions_language_of_the_computer/07_instructions_for_making_decisions
+
+
+@13:56 updating logs

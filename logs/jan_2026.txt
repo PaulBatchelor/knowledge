@@ -214,11 +214,14 @@ my pocket (readable, but some wasted space).
 
 @15:00 graph draw DSL #ink:069 #timelog:00:27:57
 
-@2026-01-04 Day 125
+@2026-01-04 Day 126
 
 @12:50 reading 2.6 and 2.7 #timelog:01:01:25
 #! dz coad/toc/02_instructions_language_of_the_computer/06_logical_operations
 #! dz coad/toc/02_instructions_language_of_the_computer/07_instructions_for_making_decisions
+
+@16:36 COAD 2.8 #timelog:01:13:11
+# dz coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware
 
 @13:56 updating logs
 
@@ -254,3 +257,14 @@ transcribe my outline, and see how long this takes.
 
 @21:19 attemps to transcribe the figure #ink:066 #timelog:00:25:25
 #! dz $
+
+@2026-01-05 Day 127
+
+@10:23 COAD 2.8, starting 2.9 #timelog:00:35:07
+#! dz coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware
+#! dz coad/toc/02_instructions_language_of_the_computer/09_communicating_with_people
+
+@14:10 finish 2.9
+#! dz coad/toc/02_instructions_language_of_the_computer/09_communicating_with_people
+
+@14:44 logs #timelog:00:04:38

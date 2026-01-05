@@ -220,5 +220,37 @@ my pocket (readable, but some wasted space).
 #! dz coad/toc/02_instructions_language_of_the_computer/06_logical_operations
 #! dz coad/toc/02_instructions_language_of_the_computer/07_instructions_for_making_decisions
 
-
 @13:56 updating logs
+
+@20:23 global bit array brainstorm #timelog:00:13:10
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+first thing I'm going to do is change the blockstack to use
+10-bit ints. to do this, I am going to generalize the problem.
+packing the ints becomes a lot easier when the underlying
+data structure is a bit array and the word boundary logic
+is abstracted away.
+---
+I would like to implement a global bit array. Every bit
+can be individually addressed in this memory space using
+32-bit integers.
+---
+It's an array, so the core operations are some kind of "read"
+and some kind of "write", to some location.
+---
+Usually, it'll be the case that multiple bits will want
+to be read or written to at once, such as is the case for
+these 10-bit ints. 32-bits would seem to be the upper limit
+for this.
+---
+so, for read and write, a start (offset) position and size
+would be the arguments. the data to be written to a 32-bit
+integer.
+---
+ah, I've already written about this. I think I might
+transcribe my outline, and see how long this takes.
+
+@20:38 transcribing previous notes on this #ink:066 #timelog:00:39:24
+#! dz $
+
+@21:19 attemps to transcribe the figure #ink:066 #timelog:00:25:25
+#! dz $

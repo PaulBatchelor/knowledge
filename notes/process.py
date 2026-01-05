@@ -26,7 +26,7 @@ def basename(name):
 
 def render(data):
     for row in data:
-        print("{\\tt" +\
+        print("{\\tt " +\
                 row.id.upper() +\
                 "}: ",\
                 basename(row.name))

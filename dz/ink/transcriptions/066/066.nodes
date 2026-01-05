@@ -1,0 +1,35 @@
+@0 block stack v2
+@1 $2^16$ words, 1024 block of 64 words
+@2 10 bits for block address
+@3 block offset addressing
+@4 fixed size linked list array
+@5 A[node] $=$ next
+@6 0 is null
+@7 can be implemented in 10-bit array
+@9 packed bits: 10-bits, 1024 entries = 5 blocks
+@8 block stack implementation
+@a general purpose bit array
+@b build on top of bit array
+@c global array: $2^16$ times 32 bits
+@d $2^16 \cdot 2^5 = 2^21$, addressing fits in 32-bit word
+@e sub-arrays: global offset + local index
+@f operations
+@g set: A, start, size, data
+@h get: A, start, size
+@i compute end addr
+@j determine word bounds
+@k num $W_a$ bits: $(W_a + 1)\cdot 32 - size$
+@l num $W_b$ bits: $(W_b + 1)\cdot 32$
+@m only needed if $W_a \neq W_b$
+@n 32 size max
+@o $W_a = \lfloor start / 32 \rfloor$, $W_b = \lfloor end / 32 \rfloor$
+@p write $n_A$ bits to $W_a$, starting at offset $i_a$
+@q $i_a = start - W_a$
+@r $n_b$ bits to $W_b$ = start at $i_b$.
+@s $i_b$ = end - $W_b$
+@t end = start + size
+@u exclusive bound?
+@v append $n_A$ bits from $W_a[i_a:i_a + n_a]$ to 0
+@w append: $O <<= n, O |= x ^ (1 << (n - 1))$
+@x append $n_b$ bits from $w_b$ region to $O$
+@y return $O$

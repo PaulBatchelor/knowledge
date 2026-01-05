@@ -46,6 +46,16 @@ BEGIN {
     print "H", B, C, 1 
 }
 
+/^SEQ3 / {
+    A=$2
+    B=$3
+    C=$4
+    D=$5
+    print "H", A, B, 1 
+    print "H", B, C, 1 
+    print "H", C, D, 1 
+}
+
 /^VSEQ / {
     A=$2
     B=$3

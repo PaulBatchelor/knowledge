@@ -1,0 +1,177 @@
+ns thoughts/projects/sonilo/tasks/blockstack_improvements/notes
+nn block_stack_v2
+ln block stack v2
+at id 0
+at pg 066
+nn wordsize_numblocks
+ln $2^16$ words, 1024 block of 64 words
+at id 1
+at pg 066
+nn block_address_10_bits
+ln 10 bits for block address
+at id 2
+at pg 066
+nn block_offset_addressing
+ln block offset addressing
+at id 3
+at pg 066
+nn fixed_size_linked_list_array
+ln fixed size linked list array
+at id 4
+at pg 066
+nn array_structure
+ln A[node] $=$ next
+at id 5
+at pg 066
+nn null_is_0
+ln 0 is null
+at id 6
+at pg 066
+nn impl_10bit_array
+ln can be implemented in 10-bit array
+at id 7
+at pg 066
+nn block_stack_impl
+ln block stack implementation
+at id 8
+at pg 066
+nn packed_bits
+ln packed bits: 10-bits, 1024 entries = 5 blocks
+at id 9
+at pg 066
+nn general_purpose_bitarray
+ln general purpose bit array
+at id a
+at pg 066
+nn build_atop_bitarray
+ln build on top of bit array
+at id b
+at pg 066
+nn global_array
+ln global array: $2^16$ times 32 bits
+at id c
+at pg 066
+nn addressing_fits_32_bits
+ln $2^16 \cdot 2^5 = 2^21$, addressing fits in 32-bit word
+at id d
+at pg 066
+nn subarrays
+ln sub-arrays: global offset + local index
+at id e
+at pg 066
+nn operations
+ln operations
+at id f
+at pg 066
+nn set
+ln set: A, start, size, data
+at id g
+at pg 066
+nn get
+ln get: A, start, size
+at id h
+at pg 066
+nn compute_end_addr
+ln compute end addr
+at id i
+at pg 066
+nn determine_word_bounds
+ln determine word bounds
+at id j
+at pg 066
+nn num_wa_bits
+ln num $W_a$ bits: $(W_a + 1)\cdot 32 - size$
+at id k
+at pg 066
+nn num_wb_bits
+ln num $W_b$ bits: $(W_b + 1)\cdot 32$
+at id l
+at pg 066
+nn only_needed_wa_wb_neq
+ln only needed if $W_a \neq W_b$
+at id m
+at pg 066
+nn max_size_32
+ln 32 size max
+at id n
+at pg 066
+nn word_bounds
+ln $W_a = \lfloor start / 32 \rfloor$, $W_b = \lfloor end / 32 \rfloor$
+at id o
+at pg 066
+nn write_wa
+ln write $n_A$ bits to $W_a$, starting at offset $i_a$
+at id p
+at pg 066
+nn ia
+ln $i_a = start - W_a$
+at id q
+at pg 066
+nn write_wb
+ln $n_b$ bits to $W_b$ = start at $i_b$.
+at id r
+at pg 066
+nn ib
+ln $i_b$ = end - $W_b$
+at id s
+at pg 066
+nn end
+ln end = start + size
+at id t
+at pg 066
+nn exclusive_bound
+ln exclusive bound?
+at id u
+at pg 066
+nn append_wa
+ln append $n_A$ bits from $W_a[i_a:i_a + n_a]$ to 0
+at id v
+at pg 066
+nn append_op
+ln append: $O <<= n, O |= x ^ (1 << (n - 1))$
+at id w
+at pg 066
+nn append_wb
+ln append $n_b$ bits from $w_b$ region to $O$
+at id x
+at pg 066
+nn return
+ln return $O$
+at id y
+at pg 066
+co wordsize_numblocks block_stack_v2
+co block_stack_impl block_stack_v2
+co block_address_10_bits wordsize_numblocks
+co block_offset_addressing block_address_10_bits
+co impl_10bit_array block_address_10_bits
+co array_structure fixed_size_linked_list_array
+co null_is_0 fixed_size_linked_list_array
+co impl_10bit_array fixed_size_linked_list_array
+co packed_bits impl_10bit_array
+co build_atop_bitarray impl_10bit_array
+co fixed_size_linked_list_array block_stack_impl
+co general_purpose_bitarray block_stack_impl
+co build_atop_bitarray general_purpose_bitarray
+co global_array general_purpose_bitarray
+co operations general_purpose_bitarray
+co addressing_fits_32_bits global_array
+co subarrays global_array
+co set operations
+co get operations
+co compute_end_addr set
+co compute_end_addr get
+co determine_word_bounds compute_end_addr
+co end compute_end_addr
+co word_bounds determine_word_bounds
+co write_wa determine_word_bounds
+co append_wb determine_word_bounds
+co num_wa_bits write_wa
+co ia write_wa
+co write_wb write_wa
+co num_wb_bits write_wb
+co ib write_wb
+co exclusive_bound end
+co return append_wa
+co append_wa append_op
+co append_wb append_op
+co append_wa append_wb

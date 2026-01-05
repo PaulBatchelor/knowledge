@@ -1,1 +1,2 @@
 coad:coad%
+blockstack_v2:thoughts/projects/sonilo/tasks/blockstack_improvements/notes%

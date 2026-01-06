@@ -269,7 +269,7 @@ transcribe my outline, and see how long this takes.
 #! dz thoughts/projects/sonilo/tasks/blockstack_improvements
 @2026-01-06 Day 128
 @09:44 log updates #timelog:00:01:27
-@09:51 build out 1:1 representation of my blockstack notes #ink:066
+@09:51 build out 1:1 representation of my blockstack notes #ink:066 #timelog:01:21:59
 #! dz thoughts/projects/dagdraw/tasks/notes_integration
 #! dz thoughts/projects/sonilo/tasks/blockstack_improvements
 A good first step towards digitizing this data is producing
@@ -310,3 +310,23 @@ different renderers for the data.
 ---
 well, now the query has been reworked to have a 'nodes'
 object for all the nodes. A 'figs' key would come next
+---
+figs are still not in the knowledge graph
+at this point. in the near future, multiple graph
+figures will be associated with a particular namespace.
+at the moment, figures are just associated with their
+page. there needs to be something else that groups
+figures with a particular namespace, similar to what
+the node transcriptions are doing.
+---
+a possible way forward is to integrate with the existing
+transcription pipeline used to generate the knowledge
+graph. add another column to graphs.txt containing a figs.txt
+file for that graph. that file will contain the page name
+for the graph, and the node name to give it. In the
+transcription generate script, it checks to see if that
+file exists, and batch generates those figure files. It
+would also need to produce dagzet output, which would
+be appeneded to the generated dagzet file.
+---
+might work? gotta go now

@@ -33,7 +33,10 @@ json_group_array(json_object(
 'name', nodes.name,
 'lines', json(nodes.lines),
 'page', nodes.page
-))) from nodes)
+)),
+'figs', 'hello'
+)
+FROM nodes)
 SELECT * from nodes_obj;
 ;
 EOM

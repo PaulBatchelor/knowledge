@@ -7,11 +7,11 @@ fi
 NAMESPACE=$1
 
 sqlite3 a.db <<EOM
-.mode json
 WITH pages AS (
     SELECT * FROM dz_attributes
     WHERE key is 'pg'
-)
+),
+nodes AS (
 SELECT
 dz_attributes.value as value,
 name,
@@ -25,5 +25,15 @@ WHERE
 dz_attributes.key IS 'id'
 AND name LIKE '$NAMESPACE'
 ORDER BY value
+),
+nodes_obj AS (
+SELECT json_object('nodes',
+json_group_array(json_object(
+'value', nodes.value,
+'name', nodes.name,
+'lines', json(nodes.lines),
+'page', nodes.page
+))) from nodes)
+SELECT * from nodes_obj;
 ;
 EOM

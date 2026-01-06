@@ -37,8 +37,8 @@ def render(data):
 
 def parse(objs):
     data = []
-    for o in objs:
-        body = " ".join(json.loads(o["lines"]))
+    for o in objs["nodes"]:
+        body = " ".join(o["lines"])
         txo = TextObject(o["value"], \
                 o["name"], \
                 body, \

@@ -4,3 +4,5 @@ nn tasks/initial_parser
 nn tasks/autoscaling
 nn tasks/fig_prototype
 nn tasks/labels
+nn tasks/notes_integration
+nn tasks/duplicate_node

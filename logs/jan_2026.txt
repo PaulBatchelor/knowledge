@@ -259,12 +259,54 @@ transcribe my outline, and see how long this takes.
 #! dz $
 
 @2026-01-05 Day 127
-
 @10:23 COAD 2.8, starting 2.9 #timelog:00:35:07
 #! dz coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware
 #! dz coad/toc/02_instructions_language_of_the_computer/09_communicating_with_people
-
 @14:10 finish 2.9
 #! dz coad/toc/02_instructions_language_of_the_computer/09_communicating_with_people
-
 @14:44 logs #timelog:00:04:38
+@21:25 block stack planning #ink:06g #timelog:00:39:33
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+@2026-01-06 Day 128
+@09:44 log updates #timelog:00:01:27
+@09:51 build out 1:1 representation of my blockstack notes #ink:066
+#! dz thoughts/projects/dagdraw/tasks/notes_integration
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+A good first step towards digitizing this data is producing
+a digital equivalent of the ink.
+---
+Let's think about data first. figures are not yet in dagzet.
+How do we get them in there. Plopping things in 'ink/figs'
+and then connecting is tempting, but it breaks my ink
+generator scripts because those just traverse the ink
+namespace.
+---
+Maybe adding a "fig" attribute to ink? I can select the
+node, then append a fig attribute that points to the png
+file.
+---
+From there, I can make another query that queries by page
+and produces the JSON needed for that page. Another process
+can generate the PDF associated with that.
+---
+Here's a snag. I have a "pg" attribute for
+the page, which is separate from the ink node which also
+has the page. To query all nodes associated with a page,
+I query for this page?
+---
+No that won't work. Pages aren't necessarily distinct.
+---
+Querying needs to happen from a namespace then, we're back
+to that.
+---
+I wonder if the mknotes.sh query can be changed to produce
+a JSON object instead of just a JSON array of rows. I'd
+like to add another query related to figures associated with
+the namespace. It would contain the node containing the
+figure path, the address, and the page the figure is associated
+with. I think that should be enough data to extract info
+for a single page. I'll use the same single query, just
+different renderers for the data.
+---
+well, now the query has been reworked to have a 'nodes'
+object for all the nodes. A 'figs' key would come next

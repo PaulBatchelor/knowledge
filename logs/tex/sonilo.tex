@@ -857,6 +857,30 @@ There needs to be a way to convert blockstack addresses to word addresses. It's 
 The 'ba' command returns block addresses, which are just those 10 bit numbers. Another utility factoring, in the block stack address should be used for conversion. Not sure what that looks like though.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-04}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:23: global bit array brainstorm}\smallskip
+first thing I'm going to do is change the blockstack to use 10-bit ints. to do this, I am going to generalize the problem. packing the ints becomes a lot easier when the underlying data structure is a bit array and the word boundary logic is abstracted away.
+\par
+
+I would like to implement a global bit array. Every bit can be individually addressed in this memory space using 32-bit integers.
+\par
+
+It's an array, so the core operations are some kind of "read" and some kind of "write", to some location.
+\par
+
+Usually, it'll be the case that multiple bits will want to be read or written to at once, such as is the case for these 10-bit ints. 32-bits would seem to be the upper limit for this.
+\par
+
+so, for read and write, a start (offset) position and size would be the arguments. the data to be written to a 32-bit integer.
+\par
+
+ah, I've already written about this. I think I might transcribe my outline, and see how long this takes.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:38: transcribing previous notes on this}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:19: attemps to transcribe the figure}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-05}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:25: block stack planning}\smallskip
 \xrdef{node15}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ink}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-21}\medskip

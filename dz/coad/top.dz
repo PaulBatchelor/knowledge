@@ -146,12 +146,12 @@ nn 04_signed_unsigned_numbers
 co 03_operands_of_the_computer_hardware $
 co ?tasks/META/read_chapter_2_start $
 co $ ?tasks/META/read_chapter_2_end
-nn 05_represetning_instructions_in_computer
+nn 05_representing_instructions_in_computer
 co 04_signed_unsigned_numbers $
 co ?tasks/META/read_chapter_2_start $
 co $ ?tasks/META/read_chapter_2_end
 nn 06_logical_operations
-co 05_represetning_instructions_in_computer $
+co 05_representing_instructions_in_computer $
 co ?tasks/META/read_chapter_2_start $
 co $ ?tasks/META/read_chapter_2_end
 nn 07_instructions_for_making_decisions

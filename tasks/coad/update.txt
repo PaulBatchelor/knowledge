@@ -1,0 +1,8 @@
+# updates the tasks for sonilo
+# run at the top-level: ./run init.txt < coad/update.txt
+gr 2
+up coad/tasks.txt
+ds 180
+gc
+sr
+w

@@ -120,7 +120,7 @@ ns +toc/02_instructions_language_of_the_computer
 !node 04_signed_unsigned_numbers
 !connect read_chapter_2
 
-!node 05_represetning_instructions_in_computer
+!node 05_representing_instructions_in_computer
 !connect read_chapter_2
 
 !node 06_logical_operations

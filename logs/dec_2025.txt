@@ -1913,7 +1913,7 @@ making a task for this.
 @11:10 tile DSL initial page setup #ink:06A #timelog:00:05:12
 
 @12:52 2.5 reading #timelog:00:36:28
-#! dz coad/toc/02_instructions_language_of_the_computer/05_represetning_instructions_in_computer
+#! dz coad/toc/02_instructions_language_of_the_computer/05_representing_instructions_in_computer
 
 @15:27 graph tool: reverse the flow #timelog:00:20:13
 The adjaceny list actually works better in reverse.

@@ -40,7 +40,7 @@ dmoi/toc/01_logic_and_proofs:16:DONE:2
 dmoi/toc/05_discrete_structures_revisited/02_functions:19:DONE:2
 dmoi/toc/05_discrete_structures_revisited/01_sets:22:DONE:2
 dmoi/toc/02_graph_theory/01_problems_and_definitions:25:DONE:2
-dmoi/toc/02_graph_theory/02_trees:29:TODO:2
+dmoi/toc/02_graph_theory/02_trees:29:DONE:2
 dmoi/toc/03_counting/01_pascals_arithmetical_triangle:32:TODO:2
 dmoi/toc/02_graph_theory/03_planar_graphs:35:TODO:2
 dmoi/toc/03_counting/02_combining_outcomes:38:TODO:2
@@ -92,7 +92,7 @@ coad/toc/02_instructions_language_of_the_computer/06_logical_operations:35:DONE:
 coad/toc/02_instructions_language_of_the_computer/07_instructions_for_making_decisions:36:DONE:4
 coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware:38:DONE:4
 coad/toc/02_instructions_language_of_the_computer/09_communicating_with_people:40:DONE:4
-coad/toc/02_instructions_language_of_the_computer/10_MIPs_addressing_32_bit_immediates_addresses:42:TODO:4
+coad/toc/02_instructions_language_of_the_computer/10_MIPs_addressing_32_bit_immediates_addresses:42:DONE:4
 coad/toc/02_instructions_language_of_the_computer/11_parallelism_and_instructions_synchronization:43:TODO:4
 coad/toc/02_instructions_language_of_the_computer/12_translating_and_starting_a_program:45:TODO:4
 coad/toc/02_instructions_language_of_the_computer/13_C_sort:47:TODO:4

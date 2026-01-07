@@ -398,3 +398,7 @@ both figures and nodes.
 now to make a test generator
 ---
 working inkpage. mostly satisfied with this
+---
+Note that this is hardcoded to be only one page. What
+I'll need to do later is follow-up and make it so it generates
+a PDF for all pages

@@ -383,7 +383,7 @@ I think a working solution here was to have add an
 additional arg 'group by'. Grouping by entity id AND
 node.
 
-@09:26 continuing where I left off yesterday
+@09:26 continuing where I left off yesterday #timelog:01:41:21
 #! dz thoughts/projects/dagdraw/tasks/notes_integration
 The "fig" attribute is successfully showing up in the
 database. I still am going to need dimensions.
@@ -396,3 +396,5 @@ the JSON output I wanted, but the info is in there for
 both figures and nodes.
 ---
 now to make a test generator
+---
+working inkpage. mostly satisfied with this

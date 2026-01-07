@@ -20,7 +20,7 @@ for entry in obj:
     entity_id = entry["entity_id"]
     date, time = entity_id.split("/")
     # TODO: try to unwrap this json array before writing to disk
-    content = json.loads(entry["content"])
+    content = entry["content"]
     node_objs[node].append({
         "title": entry["title"],
         "date": date,

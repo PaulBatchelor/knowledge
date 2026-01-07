@@ -350,3 +350,35 @@ temporary register for long numbers
 
 @2026-01-07 Day 129
 @07:51 updating logs, fixing task typo #timelog:00:22:30
+
+@08:18 okay, I need to troubleshoot why lines data is getting duplicated in log output #timelog:01:05:21
+confirmed found in the JSON output, there are duplicates lines
+included in the field called "content".
+---
+Yesterday I figured out how to get the line content displayed
+as an array of lines, not just a JSON string, so I'm going
+to fiddle with this query to get that working. It'll make
+things more readable.
+---
+blocks are the things containing content, and a left join
+is happening instead of an inner join. A correction I made
+back in the beginning december for sonilo-related things.
+---
+My guess is I made the change because logs without
+content weren't showing up?
+---
+for this particular entry I'm looking at, it seems
+the whole sequence of blocks is being repeated twice.
+---
+working out this query step by step.
+---
+A potential suspect: when an entry has multiple connections,
+it gets included more than once. The entry I'm debugging
+right now has two such connections
+---
+confirmed. I added another dz connection to this particular
+log entry, and the block output showed up in triplicate.
+---
+I think a working solution here was to have add an
+additional arg 'group by'. Grouping by entity id AND
+node.

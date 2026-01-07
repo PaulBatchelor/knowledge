@@ -1826,7 +1826,7 @@ But I think it'll be worth it when I port this to rust.
 @09:54 review ramblings, initial draft of knowledge graph #timelog:01:15:10
 #! dz csmet/cs248/finals
 
-@11:31 inking out "a structured interpretation of cs248" #timelog:14:41 #ink:063
+@11:31 inking out "a structured interpretation of cs248" #timelog:00:14:41 #ink:063
 #! dz $
 
 @13:05 more inking #timelog:00:48:04 #ink:063

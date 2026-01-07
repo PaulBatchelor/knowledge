@@ -8,7 +8,8 @@ do
     $(cd transcriptions && $TOOLPATH/gparse/gparse $NAMESPACE $FILE > ../$OUTPUT)
     if [ -f "transcriptions/$FIGS" ]
     then
-        ./transcriptions/mkfigs.sh transcriptions/$FIGS $NAMESPACE >> ../$OUTPUT
+        echo "generating figures for $NAMESPACE"
+        ./transcriptions/mkfigs.sh transcriptions/$FIGS $NAMESPACE >> $OUTPUT
     fi
 
 done < transcriptions/graphs.txt

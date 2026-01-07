@@ -9,13 +9,23 @@ fi
 FIGS=$1
 NAMESPACE=$2
 DAGDRAW_PATH=$TOOLPATH/dagdraw
+FIGOUT=figs
 dagdraw() {
+PNG=$FIGOUT/$2.png
 ./$DAGDRAW_PATH/fig.awk transcriptions/$1/$1.fig |\
     ./$DAGDRAW_PATH/dagdraw |\
     ./$DAGDRAW_PATH/draw.awk |\
-    ./$DAGDRAW_PATH/bitr - | magick - figs/$2.png
+    ./$DAGDRAW_PATH/bitr - | magick - $PNG
+# dimmensions are needed to get consistent printing
+# results in TeX (converted to DPI later)
+DIMS=$(magick identify $PNG | cut -d ' ' -f 3)
+WIDTH=$(echo $DIMS | cut -d 'x' -f 1)
+HEIGHT=$(echo $DIMS | cut -d 'x' -f 2)
 echo "nn $2"
-echo "at fig figs/$2.png"
+echo "at fig $PNG"
+echo "at figw $WIDTH"
+echo "at figh $HEIGHT"
+echo "at pg $1"
 }
 
 mkdir -p figs

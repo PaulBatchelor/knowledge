@@ -382,3 +382,17 @@ log entry, and the block output showed up in triplicate.
 I think a working solution here was to have add an
 additional arg 'group by'. Grouping by entity id AND
 node.
+
+@09:26 continuing where I left off yesterday
+#! dz thoughts/projects/dagdraw/tasks/notes_integration
+The "fig" attribute is successfully showing up in the
+database. I still am going to need dimensions.
+---
+opting for imagemagick to get this. I'm adding them as
+attributes to the fig node.
+---
+I had to massage the SQLite query a bit to produce
+the JSON output I wanted, but the info is in there for
+both figures and nodes.
+---
+now to make a test generator

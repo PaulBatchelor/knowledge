@@ -1,5 +1,5 @@
 @0 block stack v2
-@1 $2^16$ words, 1024 block of 64 words
+@1 $2^{16}$ words, 1024 block of 64 words
 @2 10 bits for block address
 @3 block offset addressing
 @4 fixed size linked list array
@@ -30,6 +30,6 @@
 @t end = start + size
 @u exclusive bound?
 @v append $n_A$ bits from $W_a[i_a:i_a + n_a]$ to 0
-@w append: $O <<= n, O |= x ^ (1 << (n - 1))$
+@w append: $O <<= n, \quad O |= x \& ((1 << n) - 1)$
 @x append $n_b$ bits from $w_b$ region to $O$
 @y return $O$

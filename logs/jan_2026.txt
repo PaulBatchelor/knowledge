@@ -416,3 +416,13 @@ the arguments comfortably fit into the 8 nibbles of the
 to the cursor (3 nibbles, 12 bits, enough for the blockstack). Values
 can be 16 bits, so that's 4 nibbles. 1 nibbles is
 reserved for size (up to 16 bits, 1-16 no empty sizes allowed)
+
+@11:30 implement initial bit array test words (xr and xw) #timelog:00:28:26
+#! dz $
+no functionality, I just want to make sure the bit extraction
+works. very informal printf stuff.
+---
+getting roped into a refactor with iscmd
+---
+words implemented, and they are calling the bit array
+C functions. Next up is to implement those functions.

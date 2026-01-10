@@ -192,3 +192,29 @@ co programmers_improve_response_time multiple_processors_chip
 co parallel_programming_difficult programmers_improve_response_time
 co parallel_performance_programming parallel_programming_difficult
 co divide_app_over_processors parallel_programming_difficult
+ns coad/notes
+nn f04v
+at fig figs/f04v
+at figw 225
+at figh 180
+at pg 04v
+nn f04y
+at fig figs/f04y
+at figw 525
+at figh 180
+at pg 04y
+nn f04z
+at fig figs/f04z
+at figw 475
+at figh 180
+at pg 04z
+nn f057
+at fig figs/f057
+at figw 450
+at figh 180
+at pg 057
+nn f05q
+at fig figs/f05q
+at figw 525
+at figh 255
+at pg 05q

@@ -426,3 +426,18 @@ getting roped into a refactor with iscmd
 ---
 words implemented, and they are calling the bit array
 C functions. Next up is to implement those functions.
+
+@2025-01-09 Day 131
+
+@2026-01-10 Day 132
+@14:47 fiddling with eps output using cairo
+#! dz thoughts/projects/dagdraw/tasks/eps
+I got it looking fairly decent, but there's a small issue
+with overlapping lines. I think it has to do with how
+my system wants to draw line segements individually.
+---
+I think to improve this, I'd want to add a step that
+combines contiguous line segments together.
+---
+Anyways, time to see if my ink renderer gets improved
+with eps output.

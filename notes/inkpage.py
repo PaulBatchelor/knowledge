@@ -4,20 +4,24 @@ import sys
 from pprint import pprint
 
 def begin():
-    print("\\pdfoutput=1")
+    # print("\\pdfoutput=1")
     print("\\input eplain")
     print("\\input graphicx")
+    print("\\input epsf")
     print("\\parindent=0pt")
     pagewidth=140
     pageheight=210
-    print(f"\\pdfpagewidth={pagewidth}mm")
-    print(f"\\pdfpageheight={pageheight}mm")
+    # print(f"\\pdfpagewidth={pagewidth}mm")
+    # print(f"\\pdfpageheight={pageheight}mm")
+    # print("\\pdfhorigin=0pt")
+    # print("\\pdfvorigin=0pt")
+    print("\\special{papersize=" + str(pagewidth) + "mm," + str(pageheight) + "mm}")
     print(f"\\hsize={pagewidth- 20}mm")
     print(f"\\vsize={pageheight - 20}mm")
-    print("\\pdfhorigin=0pt")
-    print("\\pdfvorigin=0pt")
-    print("\\hoffset=10mm")
-    print("\\voffset=10mm")
+    offset = -1 + (10.0 / 25.4)
+    offset = str(offset) + "in"
+    print("\\hoffset=" + offset)
+    print("\\voffset=" + offset)
 
 def end():
     print("\\bye")
@@ -25,6 +29,12 @@ def end():
 def includegraphics(width, path):
     cmd = "\\includegraphics"
     cmd += f"[width={width}]"
+    cmd += "{" + path + "}"
+    return cmd
+
+def epsfbox(width, path):
+    cmd = "\\epsfxsize=" + str(width) + "in"
+    cmd += "\\epsfbox"
     cmd += "{" + path + "}"
     return cmd
 
@@ -41,9 +51,14 @@ class Figure:
         self.width = w
         self.height = h
     def draw(self):
-        PPI=124.413
-        width_in = str(self.width * (1.0/PPI)) + "in"
-        return includegraphics(width_in, self.path)
+        path = self.path
+        path = path + ".eps"
+        width = self.width / 72.0
+        pgwidth = 140 - 20
+        pgwidth /= 25.4 # mm to in
+        if width > pgwidth:
+            width = pgwidth
+        return epsfbox(width, path)
 
 all_input = sys.stdin.read()
 objs = json.loads(all_input)
@@ -53,11 +68,11 @@ for figobj in objs["figs"]:
     pg = figobj["page"]
     if pg not in pages:
         pages[pg] = InkPage()
-  
+
     w = figobj["width"]
     h = figobj["height"]
     path = figobj["path"]
-    fig = Figure("notes/" + path, w, h)
+    fig = Figure(path, w, h)
 
     pages[pg].figs.append(fig)
 
@@ -73,15 +88,15 @@ for ndobj in objs["nodes"]:
     pages[pg].nids.append(nid)
 
 begin()
-pg = pages["066"]
-pg.nids.sort()
 
-for fig in pg.figs:
-    print(fig.draw())
-
-print("\\medskip")
-
-for nid in pg.nids:
-    print(f"{{\\bf {nid}.}} {pg.nodes[nid]} \quad")
+for (pgid, pg) in sorted(pages.items()):
+    pg.nids.sort()
+    print(f"{{\\bf {pgid}}}\medskip")
+    for fig in pg.figs:
+        print(fig.draw())
+    print("\\medskip")
+    for nid in pg.nids:
+        print(f"{{\\bf {nid}.}} {pg.nodes[nid]} \quad")
+    print("\\vfill\\eject")
 
 end()

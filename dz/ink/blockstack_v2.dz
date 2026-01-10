@@ -177,7 +177,7 @@ co append_wb append_op
 co append_wa append_wb
 ns thoughts/projects/sonilo/tasks/blockstack_improvements/notes
 nn blockstack_v2
-at fig figs/blockstack_v2.png
+at fig figs/blockstack_v2
 at figw 575
 at figh 150
 at pg 066

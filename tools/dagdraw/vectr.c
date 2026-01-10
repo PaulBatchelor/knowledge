@@ -16,9 +16,10 @@ typedef struct vc_context {
     int bp;
     cairo_surface_t *surface;
     cairo_t *cr;
+    char filename[256];
 } vc_context;
 
-void vc_init(vc_context *ctx)
+void vc_init(vc_context *ctx, const char *filename)
 {
     int i;
     ctx->w = 320;
@@ -28,6 +29,7 @@ void vc_init(vc_context *ctx)
     ctx->sp = ctx->bp = 0;
     ctx->cr = NULL;
     ctx->surface = NULL;
+    strcpy(ctx->filename, filename);
 }
 
 void vc_hline(vc_context *ctx, int x, int y, int len)
@@ -36,10 +38,11 @@ void vc_hline(vc_context *ctx, int x, int y, int len)
     cr = ctx->cr;
     if (cr == NULL) return;
 
+    len--;
     cairo_set_source_rgb(cr, 0, 0, 0);
     cairo_set_line_width(cr, 1);
     cairo_move_to(cr, x + 0.5, y + 0.5);
-    cairo_line_to(cr, x + len + 0.5, y + 0.5);
+    cairo_line_to(cr, x + 0.5 + len, y + 0.5);
     cairo_stroke(cr);
 }
 
@@ -49,10 +52,11 @@ void vc_vline(vc_context *ctx, int x, int y, int len)
     cr = ctx->cr;
     if (cr == NULL) return;
 
+    len--;
     cairo_set_source_rgb(cr, 0, 0, 0);
     cairo_set_line_width(cr, 1);
     cairo_move_to(cr, x + 0.5, y + 0.5);
-    cairo_line_to(cr, x + 0.5, y + len + 0.5);
+    cairo_line_to(cr, x + 0.5, y + 0.5 + len);
     cairo_stroke(cr);
 }
 
@@ -61,7 +65,7 @@ void vc_rect(vc_context *ctx, int x, int y, int w, int h)
     cairo_t *cr;
     cr = ctx->cr;
     if (cr == NULL) return;
-    cairo_rectangle(cr, x, y, w, h);
+    cairo_rectangle(cr, x + 0.5, y + 0.5, w, h);
     cairo_set_source_rgb(cr, 1, 1, 1);
     cairo_fill_preserve(cr);
     cairo_set_source_rgb(cr, 0, 0, 0);
@@ -119,7 +123,6 @@ void vc_txt(vc_context *ctx, int x, int y, uint32_t k)
 {
     char tmp[8];
     int i;
-    int sz;
     cairo_t *cr;
     cairo_text_extents_t extents;
 
@@ -130,17 +133,11 @@ void vc_txt(vc_context *ctx, int x, int y, uint32_t k)
 
     ktos(k, tmp);
 
-    sz = strlen(tmp);
-
     cairo_select_font_face(cr, "Sans", CAIRO_FONT_SLANT_NORMAL,
                           CAIRO_FONT_WEIGHT_BOLD);
     cairo_set_font_size(cr, 8);
     
     cairo_text_extents(cr, tmp, &extents);
-#if 0
-    cairo_move_to(cr, x - extents.width/2 - extents.x_bearing,
-                  y - extents.height/2 - extents.y_bearing);
-#endif
     cairo_move_to(cr, x, y + extents.height);
     cairo_show_text(cr, tmp);
 }
@@ -226,12 +223,15 @@ void parse_word(vc_context *ctx)
         ctx->w = w;
         ctx->h = h;
 
-        surface = cairo_ps_surface_create("dag.eps", w, h);
+        surface = cairo_ps_surface_create(ctx->filename, w, h);
         cairo_ps_surface_set_eps(surface, 1);
         cr = cairo_create(surface);
 
         cairo_set_source_rgb(cr, 1, 1, 1);
         cairo_paint(cr);
+
+        cairo_set_antialias(cr, CAIRO_ANTIALIAS_NONE);
+        cairo_set_line_cap(cr, CAIRO_LINE_CAP_SQUARE);
 
         ctx->surface = surface;
         ctx->cr = cr;
@@ -289,7 +289,7 @@ int main(int argc, char *argv[])
     filename = argv[1];
 
     ctx = malloc(sizeof(vc_context));
-    vc_init(ctx);
+    vc_init(ctx, filename);
 
     while ((c = fgetc(fp)) != -1) {
         parse(ctx, c);

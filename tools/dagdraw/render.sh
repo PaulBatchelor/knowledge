@@ -8,7 +8,7 @@ render2() {
 
 render3() {
     #./fig.awk $1.txt | ./dagdraw | ./draw.awk | ./bitr - | magick - $1.png
-    ./fig.awk $1.txt | ./dagdraw | ./draw.awk | ./vectr test.png
+    ./fig.awk $1.txt | ./dagdraw | ./draw.awk | ./vectr $1.eps
 }
 
 # render1 ex2

@@ -128,7 +128,7 @@ ln append $n_A$ bits from $W_a[i_a:i_a + n_a]$ to 0
 at id v
 at pg 066
 nn append_op
-ln append: $O <<= n, \quad O = O | x \& ((1 << n) - 1)$
+ln append: $O <<= n, \quad O |= x \& ((1 << n) - 1)$
 at id w
 at pg 066
 nn append_wb

@@ -490,3 +490,5 @@ seems to work.
 ---
 going to write down a few notes for myself for future me.
 there are a lot of small steps.
+
+@14:56 some DMOI transcription #ink:05v

@@ -810,44 +810,6 @@ making a task for this.
 Apparently, my zero page unit tests are breaking because the blocklist is broken, so that component is getting rewritten. Not much more to say right now.
 \par
 
-{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-06}\medskip
-{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:51: build out 1:1 representation of my blockstack notes}\smallskip
-A good first step towards digitizing this data is producing a digital equivalent of the ink.
-\par
-
-Let's think about data first. figures are not yet in dagzet. How do we get them in there. Plopping things in 'ink/figs' and then connecting is tempting, but it breaks my ink generator scripts because those just traverse the ink namespace.
-\par
-
-Maybe adding a "fig" attribute to ink? I can select the node, then append a fig attribute that points to the png file.
-\par
-
-From there, I can make another query that queries by page and produces the JSON needed for that page. Another process can generate the PDF associated with that.
-\par
-
-Here's a snag. I have a "pg" attribute for the page, which is separate from the ink node which also has the page. To query all nodes associated with a page, I query for this page?
-\par
-
-No that won't work. Pages aren't necessarily distinct.
-\par
-
-Querying needs to happen from a namespace then, we're back to that.
-\par
-
-I wonder if the mknotes.sh query can be changed to produce a JSON object instead of just a JSON array of rows. I'd like to add another query related to figures associated with the namespace. It would contain the node containing the figure path, the address, and the page the figure is associated with. I think that should be enough data to extract info for a single page. I'll use the same single query, just different renderers for the data.
-\par
-
-well, now the query has been reworked to have a 'nodes' object for all the nodes. A 'figs' key would come next
-\par
-
-figs are still not in the knowledge graph at this point. in the near future, multiple graph figures will be associated with a particular namespace. at the moment, figures are just associated with their page. there needs to be something else that groups figures with a particular namespace, similar to what the node transcriptions are doing.
-\par
-
-a possible way forward is to integrate with the existing transcription pipeline used to generate the knowledge graph. add another column to graphs.txt containing a figs.txt file for that graph. that file will contain the page name for the graph, and the node name to give it. In the transcription generate script, it checks to see if that file exists, and batch generates those figure files. It would also need to produce dagzet output, which would be appeneded to the generated dagzet file.
-\par
-
-might work? gotta go now
-\par
-
 \xrdef{node16}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blockstack improvements}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-18}\medskip
@@ -970,6 +932,21 @@ a possible way forward is to integrate with the existing transcription pipeline 
 \par
 
 might work? gotta go now
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-08}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:01: getting some inertia up to implement this bit array operator}\smallskip
+Came up with the C API. I quickly realized that since this has multiple variables, I'd need to use a stack to make it fully addressable. Instead, I'm opting make a version where the arguments comfortably fit into the 8 nibbles of the 32-bit word register. Addressing is a unsigned offset relative to the cursor (3 nibbles, 12 bits, enough for the blockstack). Values can be 16 bits, so that's 4 nibbles. 1 nibbles is reserved for size (up to 16 bits, 1-16 no empty sizes allowed)
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:30: implement initial bit array test words (xr and xw)}\smallskip
+no functionality, I just want to make sure the bit extraction works. very informal printf stuff.
+\par
+
+getting roped into a refactor with iscmd
+\par
+
+words implemented, and they are calling the bit array C functions. Next up is to implement those functions.
 \par
 
 \xrdef{node17}

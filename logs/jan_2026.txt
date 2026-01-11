@@ -472,3 +472,13 @@ Euler's Formula for Planar graphs. Another
 graph examined is $K_{3, 3}$, with a similar proof.
 
 @17:01 updating logs #timelog:00:14:58
+
+@19:45 DAGDraw path drawing algorithm #ink:06m #timelog:00:58:42
+Musing possible approaches to improving the path drawing logic.
+in the vectorized output of DAGDraw. The main process involves
+grouping segments together into contiguous lines to minimize
+the number of weird overlapping lines that can show up
+in output.
+
+@2026-01-11 Day 133
+@14:20 logs #timelog:00:03:33

@@ -1,6 +1,17 @@
 To render individual figures: go into the page directory 000,
 and run ../fig 000.
 
-To render all the figures: in ink directory, run ./transcriptions/mkfigs.sh.
-This will make a directory called "figs" and place all the
-generated figures in there. The figure list is populated in figs.txt
+Figures are rendered in groups and placed in a text file.
+These have to arguments: the page index, and the name of
+the figure to use for filename output. the filename of this
+path is then associated with a graph entry in graphs.txt.
+When generate.sh script is run, it will read entries from
+the figs file entry, and render them in a folder called "figs".
+Figures will also append dagzet data to the generated dz file
+associated with the graph.
+
+So, to render a figure in this ecosystem, add it to a
+list of figures associated with a graph, and it will be created
+when the generate script is run. If no such list exists for
+that graph, make a list in this folder, then add that list filepath
+to the appropriate column in graphs.txt.

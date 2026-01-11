@@ -1,0 +1,23 @@
+this folder is the directory to place generated TeX
+files for transcribed ink notes used the indexed DAG
+format I've been developing.
+
+to get this working, there are a lot of small steps involved,
+so below will be an unordered and possibly incomplete
+list of items needed to get these rendered.
+
+first, figures need to be rendered in EPS format. These
+are rendered by the script in dz/ink/transcriptions/generate.sh.
+It should create a folder called dz/ink/figs containing
+the output. figs should be linked to this ink folder.
+
+to render figures, DAGDraw needs to be built. Run the build
+script located in tools/dagdraw.
+
+If the ink transcriptions are regenerated, the knowledge
+graph might need to be regenerated. 'mkdz' should be fine instead
+of the slower 'gendb' script. logs aren't required to be regenerated.
+
+To add another note to generate, append entries to the 'note.txt'
+file. The first column is the output name (no extension), and
+the second column is the namespace pattern to search for.

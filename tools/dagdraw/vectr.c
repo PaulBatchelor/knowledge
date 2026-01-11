@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
-#include <cairo.h>
-#include <cairo-ps.h>
+#include <cairo/cairo.h>
+#include <cairo/cairo-ps.h>
 
 #define STKSIZE 32
 #define BUFSIZE 32

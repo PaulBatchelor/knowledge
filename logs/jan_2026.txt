@@ -507,3 +507,8 @@ was easy to transcribe.
 I think my math was off calculating the bits.
 ---
 Tests pass on the first try. Luck? Did I do it right?
+
+@17:44 doing some interactive work to try some things out #timelog:00:12:18
+#! dz $
+I don't think I'm able to read/write a single bit, or anything
+that falls within one word.

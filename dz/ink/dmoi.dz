@@ -1,0 +1,185 @@
+ns dmoi/notes
+nn 02_graph_theory
+ln graph theory
+at id 0
+at pg 05s
+nn connected
+ln connected: you can get from any vertice to any other vertice by following some path of edges
+at id 12
+at pg 05u
+nn trees
+ln 2.2 trees
+at id 1g
+at pg 05v
+nn connected_graph_no_cycles
+ln trees: connected graph containing no cycles
+at id 1h
+at pg 05v
+nn forest
+ln forest: graph containing no cycles
+at id 1i
+at pg 05v
+nn 1j
+ln a connected forest is a tree
+at id 1j
+at pg 05v
+nn rooted_trees
+ln rooted trees
+at id 1k
+at pg 05v
+nn one_vertex_root
+ln one vertex is root
+at id 1l
+at pg 05v
+nn spanning_tree
+ln spanning tree
+at id 1m
+at pg 05v
+nn tree_all_verts_conn_graph
+ln tree that includes all vertices of a connected graph
+at id 1n
+at pg 05v
+nn props_of_trees
+ln 2.2.2 props of trees [pg 119]
+at id 1o
+at pg 05v
+nn graph_is_tree
+ln a graph $T$ is a tree if and only if between every pair of distinct verts of $T$ there is a distinct path [prop 2.2.2]
+at id 1p
+at pg 05v
+nn assume_tree
+ln assume $T$ is a tree
+at id 1q
+at pg 05v
+nn uv_distinct_verts
+ln $u$ and $v$ distinct vertices
+at id 1r
+at pg 05v
+nn unique_path_uv
+ln show there is a unique path between $u$ and $v$
+at id 1s
+at pg 05v
+nn there_is_path
+ln there is a path
+at id 1t
+at pg 05v
+nn at_most_one_path
+ln not more than one path
+at id 1u
+at pg 05v
+nn two_paths_contradiction
+ln suppose there are 2 paths, get contradiction
+at id 1v
+at pg 05v
+nn vert_paths_diverge
+ln there is some first vertex $u'$ after which 2 paths diverge
+at id 1w
+at pg 05v
+nn vert_in_common
+ln since both paths end at $v$, there is some vertex after $u'$ that they have in common, called $v'$
+at id 1x
+at pg 05v
+nn two_paths_form_cycle_contradiction
+ln the 2 paths from $u'$ to $v'$ form a cycle, contradicting assumption that $T$ is a tree
+at id 1y
+at pg 05v
+nn converse_unique_path_tree
+ln converse: if between every pair of distincrt verts of $T$ there is a unique path, then $T$ is a tree
+at id 1z
+at pg 05v
+nn iff_prove_two_implications
+ln if and only if means 2 implications must be proven
+at id 20
+at pg 05v
+nn assume_hypothesis
+ln assume hypothesis: between every pair of distinct verts of T, there is a unique path
+at id 21
+at pg 05v
+nn show_connected_contains_no_cycles
+ln prove $T$ is a tree, by showing it is connected and contains no cycles
+at id 22
+at pg 05v
+nn connected_path_btwn_verts
+ln $T$ is connected because there is a path between every pair of verts
+at id 23
+at pg 05v
+nn assume_cycles_for_contradiction
+ln assume $T$ has cycles for contradiction
+at id 24
+at pg 05v
+nn uv_distinct_verts_in_cycle
+ln $u$ and $v$ distinct verts in a cycle of $T$
+at id 25
+at pg 05v
+nn uv_cw_ccw
+ln can get from $u$ to $v$ clockwise or counter-clockwise around the cycle
+at id 26
+at pg 05v
+nn two_paths_contradict_assumption
+ln 2 paths from $u$ to $v$, contradicting assumption
+at id 27
+at pg 05v
+nn existence_of_paths
+ln existence of paths
+at id 28
+at pg 05v
+nn uniqueness_of_paths
+ln uniqueness of paths
+at id 29
+at pg 05v
+nn just_consider_forest
+ln just consider graphs no cycles (forest)
+at id 2a
+at pg 05v
+nn use_parts_exploring_uniqueness
+ln use parts of proof that explore uniqueness of paths, not existence
+at id 2b
+at pg 05v
+nn cor_2_2_3_graph_is_forest
+ln corallary 2.2.3: graph f is a forest if and only if between every pair of verts there is at most one path
+at id 2c
+at pg 05v
+nn graphs
+ln graphs
+at id 7
+at pg 05s
+co trees 02_graph_theory
+co connected_graph_no_cycles connected
+co connected_graph_no_cycles trees
+co forest trees
+co props_of_trees trees
+co rooted_trees connected_graph_no_cycles
+co spanning_tree connected_graph_no_cycles
+co 1j forest
+co just_consider_forest forest
+co one_vertex_root rooted_trees
+co tree_all_verts_conn_graph spanning_tree
+co graph_is_tree props_of_trees
+co assume_tree graph_is_tree
+co uv_distinct_verts graph_is_tree
+co converse_unique_path_tree graph_is_tree
+co iff_prove_two_implications graph_is_tree
+co existence_of_paths graph_is_tree
+co uniqueness_of_paths graph_is_tree
+co just_consider_forest graph_is_tree
+co cor_2_2_3_graph_is_forest graph_is_tree
+co unique_path_uv uv_distinct_verts
+co there_is_path unique_path_uv
+co at_most_one_path unique_path_uv
+co two_paths_contradiction unique_path_uv
+co vert_paths_diverge two_paths_contradiction
+co vert_in_common vert_paths_diverge
+co two_paths_form_cycle_contradiction vert_in_common
+co assume_hypothesis converse_unique_path_tree
+co converse_unique_path_tree iff_prove_two_implications
+co show_connected_contains_no_cycles assume_hypothesis
+co connected_path_btwn_verts show_connected_contains_no_cycles
+co assume_cycles_for_contradiction show_connected_contains_no_cycles
+co uv_distinct_verts_in_cycle assume_cycles_for_contradiction
+co uv_cw_ccw uv_distinct_verts_in_cycle
+co two_paths_contradict_assumption uv_cw_ccw
+co use_parts_exploring_uniqueness uniqueness_of_paths
+co use_parts_exploring_uniqueness just_consider_forest
+co cor_2_2_3_graph_is_forest use_parts_exploring_uniqueness
+co 1j graphs
+ns dmoi/notes

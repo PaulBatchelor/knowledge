@@ -1,2 +1,3 @@
 coad/notes coad.txt coad.dz coad_figs.txt
 thoughts/projects/sonilo/tasks/blockstack_improvements/notes blockstack_v2.txt blockstack_v2.dz blockstack_v2_figs.txt
+dmoi/notes dmoi.txt dmoi.dz dmoi_figs.txt

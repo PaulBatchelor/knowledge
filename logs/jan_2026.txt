@@ -491,4 +491,13 @@ seems to work.
 going to write down a few notes for myself for future me.
 there are a lot of small steps.
 
-@14:56 some DMOI transcription #ink:05v
+@14:56 some DMOI transcription #ink:05v #timelog:00:50:38
+#! dz dmoi/news
+a new transcription group for DMOI was created!
+---
+nodes, edges, names created. figure is a WIP. still hadn't
+fully gotten the hang of drawing these things in a way that
+was easy to transcribe.
+
+@15:34 boilerplate transcriptions to get ink 05v to work #ink:05v #ink:05s #ink:05u
+#! dz dmoi/news

@@ -1,0 +1,41 @@
+@1g 2.2 trees
+@1h trees: connected graph containing no cycles
+@1i forest: graph containing no cycles
+@1j a connected forest is a tree
+@1k rooted trees
+@1l one vertex is root
+@1m spanning tree
+@1n tree that includes all vertices of a connected graph
+@1o 2.2.2 props of trees [pg 119]
+@1p a graph $T$ is a tree if and only if between every
+pair of distinct verts of $T$ there is a distinct path [prop 2.2.2]
+@1q assume $T$ is a tree
+@1r $u$ and $v$ distinct vertices
+@1s show there is a unique path between $u$ and $v$
+@1t there is a path
+@1u not more than one path
+@1v suppose there are 2 paths, get contradiction
+@1w there is some first vertex $u'$ after which 2 paths diverge
+@1x since both paths end at $v$, there is some vertex after $u'$
+that they have in common, called $v'$
+@1y the 2 paths from $u'$ to $v'$ form a cycle, contradicting
+assumption that $T$ is a tree
+@1z converse: if between every pair of distincrt verts of $T$
+there is a unique path, then $T$ is a tree
+@20 if and only if means 2 implications must be proven
+@21 assume hypothesis: between every pair of distinct verts of T,
+there is a unique path
+@22 prove $T$ is a tree, by showing it is connected and contains
+no cycles
+@23 $T$ is connected because there is a path between every
+pair of verts
+@24 assume $T$ has cycles for contradiction
+@25 $u$ and $v$ distinct verts in a cycle of $T$
+@26 can get from $u$ to $v$ clockwise or counter-clockwise around the cycle
+@27 2 paths from $u$ to $v$, contradicting assumption
+@28 existence of paths
+@29 uniqueness of paths
+@2a just consider graphs no cycles (forest)
+@2b use parts of proof that explore uniqueness of paths, not existence
+@2c corallary 2.2.3: graph f is a forest
+if and only if between every pair of verts there is at most one path

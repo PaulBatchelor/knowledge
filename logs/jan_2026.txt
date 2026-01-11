@@ -429,6 +429,26 @@ C functions. Next up is to implement those functions.
 
 @2025-01-09 Day 131
 
+@10:12 COAD 2.11 reading #timelog:00:11:35
+#! dz coad/toc/02_instructions_language_of_the_computer/11_parallelism_and_instructions_synchronization
+
+@12:38 finish up 2.11
+#! dz $
+primitives for building simple locks for parallel execution.
+one implementation uses atomic change/swap. another uses
+pair of instructions, with second checking if the two instructions
+were done effectively "atomically". MIPS does it the
+two-instruction way.
+
+@16:17 2.3.2 planar graphs #timleog:01:00:05
+#! dz dmoi/toc/02_graph_theory/03_planar_graphs
+planar graphs are graphs where it's possible to draw
+without crossing edges. drawn verts and edges divdide
+the graph into regions called faces.
+eulers formula for planar graphs, deals with the relationship
+between edges, verts, and faces, which is a constant. a
+proof accompanies this.
+
 @2026-01-10 Day 132
 @14:47 fiddling with eps output using cairo
 #! dz thoughts/projects/dagdraw/tasks/eps
@@ -441,3 +461,14 @@ combines contiguous line segments together.
 ---
 Anyways, time to see if my ink renderer gets improved
 with eps output.
+
+@15:52 2.3.3 non-planar graphs #timelog:01:00:02
+#! dz dmoi/toc/02_graph_theory/03_planar_graphs
+non-planar graphs means there are too many edges
+and too few verts for it to be a planar graph, and some
+edges need to intersect. The smallest graph
+for this is is $K_5$, with a proof by contradiction using
+Euler's Formula for Planar graphs. Another
+graph examined is $K_{3, 3}$, with a similar proof.
+
+@17:01 updating logs #timelog:00:14:58

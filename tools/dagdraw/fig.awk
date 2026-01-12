@@ -64,6 +64,16 @@ BEGIN {
     print "V", B, C, 1 
 }
 
+/^VSEQ3 / {
+    A=$2
+    B=$3
+    C=$4
+    D=$5
+    print "V", A, B, 1 
+    print "V", B, C, 1 
+    print "V", C, D, 1 
+}
+
 /^PAR / {
     A=$2
     B=$3

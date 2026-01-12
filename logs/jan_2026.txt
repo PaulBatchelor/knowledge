@@ -512,3 +512,5 @@ Tests pass on the first try. Luck? Did I do it right?
 #! dz $
 I don't think I'm able to read/write a single bit, or anything
 that falls within one word.
+
+@19:24 more fig transcription #ink:05v #timelog:00:42:55

@@ -116,8 +116,8 @@ def hpair(a, b):
     return a + " \\leaders\\hbox to 10pt {\\hss.\\hss} " + " \\hfill " + b 
 
 def toc(nodes, refs):
-    for node in nodes:
-        print(hpair(strip(node), xref(refs[node])))
+    for node in sorted(nodes):
+        print("\\noindent",hpair(strip(node), xref(refs[node])))
         print("\\smallskip")
     print("\\vfill \\break")
 

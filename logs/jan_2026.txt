@@ -527,3 +527,16 @@ a Gesture. Gesture as a core primitive. Composing with gesture.
 
 @09:49 scanning, binning, tagging #archiving #timelog:00:38:37
 new year, new folders
+
+@17:55 digging up my leetcode notes. wonder if I can render logs from them #timelog:00:20:56
+#! dz leetcode/news
+ran into rendering bugs. this may take a while. turning on
+the stopwatch.
+---
+that's fixed and it displays. but, duplicate logs are showing
+up.
+---
+Claude gave me a solution pretty quickly. I can use the
+DISTINCT keyword in the aggregate. Thanks, Claude.
+---
+going to the sort the TOC alphabetically

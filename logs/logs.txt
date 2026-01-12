@@ -2,3 +2,4 @@ sonilo:thoughts/projects/sonilo%
 thoughts:thoughts/%
 dmoi:dmoi/%
 coad:coad/%
+leetcode:leetcode/%

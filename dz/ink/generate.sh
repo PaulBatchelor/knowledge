@@ -7,3 +7,4 @@ fi
 INKPATH=$1
 
 awk -f $INKPATH/2025/generate.awk $INKPATH/2025/bins.txt > 2025.dz
+awk -f $INKPATH/2026/generate.awk $INKPATH/2026/bins.txt > 2026.dz

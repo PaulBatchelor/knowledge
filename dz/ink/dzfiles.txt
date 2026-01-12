@@ -2,3 +2,4 @@
 coad.dz
 blockstack_v2.dz
 dmoi.dz
+2026.dz

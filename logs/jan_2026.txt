@@ -514,3 +514,13 @@ I don't think I'm able to read/write a single bit, or anything
 that falls within one word.
 
 @19:24 more fig transcription #ink:05v #timelog:00:42:55
+
+@20:23 everything is a gesture #timelog:00:38:26 #ink:06m
+#! dz thoughts/atom/gesture
+Thinking ahead about high-level concepts. This music environment
+I want to make is going to involve the concept of Gesture,
+so what would happen if I go to an extreme and make everything
+a Gesture. Gesture as a core primitive. Composing with gesture.
+
+@2026-01-12 Day 134
+@09:44 updating logs #timelog:00:04:56

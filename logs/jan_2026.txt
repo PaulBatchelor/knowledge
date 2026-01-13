@@ -482,6 +482,14 @@ the number of weird overlapping lines that can show up
 in output.
 
 @2026-01-11 Day 133
+@13:06 2.12: translating and starting a program #timelog:00:59:19
+#! dz coad/toc/02_instructions_language_of_the_computer/12_translating_and_starting_a_program
+4 steps to translating a C program to program running on computer:
+compiler, assembler, linker, loader.
+---
+focused in on compilers, assemblers, linkers. loaders was
+not looked at.
+
 @14:20 logs #timelog:00:03:33
 
 @14:30 let's see if my new eps backend works okay on linux
@@ -528,6 +536,13 @@ a Gesture. Gesture as a core primitive. Composing with gesture.
 @09:49 scanning, binning, tagging #archiving #timelog:00:38:37
 new year, new folders
 
+@14:34 DMOI 2.3.4 polyhedra #timelog:00:51:53
+#! dz dmoi/toc/02_graph_theory/03_planar_graphs
+polyhedron shapes, like planar graphs, are made up
+of vertices, edges, and faces. convex polyhedron can be
+represented as planar graphs. proof that there are only
+5 regular polyhedra (have not studied this one yet)
+
 @17:55 digging up my leetcode notes. wonder if I can render logs from them #timelog:00:20:56
 #! dz leetcode/news
 ran into rendering bugs. this may take a while. turning on
@@ -540,3 +555,24 @@ Claude gave me a solution pretty quickly. I can use the
 DISTINCT keyword in the aggregate. Thanks, Claude.
 ---
 going to the sort the TOC alphabetically
+
+@20:25 2.12 loaders, continued #timelog:00:49:20
+#! dz coad/toc/02_instructions_language_of_the_computer/12_translating_and_starting_a_program
+studied linking example, examined 6 steps of the traditional
+loader: read, create address space, copy, init regs, jump
+to start up routine and call main and then exit. dynamically
+linked libraries.
+
+@2026-01-13 Day 135
+@09:20 vibe-coding a TeX font generator #timelog:00:23:39
+If I can successfully generate pk/tfm files, I'll be able
+to use TeX to generate pixel art, and potentially create
+a 1-bit backend.
+---
+Did a few iterations, including supplying a hex dumps from
+the bean tutorial, and the AI couldn't get it to work. It did
+manage to get it to generate a valid enough TFM file to produce
+a DVI, but it didn't seem to like the pk output.
+
+@09:49 since I'm here... update timelogs #timelog:00:15:56
+I'm going to put GRE prep stuff on the gradschool repo

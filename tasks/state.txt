@@ -42,7 +42,7 @@ dmoi/toc/05_discrete_structures_revisited/01_sets:22:DONE:2
 dmoi/toc/02_graph_theory/01_problems_and_definitions:25:DONE:2
 dmoi/toc/02_graph_theory/02_trees:29:DONE:2
 dmoi/toc/03_counting/01_pascals_arithmetical_triangle:32:TODO:2
-dmoi/toc/02_graph_theory/03_planar_graphs:35:TODO:2
+dmoi/toc/02_graph_theory/03_planar_graphs:35:DONE:2
 dmoi/toc/03_counting/02_combining_outcomes:38:TODO:2
 dmoi/toc/02_graph_theory/04_euler_trails_circuits:42:TODO:2
 dmoi/toc/03_counting/03_non_disjoint_outcomes:45:TODO:2

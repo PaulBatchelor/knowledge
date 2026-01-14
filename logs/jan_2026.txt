@@ -576,3 +576,86 @@ a DVI, but it didn't seem to like the pk output.
 
 @09:49 since I'm here... update timelogs #timelog:00:15:56
 I'm going to put GRE prep stuff on the gradschool repo
+
+@11:55 DMOI: polyhydra proof initial outline #timelog:00:09:15
+#! dz dmoi/toc/02_graph_theory/03_planar_graphs
+Just enough time to outline the 4 cases.
+
+@14:36 DMOI polyhdra proof #timelog:01:07:17
+#! dz dmoi/toc/02_graph_theory/03_planar_graphs
+
+@2026-01-14 Day 136
+@09:50 logging in, logs, etc #timelog:00:24:46
+lots of words in my gradschool logs
+
+@10:23 I'm scared to look at the sonilo tasks
+#! dz sonilo/news
+
+@10:24 refactoring the blockstack #timelog:01:38:59
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+refreshing myself on the current blockstack implementation.
+I'm pretty sure it's a linked list in an array sort of deal
+already. There must be a specific slot with the head of
+the list as well.
+---
+Yup. It's a linked-list-in-an-array sort of deal. Let's
+call this array $L$, with element $n$ of the array being
+referred to as $L_n$. $L_0$ is the first item of the array,
+and it contains the address of the head of the list, $h$
+initialized $h = 0$ (null). Then, the list gets initialized
+in the following way: $L_i \leftarrow h, h \leftarrow i$ for
+all $1 \le i \le 2^10$. So for $L_i = x$, $i$ refers to
+the address of the node if it's greater than 0 (with 0 being
+the head), and the value points to the next value in the
+linked list.
+---
+I'm going to keep the addressing scheme the same with 0 being
+NULL. This leaves 1023 blocks max. Probably an okay limitation?
+Down the line, I'll want to have an externally managed chunk
+of memory that's 1024 blocks. I lose a block with this
+limitation.
+---
+Writing out local "array 10" routines, for 10 bit arrays
+using the bit array routines I made.
+---
+setting up the init/push/pop routines. seeing what fails,
+if there's failure.
+---
+the tests are now failing in ways I understand. only
+the blocklist test is affected, and it has to do with
+the off-by-one addressing. I could fix the issue by changing
+the test values and be done with it, but I'm left wondering:
+should I change the address ordering to be ascending
+instead of descending? That would mean that no matter
+the size, the first element is 1 instead of 1023 or
+1024.
+---
+I was getting a weird return value of "3FF" from the
+original test. this is happening because I'm doing
+error checking, and the register isn't being overwritten.
+I do not have an error flag set up in place.
+---
+Weird bug related to freeing blocks, a push operation. I'm
+doing a check to make sure the block isn't already free,
+which is to check to see if the node points to null (0) or
+not. A value that doesn't point to null is assumed to be
+in the list. When I made things initialized in reverse
+order (prev?), the last item (1013) points to 0, which
+I believe is correct. So, I might
+mark things popped off the list 
+as $L_i \leftarrow i$, which I believe works.
+---
+tests refactored to work as expected. First item popped
+is 1. this all makes sense to me.
+
+@12:13 I think I'm done? double checking my notes #timelog:00:04:43
+#! dz $
+
+@12:15 Not done yet. address mapping is still needed
+#! dz $
+A block returned from this blocklist needs to be
+converted to an address in memory somehow. An address
+like {\tt 100.0F} should also work to, used to indicate
+at block {\tt 100} (256) plus word offset {\tt 0F} (15).
+---
+Will think on the best approach for implementing.

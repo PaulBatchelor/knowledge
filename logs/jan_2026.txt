@@ -757,3 +757,30 @@ The thinking I have here is that 'jf' and 'jb' will be
 used to do local jumps forward/backward relative to the
 current cursor position. It'll treat the word register
 like a stack and read the last 2 nibbles as an offset.
+
+@16:26 working on 'sc' #timelog:00:24:42
+#! dz $
+I have run into a weird printing issue. troubleshooting.
+---
+OH! forgot to start the comment. It was just parsing all
+those characters like a program I think.
+
+@16:51 pack addresses ('pa', formerly 'aa') #timelog:00:10:34
+#! dz $
+This sort of thing is needed to merge the bitset and the
+global blocklist addresses into one word. I was going to use
+'aa', but that's already taken (array append).
+
+@17:05 'sn' get number of elems for set #timelog:00:12:18
+#! dz $
+I forget why I needed this one. Probably testing? I'll do
+it anyways.
+
+@17:19 'bb' allocate and mark block #timelog:00:12:54
+#! dz $
+Note to self: block address space is 1-1023 inclusive. 0
+is not used. the bitset can include 0, but that's being
+reserved to make the linked list logic run smoother.
+
+@17:45 I think I have it all done. this zero page work is complete.
+#! dz $

@@ -659,3 +659,101 @@ like {\tt 100.0F} should also work to, used to indicate
 at block {\tt 100} (256) plus word offset {\tt 0F} (15).
 ---
 Will think on the best approach for implementing.
+
+@15:27 wrap-up 2.12, some 2.13 #timelog:00:42:48
+#! dz coad/toc/02_instructions_language_of_the_computer/12_translating_and_starting_a_program
+#! dz coad/toc/02_instructions_language_of_the_computer/13_C_sort
+2.12: last section here talked about Java, JRE. Also some mentioning
+of a JIT in the context of the JRE to speed up hotspots. I skimmed
+this one mostly.
+---
+2.13: this chapter outlines a procedure for producing MIPS
+code from a C function. Swap is the first example, then sort, which
+build off of swap.
+
+@2026-01-15 Day 137
+@08:41 address conversion #timelog:01:24:59
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+silly concerns: are 'bm' and 'mb' taken? That's block index
+to memory and memory to block.
+---
+nice! okay those are the words.
+---
+I messed up the test case. I need to multiply to get the
+memory address and THEN apply the bias.
+---
+it all works now. tedious to get the tests right. might
+have to do with my ed workflow. it's still not quite
+as smooth as my established vim workflow
+
+@10:31 I think we are done
+#! dz $
+
+@10:35 zero page test fixes
+#! dz thoughts/projects/sonilo/tasks/zero_page
+trying to remember where I left off
+---
+distracted by docgen.
+---
+almost second guessing my block-to-memory calculations. If my blocklist
+starts at address 0x10, the first block is going to be at
+0x180 because 0x10 is in the first five blocks. You're
+If the blocklist was stored in 0x11, it would also be 180.
+I think it's block-level alignment (for the most part).
+---
+not going to overthink this. It's good enough. moving on.
+
+@13:28 updating timelogs #timelog:00:03:35
+
+@13:32 what's next? ramblings. #timelog:00:26:44
+#! dz thoughts/projects/sonilo/tasks/zero_page
+I've just gotten the zero page set up with the block stack.
+---
+According to my notes, bitset + block stack should probably
+happen next.
+---
+I used to have a "bw" that would convert a BBB.II word
+into a word address based on block and offset. I don't think
+that can work anymore.
+---
+The bottom line is: can the zero page still be used to generate
+the complex data structure needed for the buddy slot?
+---
+It doesn't seem like I have a concrete answer for this
+written down anywhere.
+
+@14:37 what precisely do I need to initialize the buddy slot allocator? #timelog:00:13:39
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+It needs to allocate blocks when needed and put them in
+the bitset. That's one 32-bit word as it turns out.
+---
+That might be it for initialization.
+---
+If I'm doing the math correctly: a block can house 6 instances
+of a buddy allocator (10 words each), 3 words are needed
+to construct the args needed to call a single buddy allocator.
+1 word is left to store the address of the bitset/blockstack
+combo.
+---
+0-59: buddy slots. 60: address of block stack. 61-63: space
+to dynamically fill out buddy slots.
+
+@15:32 'bw' and 'gb' need to be fixed #timelog:00:03:09
+#! dz thoughts/projects/sonilo/tasks/fix_block_navigation
+bw: is helpful function that needs to be either removed
+or reworked. It needs to factor in the cursor position,
+which will contain the address of the block stack.
+---
+gb: goto block. this should eventually be reworked to use
+the 'bm' word like so: '#01 bm go'.
+---
+I'm only using it in tests for now, so nothing is
+going to fall apart. I just can't use them anymore and I should
+be fine. Deprecated.
+
+@15:43 implementing jumps (jf and jb) #timelog:00:18:36
+#! dz thoughts/projects/sonilo/tasks/zero_page
+The thinking I have here is that 'jf' and 'jb' will be
+used to do local jumps forward/backward relative to the
+current cursor position. It'll treat the word register
+like a stack and read the last 2 nibbles as an offset.

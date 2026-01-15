@@ -58,6 +58,10 @@
 \smallskip
 \noindent 11 parallelism and instructions synchronization \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node24}
 \smallskip
+\noindent 12 translating and starting a program \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node25}
+\smallskip
+\noindent 13 C sort \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node26}
+\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont news}\medskip
@@ -211,6 +215,39 @@ addressing, addressing modes, J-instruction format type, PC-relative jumping, 32
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:12: COAD 2.11 reading}\smallskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:38: finish up 2.11}\smallskip
 primitives for building simple locks for parallel execution. one implementation uses atomic change/swap. another uses pair of instructions, with second checking if the two instructions were done effectively "atomically". MIPS does it the two-instruction way.
+\par
+
+\xrdef{node25}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 12 translating and starting a program}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-11}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:06: 2.12: translating and starting a program}\smallskip
+4 steps to translating a C program to program running on computer: compiler, assembler, linker, loader.
+\par
+
+focused in on compilers, assemblers, linkers. loaders was not looked at.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-12}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:25: 2.12 loaders, continued}\smallskip
+studied linking example, examined 6 steps of the traditional loader: read, create address space, copy, init regs, jump to start up routine and call main and then exit. dynamically linked libraries.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:27: wrap-up 2.12, some 2.13}\smallskip
+2.12: last section here talked about Java, JRE. Also some mentioning of a JIT in the context of the JRE to speed up hotspots. I skimmed this one mostly.
+\par
+
+2.13: this chapter outlines a procedure for producing MIPS code from a C function. Swap is the first example, then sort, which build off of swap.
+\par
+
+\xrdef{node26}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 13 C sort}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:27: wrap-up 2.12, some 2.13}\smallskip
+2.12: last section here talked about Java, JRE. Also some mentioning of a JIT in the context of the JRE to speed up hotspots. I skimmed this one mostly.
+\par
+
+2.13: this chapter outlines a procedure for producing MIPS code from a C function. Swap is the first example, then sort, which build off of swap.
 \par
 
 \bye

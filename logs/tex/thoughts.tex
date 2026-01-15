@@ -828,6 +828,21 @@ making a task for this.
 Apparently, my zero page unit tests are breaking because the blocklist is broken, so that component is getting rewritten. Not much more to say right now.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-15}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:35: zero page test fixes}\smallskip
+trying to remember where I left off
+\par
+
+distracted by docgen.
+\par
+
+almost second guessing my block-to-memory calculations. If my blocklist starts at address 0x10, the first block is going to be at 0x180 because 0x10 is in the first five blocks. You're If the blocklist was stored in 0x11, it would also be 180. I think it's block-level alignment (for the most part).
+\par
+
+not going to overthink this. It's good enough. moving on.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:32: what's next?}\smallskip
 \xrdef{node16}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blockstack improvements}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-18}\medskip
@@ -979,6 +994,58 @@ Tests pass on the first try. Luck? Did I do it right?
 I don't think I'm able to read/write a single bit, or anything that falls within one word.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:24: refactoring the blockstack}\smallskip
+refreshing myself on the current blockstack implementation. I'm pretty sure it's a linked list in an array sort of deal already. There must be a specific slot with the head of the list as well.
+\par
+
+Yup. It's a linked-list-in-an-array sort of deal. Let's call this array $L$, with element $n$ of the array being referred to as $L_n$. $L_0$ is the first item of the array, and it contains the address of the head of the list, $h$ initialized $h = 0$ (null). Then, the list gets initialized in the following way: $L_i \leftarrow h, h \leftarrow i$ for all $1 \le i \le 2^10$. So for $L_i = x$, $i$ refers to the address of the node if it's greater than 0 (with 0 being the head), and the value points to the next value in the linked list.
+\par
+
+I'm going to keep the addressing scheme the same with 0 being NULL. This leaves 1023 blocks max. Probably an okay limitation? Down the line, I'll want to have an externally managed chunk of memory that's 1024 blocks. I lose a block with this limitation.
+\par
+
+Writing out local "array 10" routines, for 10 bit arrays using the bit array routines I made.
+\par
+
+setting up the init/push/pop routines. seeing what fails, if there's failure.
+\par
+
+the tests are now failing in ways I understand. only the blocklist test is affected, and it has to do with the off-by-one addressing. I could fix the issue by changing the test values and be done with it, but I'm left wondering: should I change the address ordering to be ascending instead of descending? That would mean that no matter the size, the first element is 1 instead of 1023 or 1024.
+\par
+
+I was getting a weird return value of "3FF" from the original test. this is happening because I'm doing error checking, and the register isn't being overwritten. I do not have an error flag set up in place.
+\par
+
+Weird bug related to freeing blocks, a push operation. I'm doing a check to make sure the block isn't already free, which is to check to see if the node points to null (0) or not. A value that doesn't point to null is assumed to be in the list. When I made things initialized in reverse order (prev?), the last item (1013) points to 0, which I believe is correct. So, I might mark things popped off the list  as $L_i \leftarrow i$, which I believe works.
+\par
+
+tests refactored to work as expected. First item popped is 1. this all makes sense to me.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:13: I think I'm done? double checking my notes}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:15: Not done yet. address mapping is still needed}\smallskip
+A block returned from this blocklist needs to be converted to an address in memory somehow. An address like {\tt 100.0F} should also work to, used to indicate at block {\tt 100} (256) plus word offset {\tt 0F} (15).
+\par
+
+Will think on the best approach for implementing.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-15}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:41: address conversion}\smallskip
+silly concerns: are 'bm' and 'mb' taken? That's block index to memory and memory to block.
+\par
+
+nice! okay those are the words.
+\par
+
+I messed up the test case. I need to multiply to get the memory address and THEN apply the bias.
+\par
+
+it all works now. tedious to get the tests right. might have to do with my ed workflow. it's still not quite as smooth as my established vim workflow
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:31: I think we are done}\smallskip
 \xrdef{node17}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ink}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-21}\medskip

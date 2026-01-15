@@ -1,4 +1,4 @@
-thoughts/projects/sonilo/tasks/blockstack_improvements:0:TODO:1
+thoughts/projects/sonilo/tasks/blockstack_improvements:0:DONE:1
 thoughts/projects/sonilo/tasks/buddy_system:5:DONE:1
 thoughts/projects/sonilo/tasks/docgen:10:DONE:1
 thoughts/projects/sonilo/tasks/ilo_interpreter:16:TODO:1

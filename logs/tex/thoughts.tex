@@ -46,6 +46,8 @@
 \smallskip
 \noindent docgen \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node13}
 \smallskip
+\noindent fix block navigation \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node28}
+\smallskip
 \noindent ilo interpreter \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node4}
 \smallskip
 \noindent initial dsp \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node9}
@@ -513,6 +515,14 @@ I've been wondering if maybe I should just get my silly test language working as
 I'm still somewhat optimistic about working with Konilo. I think I may want to build an SDL backend for Konilo at some point to allow for primitive drawing (1-bit stuff only).
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-16}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:26: test suite as prototype for command language?}\smallskip
+More and more, it's looking like this test suite language is acting like a rough draft for what the command language will look like.
+\par
+
+I think the one 32-bit register idea is quirky, but it acts as a good focus point for design. I think I'd probably built out more general purpose operations that work on that register, doing things equivalent to stack operations you'd find in a forth.
+\par
+
 \xrdef{node8}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont phasor}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
@@ -727,6 +737,45 @@ It needs to be able to allocate new blocks when needed. So, that requires the bl
 still blocked. this is a more complex function made up smaller parts (a sonilo first), so some more complex components are needed (a zero page).
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-15}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:37: what precisely do I need to initialize the buddy slot allocator?}\smallskip
+It needs to allocate blocks when needed and put them in the bitset. That's one 32-bit word as it turns out.
+\par
+
+That might be it for initialization.
+\par
+
+If I'm doing the math correctly: a block can house 6 instances of a buddy allocator (10 words each), 3 words are needed to construct the args needed to call a single buddy allocator. 1 word is left to store the address of the bitset/blockstack combo.
+\par
+
+0-59: buddy slots. 60: address of block stack. 61-63: space to dynamically fill out buddy slots.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:32: brainstorm: buddyslots function composition (part 1)}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:22: brainstorm: buddyslots function composition}\smallskip
+The main idea here was to imagine a interface for buddy slots that can somehow use the existing functions in my test suite for allocation (it's looking like my sonilo command language will closely resemble this).
+\par
+
+I'll have to look at what goes into freeing things, as that may require tracking the k size.
+\par
+
+Once again, there's the matter of address space mapping. This time, it's mapping the addresses returned by the buddy allocator (relative word indices 0-63) to words in memory. With the buddy slot system, there'd need to be a way to differentiate between which instance of the buddy system the index belongs to.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-16}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:57: re-examining buddy system API for buddy slots design}\smallskip
+The buddy system uses a stack that is instantiated, which is actually good news. It should be a straightforward thing to create new operations that work with the existing operations.
+\par
+
+For example, say the buddy system data is stored at address {\tt 0x123}. To allocate 4 words, $k = 2$, and the memwrite code would look like {\tt \#2 aa \#123 aa ma}. One could build an operation called {\tt ss} that selects a slot and generates data for the buddy allocator to read, which then can be pushed onto the stack. So, using the allocator with the buddy system could look something like: {\tt \#2 aa sc \#0 ss sc aa ma}. Here, the two cursors are used to jump between the stack and the buddy slot data.
+\par
+
+The alt cursor might need to be reserved for the zero page, and the main cursor would be used for the stack. In such a situation, perhaps the address of the buddy slot is stored in the word slot 2 of the zero page. Swap to the zero page, read the slot (jump forward 2, read, jump backward 2), swap to the stack, push the value onto the stack. It could look like this: {\tt \#2 sc \#0 aa \#2 jf rd \#2 jb sc aa ss aa ma}. In this situation, {\tt ss} uses the stack entirely for both the address of the buddy slots and which slot to select.
+\par
+
+The stack usage of latter approach with {\tt ss} is more consistent with with the design {\tt ma}, so I'm going to go with that.
+\par
+
 \xrdef{node15}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont zero page}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-16}\medskip
@@ -842,7 +891,46 @@ almost second guessing my block-to-memory calculations. If my blocklist starts a
 not going to overthink this. It's good enough. moving on.
 \par
 
-{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:32: what's next?}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:32: what's next? ramblings.}\smallskip
+I've just gotten the zero page set up with the block stack.
+\par
+
+According to my notes, bitset + block stack should probably happen next.
+\par
+
+I used to have a "bw" that would convert a BBB.II word into a word address based on block and offset. I don't think that can work anymore.
+\par
+
+The bottom line is: can the zero page still be used to generate the complex data structure needed for the buddy slot?
+\par
+
+It doesn't seem like I have a concrete answer for this written down anywhere.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:43: implementing jumps (jf and jb)}\smallskip
+The thinking I have here is that 'jf' and 'jb' will be used to do local jumps forward/backward relative to the current cursor position. It'll treat the word register like a stack and read the last 2 nibbles as an offset.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:26: working on 'sc'}\smallskip
+I have run into a weird printing issue. troubleshooting.
+\par
+
+OH! forgot to start the comment. It was just parsing all those characters like a program I think.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:51: pack addresses ('pa', formerly 'aa')}\smallskip
+This sort of thing is needed to merge the bitset and the global blocklist addresses into one word. I was going to use 'aa', but that's already taken (array append).
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:05: 'sn' get number of elems for set}\smallskip
+I forget why I needed this one. Probably testing? I'll do it anyways.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:19: 'bb' allocate and mark block}\smallskip
+Note to self: block address space is 1-1023 inclusive. 0 is not used. the bitset can include 0, but that's being reserved to make the linked list logic run smoother.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:45: I think I have it all done. this zero page work is complete.}\smallskip
 \xrdef{node16}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blockstack improvements}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-18}\medskip
@@ -999,7 +1087,7 @@ I don't think I'm able to read/write a single bit, or anything that falls within
 refreshing myself on the current blockstack implementation. I'm pretty sure it's a linked list in an array sort of deal already. There must be a specific slot with the head of the list as well.
 \par
 
-Yup. It's a linked-list-in-an-array sort of deal. Let's call this array $L$, with element $n$ of the array being referred to as $L_n$. $L_0$ is the first item of the array, and it contains the address of the head of the list, $h$ initialized $h = 0$ (null). Then, the list gets initialized in the following way: $L_i \leftarrow h, h \leftarrow i$ for all $1 \le i \le 2^10$. So for $L_i = x$, $i$ refers to the address of the node if it's greater than 0 (with 0 being the head), and the value points to the next value in the linked list.
+Yup. It's a linked-list-in-an-array sort of deal. Let's call this array $L$, with element $n$ of the array being referred to as $L_n$. $L_0$ is the first item of the array, and it contains the address of the head of the list, $h$ initialized $h = 0$ (null). Then, the list gets initialized in the following way: $L_i \leftarrow h, h \leftarrow i$ for all $1 \le i \le 2^{10}$. So for $L_i = x$, $i$ refers to the address of the node if it's greater than 0 (with 0 being the head), and the value points to the next value in the linked list.
 \par
 
 I'm going to keep the addressing scheme the same with 0 being NULL. This leaves 1023 blocks max. Probably an okay limitation? Down the line, I'll want to have an externally managed chunk of memory that's 1024 blocks. I lose a block with this limitation.
@@ -1046,6 +1134,26 @@ it all works now. tedious to get the tests right. might have to do with my ed wo
 \par
 
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:31: I think we are done}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-16}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:27: I think my offset calculations are wrong, nitty gritty details of memory addressing}\smallskip
+At the very least, I believe there is an off by 1 error because block ids returned start at 1. Say the blocklist starts at zero. That's 5 blocks, or 320 words. block 1 should be at position 320, or 140. What is being returned right now is 0x180. a 0x40 difference means a block is being skipped due to the off by one. solution is subtract 1 from the block id before computing.
+\par
+
+This change makes it explicit so that addresses returned by the blockstack are 1-indexed and can never return 0.
+\par
+
+alternatively, maybe the blockstack can return zero-indexed values that are referenced by adding 1 to them. I'll have to think on this.
+\par
+
+second issue I'm going to double check are block bounds, something I think I was rambling about yesterday. If the blocklist starts at 0x00, the address of the first block should be 0x140. if the address is instead at 0x01, what should the address be at? Relatively speaking, the list take 5 blocks, but block addresses are always memory aligned. When the blocklist starts at 0x00, it begins at block 0 and ends at block 4. When the blocklist starts at 0x01, most of it is contained between blocks 0 and 4, but the last word spills out into block 5, thus containing 6 blocks. So, if blocks are memory-aligned, the address of the first usable block would skip block 5 (0x140) and go onto block 6 (0x180).
+\par
+
+At the time of writing, {\tt \#0 go \#1 bmpr } and {\tt \#1 go \#1 bmpr } both print the same value, which seems incorrect to me.
+\par
+
+Surprised with how precise I have to be about this and how easy it is to mess things up.
+\par
+
 \xrdef{node17}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ink}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-21}\medskip
@@ -1382,6 +1490,19 @@ Musing possible approaches to improving the path drawing logic. in the vectorize
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-11}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:23: everything is a gesture}\smallskip
 Thinking ahead about high-level concepts. This music environment I want to make is going to involve the concept of Gesture, so what would happen if I go to an extreme and make everything a Gesture. Gesture as a core primitive. Composing with gesture.
+\par
+
+\xrdef{node28}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont fix block navigation}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-15}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:32: 'bw' and 'gb' need to be fixed}\smallskip
+bw: is helpful function that needs to be either removed or reworked. It needs to factor in the cursor position, which will contain the address of the block stack.
+\par
+
+gb: goto block. this should eventually be reworked to use the 'bm' word like so: {\tt \#01 bm go}.
+\par
+
+I'm only using it in tests for now, so nothing is going to fall apart. I just can't use them anymore and I should be fine. Deprecated.
 \par
 
 \bye

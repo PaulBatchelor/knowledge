@@ -2,8 +2,7 @@
 
 @10:38 setting up an initial "figure" script
 I need to establish a precedent for transcribing these
-graphs. maybe call them "figures" to disambiguate from
-the other graphs here.
+graphs. maybe call them "figures" to disambiguate from the other graphs here.
 
 @11:06 attempting to transribe ink 04v #ink:04v
 Last night, I took some time rewriting a few graphs,
@@ -604,7 +603,7 @@ referred to as $L_n$. $L_0$ is the first item of the array,
 and it contains the address of the head of the list, $h$
 initialized $h = 0$ (null). Then, the list gets initialized
 in the following way: $L_i \leftarrow h, h \leftarrow i$ for
-all $1 \le i \le 2^10$. So for $L_i = x$, $i$ refers to
+all $1 \le i \le 2^{10}$. So for $L_i = x$, $i$ refers to
 the address of the node if it's greater than 0 (with 0 being
 the head), and the value points to the next value in the
 linked list.
@@ -745,7 +744,7 @@ or reworked. It needs to factor in the cursor position,
 which will contain the address of the block stack.
 ---
 gb: goto block. this should eventually be reworked to use
-the 'bm' word like so: '#01 bm go'.
+the 'bm' word like so: {\tt \#01 bm go}.
 ---
 I'm only using it in tests for now, so nothing is
 going to fall apart. I just can't use them anymore and I should
@@ -785,7 +784,7 @@ reserved to make the linked list logic run smoother.
 @17:45 I think I have it all done. this zero page work is complete.
 #! dz $
 
-@19:32 brainstorm: buddyslots function composition (initial setup) #timelog:00:07:20 #ink:06t
+@19:32 brainstorm: buddyslots function composition (part 1) #timelog:00:07:20 #ink:06t
 #! dz thoughts/projects/sonilo/tasks/buddy_slots
 
 @21:22 brainstorm: buddyslots function composition #timelog:00:25:24 #ink:06t
@@ -819,3 +818,75 @@ acts as a good focus point for design. I think I'd probably
 built out more general purpose operations that work on that
 register, doing things equivalent to stack operations you'd
 find in a forth.
+
+@10:27 I think my offset calculations are wrong, nitty gritty details of memory addressing #timelog:00:28:24
+#! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+At the very least, I believe there is an off by 1 error because
+block ids returned start at 1. Say the blocklist starts
+at zero. That's 5 blocks, or 320 words. block 1 should be
+at position 320, or 140. What is being returned right now
+is 0x180. a 0x40 difference means a block is being skipped
+due to the off by one. solution is subtract 1 from the block
+id before computing.
+---
+This change makes it explicit so that addresses returned
+by the blockstack are 1-indexed and can never return 0.
+---
+alternatively, maybe the blockstack can return zero-indexed
+values that are referenced by adding 1 to them. I'll have
+to think on this.
+---
+second issue I'm going to double check are block bounds, something
+I think I was rambling about yesterday.
+If the blocklist starts at 0x00, the address of
+the first block should be 0x140. if the address is instead
+at 0x01, what should the address be at? Relatively speaking,
+the list take 5 blocks, but block addresses are always memory
+aligned. When the blocklist starts at 0x00, it begins at
+block 0 and ends at block 4. When the blocklist starts at
+0x01, most of it is contained between blocks 0 and 4, but
+the last word spills out into block 5, thus containing 6
+blocks. So, if blocks are memory-aligned,
+the address of the first usable block would skip block 5
+(0x140) and go onto block 6 (0x180).
+---
+At the time of writing, {\tt \#0 go \#1 bmpr } and
+{\tt \#1 go \#1 bmpr } both print the same value, which
+seems incorrect to me.
+---
+Surprised with how precise I have to be about this and
+how easy it is to mess things up.
+
+@10:57 re-examining buddy system API for buddy slots design #timelog:00:26:07
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+The buddy system uses a stack that is instantiated,
+which is actually good news. It should be a straightforward
+thing to create new operations that work with the existing
+operations.
+---
+For example, say the buddy system data is
+stored at address {\tt 0x123}. To allocate 4 words,
+$k = 2$, and the memwrite code would look like
+{\tt \#2 aa \#123 aa ma}. One could build an operation called
+{\tt ss} that selects a slot and generates data for the
+buddy allocator to read, which then can
+be pushed onto the stack. So, using the allocator with
+the buddy system could
+look something like: {\tt \#2 aa sc \#0 ss sc aa ma}. Here,
+the two cursors are used to jump between the stack and the
+buddy slot data.
+---
+The alt cursor might need to be reserved for the zero page,
+and the main cursor would be used for the stack.
+In such a situation, perhaps the address of the buddy slot
+is stored in the word slot 2 of the zero page. Swap to
+the zero page, read the slot (jump forward 2, read, jump
+backward 2), swap to the stack, push the value onto the
+stack. It could look like this:
+{\tt \#2 sc \#0 aa \#2 jf rd \#2 jb sc aa ss aa ma}. In this
+situation, {\tt ss} uses the stack entirely for both the
+address of the buddy slots and which slot to select.
+---
+The stack usage of latter approach with {\tt ss} is more
+consistent with with the design {\tt ma}, so I'm going
+to go with that.

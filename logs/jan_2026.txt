@@ -784,3 +784,38 @@ reserved to make the linked list logic run smoother.
 
 @17:45 I think I have it all done. this zero page work is complete.
 #! dz $
+
+@19:32 brainstorm: buddyslots function composition (initial setup) #timelog:00:07:20 #ink:06t
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+
+@21:22 brainstorm: buddyslots function composition #timelog:00:25:24 #ink:06t
+#! dz $
+The main idea here was to imagine a interface for buddy slots
+that can somehow use the existing functions in my test suite
+for allocation (it's looking like my sonilo command language
+will closely resemble this).
+---
+I'll have to look at what goes into freeing things, as
+that may require tracking the k size.
+---
+Once again, there's the matter of address space mapping.
+This time, it's mapping the addresses returned by the
+buddy allocator (relative word indices 0-63) to words
+in memory. With the buddy slot system, there'd need to
+be a way to differentiate between which instance of the buddy
+system the index belongs to.
+
+@2026-01-16 Day 138
+@09:22 logging in, updating timelogs #timelog:00:11:25
+
+@09:26 test suite as prototype for command language?
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+More and more, it's looking like this test suite language
+is acting like a rough draft for what the command language
+will look like.
+---
+I think the one 32-bit register idea is quirky, but it
+acts as a good focus point for design. I think I'd probably
+built out more general purpose operations that work on that
+register, doing things equivalent to stack operations you'd
+find in a forth.

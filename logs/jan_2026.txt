@@ -924,3 +924,60 @@ paths, bit strings, subsets. Left off at notation.
 
 @10:51 2.15 is an online "advanced" chapter, skipping
 #! dz coad/toc/02_instructions_language_of_the_computer/15_advanced_material_compiling_c_and_interpreting_java
+
+@11:02 I wonder if I can get musitex working with plain tex #timelog:00:22:46
+If I'm going to be studying palestrina, I'm going to need
+to work with music notation.
+---
+Learning: there is musitex, which is deprecated,
+and then there is now musixtex. neither of these seem
+to be things I can easily install on my system.
+---
+I'm going with the older package first. it has "shortcomings",
+but it looks simpler maybe?
+---
+got tex to load musitex. the examples did not work. I suspect
+it may be expecting latex.
+---
+musitex seems to be a dead end.
+
+@11:25 trying to compile lilypond from source for alpine #timelog:00:09:#0
+./configure
+---
+missing 'bdw-gc'. installed 'gc-dev'.
+---
+missing 'pangoft2'. adding 'pango-dev'.
+---
+warning: please install extractpdfmark and dblatex. error:
+flexlexer.h (flex package).
+---
+added 'flex-dev'
+---
+needs 'guile-dev'. adding.
+---
+more packages now: fontforge-dev, t1asm (???), texinfo,
+---
+pulling out. too many packages. also, I found that alpine
+has a music package that includes musixtex, so that seems
+promising.
+
+@11:35 render a small example using musixtex #timelog:00:44:00
+it needs texlua. ugh.
+---
+okay. some success getting things to work with TeX. claude
+is generating some example code. The trivial example works
+fine. I'm getting issues getting it to build me a document
+with multiple figures (using ecclesiastical scales as
+an example).
+---
+I am getting a "Division by zero ! Ask a wizard !" error.
+---
+Couldn't get past this one. Guess I'll need to do some
+real reading for this.
+---
+Bach didn't have mechanical typesetting. Palestrina didn't
+have it. How did they write music down?
+---
+Conclusion: notation is going to have to wait. But, the
+issue of getting note information (minus layout display
+info) into a computer might be feasible.

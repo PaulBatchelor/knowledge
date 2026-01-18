@@ -821,6 +821,7 @@ find in a forth.
 
 @10:27 I think my offset calculations are wrong, nitty gritty details of memory addressing #timelog:00:28:24
 #! dz thoughts/projects/sonilo/tasks/blockstack_improvements
+#! dz thoughts/projects/sonilo/tasks/fix_block_navigation
 At the very least, I believe there is an off by 1 error because
 block ids returned start at 1. Say the blocklist starts
 at zero. That's 5 blocks, or 320 words. block 1 should be
@@ -981,3 +982,16 @@ have it. How did they write music down?
 Conclusion: notation is going to have to wait. But, the
 issue of getting note information (minus layout display
 info) into a computer might be feasible.
+
+@20:36 buddy slot system: append and selection operations #timelog:01:22:03
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+The bottoms-up thing would be to implement a 'buddy
+slot select' operation, {\tt ss}. In order to select
+a slot, a the slots need to be initialized {\tt sm} (slots make)
+and a slot needs to be appended to {\tt sx} (slot extend).
+---
+These should all use a stack, and the stack should be allocated
+by the zero page.
+---
+I got as far as setting up a stack. exhausting work. I forgot
+about the trick of not including '\#' for jf/jb commands.

@@ -983,6 +983,24 @@ Conclusion: notation is going to have to wait. But, the
 issue of getting note information (minus layout display
 info) into a computer might be feasible.
 
+@14:11 wrap up 3.1.1, work on 3.1.2 #timelog:00:29:44
+#! dz dmoi/toc/03_counting/01_pascals_arithmetical_triangle
+#! dz csmet/cs342/hw11
+Notation: "n choose k" are coordinates of pascal's triangle,
+row n column k. integer lattice, lattice path. using
+pascal's triangle to find number of lattice paths between
+two points. This was actually the dynamic programming assignment
+I did for cs342 "minCostPath".
+
+@15:09 2.16: ARMv7 (32-bit) #timelog:00:49:06
+#! dz coad/toc/02_instructions_language_of_the_computer/16_armv7_instructions
+Overview of ARMv7 in the context of MIPS. the conditional
+instructions were weird to me, but it seems the end
+goal of the complexity is to reduce size (for conditinally
+executing one instruction). 12-bit addressing scheme
+also seem very convoluted to me. The authors writing this
+book also seemed skeptical too.
+
 @20:36 buddy slot system: append and selection operations #timelog:01:22:03
 #! dz thoughts/projects/sonilo/tasks/buddy_slots
 The bottoms-up thing would be to implement a 'buddy
@@ -995,3 +1013,71 @@ by the zero page.
 ---
 I got as far as setting up a stack. exhausting work. I forgot
 about the trick of not including '\#' for jf/jb commands.
+
+@2026-01-18 Day 140
+@09:58 updating logs #timelog:00:11:07
+
+@10:10 review: I might be able to start this #timelog:00:45:38
+#! dz thoughts/projects/sonilo/tasks/ugen_bytecode
+There's a buddy allocator that works on a block of memory
+that works as far as I can tell, and that might be enough
+to jump into things.
+---
+Uh oh, where did I write this down.
+---
+Oh it was in the ilo interpreter task.
+---
+I was more vague about this than I'd like. A similar
+packing format to Ilo, except that there'd be 4-bit opcodes
+instead of 8-bit opcodes, packing up to 8 instructions in
+a single word. Similar to Ilom, the instructions would be
+able to move the program counter to read words.
+---
+I think I was initially thinking there'd be stack operations
+to push/pop parameters. But, now I'm wondering if I just
+want to just emulate the patchwerk/graforge setup I had.
+In that setup, the structure was a list of nodes, with all
+the memory locations baked in.
+---
+What does a command language look like for a list of
+nodes?
+---
+A node has data, which is stored in an address,
+and it has some kind of opcode which processes that data.
+Memory is a 16-bit address, so an opcode lookup id
+can be 16 bits to make both fit on a single word. A-Z
+fits in 5 bits with 6 extra spaces to spare, so 16 bits
+gives 3 letters with an extra bit. alphanumeric would be
+nice. but 6-bit gives us 2 letters. some kind of custom
+base 36 radix format could possibly yield 3. maybe base 26
+could yield 4 letters. But, if the opcode IDs were arbitrary,
+that's still a lot of unit generators.
+---
+Blocks might still be present here (maybe they get abstracted
+away?) But if they aren't, jump instructions will be needed
+to leap from block to block. Gosh, that sounds messy.
+I think I'm going to want some kind of virtual array for this.
+I already came up with a scheme for this way back in september.
+---
+This could get reduced even further: no VM, just data. One
+word is a node. A block contains up to 64 nodes. A command
+could be written to execute the word register containing
+the opcode id and the data. It could write stuff to memory
+and the word register.
+---
+The nice thing about having a command like that is that
+instruction fetching could be "upgraded" to read from a
+different data structure other than a raw block.
+---
+Running a single instruction is one thing, but what about
+a block of instructions? What if I want to run that block
+many many times (as is the case with DSP blocks)? I need
+loops, and this test program isn't the right place for that.
+Konilo/Sonilo could make some sense too. But I think I'll
+end up coding something up in C.
+---
+the data/opcode paradigm feels pretty solid. But, I'll need
+a way to build up that data. That becomes thew new challenge.
+But certainly it would be trivial to make a simple opcode
+that reads in data and adds 1 to it or something. That would
+be enough to get a general system in place.

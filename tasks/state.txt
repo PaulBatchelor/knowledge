@@ -98,9 +98,9 @@ coad/toc/02_instructions_language_of_the_computer/12_translating_and_starting_a_
 coad/toc/02_instructions_language_of_the_computer/13_C_sort:46:DONE:4
 coad/toc/02_instructions_language_of_the_computer/14_arrays_vs_pointers:47:DONE:4
 coad/toc/02_instructions_language_of_the_computer/15_advanced_material_compiling_c_and_interpreting_java:49:DONE:4
-coad/toc/02_instructions_language_of_the_computer/16_armv7_instructions:51:TODO:4
-coad/toc/02_instructions_language_of_the_computer/17_armv8_instructions:52:TODO:4
-coad/toc/02_instructions_language_of_the_computer/18_riscv_instructions:54:TODO:4
+coad/toc/02_instructions_language_of_the_computer/16_armv7_instructions:51:DONE:4
+coad/toc/02_instructions_language_of_the_computer/17_armv8_instructions:52:DONE:4
+coad/toc/02_instructions_language_of_the_computer/18_riscv_instructions:54:DONE:4
 coad/toc/02_instructions_language_of_the_computer/19_x86_instructions:56:TODO:4
 coad/toc/02_instructions_language_of_the_computer/20_matrix_multiply_c:57:TODO:4
 coad/toc/02_instructions_language_of_the_computer/21_fallacies_pitfalls:59:TODO:4

@@ -1135,3 +1135,54 @@ how to ask about counting problems? asking for number
 of elements in set of outcomes. how to combine outcomes?
 combine the set of outcomes or combine the outcomes in
 the sets.
+
+@2026-01-20 Day 142. First day of calculus 1.
+
+@16:54 MA123 note re-writing #timelog:00:33:21
+#! dz bu/ma123/notes
+Still trying to figure out a workflow for this class, but
+I found myself wanting to take my scribbles in class and
+rewrite them using my knowledge graph format.
+
+@2026-01-21 Day 143.
+
+@13:00 COAD 2.19 wrap-up
+#! dz coad/toc/02_instructions_language_of_the_computer/19_x86_instructions
+8086 prefixes. integer operator classes. x86 instruction
+encoding.
+---
+These authors *really* do not like x86, and are not shy about
+saying how terrible they think it is. It's a little jarring,
+seeing this kind of writing. I see this a lot in CS textbooks.
+Very strong opinions written in this very biased emotional
+tone about how terrible things are. It mirrors the Linux Torvalds.
+It's not helpful rhetoric, and it comes off as unprofessional
+and sloppy. The bar is so slow for CS textbooks. Math textbooks
+have a better tone.
+
+@13:28 GRE prep #timelog:00:42:11
+
+@14:40 DMOI 3.2.3: sum/product principles #timelog:00:16:20
+#! dz dmoi/toc/03_counting/02_combining_outcomes
+sum principle, "subtraction principle", multiple events,
+multiplication leads to product principle. outcomes in
+product principle as trees with outcomes
+as levels, leaves of trees outcome. using product
+principle to define sets of outcomes that first need
+to be counted carefully
+---
+a fair bit of example problems to study here.
+
+@15:15 More 3.2.3 #timelog:00:28:37
+#! dz $
+
+@16:00 GRE prep #timelog:00:08:22
+
+@2026-01-22 Day 144
+
+@09:36 logging and tasks #timelog:00:24:35
+I am more days behind than I thought. Here we go...
+
+@10:02 doubling DMOI days
+#! dz dmoi/news
+This is just going to take a while, apparently

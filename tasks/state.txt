@@ -101,7 +101,7 @@ coad/toc/02_instructions_language_of_the_computer/15_advanced_material_compiling
 coad/toc/02_instructions_language_of_the_computer/16_armv7_instructions:51:DONE:4
 coad/toc/02_instructions_language_of_the_computer/17_armv8_instructions:52:DONE:4
 coad/toc/02_instructions_language_of_the_computer/18_riscv_instructions:54:DONE:4
-coad/toc/02_instructions_language_of_the_computer/19_x86_instructions:56:TODO:4
+coad/toc/02_instructions_language_of_the_computer/19_x86_instructions:56:DONE:4
 coad/toc/02_instructions_language_of_the_computer/20_matrix_multiply_c:57:TODO:4
 coad/toc/02_instructions_language_of_the_computer/21_fallacies_pitfalls:59:TODO:4
 coad/toc/02_instructions_language_of_the_computer/22_concluding_remarks:61:TODO:4

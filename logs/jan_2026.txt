@@ -1191,3 +1191,11 @@ Now set to 250 days.
 
 @10:10 increasing COAD days to be 250
 #! dz coad/news
+
+@10:13 stretching sonilo task days
+#! dz thoughts/projects/sonilo
+We're 67 days behind now.
+---
+Well, now it says end of july things might be done. Not
+gonna happen probably. I just kinda need this memory stuff
+to be behind me.

@@ -1,8 +1,8 @@
 # updates the tasks for sonilo
-# run at the top-level: ./run init.txt < sonilo/update
+# run at the top-level: ./run init.txt < sonilo/update.txt
 gr 0
 up sonilo/tasks.txt
-ds 180
+ds 280
 gc
 sr
 w

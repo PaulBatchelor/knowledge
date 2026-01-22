@@ -2,7 +2,7 @@
 # run at the top-level: ./run init.txt < coad/update.txt
 gr 2
 up coad/tasks.txt
-ds 180
+ds 250
 gc
 sr
 w

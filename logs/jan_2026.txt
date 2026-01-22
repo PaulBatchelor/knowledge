@@ -1183,8 +1183,11 @@ a fair bit of example problems to study here.
 @09:36 logging and tasks #timelog:00:24:35
 I am more days behind than I thought. Here we go...
 
-@10:02 doubling DMOI days
+@10:02 increasing DMOI days #timelog:00:07:00
 #! dz dmoi/news
 This is just going to take a while, apparently
 ---
 Now set to 250 days.
+
+@10:10 increasing COAD days to be 250
+#! dz coad/news

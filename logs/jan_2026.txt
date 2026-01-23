@@ -1199,3 +1199,31 @@ We're 67 days behind now.
 Well, now it says end of july things might be done. Not
 gonna happen probably. I just kinda need this memory stuff
 to be behind me.
+
+@10:35 3.2.3 continued #timelog:00:22:37
+#! dz dmoi/toc/03_counting/02_combining_outcomes
+product principle generalized to more than 2 events.
+applying product principle to functions (aka "rigoursly
+defined mathematical objects").
+
+@11:18 3.2.3, 3.2.4 #timelog:00:15:30
+#! dz dmoi/toc/03_counting/02_combining_outcomes
+3.2.4: combining principles. case study on red/face
+deck of cards problems. how to set up the outcomes?
+
+@14:00 MA 123 #timelog:01:15:00
+
+@16:50 MA 123 notes transcription #timelog:00:33:13 #ink:07A
+#! dz bu/ma123/notes
+
+@17:37 notes transcription #timelog:00:18:38 #ink:07B
+#! dz $
+
+@18:00 creating the graph #ink:07A #timelog:00:16:23
+#! dz $
+
+@18:17 creating the graph #ink:07B #timelog:00:09:28
+#! dz $
+
+@2026-01-23 Day 145
+@10:20 logging and tasking #timelog:00:10:00

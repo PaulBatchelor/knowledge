@@ -2,7 +2,8 @@
 # run at the top-level: ./run init.txt < sonilo/update.txt
 gr 0
 up sonilo/tasks.txt
-ds 280
+ds 180
+of 30
 gc
 sr
 w

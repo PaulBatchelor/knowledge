@@ -2,7 +2,7 @@
 # run at the top-level: ./run init.txt < dmoi/update.txt
 gr 1
 up dmoi/tasks.txt
-ds 250
+ds 180
 gc
 sr
 w

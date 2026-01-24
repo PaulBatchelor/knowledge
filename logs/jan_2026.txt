@@ -1284,3 +1284,12 @@ Timeline view is very helpful for logs. Worth the 45
 minutes of effort. What it enforces is that logs need
 to be tied to something (a node, a tag, etc)
 in order for it to be meaningfully visible
+
+@11:28 I need a "delay" or "day offset" for tasks #timelog:00:14:29
+Things like DMOI or sonilo just need to get bumped 3 months
+or so because of life. I don't want to change the spread, just
+shift it a ways.
+---
+'do' should be pretty simple to add
+---
+oops. 'do' is done. 'of' instead.

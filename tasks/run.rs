@@ -302,6 +302,11 @@ impl State {
             self.garbage();
         } else if *cmd == "md" {
             println!("{}", self.maxdays());
+        } else if *cmd == "of" {
+            if args.len() >= 2 {
+                let offset = args[1].parse().unwrap_or_else(|_| 0);
+                self.day_offset(offset);
+            }
         } else {
             println!("unknown command: {}", *cmd);
         }
@@ -399,6 +404,13 @@ impl State {
         }
 
         max
+    }
+    pub fn day_offset(&mut self, offset: usize) {
+        for task in &mut self.tasks {
+            if task.active(self.group) {
+                task.day += offset;
+            }
+        }
     }
 }
 

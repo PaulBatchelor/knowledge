@@ -125,6 +125,7 @@ co tasks/zero_page tasks/buddy_slots
 nn tasks/blockstack_improvements
 co tasks/blockstack_improvements tasks/zero_page
 nn tasks/fix_block_navigation
+co tasks/fix_block_navigation tasks/mem
 ln early tools for converting block addresses to word addresses
 ln worked on the assumption of a global block stack address,
 ln which I have changed to be arbitrary.

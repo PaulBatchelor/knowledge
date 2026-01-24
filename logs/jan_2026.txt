@@ -1193,7 +1193,7 @@ Now set to 250 days.
 #! dz coad/news
 
 @10:13 stretching sonilo task days
-#! dz thoughts/projects/sonilo
+#! dz thoughts/projects/sonilo/news
 We're 67 days behind now.
 ---
 Well, now it says end of july things might be done. Not
@@ -1227,3 +1227,40 @@ deck of cards problems. how to set up the outcomes?
 
 @2026-01-23 Day 145
 @10:20 logging and tasking #timelog:00:10:00
+
+@2026-01-24 Day 146. Sonilo Day?
+
+@09:43 sonilo saturdays
+#! dz thoughts/projects/sonilo
+I'm trying to establish a "sonilo saturdays" habit. Where
+I dedicate a good chunk of every saturday developing sonilo
+
+@09:44 logs review. where am I today? #timelog:00:28:27
+#! dz thoughts/projects/sonilo
+Looks like I finished up the zero page stuff.
+---
+I am working on methods to convert outputs from the block
+stack allocator (block id numbers) to word addresses in
+memory (b to m), and back again (m to b).
+---
+I need a chronological view of things in my log output.
+Date, then what things were worked on on that day.
+---
+There's an issue with my block to memory convertors in
+that the memory address returned isn't the smallest value.
+I still need to make an issue for it.
+---
+In sonilo land, I was in the middle of building up
+a test for the 'sm' command or "slot make". This tool
+appends a slot to the buddy slot list.
+---
+The big idea I had last week with regards to the buddy slot
+stuff was to create operations that could interop with the
+existing single-instance buddy system operations.
+---
+I think I also had an idea about returning to the DSP
+bytecode. I think I have enough allocation stuff working
+that I can work on this.
+---
+DSP ugen stuff might be a focus of mine because
+I'm losing momentum with memory allocators.

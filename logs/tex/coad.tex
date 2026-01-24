@@ -66,6 +66,14 @@
 \smallskip
 \noindent 15 advanced material compiling c and interpreting java \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node28}
 \smallskip
+\noindent 16 armv7 instructions \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node29}
+\smallskip
+\noindent 17 armv8 instructions \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node30}
+\smallskip
+\noindent 18 riscv instructions \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node31}
+\smallskip
+\noindent 19 x86 instructions \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node32}
+\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont news}\medskip
@@ -109,6 +117,8 @@ and I have been summoned
 
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-30}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:04: More transcription}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:10: increasing COAD days to be 250}\smallskip
 \xrdef{node1}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont toc}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-02}\medskip
@@ -276,4 +286,49 @@ Arrays vs pointers: I generally understood this from the point of view of a C pr
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 15 advanced material compiling c and interpreting java}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-17}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:51: 2.15 is an online "advanced" chapter, skipping}\smallskip
+\xrdef{node29}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 16 armv7 instructions}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-17}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:09: 2.16: ARMv7 (32-bit)}\smallskip
+Overview of ARMv7 in the context of MIPS. the conditional instructions were weird to me, but it seems the end goal of the complexity is to reduce size (for conditinally executing one instruction). 12-bit addressing scheme also seem very convoluted to me. The authors writing this book also seemed skeptical too.
+\par
+
+\xrdef{node30}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 17 armv8 instructions}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:15: skimmed 2.17 (ARMv8), 2.18 (RiscV), 2.19 x86 instructions}\smallskip
+2.17 and 2.18 were basically article stubs and I didn't think they were worth taking notes on. ARMv8 is a rewrite that does away with the v7 inconsistencies. RISCV is fairly similar to MIPS. x86 builds on top of itself, and is massively complex. The authors clearly do not like it. The focus is on the 80386 instruction set which has the jump to 32-bit in it.
+\par
+
+I'm guessing i386 is equivalent to 80386. at least, that is how I am choosing to remember the numbers in my head.
+\par
+
+\xrdef{node31}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 18 riscv instructions}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:15: skimmed 2.17 (ARMv8), 2.18 (RiscV), 2.19 x86 instructions}\smallskip
+2.17 and 2.18 were basically article stubs and I didn't think they were worth taking notes on. ARMv8 is a rewrite that does away with the v7 inconsistencies. RISCV is fairly similar to MIPS. x86 builds on top of itself, and is massively complex. The authors clearly do not like it. The focus is on the 80386 instruction set which has the jump to 32-bit in it.
+\par
+
+I'm guessing i386 is equivalent to 80386. at least, that is how I am choosing to remember the numbers in my head.
+\par
+
+\xrdef{node32}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 19 x86 instructions}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:15: skimmed 2.17 (ARMv8), 2.18 (RiscV), 2.19 x86 instructions}\smallskip
+2.17 and 2.18 were basically article stubs and I didn't think they were worth taking notes on. ARMv8 is a rewrite that does away with the v7 inconsistencies. RISCV is fairly similar to MIPS. x86 builds on top of itself, and is massively complex. The authors clearly do not like it. The focus is on the 80386 instruction set which has the jump to 32-bit in it.
+\par
+
+I'm guessing i386 is equivalent to 80386. at least, that is how I am choosing to remember the numbers in my head.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-21}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:00: COAD 2.19 wrap-up}\smallskip
+8086 prefixes. integer operator classes. x86 instruction encoding.
+\par
+
+These authors *really* do not like x86, and are not shy about saying how terrible they think it is. It's a little jarring, seeing this kind of writing. I see this a lot in CS textbooks. Very strong opinions written in this very biased emotional tone about how terrible things are. It mirrors the Linux Torvalds. It's not helpful rhetoric, and it comes off as unprofessional and sloppy. The bar is so slow for CS textbooks. Math textbooks have a better tone.
+\par
+
 \bye

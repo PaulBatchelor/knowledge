@@ -102,6 +102,14 @@ I need these tasks to go down, so I'm redistributing the days. I'm disappointed 
 stretching the reading for dmoi so only 2 tasks appear right now the reading takes a while. I am a thorough (read: slow) reader.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:13: stretching sonilo task days}\smallskip
+We're 67 days behind now.
+\par
+
+Well, now it says end of july things might be done. Not gonna happen probably. I just kinda need this memory stuff to be behind me.
+\par
+
 \xrdef{node1}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont tasks}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-10-22}\medskip
@@ -647,6 +655,44 @@ Instead of trying to use ILO, I'm going to make my own format. It will be more c
 The proposed format is also more data than executable code, which is good at this stage.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-18}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:10: review: I might be able to start this}\smallskip
+There's a buddy allocator that works on a block of memory that works as far as I can tell, and that might be enough to jump into things.
+\par
+
+Uh oh, where did I write this down.
+\par
+
+Oh it was in the ilo interpreter task.
+\par
+
+I was more vague about this than I'd like. A similar packing format to Ilo, except that there'd be 4-bit opcodes instead of 8-bit opcodes, packing up to 8 instructions in a single word. Similar to Ilom, the instructions would be able to move the program counter to read words.
+\par
+
+I think I was initially thinking there'd be stack operations to push/pop parameters. But, now I'm wondering if I just want to just emulate the patchwerk/graforge setup I had. In that setup, the structure was a list of nodes, with all the memory locations baked in.
+\par
+
+What does a command language look like for a list of nodes?
+\par
+
+A node has data, which is stored in an address, and it has some kind of opcode which processes that data. Memory is a 16-bit address, so an opcode lookup id can be 16 bits to make both fit on a single word. A-Z fits in 5 bits with 6 extra spaces to spare, so 16 bits gives 3 letters with an extra bit. alphanumeric would be nice. but 6-bit gives us 2 letters. some kind of custom base 36 radix format could possibly yield 3. maybe base 26 could yield 4 letters. But, if the opcode IDs were arbitrary, that's still a lot of unit generators.
+\par
+
+Blocks might still be present here (maybe they get abstracted away?) But if they aren't, jump instructions will be needed to leap from block to block. Gosh, that sounds messy. I think I'm going to want some kind of virtual array for this. I already came up with a scheme for this way back in september.
+\par
+
+This could get reduced even further: no VM, just data. One word is a node. A block contains up to 64 nodes. A command could be written to execute the word register containing the opcode id and the data. It could write stuff to memory and the word register.
+\par
+
+The nice thing about having a command like that is that instruction fetching could be "upgraded" to read from a different data structure other than a raw block.
+\par
+
+Running a single instruction is one thing, but what about a block of instructions? What if I want to run that block many many times (as is the case with DSP blocks)? I need loops, and this test program isn't the right place for that. Konilo/Sonilo could make some sense too. But I think I'll end up coding something up in C.
+\par
+
+the data/opcode paradigm feels pretty solid. But, I'll need a way to build up that data. That becomes thew new challenge. But certainly it would be trivial to make a simple opcode that reads in data and adds 1 to it or something. That would be enough to get a general system in place.
+\par
+
 \xrdef{node12}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont allocator}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
@@ -774,6 +820,17 @@ The alt cursor might need to be reserved for the zero page, and the main cursor 
 \par
 
 The stack usage of latter approach with {\tt ss} is more consistent with with the design {\tt ma}, so I'm going to go with that.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-17}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:36: buddy slot system: append and selection operations}\smallskip
+The bottoms-up thing would be to implement a 'buddy slot select' operation, {\tt ss}. In order to select a slot, a the slots need to be initialized {\tt sm} (slots make) and a slot needs to be appended to {\tt sx} (slot extend).
+\par
+
+These should all use a stack, and the stack should be allocated by the zero page.
+\par
+
+I got as far as setting up a stack. exhausting work. I forgot about the trick of not including '\#' for jf/jb commands.
 \par
 
 \xrdef{node15}
@@ -1503,6 +1560,26 @@ gb: goto block. this should eventually be reworked to use the 'bm' word like so:
 \par
 
 I'm only using it in tests for now, so nothing is going to fall apart. I just can't use them anymore and I should be fine. Deprecated.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-16}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:27: I think my offset calculations are wrong, nitty gritty details of memory addressing}\smallskip
+At the very least, I believe there is an off by 1 error because block ids returned start at 1. Say the blocklist starts at zero. That's 5 blocks, or 320 words. block 1 should be at position 320, or 140. What is being returned right now is 0x180. a 0x40 difference means a block is being skipped due to the off by one. solution is subtract 1 from the block id before computing.
+\par
+
+This change makes it explicit so that addresses returned by the blockstack are 1-indexed and can never return 0.
+\par
+
+alternatively, maybe the blockstack can return zero-indexed values that are referenced by adding 1 to them. I'll have to think on this.
+\par
+
+second issue I'm going to double check are block bounds, something I think I was rambling about yesterday. If the blocklist starts at 0x00, the address of the first block should be 0x140. if the address is instead at 0x01, what should the address be at? Relatively speaking, the list take 5 blocks, but block addresses are always memory aligned. When the blocklist starts at 0x00, it begins at block 0 and ends at block 4. When the blocklist starts at 0x01, most of it is contained between blocks 0 and 4, but the last word spills out into block 5, thus containing 6 blocks. So, if blocks are memory-aligned, the address of the first usable block would skip block 5 (0x140) and go onto block 6 (0x180).
+\par
+
+At the time of writing, {\tt \#0 go \#1 bmpr } and {\tt \#1 go \#1 bmpr } both print the same value, which seems incorrect to me.
+\par
+
+Surprised with how precise I have to be about this and how easy it is to mess things up.
 \par
 
 \bye

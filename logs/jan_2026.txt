@@ -1264,3 +1264,23 @@ that I can work on this.
 ---
 DSP ugen stuff might be a focus of mine because
 I'm losing momentum with memory allocators.
+
+@10:20 logs: group categories by day #timelog:00:43:56
+I need a chronological view that shows day, and then
+the groups logged that day. It's otherwise difficult
+knowing how the project progresses.
+---
+I'm getting a decent chunk of data from the SQL query
+I'm using to generate logs. Going to see if there's enough
+to work with there.
+---
+There is enough. the output returns nodes with a node name
+and entity id. The entity id consists of a day and time,
+which can be trivially parsed to extract just the day.
+The data structure I'd need to create is a sorted hashmap
+with each entry storing a set of node names.
+---
+Timeline view is very helpful for logs. Worth the 45
+minutes of effort. What it enforces is that logs need
+to be tied to something (a node, a tag, etc)
+in order for it to be meaningfully visible

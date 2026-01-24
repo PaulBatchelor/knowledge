@@ -3,33 +3,6 @@ import json
 import sys
 from pprint import pprint
 
-all_input = sys.stdin.read()
-
-obj = json.loads(all_input)
-
-node_list = []
-
-node_objs = {}
-
-for entry in obj:
-    node = entry["node"]
-    if node not in node_objs:
-        node_list.append(node)
-        node_objs[node] = []
-
-    entity_id = entry["entity_id"]
-    date, time = entity_id.split("/")
-    # TODO: try to unwrap this json array before writing to disk
-    content = entry["content"]
-    node_objs[node].append({
-        "title": entry["title"],
-        "date": date,
-        "time": time,
-        "content" : content
-    })
-    # print(node, title)
-# pprint(node_list)
-
 def begin():
     print("\\input eplain")
     print("\\pdfpagewidth=148mm")
@@ -115,47 +88,102 @@ def xref(ref):
 def hpair(a, b):
     return a + " \\leaders\\hbox to 10pt {\\hss.\\hss} " + " \\hfill " + b 
 
+def pgbreak():
+    return "\\vfill \\break"
+
 def toc(nodes, refs):
     for node in sorted(nodes):
         print("\\noindent",hpair(strip(node), xref(refs[node])))
         print("\\smallskip")
-    print("\\vfill \\break")
+    print(pgbreak())
+
+def logs(node_list, node_objs):
+    for node in node_list:
+        print(xrdef(refs[node]))
+        print(header1(strip(node)))
+        objs = node_objs[node]
+        dates = []
+        date_objs = {}
+
+        # group by date
+        for o in objs:
+            date = o["date"]
+            time = o["time"]
+            title = o["title"]
+            content = o["content"]
+            if date not in date_objs:
+                dates.append(date)
+                date_objs[date] = []
+            date_objs[date].append({
+                "time": time,
+                "title": title,
+                "content": content
+            })
+
+        # print dates
+        for d in dates:
+            print(header2(d))
+            for dob in date_objs[d]:
+                print(header3(dob["time"] + ": " + dob["title"]))
+                for p in dob["content"]:
+                    if p != None:
+                        print(par(p))
+
+def group_by_date(node_objs):
+    dates = {}
+    for (key, val) in node_objs.items():
+        for chunk in val:
+            date = chunk["date"]
+            if date not in dates:
+                dates[date] = set()
+            dates[date].add(key)
+
+    return dates
+
+def timeline(dates):
+    print(header1("Timeline"))
+    for date in sorted(dates):
+        nodes = [ strip(n) for n in sorted(dates[date]) ]
+        entry = "{\\noindent \\bf " + date + ":} "
+        entry += ", ".join(nodes)
+        entry += "\\smallskip"
+        #print(date, ", ".join(nodes))
+        print(entry)
+    print(pgbreak())
+
+all_input = sys.stdin.read()
+
+obj = json.loads(all_input)
+
+node_list = []
+
+node_objs = {}
+
+for entry in obj:
+    node = entry["node"]
+    if node not in node_objs:
+        node_list.append(node)
+        node_objs[node] = []
+
+    entity_id = entry["entity_id"]
+    date, time = entity_id.split("/")
+    content = entry["content"]
+    node_objs[node].append({
+        "title": entry["title"],
+        "date": date,
+        "time": time,
+        "content" : content
+    })
 
 refs = mkreflookup(node_list)
 
+dates = group_by_date(node_objs)
+
 begin()
-
+ 
 toc(node_list, refs)
-
-for node in node_list:
-    print(xrdef(refs[node]))
-    print(header1(strip(node)))
-    objs = node_objs[node]
-    dates = []
-    date_objs = {}
-
-    # group by date
-    for o in objs:
-        date = o["date"]
-        time = o["time"]
-        title = o["title"]
-        content = o["content"]
-        if date not in date_objs:
-            dates.append(date)
-            date_objs[date] = []
-        date_objs[date].append({
-            "time": time,
-            "title": title,
-            "content": content
-        })
-
-    # print dates
-    for d in dates:
-        print(header2(d))
-        for dob in date_objs[d]:
-            print(header3(dob["time"] + ": " + dob["title"]))
-            for p in dob["content"]:
-                if p != None:
-                    print(par(p))
-
+timeline(dates)
+ 
+logs(node_list, node_objs)
+ 
 bye()

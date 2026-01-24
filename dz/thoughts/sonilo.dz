@@ -130,3 +130,9 @@ ln early tools for converting block addresses to word addresses
 ln worked on the assumption of a global block stack address,
 ln which I have changed to be arbitrary.
 ln some tools may need to be adjusted to compensate.
+nn tasks/instruction_primitive
+co tasks/instruction_primitive tasks/ugen_bytecode
+nn tasks/bulk_instructions
+ln execute instructions in bulk
+co tasks/instruction_primitive tasks/bulk_instructions
+co tasks/bulk_instructions tasks/ugen_bytecode

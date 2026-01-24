@@ -3,8 +3,10 @@ thoughts/projects/sonilo/tasks/buddy_system
 thoughts/projects/sonilo/tasks/docgen
 thoughts/projects/sonilo/tasks/fix_block_navigation
 thoughts/projects/sonilo/tasks/ilo_interpreter
+thoughts/projects/sonilo/tasks/instruction_primitive
 thoughts/projects/sonilo/tasks/sonilo_command_language
 thoughts/projects/sonilo/tasks/zero_page
+thoughts/projects/sonilo/tasks/bulk_instructions
 thoughts/projects/sonilo/tasks/buddy_slots
 thoughts/projects/sonilo/tasks/allocator
 thoughts/projects/sonilo/tasks/mem

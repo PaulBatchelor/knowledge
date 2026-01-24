@@ -1293,3 +1293,101 @@ shift it a ways.
 'do' should be pretty simple to add
 ---
 oops. 'do' is done. 'of' instead.
+
+@13:48 ugen bytecode initial scoping #timelog:01:09:14
+#! dz thoughts/projects/sonilo/tasks/ugen_bytecode
+Thinking about subtasks here
+---
+core primitive is an instruction that fits into a 32-bit
+word. 16 bits for data, 16 bits for the opcode.
+---
+Things like ugen structure, offline rendering, etc, are already
+well defined tasks that are parents of this task.
+---
+When the single instruction primitive is created, bulk
+instruction execution needs to happen. I'm thinking about
+executing an array of instructions. That data structure
+is already built.
+
+@14:10 initial words
+#! dz thoughts/projects/sonilo/tasks/instruction_primitive
+See "ugen bytecode" task for previous thoughts on this.
+---
+goal: execute an instruction given a word.
+---
+The instruction format divides a word into two parts: data
+(16 bits) and command (16 bits).
+---
+For nodes, the data portion is most likely going to be
+a memory address, though for this task it can just be treated
+as a literal constant.
+---
+The command portion is going to need some thought. 16-bits
+is more instructions than we'll ever use (I think?). Using
+it as a lookup table could be nice.
+---
+16 bits can encode some kind of alphabetic or alphanumeric
+string. I know I can atleast get three alphabetic or alphanumeric
+characters. If I know that numbers are usually suffixes,
+I might be able to pack 3 letters and 3 numbers like ABC123
+into 16 bits.
+---
+16 bits pack 3 letters. 14 bits packs 3 letters (with
+constraints on letter choice) plus 2 bits
+for a number. Going to just stick with the 16 bit encoding
+approach.
+---
+lookup table can be a linear probing dictionary.
+---
+How to create an instruction? There needs to be a way to
+specify the data and also the command. Data will sometimes
+be a memory address, probably created first before calling
+the command. Entering in a command should effectively push
+bits onto the word.
+
+@14:33 initial words
+#! dz thoughts/projects/sonilo/tasks/bulk_instructions
+Implement the ability to render a block of instructions.
+---
+Conditional jumping isn't going to be used here because
+DSP ugens just execute things in order.
+---
+Probably utilize the existing array structure implemented,
+and figure out a decent way to append instructions to the
+array.
+
+@14:44 getting close to needing to think about this
+#! dz thoughts/projects/sonilo/tasks/ugens
+I am currently scoping out the ugen bytecode task, which
+has been greatly simplified over the months. What was
+once a whole VM has now turned into a sequential list of
+operations that read/write to data stored at a particular
+memory address.
+---
+This simpler instruction-based format means some more
+responsibilities for the ugen API. Mainly, I/O stuff.
+Nodes need inputs and nodes produce outputs.
+---
+Luckily, I have some pre-existing work for this: patchwerk.
+It's looking like I'm going to be building out something
+very similar to this.
+---
+These inputs and outputs will have their addresses baked
+into the data somehow.
+---
+An instruction takes in one data parameter. Perhaps this
+is a structure containing ugen data. Ugens have an array
+of input params (blocks, constants), an array of outputs
+(blocks, probably not constants), and data pointing
+to the internal state of the DSP.
+---
+Audio rate signals are blocks. Patchwerk uses a fixed size
+buffer (block) pool and a buffer (block) stack with reference
+counting to manage blocks. A similar kind of reference counting
+system could possibly be used.
+---
+When it comes to memory management, I'll take simple yet
+tedious/error-prone over complex yet frictionless. There
+are going to be abstractions on top of this, especially when
+gesture becomes more involved (leaning towards a kind of
+system where everything can be expressed as a gesture).

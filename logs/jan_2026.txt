@@ -1393,3 +1393,43 @@ gesture becomes more involved (leaning towards a kind of
 system where everything can be expressed as a gesture).
 
 @16:32 scanning, cropping, binning #timelog:00:45:00
+
+@19:56 some initial scaffolding #timelog:01:00:00
+#! dz thoughts/projects/sonilo/tasks/instruction_primitive
+Setting up structs and boilerplate. This glue code will exist
+outside the VM, since the routines will be implemented in
+C.
+---
+Threw together some untested code for core dictionary
+operations. I've opted for linear probing. It's simple. No
+linked lists. The hash is modulo for now. It's fine. I can
+tweak it later.
+---
+Encoding comes next. Strings need to be keys. I spent more
+time than I care to admit working out math looking into
+how to milk as many of the 16 bits as possible. With
+a mixed radix system, you can get 3 letters plus a value
+that can be 4 states (0, 1, 2, 3). Or, you can do 3 5-bit
+characters plus 1 bit (probably lose that bit). 5 bits
+gives you letters plus 6 specials (TBD? no plans yet), and is way simpler
+to build, so I'm going to go with that.
+---
+Now comes the interesting bit of hooking this functionality
+into the test system. I'm going to use 'ex' for instruction
+execution. I'll have a test function called 'INC' that
+increments the data to be plus 1.
+---
+Some new adjustments to the memwrite state machine required.
+Single quote (') will turn on 5-bit encoding. another single
+quote (') will turn it off.
+---
+Interesting. I have to keep the bits nibble-aligned. So,
+I'm going to make the enclosing "'" shift the register
+1 bit. assuming 3 characters, that should make it fit
+into 16 bits.
+---
+And it works. I'm applying the 1-bit shift for the string
+to key utility. So, generally speaking, from this point
+on, I do declare that opcode names are exactly 3 letters
+(well, 3 5-bit 'symbols' which are an alphabet and 6 other
+symbols TBD).

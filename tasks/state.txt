@@ -3,7 +3,7 @@ thoughts/projects/sonilo/tasks/buddy_system:35:DONE:1
 thoughts/projects/sonilo/tasks/docgen:40:DONE:1
 thoughts/projects/sonilo/tasks/fix_block_navigation:45:TODO:1
 thoughts/projects/sonilo/tasks/ilo_interpreter:50:TODO:1
-thoughts/projects/sonilo/tasks/instruction_primitive:55:TODO:1
+thoughts/projects/sonilo/tasks/instruction_primitive:55:DONE:1
 thoughts/projects/sonilo/tasks/sonilo_command_language:60:TODO:1
 thoughts/projects/sonilo/tasks/zero_page:65:DONE:1
 thoughts/projects/sonilo/tasks/bulk_instructions:70:TODO:1

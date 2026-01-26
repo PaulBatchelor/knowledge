@@ -1433,3 +1433,52 @@ to key utility. So, generally speaking, from this point
 on, I do declare that opcode names are exactly 3 letters
 (well, 3 5-bit 'symbols' which are an alphabet and 6 other
 symbols TBD).
+
+@2026-01-25 Day 147
+@13:48 Calculus chapter 2: 2.1, 2.2, 2.3 #timelog:00:58:21
+#! dz calculus/pearson/toc/02_limits
+Chapter 2: limits
+---
+2.1: the idea of limits. The whole point of this chapter
+was to tie the relationship of average velocity and
+instantanous velocity to the relationship of the slope
+of a secant line to a tangent.
+---
+2.2: definitions of limits. a preliminary definition of
+a limit is provided. one-sided limits (left/right). a theorem
+is provided that states that both left/right limits must
+exist for a 2-sided limit to exist.
+---
+2.3 techniques for computing limits. limits of linear
+functions. limit laws.
+
+@15:45 some more 2.3 probably #timelog:00:16:58
+#! dz $
+
+@16:17 wrap up 2.3 #timelog:00:25:56
+#! dz $
+proof of power law using product law. finding limits
+of polynomials and rational functions, with proofs using
+limit laws.
+
+@2026-01-26 Day 148
+@10:44 logs #timelog:00:08:39
+@10:55 tasking housekeeping #timelog:00:07:12
+now that I can delay tasks while preserving spread,
+I'm going to push some stuff off for a while. Calculus
+needs to take priority for a few weeks.
+
+@10:58 this might be the last chapter I read for a while
+#! dz dmoi/toc/03_counting/02_combining_outcomes
+It looks like I'm pretty close to wrapping this one up.
+
+@10:59 delayed a month, spread increased to 200 days
+#! dz dmoi/news
+I'll probably need to revisit this anyways. School might
+slow this down.
+
+@11:01 chapter 2 mostly done at this point
+#! dz coad/toc/02_instructions_language_of_the_computer
+I do want time to transcribe the knowledge graph outlines
+I built, which is going to take some time. Chapter 3 things
+can wait. I'll probably delay about a month for that.

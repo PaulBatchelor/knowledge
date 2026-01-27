@@ -1482,3 +1482,70 @@ slow this down.
 I do want time to transcribe the knowledge graph outlines
 I built, which is going to take some time. Chapter 3 things
 can wait. I'll probably delay about a month for that.
+
+@19:30 Ugen Structure #ink:07F #timelog:00:38:36
+#! dz thoughts/projects/sonilo/tasks/ugens
+Elaborated on ideas related to the structure of a ugen,
+and some of the operations used to create them. A patchwerk
+inspired reference counting system is what I'm thinking about.
+The change I'm making is when garbage collection happens for
+blocks. The change will make it so the sets of input and
+output blocks will be disjoint, making DSP code a bit
+easier to work with.
+
+@11:35 more 2.3 actually #timelog:00:15:43
+#! dz calculus/pearson/toc/02_limits
+Looked at examples for limits of rational functions.
+one sided limits, and an adjusted root law. Other techniques
+for finding limits, which involved finding equivalent limits
+where direct subsitution could be used.
+
+@13:15 2.3 #timelog:00:15:34
+#! dz $
+
+@15:26 2.3 #timelog:00:17:41
+#! dz $
+
+@16:03 2.3 #timelog:00:21:37
+#! dz $
+
+@12:00 coad 2.20, 2.21 #timelog:00:17:00
+#! dz coad/toc/02_instructions_language_of_the_computer/20_matrix_multiply_c
+#! dz coad/toc/02_instructions_language_of_the_computer/21_fallacies_pitfalls
+2.20: the matrix multiply chapter was just a page with some code.
+I did learn a term though: DGEMM: double precision general
+matrix multiply.
+---
+2.21: the major fallacy that was explained had to do with
+complex x86 instructions and they aren't necessarily faster.
+The example used was the repeat prefix for moving memory.
+Three different approaches were provided, including the
+complex approach. It turned out to be the slowest of the three.
+
+@13:57 2.21 continued #timelog:00:15:55
+#! dz coad/toc/02_instructions_language_of_the_computer/21_fallacies_pitfalls
+More fallacies: write in assembly for max perf, backwards
+compatibility in ABI means instruction sets don't change.
+---
+Pitfalls: mixing up word addressing and byte addressing (address
+between 2 words more than 1),
+using pointer of automatic variable outside of defining
+procedure.
+
+@15:12 2.22 concluding remarks #timelog:00:09:23
+#! dz coad/toc/02_instructions_language_of_the_computer/22_concluding_remarks
+Principle of stored computer programs: instructions indistinguishible
+from numbers, alterable memory for programs. Re-iterate 3
+design principles: simplicty favors regularity, smaller is
+faster, good design demands good compromises.
+
+@2026-01-27 Day 149
+@09:52 logging #timelog:00:23:25
+This is going to be interesting because I went back and
+forth. logzet will sort logs by time, so I'm going to take
+advantage of that and put the times out of order, and
+group them by what I worked on. Should make entry faster.
+
+@10:15 skipping these for now
+#! dz coad/toc/02_instructions_language_of_the_computer/23_historical_perspective_further_reading
+#! dz coad/toc/02_instructions_language_of_the_computer/24_self_study

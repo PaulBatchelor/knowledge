@@ -46,7 +46,7 @@ dmoi/toc/02_graph_theory/01_problems_and_definitions:73:DONE:2
 dmoi/toc/02_graph_theory/02_trees:78:DONE:2
 dmoi/toc/03_counting/01_pascals_arithmetical_triangle:84:DONE:2
 dmoi/toc/02_graph_theory/03_planar_graphs:89:DONE:2
-dmoi/toc/03_counting/02_combining_outcomes:94:TODO:2
+dmoi/toc/03_counting/02_combining_outcomes:94:DONE:2
 dmoi/toc/02_graph_theory/04_euler_trails_circuits:100:TODO:2
 dmoi/toc/03_counting/03_non_disjoint_outcomes:105:TODO:2
 dmoi/toc/02_graph_theory/05_coloring:111:TODO:2

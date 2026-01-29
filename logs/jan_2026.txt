@@ -1549,3 +1549,74 @@ group them by what I worked on. Should make entry faster.
 @10:15 skipping these for now
 #! dz coad/toc/02_instructions_language_of_the_computer/23_historical_perspective_further_reading
 #! dz coad/toc/02_instructions_language_of_the_computer/24_self_study
+
+@10:48 DMOI 3.2 wrap-up
+#! dz dmoi/toc/03_counting/02_combining_outcomes
+This finishes up how to think about 2-card problem using
+product principle and sum principle. I'm not going to try
+to summarize it more than that. The numbers were kind of
+given, and I haven't had to chance to really work out
+the numbers and fully trust them.
+
+@16:35 review: complex conjugates, factoring (quickly) #ink:07H #timelog:00:30:20
+#! dz bu/ma123/review
+#! dz calculus/pearson/toc/02_limits
+One of the examples in the textbook uses a conjugate
+to find and equivalent limit that to apply limit laws with.
+I completely forgot what a conjugate was, but found a wiki
+page on the subject (specifically related to square roots).
+---
+It turns out we are factoring, so I had to run home and
+remember some of the tricks involved in factoring quadratics.
+It's coming back.
+
+@18:28 more 2.3 (techniques for computing limits) #timelog:00:19:31
+#! dz calculus/pearson/toc/02_limits
+Limits that do not work with limit law
+techniques. Exponentials were used as an example. squeeze
+theorem. also some work with trig limits, for which squeeze
+theorem was used.
+
+@19:50 more 2.3 #timelog:00:19:38
+#! dz $
+
+@2026-01-28 Day 150
+@09:00 some initial spivak reading #timelog:00:40:22
+#! dz calculus/spivak/toc/05_limits
+Since I'm reading about limits in my calc class, I thought
+I'd crack this one open and take a stab at it. It provides
+a completely different mental model for thinking about limits.
+Definitely needed to read things carefully to be able to
+absorb what was on the page (I really only read 2 pages).
+
+@10:20 some problem sets from chapter 2
+#! dz bu/ma123/study
+#! dz calculus/pearson/toc/02_limits
+Had some issues accessing the HW today, so I took some time
+this morning to do some problems from the book.
+---
+I've also begun a "scratch" index system. Basically, I'm
+going to hold onto and index the scraps I work out problems
+on. Might be useful dunno yet.
+
+@14:30 transcribe hw1 problems #timelog:00:23:37
+#! dz bu/ma123/hw
+
+@15:00 more transcribing of hw1 problems #timelog:00:21:07
+#! dz bu/ma123/hw
+
+@16:45 2.4 infinite limits #timelog:00:30:37
+#! dz calculus/pearons/toc/02_limits/04_infinite_limits
+Infinite limits vs limits at infinity. finding limits
+analytically. example 4 was tricky to work out for me, especially
+with my factoring being rusty. Slowly figuring out when things
+go to negative infinity or positive infinity for one-sided limits
+based on approach.
+
+@18:12 2.4 infinite limits cont. #timelog:00:40:34
+#! dz $
+
+@18:59 logging, seting up some new things related to my calculus class #timelog:00:23:54
+#! dz calculus/spivak/news
+#! dz calculus/pearson/news
+#! dz bu/ma123/news

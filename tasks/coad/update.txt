@@ -3,7 +3,7 @@
 gr 2
 up coad/tasks.txt
 ds 180
-of 20
+of 30
 gc
 sr
 w

@@ -12,6 +12,8 @@
 \smallskip
 \noindent ink \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node17}
 \smallskip
+\noindent news \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node20}
+\smallskip
 \noindent tasks \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node1}
 \smallskip
 \noindent allocator \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node12}
@@ -24,6 +26,8 @@
 \smallskip
 \noindent buddy system \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node3}
 \smallskip
+\noindent bulk instructions \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node22}
+\smallskip
 \noindent butlp \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node18}
 \smallskip
 \noindent docgen \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node13}
@@ -33,6 +37,8 @@
 \noindent ilo interpreter \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node4}
 \smallskip
 \noindent initial dsp \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node9}
+\smallskip
+\noindent instruction primitive \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node21}
 \smallskip
 \noindent konilo sonilo communication \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node5}
 \smallskip
@@ -45,6 +51,8 @@
 \noindent sonilo command language \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node7}
 \smallskip
 \noindent ugen bytecode \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node11}
+\smallskip
+\noindent ugens \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node23}
 \smallskip
 \noindent zero page \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node15}
 \smallskip
@@ -82,12 +90,14 @@
 {\noindent \bf 2026-01-06:} blockstack improvements\smallskip
 {\noindent \bf 2026-01-08:} blockstack improvements\smallskip
 {\noindent \bf 2026-01-11:} blockstack improvements\smallskip
-{\noindent \bf 2026-01-14:} blockstack improvements\smallskip
+{\noindent \bf 2026-01-14:} sonilo, blockstack improvements\smallskip
 {\noindent \bf 2026-01-15:} blockstack improvements, buddy slots, fix block navigation, zero page\smallskip
 {\noindent \bf 2026-01-16:} blockstack improvements, buddy slots, fix block navigation, sonilo command language\smallskip
 {\noindent \bf 2026-01-17:} buddy slots\smallskip
 {\noindent \bf 2026-01-18:} ugen bytecode\smallskip
-{\noindent \bf 2026-01-22:} sonilo\smallskip
+{\noindent \bf 2026-01-22:} news\smallskip
+{\noindent \bf 2026-01-24:} sonilo, bulk instructions, instruction primitive, ugen bytecode, ugens\smallskip
+{\noindent \bf 2026-01-26:} ugens\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -124,12 +134,36 @@ I need these tasks to go down, so I'm redistributing the days. I'm disappointed 
 stretching the reading for dmoi so only 2 tasks appear right now the reading takes a while. I am a thorough (read: slow) reader.
 \par
 
-{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-22}\medskip
-{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:13: stretching sonilo task days}\smallskip
-We're 67 days behind now.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:23: I'm scared to look at the sonilo tasks}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:43: sonilo saturdays}\smallskip
+I'm trying to establish a "sonilo saturdays" habit. Where I dedicate a good chunk of every saturday developing sonilo
 \par
 
-Well, now it says end of july things might be done. Not gonna happen probably. I just kinda need this memory stuff to be behind me.
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:44: logs review. where am I today?}\smallskip
+Looks like I finished up the zero page stuff.
+\par
+
+I am working on methods to convert outputs from the block stack allocator (block id numbers) to word addresses in memory (b to m), and back again (m to b).
+\par
+
+I need a chronological view of things in my log output. Date, then what things were worked on on that day.
+\par
+
+There's an issue with my block to memory convertors in that the memory address returned isn't the smallest value. I still need to make an issue for it.
+\par
+
+In sonilo land, I was in the middle of building up a test for the 'sm' command or "slot make". This tool appends a slot to the buddy slot list.
+\par
+
+The big idea I had last week with regards to the buddy slot stuff was to create operations that could interop with the existing single-instance buddy system operations.
+\par
+
+I think I also had an idea about returning to the DSP bytecode. I think I have enough allocation stuff working that I can work on this.
+\par
+
+DSP ugen stuff might be a focus of mine because I'm losing momentum with memory allocators.
 \par
 
 \xrdef{node1}
@@ -715,6 +749,20 @@ Running a single instruction is one thing, but what about a block of instruction
 the data/opcode paradigm feels pretty solid. But, I'll need a way to build up that data. That becomes thew new challenge. But certainly it would be trivial to make a simple opcode that reads in data and adds 1 to it or something. That would be enough to get a general system in place.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:48: ugen bytecode initial scoping}\smallskip
+Thinking about subtasks here
+\par
+
+core primitive is an instruction that fits into a 32-bit word. 16 bits for data, 16 bits for the opcode.
+\par
+
+Things like ugen structure, offline rendering, etc, are already well defined tasks that are parents of this task.
+\par
+
+When the single instruction primitive is created, bulk instruction execution needs to happen. I'm thinking about executing an array of instructions. That data structure is already built.
+\par
+
 \xrdef{node12}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont allocator}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
@@ -1276,6 +1324,112 @@ At the time of writing, {\tt \#0 go \#1 bmpr } and {\tt \#1 go \#1 bmpr } both p
 \par
 
 Surprised with how precise I have to be about this and how easy it is to mess things up.
+\par
+
+\xrdef{node20}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont news}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:13: stretching sonilo task days}\smallskip
+We're 67 days behind now.
+\par
+
+Well, now it says end of july things might be done. Not gonna happen probably. I just kinda need this memory stuff to be behind me.
+\par
+
+\xrdef{node21}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:10: initial words}\smallskip
+See "ugen bytecode" task for previous thoughts on this.
+\par
+
+goal: execute an instruction given a word.
+\par
+
+The instruction format divides a word into two parts: data (16 bits) and command (16 bits).
+\par
+
+For nodes, the data portion is most likely going to be a memory address, though for this task it can just be treated as a literal constant.
+\par
+
+The command portion is going to need some thought. 16-bits is more instructions than we'll ever use (I think?). Using it as a lookup table could be nice.
+\par
+
+16 bits can encode some kind of alphabetic or alphanumeric string. I know I can atleast get three alphabetic or alphanumeric characters. If I know that numbers are usually suffixes, I might be able to pack 3 letters and 3 numbers like ABC123 into 16 bits.
+\par
+
+16 bits pack 3 letters. 14 bits packs 3 letters (with constraints on letter choice) plus 2 bits for a number. Going to just stick with the 16 bit encoding approach.
+\par
+
+lookup table can be a linear probing dictionary.
+\par
+
+How to create an instruction? There needs to be a way to specify the data and also the command. Data will sometimes be a memory address, probably created first before calling the command. Entering in a command should effectively push bits onto the word.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:56: some initial scaffolding}\smallskip
+Setting up structs and boilerplate. This glue code will exist outside the VM, since the routines will be implemented in C.
+\par
+
+Threw together some untested code for core dictionary operations. I've opted for linear probing. It's simple. No linked lists. The hash is modulo for now. It's fine. I can tweak it later.
+\par
+
+Encoding comes next. Strings need to be keys. I spent more time than I care to admit working out math looking into how to milk as many of the 16 bits as possible. With a mixed radix system, you can get 3 letters plus a value that can be 4 states (0, 1, 2, 3). Or, you can do 3 5-bit characters plus 1 bit (probably lose that bit). 5 bits gives you letters plus 6 specials (TBD? no plans yet), and is way simpler to build, so I'm going to go with that.
+\par
+
+Now comes the interesting bit of hooking this functionality into the test system. I'm going to use 'ex' for instruction execution. I'll have a test function called 'INC' that increments the data to be plus 1.
+\par
+
+Some new adjustments to the memwrite state machine required. Single quote (') will turn on 5-bit encoding. another single quote (') will turn it off.
+\par
+
+Interesting. I have to keep the bits nibble-aligned. So, I'm going to make the enclosing "'" shift the register 1 bit. assuming 3 characters, that should make it fit into 16 bits.
+\par
+
+And it works. I'm applying the 1-bit shift for the string to key utility. So, generally speaking, from this point on, I do declare that opcode names are exactly 3 letters (well, 3 5-bit 'symbols' which are an alphabet and 6 other symbols TBD).
+\par
+
+\xrdef{node22}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont bulk instructions}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:33: initial words}\smallskip
+Implement the ability to render a block of instructions.
+\par
+
+Conditional jumping isn't going to be used here because DSP ugens just execute things in order.
+\par
+
+Probably utilize the existing array structure implemented, and figure out a decent way to append instructions to the array.
+\par
+
+\xrdef{node23}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugens}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:44: getting close to needing to think about this}\smallskip
+I am currently scoping out the ugen bytecode task, which has been greatly simplified over the months. What was once a whole VM has now turned into a sequential list of operations that read/write to data stored at a particular memory address.
+\par
+
+This simpler instruction-based format means some more responsibilities for the ugen API. Mainly, I/O stuff. Nodes need inputs and nodes produce outputs.
+\par
+
+Luckily, I have some pre-existing work for this: patchwerk. It's looking like I'm going to be building out something very similar to this.
+\par
+
+These inputs and outputs will have their addresses baked into the data somehow.
+\par
+
+An instruction takes in one data parameter. Perhaps this is a structure containing ugen data. Ugens have an array of input params (blocks, constants), an array of outputs (blocks, probably not constants), and data pointing to the internal state of the DSP.
+\par
+
+Audio rate signals are blocks. Patchwerk uses a fixed size buffer (block) pool and a buffer (block) stack with reference counting to manage blocks. A similar kind of reference counting system could possibly be used.
+\par
+
+When it comes to memory management, I'll take simple yet tedious/error-prone over complex yet frictionless. There are going to be abstractions on top of this, especially when gesture becomes more involved (leaning towards a kind of system where everything can be expressed as a gesture).
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:30: Ugen Structure}\smallskip
+Elaborated on ideas related to the structure of a ugen, and some of the operations used to create them. A patchwerk inspired reference counting system is what I'm thinking about. The change I'm making is when garbage collection happens for blocks. The change will make it so the sets of input and output blocks will be disjoint, making DSP code a bit easier to work with.
 \par
 
 \bye

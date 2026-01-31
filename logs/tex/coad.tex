@@ -36,6 +36,8 @@
 \smallskip
 \noindent 15 exercises \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node13}
 \smallskip
+\noindent 02 instructions language of the computer \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node33}
+\smallskip
 \noindent 01 introduction \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node14}
 \smallskip
 \noindent 02 operations of the computer hardware \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node15}
@@ -74,6 +76,16 @@
 \smallskip
 \noindent 19 x86 instructions \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node32}
 \smallskip
+\noindent 20 matrix multiply c \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node34}
+\smallskip
+\noindent 21 fallacies pitfalls \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node35}
+\smallskip
+\noindent 22 concluding remarks \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node36}
+\smallskip
+\noindent 23 historical perspective further reading \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node37}
+\smallskip
+\noindent 24 self study \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node38}
+\smallskip
 \vfill \break
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont Timeline}\medskip
 {\noindent \bf 2025-10-30:} news\smallskip
@@ -105,6 +117,8 @@
 {\noindent \bf 2026-01-19:} 17 armv8 instructions, 18 riscv instructions, 19 x86 instructions\smallskip
 {\noindent \bf 2026-01-21:} 19 x86 instructions\smallskip
 {\noindent \bf 2026-01-22:} news\smallskip
+{\noindent \bf 2026-01-26:} 02 instructions language of the computer, 20 matrix multiply c, 21 fallacies pitfalls, 22 concluding remarks\smallskip
+{\noindent \bf 2026-01-27:} 23 historical perspective further reading, 24 self study\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont news}\medskip
@@ -362,4 +376,53 @@ I'm guessing i386 is equivalent to 80386. at least, that is how I am choosing to
 These authors *really* do not like x86, and are not shy about saying how terrible they think it is. It's a little jarring, seeing this kind of writing. I see this a lot in CS textbooks. Very strong opinions written in this very biased emotional tone about how terrible things are. It mirrors the Linux Torvalds. It's not helpful rhetoric, and it comes off as unprofessional and sloppy. The bar is so slow for CS textbooks. Math textbooks have a better tone.
 \par
 
+\xrdef{node33}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 02 instructions language of the computer}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:01: chapter 2 mostly done at this point}\smallskip
+I do want time to transcribe the knowledge graph outlines I built, which is going to take some time. Chapter 3 things can wait. I'll probably delay about a month for that.
+\par
+
+\xrdef{node34}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 20 matrix multiply c}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:00: coad 2.20, 2.21}\smallskip
+2.20: the matrix multiply chapter was just a page with some code. I did learn a term though: DGEMM: double precision general matrix multiply.
+\par
+
+2.21: the major fallacy that was explained had to do with complex x86 instructions and they aren't necessarily faster. The example used was the repeat prefix for moving memory. Three different approaches were provided, including the complex approach. It turned out to be the slowest of the three.
+\par
+
+\xrdef{node35}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 21 fallacies pitfalls}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:00: coad 2.20, 2.21}\smallskip
+2.20: the matrix multiply chapter was just a page with some code. I did learn a term though: DGEMM: double precision general matrix multiply.
+\par
+
+2.21: the major fallacy that was explained had to do with complex x86 instructions and they aren't necessarily faster. The example used was the repeat prefix for moving memory. Three different approaches were provided, including the complex approach. It turned out to be the slowest of the three.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:57: 2.21 continued}\smallskip
+More fallacies: write in assembly for max perf, backwards compatibility in ABI means instruction sets don't change.
+\par
+
+Pitfalls: mixing up word addressing and byte addressing (address between 2 words more than 1), using pointer of automatic variable outside of defining procedure.
+\par
+
+\xrdef{node36}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 22 concluding remarks}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:12: 2.22 concluding remarks}\smallskip
+Principle of stored computer programs: instructions indistinguishible from numbers, alterable memory for programs. Re-iterate 3 design principles: simplicty favors regularity, smaller is faster, good design demands good compromises.
+\par
+
+\xrdef{node37}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 23 historical perspective further reading}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-27}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:15: skipping these for now}\smallskip
+\xrdef{node38}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont 24 self study}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-27}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:15: skipping these for now}\smallskip
 \bye

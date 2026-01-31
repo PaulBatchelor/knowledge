@@ -1666,3 +1666,9 @@ which is in this interval, for which $f(x) = 1$.
 
 @2026-01-31 Day 153. Sonilo Saturday.
 @07:04 timelogging
+
+@07:29 ugen subtasks can be scoped out now I think
+#! dz thoughts/projects/sonilo/ugens
+
+@07:31 hoping to work on this today
+#! dz thoughts/projects/sonilo/tasks/bulk_instructions

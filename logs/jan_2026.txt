@@ -1831,3 +1831,31 @@ By the time unit generators are finished, I think thinking
 about using a higher-level abstraction like Konilo may be
 warranted. At that point, it'll start to feel possible
 to build demos.
+
+@16:12 bulk instructions: implementation #timelog:01:29:25
+#! dz thoughts/projects/sonilo/tasks/bulk_instructions
+Setting up the initial unit test. The actual implementation
+is trivial.
+---
+So this shouldn't be too strenuous. I'll use the exist
+block array, and append instructions to it.
+---
+Cute idea: make the program be based on the konami code: up,
+up, down, down, left, right, left, right, B, A. up/down can
+be increase, decrease by one. left/right refers to bitshifting.
+B is bitwise negation. A is reverse bits. I'll add some
+print opcodes as well.
+---
+hoping that 'bx' isn't taken. that would be a good acronym
+to use.
+---
+once again, my left/right confusion has worked against me.
+I mixed up left shift and right shift operations which
+made my expected results wrong. Also, I forgot what the binary
+nibble of 6 was. Off-by-one.
+---
+'bx' has been implemented.
+---
+side note: these instruction operations
+should eventually be consolidated into C functions, not
+just inline code.

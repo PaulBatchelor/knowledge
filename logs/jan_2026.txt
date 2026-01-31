@@ -1819,3 +1819,15 @@ words.
 ---
 It turns out that 64 18-bit numbers plus 128 7-bit numbers
 yields 32 64-bit numbers, or one block. How lovely.
+
+@16:01 task ordering updates, ugens child of some other tasks now
+#! dz thoughts/projects/sonilo/tasks/ugens
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+ilo interpreter stuff needs to at least happen after ugen
+stuff. And it's a prereq for any gesture stuff.
+---
+By the time unit generators are finished, I think thinking
+about using a higher-level abstraction like Konilo may be
+warranted. At that point, it'll start to feel possible
+to build demos.

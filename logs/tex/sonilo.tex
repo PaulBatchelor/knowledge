@@ -52,6 +52,12 @@
 \smallskip
 \noindent ugen bytecode \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node11}
 \smallskip
+\noindent ugen ports \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node24}
+\smallskip
+\noindent ugen refcount \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node25}
+\smallskip
+\noindent ugen stack \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node26}
+\smallskip
 \noindent ugens \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node23}
 \smallskip
 \noindent zero page \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node15}
@@ -98,6 +104,7 @@
 {\noindent \bf 2026-01-22:} news\smallskip
 {\noindent \bf 2026-01-24:} sonilo, bulk instructions, instruction primitive, ugen bytecode, ugens\smallskip
 {\noindent \bf 2026-01-26:} ugens\smallskip
+{\noindent \bf 2026-01-31:} bulk instructions, ugen ports, ugen refcount, ugen stack, ugens\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -1402,6 +1409,8 @@ Conditional jumping isn't going to be used here because DSP ugens just execute t
 Probably utilize the existing array structure implemented, and figure out a decent way to append instructions to the array.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 07:31: hoping to work on this today}\smallskip
 \xrdef{node23}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugens}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
@@ -1430,6 +1439,160 @@ When it comes to memory management, I'll take simple yet tedious/error-prone ove
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-26}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:30: Ugen Structure}\smallskip
 Elaborated on ideas related to the structure of a ugen, and some of the operations used to create them. A patchwerk inspired reference counting system is what I'm thinking about. The change I'm making is when garbage collection happens for blocks. The change will make it so the sets of input and output blocks will be disjoint, making DSP code a bit easier to work with.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 07:29: ugen subtasks can be scoped out now I think}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:05: ugen structure 2}\smallskip
+Taking another stab at outlining the componets that make up unit generators in an effort to see what needs to be built bottoms up
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:18: Ugen prelim(inaries)}\smallskip
+Having previously outlined top-down the components that make up ugens, this graph, examines at the leaves of that graph (the preliminary components needed to get ugens working), and pulls out more details and relationships between them.
+\par
+
+Ports, ref counters, and stacks, in approximately that order.
+\par
+
+ref counters, stacks, and then ports, in approximately that order.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:34: creating new tasks for ugens, writing words}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:55: Garbage collection after ports, order matters}\smallskip
+I may have mentioned this already. But it's one of those things I can see slipping from my mind. So, we're writing it down again.
+\par
+
+Unit generators need to be able to share and reuse blocks. A stack and a reference counting system is used to help with this.
+\par
+
+A ugen has a certain number of input ports and output ports. A ugen generator will allocate data required for the DSP state, set up the ports, and then finally do garbage collection on the reference counter.
+\par
+
+A pop operation decreases reference count associated with a particular memory address of a block. A push operation will increase it. A garbage collect operation will mark that block as available for re-use.
+\par
+
+The garbage collection happens last, after all stack operations. Any time a new output parameter is pushed onto the stack, it will be unable to claim a recently popped block used by the input, guaranteeing that input/output blocks will be disjoing. Making the output/input blocks disjoint prevents things like accidental overwrites to happen.
+\par
+
+\xrdef{node24}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen ports}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:34: creating new tasks for ugens, writing words}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:43: initial words}\smallskip
+a unit generator does I/O via things called "ports". A port can either be a pointer to a block (an audio rate signal), or it can be a constant.
+\par
+
+The port implementation is designed to fit into a single word. The first 2 bits declare the type of port. The remaining 30 bits are used to store data.
+\par
+
+one type of port is a block. A block contains a 16-bit word address to the start of a block.
+\par
+
+Another type of port is a constant, which is encoded in 30 bits. The format I'm going with here is a signed fixed point 16.14 number format. I think that should be enough resolution for this context.
+\par
+
+Unit generators will call DSP routines, and so it's probably a good idea to turn a port into an equivalent C-struct. Here, the constants would be converted into C floats, and the word addresses would be turned into pointers.
+\par
+
+\xrdef{node25}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen refcount}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:34: creating new tasks for ugens, writing words}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:55: Garbage collection after ports, order matters}\smallskip
+I may have mentioned this already. But it's one of those things I can see slipping from my mind. So, we're writing it down again.
+\par
+
+Unit generators need to be able to share and reuse blocks. A stack and a reference counting system is used to help with this.
+\par
+
+A ugen has a certain number of input ports and output ports. A ugen generator will allocate data required for the DSP state, set up the ports, and then finally do garbage collection on the reference counter.
+\par
+
+A pop operation decreases reference count associated with a particular memory address of a block. A push operation will increase it. A garbage collect operation will mark that block as available for re-use.
+\par
+
+The garbage collection happens last, after all stack operations. Any time a new output parameter is pushed onto the stack, it will be unable to claim a recently popped block used by the input, guaranteeing that input/output blocks will be disjoing. Making the output/input blocks disjoint prevents things like accidental overwrites to happen.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:06: initial words}\smallskip
+Build a reference counting system. Essentially, it'll be a list of block addresses and a count, indicating how many times they'll be used.
+\par
+
+Initially, there will need to be an operation that adds new addresses to the list. This will find an available slot and store it there.
+\par
+
+There needs to be a way to delete an address from the list, clearing it and making the slot available to be overriden by another add operation.
+\par
+
+A "find" operation will look up an address to see if it associated with the RC list. This will be helpful for other operations.
+\par
+
+Counts need to increase/decrease with push/pop stack operations.
+\par
+
+Sometimes blocks need to be held indefinitely. These will be called "hold" and "unhold" operations. A "hold" bit will need to be made.
+\par
+
+A "collect" operation is used to sweep through the list, finding anything with a used slot with a count of 0, and mark it as unused. A "used" bit will need to be made.
+\par
+
+Memory address + 2 bits for used/hold = 18 bits for a slot. Maybe pack this along with the stack?
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:19: packing the stack and refcounter together using some arithmetic}\smallskip
+One refcount entry needs 18 bits of data. 64 slots is 1152 bits of data, conveniently 36 words of data. 28 words left for the stack.
+\par
+
+slot indexes need 6 bits of data. If the stack uses an array, it's possible to have upper limit of approximiately 149 for a stack size. Round to the nearest power of 2, 128. 768 bits, 24 words. But, that doesn't include the stack pointer, which would need to be at least 8 bits to include 0.
+\par
+
+Alternatively, use an array structure, and have the first entry contain the stack pointer (the number of items on the stack). a 6-bit number would have a range 0-63, or a stack size of 63. a 7-bit number would have a range 0-127, or a stack size of 127.
+\par
+
+a 6-bit stack needs an array of 64 6-bit numbers, 12 words. A 7-bit stack needs an array of 128 7-bit numbers, 28 words.
+\par
+
+It turns out that 64 18-bit numbers plus 128 7-bit numbers yields 32 64-bit numbers, or one block. How lovely.
+\par
+
+\xrdef{node26}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen stack}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:34: creating new tasks for ugens, writing words}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:50: initial words}\smallskip
+A stack is used to share data between ugens. When a unit generator is instantiated, it reads inputs by popping data from the stack, and writes output values by pushing data onto the stack. This, combined with a reference counting system, builds up an abstraction that is able to recycle blocks within the scope of a patch (a collection of unit generators).
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:55: Garbage collection after ports, order matters}\smallskip
+I may have mentioned this already. But it's one of those things I can see slipping from my mind. So, we're writing it down again.
+\par
+
+Unit generators need to be able to share and reuse blocks. A stack and a reference counting system is used to help with this.
+\par
+
+A ugen has a certain number of input ports and output ports. A ugen generator will allocate data required for the DSP state, set up the ports, and then finally do garbage collection on the reference counter.
+\par
+
+A pop operation decreases reference count associated with a particular memory address of a block. A push operation will increase it. A garbage collect operation will mark that block as available for re-use.
+\par
+
+The garbage collection happens last, after all stack operations. Any time a new output parameter is pushed onto the stack, it will be unable to claim a recently popped block used by the input, guaranteeing that input/output blocks will be disjoing. Making the output/input blocks disjoint prevents things like accidental overwrites to happen.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:19: packing the stack and refcounter together using some arithmetic}\smallskip
+One refcount entry needs 18 bits of data. 64 slots is 1152 bits of data, conveniently 36 words of data. 28 words left for the stack.
+\par
+
+slot indexes need 6 bits of data. If the stack uses an array, it's possible to have upper limit of approximiately 149 for a stack size. Round to the nearest power of 2, 128. 768 bits, 24 words. But, that doesn't include the stack pointer, which would need to be at least 8 bits to include 0.
+\par
+
+Alternatively, use an array structure, and have the first entry contain the stack pointer (the number of items on the stack). a 6-bit number would have a range 0-63, or a stack size of 63. a 7-bit number would have a range 0-127, or a stack size of 127.
+\par
+
+a 6-bit stack needs an array of 64 6-bit numbers, 12 words. A 7-bit stack needs an array of 128 7-bit numbers, 28 words.
+\par
+
+It turns out that 64 18-bit numbers plus 128 7-bit numbers yields 32 64-bit numbers, or one block. How lovely.
 \par
 
 \bye

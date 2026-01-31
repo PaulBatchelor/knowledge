@@ -149,3 +149,5 @@ co tasks/ugen_stack tasks/ugen_ports
 nn tasks/ugen_refcount
 ln implement a reference counter for blocks
 co tasks/ugen_refcount tasks/ugen_stack
+co tasks/ugens tasks/ilo_interpreter
+co tasks/ugens tasks/sonilo_command_language

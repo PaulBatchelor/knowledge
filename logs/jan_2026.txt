@@ -1648,4 +1648,21 @@ near 0. Begin to consider function $\sqrt(x)\sin(1/x)$.
 at a supplied graph (I did not transcribe these).
 
 @2026-01-30 Day 152
+@08:50 limits
+#! dz calculus/spivak/toc/05_limits #timelog:00:39:34
+Examining $\sin(1/x)$. False that it approaches zero near zero,
+with proof (?). Then it went to show that it doesn't approach
+any number near 0. The thing that's tripping me up is the
+statement about intervals: for any interval A containing
+0, there is some number containing $x = 1 / (90 + 360n)$
+which is in this interval, for which $f(x) = 1$.
 @09:52 logging #timelog:00:07:59
+
+@11:42 textbook pset grinding #scratch:004 #timelog:00:36:39
+#! dz bu/ma123/grind
+2.2.19, 2.2.7, 2.2.4, 2.2.5, 2.2.6, 2.2.18
+
+@12:22 2.2.53 limits of even functions #timelog:00:06:50 #scratch:005
+
+@2026-01-31 Day 153. Sonilo Saturday.
+@07:04 timelogging

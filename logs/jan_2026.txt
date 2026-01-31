@@ -1668,7 +1668,154 @@ which is in this interval, for which $f(x) = 1$.
 @07:04 timelogging
 
 @07:29 ugen subtasks can be scoped out now I think
-#! dz thoughts/projects/sonilo/ugens
+#! dz thoughts/projects/sonilo/tasks/ugens
 
 @07:31 hoping to work on this today
 #! dz thoughts/projects/sonilo/tasks/bulk_instructions
+
+@11:05 ugen structure 2 #timelog:00:48:00 #ink:07S
+#! dz thoughts/projects/sonilo/tasks/ugens
+Taking another stab at outlining the componets that make
+up unit generators in an effort to see what needs to be
+built bottoms up
+
+@13:18 Ugen prelim(inaries) #timelog:00:30:50 #ink:07T
+#! dz $
+Having previously outlined top-down the components that
+make up ugens, this graph, examines at the leaves of that
+graph (the preliminary components needed to get ugens working),
+and pulls out more details and relationships between
+them.
+---
+Ports, ref counters, and stacks, in approximately
+that order.
+---
+ref counters, stacks, and then ports, in approximately
+that order.
+
+@14:34 creating new tasks for ugens, writing words #timelog:01:06:39
+#! dz $
+#! dz thoughts/projects/sonilo/tasks/ugens
+#! dz thoughts/projects/sonilo/tasks/ugen_ports
+#! dz thoughts/projects/sonilo/tasks/ugen_stack
+#! dz thoughts/projects/sonilo/tasks/ugen_refcount
+
+@14:43 initial words
+#! dz thoughts/projects/sonilo/tasks/ugen_ports
+a unit generator does I/O via things called "ports". A
+port can either be a pointer to a block (an audio rate signal),
+or it can be a constant.
+---
+The port implementation is designed to fit into a single
+word. The first 2 bits declare the type of port. The remaining
+30 bits are used to store data.
+---
+one type of port is a block. A block contains a 16-bit
+word address to the start of a block.
+---
+Another type of port is a constant, which is encoded in
+30 bits. The format I'm going with here is a signed
+fixed point 16.14 number format. I think that should be
+enough resolution for this context.
+---
+Unit generators will call DSP routines, and so it's probably
+a good idea to turn a port into an equivalent C-struct. Here,
+the constants would be converted into C floats, and the
+word addresses would be turned into pointers.
+
+@14:50 initial words
+#! dz thoughts/projects/sonilo/tasks/ugen_stack
+A stack is used to share data between ugens.
+When a unit generator is instantiated, it reads inputs by
+popping data from the stack, and writes output values by
+pushing data onto the stack. This, combined with a reference
+counting system, builds up an abstraction that is able
+to recycle blocks within the scope of a patch (a collection
+of unit generators).
+
+@14:55 Garbage collection after ports, order matters
+#! dz thoughts/projects/sonilo/tasks/ugens
+#! dz thoughts/projects/sonilo/tasks/ugen_stack
+#! dz thoughts/projects/sonilo/tasks/ugen_refcount
+I may have mentioned this already. But it's one of those things
+I can see slipping from my mind. So, we're writing it down again.
+---
+Unit generators need to be able to share and reuse
+blocks. A stack and a reference counting system is used
+to help with this.
+---
+A ugen has a certain number of input ports and output ports.
+A ugen generator will allocate data required for the DSP
+state, set up the ports, and then finally do garbage collection
+on the reference counter.
+---
+A pop operation decreases reference count associated with
+a particular memory address of a block. A push operation
+will increase it. A garbage collect operation will
+mark that block as available for re-use.
+---
+The garbage collection happens last, after all stack operations.
+Any time a new output parameter is pushed onto the stack,
+it will be unable to claim a recently popped block used by
+the input, guaranteeing that input/output blocks
+will be disjoing. Making the output/input blocks disjoint
+prevents things like accidental overwrites to happen.
+
+@15:06 initial words
+#! dz thoughts/projects/sonilo/tasks/ugen_refcount
+Build a reference counting system. Essentially, it'll be
+a list of block addresses and a count, indicating how many
+times they'll be used.
+---
+Initially, there will need to be an operation that adds
+new addresses to the list. This will find an available slot
+and store it there.
+---
+There needs to be a way to delete an address
+from the list, clearing it and making the slot available
+to be overriden by another add operation.
+---
+A "find" operation will look up an address to see if it
+associated with the RC list. This will be helpful for
+other operations.
+---
+Counts need to increase/decrease with push/pop stack
+operations.
+---
+Sometimes blocks need to be held indefinitely. These
+will be called "hold" and "unhold" operations. A "hold" bit
+will need to be made.
+---
+A "collect" operation is used to sweep through the list,
+finding anything with a used slot with a count of 0, and
+mark it as unused. A "used" bit will need to be made.
+---
+Memory address + 2 bits for used/hold = 18 bits for a slot.
+Maybe pack this along with the stack?
+
+@15:19 packing the stack and refcounter together using some arithmetic
+#! dz thoughts/projects/sonilo/tasks/ugen_refcount
+#! dz thoughts/projects/sonilo/tasks/ugen_stack
+One refcount entry needs 18 bits of data. 64 slots is
+1152 bits of data, conveniently 36 words of data. 28 words
+left for the stack.
+---
+slot indexes need 6 bits of data. If
+the stack uses an array, it's possible to have upper limit
+of approximiately 149 for a stack size. Round to the nearest
+power of 2, 128. 768 bits, 24 words. But, that doesn't include
+the stack pointer, which would need to be at least 8 bits to
+include 0.
+---
+Alternatively, use an array structure, and have the first
+entry contain the stack pointer (the number of items on
+the stack). a 6-bit number would have a range 0-63, or a
+stack size of 63. a 7-bit number would have a range 0-127,
+or a stack size of 127.
+---
+a 6-bit stack needs an array of 64 6-bit numbers, 12 words.
+A 7-bit stack needs an array of 128 7-bit numbers, 28
+words.
+---
+It turns out that 64 18-bit numbers plus 128 7-bit numbers
+yields 32 64-bit numbers, or one block. How lovely.

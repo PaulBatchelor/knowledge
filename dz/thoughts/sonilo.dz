@@ -136,3 +136,16 @@ nn tasks/bulk_instructions
 ln execute instructions in bulk
 co tasks/instruction_primitive tasks/bulk_instructions
 co tasks/bulk_instructions tasks/ugen_bytecode
+nn tasks/ugen_ports
+ln implement ugen ports.
+ln Operations include: building constant/block operations,
+ln and going from a 32-bit word representation to a
+ln C struct representation
+co tasks/ugen_ports tasks/ugens
+nn tasks/ugen_stack
+ln create a stack used to create ugens. pop/push
+ln should implicitly handle refcounts
+co tasks/ugen_stack tasks/ugen_ports
+nn tasks/ugen_refcount
+ln implement a reference counter for blocks
+co tasks/ugen_refcount tasks/ugen_stack

@@ -1926,7 +1926,7 @@ I'm just going to open up ed and start typing notes.
 @13:28 chapter 2 transcription 2.4 #ink:067 #timelog:00:26:59
 #! dz coad/toc/02_instructions_language_of_the_computer
 
-@14:03 2.5 transcription #ink:06B #timelog:00:21:25
+@14:03 2.5 transcription #ink:06B #timelog:00:21:52
 #! dz coad/toc/02_instructions_language_of_the_computer
 ink 06b has mistakes in indexing. it starts with '1L',
 when it should have been '1M'. It goes from '1o' to '11',
@@ -1934,3 +1934,8 @@ and continues from there.
 ---
 'a' was the last significant digit reached in 2, flipping
 these nodes to be 'b' instead of '1'.
+
+@14:28 2.6, 2.7 transcription #ink:06d #timelog:00:20:30
+#! dz $
+Going to continue replacing instructions with a b prefix
+until I get out of the conflict zone which should be 1p.

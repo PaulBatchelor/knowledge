@@ -107,10 +107,94 @@ nn hexadecmial
 ln hexadecimal
 at id 1o
 at pg 06b
+nn 2_07_instr_decisions
+ln 2.7: instructions for making decisions
+at id 1p
+at pg 06d
+nn conditional_branches
+ln conditional branches: an instruction that requires the comparison of two values and that allows for a subsequent transfer of control to a new address in program based on outcome of the comparison
+at id 1q
+at pg 06d
+nn beq
+ln beq: branch if equal
+at id 1r
+at pg 06d
+nn bne
+ln bne: branch if not equal
+at id 1s
+at pg 06d
+nn unconditional_branch
+ln unconditional branch
+at id 1t
+at pg 06d
+nn loops
+ln loops
+at id 1u
+at pg 06d
+nn basic_block
+ln basic block: seq of instr without branches (except possibly at end), and without branch targets/labels (except possibly at beginning)
+at id 1v
+at pg 06d
+nn early_phase_compilation
+ln early phase compiliation: breaking program into smaller blocks
+at id 1w
+at pg 06d
+nn check_var_less_than
+ln check if var less than another var
+at id 1x
+at pg 06d
+nn slt
+ln slt: set on less than
+at id 1y
+at pg 06d
+nn slti
+ln slti: immediate slt
+at id 1z
+at pg 06d
 nn instruction_set
 ln instruction set: the vocab of cmds understood by a given architecture
 at id 2
 at pg 060
+nn no_branch_lt_MIPS
+ln no branch on LT in MIPS
+at id 20
+at pg 06d
+nn too_complicated
+ln too complicated: stretch clock cycle time of take extra clock cycles per instruction
+at id 21
+at pg 06d
+nn signed_vs_unsigned_comparison
+ln signed vs unsigned in comparison instructions
+at id 22
+at pg 06d
+nn sltu
+ln sltu/sltiu: set on LT unsigned
+at id 23
+at pg 06d
+nn signed_as_unsigned_lowcost_lt
+ln treating signed numbers as unsigned: low cost way to check of $0 \le x < y$
+at id 24
+at pg 06d
+nn matches_bounds_check
+ln matches index out of bounds check for arrays
+at id 25
+at pg 06d
+nn case_switch_stmt
+ln case/switch statement
+at id 26
+at pg 06d
+nn if_then_else_chain
+ln chain of if-then-else-statements
+at id 27
+at pg 06d
+nn jump_table
+ln jump address table / jump table table of addresses for alternative instruction sequences
+at id 28
+at pg 06d
+nn jump_register
+ln jump register (jr)
+at id 29
+at pg 06d
 nn stored_program_concept
 ln stored-program concept: the idea that instructions an ddata of many types can be stored in memory as numbers, leading to the stored program computer
 at id 3
@@ -207,10 +291,42 @@ nn i_type
 ln I-type/I-format (immediate)
 at id bf
 at pg 06b
-nn 2_5_representing_instructions
-ln 2.5 representing instructions in the computer
+nn 2_06_logical_ops
+ln 2.6: logical operations
+at id bg
+at pg 06d
+nn logical_shifts
+ln logical shifts
+at id bh
+at pg 06d
+nn logical_and
+ln AND
+at id bi
+at pg 06d
+nn logical_or
+ln OR
+at id bj
+at pg 06d
+nn logical_not
+ln NOT
+at id bk
+at pg 06d
+nn nor
+ln NOR
 at id bl
-at pg 06b
+at pg 06d
+nn nor_to_not
+ln A NOR D = NOT(A or D) = NOT(A)
+at id bm
+at pg 06d
+nn andi
+ln andi: and immediate
+at id bn
+at pg 06d
+nn ori
+ln ori: or immediate
+at id bo
+at pg 06d
 nn logical
 ln logical
 at id c
@@ -308,8 +424,10 @@ ln leading 0s positive, leading 1s negative
 at id z
 at pg 067
 co 2_1_intro 2_instructions
+co 2_07_instr_decisions 2_instructions
 co 2_2_operations 2_instructions
-co 2_5_representing_instructions 2_instructions
+co 2_06_logical_ops 2_instructions
+co nor 2_instructions
 co 2_4_signed_unsigned_nums 2_instructions
 co instruction_set 2_1_intro
 co stored_program_concept 2_1_intro
@@ -333,11 +451,31 @@ co typical_zero_biased most_neg_pos_biased
 co biased_non_negative typical_zero_biased
 co binary_instr_as_fields instruction_format
 co instr_length_same_diff_formats instruction_format
+co conditional_branches 2_07_instr_decisions
+co loops 2_07_instr_decisions
+co case_switch_stmt 2_07_instr_decisions
+co beq conditional_branches
+co bne conditional_branches
+co unconditional_branch conditional_branches
+co basic_block loops
+co check_var_less_than loops
+co early_phase_compilation basic_block
+co slt check_var_less_than
+co no_branch_lt_MIPS check_var_less_than
+co signed_vs_unsigned_comparison check_var_less_than
+co slti slt
 co stored_program_concept instruction_set
 co MIPS instruction_set
 co ARMv7 instruction_set
 co x86 instruction_set
 co ARMv8 instruction_set
+co too_complicated no_branch_lt_MIPS
+co sltu signed_vs_unsigned_comparison
+co signed_as_unsigned_lowcost_lt signed_vs_unsigned_comparison
+co matches_bounds_check signed_as_unsigned_lowcost_lt
+co if_then_else_chain case_switch_stmt
+co jump_table case_switch_stmt
+co jump_register jump_table
 co MIPS_operands MIPS
 co MIPS_assembly MIPS
 co MIPS_operands 2_2_operations
@@ -360,9 +498,20 @@ co instr_length_same_diff_formats good_design_good_compromise
 co instr_length_same_diff_formats instr_needs_longer_fields
 co r_type instr_length_same_diff_formats
 co i_type instr_length_same_diff_formats
-co instruction_format 2_5_representing_instructions
-co machine_language 2_5_representing_instructions
-co hexadecmial 2_5_representing_instructions
+co logical_shifts 2_06_logical_ops
+co logical_and 2_06_logical_ops
+co logical_or 2_06_logical_ops
+co logical_not 2_06_logical_ops
+co nor 2_06_logical_ops
+co machine_language logical_and
+co logical_or logical_and
+co nor logical_or
+co ori logical_or
+co ori logical_not
+co instruction_format nor
+co machine_language nor
+co hexadecmial nor
+co nor_to_not nor
 co logical MIPS_assembly
 co conditional_branch MIPS_assembly
 co unconditional_jump MIPS_assembly

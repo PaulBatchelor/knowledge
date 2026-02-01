@@ -1,0 +1,40 @@
+@bg 2.6: logical operations
+@bh logical shifts
+@bi AND
+@bj OR
+@bk NOT
+@bl NOR
+@bm A NOR D = NOT(A or D) = NOT(A)
+@bn andi: and immediate
+@bo ori: or immediate
+@1p 2.7: instructions for making decisions
+@1q conditional branches: an instruction that requires the comparison of two values
+and that allows for a subsequent transfer of control
+to a new address in program based on outcome of the comparison
+@1r beq: branch if equal
+@1s bne: branch if not equal
+@1t unconditional branch
+@1u loops
+@1v basic block: seq of instr without branches (except
+possibly at end), and without branch targets/labels
+(except possibly at beginning)
+@1w early phase compiliation: breaking program into smaller
+blocks
+@1x check if var less than another var
+@1y slt: set on less than
+@1z slti: immediate slt
+@20 no branch on LT in MIPS
+@21 too complicated: stretch clock cycle time of take extra
+clock cycles per instruction
+@22 signed vs unsigned in comparison instructions
+@23 sltu/sltiu: set on LT unsigned
+@24 treating signed numbers as unsigned: low cost way to
+check of $0 \le x < y$
+@25 matches index out of bounds check
+for arrays
+@26 case/switch statement
+@27 chain of if-then-else-statements
+@28 jump address table / jump table
+table of addresses for alternative instruction
+sequences
+@29 jump register (jr)

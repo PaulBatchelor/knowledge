@@ -6,3 +6,5 @@ nn tasks/fig_prototype
 nn tasks/labels
 nn tasks/notes_integration
 nn tasks/duplicate_node
+nn tasks/path_drawing
+nn tasks/eps

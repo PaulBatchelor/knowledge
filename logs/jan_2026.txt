@@ -1606,7 +1606,7 @@ on. Might be useful dunno yet.
 #! dz bu/ma123/hw
 
 @16:45 2.4 infinite limits #timelog:00:30:37
-#! dz calculus/pearons/toc/02_limits/04_infinite_limits
+#! dz calculus/pearson/toc/02_limits/04_infinite_limits
 Infinite limits vs limits at infinity. finding limits
 analytically. example 4 was tricky to work out for me, especially
 with my factoring being rusty. Slowly figuring out when things
@@ -1894,3 +1894,6 @@ feed that into my program.
 Some initial text primitives made. I have a few lines of
 text being rendered in chicago12. Not bad for a first
 start.
+
+@2026-02-01 Day 154
+@08:59 logging in, fixing orphan nodes #timelog:00:14:06

@@ -1,13 +1,17 @@
 ns calculus
 nn pearson
 ns +pearson
+nn news
 nn toc
 ns +toc
 nn 02_limits
+ns +02_limits
+nn 04_infinite_limits
 
-ns calclus
+ns calculus
 nn spivak
 ns +spivak
+nn news
 nn toc
 ns +toc
 nn 05_limits

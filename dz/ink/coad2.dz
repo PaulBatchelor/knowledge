@@ -547,10 +547,70 @@ nn decoding_machine_language
 ln decoding machine language
 at id 4n
 at pg 06i
+nn data_race
+ln data race: two memory accesses form a data race if they are from different threads to the same location, at least one is a write, and occur one after the other
+at id 4o
+at pg 06j
+nn often_need_to_cooperate
+ln easier when independent, often need to cooperate
+at id 4p
+at pg 06j
+nn read_modify_atomically
+ln set of primitives to read/modify atomically (nothing else interposes itself between read/write)
+at id 4q
+at pg 06j
+nn atomic_exchange
+ln atomic exchange/swap: interchanges a value in register for value in memory
+at id 4r
+at pg 06j
+nn simple_lock
+ln simple lock: 0 means lock is free, 1, available
+at id 4s
+at pg 06j
+nn set_lock
+ln set lock: exchange of 1
+at id 4t
+at pg 06j
+nn returns_unavail_or_free
+ln value returned 1 (unavail) or 0 (free)
+at id 4u
+at pg 06j
+nn instruction_pair
+ln when 0 returned, value set to 1, preventing any competing exchange
+at id 4v
+at pg 06j
+nn atomicity
+ln atomicity: memory write/read in a single, uninterruptible instruction
+at id 4w
+at pg 06j
+nn 4x
+ln instruction pair, 2nd instruction determines if pair was executed as if atomic
+at id 4x
+at pg 06j
+nn effectively_atomic
+ln effectively atomic: appears as if all other procedure operations appeared before/after pair
+at id 4y
+at pg 06j
+nn load_linked
+ln load linked
+at id 4z
+at pg 06j
 nn ARMv7
 ln ARMV7
 at id 5
 at pg 060
+nn store_conditional
+ln store conditional
+at id 50
+at pg 06j
+nn store_val_reg
+ln store value of a (presumably different) register
+at id 51
+at pg 06j
+nn change_1_success_0_fail
+ln change register value to 1 if successful, 0 if failure
+at id 52
+at pg 06j
 nn x86
 ln x86
 at id 6
@@ -671,6 +731,14 @@ nn ori
 ln ori: or immediate
 at id bo
 at pg 06d
+nn 2_11_synchronization
+ln 2.11 parallelism and instructions: synchronization
+at id bp
+at pg 06j
+nn parallel_execution
+ln parallel execution
+at id bq
+at pg 06j
 nn logical
 ln logical
 at id c
@@ -775,6 +843,7 @@ co 2_10_MIPS_addr_32bit_imm_and_addr 2_instructions
 co 2_2_operations 2_instructions
 co 2_06_logical_ops 2_instructions
 co nor 2_instructions
+co 2_11_synchronization 2_instructions
 co 2_4_signed_unsigned_nums 2_instructions
 co instruction_set 2_1_intro
 co stored_program_concept 2_1_intro
@@ -918,6 +987,18 @@ co register MIPS_addr_modes
 co PC_relative MIPS_addr_modes
 co base_displacement MIPS_addr_modes
 co pseudo_direct MIPS_addr_modes
+co atomic_exchange read_modify_atomically
+co 4x read_modify_atomically
+co simple_lock atomic_exchange
+co atomicity atomic_exchange
+co set_lock simple_lock
+co returns_unavail_or_free set_lock
+co instruction_pair returns_unavail_or_free
+co effectively_atomic 4x
+co load_linked 4x
+co store_conditional 4x
+co store_val_reg store_conditional
+co change_1_success_0_fail store_val_reg
 co MIPS_operands 2_2_operations
 co MIPS_assembly 2_2_operations
 co hw_design_principles 2_2_operations
@@ -953,6 +1034,10 @@ co instruction_format nor
 co machine_language nor
 co hexadecmial nor
 co nor_to_not nor
+co read_modify_atomically 2_11_synchronization
+co parallel_execution 2_11_synchronization
+co data_race parallel_execution
+co often_need_to_cooperate parallel_execution
 co logical MIPS_assembly
 co conditional_branch MIPS_assembly
 co unconditional_jump MIPS_assembly

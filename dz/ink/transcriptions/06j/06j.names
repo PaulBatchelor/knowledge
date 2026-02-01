@@ -1,0 +1,17 @@
+bp 2_11_synchronization
+bq parallel_execution
+4o data_race
+4p often_need_to_cooperate
+4q read_modify_atomically
+4r atomic_exchange
+4s simple_lock
+4t set_lock
+4u returns_unavail_or_free
+4v return_0_prevents_competing_exchange
+4w atomicity
+4v instruction_pair
+4y effectively_atomic
+4z load_linked
+50 store_conditional
+51 store_val_reg
+52 change_1_success_0_fail

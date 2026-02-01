@@ -1,0 +1,24 @@
+@bp 2.11 parallelism and instructions: synchronization
+@bq parallel execution
+@4o data race: two memory accesses form a data race if they
+are from different threads to the same location, at least one
+is a write, and occur one after the other
+@4p easier when independent, often need to cooperate
+@4q set of primitives to read/modify atomically (nothing
+else interposes itself between read/write)
+@4r atomic exchange/swap: interchanges a value in register
+for value in memory
+@4s simple lock: 0 means lock is free, 1, available
+@4t set lock: exchange of 1
+@4u value returned 1 (unavail) or 0 (free)
+@4v when 0 returned, value set to 1, preventing any
+competing exchange
+@4w atomicity: memory write/read in a single, uninterruptible instruction
+@4x instruction pair, 2nd instruction determines if pair was executed
+as if atomic
+@4y effectively atomic: appears as if all other procedure operations
+appeared before/after pair
+@4z load linked
+@50 store conditional
+@51 store value of a (presumably different) register
+@52 change register value to 1 if successful, 0 if failure

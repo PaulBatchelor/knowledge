@@ -1961,3 +1961,14 @@ I'm assuming it wanted 'bd'.
 ---
 4c is connecting to itself in this one. not sure what
 I was thinking about here.
+
+@17:18 2.11 transcription #ink:06j #timelog:00:15:07
+#! dz coad/toc/02_instructions_language_of_the_computer/11_parallelism_and_instructions_synchronization
+Another offset issue again damn. I need to start keeping a list
+here of replacements.
+---
+4m and 4n are the culprits here.
+---
+'bp' is the next available.
+---
+4m will be bp, and 4n will be bq.

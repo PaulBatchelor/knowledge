@@ -95,6 +95,18 @@ nn biased_non_negative
 ln biases a number to have non-negative representation
 at id 1l
 at pg 067
+nn instruction_format
+ln instruction format
+at id 1m
+at pg 06b
+nn machine_language
+ln machine language
+at id 1n
+at pg 06b
+nn hexadecmial
+ln hexadecimal
+at id 1o
+at pg 06b
 nn instruction_set
 ln instruction set: the vocab of cmds understood by a given architecture
 at id 2
@@ -135,6 +147,70 @@ nn data_transfer
 ln data transfer
 at id b
 at pg 060
+nn binary_instr_as_fields
+ln represent binary instruction as binary fields
+at id b1
+at pg 06b
+nn MIPS_fields
+ln MIPS fields
+at id b2
+at pg 06b
+nn opcode
+ln opcode
+at id b3
+at pg 06b
+nn op_opcode
+ln op:opcode
+at id b4
+at pg 06b
+nn rs_reg_src_1
+ln rs: first register source operand
+at id b5
+at pg 06b
+nn rt_reg_src_2
+ln rt: second register source operand
+at id b6
+at pg 06b
+nn rd_reg_dst
+ln rd: register destination operand
+at id b7
+at pg 06b
+nn shamt
+ln shamt: shift amount
+at id b8
+at pg 06b
+nn funt
+ln funt: function code
+at id b9
+at pg 06b
+nn op_field_selects_variant
+ln selects specific variant of operation in op field
+at id ba
+at pg 06b
+nn good_design_good_compromise
+ln good design demands good compromises design principle 3
+at id bb
+at pg 06b
+nn instr_needs_longer_fields
+ln problem: what happens when instruction needs longer fields?
+at id bc
+at pg 06b
+nn instr_length_same_diff_formats
+ln keep instruction size the same length, requiring different kinds of instruction formats
+at id bd
+at pg 06b
+nn r_type
+ln r-type/r-format (register)
+at id be
+at pg 06b
+nn i_type
+ln I-type/I-format (immediate)
+at id bf
+at pg 06b
+nn 2_5_representing_instructions
+ln 2.5 representing instructions in the computer
+at id bl
+at pg 06b
 nn logical
 ln logical
 at id c
@@ -233,6 +309,7 @@ at id z
 at pg 067
 co 2_1_intro 2_instructions
 co 2_2_operations 2_instructions
+co 2_5_representing_instructions 2_instructions
 co 2_4_signed_unsigned_nums 2_instructions
 co instruction_set 2_1_intro
 co stored_program_concept 2_1_intro
@@ -254,6 +331,8 @@ co ones_complement_negative ones_complement
 co most_neg_pos_biased biased_notation
 co typical_zero_biased most_neg_pos_biased
 co biased_non_negative typical_zero_biased
+co binary_instr_as_fields instruction_format
+co instr_length_same_diff_formats instruction_format
 co stored_program_concept instruction_set
 co MIPS instruction_set
 co ARMv7 instruction_set
@@ -265,6 +344,25 @@ co MIPS_operands 2_2_operations
 co MIPS_assembly 2_2_operations
 co hw_design_principles 2_2_operations
 co 2_3_operands 2_2_operations
+co MIPS_fields binary_instr_as_fields
+co op_opcode MIPS_fields
+co rs_reg_src_1 MIPS_fields
+co rt_reg_src_2 MIPS_fields
+co rd_reg_dst MIPS_fields
+co shamt MIPS_fields
+co funt MIPS_fields
+co instr_needs_longer_fields MIPS_fields
+co op_opcode opcode
+co funt op_opcode
+co op_field_selects_variant funt
+co instr_needs_longer_fields good_design_good_compromise
+co instr_length_same_diff_formats good_design_good_compromise
+co instr_length_same_diff_formats instr_needs_longer_fields
+co r_type instr_length_same_diff_formats
+co i_type instr_length_same_diff_formats
+co instruction_format 2_5_representing_instructions
+co machine_language 2_5_representing_instructions
+co hexadecmial 2_5_representing_instructions
 co logical MIPS_assembly
 co conditional_branch MIPS_assembly
 co unconditional_jump MIPS_assembly

@@ -1,0 +1,21 @@
+@bl 2.5 representing instructions in the computer
+@1m instruction format
+@1n machine language
+@1o hexadecimal
+@b1 represent binary instruction as binary fields
+@b2 MIPS fields
+@b3 opcode
+@b4 op:opcode
+@b5 rs: first register source operand
+@b6 rt: second register source operand
+@b7 rd: register destination operand
+@b8 shamt: shift amount
+@b9 funt: function code
+@ba selects specific variant of operation in op field
+@bb good design demands good compromises
+design principle 3
+@bc problem: what happens when instruction needs longer fields?
+@bd keep instruction size the same length, requiring different
+kinds of instruction formats
+@be r-type/r-format (register)
+@bf I-type/I-format (immediate)

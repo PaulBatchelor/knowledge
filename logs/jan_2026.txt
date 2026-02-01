@@ -1924,3 +1924,13 @@ I'm just going to open up ed and start typing notes.
 #! dz coad/toc/02_instructions_language_of_the_computer
 
 @13:28 chapter 2 transcription 2.4 #ink:067 #timelog:00:26:59
+#! dz coad/toc/02_instructions_language_of_the_computer
+
+@14:03 2.5 transcription #ink:06B #timelog:00:21:25
+#! dz coad/toc/02_instructions_language_of_the_computer
+ink 06b has mistakes in indexing. it starts with '1L',
+when it should have been '1M'. It goes from '1o' to '11',
+and continues from there.
+---
+'a' was the last significant digit reached in 2, flipping
+these nodes to be 'b' instead of '1'.

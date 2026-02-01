@@ -1859,3 +1859,38 @@ nibble of 6 was. Off-by-one.
 side note: these instruction operations
 should eventually be consolidated into C functions, not
 just inline code.
+
+@20:39 bttyp initial coding #timelog:01:15:20
+#! dz thoughts/projects/bttyp
+I've had this idea for a 1-bit typesetting system using
+mac fonts for years now. Going to see what I can accomplish
+tonight.
+---
+I have some macfont parsing and rendering
+code somewhere which does most of the hard bits. I'll want
+to adapt it a bit to fit with the framework I have in mind.
+---
+There's a serial language which I'll make a parser for.
+And I'll also make a human-readable version that assembles
+to the parser (in AWK).
+---
+Setting up some initial scaffolding. Something that writes
+a whole page to disk.
+----
+Did some fiddling, and decided a page should be 512x832.
+It's a rectangle close to the golden ratio, while also being
+a multiple of 8 both ways.
+---
+copying over files from btprnt, and chicago12
+---
+I have a blank PNG file now.
+---
+I have an 'A' rendered now.
+---
+Working on an initial bytestream interpreter. I figured
+out how to get Awk to print special characters. Now I'll
+feed that into my program.
+---
+Some initial text primitives made. I have a few lines of
+text being rendered in chicago12. Not bad for a first
+start.

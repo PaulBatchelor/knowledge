@@ -5,4 +5,4 @@ do
     ./tools/rm_upload_pdf books/$BOOK
     # extra new line because curl output doesn't add one
     echo
-done < books/books.txt
+done < books/books.txt | grep -v "^#"

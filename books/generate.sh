@@ -4,5 +4,5 @@ do
     QUERY=$(echo $LINE | cut -d ':' -f 2)
     echo $BOOK $QUERY
     ./tools/inkbook.sh $QUERY > books/$BOOK.tex
-done < books/books.txt
+done < books/books.txt | grep -v "^#"
 

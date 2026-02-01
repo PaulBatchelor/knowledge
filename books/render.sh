@@ -4,5 +4,5 @@ do
     QUERY=$(echo $LINE | cut -d ';' -f 2)
     echo $BOOK
     cd books; pdftex $BOOK; cd -
-done < books/books.txt
+done < books/books.txt | grep -v "^#"
 

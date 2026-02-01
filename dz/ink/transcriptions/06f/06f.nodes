@@ -1,0 +1,37 @@
+@31 allocating space for new data on the stack
+@32 stack is also used to store local vars of procedure
+that don't fit in registers
+@33 procedure frame/activation record: segment of stack
+containing procedures saved registers and local variables
+@34 frame pointer: points to first word of procedure frame
+@35 allocating space for new data on heap [110]
+@36 C programmers need space in memory for static variables
+and dynamic data structs
+@37 text segment: segment of unix object file that contains
+the machine language code for routines in the source file
+@38 static data segment: place for constants, other
+static variables
+@39 heap: segment for data structures that grow/shrink
+during lifetime
+@3a MIPS convention for allocation of memory
+@3b malloc/free: allocate/free space on the heap
+@3c 2.9: communicating with people [112]
+@3d computers number crunching first, then text processing
+@3e ascii characters
+@3f instructions to move bytes
+@3g load byte (lb)
+@3h store byte (sb)
+@3i stores on rightmost bits
+@3j chars combine to strings
+@3k string representations
+@3l first position stores length
+@3m length as accompanying variable
+@3n null byte termination
+@3o characters and strings in java
+@3p unicode: encoding of the alphabets of most human languages
+@3q java uses unicode for chars
+@3r halfwords: 16-bit
+@3s instructions for half words
+@3t load half (lh)
+@3u store half (sh)
+@3v 16 bits to reprsent character

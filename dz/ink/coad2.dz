@@ -307,6 +307,130 @@ nn global_pointer
 ln global pointer: register reserved to point to static data, gp
 at id 30
 at pg 06e
+nn alloc_space_stack
+ln allocating space for new data on the stack
+at id 31
+at pg 06f
+nn stack_for_local_vars
+ln stack is also used to store local vars of procedure that don't fit in registers
+at id 32
+at pg 06f
+nn proc_frame
+ln procedure frame/activation record: segment of stack containing procedures saved registers and local variables
+at id 33
+at pg 06f
+nn frame_pointer
+ln frame pointer: points to first word of procedure frame
+at id 34
+at pg 06f
+nn alloc_space_heap
+ln allocating space for new data on heap [110]
+at id 35
+at pg 06f
+nn c_prog_mem
+ln C programmers need space in memory for static variables and dynamic data structs
+at id 36
+at pg 06f
+nn text_seg
+ln text segment: segment of unix object file that contains the machine language code for routines in the source file
+at id 37
+at pg 06f
+nn static_data_seg
+ln static data segment: place for constants, other static variables
+at id 38
+at pg 06f
+nn heap
+ln heap: segment for data structures that grow/shrink during lifetime
+at id 39
+at pg 06f
+nn MIPS_mem_alloc
+ln MIPS convention for allocation of memory
+at id 3a
+at pg 06f
+nn malloc_free
+ln malloc/free: allocate/free space on the heap
+at id 3b
+at pg 06f
+nn 2_09_communicating_with_people
+ln 2.9: communicating with people [112]
+at id 3c
+at pg 06f
+nn number_crunch_then_text_process
+ln computers number crunching first, then text processing
+at id 3d
+at pg 06f
+nn ascii
+ln ascii characters
+at id 3e
+at pg 06f
+nn instr_move_bytes
+ln instructions to move bytes
+at id 3f
+at pg 06f
+nn load_byte_lb
+ln load byte (lb)
+at id 3g
+at pg 06f
+nn store_byte
+ln store byte (sb)
+at id 3h
+at pg 06f
+nn stores_rmost_bits
+ln stores on rightmost bits
+at id 3i
+at pg 06f
+nn chars_to_strings
+ln chars combine to strings
+at id 3j
+at pg 06f
+nn string_representations
+ln string representations
+at id 3k
+at pg 06f
+nn first_pos_length
+ln first position stores length
+at id 3l
+at pg 06f
+nn length_as_var
+ln length as accompanying variable
+at id 3m
+at pg 06f
+nn null_byte_termination
+ln null byte termination
+at id 3n
+at pg 06f
+nn java_chars_strings
+ln characters and strings in java
+at id 3o
+at pg 06f
+nn unicode
+ln unicode: encoding of the alphabets of most human languages
+at id 3p
+at pg 06f
+nn java_unicode_chars
+ln java uses unicode for chars
+at id 3q
+at pg 06f
+nn halfwords
+ln halfwords: 16-bit
+at id 3r
+at pg 06f
+nn halfword_instr
+ln instructions for half words
+at id 3s
+at pg 06f
+nn load_half
+ln load half (lh)
+at id 3t
+at pg 06f
+nn store_half
+ln store half (sh)
+at id 3u
+at pg 06f
+nn char_16_bits
+ln 16 bits to reprsent character
+at id 3v
+at pg 06f
 nn MIPS
 ln MIPS
 at id 4
@@ -534,6 +658,7 @@ at pg 067
 co 2_1_intro 2_instructions
 co 2_07_instr_decisions 2_instructions
 co 2_08_procs_in_computer_hw 2_instructions
+co 2_09_communicating_with_people 2_instructions
 co 2_2_operations 2_instructions
 co 2_06_logical_ops 2_instructions
 co nor 2_instructions
@@ -590,6 +715,8 @@ co stack_ideal_for_reg_spill jump_register
 co jump_register 2_08_procs_in_computer_hw
 co procedure 2_08_procs_in_computer_hw
 co nested_proc 2_08_procs_in_computer_hw
+co alloc_space_stack 2_08_procs_in_computer_hw
+co alloc_space_heap 2_08_procs_in_computer_hw
 co exec_proc procedure
 co MIPs_regs_proc_call procedure
 co caller procedure
@@ -618,6 +745,38 @@ co push_preserved_regs_onto_stack reg_temp_saved
 co register_conflicts nested_proc
 co global_pointer nested_proc
 co push_preserved_regs_onto_stack register_conflicts
+co stack_for_local_vars alloc_space_stack
+co alloc_space_heap alloc_space_stack
+co proc_frame stack_for_local_vars
+co frame_pointer stack_for_local_vars
+co c_prog_mem alloc_space_heap
+co MIPS_mem_alloc c_prog_mem
+co malloc_free c_prog_mem
+co static_data_seg text_seg
+co heap static_data_seg
+co text_seg MIPS_mem_alloc
+co static_data_seg MIPS_mem_alloc
+co heap MIPS_mem_alloc
+co heap malloc_free
+co number_crunch_then_text_process 2_09_communicating_with_people
+co java_chars_strings 2_09_communicating_with_people
+co ascii number_crunch_then_text_process
+co instr_move_bytes ascii
+co chars_to_strings ascii
+co load_byte_lb instr_move_bytes
+co store_byte instr_move_bytes
+co string_representations chars_to_strings
+co first_pos_length string_representations
+co length_as_var string_representations
+co null_byte_termination string_representations
+co halfword_instr string_representations
+co unicode java_chars_strings
+co java_unicode_chars java_chars_strings
+co java_unicode_chars unicode
+co char_16_bits java_unicode_chars
+co load_half halfword_instr
+co store_half halfword_instr
+co string_representations char_16_bits
 co MIPS_operands MIPS
 co MIPS_assembly MIPS
 co MIPS_operands 2_2_operations

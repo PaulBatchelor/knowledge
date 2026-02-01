@@ -1943,3 +1943,13 @@ until I get out of the conflict zone which should be 1p.
 
 @15:59 2.8 transcription #ink:06e #timelog:00:19:42
 #! dz coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware
+
+@16:20 finish up 2.8 transcription, 2.9 #timelog:00:34:09
+#! dz coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware
+#! dz coad/toc/02_instructions_language_of_the_computer/09_communicating_with_people
+loops found. trying to fix
+---
+35 to 31 swapped to 31 to 35
+---
+no loops actually found. I misread '2a' as '3a'. nice
+to know my system works (when it's legible).

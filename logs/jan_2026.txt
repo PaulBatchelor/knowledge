@@ -1902,3 +1902,5 @@ start.
 
 @09:35 collision found in 06M #ink:06M #ink:07U
 Changing one of them to be 07U.
+
+@09:58 ink import p2

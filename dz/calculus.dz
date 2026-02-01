@@ -1,6 +1,7 @@
 ns calculus
 nn pearson
 ns +pearson
+nn ink
 nn news
 nn toc
 ns +toc
@@ -11,6 +12,7 @@ nn 04_infinite_limits
 ns calculus
 nn spivak
 ns +spivak
+nn ink
 nn news
 nn toc
 ns +toc

@@ -104,7 +104,7 @@
 {\noindent \bf 2026-01-22:} news\smallskip
 {\noindent \bf 2026-01-24:} sonilo, bulk instructions, instruction primitive, ugen bytecode, ugens\smallskip
 {\noindent \bf 2026-01-26:} ugens\smallskip
-{\noindent \bf 2026-01-31:} bulk instructions, ugen ports, ugen refcount, ugen stack, ugens\smallskip
+{\noindent \bf 2026-01-31:} bulk instructions, ilo interpreter, sonilo command language, ugen ports, ugen refcount, ugen stack, ugens\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -491,6 +491,14 @@ Since I originally wrote this task, the role I had in mind for Ilo has changed. 
 I think ilo will become more useful for more highlevel structures like gesture. Though, to be honest, I haven't thought that far ahead beyond how it'd be used.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:01: task ordering updates, ugens child of some other tasks now}\smallskip
+ilo interpreter stuff needs to at least happen after ugen stuff. And it's a prereq for any gesture stuff.
+\par
+
+By the time unit generators are finished, I think thinking about using a higher-level abstraction like Konilo may be warranted. At that point, it'll start to feel possible to build demos.
+\par
+
 \xrdef{node5}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont konilo sonilo communication}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-09}\medskip
@@ -592,6 +600,14 @@ More and more, it's looking like this test suite language is acting like a rough
 \par
 
 I think the one 32-bit register idea is quirky, but it acts as a good focus point for design. I think I'd probably built out more general purpose operations that work on that register, doing things equivalent to stack operations you'd find in a forth.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:01: task ordering updates, ugens child of some other tasks now}\smallskip
+ilo interpreter stuff needs to at least happen after ugen stuff. And it's a prereq for any gesture stuff.
+\par
+
+By the time unit generators are finished, I think thinking about using a higher-level abstraction like Konilo may be warranted. At that point, it'll start to feel possible to build demos.
 \par
 
 \xrdef{node8}
@@ -1411,6 +1427,28 @@ Probably utilize the existing array structure implemented, and figure out a dece
 
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 07:31: hoping to work on this today}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:12: bulk instructions: implementation}\smallskip
+Setting up the initial unit test. The actual implementation is trivial.
+\par
+
+So this shouldn't be too strenuous. I'll use the exist block array, and append instructions to it.
+\par
+
+Cute idea: make the program be based on the konami code: up, up, down, down, left, right, left, right, B, A. up/down can be increase, decrease by one. left/right refers to bitshifting. B is bitwise negation. A is reverse bits. I'll add some print opcodes as well.
+\par
+
+hoping that 'bx' isn't taken. that would be a good acronym to use.
+\par
+
+once again, my left/right confusion has worked against me. I mixed up left shift and right shift operations which made my expected results wrong. Also, I forgot what the binary nibble of 6 was. Off-by-one.
+\par
+
+'bx' has been implemented.
+\par
+
+side note: these instruction operations should eventually be consolidated into C functions, not just inline code.
+\par
+
 \xrdef{node23}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugens}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
@@ -1472,6 +1510,13 @@ A pop operation decreases reference count associated with a particular memory ad
 \par
 
 The garbage collection happens last, after all stack operations. Any time a new output parameter is pushed onto the stack, it will be unable to claim a recently popped block used by the input, guaranteeing that input/output blocks will be disjoing. Making the output/input blocks disjoint prevents things like accidental overwrites to happen.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:01: task ordering updates, ugens child of some other tasks now}\smallskip
+ilo interpreter stuff needs to at least happen after ugen stuff. And it's a prereq for any gesture stuff.
+\par
+
+By the time unit generators are finished, I think thinking about using a higher-level abstraction like Konilo may be warranted. At that point, it'll start to feel possible to build demos.
 \par
 
 \xrdef{node24}

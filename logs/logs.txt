@@ -3,3 +3,6 @@ thoughts:thoughts/%
 dmoi:dmoi/%
 coad:coad/%
 leetcode:leetcode/%
+ma123:bu/ma123/%
+calc:calculus/pearson/%
+spivak:calculus/spivak/%

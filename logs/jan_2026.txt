@@ -1912,3 +1912,10 @@ Not sure where to put these, I just made a folder on my computer
 @10:35 scanning scratch sheets as an experiment #timelog:00:04:47
 #! dz $
 Putting them in the same place as the cards.
+
+@11:12 inventing some kind of ad-hoc annotation system literally right now
+#! dz $
+It's clear to me that if I don't put things into bins and
+add annotations, it's going to get lost.
+---
+I'm just going to open up ed and start typing notes.

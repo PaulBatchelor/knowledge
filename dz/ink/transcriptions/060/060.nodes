@@ -1,0 +1,33 @@
+@0 instructions: language of the computer
+@1 2.1 introduction @2 instruction set: the vocab of cmds
+understood by a given architecture
+@3 stored-program concept: the idea that instructions an ddata of many
+types can be stored in memory as numbers, leading to the stored
+program computer
+@4 MIPS
+@5 ARMV7
+@6 x86
+@7 ARMv8
+@8 2.2 operations of the computer hardware
+@9 MIPS operands
+@f MIPS assembly language
+@a arithmetic
+@b data transfer
+@c logical
+@d conditional branch
+@e unconditional jump
+@g principles of hardware design
+@h simplicity favors regularity
+@i 2.3 operands of the computer hardware
+@j word: the natural unit of access in a computer
+@k smaller is faster
+@l memory operands
+@m data transfer instruction: a caommand tha tmoves data between
+memory and registers
+@n address: a value used to delineate the location
+of a specific data element within a memory array
+@o alignment restriction: a requirement that
+data be aligned in memeory on natural boundaries
+@p spilling registers: the process of putting
+less commonly used variables into memory
+@q constant or immediate operands

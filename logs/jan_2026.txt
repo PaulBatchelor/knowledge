@@ -1944,7 +1944,7 @@ until I get out of the conflict zone which should be 1p.
 @15:59 2.8 transcription #ink:06e #timelog:00:19:42
 #! dz coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware
 
-@16:20 finish up 2.8 transcription, 2.9 #timelog:00:34:09
+@16:20 finish up 2.8 transcription, 2.9 #timelog:00:34:09 #ink:06f
 #! dz coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware
 #! dz coad/toc/02_instructions_language_of_the_computer/09_communicating_with_people
 loops found. trying to fix
@@ -1953,3 +1953,11 @@ loops found. trying to fix
 ---
 no loops actually found. I misread '2a' as '3a'. nice
 to know my system works (when it's legible).
+
+@16:57 2.10 transcription #ink:06i #timelog:00:17:51
+#! dz coad/toc/02_instructions_language_of_the_computer/10_MIPs_addressing_32_bit_immediates_addresses
+note: external reference goes to '1d', which has a conflict.
+I'm assuming it wanted 'bd'.
+---
+4c is connecting to itself in this one. not sure what
+I was thinking about here.

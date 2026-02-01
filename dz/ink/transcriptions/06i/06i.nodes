@@ -1,0 +1,31 @@
+@3w 2.10 MIPS addressing for 32-bit immediates and addresses
+@3x 32-bit immediate operands
+@3y lui: load upper immediate
+@3z set upper 16 bits of a constant in a register
+@40 compiler/assembler breaks large constants into pieces and re-assemble
+into register
+@41 immediate field size restirction may be problem for
+memory addresses in load/stores, constants in immediate
+instructions
+@42 assembler temporary (at): temporary register available to create long values
+@43 addressing in branches and jumps
+@44 MIPS jump instructions
+@45 J-type instruction format
+@46 6-bits operation field, the rest address
+@47 conditional branch only has 16 bits for address
+@48 address larger than $2^{16}$, how?
+@49 specify register that would be added to branch address
+@4a use program counter as register
+@4b PC-relative addressing
+@4c refers to words, not bytes
+@4d 26 bit word address, 28-bit byte address
+@4e MIPS addressing mode summary
+@4f addressing modes
+@4g multiple forms of addressing
+@4h immediate register
+@4i register
+@4j PC-relative
+@4k base/displacement
+@4l pseudo-direct
+@4m MIPS addressing modes
+@4n decoding machine language

@@ -431,10 +431,122 @@ nn char_16_bits
 ln 16 bits to reprsent character
 at id 3v
 at pg 06f
+nn 2_10_MIPS_addr_32bit_imm_and_addr
+ln 2.10 MIPS addressing for 32-bit immediates and addresses
+at id 3w
+at pg 06i
+nn 32bit_immediate_operands
+ln 32-bit immediate operands
+at id 3x
+at pg 06i
+nn lui
+ln lui: load upper immediate
+at id 3y
+at pg 06i
+nn set_upper_16_in_reg
+ln set upper 16 bits of a constant in a register
+at id 3z
+at pg 06i
 nn MIPS
 ln MIPS
 at id 4
 at pg 060
+nn compiler_assembler_large_constants
+ln compiler/assembler breaks large constants into pieces and re-assemble into register
+at id 40
+at pg 06i
+nn immediate_field_size_problems
+ln immediate field size restirction may be problem for memory addresses in load/stores, constants in immediate instructions
+at id 41
+at pg 06i
+nn assembler_temporary
+ln assembler temporary (at): temporary register available to create long values
+at id 42
+at pg 06i
+nn addressing_branches_jumps
+ln addressing in branches and jumps
+at id 43
+at pg 06i
+nn MIPS_jump_instructions
+ln MIPS jump instructions
+at id 44
+at pg 06i
+nn j_type_format
+ln J-type instruction format
+at id 45
+at pg 06i
+nn j_type_fields
+ln 6-bits operation field, the rest address
+at id 46
+at pg 06i
+nn cond_branch_16_bit_addr
+ln conditional branch only has 16 bits for address
+at id 47
+at pg 06i
+nn addr_gt_2_16
+ln address larger than $2^{16}$, how?
+at id 48
+at pg 06i
+nn reg_added_to_addr
+ln specify register that would be added to branch address
+at id 49
+at pg 06i
+nn use_pc_as_reg
+ln use program counter as register
+at id 4a
+at pg 06i
+nn pc_relative_addr
+ln PC-relative addressing
+at id 4b
+at pg 06i
+nn words_not_bytes
+ln refers to words, not bytes
+at id 4c
+at pg 06i
+nn 26_bit_word_28_bit_byte
+ln 26 bit word address, 28-bit byte address
+at id 4d
+at pg 06i
+nn MIPS_addr_summary
+ln MIPS addressing mode summary
+at id 4e
+at pg 06i
+nn addressing_modes
+ln addressing modes
+at id 4f
+at pg 06i
+nn multiple_addr_forms
+ln multiple forms of addressing
+at id 4g
+at pg 06i
+nn immediate_reg
+ln immediate register
+at id 4h
+at pg 06i
+nn register
+ln register
+at id 4i
+at pg 06i
+nn PC_relative
+ln PC-relative
+at id 4j
+at pg 06i
+nn base_displacement
+ln base/displacement
+at id 4k
+at pg 06i
+nn pseudo_direct
+ln pseudo-direct
+at id 4l
+at pg 06i
+nn MIPS_addr_modes
+ln MIPS addressing modes
+at id 4m
+at pg 06i
+nn decoding_machine_language
+ln decoding machine language
+at id 4n
+at pg 06i
 nn ARMv7
 ln ARMV7
 at id 5
@@ -659,6 +771,7 @@ co 2_1_intro 2_instructions
 co 2_07_instr_decisions 2_instructions
 co 2_08_procs_in_computer_hw 2_instructions
 co 2_09_communicating_with_people 2_instructions
+co 2_10_MIPS_addr_32bit_imm_and_addr 2_instructions
 co 2_2_operations 2_instructions
 co 2_06_logical_ops 2_instructions
 co nor 2_instructions
@@ -777,8 +890,34 @@ co char_16_bits java_unicode_chars
 co load_half halfword_instr
 co store_half halfword_instr
 co string_representations char_16_bits
+co 32bit_immediate_operands 2_10_MIPS_addr_32bit_imm_and_addr
+co lui 2_10_MIPS_addr_32bit_imm_and_addr
+co addressing_branches_jumps 2_10_MIPS_addr_32bit_imm_and_addr
+co MIPS_addr_summary 2_10_MIPS_addr_32bit_imm_and_addr
+co compiler_assembler_large_constants 32bit_immediate_operands
+co set_upper_16_in_reg lui
 co MIPS_operands MIPS
 co MIPS_assembly MIPS
+co immediate_field_size_problems compiler_assembler_large_constants
+co assembler_temporary immediate_field_size_problems
+co MIPS_jump_instructions addressing_branches_jumps
+co cond_branch_16_bit_addr addressing_branches_jumps
+co j_type_format MIPS_jump_instructions
+co j_type_fields j_type_format
+co words_not_bytes j_type_fields
+co addr_gt_2_16 cond_branch_16_bit_addr
+co reg_added_to_addr addr_gt_2_16
+co use_pc_as_reg reg_added_to_addr
+co pc_relative_addr use_pc_as_reg
+co words_not_bytes pc_relative_addr
+co addressing_modes MIPS_addr_summary
+co MIPS_addr_modes MIPS_addr_summary
+co multiple_addr_forms addressing_modes
+co immediate_reg MIPS_addr_modes
+co register MIPS_addr_modes
+co PC_relative MIPS_addr_modes
+co base_displacement MIPS_addr_modes
+co pseudo_direct MIPS_addr_modes
 co MIPS_operands 2_2_operations
 co MIPS_assembly 2_2_operations
 co hw_design_principles 2_2_operations
@@ -797,6 +936,7 @@ co op_field_selects_variant funt
 co instr_needs_longer_fields good_design_good_compromise
 co instr_length_same_diff_formats good_design_good_compromise
 co instr_length_same_diff_formats instr_needs_longer_fields
+co j_type_format instr_length_same_diff_formats
 co r_type instr_length_same_diff_formats
 co i_type instr_length_same_diff_formats
 co logical_shifts 2_06_logical_ops

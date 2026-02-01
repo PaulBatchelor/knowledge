@@ -1903,4 +1903,12 @@ start.
 @09:35 collision found in 06M #ink:06M #ink:07U
 Changing one of them to be 07U.
 
-@09:58 ink import p2
+@09:58 ink import p2 #timelog:00:24:04
+
+@10:22 scanning first set of note cards as an experiment #timelog:00:10:27
+#! dz bu/ma123/news
+Not sure where to put these, I just made a folder on my computer
+
+@10:35 scanning scratch sheets as an experiment #timelog:00:04:47
+#! dz $
+Putting them in the same place as the cards.

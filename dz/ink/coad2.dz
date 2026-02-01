@@ -1,0 +1,296 @@
+ns coad/notes
+nn 2_instructions
+ln instructions: language of the computer
+at id 0
+at pg 060
+nn 2_1_intro
+ln 2.1 introduction
+at id 1
+at pg 060
+nn negnum_1_MSB
+ln all negative numbers have 1 in MSB
+at id 10
+at pg 067
+nn sign_bit
+ln sign bit
+at id 11
+at pg 067
+nn loads
+ln loads
+at id 12
+at pg 067
+nn signed_load
+ln signed load
+at id 13
+at pg 067
+nn copy_sign_fill_reg
+ln copy sign repeatedly to fill rest of register
+at id 14
+at pg 067
+nn sign_extension
+ln sign extension
+at id 15
+at pg 067
+nn unsigned_load
+ln unsigned load: fill left of data with zeros
+at id 16
+at pg 067
+nn word_load_identical_signed_unsigned
+ln 32 bit word load is identical for signed/unsigned
+at id 17
+at pg 067
+nn byte_loads
+ln byte loads
+at id 18
+at pg 067
+nn load_byte
+ln load byte (lb)
+at id 19
+at pg 067
+nn load_byte_unsigned
+ln load byte unsigned
+at id 1a
+at pg 067
+nn useful_shortcuts
+ln useful shortcuts
+at id 1b
+at pg 067
+nn negate
+ln negate: invert 0 to 1, 1 to 0, add 1
+at id 1c
+at pg 067
+nn negate_equation
+ln $x + \overline{x} = -1$, $x + \overline{x} + 1 = 0$, $\overbar{x} + 1 = -x$.
+at id 1d
+at pg 067
+nn convert_n_bits_more_than
+ln convert binary in n bits to number with more than n bits
+at id 1e
+at pg 067
+nn ones_complement
+ln one's complement: notation where 10...0 most negative and 011..1 most postive
+at id 1f
+at pg 067
+nn ones_complement_traits
+ln equal amount of positive/neagtives, 2 zeros pos 0..0 and neg 1..1
+at id 1g
+at pg 067
+nn ones_complement_negative
+ln negative found via inverting each bit $\overline{x}$
+at id 1h
+at pg 067
+nn biased_notation
+ln biased notation
+at id 1i
+at pg 067
+nn most_neg_pos_biased
+ln most neg 0..0, most positive 1..1
+at id 1j
+at pg 067
+nn typical_zero_biased
+ln 0 typically 10..0
+at id 1k
+at pg 067
+nn biased_non_negative
+ln biases a number to have non-negative representation
+at id 1l
+at pg 067
+nn instruction_set
+ln instruction set: the vocab of cmds understood by a given architecture
+at id 2
+at pg 060
+nn stored_program_concept
+ln stored-program concept: the idea that instructions an ddata of many types can be stored in memory as numbers, leading to the stored program computer
+at id 3
+at pg 060
+nn MIPS
+ln MIPS
+at id 4
+at pg 060
+nn ARMv7
+ln ARMV7
+at id 5
+at pg 060
+nn x86
+ln x86
+at id 6
+at pg 060
+nn ARMv8
+ln ARMv8
+at id 7
+at pg 060
+nn 2_2_operations
+ln 2.2 operations of the computer hardware
+at id 8
+at pg 060
+nn MIPS_operands
+ln MIPS operands
+at id 9
+at pg 060
+nn arithmetic
+ln arithmetic
+at id a
+at pg 060
+nn data_transfer
+ln data transfer
+at id b
+at pg 060
+nn logical
+ln logical
+at id c
+at pg 060
+nn conditional_branch
+ln conditional branch
+at id d
+at pg 060
+nn unconditional_jump
+ln unconditional jump
+at id e
+at pg 060
+nn MIPS_assembly
+ln MIPS assembly language
+at id f
+at pg 060
+nn hw_design_principles
+ln principles of hardware design
+at id g
+at pg 060
+nn simplicity_favors_regularity
+ln simplicity favors regularity
+at id h
+at pg 060
+nn 2_3_operands
+ln 2.3 operands of the computer hardware
+at id i
+at pg 060
+nn word
+ln word: the natural unit of access in a computer
+at id j
+at pg 060
+nn smaller_is_faster
+ln smaller is faster
+at id k
+at pg 060
+nn memory_operands
+ln memory operands
+at id l
+at pg 060
+nn data_transfer_instruction
+ln data transfer instruction: a caommand tha tmoves data between memory and registers
+at id m
+at pg 060
+nn address
+ln address: a value used to delineate the location of a specific data element within a memory array
+at id n
+at pg 060
+nn alignment_restriction
+ln alignment restriction: a requirement that data be aligned in memeory on natural boundaries
+at id o
+at pg 060
+nn spilling_registers
+ln spilling registers: the process of putting less commonly used variables into memory
+at id p
+at pg 060
+nn constant_or_immediate_operands
+ln constant or immediate operands
+at id q
+at pg 060
+nn 2_4_signed_unsigned_nums
+ln 2.4 signed and unsigned numbers
+at id r
+at pg 067
+nn binary_digit
+ln binary digit/bit: one of the two numbers in base 2, 0 or 1, that are the components of information
+at id s
+at pg 067
+nn value_ith_digit_d
+ln value of ith digit d: $d \cdot b^i$, where $b$ is base.
+at id t
+at pg 067
+nn LSB_MIPS
+ln least significant bit: rightmost bit in MIPS word
+at id u
+at pg 067
+nn MSB_MIPS
+ln most significant bit: leftmost bit in MIPS word
+at id v
+at pg 067
+nn overflow
+ln overflow: when the results of an operation are larger than can be expressed in a register
+at id w
+at pg 067
+nn sign_and_magnitude
+ln sign and magnitude representation
+at id x
+at pg 067
+nn twos_complement
+ln two's complement
+at id y
+at pg 067
+nn leading_0s_pos_1s_neg
+ln leading 0s positive, leading 1s negative
+at id z
+at pg 067
+co 2_1_intro 2_instructions
+co 2_2_operations 2_instructions
+co 2_4_signed_unsigned_nums 2_instructions
+co instruction_set 2_1_intro
+co stored_program_concept 2_1_intro
+co sign_bit negnum_1_MSB
+co signed_load loads
+co unsigned_load loads
+co word_load_identical_signed_unsigned loads
+co byte_loads loads
+co copy_sign_fill_reg signed_load
+co sign_extension copy_sign_fill_reg
+co load_byte byte_loads
+co load_byte_unsigned byte_loads
+co negate useful_shortcuts
+co convert_n_bits_more_than useful_shortcuts
+co negate_equation negate
+co sign_extension convert_n_bits_more_than
+co ones_complement_traits ones_complement
+co ones_complement_negative ones_complement
+co most_neg_pos_biased biased_notation
+co typical_zero_biased most_neg_pos_biased
+co biased_non_negative typical_zero_biased
+co stored_program_concept instruction_set
+co MIPS instruction_set
+co ARMv7 instruction_set
+co x86 instruction_set
+co ARMv8 instruction_set
+co MIPS_operands MIPS
+co MIPS_assembly MIPS
+co MIPS_operands 2_2_operations
+co MIPS_assembly 2_2_operations
+co hw_design_principles 2_2_operations
+co 2_3_operands 2_2_operations
+co logical MIPS_assembly
+co conditional_branch MIPS_assembly
+co unconditional_jump MIPS_assembly
+co simplicity_favors_regularity hw_design_principles
+co smaller_is_faster hw_design_principles
+co MIPS_operands 2_3_operands
+co smaller_is_faster 2_3_operands
+co memory_operands 2_3_operands
+co constant_or_immediate_operands 2_3_operands
+co data_transfer_instruction memory_operands
+co address memory_operands
+co alignment_restriction memory_operands
+co spilling_registers memory_operands
+co loads 2_4_signed_unsigned_nums
+co ones_complement 2_4_signed_unsigned_nums
+co biased_notation 2_4_signed_unsigned_nums
+co binary_digit 2_4_signed_unsigned_nums
+co value_ith_digit_d 2_4_signed_unsigned_nums
+co overflow 2_4_signed_unsigned_nums
+co sign_and_magnitude 2_4_signed_unsigned_nums
+co twos_complement 2_4_signed_unsigned_nums
+co LSB_MIPS binary_digit
+co MSB_MIPS binary_digit
+co negnum_1_MSB MSB_MIPS
+co twos_complement sign_and_magnitude
+co negnum_1_MSB twos_complement
+co useful_shortcuts twos_complement
+co ones_complement twos_complement
+co leading_0s_pos_1s_neg twos_complement

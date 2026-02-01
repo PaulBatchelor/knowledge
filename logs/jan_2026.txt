@@ -1922,3 +1922,5 @@ I'm just going to open up ed and start typing notes.
 
 @13:06 chapter 2 transcription #ink:060 #timelog:00:20:59
 #! dz coad/toc/02_instructions_language_of_the_computer
+
+@13:28 chapter 2 transcription 2.4 #ink:067 #timelog:00:26:59

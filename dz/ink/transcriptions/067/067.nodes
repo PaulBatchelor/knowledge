@@ -1,0 +1,37 @@
+@r 2.4 signed and unsigned numbers
+@s binary digit/bit: one of the two numbers in base 2,
+0 or 1, that are the components of information
+@t value of ith digit d: $d \cdot b^i$, where $b$ is base.
+@u least significant bit: rightmost bit in MIPS word
+@v most significant bit: leftmost bit in MIPS word
+@w overflow: when the results of an operation are larger
+than can be expressed in a register
+@x sign and magnitude representation
+@y two's complement
+@z leading 0s positive, leading 1s negative
+@10 all negative numbers have 1 in MSB
+@11 sign bit
+@12 loads
+@13 signed load
+@14 copy sign repeatedly to fill rest of register
+@15 sign extension
+@16 unsigned load: fill left of data with zeros
+@17 32 bit word load is identical for
+signed/unsigned
+@18 byte loads
+@19 load byte (lb)
+@1a load byte unsigned
+@1b useful shortcuts
+@1c negate: invert 0 to 1, 1 to 0, add 1
+@1d $x + \overline{x} = -1$, $x + \overline{x} + 1 = 0$,
+$\overbar{x} + 1 = -x$.
+@1e convert binary in n bits to number with more than n bits
+@1f one's complement: notation where 10...0 most negative
+and 011..1 most postive
+@1g equal amount of positive/neagtives, 2 zeros pos 0..0 and
+neg 1..1
+@1h negative found via inverting each bit $\overline{x}$
+@1i biased notation
+@1j most neg 0..0, most positive 1..1
+@1k 0 typically 10..0
+@1l biases a number to have non-negative representation

@@ -1,8 +1,4 @@
 ns coad/notes
-nn 2_instructions
-ln instructions: language of the computer
-at id 0
-at pg 060
 nn practical_power_limit
 ln we have run into the practical power limit for cooling commodity microprocessors
 at id 00
@@ -143,10 +139,6 @@ nn programmers_improve_response_time
 ln programmers now need to improve response time in programs by rewrite to take advantage of multiple processors
 at id 0z
 at pg 04z
-nn 2_1_intro
-ln 2.1 introduction
-at id 1
-at pg 060
 nn parallel_programming_difficult
 ln why is it difficult for programmers to explicitly write parallel programs?
 at id 10
@@ -159,108 +151,6 @@ nn divide_app_over_processors
 ln fast for parallel hw means programmer must divide app so that each processor has roughly same amount to do same time, overhead of scheduling/coordinatoin doesn't "fritter away" perf benefits of parallel
 at id 12
 at pg 04z
-nn instruction_set
-ln instruction set: the vocab of cmds understood by a given architecture
-at id 2
-at pg 060
-nn stored_program_concept
-ln stored-program concept: the idea that instructions an ddata of many types can be stored in memory as numbers, leading to the stored program computer
-at id 3
-at pg 060
-nn MIPS
-ln MIPS
-at id 4
-at pg 060
-nn ARMv7
-ln ARMV7
-at id 5
-at pg 060
-nn x86
-ln x86
-at id 6
-at pg 060
-nn ARMv8
-ln ARMv8
-at id 7
-at pg 060
-nn 2_2_operations
-ln 2.2 operations of the computer hardware
-at id 8
-at pg 060
-nn MIPS_operands
-ln MIPS operands
-at id 9
-at pg 060
-nn arithmetic
-ln arithmetic
-at id a
-at pg 060
-nn data_transfer
-ln data transfer
-at id b
-at pg 060
-nn logical
-ln logical
-at id c
-at pg 060
-nn conditional_branch
-ln conditional branch
-at id d
-at pg 060
-nn unconditional_jump
-ln unconditional jump
-at id e
-at pg 060
-nn MIPS_assembly
-ln MIPS assembly language
-at id f
-at pg 060
-nn hw_design_principles
-ln principles of hardware design
-at id g
-at pg 060
-nn simplicity_favors_regularity
-ln simplicity favors regularity
-at id h
-at pg 060
-nn 2_3_operands
-ln 2.3 operands of the computer hardware
-at id i
-at pg 060
-nn word
-ln word: the natural unit of access in a computer
-at id j
-at pg 060
-nn smaller_is_faster
-ln smaller is faster
-at id k
-at pg 060
-nn memory_operands
-ln memory operands
-at id l
-at pg 060
-nn data_transfer_instruction
-ln data transfer instruction: a caommand tha tmoves data between memory and registers
-at id m
-at pg 060
-nn address
-ln address: a value used to delineate the location of a specific data element within a memory array
-at id n
-at pg 060
-nn alignment_restriction
-ln alignment restriction: a requirement that data be aligned in memeory on natural boundaries
-at id o
-at pg 060
-nn spilling_registers
-ln spilling registers: the process of putting less commonly used variables into memory
-at id p
-at pg 060
-nn constant_or_immediate_operands
-ln constant or immediate operands
-at id q
-at pg 060
-co 2_1_intro 2_instructions
-co 2_2_operations 2_instructions
 co postpc_critical_resource_energy practical_power_limit
 co joules_better_than_watts postpc_critical_resource_energy
 co dynamic_energy postpc_critical_resource_energy
@@ -300,34 +190,8 @@ co microprocessor_vs_processor multiple_processors_chip
 co benefits_throughput_not_response multiple_processors_chip
 co programmers_improve_response_time multiple_processors_chip
 co parallel_programming_difficult programmers_improve_response_time
-co instruction_set 2_1_intro
-co stored_program_concept 2_1_intro
 co parallel_performance_programming parallel_programming_difficult
 co divide_app_over_processors parallel_programming_difficult
-co stored_program_concept instruction_set
-co MIPS instruction_set
-co ARMv7 instruction_set
-co x86 instruction_set
-co ARMv8 instruction_set
-co MIPS_operands MIPS
-co MIPS_assembly MIPS
-co MIPS_operands 2_2_operations
-co MIPS_assembly 2_2_operations
-co hw_design_principles 2_2_operations
-co 2_3_operands 2_2_operations
-co logical MIPS_assembly
-co conditional_branch MIPS_assembly
-co unconditional_jump MIPS_assembly
-co simplicity_favors_regularity hw_design_principles
-co smaller_is_faster hw_design_principles
-co MIPS_operands 2_3_operands
-co smaller_is_faster 2_3_operands
-co memory_operands 2_3_operands
-co constant_or_immediate_operands 2_3_operands
-co data_transfer_instruction memory_operands
-co address memory_operands
-co alignment_restriction memory_operands
-co spilling_registers memory_operands
 ns coad/notes
 nn f04v
 at fig figs/f04v

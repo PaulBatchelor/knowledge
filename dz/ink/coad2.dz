@@ -60,7 +60,7 @@ ln negate: invert 0 to 1, 1 to 0, add 1
 at id 1c
 at pg 067
 nn negate_equation
-ln $x + \overline{x} = -1$, $x + \overline{x} + 1 = 0$, $\overbar{x} + 1 = -x$.
+ln $x + \overline{x} = -1$, $x + \overline{x} + 1 = 0$, $\overline{x} + 1 = -x$.
 at id 1d
 at pg 067
 nn convert_n_bits_more_than

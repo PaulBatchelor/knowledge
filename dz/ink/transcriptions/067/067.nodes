@@ -24,7 +24,7 @@ signed/unsigned
 @1b useful shortcuts
 @1c negate: invert 0 to 1, 1 to 0, add 1
 @1d $x + \overline{x} = -1$, $x + \overline{x} + 1 = 0$,
-$\overbar{x} + 1 = -x$.
+$\overline{x} + 1 = -x$.
 @1e convert binary in n bits to number with more than n bits
 @1f one's complement: notation where 10...0 most negative
 and 011..1 most postive

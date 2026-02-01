@@ -1936,6 +1936,10 @@ and continues from there.
 these nodes to be 'b' instead of '1'.
 
 @14:28 2.6, 2.7 transcription #ink:06d #timelog:00:20:30
-#! dz $
+#! dz coad/toc/02_instructions_language_of_the_computer/06_logical_operations
+#! dz coad/toc/02_instructions_language_of_the_computer/07_instructions_for_making_decisions
 Going to continue replacing instructions with a b prefix
 until I get out of the conflict zone which should be 1p.
+
+@15:59 2.8 transcription #ink:06e #timelog:00:19:42
+#! dz coad/toc/02_instructions_language_of_the_computer/08_supporting_procedures_in_computer_hardware

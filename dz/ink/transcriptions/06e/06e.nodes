@@ -1,0 +1,34 @@
+@2a 2.8 supporting procedures in computer hardware
+@2b procedure: a stored subroutine that performs a specifc task
+based on provided parameters
+@2c execution of a procedure
+@2d put params in place
+@2e transfer control
+@2f acquire resources
+@2g perform task
+@2h return control
+@2i MIPs registers for procedure calling
+@2j a0-a3: args
+@2k v0-v1: return values
+@2l ra: return address
+@2m jump-and-link (jal): jumps to an address, saves address of following
+instruction in ra, the return address
+@2n caller: program that instigates a procedure, provides parameters
+@2o callee: procedure, executes sequence of instructions based on caller
+params, then returns control to caller
+@2p program counter: register containing address of instruction executed
+@2q using more registers
+@2r stack ideal struct for spilling registers
+@2s stack pointer: denotes most recent alloc address that
+shows where registers should be spilled / old registers found
+@2t historical precedent: stack grows from higher to lower addr
+@2u push: achieved via subtracting from stack
+pointer
+@2v to avoid saving/restoring register whose value is never
+used, registers in MIPs are classified as temp (t0-t9) and
+saved (s0-s7)
+@2w nested procedure
+@2x leaf procedure: procedures that do not call other procedures
+@2y how to handle register conflicts?
+@2z push all preserved registers onto stack
+@30 global pointer: register reserved to point to static data, gp

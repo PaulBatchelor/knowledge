@@ -195,10 +195,118 @@ nn jump_register
 ln jump register (jr)
 at id 29
 at pg 06d
+nn 2_08_procs_in_computer_hw
+ln 2.8 supporting procedures in computer hardware
+at id 2a
+at pg 06e
+nn procedure
+ln procedure: a stored subroutine that performs a specifc task based on provided parameters
+at id 2b
+at pg 06e
+nn exec_proc
+ln execution of a procedure
+at id 2c
+at pg 06e
+nn params_in_place
+ln put params in place
+at id 2d
+at pg 06e
+nn transfer_control
+ln transfer control
+at id 2e
+at pg 06e
+nn acquire_resources
+ln acquire resources
+at id 2f
+at pg 06e
+nn perform_task
+ln perform task
+at id 2g
+at pg 06e
+nn return_control
+ln return control
+at id 2h
+at pg 06e
+nn MIPs_regs_proc_call
+ln MIPs registers for procedure calling
+at id 2i
+at pg 06e
+nn reg_args
+ln a0-a3: args
+at id 2j
+at pg 06e
+nn reg_return_vals
+ln v0-v1: return values
+at id 2k
+at pg 06e
+nn reg_return_address
+ln ra: return address
+at id 2l
+at pg 06e
+nn jump_and_link
+ln jump-and-link (jal): jumps to an address, saves address of following instruction in ra, the return address
+at id 2m
+at pg 06e
+nn caller
+ln caller: program that instigates a procedure, provides parameters
+at id 2n
+at pg 06e
+nn callee
+ln callee: procedure, executes sequence of instructions based on caller params, then returns control to caller
+at id 2o
+at pg 06e
+nn program_counter
+ln program counter: register containing address of instruction executed
+at id 2p
+at pg 06e
+nn using_more_regs
+ln using more registers
+at id 2q
+at pg 06e
+nn stack_ideal_for_reg_spill
+ln stack ideal struct for spilling registers
+at id 2r
+at pg 06e
+nn stack_pointer
+ln stack pointer: denotes most recent alloc address that shows where registers should be spilled / old registers found
+at id 2s
+at pg 06e
+nn stack_grows_high_low
+ln historical precedent: stack grows from higher to lower addr
+at id 2t
+at pg 06e
+nn push_via_subtraction
+ln push: achieved via subtracting from stack pointer
+at id 2u
+at pg 06e
+nn reg_temp_saved
+ln to avoid saving/restoring register whose value is never used, registers in MIPs are classified as temp (t0-t9) and saved (s0-s7)
+at id 2v
+at pg 06e
+nn nested_proc
+ln nested procedure
+at id 2w
+at pg 06e
+nn leaf_proc
+ln leaf procedure: procedures that do not call other procedures
+at id 2x
+at pg 06e
+nn register_conflicts
+ln how to handle register conflicts?
+at id 2y
+at pg 06e
+nn push_preserved_regs_onto_stack
+ln push all preserved registers onto stack
+at id 2z
+at pg 06e
 nn stored_program_concept
 ln stored-program concept: the idea that instructions an ddata of many types can be stored in memory as numbers, leading to the stored program computer
 at id 3
 at pg 060
+nn global_pointer
+ln global pointer: register reserved to point to static data, gp
+at id 30
+at pg 06e
 nn MIPS
 ln MIPS
 at id 4
@@ -425,6 +533,7 @@ at id z
 at pg 067
 co 2_1_intro 2_instructions
 co 2_07_instr_decisions 2_instructions
+co 2_08_procs_in_computer_hw 2_instructions
 co 2_2_operations 2_instructions
 co 2_06_logical_ops 2_instructions
 co nor 2_instructions
@@ -476,6 +585,39 @@ co matches_bounds_check signed_as_unsigned_lowcost_lt
 co if_then_else_chain case_switch_stmt
 co jump_table case_switch_stmt
 co jump_register jump_table
+co reg_return_address jump_register
+co stack_ideal_for_reg_spill jump_register
+co jump_register 2_08_procs_in_computer_hw
+co procedure 2_08_procs_in_computer_hw
+co nested_proc 2_08_procs_in_computer_hw
+co exec_proc procedure
+co MIPs_regs_proc_call procedure
+co caller procedure
+co program_counter procedure
+co params_in_place exec_proc
+co transfer_control exec_proc
+co acquire_resources exec_proc
+co perform_task exec_proc
+co return_control exec_proc
+co transfer_control params_in_place
+co acquire_resources transfer_control
+co perform_task acquire_resources
+co return_control perform_task
+co reg_args MIPs_regs_proc_call
+co reg_return_vals MIPs_regs_proc_call
+co reg_return_address MIPs_regs_proc_call
+co jump_register reg_args
+co jump_and_link reg_return_address
+co callee caller
+co reg_temp_saved using_more_regs
+co stack_pointer stack_ideal_for_reg_spill
+co stack_grows_high_low stack_ideal_for_reg_spill
+co reg_temp_saved stack_ideal_for_reg_spill
+co push_via_subtraction stack_grows_high_low
+co push_preserved_regs_onto_stack reg_temp_saved
+co register_conflicts nested_proc
+co global_pointer nested_proc
+co push_preserved_regs_onto_stack register_conflicts
 co MIPS_operands MIPS
 co MIPS_assembly MIPS
 co MIPS_operands 2_2_operations

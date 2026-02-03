@@ -8,6 +8,8 @@ ns +toc
 nn 02_limits
 ns +02_limits
 nn 04_infinite_limits
+nn 05_limits_at_infinity
+nn 06_continuity
 
 ns calculus
 nn spivak

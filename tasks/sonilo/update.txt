@@ -4,6 +4,8 @@ gr 0
 up sonilo/tasks.txt
 ds 180
 of 30
+# 40 days delay 2026-02-02
+of 40
 gc
 sr
 w

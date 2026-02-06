@@ -83,6 +83,6 @@ dz/coad
 dz/gre.dz
 dz/MIT_course_6_3.dz
 dz/calculus.dz
-dz/bu.dz
+dz/bu
 dz/ink
 dz/zzz

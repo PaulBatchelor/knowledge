@@ -118,8 +118,123 @@ discontinuity
 @2026-02-03 Day 156
 @09:00 logging in. timelogs #timelog:00:19:48
 
+@09:31 2.6 (continuity) reading #timelog:00:15:48
+#! dz calculus/pearson/toc/02_limits/06_continuity
+example 2: continuity at a point. theorem 2.9:
+continuity rules. theorem 2.10: polynomial and rational
+functions.
+
+@10:31 2.6 reading #timelog:00:12:08
+#! dz $
+Applying continuity theorems (example 3). theorem 2.11:
+continuity of composite functions at a point. theorem 2.12:
+limits of composite functions. theorem justifies interchange
+order of a limit and function evaluation.
+
+@11:45 2.6 reading #timelog:00:14:42
+#! dz $
+
 @09:22 delaying sonilo about 50 days to keep the backlog down
 #! dz thoughts/projects/sonilo/news
 My projected deadline says july 3rd, 2026, now. Probably
 not realistic, considering how I'm only working one day a
 week on this.
+
+@16:24 writing out homework 2 problems by hand (part 1) #timelog:00:29:22
+#! dz bu/ma123/hw
+
+@07:25 spivak reading #timelog:00:18:29
+#! dz calculus/spivak/toc/05_limits
+Function that checks if number is rational or not, analyzing
+the limit.
+
+@12:01 2.6 reading #timelog:00:16:19
+#! dz calculus/pearson/toc/02_limits/06_continuity
+ex 5 limits of composite functions. continuity on an interval.
+
+@20:25 bttyp: abstraction barriers #ink:084 #timelog:30:19
+#! dz thoughts/projects/bttyp
+thinking about the layers of abstraction required to make
+bttyp to be useful. The current prototype is a proof
+of concept that glues together existing code I once wrote,
+but there needs to be more in order to make documents.
+---
+In this brainstorm, I draw a line between in the software
+abstractions. low-level "from below" stuff deals with
+rasterization, while high-level "from above" stuff deals
+with concepts like alignment, word breaking, etc. The
+"from above" stuff needs to be built and thought on more,
+and will also influence where the "from below" stuff will
+be headed.
+
+@2026-02-04 Day 157
+@09:51 spivak reading #timelog:00:36:45
+#! dz calculus/spivak/toc/05_limits
+An "amusing variation" on function to determine if
+function is rational or not. Simpler functions. Constants.
+A sign checker function.
+
+@10:42 2.6 reading #timelog:00:51:18
+#! dz calculus/pearson/toc/02_limits/06_continuity
+functions involving roots. ex 6: intervals involving
+continuity. theorem 2.13: continuity of funcs with roots.
+ex 7: continuity with roots.
+
+@12:22 homework 2 work #timelog:00:15:10
+#! dz bu/ma123/hw
+
+@12:45 homework 2 work #timelog:00:16:34
+
+@13:55 homework 2 work #timelog:01:07:33
+
+@14:18 homework 2 work #timelog:00:34:38
+
+@16:06 homework 2 work #timelog:00:17:55
+
+@2026-02-05 Day 158
+@12:07 chapter 3 reading begins
+#! dz calculus/pearson/news
+
+@12:08 3.1 initial reading #timelog:00:12:44
+#! dz calculus/pearson/toc/03_derivatives/01_introducing_the_derivative
+returning to finding the slope of a line tangent to a curve.
+ex 1: instantanous velocity and tangent lines.
+
+@2026-02-06 Day 159
+@11:48 grinding #timelog:01:13:57
+#! dz bu/ma123/grind
+2.3 ex 2, ex 4, ex 7, 2.3.29, 2.3.37, 2.3.55, 2.3.67, 2.3.72
+2.4 definition of infinite limits
+
+@16:52 3.1 reading #timelog:00:47:25
+#! dz calculus/pearson/toc/03_derivatives/01_introducing_the_derivative
+ex 2: equation of a tangent line. alternate formula for
+slope of tangent. the derivative. defining the derivative.
+
+@19:26 3.1 reading #timelog:01:21:46
+#! dz $
+ex 4: derivatives and tangent lines. interpretting the derivative.
+ex 5: instantaneous rate of change.
+---
+ex 5 had a lot of algebra and simplification. I did this
+at least twice just to make sure I had the motions set up
+right. Worth doing a few times.
+
+@2026-02-07 Day 160
+@10:22 logging stuff #timelog:00:39:40
+
+@10:57 I failed yesterdays quiz
+#! dz bu/ma123/news
+After thinking about it, I think it's because
+I took too long. The problem was immediately familiar, based
+on a homework problem (based on a textbook problem), but
+I just couldn't do the alegebra fast enough (10 minutes for
+two problems).
+---
+So, I'm coming up with a new strategy. Don't write up
+the homework problems by hand. Type them out in TeX, and
+in a way that they can be easily parsed and turned into
+divisible chunks of data later. On friday, practice the
+homework problems instead of textbook problems. Make sure
+there are answers by then. Work in a routine of reviewing
+problems from previous weeks somehow.

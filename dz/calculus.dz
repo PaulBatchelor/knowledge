@@ -10,6 +10,10 @@ ns +02_limits
 nn 04_infinite_limits
 nn 05_limits_at_infinity
 nn 06_continuity
+ns ..
+nn 03_derivatives
+ns +03_derivatives
+nn 01_introducing_the_derivative
 
 ns calculus
 nn spivak

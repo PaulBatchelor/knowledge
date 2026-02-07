@@ -105,6 +105,8 @@
 {\noindent \bf 2026-01-24:} sonilo, bulk instructions, instruction primitive, ugen bytecode, ugens\smallskip
 {\noindent \bf 2026-01-26:} ugens\smallskip
 {\noindent \bf 2026-01-31:} bulk instructions, ilo interpreter, sonilo command language, ugen ports, ugen refcount, ugen stack, ugens\smallskip
+{\noindent \bf 2026-02-03:} news\smallskip
+{\noindent \bf 2026-02-07:} news, fix block navigation, ugen refcount\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -1349,6 +1351,18 @@ At the time of writing, {\tt \#0 go \#1 bmpr } and {\tt \#1 go \#1 bmpr } both p
 Surprised with how precise I have to be about this and how easy it is to mess things up.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-07}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:05: bw rewrite scoping broad strokes}\smallskip
+For blockword to work again, it would need to have the cursor set to be the global blockstack. from there, it computes the word address of the first block, then adds the offset.
+\par
+
+I also need to update the tests using this (which I don't think are many) to ensure that the global blocks are pointed at the cursor.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:08: 'bm' is off by one, more or less}\smallskip
+I don't have this in my head anymore.
+\par
+
 \xrdef{node20}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont news}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-22}\medskip
@@ -1357,6 +1371,19 @@ We're 67 days behind now.
 \par
 
 Well, now it says end of july things might be done. Not gonna happen probably. I just kinda need this memory stuff to be behind me.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-03}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:22: delaying sonilo about 50 days to keep the backlog down}\smallskip
+My projected deadline says july 3rd, 2026, now. Probably not realistic, considering how I'm only working one day a week on this.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-07}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:02: review. planning my day}\smallskip
+Last week: block execution, scoping out ugens and subtasks.
+\par
+
+This week: get reference counting structure implemented.
 \par
 
 \xrdef{node21}
@@ -1598,6 +1625,23 @@ a 6-bit stack needs an array of 64 6-bit numbers, 12 words. A 7-bit stack needs 
 \par
 
 It turns out that 64 18-bit numbers plus 128 7-bit numbers yields 32 64-bit numbers, or one block. How lovely.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-07}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:09: attempting to accomplish this today}\smallskip
+Based on my logs, it looks like I've already scoped out the functionality of this.
+\par
+
+Looks like I haven't actually implemented anything yet.  Guess that's what I'll be looking into today.
+\par
+
+Reference count list: each entry 18 bits. Will take up first part of a block (the remaining bits will be reserved for the stack).
+\par
+
+The global bit array will come in handy here. I'll build things using that.
+\par
+
+operations: add, delete, find, hold, unhold, collect.
 \par
 
 \xrdef{node26}

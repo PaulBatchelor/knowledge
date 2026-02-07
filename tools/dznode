@@ -1,0 +1,7 @@
+# creates a "dz" node connection in my logs using fuzzy
+finding via fzf.
+# an optional search term can be passed in filter the results
+# to a particular namespace
+# typically used in VIM like so: r !./tools/dznode keyword
+NODE=$(./tools/nodefind $1 | fzf)
+echo "#! dz $NODE"

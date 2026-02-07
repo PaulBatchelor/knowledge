@@ -152,7 +152,7 @@ the limit.
 #! dz calculus/pearson/toc/02_limits/06_continuity
 ex 5 limits of composite functions. continuity on an interval.
 
-@20:25 bttyp: abstraction barriers #ink:084 #timelog:30:19
+@20:25 bttyp: abstraction barriers #ink:084 #timelog:00:30:19
 #! dz thoughts/projects/bttyp
 thinking about the layers of abstraction required to make
 bttyp to be useful. The current prototype is a proof
@@ -238,3 +238,41 @@ divisible chunks of data later. On friday, practice the
 homework problems instead of textbook problems. Make sure
 there are answers by then. Work in a routine of reviewing
 problems from previous weeks somehow.
+
+@11:02 review. planning my day #timelog:00:19:14
+#! dz thoughts/projects/sonilo/news
+Last week: block execution, scoping out ugens and subtasks.
+---
+This week: get reference counting structure implemented.
+
+@11:05 bw rewrite scoping broad strokes
+#! dz thoughts/projects/sonilo/tasks/fix_block_navigation
+For blockword to work again, it would need to have the cursor
+set to be the global blockstack. from there, it computes
+the word address of the first block, then adds the offset.
+---
+I also need to update the tests using this (which I don't
+think are many) to ensure that the global blocks are pointed
+at the cursor.
+
+@11:08 'bm' is off by one, more or less
+#! dz $
+I don't have this in my head anymore.
+
+@11:09 attempting to accomplish this today
+#! dz thoughts/projects/sonilo/tasks/ugen_refcount
+Based on my logs,
+it looks like I've already scoped out the functionality
+of this.
+---
+Looks like I haven't actually implemented anything yet. 
+Guess that's what I'll be looking into today.
+---
+Reference count list: each entry 18 bits. Will take up first
+part of a block (the remaining bits will be reserved
+for the stack).
+---
+The global bit array will come in handy here. I'll build
+things using that.
+---
+operations: add, delete, find, hold, unhold, collect.

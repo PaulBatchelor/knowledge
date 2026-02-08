@@ -1,0 +1,60 @@
+# /\\problem\{[0-9.]+\}/ {
+#     match($0, /\\problem\{([0-9.]+)\}/, arr)
+#     print arr[1]
+# }
+BEGIN {
+    isprob= false
+    issol= false
+}
+
+/\\problem\{/ {
+    split($0, arr, /[{}]/)
+    problem = arr[2]
+    gsub(/\./, "_", problem)
+    curprob = problem
+
+    isprob = 1
+    issol = 0
+    next
+}
+
+/\\solution\{/ {
+    split($0, arr, /[{}]/)
+    solution = arr[2]
+    gsub(/\./, "_", solution)
+
+    curprob = solution
+
+    isprob = 0
+    issol = 1
+    next
+}
+
+/\\bigskip/ { next }
+/^$/ { next }
+/^%@/ { next }
+
+{
+    if (isprob) {
+        problems[curprob] = problems[curprob] "ln " $0 "\n"
+    } else if (issol) {
+        solutions[curprob] = solutions[curprob] "ln " $0 "\n"
+    }
+}
+
+END {
+    print "ns +problems"
+    for (p in problems) {
+        print "nn " p
+        print problems[p]
+    }
+    print "ns .."
+
+    print "ns +solutions"
+    for (s in solutions) {
+        print "nn " s
+        print solutions[s]
+        print "co", "$", "../problems/" s
+        print ""
+    }
+}

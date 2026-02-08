@@ -378,3 +378,11 @@ to see how they'd turn out. I tried a 7-bit stack with
 @13:28 attempting to annotate scratch and cards #timelog:00:13:00
 #! dz bu/ma123/notes
 006, 007. More to go.
+
+@14:32 attempting to transcribe hw2 problem sets #timelog:00:35:41
+#! dz bu/ma123/study
+Success! I think I have something that can be parseable and
+turned into dagzet code.
+
+@15:14 attempting an initial POC parser #timelog:00:26:50
+#! dz $

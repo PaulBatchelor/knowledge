@@ -1,7 +1,28 @@
-%{
-Problem 2.3.40. Find the following limit or state that it does
+\def\problem#1{{\bf Problem #1.}}
+\def\solution#1{{\bf Solution #1.}}
+\problem{2.3.34}
+%@p 2.3.34
+Find the following limit or state that it does not exist:
+
+$$\
+\lim_{x \to -5} {\
+{x^2 + 7x + 10}
+\over
+{x + 5}
+}
+$$
+
+
+%@s 2.3.34
+\solution{2.3.34}
+Solution: $-3$.
+
+\bigskip
+
+\problem{2.3.40}
+%@p 2.3.40
+Find the following limit or state that it does
 not exist.
-%}
 
 $$\
 \lim_{h \to 0} {\
@@ -9,7 +30,111 @@ $$\
 }
 $$
 
-%{
+\solution{2.3.40}
+%@s 2.3.40
 Solution: $-1 \over 4$.
-%}
+
+\bigskip
+
+\problem{2.3.41}
+%@p 2.3.41
+Find the following limit or state that it does not exist.
+
+$$\
+\lim_{x \to 169} {\
+{\sqrt{x} - 13}
+\over
+{x - 169}
+}
+$$
+
+%@s 2.3.41
+Solution: ${1 \over 26}$
+
+\bigskip
+
+\problem{2.3.43}
+%@p 2.3.43
+$$\lim_{t \to 3} \Bigl[ {\
+{1
+\over
+t^2 + 2t - 15}
+-
+{1 \over 8(t - 3)}
+}\Bigr]
+$$
+
+\solution{2.3.43}
+%@s 2.3.43
+Solution: $-{1 \over 64}$
+
+\bigskip
+
+\problem{2.3.45}
+%@p 2.3.45
+Find the following limit or state that it does not exist.
+
+$$\
+\lim_{x \to 26} {
+{x - 26}
+\over
+{\sqrt{x} - \sqrt{26}}
+}
+$$
+
+\solution{2.3.45}
+%@s 2.3.45
+
+\bigskip
+
+\problem{2.3.53}
+%@p 2.3.53
+Find the following limit or state that it does not exist.
+$$\
+\lim_{h \to 0}{
+(3 + h)^2 - 9
+\over
+h
+}
+$$
+
+\solution{2.3.53}
+%@s 2.3.53
+Solution: $6$.
+
+\bigskip
+
+%@p 2.3.68
+\problem{2.3.68}
+Find the following limit or state it does not exist.
+
+$$\
+\lim_{x \to -5} {
+| x + 5 |
+\over
+x^2 - 25
+}
+$$
+
+\solution{2.3.68}
+The limit does not exist.
+
+\problem{2.3.88}
+Suppose:
+
+$$
+f(x) = \cases{
+-4x + b & if $x \le 2$ \cr
+x - 2 & if $x > 2$ \cr
+}
+$$
+
+Determine a value for the constant $b$ for which
+$\lim_{x \to 2} f(x)$ exists and state the value of
+the limit, if possible.
+
+\solution{2.3.88}
+
+$b = 8$, $\lim_{x \to 2} f(x) = 0$.
+
 \bye

@@ -368,3 +368,7 @@ to see how they'd turn out. I tried a 7-bit stack with
 
 @2026-02-08 Day 161
 @11:10 timelogging #timelog:00:07:48
+
+@11:20 scanning: cards, scratch, notebooks #archiving #timelog:00:13:00
+
+@11:33 cropping #archiving #timelog:00:20:32

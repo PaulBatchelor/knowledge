@@ -386,3 +386,12 @@ turned into dagzet code.
 
 @15:14 attempting an initial POC parser #timelog:00:26:50
 #! dz $
+
+@16:45 psets/solutions now added to dz. this integrates quite well
+#! dz $
+
+@16:46 more scratch annotation #timelog:00:09:06
+#! dz bu/ma123/notes
+
+@16:55 card annotations #timelog:00:14:41
+#! dz $

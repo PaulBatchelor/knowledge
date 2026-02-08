@@ -276,3 +276,40 @@ The global bit array will come in handy here. I'll build
 things using that.
 ---
 operations: add, delete, find, hold, unhold, collect.
+
+@17:50 packing calculations were wrong
+#! dz thoughts/projects/sonilo/tasks/ugen_refcount
+The size of an entry is not 18 bytes, that's only for
+the flags and memory address. A counter needs to be supplied
+as well. I think 4 bits ought to be enough (well before
+15 does it make sense to use the hold mechanism instead).
+---
+According to my calculations (and yes, I did calculations):
+48 entries of 22 bits, a stack size of 96 with 7-bit ints.
+With all that, you get about 9 words left in the block.
+
+@17:54 write some words about the tests #timelog:01:15:12
+#! dz thoughts/projects/sonilo/tasks/ugen_refcount
+As always, the hard part is coming up with meaningful
+abbreviations for the operations
+---
+'r' for 'reference counter' is a good enough mnemonic. that'll
+be the prefix.
+---
+verbs are: add, delete, find, increase, decrease, hold,
+unhold, collect, get. getlen and getcount are the helpers for
+tests.
+---
+ri for init.
+ra for 'add'. 'rm' for delete. 'ru' for update counter, which can
+be negative and positive, 'rf' for find. 'rh' for hold/unhold (with arg),
+'rg' for get. 'rx' will be an aux function,
+which will implement getlen() and getcount() based on
+an input argument.
+---
+punching these into the glossary with a TODO.
+---
+Going to start writing words for the tests now.
+---
+I got words and initial unit tests set up for add/rm,
+find, and incr/decr. I shall return for the rest later.

@@ -341,3 +341,30 @@ some old test code. {\tt test_rw} is using a command
 it calls {\tt clr}, when I think it's supposed to be {\tt cl}.
 ---
 I think we are done here.
+
+@12:10 refcount list brainstorm (part 1) #timelog:01:31:19 #ink:089
+#! dz thoughts/projects/sonilo/tasks/ugen_refcount
+Structuring thoughts on how to design and implement this
+reference counting structure. I broke it down into data an operations,
+and got really sucked into the data aspect of it. I wanted to
+tune things so that I could optimimally fit a stack and a refcount
+list on a single block of memory.
+
+@14:27 refcount list brainstorm (part 2) #timelog:00:15:53 #ink:08A
+#! dz $
+Outlined the core operations, starting drilling into some
+of them. Also started thinking about some of the helper utilites.
+
+@15:15 refcount list brainstorm (part 2) #timelog:00:19:26
+#! dz $
+more fleshing out details for each of the operations.
+
+@17:06 refcount list (brainstorm) (part 2) (continued) #timelog:00:30:35
+#! dz $
+I returned to the data problem. With my overengineered equation
+on optimum size in hand, I started plugging in some variables
+to see how they'd turn out. I tried a 7-bit stack with
+64 slots, then made it 48 slots.
+
+@2026-02-08 Day 161
+@11:10 timelogging #timelog:00:07:48

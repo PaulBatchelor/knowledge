@@ -2,3 +2,4 @@ thoughts:thoughts/%
 dmoi:dmoi/%
 coad:coad/%
 sonilo:thoughts/projects/sonilo%
+ma123_problems:bu/ma123/problems/%

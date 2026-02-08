@@ -1644,6 +1644,75 @@ The global bit array will come in handy here. I'll build things using that.
 operations: add, delete, find, hold, unhold, collect.
 \par
 
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:10: refcount list brainstorm (part 1)}\smallskip
+Structuring thoughts on how to design and implement this reference counting structure. I broke it down into data an operations, and got really sucked into the data aspect of it. I wanted to tune things so that I could optimimally fit a stack and a refcount list on a single block of memory.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:27: refcount list brainstorm (part 2)}\smallskip
+Outlined the core operations, starting drilling into some of them. Also started thinking about some of the helper utilites.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:15: refcount list brainstorm (part 2)}\smallskip
+more fleshing out details for each of the operations.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:06: refcount list (brainstorm) (part 2) (continued)}\smallskip
+I returned to the data problem. With my overengineered equation on optimum size in hand, I started plugging in some variables to see how they'd turn out. I tried a 7-bit stack with 64 slots, then made it 48 slots.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:50: packing calculations were wrong}\smallskip
+The size of an entry is not 18 bytes, that's only for the flags and memory address. A counter needs to be supplied as well. I think 4 bits ought to be enough (well before 15 does it make sense to use the hold mechanism instead).
+\par
+
+According to my calculations (and yes, I did calculations): 48 entries of 22 bits, a stack size of 96 with 7-bit ints. With all that, you get about 9 words left in the block.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:54: write some words about the tests}\smallskip
+As always, the hard part is coming up with meaningful abbreviations for the operations
+\par
+
+'r' for 'reference counter' is a good enough mnemonic. that'll be the prefix.
+\par
+
+verbs are: add, delete, find, increase, decrease, hold, unhold, collect, get. getlen and getcount are the helpers for tests.
+\par
+
+ri for init. ra for 'add'. 'rm' for delete. 'ru' for update counter, which can be negative and positive, 'rf' for find. 'rh' for hold/unhold (with arg), 'rg' for get. 'rx' will be an aux function, which will implement getlen() and getcount() based on an input argument.
+\par
+
+punching these into the glossary with a TODO.
+\par
+
+Going to start writing words for the tests now.
+\par
+
+I got words and initial unit tests set up for add/rm, find, and incr/decr. I shall return for the rest later.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:14: finish writing up initial unit tests}\smallskip
+Huh, forgot about collect. 'rc' is taken, so 'rs' for 'sweep' should work.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:05: coding some things up}\smallskip
+Just some initial scaffolding for C functions and corresponding words.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:52: finish up implementation}\smallskip
+WHAT. how did is it almost 23:00. This is why it's good to cut back on coding. You lose so much time in your life.
+\par
+
+This of course is the hour to get a weird by with the get command. Why is it that the final number of active slots is 4 and not 3?
+\par
+
+okay, fixed it. I forgot to check for only active entries (aka entries with non-zero addresses).
+\par
+
+I think these new abbreviations triggered a bug for some old test code. {\tt test_rw} is using a command it calls {\tt clr}, when I think it's supposed to be {\tt cl}.
+\par
+
+I think we are done here.
+\par
+
 \xrdef{node26}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen stack}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip

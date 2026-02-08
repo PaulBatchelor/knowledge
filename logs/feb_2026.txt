@@ -372,3 +372,5 @@ to see how they'd turn out. I tried a 7-bit stack with
 @11:20 scanning: cards, scratch, notebooks #archiving #timelog:00:13:00
 
 @11:33 cropping #archiving #timelog:00:20:32
+
+@13:22 binning #archiving

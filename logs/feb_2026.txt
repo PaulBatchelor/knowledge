@@ -313,3 +313,31 @@ Going to start writing words for the tests now.
 ---
 I got words and initial unit tests set up for add/rm,
 find, and incr/decr. I shall return for the rest later.
+
+@20:14 finish writing up initial unit tests #timelog:00:46:14
+#! dz $
+Huh, forgot about collect. 'rc' is taken, so 'rs' for 'sweep'
+should work.
+
+@21:05 coding some things up #timelog:00:20:01
+#! dz $
+Just some initial scaffolding for C functions and corresponding
+words.
+
+@21:52 finish up implementation #timelog:01:28:13
+#! dz $
+WHAT. how did is it almost 23:00. This is why it's good
+to cut back on coding. You lose so much time in your life.
+---
+This of course is the hour to get a weird by with the
+get command. Why is it that the final number of active slots
+is 4 and not 3?
+---
+okay, fixed it. I forgot to check for only active
+entries (aka entries with non-zero addresses).
+---
+I think these new abbreviations triggered a bug for
+some old test code. {\tt test_rw} is using a command
+it calls {\tt clr}, when I think it's supposed to be {\tt cl}.
+---
+I think we are done here.

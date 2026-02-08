@@ -373,4 +373,8 @@ to see how they'd turn out. I tried a 7-bit stack with
 
 @11:33 cropping #archiving #timelog:00:20:32
 
-@13:22 binning #archiving
+@13:22 binning #archiving #timelog:00:04:19
+
+@13:28 attempting to annotate scratch and cards #timelog:00:13:00
+#! dz bu/ma123/notes
+006, 007. More to go.

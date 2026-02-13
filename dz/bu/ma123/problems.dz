@@ -54,6 +54,15 @@ ln \over
 ln x^2 - 1
 ln }
 ln $$
+ln Determine the interval(s) on which the following function
+ln is continuous:
+ln $$
+ln f(x) = {
+ln x^2 - 6x + 5
+ln \over
+ln x^2 - 1
+ln }
+ln $$
 
 nn 2_3_68
 ln Find the following limit or state it does not exist.
@@ -126,9 +135,9 @@ nn 2_5_75
 ln Consider
 ln $$\
 ln f(x) = {
-ln x^2 - 36
+ln x^2 - 64
 ln \over
-ln x(x - 6)
+ln x(x - 8)
 ln }
 ln $$
 ln \par a. evaluate $$\lim_{x \to \infty}{f(x)}$$ and
@@ -404,6 +413,35 @@ ln $$
 
 ns ..
 ns +solutions
+nn 2_5_39
+ln $(x \to \infty) f(x) = (x \to -infty) = 4$
+
+co $ ../../problems/2_5_39
+
+nn 2_6_21
+ln The function is not continuous at $a = 3$ because although
+ln $f(3) = 4$ is defined and $(x \to 3)\, f(x) = 6$ exists,
+ln $f(3) \ne \lim (x \to 3) \, f(x)$
+
+co $ ../../problems/2_6_21
+
+nn 2_6_23
+ln The function is not continous at $a = 2$ because $f(2)$ is not
+ln defined.
+
+co $ ../../problems/2_6_23
+
+nn 2_6_25
+ln The function is continuous on intervals $(-\infty, \infty)$.
+
+co $ ../../problems/2_6_25
+
+nn 2_6_28
+ln The solution is continuous on the intervals
+ln $(-\infty, -1)$, $(-1, 1)$, and $(1, \infty)$.
+
+co $ ../../problems/2_6_28
+
 nn 2_3_68
 ln The limit does not exist.
 
@@ -414,20 +452,117 @@ ln Solution: $-3$.
 
 co $ ../../problems/2_3_34
 
+nn 2_5_25
+ln ${5 \over 7}$
+
+co $ ../../problems/2_5_25
+
+nn 2_6_43
+ln \par
+ln The function is continuous on the intervals
+ln $(-\infty, -2\sqrt{3}]$, $[2\sqrt{3}, \infty)$
+ln \par
+ln The finite endpoint for which $f$ is continuous from
+ln the left is $-2\sqrt{3}$.
+ln \par
+ln The finite endpoint for which $f$ is continuous from the
+ln right is $2\sqrt{3}$.
+
+co $ ../../problems/2_6_43
+
+nn 2_5_28
+ln 0
+
+co $ ../../problems/2_5_28
+
+nn 2_5_75
+ln a. $(x \to \infty) \, f(x) = (x \to -\infty) \, f(x) = 1$.
+ln The function has one horizontal asymptote at $y = 1$.
+ln b. The function has one vertical asymptote at $x = 0$. The
+ln limits at the asymptote are $(x \to a^{-})\, f(x) = -\infty$ and
+ln $x \to a^{+} \, f(x) = \infty$.
+
+co $ ../../problems/2_5_75
+
+nn 2_4_23
+ln a. $-\infty$. b. $-\infty$. c. $-\infty$
+
+co $ ../../problems/2_4_23
+
 nn 2_3_88
 ln $b = 8$, $\lim_{x \to 2} f(x) = 0$.
 
 co $ ../../problems/2_3_88
+
+nn 2_5_41
+ln $(x \to \infty)f(x) = (x \to -\infty)f(x) = 0$. The function
+ln has one horizontal asymptote at $y = 0$.
+
+co $ ../../problems/2_5_41
 
 nn 2_3_53
 ln Solution: $6$.
 
 co $ ../../problems/2_3_53
 
+nn 2_6_15
+ln The domain of $f(x)$ is $\{x: x \ne 2\}$. The function
+ln $f(x)$ is continuous where $x \ne 2$.
+
+co $ ../../problems/2_6_15
+
+nn 2_6_17
+ln The function is not continuous at $a = 8$ because
+ln $f(8)$ is not defined.
+
+co $ ../../problems/2_6_17
+
+nn 2_5_7
+ln 0
+
+co $ ../../problems/2_5_7
+
+nn 2_5_9
+ln 6
+
+co $ ../../problems/2_5_9
+
+nn 2_6_65
+ln \par
+ln The function is continuous on the intervals $(-\infty, 0), (0, \infty)$.
+ln \par $\lim (x \to 0^{-}) \, f(x) = \infty$
+ln \par ${\lim (x \to 0^{+}) \, f(x) = -\infty}$
+
+co $ ../../problems/2_6_65
+
+nn 2_4_42
+ln $\infty$
+
+co $ ../../problems/2_4_42
+
+nn 2_5_15
+ln $({x \to \infty}){ g(x)} = ({x \to -\infty}) g(x) = 30$
+
+co $ ../../problems/2_5_15
+
+nn 2_4_47
+ln The vertical symptote is $x = 4$. The limits at this symptote
+ln are $x \to 4^{+} = -\infty$, $x \to 4^{-} = \infty$, and
+ln the limit DNE for $x \to 4$.
+
+co $ ../../problems/2_4_47
+
 nn 2_3_40
 ln Solution: $-1 \over 4$.
 
 co $ ../../problems/2_3_40
+
+nn 2_6_39
+ln \par a. $\lim (x \to 1) \, f(x)$ does not exist
+ln \par b. f is continuous from the left at 1
+ln \par c. $(-\infty, 1], (1, \infty)$
+
+co $ ../../problems/2_6_39
 
 nn 2_3_41
 ln Solution: ${1 \over 26}$

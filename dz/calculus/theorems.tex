@@ -1,0 +1,74 @@
+\input common
+\def\begthm#1#2{{\headerfont {Theorem #1:} \quad #2}
+\smallskip\hrule\smallskip
+}
+\def\endthm{\bigskip\bigskip}
+
+\begthm{3.1}{Differentiable Implies Continuous}
+If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+\endthm
+
+\begthm{3.1a}{Not Continuous implies Not Differentiable}
+If $f$ is not continuous at $a$, then $f$ is not differentiable
+at $a$.
+\endthm
+
+\begthm{3.2}{Constant Rule}
+If $c$ is a real number, then ${d \over dx}(c) = 0$.
+\endthm
+
+\begthm{3.3}{Power Rule}
+If $n$ is a nonnegative integer, then ${d \over dx}(x^n) = nx^{n - 1}$
+\endthm
+
+\begthm{3.4}{Constant Multiple Rule}
+If $f$ is differentiable at $x$ and $c$ is a constant, then
+$$\
+{d \over dx}(cf(x)) = c f'(x).
+$$
+\endthm
+
+\begthm{3.5}{Sum Rule}
+If $f$ and $g$ are differentiable at $x$, then
+
+$$\
+{d \over dx}(f(x) + g(x)) = f'(x) + g'(x).
+$$
+\endthm
+
+\begthm{3.6}{The Derivative of $e^x$}
+The function $f(x) = e^x$ is differentiable for all real numbers $x$,
+and
+$$\
+{d \over dx}(e^x) = e^x
+$$
+\endthm
+
+\begthm{3.4}{Product Rule}
+If $f$ and $g$ are differentiable at $x$, then
+
+$$\
+{d \over dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x).
+$$
+\endthm
+
+\begthm{3.8}{Quotient Rule}
+If $f$ and $g$ are differntiable at $x$ and $g(x) \ne 0$,
+then the derivative of $f / g$ at $x$ exists and
+$$\
+{d \over dx}\bigg({f(x) \over g(x)}\bigg) = {
+g(x)f'(x) - f(x)g'(x)
+\over
+(g(x))^2
+}
+$$
+\endthm
+
+\begthm{3.9}{Power Rule (general form}
+If $n$ is any real number, then
+$$\
+{d \over dx}(x^n) = nx^{n - 1}
+$$
+\endthm
+
+\bye

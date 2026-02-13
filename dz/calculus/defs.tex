@@ -1,0 +1,139 @@
+\input common
+\def\begdef#1{
+{\headerfont #1}\smallskip
+\hrule\smallskip
+}
+
+\def\enddef{
+\bigskip\bigskip
+}
+
+\begdef{Rate of Change and Slope of the Tangent Line}
+\enddef
+
+The {\bf average rate of change} in $f$ on the interval
+$[a, x]$ is the slope of the corresponding secant line:
+
+$$\
+m_{sec} = {f(x) - f(a) \over x - a}
+$$
+
+The {\bf instantaneous rate of change} in $f$ at $a$ is
+
+$$\
+m_{tan} = \lim_{x \to a} {
+f(x) - f(a)
+\over
+x - a
+}
+$$
+
+Which is also the {\bf slope of the tangent line} at $(a, f(a))$,
+provided this limit exists. The {\bf tangent line} is the unique
+line through $(a, f(a))$ with sloep $m_{tan}$. Its equation is:
+
+$$\
+y - f(a) = m_{tan}(x- a)
+$$
+
+\begdef {Alternate Definition: Rate of Change and the Slope of the Tangent Line}
+The {\bf average rate of change} of $f$ on the interval $[a, a + h]$
+is the slope of the corresponding secant line:
+
+$$\
+m_{sec} = {
+f(a + h) - f(a)
+\over
+h
+}
+$$
+
+The {\bf instantaneous rate of change} in $f$ at $a$ is
+
+$$\
+m_{tan} = \lim_{h \to 0}{
+f(a + h) - f(a)
+\over
+h
+}
+$$
+
+which is also the {\bf slope of the tangent line} at $(a, f(a))$,
+provided this limit exists.
+
+\enddef
+
+\begdef{The derviative of a function at a point}
+The {\bf derivative of $f$ at $a$}, denoted $f'(a)$, is given
+by either of the two following limits, provided the limits exist and $a$ is in the
+domain of $f$:
+
+$$\
+f'(a) = \lim_{x \to a}{
+f(x) - f(a)
+\over
+x - a
+}
+$$
+
+or
+
+$$\
+f'(a) = \lim_{h \to 0}{
+f(a + h) - f(a)
+\over
+h
+}
+$$
+
+\enddef
+
+\begdef{The Derivative Function}
+The {\bf derivative} is the function
+
+$$\
+f'(x) = \lim_{h \to 0}{
+f(x + h) - f(x)
+\over
+h
+}
+$$
+
+provided the limit exists and $x$ is in the domain of $f$.
+If $f'(x)$ exists, we say that $f$ is {\bf differentiable}
+at $x$. If $f$ is differentiable at every point of an open
+interval $I$, we say that $f$ is differentiable from on $I$.
+
+\enddef
+
+\begdef{The Number $e$}
+The number $e = 2.718281828459...$ satisfies
+
+$$\
+\lim_{h \to 0} {
+e^h - 1
+\over h
+} = 1
+$$
+
+It is the base of the natural exponential function $f(x) = e^x$.
+\enddef
+
+\begdef{Higher-Order Derivatives}
+Assuming $y = f(x)$ can be differentiated as often as necessary,
+the {\bf second derivative} of $f$ is
+
+$$\
+f''(x) = {d \over dx}(f'(x)).
+$$
+
+For integers $n \ge 1$, the {\bf {\it n}th derivative} of $f$ is
+
+$$\
+f^{(n)}(x) = {d \over dx}(f^{(n - 1)}(x)).
+$$
+
+\enddef
+
+\bye
+

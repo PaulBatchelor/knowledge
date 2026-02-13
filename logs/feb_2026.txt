@@ -412,8 +412,10 @@ a day. Oof. Going to have to learn quickly.
 @2026-02-11 Day 164
 @2026-02-12 Day 165
 @2026-02-13 Day 166
-
 @09:13 punching up answers to hw3 #timelog:00:44:36
 #! dz bu/ma123/hw
 Note to self: this takes about 45 minutes. Might be the only
 thing I get to do on Friday morning before leaving for the city.
+
+@16:26 transcribing theorems and definitions from chapter 3 #timelog:00:58:48
+#! dz calculus/pearson/toc/03_derivatives

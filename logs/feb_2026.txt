@@ -453,7 +453,7 @@ thing I get to do on Friday morning before leaving for the city.
 #! dz calculus/pearson/toc/03_derivatives
 
 @11:42 pset grinding (hw3) #timelog:00:34:53
-#! dz bu/ma123/grinding
+#! dz bu/ma123/grind
 
 @12:28 pset grinding (hw3) #timelog:00:40:12
 #! dz $
@@ -515,3 +515,54 @@ two bits being a type, 30 bits for data. Stack size of 19.
 the 2 other types TBD. Constants can be encoded with 15.15
 signed data encoding or something and that should be good
 enough.
+
+@13:40 write up initial unit tests #timelog:01:19:41
+#! dz thoughts/projects/sonilo/tasks/ugen_stack
+First, let's take a look at the commands I'll need to implement,
+and their names.
+---
+Operations include: push/pop, hold/unhold (implicit), dup,
+and rot. There are other stack operations in forths, so having
+a good single letter namespace would be nice.
+---
+I've shifted from calling this a "ugen stack" to a "parameter stack",
+because it more precisely describes the data being handled,
+which is any valid parameter for a unit generator.
+---
+The 'p' prefix is reasonably open. pr, pa, pw, and pe are taken.
+---
+po: pop. pu: push. pi: init stack (give it block).
+ph: hold/unhold (this can be given a parameter). pd: dup.
+pR: rotate (capital letters work, as long as it's not A-F).
+---
+should stacks implicitly add addresses to the RC? I'm going
+to say... no. That's just one extra thing that can go wrong.
+In practice, I imagine a pool of blocks will be initialized
+and added to the RC pool. Then, there'd be operations
+that select available blocks, abstracting away the need
+to know the blocks of memory addresses.
+---
+Pool is TBD. adding a task for it, with some words.
+---
+'px' I'll use for pstack aux functions. that was a nice
+thing to have with the RC stuff.
+---
+Just remembered that stacks are going to need types.
+Gotta update the push commands to take in a type flag so it
+knows what to do with the bits.
+
+@13:57 A block pool abstraction would be nice to have
+#! dz thoughts/projects/sonilo/tasks/block_pool
+This would abstract away the tediousness of allocating
+blocks from the global block stack and keeping track of
+memory addresses manually.
+---
+A new block is needed any time an output block is created
+for a ugen. So steps would be: set up input blocks, set up
+output block(s), sweep.
+---
+If I were making, say a sine ugen with frequency and amplitude
+as args, the steps would be: set up ugen with 2 ins, 1 out.
+pop amp, assign to port 0, pop freq, assign to port 1,
+new block for output, assign to port 2. alloc data, initialize,
+set to ugen. sweep.

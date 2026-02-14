@@ -326,7 +326,7 @@ words.
 
 @21:52 finish up implementation #timelog:01:28:13
 #! dz $
-WHAT. how did is it almost 23:00. This is why it's good
+WHAT. how is it almost 23:00. This is why it's good
 to cut back on coding. You lose so much time in your life.
 ---
 This of course is the hour to get a weird by with the
@@ -337,7 +337,7 @@ okay, fixed it. I forgot to check for only active
 entries (aka entries with non-zero addresses).
 ---
 I think these new abbreviations triggered a bug for
-some old test code. {\tt test_rw} is using a command
+some old test code. {\tt test\_rw} is using a command
 it calls {\tt clr}, when I think it's supposed to be {\tt cl}.
 ---
 I think we are done here.
@@ -474,3 +474,44 @@ use the text provided for further explanation.
 ---
 Started this approach with 3.3 and 3.4. Going to see how
 helpful this is.
+
+@09:53 planning the day
+#! dz thoughts/projects/sonilo/news
+Looks like I finished the reference counting structure
+last week.
+---
+Agenda has bulk instructions, block navigation fixes, and
+the ugen stack.
+---
+Block navigation fixes can wait.
+
+
+@09:59 This is basically complete. Just wrap things in functions
+#! dz thoughts/projects/sonilo/tasks/bulk_instructions
+I left some TODOs for myself. Trivial work.
+
+@10:01 hoping to do some initial work today on this #timelog:00:21:40
+#! dz thoughts/projects/sonilo/tasks/ugen_stack
+This stack is designed to work with the reference counter
+structure, so it's all on the same block.
+---
+Push/pop operations should implicitly update refcounts.
+---
+I was currently envisioning 7-bit data types. This is good
+enough for addresses relative to the block. But, it does
+not handle other data types like constants. This would be
+desirable right?
+---
+Looks like there's 640 bits to play with after subtracting
+the size of the refcount structure. That's 20 words, so
+a stack size of 19. Or it could be 40 half-words, with a
+stack size of 39.
+---
+I think I'm leaning towards a smaller stack, larger data type.
+I get the feeling I'm going to be adding more types of
+data before I run out of stack space. 32 bits, with the first
+two bits being a type, 30 bits for data. Stack size of 19.
+2 types (constant or block) will be used right now, with
+the 2 other types TBD. Constants can be encoded with 15.15
+signed data encoding or something and that should be good
+enough.

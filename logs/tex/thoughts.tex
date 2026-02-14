@@ -133,6 +133,7 @@
 {\noindent \bf 2026-01-31:} bttyp, bulk instructions, ilo interpreter, sonilo command language, ugen ports, ugen refcount, ugen stack, ugens\smallskip
 {\noindent \bf 2026-02-03:} bttyp, news\smallskip
 {\noindent \bf 2026-02-07:} news, fix block navigation, ugen refcount\smallskip
+{\noindent \bf 2026-02-14:} news\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -1738,6 +1739,8 @@ Last week: block execution, scoping out ugens and subtasks.
 This week: get reference counting structure implemented.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:53: planning the day}\smallskip
 \xrdef{node30}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
@@ -2059,7 +2062,7 @@ This of course is the hour to get a weird by with the get command. Why is it tha
 okay, fixed it. I forgot to check for only active entries (aka entries with non-zero addresses).
 \par
 
-I think these new abbreviations triggered a bug for some old test code. {\tt test_rw} is using a command it calls {\tt clr}, when I think it's supposed to be {\tt cl}.
+I think these new abbreviations triggered a bug for some old test code. {\tt test\_rw} is using a command it calls {\tt clr}, when I think it's supposed to be {\tt cl}.
 \par
 
 I think we are done here.

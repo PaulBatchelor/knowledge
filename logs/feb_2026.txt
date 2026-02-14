@@ -408,9 +408,41 @@ spread them out through the week. But, I want it done
 by Friday. So, Tues Weds Thurs is 3 days. That's 11 problems
 a day. Oof. Going to have to learn quickly.
 
+@12:00 calc 3.2 #timelog:00:05:50
+#! dz calculus/pearson/toc/03_derivatives/02_derivative_as_function
+Derivative notation. recall: secant slope between points.
+
+@15:48 calc 3.2 #timelog:00:24:00
+#! dz $
+Gradually, working up to the ${d \over dx}$ notation used,
+from the previous definitions of derivative.
+
+@16:59 calc 3.2 #timelg:00:17:11
+#! dz $
+
 @2026-02-10 Day 163
+
 @2026-02-11 Day 164
+@10:06 spivak reading
+#! dz calculus/spivak/toc/05_limits
+At this point in the reading, the provision definition
+of a limit is revisited, as it is not precise enough to
+be used in proofs. The proof is revised by fixing one ambiguity
+at a time.
+
 @2026-02-12 Day 165
+
+@10:34 3.3 rules of differentiation outlining #timelog:00:15:57
+#! dz calculus/pearson/toc/03_derivatives/03_rules_of_differentiation
+6 examples. 6 sections. 5 theorems. 2 definitions.
+
+@10:55 3.3 outlining wrap-up #timelog:00:12:29
+#! dz $
+
+@12:05 3.4 (product and quotient rules) outlining #timelog:00:15:07
+#! dz calculus/pearson/toc/03_derivatives/04_product_and_quotient_rules
+4 sections, 2 theorems (guess which ones those are), 5 examples.
+
 @2026-02-13 Day 166
 @09:13 punching up answers to hw3 #timelog:00:44:36
 #! dz bu/ma123/hw
@@ -419,3 +451,26 @@ thing I get to do on Friday morning before leaving for the city.
 
 @16:26 transcribing theorems and definitions from chapter 3 #timelog:00:58:48
 #! dz calculus/pearson/toc/03_derivatives
+
+@11:42 pset grinding (hw3) #timelog:00:34:53
+#! dz bu/ma123/grinding
+
+@12:28 pset grinding (hw3) #timelog:00:40:12
+#! dz $
+At the end, I also did some trig review, and starting
+remember how the unit circle works again.
+
+@2026-02-14 Day 167
+@09:35 timelogging #timelog:00:16:49
+@09:42 Moving to outlining chapters instead of reading cover to cover
+#! dz calculus/pearson/news
+I'm just not moving fast enough, and it's too much
+information for this class. Instead, I'm going to skim the chapter
+and make a map of the core components. A chapter consists of
+sections, theorems, definitions, and examples. My outlines will
+note their names and page numbers. From there, I can revisit
+and study those things. If I need more elaboration, I can
+use the text provided for further explanation.
+---
+Started this approach with 3.3 and 3.4. Going to see how
+helpful this is.

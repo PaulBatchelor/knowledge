@@ -3,6 +3,7 @@ nn pearson
 ns +pearson
 nn ink
 nn news
+nn theorems
 nn toc
 ns +toc
 nn 02_limits

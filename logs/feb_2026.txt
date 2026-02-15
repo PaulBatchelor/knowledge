@@ -628,3 +628,15 @@ So, this would be more breadth-first than depth-first. Hours
 in the day, etc.
 
 @10:45 cropping #archiving #timelog:00:26:55
+
+@12:32 Converting theorems to dagzet data #timelog:00:56:40
+#! bu/ma123/study
+My theorems TeX file should be parsed like my
+problems TeX file. Except, these need to eventually exist
+as anki flashcards.
+---
+Fortunately, Anki does support TeX equations, but it
+just escapes differently. So, it looks like I'll need to
+build a parser in a "real" language like Python instead of Awk.
+---
+It works! All the theorems show up properly. Awesome.

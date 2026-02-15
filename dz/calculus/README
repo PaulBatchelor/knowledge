@@ -1,0 +1,2 @@
+generate.py is used to generate theorems.dz. run it
+with python3 generate.py > theorems.dz

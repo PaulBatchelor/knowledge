@@ -1,0 +1,115 @@
+ns calculus/pearson/theorems
+nn 3_1_differentiable_implies_continuous
+ln Differentiable Implies Continuous.
+ln If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+ff Differentiable Implies Continuous
+fb If \(f\) is differentiable at \(a\), then \(f\) is continuous at \(a\).
+
+nn 3_1a_not_continuous_implies_not_differentiable
+ln Not Continuous implies Not Differentiable.
+ln If $f$ is not continuous at $a$, then $f$ is not differentiable
+ln at $a$.
+ff Not Continuous implies Not Differentiable
+fb If \(f\) is not continuous at \(a\), then \(f\) is not differentiable
+fb at \(a\).
+
+nn 3_2_constant_rule
+ln Constant Rule.
+ln If $c$ is a real number, then ${d \over dx}(c) = 0$.
+ff Constant Rule
+fb If \(c\) is a real number, then \({d \over dx}(c) = 0\).
+
+nn 3_3_power_rule
+ln Power Rule.
+ln If $n$ is a nonnegative integer, then ${d \over dx}(x^n) = nx^{n - 1}$
+ff Power Rule
+fb If \(n\) is a nonnegative integer, then \({d \over dx}(x^n) = nx^{n - 1}\)
+
+nn 3_4_constant_multiple_rule
+ln Constant Multiple Rule.
+ln If $f$ is differentiable at $x$ and $c$ is a constant, then
+ln $$\
+ln {d \over dx}(cf(x)) = c f'(x).
+ln $$
+ff Constant Multiple Rule
+fb If \(f\) is differentiable at \(x\) and \(c\) is a constant, then
+fb \(
+fb {d \over dx}(cf(x)) = c f'(x).
+fb \)
+
+nn 3_5_sum_rule
+ln Sum Rule.
+ln If $f$ and $g$ are differentiable at $x$, then
+ln 
+ln $$\
+ln {d \over dx}(f(x) + g(x)) = f'(x) + g'(x).
+ln $$
+ff Sum Rule
+fb If \(f\) and \(g\) are differentiable at \(x\), then
+fb 
+fb \(
+fb {d \over dx}(f(x) + g(x)) = f'(x) + g'(x).
+fb \)
+
+nn 3_6_the_derivative_of_e_x
+ln The Derivative of $e^x$.
+ln The function $f(x) = e^x$ is differentiable for all real numbers $x$,
+ln and
+ln $$\
+ln {d \over dx}(e^x) = e^x
+ln $$
+ff The Derivative of $e^x$
+fb The function \(f(x) = e^x\) is differentiable for all real numbers \(x\),
+fb and
+fb \(
+fb {d \over dx}(e^x) = e^x
+fb \)
+
+nn 3_7_product_rule
+ln Product Rule.
+ln If $f$ and $g$ are differentiable at $x$, then
+ln 
+ln $$\
+ln {d \over dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x).
+ln $$
+ff Product Rule
+fb If \(f\) and \(g\) are differentiable at \(x\), then
+fb 
+fb \(
+fb {d \over dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x).
+fb \)
+
+nn 3_8_quotient_rule
+ln Quotient Rule.
+ln If $f$ and $g$ are differntiable at $x$ and $g(x) \ne 0$,
+ln then the derivative of $f / g$ at $x$ exists and
+ln $$\
+ln {d \over dx}\bigg({f(x) \over g(x)}\bigg) = {
+ln g(x)f'(x) - f(x)g'(x)
+ln \over
+ln (g(x))^2
+ln }
+ln $$
+ff Quotient Rule
+fb If \(f\) and \(g\) are differntiable at \(x\) and \(g(x) \ne 0\),
+fb then the derivative of \(f / g\) at \(x\) exists and
+fb \(
+fb {d \over dx}\bigg({f(x) \over g(x)}\bigg) = {
+fb g(x)f'(x) - f(x)g'(x)
+fb \over
+fb (g(x))^2
+fb }
+fb \)
+
+nn 3_9_power_rule
+ln Power Rule (general form).
+ln If $n$ is any real number, then
+ln $$\
+ln {d \over dx}(x^n) = nx^{n - 1}
+ln $$
+ff Power Rule (general form)
+fb If \(n\) is any real number, then
+fb \(
+fb {d \over dx}(x^n) = nx^{n - 1}
+fb \)
+

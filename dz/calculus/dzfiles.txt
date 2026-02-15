@@ -1,1 +1,2 @@
 calculus.dz
+theorems.dz

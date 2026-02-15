@@ -4,6 +4,8 @@ gr 2
 up coad/tasks.txt
 ds 180
 of 30
+# 2026-02-15 bump 2 months, calculus is my life right now
+of 60
 gc
 sr
 w

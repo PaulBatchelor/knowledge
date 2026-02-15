@@ -603,3 +603,26 @@ parser can read.
 ---
 I found a logzet bug. My session is called "ma123" but it's not getting
 the numbers.
+
+@10:28 adding block pool task
+#! dz thoughts/projects/sonilo/news
+
+@10:39 wondering if I should applying my skimming technique for DMOI
+#! dz dmoi/news
+Better to skim it than do nothing at all?
+---
+I've been doing a thing with my BU calculus textbook where I
+build an outline of a section of a chapter rather than
+attempt to read it cover to cover. This is a pretty predictable
+textbook. A section of a chapter contains subsections, examples,
+theorems, and definitions. With words to elaborate what
+has been explained.
+---
+In DMOI, there are subsections, examples, theorems, and proofs.
+---
+I'm thinking I could build a map (with page numbers), transcribe
+the map, and then (time permitting), dive into examples more
+deeply.
+---
+So, this would be more breadth-first than depth-first. Hours
+in the day, etc.

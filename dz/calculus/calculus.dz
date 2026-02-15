@@ -14,6 +14,37 @@ ns ..
 nn 03_derivatives
 ns +03_derivatives
 nn 01_introducing_the_derivative
+nn 02_derivative_as_function
+nn 03_rules_of_differentiation
+nn 04_product_and_quotient_rules
+
+ns ../..
+
+nn examples/2_4_01
+co $ ?04_infinite_limits
+nn examples/2_4_02
+co $ ?04_infinite_limits
+nn examples/2_4_03
+co $ ?04_infinite_limits
+nn examples/2_4_04
+co $ ?04_infinite_limits
+nn examples/2_4_05
+co $ ?04_infinite_limits
+nn examples/2_4_06
+co $ ?04_infinite_limits
+
+nn examples/2_5_01
+co $ ?05_limits_at_infinity
+nn examples/2_5_02
+co $ ?05_limits_at_infinity
+nn examples/2_5_03
+co $ ?05_limits_at_infinity
+nn examples/2_5_04
+co $ ?05_limits_at_infinity
+nn examples/2_5_05
+co $ ?05_limits_at_infinity
+nn examples/2_5_06
+co $ ?05_limits_at_infinity
 
 ns calculus
 nn spivak

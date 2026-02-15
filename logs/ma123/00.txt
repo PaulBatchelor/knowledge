@@ -1,0 +1,462 @@
+@2026-02-09#ma123
+@15:00 trying out a pset logging strategy
+#! dz bu/ma123/study
+I want to review problem sets, then log my experiences here.
+---
+Still working out the kinks with my BYOK.
+
+@15:15 2.3.34 no problem
+#! p 2.3.34
+This is a matter of factoring and canceling
+
+@15:16 fractions in numerator, tricky
+#! p 2.3.40
+I keep doing this one wrong. This is the one
+that showed up on the quiz that I failed.
+---
+My first attempt was 0, but that was wrong because
+I forgot about one of the terms.
+---
+Huh. I am really not understanding the algebra for this
+---
+okay great. trick I was missing was to distribute the denominator properly, and then properly combine fractions in the numerator.
+@15:35 2.3.41 remember $13^2$ is 169
+#! p 2.3.41
+This can be factored and cancelled because the square root of 169 is 13.
+
+@2026-02-10#ma123
+@09:00 2.4 pset experiment
+#! dz bu/ma123/hw
+I have an idea for tackling these problems. Essentially, I am going to log my thought process.
+
+@09:03 initial thoughts on 2.4 problems #timelog:00:15:00
+#! dz $
+Not going to look at the textbook, just going
+to get my initial impressions. This will help
+me establish a baseline.
+
+@09:04 initial thoughts
+#! p 2.4.4
+In other words, if there is a zero in the denominator, does that necessarily have a vertical
+asymptote?
+---
+if g(a) were a constant, there wouldn't be a asymptote right? Also, there could be expressions
+that cancel.
+
+@09:07 initial thoughts
+#! p 2.4.23
+I plotted this one last night, and it looks like
+it approaches negative infinity.
+---
+I am still tripped up on left/right sided limits. I guess we can say that both sides on the bottom approach zero from a positive angle?
+
+@09:10 initial thoughts
+#! p 2.4.42
+I forget the behavior of tan. I think it's bounded
+between $\pi \over 2$ positive or negative.
+---
+I think there theorems for this?
+
+@09:14 initial thoughts
+#! p 2.4.47
+ah, is this the thing where you look at the highest
+order of each? there's a rule for polynomials.
+---
+They want the lefthand and righthand sided limits.
+---
+Oops, was there an $a$ value I needed to add?
+
+@09:16 initial thoughts
+#! p 2.5.7
+negative exponent means it becomes a denominator
+---
+$t^3$ will approach infinity. but since it's in the denominator, it will approach 0.
+---
+negation makes it negative infinity.
+
+@09:20 going through 2.4 again #timelog:00:42:57
+#! dz bu/ma123/study
+In this pass, I'm going to just work through
+the examples and theorems. I may log my thoughts
+as I go
+
+@09:26 ex 1: infinite limits
+#! e 2.4 1
+This one has you determining limits by looking
+at a graph.
+---
+I forgot that infinite limits could be one sided.
+
+@09:28 ex 2: determining limits graphically
+#! e 2.4 2
+similar to ex 1, you're looking at a graph to
+determine the limits visually. Introduces
+an example of a function with different
+sided infinite limits.
+
+@09:35 ex 3: approaching limits analytically
+#! e 2.4 3
+The denominator approaches 0, so it's going to
+go to inifinity. but this example shows how evaluating from the left/right side shows the direction. The sign of the numerator is also important.
+---
+Negative values going to zero, positive valuess going to zero.
+
+@09:43 ex 4: determining limits analytically
+#! e 2.4 4
+factoring was okay. Just need to be careful. I forgot about the sign.
+---
+It makes a claim that $x(x + 4)$ will be negative
+and approaching zero as x approaches -4 from
+the right. But how can we quickly verify that?
+---
+They give an answer to this, actually: as x approaches -4 from the RHS, x is less than 0, and (x + 4) > 0. So, the combined product is going to be negative.
+---
+So, it appears the strategy here is to break apart the individual components and note their behaviors, then note the behaviors when they aree combined.
+
+@10:00 ex 5 location of vertical asymptotes
+#! e 2.4 5
+This one is important because it shows you can have
+an equation that is undefined at a point, but not necessarily a vertical asymptote.
+---
+The second half evaluates a infinite limit from left/right side, to show that they go to different points of infinity, thus demonstrating that the both sided limit does not exist.
+
+@10:04 ex 6 limits of trigonometric functions
+#! e 2.4 6
+I don't like this one because you have to have a bunch of identities memorized upfront: what $cot$ is, and what the limits of $cos$ and $sin$ are. Definitely makes me want to extract those bits of info into my knowledge graph.
+
+@10:07 after 45 minutes reviewing 2.4, back to the problems #timelog:00:38:00
+#! dz bu/ma123/hw
+
+@10:08 a 0 in denominator doesn't necessarily have asymptote
+#! p 2.4.4
+#! e 2.4 5
+As shown in example 5 in this chapter, you can have
+an undefined point that is not a vertical asymptote.
+
+@10:14 2.4.23 initial work
+#! p 2.4.23
+Because the denominator is squared, it will approach 0 from positive values on both sides.
+The both sided limit exists. Becausee the numerator is negative, the value is negative infinity.
+
+@10:40 2.4.42 initial work
+#! p 2.4.42
+#! e 2.4 6
+this is a trig limit for $tan$, for a big theta
+value. I came up with a potential solution by studying example 6 of 2.4. First, I rewrote the
+tan expression, then wrapped the bounds of the limit.
+---
+The $\tan$ function can be rewritten as
+${\sin \theta \over \cos \theta$. sin evaluates to -1, and the cos evals to 0, plus the negative coefficient. at $7\pi \over 2$, cosine, approaches
+0 positively from the RHS.
+---
+I did some wrapping initially because my graphing calculator had floating point precision issues. lol.
+---
+I want to say it is positive infinity, but I'm a little unsure how to distribute the negatives signs.
+
+@11:00 a few more 2.4  problems before lunch #timelog:00:08:49
+#! dz bu/ma123/hw
+
+@11:05 initial work
+#! p 2.4.47
+I think I forgot to supply $a$, but I could still
+factor and simplify to find asymptotes.
+---
+I was able to cancel some terms, and apparently this
+means those zeros don't form asymptotes. Still don't understand why that works. I plotted this function and confirmed there is indeed only one VA.
+---
+The limits go +/- infinity at that asymptote, so that limit doesn't exist (at 4).
+---
+I'm not going to log on to find $a$, I'm just going
+to move onto doing 2.5.
+
+@11:09 2.5 problems initial thoughts #timelog:00:13:21
+#! dz bu/ma123/hw
+
+@11:10 initial thoughts
+#! p 2.5.9
+x goes to infinity, the square in the denominator
+goes to 0. The constant (6) remains. I think that's right?
+
+@11:12 initial thoughts
+#! p 2.5.12
+I think this is the one where you divide by the denominator? That trick?
+---
+Weird that the powers are in reverse order. Why are they all 7s?
+---
+I think you just consider the highest order powers and their coefficients. So, I think it approaches 7?
+
+@11:14 initial thoughts
+#! p 2.5.15
+Instead of an explicit equation, it gives an inequality. The function sits between two functions.
+---
+Is this a squeeze theorem thing? You can solve the limits in between, and if they match there's a limit.
+---
+eyeballing it: $x^4$ approaches infinity on both sides, which makes it approach 0 on both sides. Both approach 30.
+
+@11:19 initial thoughts
+#! p 2.5.25
+Is it only the highest order terms to consider? $15/21$ conveniently simplifies to $5/7$.
+
+@11:21 initial thoughts
+#! p 2.5.28
+These polynomial orders are different here. There's a theorem with a rule about. Intuitively, the denominator approaches infinity faster than the numerator. So does that mean it approaches 0?
+
+@11:54 more 2.5 initial thoughts #timelog:00:16:53
+#! dz bu/ma123/hw
+
+@11:55 initial thoughts
+#! p 2.5.39
+Is this again just about looking at the highest
+power? Looks like it would be 4.
+
+@11:56 initial thoughts
+#! p 2.5.41
+Powers differ by 1, with smaller (odd) power on top.
+Odd powers are negative as it approaches
+negative infinity, positive as it approaches positive infinity. Since it's asking to eval both sides. My guess is negative/positve for negative/positive infinity.
+---
+As for the asymptotes: you can factor the denominator to get a zero that way maybe? looks like $\sqrt(7)$
+
+@12:00 initial thoughts
+#! p 2.5.49
+This one has roots, and I forget how to handle limits of those.
+
+@12:01 initial thoughts
+#! p 2.5.73
+Finding limits at infinitiess again, and then
+identifying asymptotes.
+---
+powers are the same, I hope that makes the limits
+easier (something something 3?)
+---
+VAs:  looks factorable. Lots of squares.
+
+@12:06 initial thoughts
+#! p 2.5.75
+limits at inf, and asymptotes. looks factorable.
+---
+There's some canceling that can be done, so I think
+the asymptote would be at $x = 0$.
+
+@12:07 initial thoughts
+#! p 2.5.78
+Limits and horizontal asymptotes. Vertical asymptotes. Absolute value in numerator.
+Weird number 98. Wait, you can bring out a 2 and
+it becomes a 49, and there is an $(x + 7)$ in the
+denominator. So that's promising.
+
+@12:11 working through 2.5 examples #timelog:00:18:48
+#! dz bu/ma123/study
+
+@12:16 ex 1. limits at infinity
+#! e 2.5 1
+pretty much shows things getting very big in the
+denominator tends to make things go to 0.
+
+@12:21 ex 2. limits at infinity
+#! e 2.5 2
+I forgot that the sign of the leading coefficient
+influences the sign of the result. Otherwise, the
+rules made sense here.
+
+@12:25 ex 3. end behavior of rational functions
+#! e 2.5 3
+this is the one where you start dividing by the
+higher order components. did A and B, not C. Later
+on after this example they show rules for rational asymptotes, which looks pretty helpful for the problem sets this week.
+
+@17:15 more 2.5 examples #timelog:00:48:41
+#! dz bu/ma123/study
+
+@17:24 example 4: slant asymptotes
+#! e 2.5 4
+This one is like finding the horizontal asymptotes,
+with an extra step in there to get the "slant asymptote". Polynomial long division required
+
+@17:35 example 5: end behavior of an algebraic function
+#! e 2.5 5
+this one confuses me in a few ways because of the way it involves roots. I am going to try and 
+talk my way through this one.
+---
+Everything in the denominator is under a square root. Somehow, we are able divide every term under the squaree root, even if those terms are being added.
+---
+When the infinity is found for the second one, we divide by $-x^3$ instead of $x^3$.
+---
+The rule goes "divide by the largest term in the denominator". Well, the largest term is
+$\sqrt{25x^6) = \sqrt(25)\sqrt(x^6)$, so really we are dividing by $\sqrt(x^6)$. This gets simplified to $x^3$, but there's a caveat here. $\sqrt(x^6) = |x^3|$ the same way $\sqrt(x^2) = |x|$. If $x > 0$, then $x^3$ as $x \to infty$ will just be $x^3$. However, $|x^3| = -x^3$ when $x \to -\infty$. So, for finding the limit $x \to -\infty$, the numerator is still being divided by $\sqrt(x^6)$ like the rule, but now $\sqrt{x^6}=|x^3|=-x^3$.
+
+@18:03 example 6: end behavior of transcendental functions
+#! e 2.5 6
+Three examples of functions are given. It seems like you basically need to know the limits ahead of time. The explanations bring those in pre-derived. But it mostly makes sense I guess.
+
+@18:06 taking a stab at 2.5
+#! dz bu/ma123/hw
+
+@18:08 2.5.7 work #timelog:00:04:00
+#! p 2.5.7
+The main term is $t^{-3} = 1/t^3$, which goes to 0, making the whole thing 0.
+
+@18:13 initial work #timelog:00:01:15
+#! p 2.5.9
+This one has a term under the numerator, making it go to zero, leaving the constant 6 remaining.
+
+@18:16 initial work #timelog:00:02:11
+#! p 2.5.12
+This is a rational polynomial expression, so we do the trick where we divide by the highest polynomial in the denominator: $x^4$. this blows away everything but 7.
+
+@18:20 initial work #timelog:00:07:38
+#! p 2.5.15
+The hardest part of this one for me was understanding the inequality correctly. I'm still not 100% convinced, but I am pretty sure it is somewhere in between, so you can use the squeeze theorem. The term nlows away at both infinities, so it is just 30.
+
+@18:30 initial work #timelog:00:06:27
+#! p 2.5.25
+This one I worked out pretty quickly, but hesitated on because I wasn't convinced it would go to a constant, and I was misrememnering theorem 2.7.
+---
+I did it the "long" way by dividing all the terms, but plugging in theorem 2.7 would have been faster.
+
+@18:42 initial work #timelog:00:01:20
+#! p 2.5.28
+If I'm understanding theorem 2.7 correctly, then the answer to this one is simply zero.
+
+@18:34 initial work #timelog:00:04:03
+#! p 2.5.39
+Via 2.7 theorem, these should evalulate to be 4, with a horizontal asymptote as y =4.
+
+@2026-02-11#ma123
+@11:00 Trying to finish up the 2.5 problems
+#! dz bu/ma123/hw
+once again, I'm just going to log the individual
+times for each problem instead of logging
+how much time total I spent doing the problems.
+It's a more useful metric, even if I do lose a couple of minutes.
+
+@11:01 initial work #timelog:00:02:49
+#! p 2.5.41
+I just plugged in 2.7 theorem. it goes to 0 because
+the numerator order is smaller.
+
+@11:07 initial work #timelog:00:08:36
+#! p 2.5.49
+This one took a bit more time because of the roots,
+but it was ultimately a variation on one of the examples in 2.5 involving roots.
+---
+Thm 2.7 I assume still holds, and the limit at infinity ends up being ${\root 3 \of x^6 \over 3x^6$. Simplifying, ${\root 3 \of x^6} = (x^6)^{1/3}=x^2$, which yields $x^2 \over 3x^2 = 1 \over 3$.
+
+@11:22 initial work. swing and a miss #timelog:00:25:32
+#! p 2.5.73
+horizontal asymptotes are easy enough to do here. Getting the vertical asympotes are proving to be a pain for me. I have been trying to figure out ways to reduce the denominator.
+---
+There are a lot of squares in here, which maybe implies some square root operations, but that leads to an ugly middle term. I left off trying to divide both polynomials by $x^2$ so they both end up having $x^2$ as their highest order polynomial. Again, there's an ugly term in the denom.
+---
+Going to have to swing back for this one.
+
+@13:33 more stabs on this
+#! p 2.5.73
+I tried a few approaches to reduce this damn denominator. Dividing everything by $x^2$ seems to get 144 into a term $(12/x)^2$, which seems awfully similar to the $12x$ term in the numerator.
+---
+Frustrated. I didn't log my time, but it was at least half an hour, probably more. I hate finding the "trick".
+
+@13:36 initial work #timelog:00:04:42
+#! p 2.5.75
+First, I simplified and reduced the equation via
+factoring. Assuming 2.7 theorem still applies, the
+answer I think is just 1 at both sides? In the reduced form, the only VA is $x = 0$, because $x$ is the only thing in the denominator still.
+
+@13:56 initial work #timelog:00:11:07
+#! p 2.5.78
+This has got an absolute value in the numerator.
+Examining this, I figured that the inside expression would always be negative as $x$ approaches infinity in both directions, so the whole expression becomess negated.
+---
+Distributing values, the expression seems to want to have a horizontal asymptote at $y=2$.
+---
+To get the vertical asymptotes, factor the expression in the numerator, and then cancel. There is only one VA left, and that is $x=0$. Finding the one sided limits, one notes that only negative values approach the denominator from the left side, and positive values only approach the numerator from the right hand side. So you get $-\infty$ and $+\infty$, respectively.
+
+@14:18 going to punch in the 2.4 and 2.5 problems I did
+#! dz bu/ma123/hw
+
+@14:49 My limit was incorrect
+#! p 2.5.49
+It did not like ${1 \over 3}.
+
+@14:50 It did not like my vertical asymptotes
+#! p 2.5.78
+I assumed there'd be a VA at 0 because I was dividing by x. I realized I didn't distribute right. I think it should be 2.
+
+@14:52 It did not like my vertical asymptotes
+#! p 2.5.75
+Similar to 2.5.78, it did not like that I put in 0. It should have been 1, not 0.
+
+@14:55 attempting this problem again #timelog:00:06:58
+#! p 2.5.49
+I forgot to factor in the other root in the denominator. Dividing by $x^2$ in the denominator is effectively dividing by $x^4$ under the root. So, the 5 remains, and you (possibly) get $1 \over {3 + \sqrt(5)}$. I'm hesitant on this, and will think on this before submitting.
+---
+Still need to check the limits of this HA though.
+
+@15:09 repeating this problem again #timelog:00:07:02
+#! p 2.5.75
+I got the HA before, just need to get the VA correct. I think this was a small mistake.
+---
+I've redone this, I've double checked the plots. It looks like the vertical asymptote was at 0, which was my initial. Maybe I got the limits backwards?
+RHS limit is positive, LHS is negatve.
+
+@15:26 Looking at the answers, not sure what I am missing here
+#! p 2.5.75
+The plot definitely has one vertical asymptote at x=0, and there are only 2 options for this. One says the LHS limit doesn't exist, which it does.
+---
+Either I am missing something, or I am putting in the answer wrong. grr.
+
+@15:30 re-doing 2.5.78 #timelog:00:07:01
+#! p 2.5.78
+I plotted this. While there's definitely a vertical asymptote at $x = 0$, there's also something funky at $x=-7$. It doesn't look asympote-y though, more of a discontinuity. I'm not sure why. 
+
+@16:15 initial thoughts on 2.6 questions #timelog:00:26:06
+#! dz bu/ma123/hw
+
+@16:16 initial thoughts
+#! p 2.6.15
+This is asking for the domain where f is continuous for an equation that is a rational polynomial. The only time the function is undefined is when $x=2$. So I think it's continuous for all values when $x \ne 2$.
+
+@16:17 initial thoughts
+#! p 2.6.17
+Doesn't look like this function is going to be continuous at $a = 8$ because $f(8)$ seems to be undefined.
+
+@16:19 initial thoughts
+#! p 2.6.21
+$f(3)$ is defined. Eyeballing, looks like the limits might not work out to be $f(a)$. LHS limit looks to be 6? RHS is 4.
+
+@16:21 initial thoughts
+#! p 2.6.23
+$f(a)$ doesn't seem to be defined at $a = 2$. So, this function is not continuous.
+
+@16:23 initial thoughts
+#! p 2.6.25
+This is just a polynonial expression, which is continuous. So the interval is going to be $(-\infty, \infty)$.
+
+@16:24 initial thoughts
+#! p 2.6.28
+The denominator is $x^2 - 1$, so the function is not defined for $x = 1$ and $x = -1$. So, the intervals are from $(-\infty, -1)$, $(-1, 1)$, and $(1, \infty)$.
+In others continus when $x \ne -1$, $x \ne 1$.
+
+@16:27 initial thoughts
+#! p 2.6.39
+a. function is defined at $x = 1$, but the limit is not defined.
+---
+b. The piecewise function has  $x \le 1$, which I think means it is left continuous (but I know there's a formal definition and all that).
+---
+c. intervals of continuity: $(-\infty, 1]$ and $(1, \infty)$.
+
+@16:32 initial thoughts
+#! p 2.6.43
+Square root. At some point, the square root becomes negative, which doesn't exist for real numbers. Where that exists seems to be a non-integerer value. Somewhere between 3 and 4 (positive or negative). This might take some alegebra to figure out the endpoints precisely.
+
+@16:35 initial thoughts
+#! p 2.6.61
+This is a trig one. $\csc = 1/\sin$. Why does this problem want you to find intervals and then limits. Looks confusing.
+
+@16:37 initial thoughts
+#! p 2.6.65
+Find intervals, then limits. Again, not sure what the logic is here for doing intervals then limits. Is it easiererr to find the limits. These are more transcendental functions.
+
+@16:38 initial thoughts
+#! p 2.6.86
+Ah okay, we did something similar to this in the lecture. The proper procedure involves using the continuity checklist. You end up evaluating the one sided limits at $x \to a$, which yields two equations in terms of $a$. set those equal, and solve for $a$.

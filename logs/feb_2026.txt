@@ -572,3 +572,34 @@ set to ugen. sweep.
 
 @20:37 addressing the small TODOS #timelog:00:13:12
 #! dz thoughts/projects/sonilo/tasks/bulk_instructions
+
+@2026-02-15 Day 168
+@09:01 lots and lots of scanning #archiving #timelog:00:23:55
+I've decided to scan some notes I did during christmas
+when I was sitting around in North Carolina. They outline
+my thought process for building the drawing language
+I currently use to transcribe my knowledge graphs. I added
+page numbers to all of them, and will be included in my "thoughts and ideas"
+collection for 2025. It was my last idea of that year.
+---
+On top of that, there are note cards from MA123 this week,
+as well as scratch papers.
+---
+Nothing from my inked notes today, surprisingly. I almost
+filled a book, but not quite
+
+@09:26 attempting to transfer and parse notes from my BYOK #timelog:00:58:15
+#! dz bu/ma123/notes
+This past week, I experimented with keeping a log of my
+problem sets using my new BYOK. The hope is that I'll be able
+to capture my thinking and thought process I went through
+approaching these problems that I'll be able to review for
+midterms and finals in a few weeks (and perhaps review even
+years from now?).
+---
+In addition to transferring, I'm going to need to build a parser
+that converts some of my shorthand into logs that my logzet
+parser can read.
+---
+I found a logzet bug. My session is called "ma123" but it's not getting
+the numbers.

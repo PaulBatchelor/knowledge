@@ -1,0 +1,19 @@
+@5x loader steps (unix)
+@5y read exe header, detemrine text/data segment sizes
+@5z create addresss space that fits
+@60 copy data and instruction to memory
+@61 copy any params to main program onto stack
+@62 init registers, set stack pointer to first free location
+@63 jump to start-up routine, that copies params into
+arg regs, calls main routine
+@64 dynamically linked libraries
+@65 traditional static linking disadvantages
+@br library routines baked into exe
+@66 loads all routines that are called anywhere in exe, even if not executed
+@68 lib routines not linked not loaded until program run
+@67 DLLs address static linking disadvantages
+@69 prog and lib routines keep extra info onlocation of nonlocal props and their names
+@6a initially, loader ran dynamic linker
+@6b still linked all routines that might be called vs only those called
+while prog running
+@6c DLL lazy procedure linkage: each routine linked only after it is called

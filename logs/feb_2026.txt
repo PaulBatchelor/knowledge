@@ -642,3 +642,23 @@ build a parser in a "real" language like Python instead of Awk.
 It works! All the theorems show up properly. Awesome.
 
 @16:54 COAD transcription #timelog:00:22:35 #ink:06N
+
+@17:18 COAD transcription #ink:06Q #timelog:00:06:00
+collision found at node 68. Show stopper, because I
+don't even know what to replace it with (I've already
+found collision nodes).
+---
+I'll need to assemble logs for ink.
+
+@17:24 ink logs, quick utility #timelog:00:45:41
+That was not exactly quick. But I find my logs.
+
+@18:11 continued transcription, resolving conflicts #ink:06Q
+bq was last. br is next.
+---
+br will replace one of the 68s (library routines...)
+---
+And of course there's a cycle. damn mistakes cost me
+a lot of time.
+---
+mistook 5z for 57. oops.

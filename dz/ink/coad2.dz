@@ -731,10 +731,74 @@ nn relocation_info_may_be_included
 ln relocation info may be included for loader
 at id 5w
 at pg 06n
+nn loader_steps
+ln loader steps (unix)
+at id 5x
+at pg 06q
+nn read_exe_header
+ln read exe header, detemrine text/data segment sizes
+at id 5y
+at pg 06q
+nn create_address_space
+ln create addresss space that fits
+at id 5z
+at pg 06q
 nn x86
 ln x86
 at id 6
 at pg 060
+nn copy_data_instr_mem
+ln copy data and instruction to memory
+at id 60
+at pg 06q
+nn copy_params_to_main_prog
+ln copy any params to main program onto stack
+at id 61
+at pg 06q
+nn init_registers
+ln init registers, set stack pointer to first free location
+at id 62
+at pg 06q
+nn jump_startup_routine
+ln jump to start-up routine, that copies params into arg regs, calls main routine
+at id 63
+at pg 06q
+nn dynamically_linked_libs
+ln dynamically linked libraries
+at id 64
+at pg 06q
+nn static_linking_disadv
+ln traditional static linking disadvantages
+at id 65
+at pg 06q
+nn loads_routines_called_anywhere
+ln loads all routines that are called anywhere in exe, even if not executed
+at id 66
+at pg 06q
+nn DLLs_address_static_linking_disadv
+ln DLLs address static linking disadvantages
+at id 67
+at pg 06q
+nn 68
+ln lib routines not linked not loaded until program run
+at id 68
+at pg 06q
+nn routines_extra_info
+ln prog and lib routines keep extra info onlocation of nonlocal props and their names
+at id 69
+at pg 06q
+nn loader_ran_dynamic_linker
+ln initially, loader ran dynamic linker
+at id 6a
+at pg 06q
+nn still_linked_all_routines
+ln still linked all routines that might be called vs only those called while prog running
+at id 6b
+at pg 06q
+nn DLL_lazy_procedure_linkage
+ln DLL lazy procedure linkage: each routine linked only after it is called
+at id 6c
+at pg 06q
 nn ARMv8
 ln ARMv8
 at id 7
@@ -859,6 +923,10 @@ nn parallel_execution
 ln parallel execution
 at id bq
 at pg 06j
+nn routines_baked_into_exe
+ln library routines baked into exe
+at id br
+at pg 06q
 nn logical
 ln logical
 at id c
@@ -1121,6 +1189,7 @@ co store_conditional 4x
 co store_val_reg store_conditional
 co change_1_success_0_fail store_val_reg
 co steps_transforming_C_program 2_12_translating_starting_program
+co dynamically_linked_libs 2_12_translating_starting_program
 co compiler steps_transforming_C_program
 co assembler steps_transforming_C_program
 co linker steps_transforming_C_program
@@ -1135,6 +1204,8 @@ co loader linker
 co linker_link_editor linker
 co linker_steps linker
 co produces_exe linker
+co static_linking_disadv linker
+co loader_steps loader
 co assembly_language transform_C_to_assembly
 co simplifies_translation_programming pseudo_instructions
 co object_file assembly_to_object_file
@@ -1157,6 +1228,22 @@ co object_file_format executable_file
 co no_unresolved_refs executable_file
 co can_contain_debug_info executable_file
 co relocation_info_may_be_included executable_file
+co read_exe_header loader_steps
+co create_address_space loader_steps
+co copy_params_to_main_prog loader_steps
+co init_registers loader_steps
+co jump_startup_routine loader_steps
+co create_address_space read_exe_header
+co copy_data_instr_mem create_address_space
+co copy_params_to_main_prog copy_data_instr_mem
+co DLLs_address_static_linking_disadv dynamically_linked_libs
+co 68 dynamically_linked_libs
+co routines_extra_info dynamically_linked_libs
+co loader_ran_dynamic_linker dynamically_linked_libs
+co loads_routines_called_anywhere static_linking_disadv
+co routines_baked_into_exe static_linking_disadv
+co still_linked_all_routines loader_ran_dynamic_linker
+co DLL_lazy_procedure_linkage still_linked_all_routines
 co MIPS_operands 2_2_operations
 co MIPS_assembly 2_2_operations
 co hw_design_principles 2_2_operations

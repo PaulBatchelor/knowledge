@@ -1,0 +1,16 @@
+5x loader_steps
+5y read_exe_header
+5z create_address_space
+60 copy_data_instr_mem
+61 copy_params_to_main_prog
+62 init_registers
+63 jump_startup_routine
+64 dynamically_linked_libs
+65 static_linking_disadv
+br routines_baked_into_exe
+66 loads_routines_called_anywhere
+67 DLLs_address_static_linking_disadv
+69 routines_extra_info
+6a loader_ran_dynamic_linker
+6b still_linked_all_routines
+6c DLL_lazy_procedure_linkage

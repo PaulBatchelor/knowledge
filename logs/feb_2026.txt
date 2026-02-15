@@ -640,3 +640,5 @@ just escapes differently. So, it looks like I'll need to
 build a parser in a "real" language like Python instead of Awk.
 ---
 It works! All the theorems show up properly. Awesome.
+
+@16:54 COAD transcription #timelog:00:22:35 #ink:06N

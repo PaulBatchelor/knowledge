@@ -611,6 +611,126 @@ nn change_1_success_0_fail
 ln change register value to 1 if successful, 0 if failure
 at id 52
 at pg 06j
+nn 2_12_translating_starting_program
+ln 2.12 Translating and starting a program
+at id 53
+at pg 06n
+nn steps_transforming_C_program
+ln 4 steps in transforming a C program in non-volatile storage into program running on computer
+at id 54
+at pg 06n
+nn compiler
+ln compiler
+at id 55
+at pg 06n
+nn assembler
+ln assembler
+at id 56
+at pg 06n
+nn linker
+ln linker
+at id 57
+at pg 06n
+nn loader
+ln loader
+at id 58
+at pg 06n
+nn transform_C_to_assembly
+ln transforms C programs into assembly program
+at id 59
+at pg 06n
+nn assembly_language
+ln assembly language: symbolic language that can be translated into machine code
+at id 5a
+at pg 06n
+nn pseudo_instructions
+ln pseudo-instructions: common variation of assembly instruction often treated as if it were an instruction in its own right
+at id 5b
+at pg 06n
+nn simplifies_translation_programming
+ln simplifies translation and programming
+at id 5c
+at pg 06n
+nn assembly_to_object_file
+ln assembly program to object file
+at id 5d
+at pg 06n
+nn object_file
+ln object file: combo of machine language, data, and info to place instructions in memory
+at id 5e
+at pg 06n
+nn symbol_table
+ln symbol table: table that matches names of labels to address of the memory words that the instructions occupy
+at id 5f
+at pg 06n
+nn unix_object_file_components
+ln unix object file components
+at id 5g
+at pg 06n
+nn object_file_header
+ln object file header
+at id 5h
+at pg 06n
+nn text_segment
+ln text segment
+at id 5i
+at pg 06n
+nn static_data_segment
+ln static data segment
+at id 5j
+at pg 06n
+nn relocation_info
+ln relocation information
+at id 5k
+at pg 06n
+nn debug_info
+ln debugging info
+at id 5l
+at pg 06n
+nn linker_link_editor
+ln linker/link editor: syusmtes program that combiles independently assembled machine language programs and resolves all undefined labels into an executable file
+at id 5m
+at pg 06n
+nn linker_steps
+ln linker steps
+at id 5n
+at pg 06n
+nn place_code_data_in_mem
+ln place code and data in memory
+at id 5o
+at pg 06n
+nn determine_data_label_addr
+ln determine address of data and instruction labels
+at id 5p
+at pg 06n
+nn patch_internal_external_refs
+ln patch internal external refs
+at id 5q
+at pg 06n
+nn produces_exe
+ln produces executable file that can be run on computer
+at id 5r
+at pg 06n
+nn executable_file
+ln executable file
+at id 5s
+at pg 06n
+nn object_file_format
+ln object file format
+at id 5t
+at pg 06n
+nn no_unresolved_refs
+ln no unresolved refs
+at id 5u
+at pg 06n
+nn can_contain_debug_info
+ln can contain symbol tables / debug info, stripped EXEs do not
+at id 5v
+at pg 06n
+nn relocation_info_may_be_included
+ln relocation info may be included for loader
+at id 5w
+at pg 06n
 nn x86
 ln x86
 at id 6
@@ -840,6 +960,7 @@ co 2_07_instr_decisions 2_instructions
 co 2_08_procs_in_computer_hw 2_instructions
 co 2_09_communicating_with_people 2_instructions
 co 2_10_MIPS_addr_32bit_imm_and_addr 2_instructions
+co 2_12_translating_starting_program 2_instructions
 co 2_2_operations 2_instructions
 co 2_06_logical_ops 2_instructions
 co nor 2_instructions
@@ -999,6 +1120,43 @@ co load_linked 4x
 co store_conditional 4x
 co store_val_reg store_conditional
 co change_1_success_0_fail store_val_reg
+co steps_transforming_C_program 2_12_translating_starting_program
+co compiler steps_transforming_C_program
+co assembler steps_transforming_C_program
+co linker steps_transforming_C_program
+co loader steps_transforming_C_program
+co assembler compiler
+co transform_C_to_assembly compiler
+co linker assembler
+co pseudo_instructions assembler
+co assembly_to_object_file assembler
+co symbol_table assembler
+co loader linker
+co linker_link_editor linker
+co linker_steps linker
+co produces_exe linker
+co assembly_language transform_C_to_assembly
+co simplifies_translation_programming pseudo_instructions
+co object_file assembly_to_object_file
+co unix_object_file_components object_file
+co object_file_format object_file
+co can_contain_debug_info symbol_table
+co symbol_table unix_object_file_components
+co object_file_header unix_object_file_components
+co text_segment unix_object_file_components
+co static_data_segment unix_object_file_components
+co relocation_info unix_object_file_components
+co debug_info unix_object_file_components
+co relocation_info_may_be_included relocation_info
+co can_contain_debug_info debug_info
+co place_code_data_in_mem linker_steps
+co determine_data_label_addr place_code_data_in_mem
+co patch_internal_external_refs determine_data_label_addr
+co executable_file produces_exe
+co object_file_format executable_file
+co no_unresolved_refs executable_file
+co can_contain_debug_info executable_file
+co relocation_info_may_be_included executable_file
 co MIPS_operands 2_2_operations
 co MIPS_assembly 2_2_operations
 co hw_design_principles 2_2_operations

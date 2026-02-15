@@ -1,0 +1,36 @@
+@53 2.12 Translating and starting a program
+@54 4 steps in transforming a C program in non-volatile
+storage into program running on computer
+@55 compiler
+@56 assembler
+@57 linker
+@58 loader
+@59 transforms C programs into assembly program
+@5a assembly language: symbolic language that can be translated into machine code
+@5b pseudo-instructions: common variation of assembly instruction often treated
+as if it were an instruction in its own right
+@5c simplifies translation and programming
+@5d assembly program to object file
+@5e object file: combo of machine language, data, and info to place
+instructions in memory
+@5f symbol table: table that matches names of labels to address
+of the memory words that the instructions occupy
+@5g unix object file components
+@5h object file header
+@5i text segment
+@5j static data segment
+@5k relocation information
+@5l debugging info
+@5m linker/link editor: syusmtes program that combiles independently
+assembled machine language programs and resolves all
+undefined labels into an executable file
+@5n linker steps
+@5o place code and data in memory
+@5p determine address of data and instruction labels
+@5q patch internal external refs
+@5r produces executable file that can be run on computer
+@5s executable file
+@5t object file format
+@5u no unresolved refs
+@5v can contain symbol tables / debug info, stripped EXEs do not
+@5w relocation info may be included for loader

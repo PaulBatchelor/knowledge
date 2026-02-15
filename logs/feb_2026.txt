@@ -566,3 +566,9 @@ as args, the steps would be: set up ugen with 2 ins, 1 out.
 pop amp, assign to port 0, pop freq, assign to port 1,
 new block for output, assign to port 2. alloc data, initialize,
 set to ugen. sweep.
+
+@19:23 implementation #timelog:01:07:27
+#! dz $
+
+@20:37 addressing the small TODOS #timelog:00:13:12
+#! dz thoughts/projects/sonilo/tasks/bulk_instructions

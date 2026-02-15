@@ -5,8 +5,8 @@ thoughts/projects/sonilo/tasks/fix_block_navigation:83:TODO:1
 thoughts/projects/sonilo/tasks/instruction_primitive:88:DONE:1
 thoughts/projects/sonilo/tasks/ugen_refcount:93:DONE:1
 thoughts/projects/sonilo/tasks/zero_page:97:DONE:1
-thoughts/projects/sonilo/tasks/bulk_instructions:102:TODO:1
-thoughts/projects/sonilo/tasks/ugen_stack:106:TODO:1
+thoughts/projects/sonilo/tasks/bulk_instructions:102:DONE:1
+thoughts/projects/sonilo/tasks/ugen_stack:106:DONE:1
 thoughts/projects/sonilo/tasks/buddy_slots:111:TODO:1
 thoughts/projects/sonilo/tasks/ugen_ports:116:TODO:1
 thoughts/projects/sonilo/tasks/allocator:120:TODO:1

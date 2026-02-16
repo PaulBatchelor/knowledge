@@ -1,10 +1,12 @@
 \input common
 \def\begthm#1#2{
+\vbox\bgroup
 {\headerfont {Theorem #1:} \quad #2}
 \smallskip\hrule\smallskip
 }
 
 \def\endthm{
+\egroup
 \bigskip\bigskip
 }
 
@@ -103,6 +105,7 @@ $f(x) = mx + b$,
 $$\
 \lim_{x \to a} {f(x)} = f(a) = ma + b.
 $$
+\endthm
 
 \begthm{2.3a}{Limit Law: Sum}
 $$\

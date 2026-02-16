@@ -667,3 +667,7 @@ mistook 5z for 57. oops.
 @11:57 going to start transcribing theorems/definitions from chapter 2 #timelog:00:23:11
 #! dz bu/ma123/study
 Got to theorem 2.3 (limit laws).
+
+@13:03 continue transcribing theorems/definitions for chapter 2 #timelog:00:55:44
+#! dz $
+Almost done with 2.5.

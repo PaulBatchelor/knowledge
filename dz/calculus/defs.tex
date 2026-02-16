@@ -1,10 +1,12 @@
 \input common
 \def\begdef#1{
+\vbox\bgroup
 {\headerfont #1}\smallskip
 \hrule\smallskip
 }
 
 \def\enddef{
+\egroup
 \bigskip\bigskip
 }
 
@@ -173,6 +175,73 @@ $$
 
 and say the limit of $f(x)$ as $x$ approaches $a$ from
 the left equals $L$.
+\enddef
+
+\begdef{Infinite Limits}
+Suppose $f$ is defined for all $x$ near $a$. If $f(x)$
+gorws arbitrarily large for all $x$ sufficiently close (but not equal)
+to $a$, we write
+
+$$\
+\lim_{x \to a} f(x) = \infty
+$$
+
+and say the limit of $f(x)$ as $x$ approaches $a$ is
+infinity.
+
+\par If $f(x)$ is negative and grows arbitrarily large in magnitude for
+all $x$ sufficiently close (but not equal to) $a$, we write
+
+$$\
+\lim_{x \to a} f(x) = -\infty
+$$
+
+and say the limit of $f(x)$ as $x$ approaches $a$ is
+negative infinity.
+
+{\it In both cases, the limit does not exist}.
+
+\enddef
+
+\begdef{Vertical Asymptote}
+If
+$\lim\limits_{x \to a} = \pm \infty$, 
+$\lim\limits_{x \to a^+} = \pm \infty$, 
+$\lim\limits_{x \to a^-} = \pm \infty$,
+the line $x = a$ is called a {\bf vertical asymptote}
+of $f$.
+\enddef
+
+\begdef{Limits at Infinity and Horizontal Asymptotes}
+If $f(x)$ becomes arbitrarily close to a finite number $L$
+for all sufficiently large and positive $x$, then we
+write
+
+$$\
+\lim_{x \to \infty} = L
+$$
+
+We say the limit as $f(x)$ as $x$ approaches infinity
+is $L$. in thise, the line $y = L$ is a {\bf horizontal asymptote}
+of $f$. The limit at negative infinity, $\lim\limits_{x \to -\infty} f(x) = M$,
+is defined analogously. When this limit exists, $y = M$ is a horizontal
+asymptote.
+\enddef
+
+\begdef{Infinite Limits at Infinity}
+If $f(x)$ becomes arbitrarily large as $x$ becomes arbitrarily
+large, then we right
+
+$$\
+\lim_{x \to \infty} f(x) = \infty.
+$$
+
+The limits
+$\lim\limits_{x \to \infty} = -\infty$,
+$\lim\limits_{x \to -\infty} = \infty$,
+and
+$\lim\limits_{x \to -\infty} = -\infty$
+are defined similarly.
 \enddef
 
 \bye

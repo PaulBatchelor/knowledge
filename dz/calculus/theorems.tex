@@ -1,8 +1,12 @@
 \input common
-\def\begthm#1#2{{\headerfont {Theorem #1:} \quad #2}
+\def\begthm#1#2{
+{\headerfont {Theorem #1:} \quad #2}
 \smallskip\hrule\smallskip
 }
-\def\endthm{\bigskip\bigskip}
+
+\def\endthm{
+\bigskip\bigskip
+}
 
 \begthm{3.1}{Differentiable Implies Continuous}
 If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
@@ -198,5 +202,123 @@ $$
 provided $f(x) > 0$ for $x$ near $a$, if $n$ is even.
 \endthm
 
+\begthm{2.4}{Limits of Polynomial and Rational Functions}
+Assume $p$ and $q$ are polynomials and $a$ is a constant.
+
+\par a. Polynomial functions
+$$\
+\lim_{x \to a} p(x) = p(a)
+$$
+
+
+\par b. Rational functions
+
+$$\
+\lim_{x \to a} {p(x) \over q(x)} = {p(a) \over q(a)}
+$$
+
+provided $q(a) \ne 0$.
+\endthm
+
+\begthm{2.3h}{Limit laws for One-Sided Limits}
+Laws 2.3a-2.3f hold with $\lim\limits_{x \to a}$ replaced with
+$\lim\limits_{x \to a^+}$ or $\lim\limits_{x \to a^-}$. Law 2.3g is
+modified as follows.
+
+\par a.
+
+$$\
+\lim_{x \to a^+}(f(x))^{1/n} =
+\bigg(
+\lim_{x \to a^+} f(x)
+\bigg)^{1/n}
+$$
+
+provided $f(x) \ge 0$, for $x$ near $a$ with $x > a$, if $n$ is even.
+
+\par b.
+
+$$\
+\lim_{x \to a^-}(f(x))^{1/n} =
+\bigg(
+\lim_{x \to a^-} f(x)
+\bigg)^{1/n}
+$$
+
+provided $f(x) \ge 0$, for $x$ near $a$ with $x < a$, if $n$ is even.
+
+\endthm
+
+\begthm{2.5}{The Squeeze Theorem}
+Assume the functions $f$, $g$, and $h$ satisfy $f(x) \le g(x) \le h(x)$
+for all values of $x$ near $a$, except possibly at $a$.
+If $\lim\limits_{x \to a} f(x) = \lim\limits_{x \to a} h(x) = L$,
+then $\lim\limits_{x \to a} g(x) = L$.
+\endthm
+
+\begthm{2.6}{Limits at Infinity of Powers and Polynomials}
+Let $n$ be a positive integer and let $p$ be the polynomial
+
+$p(x) = a_n x^n + a_{n - 1}x^{n - 1} + \cdots + a_2 x^2 +
+a_1x + a_0$, where $a_n \ne 0$.
+\par 1.
+$\lim\limits_{x \to \pm\infty} x^n = \infty$ when $n$ is even.
+
+\par 2.
+$\lim\limits_{x \to \infty} x^n = \infty$
+and
+$\lim\limits_{x \to -\infty} x^n = -\infty$
+when $n$ is odd.
+
+\par 3.
+$\lim\limits_{x \to \pm\infty} {1 \over x^n} =
+\lim\limits_{x \to \pm\infty} {x^{-n}} = 0
+$.
+
+\par 4.
+$\lim\limits_{x \to \pm\infty} p(x)=
+\lim\limits_{x \to \pm\infty} a_nx^n= \pm\infty$,
+depending on the degree of the polynomial and the sign
+of the leading coefficient $a_n$.
+
+\endthm
+
+\begthm{2.7}{End Behavior and Asymptotes of Rational Functions}
+Suppose $f(x) = {p(x) \over q(x)}$ is a rational function,
+where
+$$\
+p(x) = a_mx^m + a_{m-1}x^{m-1} + \cdots + a_2x^2 + a_0
+$$
+
+and
+
+$$\
+q(x) = b_nx^n + b_{n-1}x^{n-1} + \cdots + b_2x^2 + b_0
+$$
+
+with $a_m \ne 0$ and $b_n \ne 0$.
+
+\par {\bf a. Degree of numerator less than degree of denominator.}
+If $m < n$, then $\lim\limits_{x \to \pm\infty} f(x) = 0$,
+and $y = 0$ is a horizontal asymptote of $f$.
+
+\par {\bf b. Degree of numerator equals degree of denominator.}
+If $m = n$, then $\lim\limits_{x \to \pm\infty} f(x) = a_m/b_n$,
+and $y = a_m/b_n$ is a horizontal asymptote of $f$.
+
+\par {\bf c. Degree of numerator greater than degree of denominator.}
+If $m > n$, then $\lim\limits_{x \to \pm\infty} f(x) = \infty$ or $-\infty$,
+and $f$ has no horizontal asymptote.
+
+\par {\bf d. Slant asymptote.} 
+If $m = n + 1$, then $\lim\limits_{x \to \pm\infty} f(x) = \infty$
+or $-\infty$, and $f$ has no horizontal asymptote, but $f$
+has a slant asymptote.
+
+\par {\bf e. Vertifcal asymptotes.} Assuming $f$ is in
+reduced form ($p$ and $q$ share no common factors), vertical
+asymptotes occur at the zeros of $q$.
+
+\endthm
 
 \bye

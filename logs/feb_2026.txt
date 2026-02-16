@@ -662,3 +662,8 @@ And of course there's a cycle. damn mistakes cost me
 a lot of time.
 ---
 mistook 5z for 57. oops.
+
+@2026-02-16 Day 169
+@11:57 going to start transcribing theorems/definitions from chapter 2 #timelog:00:23:11
+#! dz bu/ma123/study
+Got to theorem 2.3 (limit laws).

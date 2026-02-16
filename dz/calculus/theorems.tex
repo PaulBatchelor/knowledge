@@ -71,4 +71,132 @@ $$\
 $$
 \endthm
 
+\begthm{2.1}{Relationship between One-Sided and Two-Sided Limits}
+Assume $f$ is defined for all $x$ near $a$ except possibly
+at $a$. Then
+
+$$\
+\lim_{x \to a} f(x) = L
+$$
+
+if and only if
+
+$$\
+\lim_{x \to a^{-}} = L
+$$
+
+and
+
+$$\
+\lim_{x \to a^{+}} = L
+$$
+\endthm
+
+\begthm{2.2}{Limits of a Linear Function}
+Let $a$, $b$, and $m$ be real numbers. For linear functions
+$f(x) = mx + b$,
+
+$$\
+\lim_{x \to a} {f(x)} = f(a) = ma + b.
+$$
+
+\begthm{2.3a}{Limit Law: Sum}
+$$\
+\lim_{x \to a}{
+(f(x) + g(x))
+} =
+\lim_{x \to a}{f(x)} +
+\lim_{x \to a}{g(x)} 
+$$
+\endthm
+
+\begthm{2.3b}{Limit Law: Difference}
+$$\
+\lim_{x \to a}{
+(f(x) - g(x))
+} =
+\lim_{x \to a}{f(x)} -
+\lim_{x \to a}{g(x)} 
+$$
+\endthm
+
+\begthm{2.3c}{Limit Law: Constant multiple}
+$$\
+\lim_{x \to a}{
+cf(x)
+} =
+c\lim_{x \to a}{f(x)}
+$$
+\endthm
+
+\begthm{2.3d}{Limit Law: Product}
+$$\
+\lim_{x \to a}{
+(f(x)g(x))
+} =
+\bigg(
+\lim_{x \to a}{f(x)}
+\bigg)
+\bigg(
+\lim_{x \to a}{g(x)} 
+\bigg)
+$$
+\endthm
+
+\begthm{2.3e}{Limit Law: Quotient}
+$$\
+\lim_{x \to a}{
+\bigg(
+{
+f(x)
+\over
+g(x)
+}
+\bigg)
+} =
+{
+{\lim_{x \to a}{f(x)}}
+\over
+{\lim_{x \to a}{g(x)}}
+}
+$$
+
+provided
+
+$$\
+\lim_{x \to a}{g(x)} \ne 0
+$$
+\endthm
+
+\begthm{2.3f}{Limit Law: Power}
+$$\
+\lim_{x \to a}{
+(f(x))^n
+}
+=
+\big(
+\lim_{x \to a}{
+(f(x))
+}
+\big)^n
+$$
+\endthm
+
+\begthm{2.3g}{Limit Law: Root}
+$$\
+\lim_{x \to a}{
+(f(x))^{1/n}
+}
+=
+\big(
+\lim_{x \to a}{
+(f(x))
+}
+\big)^{1/n}
+$$
+
+provided $f(x) > 0$ for $x$ near $a$, if $n$ is even.
+\endthm
+
+
 \bye

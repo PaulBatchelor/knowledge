@@ -671,3 +671,6 @@ Got to theorem 2.3 (limit laws).
 @13:03 continue transcribing theorems/definitions for chapter 2 #timelog:00:55:44
 #! dz $
 Almost done with 2.5.
+
+@20:15 more transcriptions #timelog:00:26:33
+#! dz $

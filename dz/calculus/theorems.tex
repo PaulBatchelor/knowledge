@@ -321,7 +321,103 @@ has a slant asymptote.
 \par {\bf e. Vertifcal asymptotes.} Assuming $f$ is in
 reduced form ($p$ and $q$ share no common factors), vertical
 asymptotes occur at the zeros of $q$.
+\endthm
 
+\begthm{2.8}{End Behavior of $e^x$, $e^{-x}$, and $\ln x$}
+The end behavior for $e^x$ and $e^{-x}$ on $(-\infty, infty)$
+and on $\ln x$ on $(0, \infty)$ is given by the following
+limits:
+
+$$\
+\lim_{x \to \infty} e^x = \infty,
+\lim_{x \to -\infty} e^x = 0
+$$
+
+$$\
+\lim_{x \to \infty} e^{-x} = 0,
+\lim_{x \to -\infty} e^{-x} = \infty
+$$
+
+$$\
+\lim_{x \to 0^+} \ln x = -\infty,
+\lim_{x \to \infty} \ln x = \infty
+$$
+\endthm
+
+\begthm{2.9}{Continuity Rules}
+If $f$ and $g$ are continuous at $a$, then the following
+functions are also continuous at $a$. Assume $c$ is a constant
+and $n > 0$ is an integer.
+
+\par {\bf a.} $f + g$
+
+\par {\bf b.} $f - g$
+
+\par {\bf c.} $cf$
+
+\par {\bf d.} $fg$
+
+\par {\bf e.} $f/g$, provided $g(a) \ne 0$
+
+\par {\bf f.} $(f(x))^n$
+
+\endthm
+
+\begthm{2.10}{Polynomial and Rational Functions}
+\par {\bf a.} A polynomial function is continuous for all x.
+
+\par {\bf b.} A rational function (a function of the form
+${p \over q}$, where $p$ and $q$ are polynomials)
+is continuous for all $x$ for which $q(x) \ne 0$.
+
+\endthm
+
+\begthm{2.11}{Continunity of Composite Functions at a Point}
+if $g$ is continuous at $a$ and $f$ is continuous at $g(a)$,
+then the composite function $g \circ f$ is continuous at $a$.
+\endthm
+
+\begthm{2.12}{Limits of Composite Functions}
+\par {\bf 1.} if $g$ is continuous at $a$ and $f$ is continuous
+at $g(a)$, then
+
+$$\
+\lim_{x \to a} f(g(x)) = f\big(\lim_{x \to a} g(x)\big).
+$$
+
+\par {\bf 2.} if $g(x) = L$ and $f$ is continuous at $L$,
+then
+
+$$\
+\lim_{x \to a} f(g(x)) = f\big(\lim_{x \to a} g(x)\big).
+$$
+
+\endthm
+
+\begthm{2.13}{Continuity of Functions with Roots}
+Assume $n$ is a positive integer. If $n$ is an odd integer,
+then $(f(x))^{1/n}$ is continuous at all points at which
+$f$ is continuous.
+\par
+If $n$ is even, then $(f(x))^{1/n}$ is continuous at all points
+$a$ at which $f$ is continuous and $f(a) > 0$.
+\endthm
+
+\begthm{2.14}{Continuity of Inverse Functions}
+If a function $f$ is continuous on an interval $I$ and
+has an inverse on $I$, then its inverse $f^{-1}$ is also
+continuous (on the interval consisting of the points
+$f(x)$, where $x$ is in $I$).
+\endthm
+
+\begthm{2.15}{Continuity of Transcendental functions}
+TODO.
+\endthm
+
+\begthm{2.16}{Intermediate Value Theorem}
+Suppose $f$ is continuous on the interval $[a, b]$ and $L$
+is a number strictly between $f(a)$ and $f(b)$. Then there
+exists at lest one number $c$ in $(a, b)$ satisfying $f(c) = L$.
 \endthm
 
 \bye

@@ -630,7 +630,7 @@ in the day, etc.
 @10:45 cropping #archiving #timelog:00:26:55
 
 @12:32 Converting theorems to dagzet data #timelog:00:56:40
-#! bu/ma123/study
+#! dz bu/ma123/study
 My theorems TeX file should be parsed like my
 problems TeX file. Except, these need to eventually exist
 as anki flashcards.
@@ -674,3 +674,23 @@ Almost done with 2.5.
 
 @20:15 more transcriptions #timelog:00:26:33
 #! dz $
+
+@15:12 3.5 outlining #timelog:00:22:42 #ink:095
+#! dz calculus/pearson/toc/03_derivatives/05_derivatives_of_trigonometric_functions
+5 sections, 3 theorems, 5 examples.
+
+@09:38 GRE practice set counts #timelog:00:32:14
+
+@2026-02-17 Day 170
+
+@11:03 3.6 outlining #timelog:00:24:20 #ink:097
+#! dz calculus/pearson/toc/03_derivatives/05_derivatives_of_trigonometric_functions
+3 sections, 4 defintions, 6 examples
+
+@14:10 some work through 3.3 examples #timelog:01:02:58 #ink:098
+#! dz calculus/pearson/toc/03_derivatives/03_rules_of_differentiation
+Went through 4 examples, out of 6 examples in this chapter. Logged
+notes along the way
+
+@2026-02-178 Day 171
+@09:36 timelogging #timelog:00:06:47

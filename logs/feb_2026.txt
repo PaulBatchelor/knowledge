@@ -692,7 +692,7 @@ Almost done with 2.5.
 Went through 4 examples, out of 6 examples in this chapter. Logged
 notes along the way
 
-@2026-02-178 Day 171
+@2026-02-18 Day 171
 @09:36 timelogging #timelog:00:06:47
 
 @09:43 hw4 transcriptions (finally) #timelog:00:48:01
@@ -700,3 +700,20 @@ notes along the way
 The problem sets were released late. And the count has increased
 from 34 last week to 36 this week. Sigh. I'm hoping these
 will be quick.
+
+@2026-02-19 Day 172
+@09:54 adding solutions to hw4 #timelog:00:21:05
+#! dz bu/ma123/hw
+I've done about 60% of the homework, which I'll
+be entering into my system right now.
+I'm hoping to get to around
+75%-80% by tonight, which should hopefully be a good enough
+chunk to study for the quiz tomorrow.
+---
+Getting used to the system. I'm a little less stressed out about it.
+The penalty for getting a question wrong is they let you do
+another similar problem with 2 strikes.
+---
+Because the problemsets came out so late, I don't think I'm
+going to get as many done as I did last week by Friday. Also,
+they added more problems?

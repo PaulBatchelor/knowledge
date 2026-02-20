@@ -742,6 +742,13 @@ queries. No join needed.
 #! dz bu/ma123/hw
 
 @09:42 I am building an anotated pset TODO list template #timelog:00:15:00
-#! dz bu/ma123/hw
+#! dz bu/ma123/study
 Something to keep track of what problems I've done, when
 I've done them, and some space for notes (maybe)
+
+@10:12 continued work on TODO list template
+#! dz $
+Well, until I know what I'm doing I think what I have is
+good enough. It's pretty open ended. Just the problem
+number, a horizonal rule, and some space. I'll fill it in
+with details as I go.

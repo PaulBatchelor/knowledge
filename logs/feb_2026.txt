@@ -720,3 +720,19 @@ they added more problems?
 
 @19:12 adding in corrections to homework problems #timelog:00:04:00
 #! dz bu/ma123/hw
+
+@19:46 wondering how hard it is to get node context into logs
+#! dz bu/ma123/study
+For studying problem sets, it would be helpful to get the problem,
+as well as the text content associated with that node.
+---
+It's not in the JSON output. So, I'd need to change
+the structure a bit. Maybe have two objects, one called "logs",
+another called "nodes". Nodes will contain text content for
+all the nodes mentioned in the logs.
+---
+The way I have the structure set up, this is two separate
+queries. No join needed.
+
+@20:24 ladies and gentlemen, we have annotated problem sets
+#! dz bu/ma123/study

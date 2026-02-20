@@ -21,7 +21,28 @@ INNER JOIN lz_entities ON lz_connections.id = lz_entities.rowid
 WHERE
 node LIKE '$1'
 GROUP BY node, lz_entities.id
-ORDER BY lz_entities.id, lz_blocks.id)
-SELECT json_group_array(json(json_result)) FROM results
+ORDER BY lz_entities.id, lz_blocks.id),
+
+nodes AS (SELECT
+json_object(
+'name', name,
+'content', json(ifnull(lines, '[]'))
+)
+as obj
+FROM dz_nodes
+LEFT JOIN dz_lines on dz_lines.node = dz_nodes.id
+WHERE name LIKE '$1'
+),
+
+aggregated AS (
+  SELECT
+    (SELECT json_group_array(json(json_result)) FROM results) AS logs,
+    (SELECT json_group_array(json(obj)) FROM nodes) AS nodes
+)
+SELECT json_object(
+  'logs', json(logs),
+  'nodes', json(nodes)
+)
+FROM aggregated
 ;
 EOM

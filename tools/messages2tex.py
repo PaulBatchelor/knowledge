@@ -97,10 +97,12 @@ def toc(nodes, refs):
         print("\\smallskip")
     print(pgbreak())
 
-def logs(node_list, node_objs):
+def logs(node_list, node_objs, node_content):
     for node in node_list:
         print(xrdef(refs[node]))
         print(header1(strip(node)))
+        if node in node_content:
+            print(node_content[node])
         objs = node_objs[node]
         dates = []
         date_objs = {}
@@ -151,9 +153,17 @@ def timeline(dates):
         print(entry)
     print(pgbreak())
 
+def mknode_data(nodes):
+    data = {}
+    for o in nodes:
+        data[o["name"]] = "\n".join(o["content"])
+    return data
+
 all_input = sys.stdin.read()
 
 obj = json.loads(all_input)
+node_content = mknode_data(obj["nodes"])
+obj = obj["logs"]
 
 node_list = []
 
@@ -185,6 +195,6 @@ begin()
 toc(node_list, refs)
 timeline(dates)
  
-logs(node_list, node_objs)
+logs(node_list, node_objs, node_content)
  
 bye()

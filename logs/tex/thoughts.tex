@@ -140,6 +140,7 @@
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-10-22}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:04: Transcribing Task Graphs for Sonilo}\smallskip
 It needs to be fleshed out more, but I want real data to work with for this task graphing utility I am going to build for scheduling tasks and generating daily agendas.
@@ -207,6 +208,7 @@ DSP ugen stuff might be a focus of mine because I'm losing momentum with memory 
 
 \xrdef{node1}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont tasks}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-10-22}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:47: back to tasks for sonilo (hopefully)}\smallskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:40: finish the initial graph traversal program}\smallskip
@@ -220,6 +222,7 @@ Also used this time to clean up the task graph. I now have top level task in Son
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:21: more sonilo check-ins}\smallskip
 \xrdef{node2}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont meaningful sounds}\medskip
+Create meaningful sounds using Sonilo
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-10-22}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:40: finish the initial graph traversal program}\smallskip
 Also used this time to clean up the task graph. I now have top level task in Sonilo that just reads "make meaningful sounds with sonilo".
@@ -227,6 +230,7 @@ Also used this time to clean up the task graph. I now have top level task in Son
 
 \xrdef{node3}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont buddy system}\medskip
+Create buddy system allocator
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-10-29}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:28: Work on the buddy system some more}\smallskip
 Also, trying on this task management system.
@@ -412,6 +416,7 @@ Works now, nice! I think we're done.
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:17: this is completed. finally}\smallskip
 \xrdef{node4}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ilo interpreter}\medskip
+Create ilo bytecode VM interpreter
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-02}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:43: initial exploration}\smallskip
 I think this is mainly about adapting the existing ilo byte code interpreter and pali assembler as much as possible.
@@ -533,6 +538,7 @@ By the time unit generators are finished, I think thinking about using a higher-
 
 \xrdef{node5}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont konilo sonilo communication}\medskip
+Establish communication protocol for Konilo and Sonilo
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-09}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:21: quick words about konilo-sonilo communication}\smallskip
 This has popped up in my agenda, but I am behind because of the buddy memory allocator. To keep momentum going, I'm going to write down what I'm thinking about today.
@@ -577,6 +583,7 @@ Ilo probably won't be used for constructing ugen chains, due to the memory overh
 
 \xrdef{node6}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont mem}\medskip
+Memory Allocation
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:25: memory allocation: core components close to done, how to tie together?}\smallskip
 The buddy system is close to being done. The block stack API is finished. The cache is is finished. These are components that need to work together to build a cohesive memory allocation system.
@@ -601,6 +608,7 @@ cleanup: frees all memory in the current context
 
 \xrdef{node7}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo command language}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:33: msgpack, what is the initial command set?}\smallskip
 I'm decided to use msgpack as a communicaiton protocol. Or a subset of msgpack at least. Using something that has a spec already written out has advantages. Having data types like arrays and objects could come in handy down the line.
@@ -644,6 +652,7 @@ By the time unit generators are finished, I think thinking about using a higher-
 
 \xrdef{node8}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont phasor}\medskip
+Implement phasor DSP algorithm
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-13}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:39: technically this is today's task, ha. I am so behind}\smallskip
 The DSP algorithm for this is already available in sonilo. The work involved here will reworking the memory so it reads from sonilo's fixed memory system.
@@ -716,6 +725,7 @@ I'm not going to try and over-categorize. I'm throwing everything into a "util" 
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:38: phasor, officially done}\smallskip
 \xrdef{node9}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont initial dsp}\medskip
+Implement some intial DSP algorithms
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-24}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:27: writing out pseudo-code for an ILO program computing phasor}\smallskip
 This exercise is exposing some points of friction for me.
@@ -744,6 +754,7 @@ Okay, this is clearly more work than I expected.
 
 \xrdef{node10}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blsaw}\medskip
+Implement blsaw DSP algorithm
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-29}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:39: blsaw initial code}\smallskip
 Just porting the initial code and getting it in using some of the conventions established in phasor.
@@ -751,6 +762,7 @@ Just porting the initial code and getting it in using some of the conventions es
 
 \xrdef{node11}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen bytecode}\medskip
+Build a bytecode interpeter for running ugens
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:59: ilo interpreter can wait, use custom bytecode format instead}\smallskip
 I think the DSP is specialized enough that I can get away with it.
@@ -820,6 +832,9 @@ When the single instruction primitive is created, bulk instruction execution nee
 
 \xrdef{node12}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont allocator}\medskip
+create a high-level memory allocator,
+wrapping the blocklist, bitset, and buddy
+allocator.
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:01: make task for memory allocator}\smallskip
 This will be a high-level allocator, wrapping the block list, bitset, and the buddy allocator.
@@ -850,6 +865,7 @@ When a block is retrieved from the block stack, it is stored in a set of blocks.
 
 \xrdef{node13}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont docgen}\medskip
+Create a simple documentation generator for input.txt
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-11-30}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:57: creating a docgen for my sonilo input.txt file}\smallskip
 I need a better way to read a review this stuff. attempting to generate tex for this
@@ -857,6 +873,9 @@ I need a better way to read a review this stuff. attempting to generate tex for 
 
 \xrdef{node14}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont buddy slots}\medskip
+create a block dedicated to keeping track of multiple
+blocks. An allocator would be able to attempt to allocate
+a block by checking through all the available slots.
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-03}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:49: initial buddy slots work}\smallskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-12}\medskip
@@ -960,6 +979,7 @@ I got as far as setting up a stack. exhausting work. I forgot about the trick of
 
 \xrdef{node15}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont zero page}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-16}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:10: setting up zero page task}\smallskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:16: writing initial words on zero page}\smallskip
@@ -1115,6 +1135,7 @@ Note to self: block address space is 1-1023 inclusive. 0 is not used. the bitset
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:45: I think I have it all done. this zero page work is complete.}\smallskip
 \xrdef{node16}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blockstack improvements}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-18}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:55: implement zero page command 'zp'. blocklist blockers.}\smallskip
 the zero page has been implemented, but there are some blockers related to the blocklist. Words to follow
@@ -1338,11 +1359,13 @@ Surprised with how precise I have to be about this and how easy it is to mess th
 
 \xrdef{node17}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ink}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-21}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:34: sonilo now has an ink node}\smallskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:44: re-binning pages to be in sonilo ink}\smallskip
 \xrdef{node18}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont initial parser}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-28}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:14: begin work implementing this graph drawing algo}\smallskip
 Lots of time with pencil and paper these past few days, working out a way to transcribe these knowledge graphs I've drawing by hand.
@@ -1475,6 +1498,7 @@ seems to work! I'll need to do more tweaks for things like configuring the initi
 
 \xrdef{node19}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont autoscaling}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-29}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:11: work on auto-scaling canvas size}\smallskip
 I think the way I'll do this is to keep track of the max/min x and y coordinates, and then use that to determine the bounds.
@@ -1492,6 +1516,7 @@ Hey, it works. The canvas will auto-adjust to fit the boundary.
 
 \xrdef{node20}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont fig prototype}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-29}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 22:00: figure out one level higher}\smallskip
 Something that can generate the edge code a little bit easier
@@ -1502,6 +1527,7 @@ I got my "arch" design, parallel, and sequence configurations working in a macro
 
 \xrdef{node21}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont labels}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-30}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 07:24: label support}\smallskip
 The last thing I need to get this actually usuable is to add labels for nodes.
@@ -1543,6 +1569,7 @@ I'll need to work out the "fig" language a bit more, but the fundamentals are in
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:13: making the boxes a little bit bigger}\smallskip
 \xrdef{node22}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont duplicate node}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2025-12-31}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:22: Duplicate node support}\smallskip
 Needed for a graph I was trying to transcribe yesterday.
@@ -1554,6 +1581,7 @@ The strategy I have in mind is to denote duplicate nodes in the following way: {
 
 \xrdef{node23}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont butlp}\medskip
+Implement buttwerworth DSP algorithm
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-02}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:48: this is a doable self-contained task}\smallskip
 It'll mostly be copy-paste work from sndkit.
@@ -1561,6 +1589,7 @@ It'll mostly be copy-paste work from sndkit.
 
 \xrdef{node24}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont notes integration}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-02}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:16: dagdraw notes integration: initial thoughts}\smallskip
 I'm building a TeX generator for viewing my transcribed reading notes, and I think it would make sense to include these generated figures.
@@ -1649,6 +1678,7 @@ going to write down a few notes for myself for future me. there are a lot of sma
 
 \xrdef{node25}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont eps}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-10}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:47: fiddling with eps output using cairo}\smallskip
 I got it looking fairly decent, but there's a small issue with overlapping lines. I think it has to do with how my system wants to draw line segements individually.
@@ -1662,6 +1692,7 @@ Anyways, time to see if my ink renderer gets improved with eps output.
 
 \xrdef{node26}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont path drawing}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-10}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:45: DAGDraw path drawing algorithm}\smallskip
 Musing possible approaches to improving the path drawing logic. in the vectorized output of DAGDraw. The main process involves grouping segments together into contiguous lines to minimize the number of weird overlapping lines that can show up in output.
@@ -1669,6 +1700,7 @@ Musing possible approaches to improving the path drawing logic. in the vectorize
 
 \xrdef{node27}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont gesture}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-11}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:23: everything is a gesture}\smallskip
 Thinking ahead about high-level concepts. This music environment I want to make is going to involve the concept of Gesture, so what would happen if I go to an extreme and make everything a Gesture. Gesture as a core primitive. Composing with gesture.
@@ -1676,6 +1708,10 @@ Thinking ahead about high-level concepts. This music environment I want to make 
 
 \xrdef{node28}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont fix block navigation}\medskip
+early tools for converting block addresses to word addresses
+worked on the assumption of a global block stack address,
+which I have changed to be arbitrary.
+some tools may need to be adjusted to compensate.
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-15}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:32: 'bw' and 'gb' need to be fixed}\smallskip
 bw: is helpful function that needs to be either removed or reworked. It needs to factor in the cursor position, which will contain the address of the block stack.
@@ -1721,6 +1757,7 @@ I don't have this in my head anymore.
 
 \xrdef{node29}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont news}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-22}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:13: stretching sonilo task days}\smallskip
 We're 67 days behind now.
@@ -1757,6 +1794,7 @@ Block navigation fixes can wait.
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:28: adding block pool task}\smallskip
 \xrdef{node30}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
+
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:10: initial words}\smallskip
 See "ugen bytecode" task for previous thoughts on this.
@@ -1810,6 +1848,7 @@ And it works. I'm applying the 1-bit shift for the string to key utility. So, ge
 
 \xrdef{node31}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont bulk instructions}\medskip
+execute instructions in bulk
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:33: initial words}\smallskip
 Implement the ability to render a block of instructions.
@@ -1853,6 +1892,7 @@ I left some TODOs for myself. Trivial work.
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:37: addressing the small TODOS}\smallskip
 \xrdef{node32}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugens}\medskip
+Create unit generator interface
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:44: getting close to needing to think about this}\smallskip
 I am currently scoping out the ugen bytecode task, which has been greatly simplified over the months. What was once a whole VM has now turned into a sequential list of operations that read/write to data stored at a particular memory address.
@@ -1923,6 +1963,10 @@ By the time unit generators are finished, I think thinking about using a higher-
 
 \xrdef{node33}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen ports}\medskip
+implement ugen ports.
+Operations include: building constant/block operations,
+and going from a 32-bit word representation to a
+C struct representation
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:34: creating new tasks for ugens, writing words}\smallskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:43: initial words}\smallskip
@@ -1943,6 +1987,7 @@ Unit generators will call DSP routines, and so it's probably a good idea to turn
 
 \xrdef{node34}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen refcount}\medskip
+implement a reference counter for blocks
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:34: creating new tasks for ugens, writing words}\smallskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:55: Garbage collection after ports, order matters}\smallskip
@@ -2090,6 +2135,8 @@ I think we are done here.
 
 \xrdef{node35}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen stack}\medskip
+create a stack used to create ugens. pop/push
+should implicitly handle refcounts
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:34: creating new tasks for ugens, writing words}\smallskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:50: initial words}\smallskip
@@ -2175,6 +2222,7 @@ Just remembered that stacks are going to need types. Gotta update the push comma
 
 \xrdef{node36}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont bttyp}\medskip
+bttyp: a 1-bit typesetter inspired by macintosh aesthetics
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-31}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:39: bttyp initial coding}\smallskip
 I've had this idea for a 1-bit typesetting system using mac fonts for years now. Going to see what I can accomplish tonight.
@@ -2217,6 +2265,7 @@ In this brainstorm, I draw a line between in the software abstractions. low-leve
 
 \xrdef{node37}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont block pool}\medskip
+build up an interface for managing blocks with the RC structure
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-14}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:57: A block pool abstraction would be nice to have}\smallskip
 This would abstract away the tediousness of allocating blocks from the global block stack and keeping track of memory addresses manually.

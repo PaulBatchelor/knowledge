@@ -568,7 +568,7 @@ new block for output, assign to port 2. alloc data, initialize,
 set to ugen. sweep.
 
 @19:23 implementation #timelog:01:07:27
-#! dz $
+#! dz thoughts/projects/sonilo/tasks/ugen_stack
 
 @20:37 addressing the small TODOS #timelog:00:13:12
 #! dz thoughts/projects/sonilo/tasks/bulk_instructions

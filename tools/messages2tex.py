@@ -86,7 +86,7 @@ def xref(ref):
     return "\\xref{" + ref + "}"
 
 def hpair(a, b):
-    return a + " \\leaders\\hbox to 10pt {\\hss.\\hss} " + " \\hfill " + b 
+    return a + " \\leaders\\hbox to 10pt {\\hss.\\hss} " + " \\hfill " + b
 
 def pgbreak():
     return "\\vfill \\break"
@@ -168,6 +168,7 @@ for entry in obj:
     entity_id = entry["entity_id"]
     date, time = entity_id.split("/")
     content = entry["content"]
+    date = date.split("#")[0]
     node_objs[node].append({
         "title": entry["title"],
         "date": date,

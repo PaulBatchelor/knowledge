@@ -18,6 +18,8 @@
 \smallskip
 \noindent allocator \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node12}
 \smallskip
+\noindent block pool \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node27}
+\smallskip
 \noindent blockstack improvements \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node16}
 \smallskip
 \noindent blsaw \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node10}
@@ -107,7 +109,8 @@
 {\noindent \bf 2026-01-31:} bulk instructions, ilo interpreter, sonilo command language, ugen ports, ugen refcount, ugen stack, ugens\smallskip
 {\noindent \bf 2026-02-03:} news\smallskip
 {\noindent \bf 2026-02-07:} news, fix block navigation, ugen refcount\smallskip
-{\noindent \bf 2026-02-14:} news\smallskip
+{\noindent \bf 2026-02-14:} news, block pool, bulk instructions, ugen stack\smallskip
+{\noindent \bf 2026-02-15:} news\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -1389,6 +1392,17 @@ This week: get reference counting structure implemented.
 
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-14}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:53: planning the day}\smallskip
+Looks like I finished the reference counting structure last week.
+\par
+
+Agenda has bulk instructions, block navigation fixes, and the ugen stack.
+\par
+
+Block navigation fixes can wait.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-15}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:28: adding block pool task}\smallskip
 \xrdef{node21}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
@@ -1479,6 +1493,12 @@ once again, my left/right confusion has worked against me. I mixed up left shift
 side note: these instruction operations should eventually be consolidated into C functions, not just inline code.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:59: This is basically complete. Just wrap things in functions}\smallskip
+I left some TODOs for myself. Trivial work.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:37: addressing the small TODOS}\smallskip
 \xrdef{node23}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugens}\medskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-01-24}\medskip
@@ -1701,7 +1721,7 @@ Just some initial scaffolding for C functions and corresponding words.
 \par
 
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:52: finish up implementation}\smallskip
-WHAT. how did is it almost 23:00. This is why it's good to cut back on coding. You lose so much time in your life.
+WHAT. how is it almost 23:00. This is why it's good to cut back on coding. You lose so much time in your life.
 \par
 
 This of course is the hour to get a weird by with the get command. Why is it that the final number of active slots is 4 and not 3?
@@ -1756,4 +1776,63 @@ a 6-bit stack needs an array of 64 6-bit numbers, 12 words. A 7-bit stack needs 
 It turns out that 64 18-bit numbers plus 128 7-bit numbers yields 32 64-bit numbers, or one block. How lovely.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:01: hoping to do some initial work today on this}\smallskip
+This stack is designed to work with the reference counter structure, so it's all on the same block.
+\par
+
+Push/pop operations should implicitly update refcounts.
+\par
+
+I was currently envisioning 7-bit data types. This is good enough for addresses relative to the block. But, it does not handle other data types like constants. This would be desirable right?
+\par
+
+Looks like there's 640 bits to play with after subtracting the size of the refcount structure. That's 20 words, so a stack size of 19. Or it could be 40 half-words, with a stack size of 39.
+\par
+
+I think I'm leaning towards a smaller stack, larger data type. I get the feeling I'm going to be adding more types of data before I run out of stack space. 32 bits, with the first two bits being a type, 30 bits for data. Stack size of 19. 2 types (constant or block) will be used right now, with the 2 other types TBD. Constants can be encoded with 15.15 signed data encoding or something and that should be good enough.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:40: write up initial unit tests}\smallskip
+First, let's take a look at the commands I'll need to implement, and their names.
+\par
+
+Operations include: push/pop, hold/unhold (implicit), dup, and rot. There are other stack operations in forths, so having a good single letter namespace would be nice.
+\par
+
+I've shifted from calling this a "ugen stack" to a "parameter stack", because it more precisely describes the data being handled, which is any valid parameter for a unit generator.
+\par
+
+The 'p' prefix is reasonably open. pr, pa, pw, and pe are taken.
+\par
+
+po: pop. pu: push. pi: init stack (give it block). ph: hold/unhold (this can be given a parameter). pd: dup. pR: rotate (capital letters work, as long as it's not A-F).
+\par
+
+should stacks implicitly add addresses to the RC? I'm going to say... no. That's just one extra thing that can go wrong. In practice, I imagine a pool of blocks will be initialized and added to the RC pool. Then, there'd be operations that select available blocks, abstracting away the need to know the blocks of memory addresses.
+\par
+
+Pool is TBD. adding a task for it, with some words.
+\par
+
+'px' I'll use for pstack aux functions. that was a nice thing to have with the RC stuff.
+\par
+
+Just remembered that stacks are going to need types. Gotta update the push commands to take in a type flag so it knows what to do with the bits.
+\par
+
+\xrdef{node27}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont block pool}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:57: A block pool abstraction would be nice to have}\smallskip
+This would abstract away the tediousness of allocating blocks from the global block stack and keeping track of memory addresses manually.
+\par
+
+A new block is needed any time an output block is created for a ugen. So steps would be: set up input blocks, set up output block(s), sweep.
+\par
+
+If I were making, say a sine ugen with frequency and amplitude as args, the steps would be: set up ugen with 2 ins, 1 out. pop amp, assign to port 0, pop freq, assign to port 1, new block for output, assign to port 2. alloc data, initialize, set to ugen. sweep.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:23: implementation}\smallskip
 \bye

@@ -740,3 +740,8 @@ queries. No join needed.
 @2026-02-20 Day 173
 @08:48 adding new solutions #timelog:00:16:31
 #! dz bu/ma123/hw
+
+@09:42 I am building an anotated pset TODO list template #timelog:00:15:00
+#! dz bu/ma123/hw
+Something to keep track of what problems I've done, when
+I've done them, and some space for notes (maybe)

@@ -736,3 +736,7 @@ queries. No join needed.
 
 @20:24 ladies and gentlemen, we have annotated problem sets
 #! dz bu/ma123/study
+
+@2026-02-20 Day 173
+@08:48 adding new solutions #timelog:00:16:31
+#! dz bu/ma123/hw

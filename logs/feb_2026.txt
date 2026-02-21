@@ -759,3 +759,14 @@ with details as I go.
 My thinking is: the logs and problems won't have the solutions,
 but it will have lots of hints and my innervoice from the
 last time I tackled the problem.
+
+@11:08 pset logs aren't including all psets with solutions #timelog:00:29:10
+#! dz bu/ma123/study
+I thought I wrote logs for every one, but I could be wrong
+here.
+---
+I didn't write a log for every problem. I think I need
+to generate a problem sheet without the solutions.
+---
+I made a new generator to generate a pretty clean PDF
+of all the problems I have solutions for.

@@ -1,0 +1,304 @@
+@2026-02-16#ma123
+@11:15 hw3 review #timelog:00:25:57
+#! dz bu/ma123/study
+
+@11:18 post problem thoughts
+#! p 2.5.78
+This was the one that I had the most trouble
+wrapping my head around. My trouble spots were
+grokking absolute value, and getting vertical asymptotes.
+---
+I'm going to say a few words about the vertical asymptotes. The numerator in the expression has an absolute value of $|98 - 2x^2|$, which means the expression inside will be negated if it is to be evaluated to be less than 0.
+---
+So, when will $98-2x^2$ be less than 0? Whenever $2x^2 > 98$, or $x^2 > 49$, which means that $|x| > 7$, the numerator will be $-(98 - 2x^2)$.
+---
+Back to vertical asymptotes. $|98 - 2x^2| =
+|2(7 - x)(7 + x)| = |2(7-x)(x+7)$. The $(x + 7)$ cancels out, and we are left with a single VA of $x = 0$.
+---
+Computing one-sided limits. It's very easily to lose track of the negation in $(-x + 7)$, using $(7 - x)$ is easier. I missed the negation and got the limits
+flipped.
+
+@11:37 some insights
+#! p 2.5.73
+It turns out, you can factor the denominator.
+$x^4 - 40x^2 + 144 = (x^2 - 36)(x^2 -4)$. I used the quadratic expression to find the roots. The trick still works even with higher powers.
+---
+Those can then get factored further:
+$(x^2 - 36)(x^2 -4) = (x - 6)(x+6)(x-2)(x+2)$, and cancelling can happen.
+
+@14:14 voyager keyboard works on BYOK after update!
+okay now the voyager split keyboard works this is what I call progress!
+
+@16:52 working through 3.2 examples #timelog:00:47:28
+#! dz bu/ma123/review
+
+@16:54 example 1: computing a derivative
+#! e 3.2 1
+Worked out the example myself without looking
+at the steps and got the same answer. Mostly algebra.
+
+@17:02 ex 2 a derivative calculation
+#! e 3.2 2
+Derivative math was fine. complex conjugate trick. getting the equation of the line was still a little
+shaky for me. First, I don't remember that equation yet, but it looks like the sort of thing I can build some intuition for. there's a lot of stuff in calculus where there's a correlation between $|x - a|$ and $|f(x) - f(a)$, and I see some of that in the equation.
+---
+The derivative needs to be computed before plugging it into the equation. There should be no x values in the derivative in the line equation.
+
+@17:19 ex 3 another derivative calculation
+#! e 3.2 3
+I actually did the alegebra correctly for this one,
+but I didn't trust my work at the second to last step because it looked wrong.
+
+@17:30 ex 4 graph of the derivative
+#! e 3.2 4
+It's a graph one, and you can eyeball it and see that
+the graph of the derivative of these lines turns into a step pattern where each step is the slop of that line segment.
+
+@17:33 graph problem, too tired to look at
+#! e 3.2 5
+
+@17:34 another graph problem, too tired to look at
+#! e 3.2 6
+
+@17:35 sneaking a peak
+#! e 3.2 7
+part A (find the points that aren't continuous) and part B (find the points that aren't differentiable) are straightforward and basically review.
+---
+I take that back... B has a gotcha. There's a "cusp" at point 0 which makes it not differentiable.
+---
+Part C, on the other hand, is making me think. It's also a "sketchy" one.
+---
+There are 4 things to consider with this derivative graph. The first two points address when the function rises and when it falls. ($g'(x) > 0$ and $g'(x) < 0$.
+---
+Somehow we know that as $x$ approaches $0$ from the left, it approaches $-\infty$, and $\infty$ when it approaches 0 from the right.
+---
+as x approaches 2, it slows to a halt, making that one 0.
+---
+Visual intuition is hard. I don't like drawing graphs!
+
+@2026-02-18
+
+@10:53 initial thoughts
+#! p 3.1.11
+find the slope of a line. using the first definition of derivative ($x - a$ in the denominator).
+
+@10:55 initial thoughts
+#! p 3.1.13
+this is one of those applied problems for finding instantaneous velocity. mostly feels like review.
+
+@10:56 initial thoughts
+#! p 3.1.24
+Find the slope (review), use it to determine a line equation (new). Equation will involve an equation, most likely of the form $y = mx + b$. I am a little bit nervous about inputting it in correctly in the app.
+
+@11:03 initial thoughts
+#! p 3.1.31
+More slope and line equation stuff. Root stuff in the equation, hopefully that will be oka1:04 initial thoughts
+
+@11:05 initial thoughts
+#! p 3.1.17
+more line stuff. $x$ is in the denominator.
+
+@11:06 initial thoughts
+#! p 3.2.24
+Explictely want to use limits. So, just plug it into the derivative formula? The, plug the result of that into the two values given. Doesn't seem too bad.
+
+@11:08 initial thoughts
+#! p 3.2.25
+More derivative calculation and plugging in values.
+
+@11:09 initial thoughts
+#! p 3.2.26
+More derivative calculation and plugging in things.
+---
+I am hoping there aren't any gotchas with these. that would be annoying.
+
+@11:10 initial thoughts
+#! p 3.2.28
+More derivative calculation with limits, then plugging in values. This is all under a square root.
+
+@11:12 initial thoughts
+#! p 3.2.33
+new notation introduced with this problem. Still just comes down to computing the derivative then plugging in values. Note that the fractions here will require care in notation to keep things sane (use $1 \over h$?).
+
+@11:13 initial thoughts
+#! p 3.2.35
+derivative of polynomial, then equation for a line at a point.
+
+@11:14 initial thoughts
+#! p 3.2.37
+derivatibe of an equation under a square root, then find a line at a point. I hope I feel comfortable with square roots at this point.
+
+@11:15 initial thoughts
+#! p 3.3.31
+I think at this point you can use the sum laws for this one to compute the derivative? Seems straight forward enough.
+
+@11:16 initial thoughts
+#! p 3.3.38
+Derivative with $e^w$ in it. looks like sum and difference laws. Better get those theorems on my remarkable.
+
+@11:17 initial thoughts
+#! p 3.3.44
+This is one of those applied problems, where they give you an equation related to a science problem. The equation is an exponential, and there are units.
+
+@11:18 initial thoughts
+#! p 3.3.47
+This problem wants you to do some algebra before finding the derivative.
+---
+Looks like some FOILing happens. Then you get some polynomial you can use differentiation rules on?
+
+@11:20 initial thoughts
+#! p 3.3.55
+Derivative problem. This one looks like it will use a complex conjugate or root cancelling. Looks like roots will be remaining, so gotta look up the derivative law for that.
+
+@11:21 initial thoughts
+#! p 3.3.58
+More simplification work before derivative. Exponential constant used. I think factoring works pretty similarly here actually.
+
+@11:22 initial thoughts
+#! p 3.4.15
+This looks like boilerplate product and quotient rules of differentiation. I'm not sure why they give $f(x)$ and not $g(x)$. Is $f(x)$ even used here?
+
+@11:28 initial thoughts
+#! p 3.4.21
+Quotient law I think.
+
+@11:29 initial thoughts
+#! p 3.4.23
+fractional exponent and exponential. I think this is just a mix of the exponential law, product law, and power law.
+
+@11:30 initial thoughts
+#! p 3.4.25
+looks like quotient, constant multiple, constant, and exponential laws.
+
+@11:31 initial thoughts
+#! p 3.4.56
+This is identical to 3.3.55? oops. Can you apply rules of differentiation without simplifying?
+
+@11:32 initial thoughts
+#! p 3.4.70
+You're just computing the derivative on itself 3 times. Quotient law, power law, then constant multiple law.
+
+@11:33 initial thoughts
+#! p 3.4.63
+First and second order derivatives on a rational polynomial expression. This doesn't seem too bad...
+
+@10:52 initial thoughts on hw4 #timelog:00:36:59
+#! dz bu/ma123/hw
+
+@2026-02-19#ma123
+
+@10:36 reflection
+#! p 3.1.11
+Yeah, this was straight forward. Just doing week 1 work, but in a slightly different context.
+
+@10:37 reflections
+#! p 3.1.17
+Looks like I doubted my calculations when computing this. Trying to get things to cancel involved a negation trick which gave me hestiation, but it ended up being the right thing to do. I did confirm correct answers by checking the plot.
+
+@10:37 this one is taking a while
+#! p 3.1.13
+I am in the process of simplifying the equation for instantaneous velocity. Had to go through the quadratic formula, and triple checked my work. In checking, I made a small mistake in reducing a fraction. I am also remembering how non-trivial polynomials work. I think I have the right factorization now, what's left is to complete the equation.
+
+@10:42 reflections
+#! p 3.1.24
+I got 0, which made me want to check the plot. Sure enough, it's the top of a parabola. The y equation makes sense too, as it is just a horizontal line.
+
+@10:43 reflections
+#! p 3.1.31
+Took me a few attempts to get this right. It really just boiled down to conjugation before anything else. Also, when it's in a form where $h$ goes away and you're not dividing by 0, you're good to go.
+---
+I get spooked when equations look remotely weird, so I triple checked my line equation.
+
+@10:46 reflections
+#! p 3.2.11
+Very straight forward. Plugged into the the derivative formula and computed the limit.
+
+@10:48 reflections
+#! p 3.2.24
+These kind of derivates are the sorts of problems that get quite large, but suddenly cancel out to become quite small. It's easy to make mistakes and do things like forget about a negation.
+
+@10:50 reflections
+#! p 3.2.25
+I don't think I had too much issue getting the derivative. Fractions have a special way of being worked out. You write $1 \over h$, and try not to forget about that term. Eventually, you'll need it to cancel out an $h$ (probably).
+---
+One of the answers was $-{28 \over 81}$, which just looked weird to me. I wasn't sure if it could be reduced. It turns out that the fractional value is $0.3456790123$, a sequence containing all the numbers except 8, in mostly increasing order. Clearly, someone was thinking about this fraction.
+
+@10:55 reflections
+#! p 3.3.31
+Pretty straight forward. You just use derivative laws. (power, sum, and constant).
+
+@10:57 reflections
+#! p 3.3.38
+The thing with this one: one of the exponentials is a constant. So, there's 2 constants, and one exponential. This makes the result just that exponential.
+
+@10:58 reflections
+#! p 3.3.47
+I messed this one up when I first submitted it. I did everything right, but when it came to applying the power law for derivatives, I missed some coefficients. Small mistake, but generally everything else I got right.
+
+@11:00 reflections
+#! p 3.3.53
+I wasn't exactly sure how to notate the result at the end, but I did the steps right. Negative vs fractional exponents makes me hesitate a little bit.
+
+@11:01 reflections
+#! p 3.3.55
+An important detail I forgot to write down: $a$ is a positive constant. That would have made things easier.
+
+@11:02 reflections
+#! p 3.3.58
+This one made me a little nostalgic because it brought me back to working with complex sinusoids in DSP classes at CCRMA. Once you get over the weirdness of $e$ notation, you'll you can treat it as a polynomial in this context.
+
+@11:04 reflections
+#! p 3.4.70
+You're applying the same rules over and over. Watch out for sign and negative exponent rules.
+
+@10:35 writing up reflections on problems done so far #timelog:00:29:11
+#! dz bu/ma123/hw
+#! dz bu/ma123/study
+I'm hoping this will help me study better for the upcoming midterm (and yes, the final in a matter of months/weeks)
+
+@2026-02-20#ma123
+@09:14 reflection
+#! p 3.2.26
+Looks like I messed up the cancelling on my first attempt somewhere. It's a fraction, which is always tricky for me to set up. Also, there are a few terms to distribute. Lots of little steps, and all done with pencil. Lots of long lines. I found myself thinking ahead more about how much space I had in the line.
+---
+I've done enough of these to notice a pattern in the way things cancel. I'm certain there's some kind of shortcut.
+
+@09:18 why am I getting this one wrong?
+#! p 3.2.28
+I can't seem to get the derivative correct for this one. I've done the calculation twice, and I've checked other sources to verify that it is correct.
+---
+The only thing I see wrong with it is the variable. The problem uses $f(w)$, the input box asks for $f'(x)$. I gave it in terms of x, it might want $w$. If that's the case, I'm going to be upset.
+
+@09:20 reflections
+#! p 3.2.37
+I think this one was pretty straight forward. Solve with conjugation. At this point, I've done enough to know the right procedure for setting up conjugation properly.
+---
+This also asks for a line equation at a point, which has turned out to be a great way to verify that the equation and the derivative are (probably) correct. The line should cleanly intersect through the point of the equation, and the line should be pretty flush with the point.
+
+@09:24 reflections
+#! p 3.3.44
+Word problems are scary to me, but the exponential equation was fine to deal with.
+---
+Part 2 asking for the least/greatest growth rate was easier than I expected. The interval $[0, 10]$ is closed not open, so the answers would be $0$ and $10$ exactly.
+
+@09:25 reflections
+#! p 3.4.21
+Once I got the quotient equation set up correctly, this wasn't too bad to work out.
+---
+It was helpful for me to write each component out explicitly. Like quotient theorem, derivatives, etc. That made it easier to verify each step was correct when double checking and gave me more confidence when hitting submit. There's a lesson somewhere here I'm sure...
+
+@09:28 reflections
+#! p 3.4.25
+Again, more quotient theorem, which is a little tricky for me still. The exponentials are still kinda funny looking, so that adds an extra point of cognitive burden.
+---
+I started this problem the day before, and then finished it the next day after lecture. The lecture introduced a neat shorthand for doing inline derivatives like $(e^x + 4)(3e^x)'$ which made things much easier to write.
+
+@09:32 reflections
+#! p 3.2.35
+I kept overlooking this one for some reason. Not sure why.
+---
+My paranoid triple checking and graph verification paid off. The graph looked off, and it made me catch a mistake I made computing $f(1)$ (this is what I get for doing things in my head). $2(1)^2$ is not $2^2$, it's $2(1)$. Doh. I also randomly flipped a sign for some reason at the last minute for the line equation? Not thinking straight. I luckily caught it before I submitted the answer, which to me is a personal win.
+
+@09:13 some reflections on newly added hw4 problems #timelog:00:23:44
+#! dz bu/ma123/hw
+#! dz bu/ma123/study

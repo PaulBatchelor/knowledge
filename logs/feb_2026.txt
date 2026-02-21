@@ -752,3 +752,10 @@ Well, until I know what I'm doing I think what I have is
 good enough. It's pretty open ended. Just the problem
 number, a horizonal rule, and some space. I'll fill it in
 with details as I go.
+
+@2026-02-21 Day 174
+@10:11 Transferring notes, getting it ready for study #timelog:00:04:54
+#! dz bu/ma123/study
+My thinking is: the logs and problems won't have the solutions,
+but it will have lots of hints and my innervoice from the
+last time I tackled the problem.

@@ -753,7 +753,7 @@ good enough. It's pretty open ended. Just the problem
 number, a horizonal rule, and some space. I'll fill it in
 with details as I go.
 
-@2026-02-21 Day 174
+@2026-02-21 Day 174. MA123 midterm review
 @10:11 Transferring notes, getting it ready for study #timelog:00:04:54
 #! dz bu/ma123/study
 My thinking is: the logs and problems won't have the solutions,
@@ -770,3 +770,8 @@ to generate a problem sheet without the solutions.
 ---
 I made a new generator to generate a pretty clean PDF
 of all the problems I have solutions for.
+
+@2026-02-22 Day 175. MA123 midterm 1 review day 2.
+
+@09:29 completed 3 more problems this morning, add them to my hw4 collection #timelog:00:15:53
+#! dz bu/ma123/hw

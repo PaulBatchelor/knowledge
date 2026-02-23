@@ -313,7 +313,7 @@ and $y = a_m/b_n$ is a horizontal asymptote of $f$.
 If $m > n$, then $\lim\limits_{x \to \pm\infty} f(x) = \infty$ or $-\infty$,
 and $f$ has no horizontal asymptote.
 
-\par {\bf d. Slant asymptote.} 
+\par {\bf d. Slant asymptote.}
 If $m = n + 1$, then $\lim\limits_{x \to \pm\infty} f(x) = \infty$
 or $-\infty$, and $f$ has no horizontal asymptote, but $f$
 has a slant asymptote.
@@ -418,6 +418,94 @@ TODO.
 Suppose $f$ is continuous on the interval $[a, b]$ and $L$
 is a number strictly between $f(a)$ and $f(b)$. Then there
 exists at lest one number $c$ in $(a, b)$ satisfying $f(c) = L$.
+\endthm
+
+\begthm{3.10}{Trigonometric Limits}
+$$\
+\lim_{x \to 0} = {\sin x \over x} = 1
+$$
+
+$$\
+\lim_{x \to 0} = {\cos x - 1 \over x} = 0
+$$
+\endthm
+
+\begthm{3.11}{Derivatives of Sine and Cosine}
+$$\
+{d \over dx}(\sin x) = \cos x
+$$
+
+$$\
+{d \over dx}(\cos x) = -\sin x
+$$
+\endthm
+
+\begthm{3.12}{Derivatives of the Trigonmetric Functions}
+$$\
+{d \over dx}
+(\sin x)
+=
+\cos x
+$$
+
+$$\
+{d \over dx}
+(\cos x)
+=
+-\sin x
+$$
+
+$$\
+{d \over dx}
+(\tan x)
+=
+\sec^2 x
+$$
+
+$$\
+{d \over dx}
+(\cot x)
+=
+-\csc^2 x
+$$
+
+$$\
+{d \over dx}
+(\sec x)
+=
+\sec x \tan x
+$$
+
+$$\
+{d \over dx}
+(\csc x)
+=
+-\csc x \cot x
+$$
+\endthm
+
+\begthm{3.13}{The Chain Rule}
+Suppose $y = f(u)$ is differentiable at $u = g(x)$ and $u = g(x)$
+is differentiable at $x$. The composite function $f(g(x))$ is
+differentiable at $x$, and its derivative can be expressed
+in two equivalent ways.
+
+$$\
+{dy \over dx} = {dy \over du} \cdot {du \over dx}
+$$
+
+$$\
+{d \over dx}(f(g(x))) = f'(g(x)) \cdot g'(x)
+$$
+\endthm
+
+\begthm{3.14}{Chain Rule for Powers}
+If $g$ is differentiable for all $x$ in its domain and $p$
+is a real number, then
+
+$$\
+{d \over dx} \big((g(x))^p\big) = p(g(x))^{p - 1}g'(x)
+$$
 \endthm
 
 \bye

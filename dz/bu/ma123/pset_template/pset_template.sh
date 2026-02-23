@@ -4,8 +4,6 @@ then
     dagzet ../problems.dz | sqlite3 a.db
 fi
 
-
-
 PSET_STUDY_TEMPLATE=pset_study_template
 PSETS=psets
 

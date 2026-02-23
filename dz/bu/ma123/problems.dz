@@ -86,10 +86,22 @@ ln x^2 - 25
 ln }
 ln $$
 
+nn 3_5_57
+ln Find $y''$:
+ln $$\
+ln y = 6x \sin x
+ln $$
+
 nn 3_3_31
 ln Find the derivative of the following function.
 ln $$\
 ln f(x) = 2x^4 + 5x
+ln $$
+
+nn 3_5_59
+ln Find $y''$:
+ln $$\
+ln y = e^x \sin x
 ln $$
 
 nn 2_4_4
@@ -106,6 +118,15 @@ ln \over
 ln {x + 5}
 ln }
 ln $$
+
+nn 3_5_23
+ln Find the derivative of the following function:
+ln $$\
+ln y = 7\sin x + 2\cos x
+ln $$
+
+nn 3_7_95
+ln \bye
 
 nn 2_5_25
 ln Determine the following limit:
@@ -131,6 +152,12 @@ ln the slope of the line tangent to the graph of $f$ at $P$.
 ln \medskip
 ln $$\
 ln f(x) = -6x +8, P(1, 2)
+ln $$
+
+nn 3_5_27
+ln Find the derivative of the following function:
+ln $$\
+ln y = x \tan x
 ln $$
 
 nn 3_3_38
@@ -169,6 +196,7 @@ ln Find the derivative of the following function.
 ln $$\
 ln f(x) = {x - a \over \sqrt{x} - \sqrt{a}}
 ln $$
+ln $a$ is a positive constant.
 
 nn 3_1_13
 ln A projectile is fired vertically upward into the air; its
@@ -200,6 +228,12 @@ ln Find the derivative of the following function.
 ln $$\
 ln f(x) = {9x \over x + 2}
 ln $$
+
+nn 3_5_76
+ln {\par \bf a.} For what values of $x$ does
+ln $f(x) = 8x + 16\sin(x)$ have a horizontal tangent line?
+ln {\par \bf b.} For what values of $x$ does $f(x) = 8x + 16\sin(x)$
+ln have a slope of 8?
 
 nn 3_2_33
 ln Evaluate ${dy \over dx}$ and ${dy \over dx}\big|_{x = 3}$
@@ -291,6 +325,11 @@ ln $$
 nn 3_2_35
 ln \par {\bf a.} Find the derivative function $f'$ for the
 ln function $f$.
+ln \par {\bf b.} Find an equation of the line tangent to the
+ln graph of $f$ at $(a, f(a))$ for the given value of $a$.
+ln $$\
+ln f(x) = 2x^2 - 9x + 10; a = 1
+ln $$
 
 nn 2_3_53
 ln Find the following limit or state that it does not exist.
@@ -332,6 +371,12 @@ ln }
 ln $$
 ln and where is $f$ continuous?
 
+nn 3_5_43
+ln Find the derivative of the following function:
+ln $$\
+ln y = 5 \tan x + 5 \cot x
+ln $$
+
 nn 3_2_37
 ln \par {\bf a.} Find the derivative function $f'$ for the
 ln function $f$.
@@ -351,6 +396,12 @@ ln $$
 ln and
 ln $$\
 ln \lim_{x \to -{2\pi}^{-}}{f(x)}
+ln $$
+
+nn 3_5_44
+ln Find the derivative of the following function:
+ln $$\
+ln y = \tan x \sec x
 ln $$
 
 nn 3_3_55
@@ -385,7 +436,6 @@ ln Find $f'(x)$ and $f''(x)$.
 ln $$\
 ln f(x) = {x^2 - 6x \over x + 1}
 ln $$
-ln \bye
 
 nn 3_1_31
 ln \par {\bf a.} Use the definition
@@ -449,6 +499,25 @@ ln x^4
 ln }
 ln $$
 
+nn 3_5_12
+ln Use the limit
+ln $\lim\limits_{x \to 0} {\sin x \over x} = 1$
+ln and/or
+ln $\lim\limits_{x \to 0} {\cos x - 1 \over x} = 0$
+ln To evaluate the following limit:
+ln $$\
+ln \lim_{x \to 0} {\sin 2x \over 3x}
+ln $$
+
+nn 3_5_13
+ln Use the limit
+ln $\lim\limits_{x \to 0} {\sin x \over x} = 1$
+ln and/or
+ln $\lim\limits_{x \to 0} {\cos x - 1 \over x} = 0$
+ln $$\
+ln \lim_{x \to 0} {\sin 9x \over \sin 2x}
+ln $$
+
 nn 2_4_42
 ln Determine the following limit, using $\infty$ or $-\infty$
 ln when appropriate, or state that it does not exist.
@@ -470,6 +539,27 @@ ln $$\lim_{x \to \infty}{g(x)}$$
 ln and
 ln $$\lim_{x \to -\infty}{g(x)}$$
 
+nn 3_5_61
+ln Find $y''$ for the following function:
+ln $$\
+ln y = 5 \cot x
+ln $$
+
+nn 3_5_16
+ln Use the limit
+ln $\lim\limits_{x \to 0} {\sin x \over x} = 1$
+ln and/or
+ln $\lim\limits_{x \to 0} {\cos x - 1 \over x} = 0$
+ln $$\
+ln \lim_{\theta \to 0}{\cos^2\theta - 1 \over \theta}
+ln $$
+
+nn 3_5_63
+ln Find $y''$ for the following function:
+ln $$\
+ln y = \sin x \cos x
+ln $$
+
 nn 2_4_47
 ln Find all vertical asymptotes, $x = a$, of the following
 ln function. For each value $a$, evaluate
@@ -483,6 +573,19 @@ ln f(x) = {
 ln x^2 - 7x + 10
 ln \over
 ln x^2 - 6x + 8
+ln }
+ln $$
+
+nn 3_5_19
+ln Use the limit
+ln $\lim\limits_{x \to 0} {\sin x \over x} = 1$
+ln and/or
+ln $\lim\limits_{x \to 0} {\cos x - 1 \over x} = 0$
+ln $$\
+ln \lim_{x \to -2}{
+ln \sin(x + 2)
+ln \over
+ln x^2 - 4
 ln }
 ln $$
 
@@ -524,6 +627,18 @@ ln the following function $f$.
 ln \par {\bf b.} Evaluate $f'(a)$ for given values of $a$.
 ln $$\
 ln f(x) = 3x^2 + 5x; a=-1, 1
+ln $$
+
+nn 3_5_68
+ln Evaluate the following limit or state that it does not exist.
+ln (Hint: identify the limit as a derivative of a function $f$
+ln at a point $a$) (2 parts)
+ln $$\
+ln \lim_{h \to 0} {
+ln {sin({\pi \over 4} + h}) - {\sqrt{2} \over 2}
+ln \over
+ln h
+ln }
 ln $$
 
 nn 3_2_25
@@ -587,6 +702,12 @@ ln {\sqrt{x} - \sqrt{26}}
 ln }
 ln $$
 
+nn 3_5_34
+ln Find the derivative of the following function:
+ln $$\
+ln y = { 10x \sin x \over 1 - \cos x }
+ln $$
+
 nn 3_2_28
 ln \par {\bf a.} Use limits to find the derivative function $f'$ for
 ln the following function $f$.
@@ -605,7 +726,7 @@ ln $$
 ns ..
 ns +solutions
 nn 2_5_39
-ln $(x \to \infty) f(x) = (x \to -infty) = 4$
+ln $(x \to \infty) f(x) = (x \to -\infty) = 4$
 
 co $ ../../problems/2_5_39
 
@@ -684,7 +805,7 @@ ln $m_{tan} = -6$
 co $ ../../problems/3_1_11
 
 nn 3_3_38
-ln $g'(w) = e^2$
+ln $g'(w) = e^w$
 
 co $ ../../problems/3_3_38
 
@@ -692,6 +813,13 @@ nn 2_5_28
 ln 0
 
 co $ ../../problems/2_5_28
+
+nn 3_4_56
+ln $$\
+ln {dy \over dx} = {1 \over 2 \sqrt{x}}
+ln $$
+
+co $ ../../problems/3_4_56
 
 nn 2_5_75
 ln a. $(x \to \infty) \, f(x) = (x \to -\infty) \, f(x) = 1$.
@@ -706,6 +834,16 @@ nn 3_4_21
 ln $f'(x) = {18 \over (x + 2)^2}$
 
 co $ ../../problems/3_4_21
+
+nn 3_2_33
+ln $$\
+ln {dy \over dx} = - {7 \over (x + 1)^2}
+ln $$
+ln $$\
+ln {dy \over dx} \bigg|_{x = 3} = - {7 \over 16}
+ln $$
+
+co $ ../../problems/3_2_33
 
 nn 2_4_23
 ln a. $-\infty$. b. $-\infty$. c. $-\infty$
@@ -733,11 +871,6 @@ co $ ../../problems/2_5_41
 nn 3_2_35
 ln \par {\bf a.} $f'(x) = 4x - 9$
 ln \par {\bf b.} $y = -5x + 8$
-ln \par {\bf b.} Find an equation of the line tangent to the
-ln graph of $f$ at $(a, f(a))$ for the given value of $a$.
-ln $$\
-ln f(x) = 2x^2 - 9x + 10; a = 1
-ln $$
 
 co $ ../../problems/3_2_35
 
@@ -869,6 +1002,13 @@ ln Solution: $-{1 \over 64}$
 
 co $ ../../problems/2_3_43
 
+nn 3_4_15
+ln ${d \over dx}(f(x)g(x))\big|_{x = 4} = -7$,
+ln ${d \over dx}\big[{f(x) \over g(x)}\big]\big|_{x = 4}
+ln = -{17 \over 4}$.
+
+co $ ../../problems/3_4_15
+
 nn 3_2_26
 ln \par {\bf a.} $f'(x) = {5 \over (4x + 5)^2}$
 ln \par {\bf b.} $f'(0) = {1 \over 5}$
@@ -897,6 +1037,12 @@ ln The limit can be computed to be
 ln $\lim_{x \to 26} {\sqrt{x} + \sqrt{26}} = 2 \sqrt{26}$
 
 co $ ../../problems/2_3_45
+
+nn 3_2_28
+ln \par $f'(w) = {12 \over \sqrt{24w + 1}}$,
+ln $f'(0) = 12$, $f'(1) = {12 \over 5}$.
+
+co $ ../../problems/3_2_28
 
 nn 3_3_47
 ln $f'(x) = 45x^2 + 18x + 25$

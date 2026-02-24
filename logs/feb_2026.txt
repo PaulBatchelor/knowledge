@@ -863,3 +863,65 @@ the following thursday, on the 5th.
 
 @11:41 buddy find task created
 #! dz thoughts/projects/sonilo/tasks/buddy_find
+
+@16:13 buddy find task initial investigations #timelog:01:31:29
+#! dz thoughts/projects/sonilo/tasks/buddy_find
+Damn it. I'm so confused about this code.
+---
+What is this BLOCK?
+---
+Block seems to be 64 words long, and I introduced it
+during a redesign as tempory block to do "bookkeeping".
+---
+It looks like each word is an entry, with 2 7-bit pointer
+links for a linked list, and some bits for a k-val.
+---
+My guess is that BLOCK acts as a lookup table for information
+associated with the virtual address L. I'm assuming one
+could get the K value associated with the address L by
+simply doing the equivalent of {\tt BLOCK[L].k}.
+---
+It's not enough to retrieve the k value. It needs to be
+validated that it is being used, and that this value is
+the start of a block.
+---
+There's a TAGS component which keeps track of
+if a block is being used or not (I think?). 1 means it's
+available, 0 means it's unavailable.
+---
+At this point, the K value is retrieved, and it is determined
+that is being used. Is this enough to verify that it is the
+start address of a block?
+---
+There's a great deal of headache getting this thing configured.
+What was I thinking.
+---
+The buddy system doesn't actually manage a block, does it?
+It's just thinking about a 6-bit address space. I'm guessing
+to make this actually usable, I'd need to add it to some
+arbitrary word address.
+---
+This "buddy slot" system would then do the work of adding offsets.
+---
+I've a small sample program that does the allocation. The
+hardest part is keeping track of all the sizes and memory
+offsets. That's not documented well, as it turns out.
+---
+I assumed the memory address of the block being managed
+was known? I don't think it is, which means that I'll have
+to change what exactly this "buddy find" operation does.
+
+@17:47 adding 'mx' utility for auxiliary buddy utility things
+#! dz thoughts/projects/sonilo/tasks/buddy_find
+Just to get some insight into how this allocator works a bit.
+---
+I tweaked the allocator a bit so that when it allocates
+a block, it markes the k value of that block (I am assuming
+this is correct and should have been done already in the
+first place). I also found that freeing a block keeps
+the k-value preserved.
+---
+The AVAIL tags are flipped off as expected.
+---
+I'm starting to believe that the avail bit and K might
+be enough of a check.

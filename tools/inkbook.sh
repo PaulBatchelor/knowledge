@@ -21,29 +21,7 @@ process() {
 }
 
 header() {
-echo "\pdfoutput=1"
-echo "\input graphicx"
-# echo "\def\imgbox#1{"
-# echo "\vfill"
-# echo "\centerline{\includegraphics[width=120mm]{ink/#1}}"
-# echo "\vfill\break"
-# echo "}"
-echo "\def\imgbox#1{"
-echo "\null"
-echo "\vfill"
-echo "\centerline{"
-echo "    \vbox{%"
-echo "        \hrule height 1pt"
-echo "        \hbox{%"
-echo "            \vrule width 1pt"
-echo "            \includegraphics[width=130mm]{$INKPATH/#1}%"
-echo "            \vrule width 1pt"
-echo "        }%"
-echo "        \hrule height 1pt"
-echo "    }"
-echo "}"
-echo "\vfill\break"
-echo "}"
+    echo "\input header"
 }
 
 header

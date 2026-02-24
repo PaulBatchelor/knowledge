@@ -1,0 +1,28 @@
+\pdfoutput=1
+\parindent=0pt
+\pdfpagewidth=148mm
+\pdfpageheight=210mm
+\hsize=128mm
+\vsize=190mm
+\pdfhorigin=0pt
+\pdfvorigin=0pt
+\hoffset=10mm
+\voffset=10mm
+\nopagenumbers
+\input graphicx
+
+\def\imgbox#1{
+\vfill
+\centerline{
+    \vbox{%
+        \hrule height 1pt
+        \hbox{%
+            \vrule width 1pt
+            \includegraphics[width=\hsize, height=\vsize, keepaspectratio]{ink/#1}%
+            \vrule width 1pt
+        }%
+        \hrule height 1pt
+    }
+}
+\vfill\break
+}

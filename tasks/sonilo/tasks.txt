@@ -1,4 +1,5 @@
 thoughts/projects/sonilo/tasks/blockstack_improvements
+thoughts/projects/sonilo/tasks/buddy_find
 thoughts/projects/sonilo/tasks/buddy_system
 thoughts/projects/sonilo/tasks/docgen
 thoughts/projects/sonilo/tasks/fix_block_navigation

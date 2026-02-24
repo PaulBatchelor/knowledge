@@ -156,3 +156,9 @@ nn tasks/block_pool
 ln build up an interface for managing blocks with the RC structure
 co tasks/block_pool tasks/offline_patch
 co tasks/ugens tasks/block_pool
+nn tasks/buddy_find
+ln Create a "buddy find" operation that converts an A
+ln address to a pair (p, k), where p is the local index
+ln relative to the block, and k and the 2^k size of the block.
+co tasks/buddy_find tasks/buddy_slots
+cr such an operation is needed for a "bsfree" operation

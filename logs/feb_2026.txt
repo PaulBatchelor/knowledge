@@ -810,28 +810,7 @@ k-size. This operation should fail if one of the following
 happens: the address is not in the block range, the block
 address is unused, or it is not the start of a block.
 
-@2026-02-23 Day 176. MA123 midterm 1 review day 3
-
-@2026-02-24 Day 177. MA123 midterm 1 review postponed
-
-@10:33 midterm rescheduled for following week
-#! dz bu/ma123/news
-Instead of this thursday, the 26th, it's going to be
-the following thursday, on the 5th.
-
-@10:54 scanning #archiving #timelog:00:23:18
-
-@20:58 transcribing theorems/defs for 3.5, 3.6, 3.7 #timelog:00:15:45
-#! dz calculus/pearson
-It's a rush job. The homework came tonight, and I want
-to have handy before I jump in.
-
-@21:17 initial transcription of hw5 #timelog:00:22:32
-#! dz bu/ma123/hw
-Got all the problem numbers down, typed up everything for
-3.5
-
-@21:41 attack plan for hw3
+@21:41 attack plan for hw5
 #! dz bu/ma123/hw
 I'm going to get most of the 3.5 problems out of the way
 first. They look relatively straightforward except for the
@@ -858,7 +837,29 @@ weekend is going to suck.
 28 problems gives me a 90. That's what I want to target by
 Sunday evening.
 
-@2026-02-23 Day 176. MA123 Midterm 1 review day 3.
+@20:58 transcribing theorems/defs for 3.5, 3.6, 3.7 #timelog:00:15:45
+#! dz calculus/pearson
+It's a rush job. The homework came tonight, and I want
+to have handy before I jump in.
+
+@21:17 initial transcription of hw5 #timelog:00:22:32
+#! dz bu/ma123/hw
+Got all the problem numbers down, typed up everything for
+3.5
+
+@2026-02-23 Day 176. MA123 midterm 1 review day 3
 
 @16:21 transcribe 3.7 problems #timelog:00:13:22
 #! dz bu/ma123/hw
+
+@2026-02-24 Day 177. MA123 midterm 1 review postponed
+
+@10:33 midterm rescheduled for following week
+#! dz bu/ma123/news
+Instead of this thursday, the 26th, it's going to be
+the following thursday, on the 5th.
+
+@10:54 scanning #archiving #timelog:00:23:18
+
+@11:41 buddy find task created
+#! dz thoughts/projects/sonilo/tasks/buddy_find

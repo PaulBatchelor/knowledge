@@ -485,7 +485,6 @@ the ugen stack.
 ---
 Block navigation fixes can wait.
 
-
 @09:59 This is basically complete. Just wrap things in functions
 #! dz thoughts/projects/sonilo/tasks/bulk_instructions
 I left some TODOs for myself. Trivial work.
@@ -572,6 +571,15 @@ set to ugen. sweep.
 
 @20:37 addressing the small TODOS #timelog:00:13:12
 #! dz thoughts/projects/sonilo/tasks/bulk_instructions
+
+@20:05 Gesture: a sequence of transformed ramps #ink:099 #timelog:00:28:14
+#! dz thoughts/atom/gesture
+I attempted to re-imagine Gesture in terms of a sequence
+of line segments, with each segment produced by taking a
+ramp and applying transformations to it. I borrowed some
+math notation to informally describe how this could work.
+I'm hoping this kind of thinking will lead to some better
+higher-level abstractions and notation down the line.
 
 @2026-02-15 Day 168
 @09:01 lots and lots of scanning #archiving #timelog:00:23:55
@@ -775,3 +783,40 @@ of all the problems I have solutions for.
 
 @09:29 completed 3 more problems this morning, add them to my hw4 collection #timelog:00:15:53
 #! dz bu/ma123/hw
+
+@16:07 buddy slot revisited #ink:09A #timelog:00:48:29
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+I had to refresh my memory on what this task was about becase
+it's been so long. The distance was nice. I could forget
+about the details like the specific contents of structures
+and their bits, and focus on the abstractions.
+---
+A couple conclusions I came up with.
+---
+Conclusion 1. I still think
+it's a good idea for buddy slots to be composable with
+the buddy allocator, I just needed to clearly notate
+what the inputs and outputs are for both the buddy allocator
+and the buddy slot allocator.
+---
+Conclusion 2. the buddy slot allocator
+should ideally behave like C malloc/free.
+---
+Conclusion 3. In order to get the buddy-slot free
+to work, the buddy system is probably going to need
+an operation that takes in a word address and returns
+a corresponding pair of values for the relative index and
+k-size. This operation should fail if one of the following
+happens: the address is not in the block range, the block
+address is unused, or it is not the start of a block.
+
+@2026-02-23 Day 176. MA123 midterm 1 review day 3
+
+@2026-02-24 Day 177. MA123 midterm 1 review postponed
+
+@10:33 midterm rescheduled for following week
+#! dz bu/ma123/news
+Instead of this thursday, the 26th, it's going to be
+the following thursday, on the 5th.
+
+@10:54 scanning #archiving #timelog:00:23:18

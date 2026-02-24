@@ -820,3 +820,45 @@ Instead of this thursday, the 26th, it's going to be
 the following thursday, on the 5th.
 
 @10:54 scanning #archiving #timelog:00:23:18
+
+@20:58 transcribing theorems/defs for 3.5, 3.6, 3.7 #timelog:00:15:45
+#! dz calculus/pearson
+It's a rush job. The homework came tonight, and I want
+to have handy before I jump in.
+
+@21:17 initial transcription of hw5 #timelog:00:22:32
+#! dz bu/ma123/hw
+Got all the problem numbers down, typed up everything for
+3.5
+
+@21:41 attack plan for hw3
+#! dz bu/ma123/hw
+I'm going to get most of the 3.5 problems out of the way
+first. They look relatively straightforward except for the
+last 2. 3.5 has 5 examples. I'll do the first 3 or so, and
+see how far that gets me with the problems.
+---
+There aren't many problems for 3.6, but they are kind of
+wordy and involved. I'm going to hold off of 3.6 and do
+these last.
+---
+3.7 has 10 problems. It has 7 examples. I'll see how many
+I can get through. This will probably be tuesday and/or
+wednesday.
+---
+Let's assume I can do 6 out of 10 3.7 problems no problem, and
+about 12 out 16 of the 3.5 problems. That gives me 18 out of
+31 problems total. That's 58 percent. That would be a nice
+goal to get by Wedensday evening. Thursday is out of the
+question. Nothing is going to get done. Friday, I can spend
+some time on a few problems before discussion, an probably
+try get let's say 4 more problems in, which is a 70%. My
+weekend is going to suck.
+---
+28 problems gives me a 90. That's what I want to target by
+Sunday evening.
+
+@2026-02-23 Day 176. MA123 Midterm 1 review day 3.
+
+@16:21 transcribe 3.7 problems #timelog:00:13:22
+#! dz bu/ma123/hw

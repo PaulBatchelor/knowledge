@@ -925,3 +925,20 @@ The AVAIL tags are flipped off as expected.
 ---
 I'm starting to believe that the avail bit and K might
 be enough of a check.
+
+@2026-02-25 Day 178
+@09:40 transcribing some of the 3.6 hw5 questions #timelog:00:10:38
+#! dz bu/ma123/hw
+3.6.3 and 3.6.7 are reading requestions. 3.6.11 is analyzing
+a graph. 3.6.13 is a weird multiple choice question relating
+to marginal cost. This leaves 3.6.24 and 3.6.40, which are
+questions that I think I can type up.
+---
+Nevermind on 3.6.40. that one needs a graph as well.
+So it's really just the one problem that I can TeX up.
+
+@09:44 3.6 3.6 is a very weird chapter
+#! dz calculus/pearson/toc/03_derivatives/06_derivatives_as_rates_of_change
+it feels out of
+place with the rest of this chapter.. It's the
+chapter for the econ majors. All applied stuff, no theory.

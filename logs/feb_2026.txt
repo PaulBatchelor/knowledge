@@ -942,3 +942,19 @@ So it's really just the one problem that I can TeX up.
 it feels out of
 place with the rest of this chapter.. It's the
 chapter for the econ majors. All applied stuff, no theory.
+
+@2026-02-26 Day 179
+@10:57 discovered last night most problems have "examples"
+#! dz bu/ma123/hw
+It seems that if you follow the examples, but plug in your
+numbers, you'll get the answer. Most problems have examples.
+What it means is that I don't need to waste time finding
+the "trick" anymore. They'll show you the "trick" in the examples.
+---
+I've got things down to 7 problems remaining. Most of them I
+have done, but for one reason or another have hesitated on.
+I've printed out each example, and will now follow the steps
+to solve each problem their way, so as to be unamiguously
+correct with the input. This homework system is very sensitive
+about input, and punishes quickly, so I want to make sure
+I get it right the first time.

@@ -958,3 +958,35 @@ to solve each problem their way, so as to be unamiguously
 correct with the input. This homework system is very sensitive
 about input, and punishes quickly, so I want to make sure
 I get it right the first time.
+
+@12:30 composition thought 
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+#! dz thoughts/projects/sonilo/tasks/buddy_find
+So, the buddy allocator doesn't care about the actual word
+address, it only deals with relative positions.
+---
+For allocation, to turn it into a word, you need to bias
+it with a base address (the start of the block).
+---
+Using an add stack operation, this is pretty straight
+forward. Push the block address, call buddy alloc, then
+add the result to the base address.
+---
+So using this system,
+the buddy slot malloc function will not only push the input
+data for call to the buddy allocator, it will also push
+the base address associated with the system to be later
+added on to the result of the buddy.
+---
+The buddy slot system would then need to be tasked with
+storing the base address of each instance of the buddy
+allocator. So when it comes to freeing a memory address,
+it would also need to do the task of taking a word address,
+and determining which buddy instance it belongs to, then
+turning it into a relative position by subtracting it from
+the associated base address.
+---
+So, the input to a buddy find operation would just be
+a relative index 0-63, which would then retrieve a corresponding
+k value to pass into buddy free, assuming the index is valid
+(in bounds, currently active, start of a segment, etc).

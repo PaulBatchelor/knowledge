@@ -44,6 +44,8 @@
 \smallskip
 \noindent blsaw \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node10}
 \smallskip
+\noindent buddy find \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node38}
+\smallskip
 \noindent buddy slots \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node14}
 \smallskip
 \noindent buddy system \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node3}
@@ -135,8 +137,10 @@
 {\noindent \bf 2026-01-31:} bttyp, bulk instructions, ilo interpreter, sonilo command language, ugen ports, ugen refcount, ugen stack, ugens\smallskip
 {\noindent \bf 2026-02-03:} bttyp, news\smallskip
 {\noindent \bf 2026-02-07:} news, fix block navigation, ugen refcount\smallskip
-{\noindent \bf 2026-02-14:} news, block pool, bulk instructions, ugen stack\smallskip
+{\noindent \bf 2026-02-14:} gesture, news, block pool, bulk instructions, ugen stack\smallskip
 {\noindent \bf 2026-02-15:} news\smallskip
+{\noindent \bf 2026-02-22:} buddy slots\smallskip
+{\noindent \bf 2026-02-24:} buddy find\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -977,6 +981,23 @@ These should all use a stack, and the stack should be allocated by the zero page
 I got as far as setting up a stack. exhausting work. I forgot about the trick of not including '\#' for jf/jb commands.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:07: buddy slot revisited}\smallskip
+I had to refresh my memory on what this task was about becase it's been so long. The distance was nice. I could forget about the details like the specific contents of structures and their bits, and focus on the abstractions.
+\par
+
+A couple conclusions I came up with.
+\par
+
+Conclusion 1. I still think it's a good idea for buddy slots to be composable with the buddy allocator, I just needed to clearly notate what the inputs and outputs are for both the buddy allocator and the buddy slot allocator.
+\par
+
+Conclusion 2. the buddy slot allocator should ideally behave like C malloc/free.
+\par
+
+Conclusion 3. In order to get the buddy-slot free to work, the buddy system is probably going to need an operation that takes in a word address and returns a corresponding pair of values for the relative index and k-size. This operation should fail if one of the following happens: the address is not in the block range, the block address is unused, or it is not the start of a block.
+\par
+
 \xrdef{node15}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont zero page}\medskip
 
@@ -1706,6 +1727,11 @@ Musing possible approaches to improving the path drawing logic. in the vectorize
 Thinking ahead about high-level concepts. This music environment I want to make is going to involve the concept of Gesture, so what would happen if I go to an extreme and make everything a Gesture. Gesture as a core primitive. Composing with gesture.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:05: Gesture: a sequence of transformed ramps}\smallskip
+I attempted to re-imagine Gesture in terms of a sequence of line segments, with each segment produced by taking a ramp and applying transformations to it. I borrowed some math notation to informally describe how this could work. I'm hoping this kind of thinking will lead to some better higher-level abstractions and notation down the line.
+\par
+
 \xrdef{node28}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont fix block navigation}\medskip
 early tools for converting block addresses to word addresses
@@ -2276,6 +2302,66 @@ A new block is needed any time an output block is created for a ugen. So steps w
 \par
 
 If I were making, say a sine ugen with frequency and amplitude as args, the steps would be: set up ugen with 2 ins, 1 out. pop amp, assign to port 0, pop freq, assign to port 1, new block for output, assign to port 2. alloc data, initialize, set to ugen. sweep.
+\par
+
+\xrdef{node38}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont buddy find}\medskip
+Create a "buddy find" operation that converts an A
+address to a pair (p, k), where p is the local index
+relative to the block, and k and the $2^k$ size of the block.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:41: buddy find task created}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:13: buddy find task initial investigations}\smallskip
+Damn it. I'm so confused about this code.
+\par
+
+What is this BLOCK?
+\par
+
+Block seems to be 64 words long, and I introduced it during a redesign as tempory block to do "bookkeeping".
+\par
+
+It looks like each word is an entry, with 2 7-bit pointer links for a linked list, and some bits for a k-val.
+\par
+
+My guess is that BLOCK acts as a lookup table for information associated with the virtual address L. I'm assuming one could get the K value associated with the address L by simply doing the equivalent of {\tt BLOCK[L].k}.
+\par
+
+It's not enough to retrieve the k value. It needs to be validated that it is being used, and that this value is the start of a block.
+\par
+
+There's a TAGS component which keeps track of if a block is being used or not (I think?). 1 means it's available, 0 means it's unavailable.
+\par
+
+At this point, the K value is retrieved, and it is determined that is being used. Is this enough to verify that it is the start address of a block?
+\par
+
+There's a great deal of headache getting this thing configured. What was I thinking.
+\par
+
+The buddy system doesn't actually manage a block, does it? It's just thinking about a 6-bit address space. I'm guessing to make this actually usable, I'd need to add it to some arbitrary word address.
+\par
+
+This "buddy slot" system would then do the work of adding offsets.
+\par
+
+I've a small sample program that does the allocation. The hardest part is keeping track of all the sizes and memory offsets. That's not documented well, as it turns out.
+\par
+
+I assumed the memory address of the block being managed was known? I don't think it is, which means that I'll have to change what exactly this "buddy find" operation does.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:47: adding 'mx' utility for auxiliary buddy utility things}\smallskip
+Just to get some insight into how this allocator works a bit.
+\par
+
+I tweaked the allocator a bit so that when it allocates a block, it markes the k value of that block (I am assuming this is correct and should have been done already in the first place). I also found that freeing a block keeps the k-value preserved.
+\par
+
+The AVAIL tags are flipped off as expected.
+\par
+
+I'm starting to believe that the avail bit and K might be enough of a check.
 \par
 
 \bye

@@ -992,5 +992,13 @@ k value to pass into buddy free, assuming the index is valid
 (in bounds, currently active, start of a segment, etc).
 
 @2026-02-27 Day 180
-@07:19 Typing up hw5 solutions
+@07:19 Typing up hw5 solutions #timelog:00:33:37
 #! dz bu/ma123/hw
+
+@08:14 going to try to type up hw page data somehow #timelog:00:06:05
+#! dz bu/ma123/hw
+sorta adhoc, but I have all this information about
+which scratch pages where used for which problems.
+---
+I also have times on these scratch pages too, which would
+be good data to have as well.

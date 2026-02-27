@@ -1011,3 +1011,17 @@ means "problem scratch pages", and "t" is going to mean
 "scratch times (for problems)"
 ---
 I also did "review", which I will designate as "r"
+
+@08:37 crunching some numbers to get stats on how long hw5 took #timelog:00:16:00
+#! dz $
+About 10 hours total. That includes doing the problem sets,
+and then reviewing my work. I still have one more problem left,
+but that should take about 15 minutes or less.
+---
+At 31 problems, it took me about 20 minutes per problem on average.
+---
+I'm going to say this might skew lower since I didn't measure
+every single second. I'll say at 25 minutes per problem, 30
+problems is about 12.5 hours of work. And that's not counting
+doing the textbook problems. So yeah, 15-20 hours a week
+is about the expectation.

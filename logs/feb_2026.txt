@@ -990,3 +990,7 @@ So, the input to a buddy find operation would just be
 a relative index 0-63, which would then retrieve a corresponding
 k value to pass into buddy free, assuming the index is valid
 (in bounds, currently active, start of a segment, etc).
+
+@2026-02-27 Day 180
+@07:19 Typing up hw5 solutions
+#! dz bu/ma123/hw

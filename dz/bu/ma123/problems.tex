@@ -1114,6 +1114,11 @@ $$\
 \lim_{x \to 0} {\sin 2x \over 3x}
 $$
 
+\solution{3.5.12}
+$$\
+\lim_{x \to 0} {\sin 2x \over 3x} = {2 \ over 3}
+$$
+
 \bigskip
 
 \problem{3.5.13}
@@ -1126,6 +1131,11 @@ $$\
 \lim_{x \to 0} {\sin 9x \over \sin 2x}
 $$
 
+\solution{3.5.13}
+$$\
+\lim_{x \to 0} {\sin 9x \over \sin 2x} = {9 \over 2}
+$$
+
 \bigskip
 
 \problem{3.5.16}
@@ -1136,6 +1146,11 @@ $\lim\limits_{x \to 0} {\cos x - 1 \over x} = 0$
 
 $$\
 \lim_{\theta \to 0}{\cos^2\theta - 1 \over \theta}
+$$
+
+\solution{3.5.16}
+$$\
+\lim_{\theta \to 0}{\cos^2\theta - 1 \over \theta} = 0
 $$
 
 \bigskip
@@ -1154,6 +1169,15 @@ x^2 - 4
 }
 $$
 
+\solution{3.5.19}
+$$\
+\lim_{x \to -2}{
+\sin(x + 2)
+\over
+x^2 - 4
+} = - {1 \over 4}
+$$
+
 \bigskip
 
 \problem{3.5.23}
@@ -1164,12 +1188,23 @@ y = 7\sin x + 2\cos x
 $$
 \bigskip
 
+\solution{3.5.23}
+$$\
+{dy \over dx} = 7\cos x - 2\sin x
+$$
+
 \problem{3.5.27}
 Find the derivative of the following function:
 
 $$\
 y = x \tan x
 $$
+
+\solution{3.5.27}
+$$\
+{dy \over dx} = \tan x + x\sec^2 x
+$$
+
 \bigskip
 
 \problem{3.5.34}
@@ -1177,6 +1212,15 @@ Find the derivative of the following function:
 
 $$\
 y = { 10x \sin x \over 1 - \cos x }
+$$
+
+\solution{3.5.34}
+$$\
+{dy \over dx} = {
+10 \sin x - 10x
+\over
+1 - \cos x
+}
 $$
 
 \bigskip
@@ -1187,6 +1231,15 @@ Find the derivative of the following function:
 $$\
 y = 5 \tan x + 5 \cot x
 $$
+
+\solution{3.5.43}
+
+$$\
+{dy \over dx} = {
+5\sec^2 x - 5\csc^2 x
+}
+$$
+
 \bigskip
 
 \problem{3.5.44}
@@ -1194,6 +1247,11 @@ Find the derivative of the following function:
 
 $$\
 y = \tan x \sec x
+$$
+
+\solution{3.5.44}
+$$\
+{dy \over dx} = \sec^3 x (\sin^2 x + 1)
 $$
 
 \bigskip
@@ -1204,6 +1262,12 @@ Find $y''$:
 $$\
 y = 6x \sin x
 $$
+
+\solution{3.5.57}
+$$\
+y'' = 12\cos x - 6x\sin x
+$$
+
 \bigskip
 
 \problem{3.5.59}
@@ -1213,6 +1277,10 @@ $$\
 y = e^x \sin x
 $$
 
+\solution{3.5.59}
+$$\
+y'' = 2e^x \cos x
+$$
 \bigskip
 
 \problem{3.5.61}
@@ -1221,6 +1289,12 @@ Find $y''$ for the following function:
 $$\
 y = 5 \cot x
 $$
+
+\solution{3.5.61}
+$$\
+y'' = 10 \csc^2 x \cot x
+$$
+
 \bigskip
 
 \problem{3.5.63}
@@ -1228,6 +1302,11 @@ Find $y''$ for the following function:
 
 $$\
 y = \sin x \cos x
+$$
+
+\solution{3.5.63}
+$$\
+y'' = -4 \sin x \cos x
 $$
 
 \bigskip
@@ -1244,6 +1323,19 @@ $$\
 h
 }
 $$
+
+\solution{3.5.68}
+
+$f(x) = \sin x, a = {\pi \over 4}$.
+
+$$\
+\lim_{h \to 0} {
+{sin({\pi \over 4} + h}) - {\sqrt{2} \over 2}
+\over
+h
+} = {\sqrt{2} \over 2}
+$$
+
 \bigskip
 
 \problem{3.5.76}
@@ -1252,6 +1344,16 @@ $f(x) = 8x + 16\sin(x)$ have a horizontal tangent line?
 
 {\par \bf b.} For what values of $x$ does $f(x) = 8x + 16\sin(x)$
 have a slope of 8?
+
+\solution{3.5.76}
+
+{\par \bf a.}
+$x = {2\pi \over 3} + 2k\pi$ and
+${4\pi \over 3} + 2k\pi$, where $k$ is any integer.
+
+{\par \bf b.}
+$x = {\pi \over 2} + k\pi$, where $k$ is any integer.
+
 \bigskip
 
 \problem{3.6.3}
@@ -1302,8 +1404,16 @@ $u = g(x)$ and an outer function $y = f(u)$ such that
 $y = f(g(x))$. Then calculate $dy \over dx$.
 
 $$\
-y = (2x + 7)^2
+y = (2x + 7)^8
 $$
+
+\solution{3.7.15}
+$u = g(x) = 2x + 7, y = f(u) = u^8$
+
+$$\
+{dy \over dx} = 16(2x + 7)^7
+$$
+
 \bigskip
 
 \problem{3.7.17}
@@ -1315,6 +1425,12 @@ $$\
 y = \sin^{11}x
 $$
 
+\solution{3.7.17}
+$u = g(x) = \sin(x), y = f(u) = u^{11}$
+
+$$\
+{dy \over dx} = 11\sin^{10} x \cos x
+$$
 \bigskip
 
 \problem{3.7.24}
@@ -1324,6 +1440,13 @@ $y = f(g(x))$. Then calculate $dy \over dx$.
 
 $$\
 y = \cos{x \over 5}
+$$
+
+\solution{3.7.24}
+$u = g(x) = {x \over 5}, y = f(u) = \cos u$
+
+$$\
+{dy \over dx} = -{1 \over 5} sin {x \over 5}
 $$
 \bigskip
 
@@ -1336,6 +1459,11 @@ Calculate the derivative of the following function
 $$\
 y = \sin(6x^2 + 6x + 3)
 $$
+
+\solution{3.7.37}
+$$\
+{dy \over dx} = \cos(6x^2 + 6x + 3)(12x + 6)
+$$
 \bigskip
 
 \problem{3.7.41}
@@ -1343,6 +1471,16 @@ Find ${dx \over dy}$.
 
 $$\
 y = \sqrt{2x \over 5x - 3}
+$$
+
+\solution{3.7.41}
+$$\
+{dy \over dx} = -{
+3
+\over
+(2x)^{1 \over 2}
+(5x - 3)^{3 \over 2}
+}
 $$
 
 \bigskip
@@ -1353,6 +1491,11 @@ Calculate the derivative of the following function.
 $$\
 y = (\sec(x) + \tan(x))^{14}
 $$
+
+\solution{3.7.43}
+$$\
+{dy \over dx} = 14 \sec x(\sec x + \tan x)^{14}
+$$
 \bigskip
 
 \problem{3.7.63}
@@ -1360,6 +1503,16 @@ Calculate the derivative of the following function.
 
 $$\
 y = \big( {x \over 5x + 1} \big)^5
+$$
+
+\solution{3.7.63}
+
+$$\
+{dy \over dx} = {
+5x^4
+\over
+(5x + 1)^6
+}
 $$
 \bigskip
 
@@ -1375,11 +1528,16 @@ $(5, 1)$ is $y = 4x - 19$.
 \par {\bf b.} Deteremine an equation of the line tangent
 to the graph of $h$ at the point on the graph where $x = 3$.
 
+\solution{3.7.93}
+{\par \bf a.} $h(3) = 1, h'(3) = 12$
+{\par \bf b.} $y = 12x - 35$
+
 \bigskip
 
 \problem{3.7.95}
 Find the equation of the line tangent to $y = e^{3x}$ at
 $x = {1 \over 3}\ln 2$.
+
 \bigskip
 
 \bye

@@ -46,11 +46,40 @@ ln x^2 - 7x + 10
 ln }, a = 2
 ln $$
 
+nn 3_7_41
+ln Find ${dx \over dy}$.
+ln $$\
+ln y = \sqrt{2x \over 5x - 3}
+ln $$
+
+nn 3_6_24
+ln Suppose a stone is thrown vertically upward from the edge of
+ln a cliff on Earth with an initial velocity of 14.7 m/s from
+ln a height of 19.6m above the ground. The height (in meters)
+ln of the stone above the ground t seconds after it is thrown
+ln is
+ln $$\
+ln s(t) = -4.9t^2 + 14.7t + 19.6
+ln $$
+ln {\par \bf a.} Determine the velocity $v$ of the stone after
+ln $t$ seconds.
+ln {\par \bf b.} When does the the stone reach the highest point?
+ln {\par \bf c.} When is the height of the stone at the highest point?
+ln {\par \bf d.} When does the stone strike the ground?
+ln {\par \bf e.} With what velocity does the stone strike the ground?
+ln {\par \bf f.} On what intervals is the speed increasing?
+
 nn 2_6_25
 ln Determine the interval(s) on which the following function
 ln is continuous.
 ln $$
 ln p(x) = 5x^4 + 6x^3 + 8
+ln $$
+
+nn 3_7_43
+ln Calculate the derivative of the following function.
+ln $$\
+ln y = (\sec(x) + \tan(x))^{14}
 ln $$
 
 nn 3_2_11
@@ -98,6 +127,16 @@ ln $$\
 ln f(x) = 2x^4 + 5x
 ln $$
 
+nn 3_7_93
+ln Assume $f$ and $g$ are differentiable functions with
+ln $h(x) = f(g(x))$. Suppose the equation of the line tangent
+ln to the graph of $g$ at the point $(3, 5)$ is $y = 3x - 4$
+ln and the equation of the line tangent to the graph $f$ at
+ln $(5, 1)$ is $y = 4x - 19$.
+ln \par {\bf a.} Calculate $h(3)$ and $h'(3)$.
+ln \par {\bf b.} Deteremine an equation of the line tangent
+ln to the graph of $h$ at the point on the graph where $x = 3$.
+
 nn 3_5_59
 ln Find $y''$:
 ln $$\
@@ -126,6 +165,8 @@ ln y = 7\sin x + 2\cos x
 ln $$
 
 nn 3_7_95
+ln Find the equation of the line tangent to $y = e^{3x}$ at
+ln $x = {1 \over 3}\ln 2$.
 ln \bye
 
 nn 2_5_25
@@ -144,6 +185,14 @@ ln is continuous. At which finite endpoints of the intervals
 ln of continuity is $f$ continuous from the left or continuous
 ln from the right?
 ln $$f(x) = \sqrt{3x^2 - 36}$$
+
+nn 3_7_15
+ln For the following composite function, find an inner function
+ln $u = g(x)$ and an outer function $y = f(u)$ such that
+ln $y = f(g(x))$. Then calculate $dy \over dx$.
+ln $$\
+ln y = (2x + 7)^8
+ln $$
 
 nn 3_1_11
 ln Use the definition $m_{tan} =
@@ -191,6 +240,14 @@ ln 4x^6 + 9x^5 - 5x^3
 ln }
 ln $$
 
+nn 3_7_17
+ln For the following composite function, find an inner function
+ln $u = g(x)$ and an outer function $y = f(u)$ such that
+ln $y = f(g(x))$. Then calculate $dy \over dx$.
+ln $$\
+ln y = \sin^{11}x
+ln $$
+
 nn 3_4_56
 ln Find the derivative of the following function.
 ln $$\
@@ -206,6 +263,12 @@ ln instantaneous velocity of the projectile at $t = a$ seconds
 ln for the given value of $a$.
 ln $$\
 ln s(t) = -16t^2 + 76t; a = 2
+ln $$
+
+nn 3_7_63
+ln Calculate the derivative of the following function.
+ln $$\
+ln y = \big( {x \over 5x + 1} \big)^5
 ln $$
 
 nn 2_5_75
@@ -474,6 +537,12 @@ ln \lim_{x \to 0^{-}}{f(x)};
 ln \lim_{x \to 0^{+}}{f(x)}
 ln $$
 
+nn 3_7_37
+ln Calculate the derivative of the following function
+ln $$\
+ln y = \sin(6x^2 + 6x + 3)
+ln $$
+
 nn 2_5_49
 ln Evaluate
 ln $$\lim_{x \to \infty}{f(x)}$$
@@ -716,6 +785,14 @@ ln $$\
 ln f(w) = \sqrt{24w + 1}; a = 0, 1
 ln $$
 
+nn 3_7_24
+ln For the following composite function, find an inner function
+ln $u = g(x)$ and an outer function $y = f(u)$ such that
+ln $y = f(g(x))$. Then calculate $dy \over dx$.
+ln $$\
+ln y = \cos{x \over 5}
+ln $$
+
 nn 3_3_47
 ln Find the derivativeof the following function by first expanding
 ln the expression.
@@ -750,10 +827,29 @@ ln defined.
 
 co $ ../../problems/2_6_23
 
+nn 3_7_41
+ln $$\
+ln {dy \over dx} = -{
+ln 3
+ln \over
+ln (2x)^{1 \over 2}
+ln (5x - 3)^{3 \over 2}
+ln }
+ln $$
+
+co $ ../../problems/3_7_41
+
 nn 2_6_25
 ln The function is continuous on intervals $(-\infty, \infty)$.
 
 co $ ../../problems/2_6_25
+
+nn 3_7_43
+ln $$\
+ln {dy \over dx} = 14 \sec x(\sec x + \tan x)^{14}
+ln $$
+
+co $ ../../problems/3_7_43
 
 nn 3_2_11
 ln $f'(x) = 4$.
@@ -771,15 +867,42 @@ ln The limit does not exist.
 
 co $ ../../problems/2_3_68
 
+nn 3_5_57
+ln $$\
+ln y'' = 12\cos x - 6x\sin x
+ln $$
+
+co $ ../../problems/3_5_57
+
 nn 3_3_31
 ln $f'(x) = 8x^3 + 5$
 
 co $ ../../problems/3_3_31
 
+nn 3_7_93
+ln {\par \bf a.} $h(3) = 1, h'(3) = 12$
+ln {\par \bf b.} $y = 12x - 35$
+
+co $ ../../problems/3_7_93
+
+nn 3_5_59
+ln $$\
+ln y'' = 2e^x \cos x
+ln $$
+
+co $ ../../problems/3_5_59
+
 nn 2_3_34
 ln Solution: $-3$.
 
 co $ ../../problems/2_3_34
+
+nn 3_5_23
+ln $$\
+ln {dy \over dx} = 7\cos x - 2\sin x
+ln $$
+
+co $ ../../problems/3_5_23
 
 nn 2_5_25
 ln ${5 \over 7}$
@@ -799,10 +922,25 @@ ln right is $2\sqrt{3}$.
 
 co $ ../../problems/2_6_43
 
+nn 3_7_15
+ln $u = g(x) = 2x + 7, y = f(u) = u^8$
+ln $$\
+ln {dy \over dx} = 16(2x + 7)^7
+ln $$
+
+co $ ../../problems/3_7_15
+
 nn 3_1_11
 ln $m_{tan} = -6$
 
 co $ ../../problems/3_1_11
+
+nn 3_5_27
+ln $$\
+ln {dy \over dx} = \tan x + x\sec^2 x
+ln $$
+
+co $ ../../problems/3_5_27
 
 nn 3_3_38
 ln $g'(w) = e^w$
@@ -814,12 +952,31 @@ ln 0
 
 co $ ../../problems/2_5_28
 
+nn 3_7_17
+ln $u = g(x) = \sin(x), y = f(u) = u^{11}$
+ln $$\
+ln {dy \over dx} = 11\sin^{10} x \cos x
+ln $$
+
+co $ ../../problems/3_7_17
+
 nn 3_4_56
 ln $$\
 ln {dy \over dx} = {1 \over 2 \sqrt{x}}
 ln $$
 
 co $ ../../problems/3_4_56
+
+nn 3_7_63
+ln $$\
+ln {dy \over dx} = {
+ln 5x^4
+ln \over
+ln (5x + 1)^6
+ln }
+ln $$
+
+co $ ../../problems/3_7_63
 
 nn 2_5_75
 ln a. $(x \to \infty) \, f(x) = (x \to -\infty) \, f(x) = 1$.
@@ -834,6 +991,15 @@ nn 3_4_21
 ln $f'(x) = {18 \over (x + 2)^2}$
 
 co $ ../../problems/3_4_21
+
+nn 3_5_76
+ln {\par \bf a.}
+ln $x = {2\pi \over 3} + 2k\pi$ and
+ln ${4\pi \over 3} + 2k\pi$, where $k$ is any integer.
+ln {\par \bf b.}
+ln $x = {\pi \over 2} + k\pi$, where $k$ is any integer.
+
+co $ ../../problems/3_5_76
 
 nn 3_2_33
 ln $$\
@@ -902,11 +1068,27 @@ ln $f(x)$ is continuous where $x \ne 2$.
 
 co $ ../../problems/2_6_15
 
+nn 3_5_43
+ln $$\
+ln {dy \over dx} = {
+ln 5\sec^2 x - 5\csc^2 x
+ln }
+ln $$
+
+co $ ../../problems/3_5_43
+
 nn 3_2_37
 ln \par {\bf a.} $f'(x) = {5 \over 2\sqrt{5x + 6}}$
 ln \par {\bf b.} $y = {5 \over 8}x + {11 \over 4}$
 
 co $ ../../problems/3_2_37
+
+nn 3_5_44
+ln $$\
+ln {dy \over dx} = \sec^3 x (\sin^2 x + 1)
+ln $$
+
+co $ ../../problems/3_5_44
 
 nn 3_3_55
 ln \par The simplified expression is $y = \sqrt{x} + \sqrt{a}$.
@@ -950,6 +1132,27 @@ ln \par ${\lim (x \to 0^{+}) \, f(x) = -\infty}$
 
 co $ ../../problems/2_6_65
 
+nn 3_7_37
+ln $$\
+ln {dy \over dx} = \cos(6x^2 + 6x + 3)(12x + 6)
+ln $$
+
+co $ ../../problems/3_7_37
+
+nn 3_5_12
+ln $$\
+ln \lim_{x \to 0} {\sin 2x \over 3x} = {2 \ over 3}
+ln $$
+
+co $ ../../problems/3_5_12
+
+nn 3_5_13
+ln $$\
+ln \lim_{x \to 0} {\sin 9x \over \sin 2x} = {9 \over 2}
+ln $$
+
+co $ ../../problems/3_5_13
+
 nn 2_4_42
 ln $\infty$
 
@@ -960,12 +1163,44 @@ ln $({x \to \infty}){ g(x)} = ({x \to -\infty}) g(x) = 30$
 
 co $ ../../problems/2_5_15
 
+nn 3_5_61
+ln $$\
+ln y'' = 10 \csc^2 x \cot x
+ln $$
+
+co $ ../../problems/3_5_61
+
+nn 3_5_16
+ln $$\
+ln \lim_{\theta \to 0}{\cos^2\theta - 1 \over \theta} = 0
+ln $$
+
+co $ ../../problems/3_5_16
+
+nn 3_5_63
+ln $$\
+ln y'' = -4 \sin x \cos x
+ln $$
+
+co $ ../../problems/3_5_63
+
 nn 2_4_47
 ln The vertical symptote is $x = 4$. The limits at this symptote
 ln are $x \to 4^{+} = -\infty$, $x \to 4^{-} = \infty$, and
 ln the limit DNE for $x \to 4$.
 
 co $ ../../problems/2_4_47
+
+nn 3_5_19
+ln $$\
+ln \lim_{x \to -2}{
+ln \sin(x + 2)
+ln \over
+ln x^2 - 4
+ln } = - {1 \over 4}
+ln $$
+
+co $ ../../problems/3_5_19
 
 nn 2_3_40
 ln Solution: $-1 \over 4$.
@@ -989,6 +1224,18 @@ ln \par {\bf a.} $f'(x) = 6x + 5$
 ln \par {\bf b.} $f'(-1) = -1$, $f'(1) = 11$.
 
 co $ ../../problems/3_2_24
+
+nn 3_5_68
+ln $f(x) = \sin x, a = {\pi \over 4}$.
+ln $$\
+ln \lim_{h \to 0} {
+ln {sin({\pi \over 4} + h}) - {\sqrt{2} \over 2}
+ln \over
+ln h
+ln } = {\sqrt{2} \over 2}
+ln $$
+
+co $ ../../problems/3_5_68
 
 nn 3_2_25
 ln \par {\bf a.} $f'(x) = - {7 \over (x + 5)^2}$
@@ -1038,11 +1285,30 @@ ln $\lim_{x \to 26} {\sqrt{x} + \sqrt{26}} = 2 \sqrt{26}$
 
 co $ ../../problems/2_3_45
 
+nn 3_5_34
+ln $$\
+ln {dy \over dx} = {
+ln 10 \sin x - 10x
+ln \over
+ln 1 - \cos x
+ln }
+ln $$
+
+co $ ../../problems/3_5_34
+
 nn 3_2_28
 ln \par $f'(w) = {12 \over \sqrt{24w + 1}}$,
 ln $f'(0) = 12$, $f'(1) = {12 \over 5}$.
 
 co $ ../../problems/3_2_28
+
+nn 3_7_24
+ln $u = g(x) = {x \over 5}, y = f(u) = \cos u$
+ln $$\
+ln {dy \over dx} = -{1 \over 5} sin {x \over 5}
+ln $$
+
+co $ ../../problems/3_7_24
 
 nn 3_3_47
 ln $f'(x) = 45x^2 + 18x + 25$

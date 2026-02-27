@@ -1031,3 +1031,14 @@ is about the expectation.
 @09:25 cropping ma123 scratch scans #archiving #timelog:00:17:25
 
 @09:44 cropping ma123 card scans #archiving #timelog:00:05:00
+
+@17:01 punching in numbers for psets #timelog:00:08:34
+#! dz bu/ma123/study
+New entry type: 'g' for grind.
+I also added 's' to mark off sections (hw5 for now).
+---
+Going to add 'gt' for 'grind time' as well
+---
+thinking about it, 'g' might not need a timestamp if
+I give the date and time for the page in a 'gt' entry.
+Hmm...

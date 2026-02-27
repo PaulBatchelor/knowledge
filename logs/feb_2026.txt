@@ -1002,3 +1002,12 @@ which scratch pages where used for which problems.
 ---
 I also have times on these scratch pages too, which would
 be good data to have as well.
+
+@08:23 inputting in hw5 time data #timelog:00:11:59
+#! dz bu/ma123/hw
+This will go into the same file. I am separating fields
+with a space, and using the first value as a prefix. "p"
+means "problem scratch pages", and "t" is going to mean
+"scratch times (for problems)"
+---
+I also did "review", which I will designate as "r"

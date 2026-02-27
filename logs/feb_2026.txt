@@ -1025,3 +1025,5 @@ every single second. I'll say at 25 minutes per problem, 30
 problems is about 12.5 hours of work. And that's not counting
 doing the textbook problems. So yeah, 15-20 hours a week
 is about the expectation.
+
+@09:11 cropping and binning ink from last week #archiving #timelog:00:11:07

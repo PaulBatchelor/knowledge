@@ -1062,3 +1062,6 @@ just can't see it on the number line.
 
 @17:51 punching up practice midterm solutions #timelog:00:15:06
 #! dz $
+
+@18:09 discussion week 2 problems/solutions #timelog:00:04:24
+#! dz $

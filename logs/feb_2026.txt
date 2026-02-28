@@ -1047,3 +1047,9 @@ Hmm...
 
 @11:39 done with hw5. punching in data #timelog:00:05:40
 #! dz bu/ma123/hw
+
+@12:26 transcribing midterm problems #timelog:00:33:42
+#! dz bu/ma123/study
+
+@13:00 transcribing discussion problems #timelog:00:11:00
+#! dz $

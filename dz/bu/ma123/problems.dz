@@ -239,7 +239,7 @@ nn PM_1_10
 ln Use the following table to compute the derivatives below:
 ln \def\tablerule{}
 ln \def\col#1{\quad$#1$\quad}
-ln \vbox{\offinterlineskip
+ln %\vbox{\offinterlineskip
 ln \tablerule
 ln \halign{
 ln \col{#}\tabskip=0pt&\col{#}&\col{#}&\col{#}&\col{#}&\col{#}\cr
@@ -254,7 +254,7 @@ ln \tablerule
 ln g'(x)   & 2   & 10   & 20   & 15   & 20   \cr
 ln \tablerule
 ln }
-ln }
+ln %}
 ln {\par \bf a.} $(fg)'(2)$
 ln {\par \bf b.} $({f \over g})'(3)$
 ln {\par \bf c.} $(f(g(x)))'(2)$

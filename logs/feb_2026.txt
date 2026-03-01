@@ -1102,3 +1102,13 @@ go faster. A minor adjustment to the cropping process.
 
 @11:53 adding ma123 pset logs, updating problems dz #timelog:00:07:36
 #! dz bu/ma123/study
+
+@13:27 creating a curated problemset list
+#! dz $
+I went through all my problemset logs, and picked out
+the ones where I seemed to be consistently running into issues.
+Also tried to included ones with common mistakes I consistently
+make like sign.
+---
+Now, to create a program that can creat PDFS of the curated
+lists.

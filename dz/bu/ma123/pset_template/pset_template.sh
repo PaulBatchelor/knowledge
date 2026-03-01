@@ -17,3 +17,8 @@ echo "Generating $PSETS"
 sqlite3 a.db < generate_psets.sql | python3 psets.py $PSETS.tex $SOLUTIONS.tex
 pdftex $PSETS > /dev/null
 pdftex $SOLUTIONS > /dev/null
+
+echo "Generating curated $PSETS"
+sqlite3 a.db < generate_psets.sql | python3 curated.py | python3 psets.py $PSETS"_curated.tex" $SOLUTIONS"_curated.tex"
+pdftex $PSETS"_curated" > /dev/null
+pdftex $SOLUTIONS"_curated"  > /dev/null

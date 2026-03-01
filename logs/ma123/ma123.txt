@@ -819,7 +819,7 @@ Just a minor nit. I wrote $f(x)$ DNE at $x = 8$, though I think it might be more
 Just a few problems I remember having a difficult time with, which are now a bit easier.
 
 @17:33 another swing and a miss
-#! dz bu/ma123/problems/2_4_23
+#! dz bu/ma123/problems/3_4_23
 My result looked too messy here. I keep running into issues trying to join the results for the $t$ values. I get the sense that the problem really wants me to make things join together into one clean coefficient, but I'm not sure how to do it. I apparently struggle with powers and arithmetic.
 
 @17:37 another attempt, weird answer
@@ -835,7 +835,7 @@ This problem could be simplified and solved trivially using power laws, so I kne
 Instead of getting a derivative function (not the problem being asked), I computed the derived for $a = 2$. One less variable to think about. A much easier problem after that. The work is much simpler, and it shouldn't be too hard to go back and check my work.
 
 @18:35 mini breakthrough? possible answer?
-#! dz bu/ma123/problems/2_4_23
+#! dz bu/ma123/problems/3_4_23
 The big problem is, how to simplify the result of the derivative? Bringing out the exponential was correct, but my mini breakthrough was putting it in the form $Ae^t$, which is a form I immediately recognized from my DSP days, so it gave me the confidence to work it out in that format
 ---
 Second breakthrough. Getting a common factor of $\root 8 \of {t}$, and getting everything in the fraction, then realizing I could take out one. One of the terms basically evaluates to 1, and you get a much more reasonable result. It's still pretty complicated, so I'm wary about submitting it. Going to check it again at some point (well, tomorrow).

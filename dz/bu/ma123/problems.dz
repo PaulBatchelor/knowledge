@@ -1169,6 +1169,13 @@ ln a. $-\infty$. b. $-\infty$. c. $-\infty$
 
 co $ ../../problems/2_4_23
 
+nn 2_5_49
+ln $$\lim_{x \to \pm\infty}{f(x)} = {1 \over 3 + \sqrt{5}}$$.
+ln There is one horizontal asymptote
+ln at $y = {1 \over 3 + \sqrt{5}}$.
+
+co $ ../../problems/2_5_49
+
 nn PM_1_10
 ln {\par \bf a.} $(fg)'(2) = 40$
 ln {\par \bf b.} $({f \over g})'(3) = -105$
@@ -1577,6 +1584,16 @@ ln }
 ln $$
 
 co $ ../../problems/3_7_41
+
+nn 2_5_73
+ln $$\lim_{x \to \pm\infty} f(x) = 3$$
+ln \par There is one horiztonal asymptote at $y = 3$.
+ln \par The function has two vertical asymptotes. leftmost
+ln at $x = -2$, and rightmost at $x = 6$. The limits
+ln of the leftmost asymptote are $\lim\limits_{x \to a^-} f(x) = \infty$
+ln and $\lim\limits_{x to a^+} f(x) = \infty$.
+
+co $ ../../problems/2_5_73
 
 nn 3_7_43
 ln $$\

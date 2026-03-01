@@ -1099,3 +1099,6 @@ go faster. A minor adjustment to the cropping process.
 @10:55 cropping ma-123 scratch #archiving #timelog:00:09:58
 
 @11:06 cropping ma-123 cards #archiving #timelog:00:03:46
+
+@11:53 adding ma123 pset logs, updating problems dz #timelog:00:07:36
+#! dz bu/ma123/study

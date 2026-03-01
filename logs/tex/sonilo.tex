@@ -115,6 +115,7 @@
 {\noindent \bf 2026-02-15:} news\smallskip
 {\noindent \bf 2026-02-22:} buddy slots\smallskip
 {\noindent \bf 2026-02-24:} buddy find\smallskip
+{\noindent \bf 2026-02-26:} buddy find, buddy slots\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -970,6 +971,26 @@ Conclusion 2. the buddy slot allocator should ideally behave like C malloc/free.
 \par
 
 Conclusion 3. In order to get the buddy-slot free to work, the buddy system is probably going to need an operation that takes in a word address and returns a corresponding pair of values for the relative index and k-size. This operation should fail if one of the following happens: the address is not in the block range, the block address is unused, or it is not the start of a block.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:30: composition thought }\smallskip
+So, the buddy allocator doesn't care about the actual word address, it only deals with relative positions.
+\par
+
+For allocation, to turn it into a word, you need to bias it with a base address (the start of the block).
+\par
+
+Using an add stack operation, this is pretty straight forward. Push the block address, call buddy alloc, then add the result to the base address.
+\par
+
+So using this system, the buddy slot malloc function will not only push the input data for call to the buddy allocator, it will also push the base address associated with the system to be later added on to the result of the buddy.
+\par
+
+The buddy slot system would then need to be tasked with storing the base address of each instance of the buddy allocator. So when it comes to freeing a memory address, it would also need to do the task of taking a word address, and determining which buddy instance it belongs to, then turning it into a relative position by subtracting it from the associated base address.
+\par
+
+So, the input to a buddy find operation would just be a relative index 0-63, which would then retrieve a corresponding k value to pass into buddy free, assuming the index is valid (in bounds, currently active, start of a segment, etc).
 \par
 
 \xrdef{node15}
@@ -1953,6 +1974,26 @@ The AVAIL tags are flipped off as expected.
 \par
 
 I'm starting to believe that the avail bit and K might be enough of a check.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:30: composition thought }\smallskip
+So, the buddy allocator doesn't care about the actual word address, it only deals with relative positions.
+\par
+
+For allocation, to turn it into a word, you need to bias it with a base address (the start of the block).
+\par
+
+Using an add stack operation, this is pretty straight forward. Push the block address, call buddy alloc, then add the result to the base address.
+\par
+
+So using this system, the buddy slot malloc function will not only push the input data for call to the buddy allocator, it will also push the base address associated with the system to be later added on to the result of the buddy.
+\par
+
+The buddy slot system would then need to be tasked with storing the base address of each instance of the buddy allocator. So when it comes to freeing a memory address, it would also need to do the task of taking a word address, and determining which buddy instance it belongs to, then turning it into a relative position by subtracting it from the associated base address.
+\par
+
+So, the input to a buddy find operation would just be a relative index 0-63, which would then retrieve a corresponding k value to pass into buddy free, assuming the index is valid (in bounds, currently active, start of a segment, etc).
 \par
 
 \bye

@@ -58,3 +58,33 @@ temple. Just need to warp there and play the song.
 @2026-03-02 Day 183
 @09:53 punching in times, errata #timelog:00:05:19
 #! dz bu/ma123/study
+
+@15:06 hero bow, got to boss door #lotzmm #timelog:00:47:21
+
+@17:05 finished deku shrine, attempted weird butler quest? #lozmm #timelog:00:58:08
+
+@2026-03-03 Day 184. MA-123 midterm 1
+
+@08:54 bombers club, where to get bombs, mountain village #lozmm #timelog:00:45:00
+
+@16:45 lens of truth, bombs. how to get into goron door? #lozmm #timelog:01:03:15
+Where did the goron go? (I later figured out he was only there
+on the first day).
+
+@17:47 darmani mask, lullabye, rock sirioin
+
+@19:12 music staff notation thoughts #ink:09b #timelog:00:16:18
+I found myself suddenly interested in some of the affordances
+that western staff notation provides, and wanted to jot down
+some general things it can articuate. My thinking is: optimistically
+assume that western music notation is good at what it does,
+but what exactly is that? Can that be abstracted to other things
+(like gesture)? Could use compose with staff notation (by hand),
+for things like Gesture and computer music?
+
+@20:43 music staff notation thoughts (part 2) #ink:09b #timelog:00:12:48
+
+@2026-03-04 Day 185
+
+@08:46 snowfall temple initial entrace #lozmm #timelog:00:37:56
+Getting the hang of steering. I'm bad at it, but it is fun.

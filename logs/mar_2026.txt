@@ -200,3 +200,35 @@ I realized this while writing out an overview
 the allocation system bottoms-up. For allocation, the buddy slot allocator
 needs to find an instance where the power-of-2 k size is
 available. This should be a pretty quick check.
+
+@11:09 writing some initial ports code #timelog:01:12:07
+#! dz thoughts/projects/sonilo/tasks/ugen_ports
+I got through the easy bits, now it's on to whatever weird encoding
+scheme I'll use for representing constant values.
+---
+After some talks with Claude, I think I'm going to go with
+Q16.13 with a sign bit.
+---
+I also remebered that I needed a way to convert a port back
+to a word.
+---
+q to f, f to q made. untested, but hopefully correct (or easily correctable).
+Next, flesh out the port read/write operations.
+---
+now to serialize a port. at that point, I think that's a good
+chunk of functionality implemented, and probably enough for
+the needs of sonilo.
+---
+Ah, subtracting two arbitray memory addresses is undefined
+behavior in C. Should have guessed.
+---
+The block data is going to need to store the address in
+sonilo memory space. Re-adjusted the union to store both.
+A little more overhead. Ah well.
+---
+Core functionality is coded out, but untested. Since I can
+serialize/deserialize this data, I should be able to build
+some unit tests using my test harness. I'm wondering how
+I should handle writing constants in my test harness language
+(which will eventually inform my communication protocol).
+Blocks should be a little more straightforward.

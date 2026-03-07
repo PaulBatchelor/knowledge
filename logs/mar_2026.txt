@@ -88,3 +88,112 @@ for things like Gesture and computer music?
 
 @08:46 snowfall temple initial entrace #lozmm #timelog:00:37:56
 Getting the hang of steering. I'm bad at it, but it is fun.
+
+@2026-03-05 Day 186
+
+@2026-03-06 Day 187
+
+@2026-03-07 Day 188
+@09:34 sonilo review: buddy slots and buddy find. it's been over a week #timelog:00:14:35
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+#! dz thoughts/projects/sonilo/news
+I think the last Big Thought I had here was about the behavior
+of this "buddy slot" system for managing multiple blocks of
+memory using the buddy system. Writing new operations can
+compose with the existing buddy slot operations was something
+I came up with weeks ago, but the addition to this is the
+concept of a base address that gets added to the output of
+a buddy system (which only thinks about memory addresses
+in terms of relative word offsets).
+---
+The addition of base address paints a clearer picture for
+what the responsibilities of this so-called "buddy-slot"
+system. This allocator needs to be provide a interface similar
+to malloc/free. To do this, the buddy slot system will need
+to handle allocating and freeing,
+blocks from the global block pool, as well as manage the
+state for some number of buddy system allocators. In addition
+to the memory that it allocates for other things to use, it
+will also allocate temporary memory. There should be a nice
+way to return this memory back to the global block pool when
+the allocator is done being used (allocated segments will
+be unable to be recycled until the entire block is freed).
+
+@09:59 reviewing some sonilo tasks #timelog:00:47:58
+#! dz thoughts/projects/sonilo/news
+
+@09:59 initial thoughts on an API
+#! dz thoughts/projects/sonilo/tasks/ugen_ports
+For a DSP block, it might be a good idea to write operations
+that convert a word to a C struct. The DSP could then more
+efficiently read/write from this C struct. This would mean
+doing a deserializing/unmarshaling operation every DSP block
+call for every port. Not the most efficient thing, but it
+could be worse.
+---
+Alternatively, one could imagine a scenario where
+the port in question is serialized once, and then this
+representation is used. Not really interested in this approach
+right now though.
+---
+Anyways, this C struct would contain a union and a type flag.
+The types needed would be a constant (floating point value) and
+block (pointer to floating point values).
+---
+This port data type would have read/write operations associated
+with them. The internal behavior of those operations would
+change based on the type.
+
+@10:15 check-in
+#! dz thoughts/projects/sonilo/tasks/allocator
+Here's the vision of memory allocation in Sonilo as it stands
+today.
+---
+Sonilo is used a fixed-size region of memory that is $2^{16}$
+32-bit words. These words are formed into 64-word groupings
+known as blocks.
+---
+In theory, there are 1024 available blocks, and these
+can be addressed in a 10-bit namespace. A free list is used
+to manage these blocks (this takes up some memory). An additional
+operation is used to convert this 10-bit block address to a
+16-bit word address. This operation skips over the blocks used
+for the free list.
+---
+The name of the game after this is to imagine structures which
+can fit on a block. Blocks can be used as arrays which can
+be used as stacks. A block can be used as a zero page for
+storing temporary information. There is also the notion of
+a "bit set", a data structure designed to be used to hold
+a set of block addresses, with the idea that allocated blocks
+could be grouped together and managed. Blocks are also the
+building block for the audio rendering system. A block can
+be treated as a 64-sample block of audio in a block-based
+rendering system.
+---
+The next level of concern is allocating regions of memory
+that are smaller than a block, which is a requirement for most DSP
+algorithms that need some kind of state. For this, a block
+of memory is divided up using a buddy system. This allows allocating
+a power-of-two chunk of memory inside of a block. The buddy
+system implemented in Sonilo uses word 6-bit word offsets.
+Presumably, these values would be added to some base word
+address of a block.
+---
+Another system (not yet built at this time) is built on top
+of the buddy system, known more or less
+as the "buddy slot" allocator. The goal of this abstraction
+is to provide a interface similar for malloc/free for allocating
+small regions of memory. This allocator manages
+blocks from the free list and instances of buddy allocators.
+An allocator would take some memory request, and turn that
+into arguments for an instance of a buddy allocator.
+The free operation would take a word address, and attempt to find
+a buddy instance associated with it.
+
+@10:50 another operation: check of k-size is available
+#! dz thoughts/projects/sonilo/tasks/buddy_find
+I realized this while writing out an overview
+the allocation system bottoms-up. For allocation, the buddy slot allocator
+needs to find an instance where the power-of-2 k size is
+available. This should be a pretty quick check.

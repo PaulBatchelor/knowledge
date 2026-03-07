@@ -135,7 +135,7 @@ an "allocator" is going to be. I will articulate what
 I know now.
 ---
 Memory management is a layered ordeal. The memory to be
-managed is $2^16$ words of 32-bit. Memory is broken up
+managed is $2^{16}$ words of 32-bit. Memory is broken up
 into chunks of 64-words, called blocks. Free blocks are
 maintained on a stack. Allocation is a matter of popping
 the block, and pushing the block back is freeing the memory.

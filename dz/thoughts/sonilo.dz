@@ -162,3 +162,9 @@ ln address to a pair (p, k), where p is the local index
 ln relative to the block, and k and the $2^k$ size of the block.
 co tasks/buddy_find tasks/buddy_slots
 cr such an operation is needed for a "bsfree" operation
+nn tasks/context
+ln create a base "context" for managing blocks. most likely,
+ln a combination of a zero page, some bitsets, a free list, and
+ln a stack. the context will provide a baseline layer of abstraction
+ln that new subroutines can sit on top of.
+co tasks/context tasks/allocator

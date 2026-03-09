@@ -306,3 +306,23 @@ of the stack on the zero page (it would be fixed).
 
 @2026-03-09 Day 190
 @11:43 logs #timelog:00:17:57
+
+@15:37 task created
+#! dz thoughts/projects/sonilo/tasks/context
+At this point, I think this is a pretty well defined task
+and I can start taking a stab at it.
+
+@15:38 what's left here?
+#! dz thoughts/projects/sonilo/tasks/ugen_ports
+I'm tempted just to merge this in and call it a day.
+---
+I don't actually have an established way to enter in
+constants in my test suite code. Might be important down
+the line when I start thinking about my sonilo command language
+that will work inside Konilo.
+---
+There are no unit tests for this. That might be okay? There's
+not a lot to test here, and there's going to need to be other
+components built out for this to actually work.
+---
+Leaving this branch open for now.

@@ -54,6 +54,8 @@
 \smallskip
 \noindent butlp \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node23}
 \smallskip
+\noindent context \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node39}
+\smallskip
 \noindent docgen \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node13}
 \smallskip
 \noindent fix block navigation \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node28}
@@ -142,6 +144,8 @@
 {\noindent \bf 2026-02-22:} buddy slots\smallskip
 {\noindent \bf 2026-02-24:} buddy find\smallskip
 {\noindent \bf 2026-02-26:} buddy find, buddy slots\smallskip
+{\noindent \bf 2026-03-07:} news, allocator, buddy find, buddy slots, ugen ports\smallskip
+{\noindent \bf 2026-03-08:} context\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -853,7 +857,7 @@ got caught up with printing it to a PDF
 since writing this, I've gotten a more formed idea of what an "allocator" is going to be. I will articulate what I know now.
 \par
 
-Memory management is a layered ordeal. The memory to be managed is $2^16$ words of 32-bit. Memory is broken up into chunks of 64-words, called blocks. Free blocks are maintained on a stack. Allocation is a matter of popping the block, and pushing the block back is freeing the memory.
+Memory management is a layered ordeal. The memory to be managed is $2^{16}$ words of 32-bit. Memory is broken up into chunks of 64-words, called blocks. Free blocks are maintained on a stack. Allocation is a matter of popping the block, and pushing the block back is freeing the memory.
 \par
 
 Entire blocks are typically used as audio buffers to store signals. Hence the 64 size, which is a pretty common block size for audio systems.
@@ -866,6 +870,49 @@ Multiple buddy allocators are used together to form the main allocator used for 
 \par
 
 When a block is retrieved from the block stack, it is stored in a set of blocks. This makes it easier to free memory later, because it frees everything at once.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-07}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:15: check-in}\smallskip
+Here's the vision of memory allocation in Sonilo as it stands today.
+\par
+
+Sonilo is used a fixed-size region of memory that is $2^{16}$ 32-bit words. These words are formed into 64-word groupings known as blocks.
+\par
+
+In theory, there are 1024 available blocks, and these can be addressed in a 10-bit namespace. A free list is used to manage these blocks (this takes up some memory). An additional operation is used to convert this 10-bit block address to a 16-bit word address. This operation skips over the blocks used for the free list.
+\par
+
+The name of the game after this is to imagine structures which can fit on a block. Blocks can be used as arrays which can be used as stacks. A block can be used as a zero page for storing temporary information. There is also the notion of a "bit set", a data structure designed to be used to hold a set of block addresses, with the idea that allocated blocks could be grouped together and managed. Blocks are also the building block for the audio rendering system. A block can be treated as a 64-sample block of audio in a block-based rendering system.
+\par
+
+The next level of concern is allocating regions of memory that are smaller than a block, which is a requirement for most DSP algorithms that need some kind of state. For this, a block of memory is divided up using a buddy system. This allows allocating a power-of-two chunk of memory inside of a block. The buddy system implemented in Sonilo uses word 6-bit word offsets. Presumably, these values would be added to some base word address of a block.
+\par
+
+Another system (not yet built at this time) is built on top of the buddy system, known more or less as the "buddy slot" allocator. The goal of this abstraction is to provide a interface similar for malloc/free for allocating small regions of memory. This allocator manages blocks from the free list and instances of buddy allocators. An allocator would take some memory request, and turn that into arguments for an instance of a buddy allocator. The free operation would take a word address, and attempt to find a buddy instance associated with it.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:02: allocator abstraction outline}\smallskip
+I'm starting to glue things together into a coherent allocator system for small chunks of memory, built on top of the block allocation system.
+\par
+
+At the end of this, I realized I needed to focus on making the thing in charge of allocating blocks a little bit better.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:41: memstack: a convenient interface for managing blocks}\smallskip
+Working name "memstack". I realized that allocating blocks relied on a few components working together, and wanted to work that out a bit better.
+\par
+
+It's not enough to be able to allocate a block and free that block. There needs to be a way to allocate many blocks, and then free some or all of those blocks. At the bare minimum, there needs to be a distinction between blocks that have an indefinite lifetime (such as those in a patch), and those that have a temporary lifetime (scaffolding used to construct patches). Also, collections of blocks should be able to be freed in one bulk operation, not individually.
+\par
+
+The "memstack" interface consists of a "free list" (what I previously referred to as a block list), a set data structure (implemented using bitmaps) to keep track of blocks being used, and a stack data structure. Two sets are used, a "main" set used for persistent memory, and "temp" set used for initial scaffolding. 4 individual components, each with memory addresses, that can be stored in 2 words.
+\par
+
+Allocating blocks is a matter of allocating a block and storing it in a set. You can do this in a single operation, where the input word contains the address of the free list and the address of the set to store the block address in.
+\par
+
+Switching between the temp set and the main set could be generalized as a swap operation between two words, or a double word if the words are continguous. So, I'm thinking about building some general swap operations to help with this task.
 \par
 
 \xrdef{node13}
@@ -1017,6 +1064,14 @@ The buddy slot system would then need to be tasked with storing the base address
 \par
 
 So, the input to a buddy find operation would just be a relative index 0-63, which would then retrieve a corresponding k value to pass into buddy free, assuming the index is valid (in bounds, currently active, start of a segment, etc).
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-07}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:34: sonilo review: buddy slots and buddy find. it's been over a week}\smallskip
+I think the last Big Thought I had here was about the behavior of this "buddy slot" system for managing multiple blocks of memory using the buddy system. Writing new operations can compose with the existing buddy slot operations was something I came up with weeks ago, but the addition to this is the concept of a base address that gets added to the output of a buddy system (which only thinks about memory addresses in terms of relative word offsets).
+\par
+
+The addition of base address paints a clearer picture for what the responsibilities of this so-called "buddy-slot" system. This allocator needs to be provide a interface similar to malloc/free. To do this, the buddy slot system will need to handle allocating and freeing, blocks from the global block pool, as well as manage the state for some number of buddy system allocators. In addition to the memory that it allocates for other things to use, it will also allocate temporary memory. There should be a nice way to return this memory back to the global block pool when the allocator is done being used (allocated segments will be unable to be recycled until the entire block is freed).
 \par
 
 \xrdef{node15}
@@ -1839,6 +1894,14 @@ Block navigation fixes can wait.
 
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-02-15}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:28: adding block pool task}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-07}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:34: sonilo review: buddy slots and buddy find. it's been over a week}\smallskip
+I think the last Big Thought I had here was about the behavior of this "buddy slot" system for managing multiple blocks of memory using the buddy system. Writing new operations can compose with the existing buddy slot operations was something I came up with weeks ago, but the addition to this is the concept of a base address that gets added to the output of a buddy system (which only thinks about memory addresses in terms of relative word offsets).
+\par
+
+The addition of base address paints a clearer picture for what the responsibilities of this so-called "buddy-slot" system. This allocator needs to be provide a interface similar to malloc/free. To do this, the buddy slot system will need to handle allocating and freeing, blocks from the global block pool, as well as manage the state for some number of buddy system allocators. In addition to the memory that it allocates for other things to use, it will also allocate temporary memory. There should be a nice way to return this memory back to the global block pool when the allocator is done being used (allocated segments will be unable to be recycled until the entire block is freed).
+\par
+
 \xrdef{node30}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
 
@@ -2030,6 +2093,45 @@ Another type of port is a constant, which is encoded in 30 bits. The format I'm 
 \par
 
 Unit generators will call DSP routines, and so it's probably a good idea to turn a port into an equivalent C-struct. Here, the constants would be converted into C floats, and the word addresses would be turned into pointers.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-07}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:59: initial thoughts on an API}\smallskip
+For a DSP block, it might be a good idea to write operations that convert a word to a C struct. The DSP could then more efficiently read/write from this C struct. This would mean doing a deserializing/unmarshaling operation every DSP block call for every port. Not the most efficient thing, but it could be worse.
+\par
+
+Alternatively, one could imagine a scenario where the port in question is serialized once, and then this representation is used. Not really interested in this approach right now though.
+\par
+
+Anyways, this C struct would contain a union and a type flag. The types needed would be a constant (floating point value) and block (pointer to floating point values).
+\par
+
+This port data type would have read/write operations associated with them. The internal behavior of those operations would change based on the type.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:09: writing some initial ports code}\smallskip
+I got through the easy bits, now it's on to whatever weird encoding scheme I'll use for representing constant values.
+\par
+
+After some talks with Claude, I think I'm going to go with Q16.13 with a sign bit.
+\par
+
+I also remebered that I needed a way to convert a port back to a word.
+\par
+
+q to f, f to q made. untested, but hopefully correct (or easily correctable). Next, flesh out the port read/write operations.
+\par
+
+now to serialize a port. at that point, I think that's a good chunk of functionality implemented, and probably enough for the needs of sonilo.
+\par
+
+Ah, subtracting two arbitray memory addresses is undefined behavior in C. Should have guessed.
+\par
+
+The block data is going to need to store the address in sonilo memory space. Re-adjusted the union to store both. A little more overhead. Ah well.
+\par
+
+Core functionality is coded out, but untested. Since I can serialize/deserialize this data, I should be able to build some unit tests using my test harness. I'm wondering how I should handle writing constants in my test harness language (which will eventually inform my communication protocol). Blocks should be a little more straightforward.
 \par
 
 \xrdef{node34}
@@ -2403,6 +2505,24 @@ The buddy slot system would then need to be tasked with storing the base address
 \par
 
 So, the input to a buddy find operation would just be a relative index 0-63, which would then retrieve a corresponding k value to pass into buddy free, assuming the index is valid (in bounds, currently active, start of a segment, etc).
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-07}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:50: another operation: check of k-size is available}\smallskip
+I realized this while writing out an overview the allocation system bottoms-up. For allocation, the buddy slot allocator needs to find an instance where the power-of-2 k size is available. This should be a pretty quick check.
+\par
+
+\xrdef{node39}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont context}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-08}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:45: context}\smallskip
+building off of my "memstack" concept, I tried to return to this idea I had months ago about a core "context" object in charge of allocating memory.
+\par
+
+A context is a zero page, and on the first few words of the zero page contain information about a free list, some sets keeping track of blocks used, and a stack structure used to share information between operations.
+\par
+
+I was thinking it would make sense to have operations that could read contents of the zero page and push them directly to the stack, since in this case we would know the address of the stack on the zero page (it would be fixed).
 \par
 
 \bye

@@ -200,7 +200,7 @@ into arguments for an instance of a buddy allocator.
 The free operation would take a word address, and attempt to find
 a buddy instance associated with it.
 
-@10:50 another operation: check of k-size is available
+@10:50 another operation: check if k-size is available
 #! dz thoughts/projects/sonilo/tasks/buddy_find
 I realized this while writing out an overview
 the allocation system bottoms-up. For allocation, the buddy slot allocator
@@ -342,3 +342,17 @@ are arbitrary, and the underlying components are already
 being tested.
 ---
 I think I'm just going to merge it.
+
+@18:07 added kavail and klen operations #timelog:00:33:18
+#! dz thoughts/projects/sonilo/tasks/buddy_find
+"klen" is used to determine the size of a particular k-list.
+"kavail" is used to determine if the k size is available,
+which works by checking the length of all the k lists that
+are the supplied k value or higher.
+
+@18:44 wrapping this test code into my main test suite #timelog:00:35:03
+#! dz $
+It just seems a shame to throw away this test code entirely.
+---
+It's in. The test passes. The TeX output still wants to build.
+Merging it into main. I think we're done here.

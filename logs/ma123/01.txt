@@ -179,7 +179,7 @@ This is identical to 3.3.55? oops. Can you apply rules of differentiation withou
 You're just computing the derivative on itself 3 times. Quotient law, power law, then constant multiple law.
 
 @11:33 initial thoughts
-#! p 3.4.63
+#! p 3.4.73
 First and second order derivatives on a rational polynomial expression. This doesn't seem too bad...
 
 @10:52 initial thoughts on hw4 #timelog:00:36:59

@@ -7,6 +7,18 @@ ln $$\
 ln y = 5 \cot x
 ln $$
 
+nn 3_9_73
+ln Differentiate:
+ln $$\
+ln f(x) = \ln \bigg[{
+ln (5x + 7)(x + 3)^2
+ln \over
+ln (1 - 9x)^3
+ln }
+ln \bigg]
+ln $$
+ln \bye
+
 nn 3_4_23
 ln Find the derivative of the following function.
 ln $$\
@@ -92,6 +104,13 @@ ln of continuity is $f$ continuous from the left or continuous
 ln from the right?
 ln $$f(x) = \sqrt{3x^2 - 36}$$
 
+nn 3_8_15
+ln {\par \bf a.} Use implicit differentiation to find ${dy \over dx}$.
+ln {\par \bf b.} Find the slope of the curve at the given point.
+ln $$\
+ln y^4 = x; (81, 3)
+ln $$
+
 nn 2_6_61
 ln Determine the interval(s) on which the function
 ln $f(x) = \csc x$
@@ -104,6 +123,32 @@ ln $$\
 ln \lim_{x \to -{2\pi}^{-}}{f(x)}
 ln $$
 
+nn 3_8_31
+ln Use implicit differentiation to find ${dy \over dx}$.
+ln $$\
+ln 3 \sin xy = 3x + 8y
+ln $$
+
+nn 3_8_18
+ln {\par \bf a.} Use implicit differentiation to find ${dy \over dx}$.
+ln {\par \bf b.} Find the slope of the curve at the given point.
+ln $$\
+ln 4\sqrt{x} - 3\sqrt{y} = 5; (4, 1)
+ln $$
+
+nn 3_8_32
+ln Use implicit differentiation to find ${dy \over dx}$.
+ln $$\
+ln e^{xy} = 7y
+ln $$
+
+nn 3_8_19
+ln {\par \bf a.} Use implicit differentiation to find ${dy \over dx}$.
+ln {\par \bf b.} Find the slope of the curve at the given point.
+ln $$\
+ln \cos 4 y = x; (0, {\pi \over 8})
+ln $$
+
 nn 2_5_25
 ln Determine the following limit:
 ln $$\
@@ -112,6 +157,12 @@ ln 15x^3 + 8x^2 - 8x
 ln \over
 ln 21x^3 + 8x^2 + 4x + 5
 ln }
+ln $$
+
+nn 3_8_34
+ln Use implicit differentiation to find ${dy \over dx}$.
+ln $$\
+ln 3y = {x + 5 \over y - 5}
 ln $$
 
 nn 2_6_65
@@ -412,6 +463,16 @@ ln Consider the function $F(x) = {f(x) \over g(x)}$ with $g(a) = 0$.
 ln Does $F$ necessarily have a vertical asymptote at $x = a$?
 ln Explain your reasoning.
 
+nn 3_9_23
+ln Find the derivative:
+ln $$\
+ln {d \over dx}\bigg[
+ln \ln \bigg(
+ln {2x + 3 \over 2x - 3}
+ln \bigg)
+ln \bigg]
+ln $$
+
 nn 3_5_12
 ln Use the limit
 ln $\lim\limits_{x \to 0} {\sin x \over x} = 1$
@@ -449,6 +510,12 @@ ln \par {\bf a.} Calculate $h(3)$ and $h'(3)$.
 ln \par {\bf b.} Deteremine an equation of the line tangent
 ln to the graph of $h$ at the point on the graph where $x = 3$.
 
+nn 3_9_27
+ln Find the derivative of the following function:
+ln $$\
+ln y = x^3(2 - \ln x^3)
+ln $$
+
 nn 3_5_16
 ln Use the limit
 ln $\lim\limits_{x \to 0} {\sin x \over x} = 1$
@@ -461,6 +528,12 @@ ln $$
 nn 3_7_95
 ln Find the equation of the line tangent to $y = e^{3x}$ at
 ln $x = {1 \over 3}\ln 2$.
+
+nn 3_9_43
+ln Find the derivative of:
+ln $$\
+ln x^3 9^x
+ln $$
 
 nn 3_5_19
 ln Use the limit
@@ -498,6 +571,16 @@ ln the slope of the line tangent to graph of $f$ at $P$.
 ln \par {\bf b.} Determine an equation of the tangent line at $P$.
 ln $$\
 ln f(x) = 4 - 4x^2; P(0, 4)
+ln $$
+
+nn 3_9_47
+ln Find the derivative of the following function:
+ln $$\
+ln f(x) = {
+ln 14^x
+ln \over
+ln {14x + 1}
+ln }
 ln $$
 
 nn PM_1_4_2
@@ -654,6 +737,13 @@ ln for all non-zero values of $x$. Evaluate
 ln $$\lim_{x \to \infty}{g(x)}$$
 ln and
 ln $$\lim_{x \to -\infty}{g(x)}$$
+
+nn 3_8_24
+ln {\par \bf a.} Use implicit differentiation to find ${dy \over dx}$.
+ln {\par \bf b.} Find the slope of the curve at the given point.
+ln $$\
+ln x^{3/4} + y^{3/4} = 2; (1, 1)
+ln $$
 
 nn 2_5_7
 ln Determine the following limit:
@@ -910,6 +1000,12 @@ ln $$
 nn 3_2_33
 ln Evaluate ${dy \over dx}$ and ${dy \over dx}\big|_{x = 3}$
 ln if $y = {x + 8 \over x + 1}$.
+
+nn 3_9_17
+ln Find the derivative of:
+ln $$\
+ln y = \ln (8x^2 + 1)
+ln $$
 
 nn 3_2_35
 ln \par {\bf a.} Find the derivative function $f'$ for the
@@ -1226,7 +1322,6 @@ ln \over
 ln \cos(\theta)
 ln } = -2
 ln $$
-ln \bye
 
 co $ ../../problems/DS_2_3
 
@@ -1295,7 +1390,7 @@ co $ ../../problems/3_2_26
 
 nn 3_5_12
 ln $$\
-ln \lim_{x \to 0} {\sin 2x \over 3x} = {2 \ over 3}
+ln \lim_{x \to 0} {\sin 2x \over 3x} = {2 \over 3}
 ln $$
 
 co $ ../../problems/3_5_12
@@ -1506,7 +1601,7 @@ ln $$
 co $ ../../problems/3_4_56
 
 nn 3_4_70
-ln $f'(x) = - {6 \over x^7}$, $f''(x) = -{42 \over x^8}$,
+ln $f'(x) = - {6 \over x^7}$, $f''(x) = {42 \over x^8}$,
 ln $f'''(x) = -{336 \over x^9}$
 
 co $ ../../problems/3_4_70

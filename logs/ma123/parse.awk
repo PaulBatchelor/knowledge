@@ -2,6 +2,7 @@
 BEGIN {
     chapters["2_5"] = "02_limits/05_limits_at_infinity"
     chapters["2_4"] = "02_limits/04_infinite_limits"
+    chapters["3_2"] = "03_derivatives/02_derivative_as_function"
 }
 /^#! p/ {
     #print $0

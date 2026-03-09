@@ -516,13 +516,13 @@ okay now the voyager split keyboard works this is what I call progress!
 
 @16:54 example 1: computing a derivative
 #! dz calculus/pearson/examples/3_2_01
-#! dz calculus/pearson/toc/
+#! dz calculus/pearson/toc/03_derivatives/02_derivative_as_function
 Worked out the example myself without looking
 at the steps and got the same answer. Mostly algebra.
 
 @17:02 ex 2 a derivative calculation
 #! dz calculus/pearson/examples/3_2_02
-#! dz calculus/pearson/toc/
+#! dz calculus/pearson/toc/03_derivatives/02_derivative_as_function
 Derivative math was fine. complex conjugate trick. getting the equation of the line was still a little
 shaky for me. First, I don't remember that equation yet, but it looks like the sort of thing I can build some intuition for. there's a lot of stuff in calculus where there's a correlation between $|x - a|$ and $|f(x) - f(a)$, and I see some of that in the equation.
 ---
@@ -530,27 +530,27 @@ The derivative needs to be computed before plugging it into the equation. There 
 
 @17:19 ex 3 another derivative calculation
 #! dz calculus/pearson/examples/3_2_03
-#! dz calculus/pearson/toc/
+#! dz calculus/pearson/toc/03_derivatives/02_derivative_as_function
 I actually did the alegebra correctly for this one,
 but I didn't trust my work at the second to last step because it looked wrong.
 
 @17:30 ex 4 graph of the derivative
 #! dz calculus/pearson/examples/3_2_04
-#! dz calculus/pearson/toc/
+#! dz calculus/pearson/toc/03_derivatives/02_derivative_as_function
 It's a graph one, and you can eyeball it and see that
 the graph of the derivative of these lines turns into a step pattern where each step is the slop of that line segment.
 
 @17:33 graph problem, too tired to look at
 #! dz calculus/pearson/examples/3_2_05
-#! dz calculus/pearson/toc/
+#! dz calculus/pearson/toc/03_derivatives/02_derivative_as_function
 
 @17:34 another graph problem, too tired to look at
 #! dz calculus/pearson/examples/3_2_06
-#! dz calculus/pearson/toc/
+#! dz calculus/pearson/toc/03_derivatives/02_derivative_as_function
 
 @17:35 sneaking a peak
 #! dz calculus/pearson/examples/3_2_07
-#! dz calculus/pearson/toc/
+#! dz calculus/pearson/toc/03_derivatives/02_derivative_as_function
 part A (find the points that aren't continuous) and part B (find the points that aren't differentiable) are straightforward and basically review.
 ---
 I take that back... B has a gotcha. There's a "cusp" at point 0 which makes it not differentiable.
@@ -668,7 +668,7 @@ This is identical to 3.3.55? oops. Can you apply rules of differentiation withou
 You're just computing the derivative on itself 3 times. Quotient law, power law, then constant multiple law.
 
 @11:33 initial thoughts
-#! dz bu/ma123/problems/3_4_63
+#! dz bu/ma123/problems/3_4_73
 First and second order derivatives on a rational polynomial expression. This doesn't seem too bad...
 
 @10:52 initial thoughts on hw4 #timelog:00:36:59
@@ -963,7 +963,7 @@ I wasn't sure which form to put the answer in, which was a pattern I ran into wi
 I was able to use the product rule and the chain rule to verify the answer.
 
 @15:57 good thing I remembered trig function values
-#! dz bu/ma123/problems/2_5_68
+#! dz bu/ma123/problems/3_5_68
 First, it was clear enough to see the definition of a derivitive in terms of limits. Second, I remembered the value of $\sin(\pi \over 4)$ because I was brushing up on this in time for the exam.
 
 @16:00 forgot how some trig values
@@ -985,7 +985,7 @@ just composing functions with chain rule
 It looked kinda funny shoving in a whole polynomial into the answer, but that was right.
 
 @16:06 this was an ugly problem
-#! dz bu/ma123/problems/3_7_43
+#! dz bu/ma123/problems/3_7_41
 I did not have the confidence to submit my answer, and I was right to wait because it might have been wrong. The answer is not pretty. There's lots of fractional exponents, and there's not a lot that simplifies.
 ---
 The process has a lot of small easy to mess up mistakes, and you need to treat your exponents carefully.
@@ -1040,8 +1040,8 @@ I took the derivative wrong here for cotangent. it's $- \csc^2$, not $\csc$. The
 #! dz bu/ma123/problems/3_5_76
 This problem took time for me. I'm not good at remembering the angle values on the unit circle, especially when it requires moving around the various quadrants. top righthand quadrant is okay. 
 
-@11:30 I screwed up the arithmetic #scratch:02m
-#! dz bu/ma123/problems/PM_3_1_3
+@11:30 I screwed up the arithmetic (part c) #scratch:02m
+#! dz bu/ma123/problems/PM_1_3
 One of these was a sign issue. I think I lost track of which operation was which here. Messy handwriting?
 ---
 In my attempt to move quickly, I enthusiastically dropped a term that I was supposed to add in the equation. I was so worked up trying to figure out 32 times 5 (I wrote it out long form because I didn't trust my head). Had I added it, I would have gotten it right. Once again, this was a "last mile" mistake. Everything in this problem would have been right.

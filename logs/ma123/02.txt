@@ -170,7 +170,7 @@ I wasn't sure which form to put the answer in, which was a pattern I ran into wi
 I was able to use the product rule and the chain rule to verify the answer.
 
 @15:57 good thing I remembered trig function values
-#! p 2.5.68
+#! p 3.5.68
 First, it was clear enough to see the definition of a derivitive in terms of limits. Second, I remembered the value of $\sin(\pi \over 4)$ because I was brushing up on this in time for the exam.
 
 @16:00 forgot how some trig values
@@ -247,8 +247,8 @@ I took the derivative wrong here for cotangent. it's $- \csc^2$, not $\csc$. The
 #! p 3.5.76
 This problem took time for me. I'm not good at remembering the angle values on the unit circle, especially when it requires moving around the various quadrants. top righthand quadrant is okay. 
 
-@11:30 I screwed up the arithmetic #scratch:02m
-#! p PM.3.1.3
+@11:30 I screwed up the arithmetic (part c) #scratch:02m
+#! p PM.1.3
 One of these was a sign issue. I think I lost track of which operation was which here. Messy handwriting?
 ---
 In my attempt to move quickly, I enthusiastically dropped a term that I was supposed to add in the equation. I was so worked up trying to figure out 32 times 5 (I wrote it out long form because I didn't trust my head). Had I added it, I would have gotten it right. Once again, this was a "last mile" mistake. Everything in this problem would have been right.

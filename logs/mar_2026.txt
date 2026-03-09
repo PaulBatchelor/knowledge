@@ -238,3 +238,71 @@ some unit tests using my test harness. I'm wondering how
 I should handle writing constants in my test harness language
 (which will eventually inform my communication protocol).
 Blocks should be a little more straightforward.
+
+@15:02 allocator abstraction outline #ink:09h #timelog:01:15:35
+#! dz thoughts/projects/sonilo/tasks/allocator
+I'm starting to glue things together into a coherent allocator
+system for small chunks of memory, built on top of the block
+allocation system.
+---
+At the end of this, I realized I needed to focus on making the
+thing in charge of allocating blocks a little bit better.
+
+@20:41 memstack: a convenient interface for managing blocks #ink:09i #timelog:00:51:04
+#! dz thoughts/projects/sonilo/tasks/allocator
+Working name "memstack". I realized that allocating blocks
+relied on a few components working together, and wanted
+to work that out a bit better.
+---
+It's not enough to be able to allocate a block and free that
+block. There needs to be a way to allocate many blocks, and
+then free some or all of those blocks. At the bare minimum,
+there needs to be a distinction between blocks that have
+an indefinite lifetime (such as those in a patch), and those
+that have a temporary lifetime (scaffolding used to construct
+patches). Also, collections of blocks should be able to be
+freed in one bulk operation, not individually.
+---
+The "memstack" interface consists of a "free list" (what
+I previously referred to as a block list), a set data structure
+(implemented using bitmaps) to keep track of blocks being used,
+and a stack data structure. Two sets are used, a "main" set used
+for persistent memory, and "temp" set used for initial scaffolding.
+4 individual components, each with memory addresses, that
+can be stored in 2 words.
+---
+Allocating blocks is a matter of allocating a block and storing
+it in a set. You can do this in a single operation, where the
+input word contains the address of the free list and the
+address of the set to store the block address in.
+---
+Switching between the temp set and the main set could be
+generalized as a swap operation between two words, or a double
+word if the words are continguous. So, I'm thinking about
+building some general swap operations to help with this
+task.
+
+@14:02 beat snowhead #timelog:01:02:24 #lozmm
+Fun boss. Took a while to remember I had to punch pillars.
+I did the mini boss a second time to get the boss key, and
+it was easier because I knew his "moves" better.
+
+@2026-03-08 Day 189
+@16:45 context #ink:09j #timelog:00:33:19
+#! dz thoughts/projects/sonilo/tasks/context
+building off of my "memstack" concept, I tried to return
+to this idea I had months ago about a core "context" object
+in charge of allocating memory.
+---
+A context is a zero page, and on the first few words
+of the zero page contain information about a free list,
+some sets keeping track of blocks used, and a stack structure
+used to share information between operations.
+---
+I was thinking it would make sense to have operations that
+could read contents of the zero page and push them directly
+to the stack, since in this case we would know the address
+of the stack on the zero page (it would be fixed).
+
+@2026-03-09 Day 190
+@11:43 logs #timelog:00:17:57

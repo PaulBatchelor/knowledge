@@ -356,3 +356,19 @@ It just seems a shame to throw away this test code entirely.
 ---
 It's in. The test passes. The TeX output still wants to build.
 Merging it into main. I think we're done here.
+
+@19:26 I think this is in a good enough place
+#! dz thoughts/projects/sonilo/tasks/ugen_ports
+As I think I said previously: it's not tested, but there's
+not a lot to test. I think the amount of work needed to
+make this testable is diminishing returns.
+---
+I was thinking about adding a way to input constants in
+the test suite, but honestly, that's the sort of thing I see
+myself doing in Konilo, not this weird tool.
+---
+In fact, I can imagine unit generators being one of the
+first abstractions being built in Konilo, after I get
+core memory allocation figured out (and a communication
+protocol). I think it'll be worth it to jump away from the
+test suite at that point, even if it means a bit more time.

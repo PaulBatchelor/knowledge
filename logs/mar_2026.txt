@@ -326,3 +326,19 @@ not a lot to test here, and there's going to need to be other
 components built out for this to actually work.
 ---
 Leaving this branch open for now.
+
+@16:40 initial coding #timelog:00:53:22
+#! dz thoughts/projects/sonilo/tasks/context
+There's a lot of functionality that should have been a C
+API function, but was instead inline code for my test suite.
+Sigh.
+---
+I didn't write any API functions. Lots of busywork today.
+---
+kicking up gremlins. memory allocator test fails.
+---
+There is nothing here I can really test. All the addresses
+are arbitrary, and the underlying components are already
+being tested.
+---
+I think I'm just going to merge it.

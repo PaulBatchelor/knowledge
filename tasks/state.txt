@@ -1,7 +1,7 @@
 thoughts/projects/sonilo/tasks/blockstack_improvements:70:DONE:1
 thoughts/projects/sonilo/tasks/buddy_find:74:TODO:1
 thoughts/projects/sonilo/tasks/buddy_system:78:DONE:1
-thoughts/projects/sonilo/tasks/context:82:TODO:1
+thoughts/projects/sonilo/tasks/context:82:DONE:1
 thoughts/projects/sonilo/tasks/docgen:87:DONE:1
 thoughts/projects/sonilo/tasks/fix_block_navigation:91:TODO:1
 thoughts/projects/sonilo/tasks/instruction_primitive:95:DONE:1

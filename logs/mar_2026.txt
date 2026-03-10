@@ -379,3 +379,17 @@ test suite at that point, even if it means a bit more time.
 #! dz thoughts/projects/sonilo/tasks/buddy_slots
 I jotted some notes down, I want to turn that into some
 C API functions.
+
+@15:00 allocator alloc initial code #timelog:00:49:21
+#! dz $
+starting with some helper primitives for allocating blocks
+from the block list, and marking them in sets via the context.
+It'll be better to have these instead of doing the swap
+operations because it'll be less error prone.
+---
+setting up the initializer for the slot allocator.
+---
+since I zeroed out the block, there are lots of implicitly
+set things in initialization.
+---
+time for the allocator

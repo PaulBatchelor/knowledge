@@ -372,3 +372,10 @@ first abstractions being built in Konilo, after I get
 core memory allocation figured out (and a communication
 protocol). I think it'll be worth it to jump away from the
 test suite at that point, even if it means a bit more time.
+
+@2026-03-10 Day 191
+
+@13:51 attempting to code up some scaffolding #timelog:00:26:56
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+I jotted some notes down, I want to turn that into some
+C API functions.

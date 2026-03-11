@@ -393,3 +393,6 @@ since I zeroed out the block, there are lots of implicitly
 set things in initialization.
 ---
 time for the allocator
+
+@17:12 back at it... very very briefly #timelog:00:05:29
+#! dz $

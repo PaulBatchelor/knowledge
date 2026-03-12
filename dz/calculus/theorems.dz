@@ -51,7 +51,7 @@ fb \(
 fb {d \over dx}(f(x) + g(x)) = f'(x) + g'(x).
 fb \)
 
-nn 3_6_the_derivative_of_e_x
+nn 3_6_the_derivative_of_ex
 ln The Derivative of $e^x$.
 ln The function $f(x) = e^x$ is differentiable for all real numbers $x$,
 ln and
@@ -113,7 +113,7 @@ fb \(
 fb {d \over dx}(x^n) = nx^{n - 1}
 fb \)
 
-nn 2_1_relationship_between_one-sided
+nn 2_1_relationship_between_onesided
 ln Relationship between One-Sided and Two-Sided Limits.
 ln Assume $f$ is defined for all $x$ near $a$ except possibly
 ln at $a$. Then
@@ -169,7 +169,7 @@ fb \(
 fb \lim_{x \to a} {f(x)} = f(a) = ma + b.
 fb \)
 
-nn 2_3a_limit_law:_sum
+nn 2_3a_limit_law_sum
 ln Limit Law: Sum.
 ln $$\
 ln \lim_{x \to a}{
@@ -187,7 +187,7 @@ fb \lim_{x \to a}{f(x)} +
 fb \lim_{x \to a}{g(x)} 
 fb \)
 
-nn 2_3b_limit_law:_difference
+nn 2_3b_limit_law_difference
 ln Limit Law: Difference.
 ln $$\
 ln \lim_{x \to a}{
@@ -205,7 +205,7 @@ fb \lim_{x \to a}{f(x)} -
 fb \lim_{x \to a}{g(x)} 
 fb \)
 
-nn 2_3c_limit_law:_constant_multiple
+nn 2_3c_limit_law_constant_multiple
 ln Limit Law: Constant multiple.
 ln $$\
 ln \lim_{x \to a}{
@@ -221,7 +221,7 @@ fb } =
 fb c\lim_{x \to a}{f(x)}
 fb \)
 
-nn 2_3d_limit_law:_product
+nn 2_3d_limit_law_product
 ln Limit Law: Product.
 ln $$\
 ln \lim_{x \to a}{
@@ -247,7 +247,7 @@ fb \lim_{x \to a}{g(x)}
 fb \bigg)
 fb \)
 
-nn 2_3e_limit_law:_quotient
+nn 2_3e_limit_law_quotient
 ln Limit Law: Quotient.
 ln $$\
 ln \lim_{x \to a}{
@@ -295,7 +295,7 @@ fb \(
 fb \lim_{x \to a}{g(x)} \ne 0
 fb \)
 
-nn 2_3f_limit_law:_power
+nn 2_3f_limit_law_power
 ln Limit Law: Power.
 ln $$\
 ln \lim_{x \to a}{
@@ -321,7 +321,7 @@ fb }
 fb \big)^n
 fb \)
 
-nn 2_3g_limit_law:_root
+nn 2_3g_limit_law_root
 ln Limit Law: Root.
 ln $$\
 ln \lim_{x \to a}{
@@ -371,13 +371,13 @@ ln provided $q(a) \ne 0$.
 ff Limits of Polynomial and Rational Functions
 fb Assume \(p\) and \(q\) are polynomials and \(a\) is a constant.
 fb 
-fb \par a. Polynomial functions
+fb <br><br> a. Polynomial functions
 fb \(
 fb \lim_{x \to a} p(x) = p(a)
 fb \)
 fb 
 fb 
-fb \par b. Rational functions
+fb <br><br> b. Rational functions
 fb 
 fb \(
 fb \lim_{x \to a} {p(x) \over q(x)} = {p(a) \over q(a)}
@@ -385,7 +385,7 @@ fb \)
 fb 
 fb provided \(q(a) \ne 0\).
 
-nn 2_3h_limit_laws_for_one-sided_limits
+nn 2_3h_limit_laws_for_onesided_limits
 ln Limit laws for One-Sided Limits.
 ln Laws 2.3a-2.3f hold with $\lim\limits_{x \to a}$ replaced with
 ln $\lim\limits_{x \to a^+}$ or $\lim\limits_{x \to a^-}$. Law 2.3g is
@@ -418,7 +418,7 @@ fb Laws 2.3a-2.3f hold with \(\lim\limits_{x \to a}\) replaced with
 fb \(\lim\limits_{x \to a^+}\) or \(\lim\limits_{x \to a^-}\). Law 2.3g is
 fb modified as follows.
 fb 
-fb \par a.
+fb <br><br> a.
 fb 
 fb \(
 fb \lim_{x \to a^+}(f(x))^{1/n} =
@@ -429,7 +429,7 @@ fb \)
 fb 
 fb provided \(f(x) \ge 0\), for \(x\) near \(a\) with \(x > a\), if \(n\) is even.
 fb 
-fb \par b.
+fb <br><br> b.
 fb 
 fb \(
 fb \lim_{x \to a^-}(f(x))^{1/n} =
@@ -484,21 +484,21 @@ fb Let \(n\) be a positive integer and let \(p\) be the polynomial
 fb 
 fb $p(x) = a_n x^n + a_{n - 1}x^{n - 1} + \cdots + a_2 x^2 +
 fb a_1x + a_0\(, where \)a_n \ne 0$.
-fb \par 1.
+fb <br><br> 1.
 fb \(\lim\limits_{x \to \pm\infty} x^n = \infty\) when \(n\) is even.
 fb 
-fb \par 2.
+fb <br><br> 2.
 fb \(\lim\limits_{x \to \infty} x^n = \infty\)
 fb and
 fb \(\lim\limits_{x \to -\infty} x^n = -\infty\)
 fb when \(n\) is odd.
 fb 
-fb \par 3.
+fb <br><br> 3.
 fb $\lim\limits_{x \to \pm\infty} {1 \over x^n} =
 fb \lim\limits_{x \to \pm\infty} {x^{-n}} = 0
 fb $.
 fb 
-fb \par 4.
+fb <br><br> 4.
 fb $\lim\limits_{x \to \pm\infty} p(x)=
 fb \lim\limits_{x \to \pm\infty} a_nx^n= \pm\infty$,
 fb depending on the degree of the polynomial and the sign
@@ -533,7 +533,7 @@ ln \par {\bf c. Degree of numerator greater than degree of denominator.}
 ln If $m > n$, then $\lim\limits_{x \to \pm\infty} f(x) = \infty$ or $-\infty$,
 ln and $f$ has no horizontal asymptote.
 ln 
-ln \par {\bf d. Slant asymptote.} 
+ln \par {\bf d. Slant asymptote.}
 ln If $m = n + 1$, then $\lim\limits_{x \to \pm\infty} f(x) = \infty$
 ln or $-\infty$, and $f$ has no horizontal asymptote, but $f$
 ln has a slant asymptote.
@@ -556,28 +556,28 @@ fb \)
 fb 
 fb with \(a_m \ne 0\) and \(b_n \ne 0\).
 fb 
-fb \par {\bf a. Degree of numerator less than degree of denominator.}
+fb <br><br> {\bf a. Degree of numerator less than degree of denominator.}
 fb If \(m < n\), then \(\lim\limits_{x \to \pm\infty} f(x) = 0\),
 fb and \(y = 0\) is a horizontal asymptote of \(f\).
 fb 
-fb \par {\bf b. Degree of numerator equals degree of denominator.}
+fb <br><br> {\bf b. Degree of numerator equals degree of denominator.}
 fb If \(m = n\), then \(\lim\limits_{x \to \pm\infty} f(x) = a_m/b_n\),
 fb and \(y = a_m/b_n\) is a horizontal asymptote of \(f\).
 fb 
-fb \par {\bf c. Degree of numerator greater than degree of denominator.}
+fb <br><br> {\bf c. Degree of numerator greater than degree of denominator.}
 fb If \(m > n\), then \(\lim\limits_{x \to \pm\infty} f(x) = \infty\) or \(-\infty\),
 fb and \(f\) has no horizontal asymptote.
 fb 
-fb \par {\bf d. Slant asymptote.} 
+fb <br><br> {\bf d. Slant asymptote.}
 fb If \(m = n + 1\), then \(\lim\limits_{x \to \pm\infty} f(x) = \infty\)
 fb or \(-\infty\), and \(f\) has no horizontal asymptote, but \(f\)
 fb has a slant asymptote.
 fb 
-fb \par {\bf e. Vertifcal asymptotes.} Assuming \(f\) is in
+fb <br><br> {\bf e. Vertifcal asymptotes.} Assuming \(f\) is in
 fb reduced form (\(p\) and \(q\) share no common factors), vertical
 fb asymptotes occur at the zeros of \(q\).
 
-nn 2_8_end_behavior_of_e_x,_e_{-x},_and
+nn 2_8_end_behavior_of_ex_ex_and_ln_x
 ln End Behavior of $e^x$, $e^{-x}$, and $\ln x$.
 ln The end behavior for $e^x$ and $e^{-x}$ on $(-\infty, infty)$
 ln and on $\ln x$ on $(0, \infty)$ is given by the following
@@ -640,17 +640,17 @@ fb If \(f\) and \(g\) are continuous at \(a\), then the following
 fb functions are also continuous at \(a\). Assume \(c\) is a constant
 fb and \(n > 0\) is an integer.
 fb 
-fb \par {\bf a.} \(f + g\)
+fb <br><br> {\bf a.} \(f + g\)
 fb 
-fb \par {\bf b.} \(f - g\)
+fb <br><br> {\bf b.} \(f - g\)
 fb 
-fb \par {\bf c.} \(cf\)
+fb <br><br> {\bf c.} \(cf\)
 fb 
-fb \par {\bf d.} \(fg\)
+fb <br><br> {\bf d.} \(fg\)
 fb 
-fb \par {\bf e.} \(f/g\), provided \(g(a) \ne 0\)
+fb <br><br> {\bf e.} \(f/g\), provided \(g(a) \ne 0\)
 fb 
-fb \par {\bf f.} \((f(x))^n\)
+fb <br><br> {\bf f.} \((f(x))^n\)
 fb 
 
 nn 2_10_polynomial_and_rational_functions
@@ -662,18 +662,18 @@ ln ${p \over q}$, where $p$ and $q$ are polynomials)
 ln is continuous for all $x$ for which $q(x) \ne 0$.
 ln 
 ff Polynomial and Rational Functions
-fb \par {\bf a.} A polynomial function is continuous for all x.
+fb <br><br> {\bf a.} A polynomial function is continuous for all x.
 fb 
-fb \par {\bf b.} A rational function (a function of the form
+fb <br><br> {\bf b.} A rational function (a function of the form
 fb \({p \over q}\), where \(p\) and \(q\) are polynomials)
 fb is continuous for all \(x\) for which \(q(x) \ne 0\).
 fb 
 
-nn 2_11_continunity_of_composite_functions
-ln Continunity of Composite Functions at a Point.
+nn 2_11_continuity_of_composite_functions
+ln Continuity of Composite Functions at a Point.
 ln if $g$ is continuous at $a$ and $f$ is continuous at $g(a)$,
 ln then the composite function $g \circ f$ is continuous at $a$.
-ff Continunity of Composite Functions at a Point
+ff Continuity of Composite Functions at a Point
 fb if \(g\) is continuous at \(a\) and \(f\) is continuous at \(g(a)\),
 fb then the composite function \(g \circ f\) is continuous at \(a\).
 
@@ -694,14 +694,14 @@ ln \lim_{x \to a} f(g(x)) = f\big(\lim_{x \to a} g(x)\big).
 ln $$
 ln 
 ff Limits of Composite Functions
-fb \par {\bf 1.} if \(g\) is continuous at \(a\) and \(f\) is continuous
+fb <br><br> {\bf 1.} if \(g\) is continuous at \(a\) and \(f\) is continuous
 fb at \(g(a)\), then
 fb 
 fb \(
 fb \lim_{x \to a} f(g(x)) = f\big(\lim_{x \to a} g(x)\big).
 fb \)
 fb 
-fb \par {\bf 2.} if \(g(x) = L\) and \(f\) is continuous at \(L\),
+fb <br><br> {\bf 2.} if \(g(x) = L\) and \(f\) is continuous at \(L\),
 fb then
 fb 
 fb \(
@@ -721,7 +721,7 @@ ff Continuity of Functions with Roots
 fb Assume \(n\) is a positive integer. If \(n\) is an odd integer,
 fb then \((f(x))^{1/n}\) is continuous at all points at which
 fb \(f\) is continuous.
-fb \par
+fb <br><br>
 fb If \(n\) is even, then \((f(x))^{1/n}\) is continuous at all points
 fb \(a\) at which \(f\) is continuous and \(f(a) > 0\).
 
@@ -752,4 +752,274 @@ ff Intermediate Value Theorem
 fb Suppose \(f\) is continuous on the interval \([a, b]\) and \(L\)
 fb is a number strictly between \(f(a)\) and \(f(b)\). Then there
 fb exists at lest one number \(c\) in \((a, b)\) satisfying \(f(c) = L\).
+
+nn 3_10_trigonometric_limits
+ln Trigonometric Limits.
+ln $$\
+ln \lim_{x \to 0} = {\sin x \over x} = 1
+ln $$
+ln 
+ln $$\
+ln \lim_{x \to 0} = {\cos x - 1 \over x} = 0
+ln $$
+ff Trigonometric Limits
+fb \(
+fb \lim_{x \to 0} = {\sin x \over x} = 1
+fb \)
+fb 
+fb \(
+fb \lim_{x \to 0} = {\cos x - 1 \over x} = 0
+fb \)
+
+nn 3_11_derivatives_of_sine_and_cosine
+ln Derivatives of Sine and Cosine.
+ln $$\
+ln {d \over dx}(\sin x) = \cos x
+ln $$
+ln 
+ln $$\
+ln {d \over dx}(\cos x) = -\sin x
+ln $$
+ff Derivatives of Sine and Cosine
+fb \(
+fb {d \over dx}(\sin x) = \cos x
+fb \)
+fb 
+fb \(
+fb {d \over dx}(\cos x) = -\sin x
+fb \)
+
+nn 3_12_derivatives_of_the_trigonmetric
+ln Derivatives of the Trigonmetric Functions.
+ln $$\
+ln {d \over dx}
+ln (\sin x)
+ln =
+ln \cos x
+ln $$
+ln 
+ln $$\
+ln {d \over dx}
+ln (\cos x)
+ln =
+ln -\sin x
+ln $$
+ln 
+ln $$\
+ln {d \over dx}
+ln (\tan x)
+ln =
+ln \sec^2 x
+ln $$
+ln 
+ln $$\
+ln {d \over dx}
+ln (\cot x)
+ln =
+ln -\csc^2 x
+ln $$
+ln 
+ln $$\
+ln {d \over dx}
+ln (\sec x)
+ln =
+ln \sec x \tan x
+ln $$
+ln 
+ln $$\
+ln {d \over dx}
+ln (\csc x)
+ln =
+ln -\csc x \cot x
+ln $$
+ff Derivatives of the Trigonmetric Functions
+fb \(
+fb {d \over dx}
+fb (\sin x)
+fb =
+fb \cos x
+fb \)
+fb 
+fb \(
+fb {d \over dx}
+fb (\cos x)
+fb =
+fb -\sin x
+fb \)
+fb 
+fb \(
+fb {d \over dx}
+fb (\tan x)
+fb =
+fb \sec^2 x
+fb \)
+fb 
+fb \(
+fb {d \over dx}
+fb (\cot x)
+fb =
+fb -\csc^2 x
+fb \)
+fb 
+fb \(
+fb {d \over dx}
+fb (\sec x)
+fb =
+fb \sec x \tan x
+fb \)
+fb 
+fb \(
+fb {d \over dx}
+fb (\csc x)
+fb =
+fb -\csc x \cot x
+fb \)
+
+nn 3_13_the_chain_rule
+ln The Chain Rule.
+ln Suppose $y = f(u)$ is differentiable at $u = g(x)$ and $u = g(x)$
+ln is differentiable at $x$. The composite function $f(g(x))$ is
+ln differentiable at $x$, and its derivative can be expressed
+ln in two equivalent ways.
+ln 
+ln $$\
+ln {dy \over dx} = {dy \over du} \cdot {du \over dx}
+ln $$
+ln 
+ln $$\
+ln {d \over dx}(f(g(x))) = f'(g(x)) \cdot g'(x)
+ln $$
+ff The Chain Rule
+fb Suppose \(y = f(u)\) is differentiable at \(u = g(x)\) and \(u = g(x)\)
+fb is differentiable at \(x\). The composite function \(f(g(x))\) is
+fb differentiable at \(x\), and its derivative can be expressed
+fb in two equivalent ways.
+fb 
+fb \(
+fb {dy \over dx} = {dy \over du} \cdot {du \over dx}
+fb \)
+fb 
+fb \(
+fb {d \over dx}(f(g(x))) = f'(g(x)) \cdot g'(x)
+fb \)
+
+nn 3_14_chain_rule_for_powers
+ln Chain Rule for Powers.
+ln If $g$ is differentiable for all $x$ in its domain and $p$
+ln is a real number, then
+ln 
+ln $$\
+ln {d \over dx} \big((g(x))^p\big) = p(g(x))^{p - 1}g'(x)
+ln $$
+ff Chain Rule for Powers
+fb If \(g\) is differentiable for all \(x\) in its domain and \(p\)
+fb is a real number, then
+fb 
+fb \(
+fb {d \over dx} \big((g(x))^p\big) = p(g(x))^{p - 1}g'(x)
+fb \)
+
+nn 3_15_derivative_of_ln_x
+ln Derivative of $\ln x$.
+ln $$\
+ln {d \over dx} (\ln x) = {1 \over x}, \hbox{for} \, x > 0
+ln $$
+ln 
+ln $$\
+ln {d \over dx} (\ln |x|) = {1 \over x}, \hbox{for} \, x \ne 0
+ln $$
+ln 
+ln If $u$ is differentiable at $x$ and $u(x) \ne 0$, then
+ln 
+ln $$\
+ln {d \over dx} (\ln |u(x)|) = {
+ln u'(x) \over u(x)
+ln }
+ln $$
+ff Derivative of $\ln x$
+fb \(
+fb {d \over dx} (\ln x) = {1 \over x}, \hbox{for} \, x > 0
+fb \)
+fb 
+fb \(
+fb {d \over dx} (\ln |x|) = {1 \over x}, \hbox{for} \, x \ne 0
+fb \)
+fb 
+fb If \(u\) is differentiable at \(x\) and \(u(x) \ne 0\), then
+fb 
+fb \(
+fb {d \over dx} (\ln |u(x)|) = {
+fb u'(x) \over u(x)
+fb }
+fb \)
+
+nn 3_16_theorem_of_bx
+ln Theorem of $b^x$.
+ln If $b > 0$ and $b \ne 1$, then for all $x$,
+ln 
+ln $$\
+ln {d \over dx}(b^x) = b^x \ln b
+ln $$
+ff Theorem of $b^x$
+fb If \(b > 0\) and \(b \ne 1\), then for all \(x\),
+fb 
+fb \(
+fb {d \over dx}(b^x) = b^x \ln b
+fb \)
+
+nn 3_17_general_power_rule
+ln General Power Rule.
+ln For real numbers $p$ and for $x > 0$,
+ln $$\
+ln {d \over dx}(x^p) = px^{p - 1}.
+ln $$
+ln 
+ln Furthermore, if $u$ is a positive differentiable function
+ln on its domain, then
+ln 
+ln $$\
+ln {d \over dx} (u(x)^p) = p(u(x))^{p - 1} \cdot u'(x)
+ln $$
+ff General Power Rule
+fb For real numbers \(p\) and for \(x > 0\),
+fb \(
+fb {d \over dx}(x^p) = px^{p - 1}.
+fb \)
+fb 
+fb Furthermore, if \(u\) is a positive differentiable function
+fb on its domain, then
+fb 
+fb \(
+fb {d \over dx} (u(x)^p) = p(u(x))^{p - 1} \cdot u'(x)
+fb \)
+
+nn 3_18_derivative_of_logbx
+ln Derivative of $\log_{b}x$.
+ln If $b > 0$ and $b \ne 1$, then
+ln $$\
+ln {d \over dx} (log_{b} x) = {1 \over {x \ln b}}, \hbox{for}
+ln \, x > 0
+ln $$
+ln 
+ln and
+ln 
+ln $$\
+ln {d \over dx}(log_{b}|x|) = {1 \over {x \ln b}}, \hbox{for}
+ln \, x \ne 0
+ln $$
+ln 
+ff Derivative of $\log_{b}x$
+fb If \(b > 0\) and \(b \ne 1\), then
+fb \(
+fb {d \over dx} (log_{b} x) = {1 \over {x \ln b}}, \hbox{for}
+fb \, x > 0
+fb \)
+fb 
+fb and
+fb 
+fb \(
+fb {d \over dx}(log_{b}|x|) = {1 \over {x \ln b}}, \hbox{for}
+fb \, x \ne 0
+fb \)
+fb 
 

@@ -42,6 +42,7 @@ def title_to_name(title):
             break
         if w[0] == "$":
             w = w.replace("$", "").replace("^", "_")
+        w = re.sub(r'[^[a-zA-Z0-9]', '', w)
         if sz > 25:
             break
         name.append(w.lower())
@@ -82,6 +83,9 @@ for id in ids:
                 start = False
 
         line = re.sub(r"\$(.*?)\$", r"\(\1\)", line)
+
+        # any par should be replaced with explicit line breaks
+        line = re.sub(r"\\par", "<br><br>", line)
 
         print(f"fb {line}")
     print()

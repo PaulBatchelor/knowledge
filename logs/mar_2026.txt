@@ -406,3 +406,6 @@ SPQR (finally).
 @10:40 transcribing theorems in 3.9 #timelog:00:22:51
 #! dz calculus/pearson/toc/03_derivatives/09_derivatives_of_logarithmic_and_exponential_functions
 
+@11:10 fixing typos found in anki cards #timelog:00:26:29
+#! dz bu/ma123/study
+

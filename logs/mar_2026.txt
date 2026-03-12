@@ -396,3 +396,13 @@ time for the allocator
 
 @17:12 back at it... very very briefly #timelog:00:05:29
 #! dz $
+
+@2026-03-11 Day 192. Down for the count.
+I threw out my back the previous night, so today was just
+spent in bed. The only thing of value done today was that I finished
+SPQR (finally).
+
+@2026-03-12 Day 193
+@10:40 transcribing theorems in 3.9 #timelog:00:22:51
+#! dz calculus/pearson/toc/03_derivatives/09_derivatives_of_logarithmic_and_exponential_functions
+

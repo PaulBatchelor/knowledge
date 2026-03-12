@@ -789,8 +789,8 @@ fb \(
 fb {d \over dx}(\cos x) = -\sin x
 fb \)
 
-nn 3_12_derivatives_of_the_trigonmetric
-ln Derivatives of the Trigonmetric Functions.
+nn 3_12_derivatives_of_the_trigonometric
+ln Derivatives of the Trigonometric Functions.
 ln $$\
 ln {d \over dx}
 ln (\sin x)
@@ -832,7 +832,7 @@ ln (\csc x)
 ln =
 ln -\csc x \cot x
 ln $$
-ff Derivatives of the Trigonmetric Functions
+ff Derivatives of the Trigonometric Functions
 fb \(
 fb {d \over dx}
 fb (\sin x)

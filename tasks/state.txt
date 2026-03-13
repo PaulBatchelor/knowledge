@@ -9,7 +9,7 @@ thoughts/projects/sonilo/tasks/ugen_refcount:100:DONE:1
 thoughts/projects/sonilo/tasks/zero_page:104:DONE:1
 thoughts/projects/sonilo/tasks/bulk_instructions:108:DONE:1
 thoughts/projects/sonilo/tasks/ugen_stack:112:DONE:1
-thoughts/projects/sonilo/tasks/buddy_slots:117:TODO:1
+thoughts/projects/sonilo/tasks/buddy_slots:117:DONE:1
 thoughts/projects/sonilo/tasks/ugen_ports:121:DONE:1
 thoughts/projects/sonilo/tasks/allocator:125:TODO:1
 thoughts/projects/sonilo/tasks/mem:130:TODO:1

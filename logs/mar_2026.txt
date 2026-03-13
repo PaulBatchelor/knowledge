@@ -543,3 +543,19 @@ OR. I build a sonilo assembler that handwrites msgpack output.
 I do want msgpack, or at least a subset of msgpack,
 because object serialization gives me
 some wiggle room for changes down the line.
+
+@15:33 finish up free #timelog:00:17:23
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+I am once again suspicious about my address validation for
+my buddy free. How do I know that some local address
+in a buddy system actually is the beginning of a block?
+---
+For a simple case. When a block is initialized, the only
+available block to use is at position $L = 0$, with a k size
+of 6 (64). What happens when I pass in some value of $L = 10, $k = 1$?
+Or something half-correct like $L=0, k=0$ or $L=23, k=6$? The
+mechanisms of this algorithm still allude me.
+---
+In theory, I think this is done? I don't think I'll be able
+to test it will until I start actually using it. That's
+when the bugs will float up to the top.

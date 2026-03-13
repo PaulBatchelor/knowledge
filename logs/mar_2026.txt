@@ -507,3 +507,39 @@ and then plug in $f(x)$ at the end.
 
 @2026-03-13 Day 194
 @10:14 logging #timelog:00:37:00
+
+@10:53 what's left
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+finish up allocator free
+---
+Is this something I can meaningfully test right now? I'm
+thinking not really. I need to start thinking forward about
+building unit generators, possibly using an initial command
+language.
+
+@10:54 msgpack can efficiently store positive 7-bit fixints
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+7-bit ints are encoded into a single byte. ASCII should fit,
+so it might be doable to create something resembling my
+memwrite virtual machine serialized in a msgpack object.
+
+@10:58 first tasks for command language: allocation for ugens
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+#! dz thoughts/projects/sonilo/tasks/ugens
+ugen: allocate ports, allocate blocks for ports, allocate
+data for the ugen, allocate a struct to store components
+in the ugen. These should all be done with sonilo commands,
+serialized in msgpack. Eventually, functionality for this
+will be done in Konilo. For now, I'll probably use either
+Lua or Python for prototyping.
+
+@11:00 a portable json2msgpack utility could be useful
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+More languages support JSON than msgpack. If there isn't
+a convenient tool for this already, I might build one in C.
+---
+OR. I build a sonilo assembler that handwrites msgpack output.
+---
+I do want msgpack, or at least a subset of msgpack,
+because object serialization gives me
+some wiggle room for changes down the line.

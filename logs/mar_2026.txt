@@ -409,3 +409,101 @@ SPQR (finally).
 @11:10 fixing typos found in anki cards #timelog:00:26:29
 #! dz bu/ma123/study
 
+@12:09 working through 3.9 example 1 #timelog:00:26:19 #ink:09K
+#! dz bu/ma123/study
+#! dz calculus/pearson/toc/03_derivatives/09_derivatives_of_logarithmic_and_exponential_functions
+#! dz calculus/pearson/theorems/3_15_derivative_of_ln_x
+four problems, each with their own combination of "tricks".
+First was a natural log with chain rule. Second was natural log
+with product rule. Third uses chain rule and "second part of
+theorem 3.15" (I think this referred to using absolute values).
+Fourth used quotient rule and chain rule. Fourth had a bit
+more implied work with simplification.
+
+@13:43 3.9 example 2, some of 4. #ink:09K #timelog:00:26:09
+#! dz bu/ma123/study
+#! dz calculus/pearson/toc/03_derivatives/09_derivatives_of_logarithmic_and_exponential_functions
+#! dz calculus/pearson/theorems/3_16_theorem_of_bx
+#! dz calculus/pearson/theorems/3_17_general_power_rule
+Example 2 had two problems, which mostly dealt with theorem
+3.16 (logs and exponentials).
+---
+First problem was a pretty straight-ahead application of
+the theorem. Second problem was a combination of the constant
+multiple rule, followed by chain rule, and simplification.
+---
+Started the first two problems of example 4, which were
+mirror images of eachother ($x^\pi$ and $\pi^x$). The
+former utilized the general power law, as the exponent
+was a constant. The latter utilized the the $b^x$ theorem.
+---
+Note that the answer for a had to explicitly mention "for
+$x > 0$".
+
+@14:20 3.9: last bits of example 4, example 5, example 6 #ink:09L
+#! dz bu/ma123/study
+#! dz calculus/pearson/toc/03_derivatives/09_derivatives_of_logarithmic_and_exponential_functions
+#! dz calculus/pearson/theorems/3_15_derivative_of_ln_x
+The last problem in example 4 was a combination of the general
+power rule and the chain rule. $e$ was used as a constant
+in the exponent, which looked funny at first.
+---
+Example 5 explored the notion of so-called "tower functions",
+which I had a hard time finding a definition for outside of
+the textbook. It seems to be related to a something known as
+"tetration" in mathematics, which refers to iterated or repeated
+exponentiation. In this context, it seems to basically
+refer to having a function in the exponent rather than a constant.
+---
+This example focused on one equation with a trig function
+in the exponent. The first part asked you to find the derivative,
+the second part asked you to compute the derivative at a particular
+value. In part one, the equation is rewritten in terms of exponentials,
+which allows natural log derivative theorems to be used (3.15).
+---
+Part 2 is just plug and chug. $\pi \over 2$ makes things simplify
+quite nicely into 1.
+---
+Example 6 asks if a particular equation $x^x$ has any
+horiztonal tangent lines (which is to say, does $f'(x) = 0$
+exist for any value of $x$?). Similar to example 5, the
+equation can be rewritten in terms of exponentials, and
+derivatives can be taken this way. The derivative is a product
+of two equations, for which one of them needs to evaluate to 0
+for a horizontal tangent to exist. This is impossible for one,
+but works for the other term. Setting this term to zero and
+solving for $x$ yields an answer.
+
+@16:20 3.9 examples 7 and 8 #timelog:00:43:17 #ink:09M
+#! dz bu/ma123/study
+#! dz calculus/pearson/toc/03_derivatives/09_derivatives_of_logarithmic_and_exponential_functions
+#! dz calculus/pearson/theorems/3_18_derivative_of_logbx
+#! dz calculus/pearson/theorems/3_15_derivative_of_ln_x
+
+example 7 concerns itself with theorem 3.18, which is the theorem
+for handling derivatives of logs with arbitrary bases.
+---
+Two problems. The first one uses theorem 3.18 with the chain rule.
+The second one uses 3.18 with the product rule. It also does
+a thing where it converts the base to use all natural logs
+(aka base $e$ instead of base $2$).
+---
+Example 8 took some time for me to understand. It's a problem
+that uses logarithms to simplify getting derivatives because
+the quotient rule is a bit gnarly and logs can use the sum
+rule.
+---
+The first part of getting the equation into log space was
+straight forward for me. Grokking computing the derivative 
+from the last part of theorem 3.15 took me a moment for
+it to click. There's this fraction involved, $f'(x)/f(x)$,
+and I wasn't handling that fraction correctly (I incorrectly thought
+you had to divide the derivative equation by $f(x)$, which
+the example did not do). When you put the equation in log space,
+you are doing $\ln f(x)$, for which theorem 3.15 states ${d \over dx} f(x) = f'(x) \over f(x)$.
+The derivative you compute in logspace implicitely is this fraction.
+To find $f'(x)$, you solve the expression algebraically (implicit differentiation),
+and then plug in $f(x)$ at the end.
+
+@2026-03-13 Day 194
+@10:14 logging #timelog:00:37:00

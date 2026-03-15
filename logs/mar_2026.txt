@@ -623,4 +623,6 @@ These assume a "context" is already instantiated.
 The balance between what to expose and what to abstract
 away is still unclear to me. With unit generators
 
-@14:27 scanning #timelog:00:07:56
+@14:27 scanning #timelog:00:07:56 #archiving
+
+@15:09 cropping #archiving #timelog:00:12:00

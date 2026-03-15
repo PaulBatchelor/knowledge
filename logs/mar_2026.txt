@@ -622,3 +622,5 @@ These assume a "context" is already instantiated.
 #! dz thoughts/projects/sonilo/tasks/ugens
 The balance between what to expose and what to abstract
 away is still unclear to me. With unit generators
+
+@14:27 scanning #timelog:00:07:56

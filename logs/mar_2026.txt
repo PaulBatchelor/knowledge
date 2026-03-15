@@ -100,6 +100,14 @@ further than that.
 
 @2026-03-05 Day 186
 
+@09:24 3.8 examples #timelog:00:20:55 #ink:09C
+#! dz calculus/pearson/toc/03_derivatives/08_implicit_differentiation
+
+@10:01 3.8 examples #ink:09C #timelog:00:33:10
+#! dz $
+
+@10:47 3.8 examples #ink:09C #timelog:00:18:04
+
 @2026-03-06 Day 187
 
 @2026-03-07 Day 188
@@ -559,3 +567,58 @@ mechanisms of this algorithm still allude me.
 In theory, I think this is done? I don't think I'll be able
 to test it will until I start actually using it. That's
 when the bugs will float up to the top.
+
+@18:20 formal limit definition, prelude to proofs #timelog:00:52:51
+#! dz calculus/spivak/toc/05_limits
+The proof demonstrated shows why $\sin 1/x$ does not approach
+0 near 0.
+
+@2026-03-14 Day 195
+
+@11:29 brainstorm: ugen allocation, how to make a ugen #ink:09O #timelog:28:20
+#! dz thoughts/projects/sonilo/tasks/ugens
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+As I begin designing this command language, I start thinking
+about one of the first tasks: creating unit generators. Behind
+that is the task of allocating unit generators, which ties
+to the memory allocation schemes I've been thinking about
+for the past few months.
+
+@10:50 proof using limit definition #timelog:
+#! dz calculus/spivak/toc/05_limits
+There's this very weird piecewise function involving
+rational numbers that's used as a example. A proof using
+the formal definition of a limit is utilized to show that
+this function approaches 0 near 0.
+
+@2026-03-15 Day 196
+
+@10:19 brainstorm: pseudo-commands #ink:09O #timelog:00:32:23
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+The day before, I fleshed out unit generators in the context
+of allocation. Today, I tried imagining the sorts of low-level
+operations needed to make such a thing work. I don't think I
+quite bridged the gap between operations and ugen creation,
+but it was helpful in getting me thinking about language design.
+---
+The sonilo command language is not going to be about abstraction.
+Re-usable modular code is not a goal here. The idea here is
+to provide a bedrock with enough functionality to support
+my needs involving music and sound (tasks which involving
+assembling unit generators together to make graphs), while
+flexible enough to adapt to future needs.
+---
+Some operations I jotted down: block and temporary
+block allocation, loading/storing words and words
+with offsets, parameter stack
+manipulation, foreign function calls (like a C function
+containing a DSP routine), resolving FFI symbols to actual
+funciton slots (like a function pointer?).
+These assume a "context" is already instantiated.
+
+@13:41 timelogging #timelog:00:37:47
+
+@13:49 where in the abstraction chain should ugens be created?
+#! dz thoughts/projects/sonilo/tasks/ugens
+The balance between what to expose and what to abstract
+away is still unclear to me. With unit generators

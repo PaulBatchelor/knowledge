@@ -626,3 +626,17 @@ away is still unclear to me. With unit generators
 @14:27 scanning #timelog:00:07:56 #archiving
 
 @15:09 cropping #archiving #timelog:00:12:00
+
+@2026-03-16 Day 197
+@10:58 entering in some hw6 assignments #timelog:00:33:21
+#! dz bu/ma123/hw
+A surprisingly stressful experience.
+---
+exactly 50 percent completed. I've flagged 4 problems to
+double check before submitting. The remaining 5 problems
+after that
+are various applied science problems, and a few graph related
+problems.
+
+@18:17 punching in solutions from hw6 #timelog:00:08:42
+#! dz bu/ma123/study

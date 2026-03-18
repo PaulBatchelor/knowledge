@@ -23,6 +23,7 @@ nn 06_derivatives_as_rates_of_change
 nn 07_chain_rule
 nn 08_implicit_differentiation
 nn 09_derivatives_of_logarithmic_and_exponential_functions
+nn 10_derivatives_of_inverse_trig_functions
 
 ns ../..
 

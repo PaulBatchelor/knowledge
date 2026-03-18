@@ -662,3 +662,8 @@ now I want to solidify some things.
 
 @2026-03-18 Day 199
 @09:43 timelogging #timelog:00:15:35
+
+@10:00 transcribing theorems for 3.10 #timelog:00:15:33
+#! dz calculus/pearson/toc/03_derivatives/10_derivatives_of_inverse_trig_functions
+I don't think there are any theorems in 3.11, that's just
+"applied" stuff.

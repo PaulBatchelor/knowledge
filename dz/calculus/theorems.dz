@@ -1023,3 +1023,171 @@ fb \, x \ne 0
 fb \)
 fb 
 
+nn 3_19_derivative_of_inverse_sine
+ln Derivative of Inverse Sine.
+ln $$\
+ln {d \over dx}(\sin^{-1} x) = {
+ln 1
+ln \over
+ln \sqrt{1 - x^2}
+ln }, \, \hbox{for} -1 < x < 1
+ln $$
+ff Derivative of Inverse Sine
+fb \(
+fb {d \over dx}(\sin^{-1} x) = {
+fb 1
+fb \over
+fb \sqrt{1 - x^2}
+fb }, \, \hbox{for} -1 < x < 1
+fb \)
+
+nn 3_20_derivatives_of_inverse_trigonometric
+ln Derivatives of Inverse Trigonometric Functions.
+ln $$\
+ln {d \over dx}
+ln (\sin^{-1} x)
+ln =
+ln {
+ln 1
+ln \over
+ln \sqrt{1 - x^2}
+ln }
+ln \qquad
+ln {d \over dx}
+ln (\cos^{-1} x)
+ln =
+ln -{
+ln 1
+ln \over
+ln \sqrt{1 - x^2}
+ln },
+ln \, \hbox{for} \, -1 < x < 1
+ln $$
+ln 
+ln $$\
+ln {d \over dx}
+ln (\tan^{-1} x)
+ln =
+ln {
+ln 1
+ln \over
+ln 1 + x^2
+ln }
+ln \qquad
+ln {d \over dx}
+ln (\cot^{-1} x)
+ln =
+ln -{
+ln 1
+ln \over
+ln 1 + x^2
+ln },
+ln \, \hbox{for} \, -\infty < x < \infty
+ln $$
+ln 
+ln $$\
+ln {d \over dx}
+ln (\sec^{-1} x)
+ln =
+ln {
+ln 1
+ln \over
+ln |x|\sqrt{x^2 - 1}
+ln }
+ln \qquad
+ln {d \over dx}
+ln (\csc^{-1} x)
+ln =
+ln -{
+ln 1
+ln \over
+ln |x|\sqrt{x^2 - 1}
+ln },
+ln \, \hbox{for} \, |x| > 1
+ln $$
+ln 
+ff Derivatives of Inverse Trigonometric Functions
+fb \(
+fb {d \over dx}
+fb (\sin^{-1} x)
+fb =
+fb {
+fb 1
+fb \over
+fb \sqrt{1 - x^2}
+fb }
+fb \qquad
+fb {d \over dx}
+fb (\cos^{-1} x)
+fb =
+fb -{
+fb 1
+fb \over
+fb \sqrt{1 - x^2}
+fb },
+fb \, \hbox{for} \, -1 < x < 1
+fb \)
+fb 
+fb \(
+fb {d \over dx}
+fb (\tan^{-1} x)
+fb =
+fb {
+fb 1
+fb \over
+fb 1 + x^2
+fb }
+fb \qquad
+fb {d \over dx}
+fb (\cot^{-1} x)
+fb =
+fb -{
+fb 1
+fb \over
+fb 1 + x^2
+fb },
+fb \, \hbox{for} \, -\infty < x < \infty
+fb \)
+fb 
+fb \(
+fb {d \over dx}
+fb (\sec^{-1} x)
+fb =
+fb {
+fb 1
+fb \over
+fb |x|\sqrt{x^2 - 1}
+fb }
+fb \qquad
+fb {d \over dx}
+fb (\csc^{-1} x)
+fb =
+fb -{
+fb 1
+fb \over
+fb |x|\sqrt{x^2 - 1}
+fb },
+fb \, \hbox{for} \, |x| > 1
+fb \)
+fb 
+
+nn 3_21_derivative_of_the_inverse_function
+ln Derivative of the Inverse Function.
+ln Let $f$ be differentiable and have an invese on an interval $I$.
+ln If $x_0$ is a point of $I$ at which $f'(x_0) \ne 0$, then $f^{-1}$
+ln is differentiable at $y_0 = f(x_0)$ and
+ln 
+ln $$\
+ln (f^{-1})'(y_0) = {1 \over f'(x_0)},
+ln \, \hbox{where} \, y_0 = f(x_0).
+ln $$
+ff Derivative of the Inverse Function
+fb Let \(f\) be differentiable and have an invese on an interval \(I\).
+fb If \(x_0\) is a point of \(I\) at which \(f'(x_0) \ne 0\), then \(f^{-1}\)
+fb is differentiable at \(y_0 = f(x_0)\) and
+fb 
+fb \(
+fb (f^{-1})'(y_0) = {1 \over f'(x_0)},
+fb \, \hbox{where} \, y_0 = f(x_0).
+fb \)
+

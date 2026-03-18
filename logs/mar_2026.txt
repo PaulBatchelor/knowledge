@@ -667,3 +667,15 @@ now I want to solidify some things.
 #! dz calculus/pearson/toc/03_derivatives/10_derivatives_of_inverse_trig_functions
 I don't think there are any theorems in 3.11, that's just
 "applied" stuff.
+
+@10:25 transcribing hw7 problems #timelog:00:18:52
+#! dz bu/ma123/hw
+All of 3.11 is untranscribable for my system, and seems
+to consist of those weird multiple choice problems.
+These, plus a weird problem at the end of 3.9, consist of
+34% of the homework. So, a good chunk can be indexed.
+---
+I've figured out a way to print out all these problems to
+a PDF, as well as all the examples (where there are
+examples). I like this, because it means I can work away from
+my computer area.

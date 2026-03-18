@@ -644,3 +644,6 @@ problems.
 @2026-03-17 Day 198
 @20:39 transcribing the remaining answers for hw6 #timelog:00:11:35
 #! dz bu/ma123/study
+
+@21:21 initial problem stubs for hw7 #timelog:00:04:59
+#! dz bu/ma123/hw

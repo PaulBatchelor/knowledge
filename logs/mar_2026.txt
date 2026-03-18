@@ -641,9 +641,24 @@ problems.
 @18:17 punching in solutions from hw6 #timelog:00:08:42
 #! dz bu/ma123/study
 
+@16:20 how to get epona? #lozmm #timelog:00:47:18
+Remembered I had to wait until the last day to get to
+the ranch. But, when I got there, I was missing something.
+There's a quest I have to do in the city I think. May need
+to consult a guide for this.
+
 @2026-03-17 Day 198
 @20:39 transcribing the remaining answers for hw6 #timelog:00:11:35
 #! dz bu/ma123/study
 
 @21:21 initial problem stubs for hw7 #timelog:00:04:59
 #! dz bu/ma123/hw
+
+@22:23 word machine initial outlining #ink:09q #timelog:00:22:55
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+The "command language" in Sonilo controls some kind of virtual
+computer. My test suite has been a relaxed form of this, but
+now I want to solidify some things.
+
+@2026-03-18 Day 199
+@09:43 timelogging #timelog:00:15:35

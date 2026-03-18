@@ -2087,11 +2087,33 @@ Use implicit differentiation to find ${dy \over dx}$.
 $$\
 3 \sin xy = 3x + 8y
 $$
+
+\solution{3.8.31}
+$$\
+{dy \over dx} =
+{
+3 - 3y\cos xy
+\over
+3x\cos xy -8
+}
+$$
+
 \problem{3.8.32}
 Use implicit differentiation to find ${dy \over dx}$.
 
 $$\
 e^{xy} = 7y
+$$
+
+\solution{3.8.32}
+
+$$\
+{dy \over dx} =
+{
+ye^{xy}
+\over
+7 - xe^{xy}
+}
 $$
 
 \problem{3.8.34}
@@ -2102,7 +2124,13 @@ $$\
 $$
 
 \solution{3.8.34}
-${dy \over dx} = {3 - 3y \cos xy \over 3x \cos xy - 8}$
+$$\
+{dy \over dx} = {
+y - 5
+\over
+3(y - 5)^2 + x + 5
+}
+$$
 
 \problem{3.8.41}
 \bigskip
@@ -2122,6 +2150,16 @@ Find the derivative of:
 $$\
 y = \ln (8x^2 + 1)
 $$
+
+\solution{3.9.17}
+$$\
+{dy \over dx} = {
+16x
+\over
+8x^2 + 1
+}
+$$
+
 \problem{3.9.23}
 Find the derivative:
 
@@ -2132,18 +2170,40 @@ $$\
 \bigg)
 \bigg]
 $$
+
+\solution{3.9.23}
+$$\
+{dy \over dx} = -{
+12
+\over
+4x^2 - 9
+}
+$$
+
 \problem{3.9.27}
 Find the derivative of the following function:
 
 $$\
 y = x^3(2 - \ln x^3)
 $$
+
+\solution{3.9.27}
+$$\
+{dy \over dx} = 3x^2 - 3x^2 \ln x^3
+$$
+
 \problem{3.9.43}
 Find the derivative of:
 
 $$\
 x^3 9^x
 $$
+
+\solution{3.9.43}
+$$\
+{dy \over dx} = x^2 9^x (3 + x \ln 9)
+$$
+
 \problem{3.9.47}
 Find the derivative of the following function:
 
@@ -2154,6 +2214,16 @@ f(x) = {
 {14^x + 1}
 }
 $$
+
+\solution{3.9.47}
+$$\
+{dy \over dx} = {
+14^x \ln 14
+\over
+(14^x + 1)^2
+}
+$$
+
 \problem{3.9.58}
 \bigskip
 
@@ -2167,5 +2237,11 @@ f(x) = \ln \bigg[{
 (1 - 9x)^3
 }
 \bigg]
+$$
+
+\solution{3.9.73}
+$$\
+{dy \over dx} =
+{5 \over 5x + 7} + {2 \over x + 3} + {27 \over 1 - 9x}
 $$
 \bye

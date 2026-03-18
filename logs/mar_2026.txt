@@ -640,3 +640,7 @@ problems.
 
 @18:17 punching in solutions from hw6 #timelog:00:08:42
 #! dz bu/ma123/study
+
+@2026-03-17 Day 198
+@20:39 transcribing the remaining answers for hw6 #timelog:00:11:35
+#! dz bu/ma123/study

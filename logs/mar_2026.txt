@@ -679,3 +679,11 @@ I've figured out a way to print out all these problems to
 a PDF, as well as all the examples (where there are
 examples). I like this, because it means I can work away from
 my computer area.
+
+@2026-03-19 Day 200
+
+@2026-03-20 Day 201
+@09:21 curating problems for my grind period for quiz #timelog:00:10:21
+#! dz bu/ma123/study
+Most likely, it's going to be 3.8 (implicit differentiation)
+and some of 3.9.

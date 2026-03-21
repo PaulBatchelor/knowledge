@@ -120,6 +120,12 @@
 {\noindent \bf 2026-02-26:} buddy find, buddy slots\smallskip
 {\noindent \bf 2026-03-07:} news, allocator, buddy find, buddy slots, ugen ports\smallskip
 {\noindent \bf 2026-03-08:} context\smallskip
+{\noindent \bf 2026-03-09:} buddy find, context, ugen ports\smallskip
+{\noindent \bf 2026-03-10:} buddy slots\smallskip
+{\noindent \bf 2026-03-13:} buddy slots, sonilo command language, ugens\smallskip
+{\noindent \bf 2026-03-14:} sonilo command language, ugens\smallskip
+{\noindent \bf 2026-03-15:} sonilo command language, ugens\smallskip
+{\noindent \bf 2026-03-17:} sonilo command language\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -633,6 +639,46 @@ ilo interpreter stuff needs to at least happen after ugen stuff. And it's a prer
 By the time unit generators are finished, I think thinking about using a higher-level abstraction like Konilo may be warranted. At that point, it'll start to feel possible to build demos.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:54: msgpack can efficiently store positive 7-bit fixints}\smallskip
+7-bit ints are encoded into a single byte. ASCII should fit, so it might be doable to create something resembling my memwrite virtual machine serialized in a msgpack object.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:58: first tasks for command language: allocation for ugens}\smallskip
+ugen: allocate ports, allocate blocks for ports, allocate data for the ugen, allocate a struct to store components in the ugen. These should all be done with sonilo commands, serialized in msgpack. Eventually, functionality for this will be done in Konilo. For now, I'll probably use either Lua or Python for prototyping.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:00: a portable json2msgpack utility could be useful}\smallskip
+More languages support JSON than msgpack. If there isn't a convenient tool for this already, I might build one in C.
+\par
+
+OR. I build a sonilo assembler that handwrites msgpack output.
+\par
+
+I do want msgpack, or at least a subset of msgpack, because object serialization gives me some wiggle room for changes down the line.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:29: brainstorm: ugen allocation, how to make a ugen}\smallskip
+As I begin designing this command language, I start thinking about one of the first tasks: creating unit generators. Behind that is the task of allocating unit generators, which ties to the memory allocation schemes I've been thinking about for the past few months.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-15}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:19: brainstorm: pseudo-commands}\smallskip
+The day before, I fleshed out unit generators in the context of allocation. Today, I tried imagining the sorts of low-level operations needed to make such a thing work. I don't think I quite bridged the gap between operations and ugen creation, but it was helpful in getting me thinking about language design.
+\par
+
+The sonilo command language is not going to be about abstraction. Re-usable modular code is not a goal here. The idea here is to provide a bedrock with enough functionality to support my needs involving music and sound (tasks which involving assembling unit generators together to make graphs), while flexible enough to adapt to future needs.
+\par
+
+Some operations I jotted down: block and temporary block allocation, loading/storing words and words with offsets, parameter stack manipulation, foreign function calls (like a C function containing a DSP routine), resolving FFI symbols to actual funciton slots (like a function pointer?). These assume a "context" is already instantiated.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-17}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 22:23: word machine initial outlining}\smallskip
+The "command language" in Sonilo controls some kind of virtual computer. My test suite has been a relaxed form of this, but now I want to solidify some things.
+\par
+
 \xrdef{node8}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont phasor}\medskip
 Implement phasor DSP algorithm
@@ -1046,6 +1092,43 @@ I think the last Big Thought I had here was about the behavior of this "buddy sl
 \par
 
 The addition of base address paints a clearer picture for what the responsibilities of this so-called "buddy-slot" system. This allocator needs to be provide a interface similar to malloc/free. To do this, the buddy slot system will need to handle allocating and freeing, blocks from the global block pool, as well as manage the state for some number of buddy system allocators. In addition to the memory that it allocates for other things to use, it will also allocate temporary memory. There should be a nice way to return this memory back to the global block pool when the allocator is done being used (allocated segments will be unable to be recycled until the entire block is freed).
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-10}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:51: attempting to code up some scaffolding}\smallskip
+I jotted some notes down, I want to turn that into some C API functions.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:00: allocator alloc initial code}\smallskip
+starting with some helper primitives for allocating blocks from the block list, and marking them in sets via the context. It'll be better to have these instead of doing the swap operations because it'll be less error prone.
+\par
+
+setting up the initializer for the slot allocator.
+\par
+
+since I zeroed out the block, there are lots of implicitly set things in initialization.
+\par
+
+time for the allocator
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:12: back at it... very very briefly}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:53: what's left}\smallskip
+finish up allocator free
+\par
+
+Is this something I can meaningfully test right now? I'm thinking not really. I need to start thinking forward about building unit generators, possibly using an initial command language.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:33: finish up free}\smallskip
+I am once again suspicious about my address validation for my buddy free. How do I know that some local address in a buddy system actually is the beginning of a block?
+\par
+
+For a simple case. When a block is initialized, the only available block to use is at position $L = 0$, with a k size of 6 (64). What happens when I pass in some value of $L = 10, k = 1$? Or something half-correct like $L=0, k=0$ or $L=23, k=6$? The mechanisms of this algorithm still allude me.
+\par
+
+In theory, I think this is done? I don't think I'll be able to test it will until I start actually using it. That's when the bugs will float up to the top.
 \par
 
 \xrdef{node15}
@@ -1705,6 +1788,21 @@ ilo interpreter stuff needs to at least happen after ugen stuff. And it's a prer
 By the time unit generators are finished, I think thinking about using a higher-level abstraction like Konilo may be warranted. At that point, it'll start to feel possible to build demos.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:58: first tasks for command language: allocation for ugens}\smallskip
+ugen: allocate ports, allocate blocks for ports, allocate data for the ugen, allocate a struct to store components in the ugen. These should all be done with sonilo commands, serialized in msgpack. Eventually, functionality for this will be done in Konilo. For now, I'll probably use either Lua or Python for prototyping.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-14}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:29: brainstorm: ugen allocation, how to make a ugen}\smallskip
+As I begin designing this command language, I start thinking about one of the first tasks: creating unit generators. Behind that is the task of allocating unit generators, which ties to the memory allocation schemes I've been thinking about for the past few months.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-15}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:49: where in the abstraction chain should ugens be created?}\smallskip
+The balance between what to expose and what to abstract away is still unclear to me. With unit generators
+\par
+
 \xrdef{node24}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen ports}\medskip
 implement ugen ports.
@@ -1766,6 +1864,30 @@ The block data is going to need to store the address in sonilo memory space. Re-
 \par
 
 Core functionality is coded out, but untested. Since I can serialize/deserialize this data, I should be able to build some unit tests using my test harness. I'm wondering how I should handle writing constants in my test harness language (which will eventually inform my communication protocol). Blocks should be a little more straightforward.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-09}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:38: what's left here?}\smallskip
+I'm tempted just to merge this in and call it a day.
+\par
+
+I don't actually have an established way to enter in constants in my test suite code. Might be important down the line when I start thinking about my sonilo command language that will work inside Konilo.
+\par
+
+There are no unit tests for this. That might be okay? There's not a lot to test here, and there's going to need to be other components built out for this to actually work.
+\par
+
+Leaving this branch open for now.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:26: I think this is in a good enough place}\smallskip
+As I think I said previously: it's not tested, but there's not a lot to test. I think the amount of work needed to make this testable is diminishing returns.
+\par
+
+I was thinking about adding a way to input constants in the test suite, but honestly, that's the sort of thing I see myself doing in Konilo, not this weird tool.
+\par
+
+In fact, I can imagine unit generators being one of the first abstractions being built in Konilo, after I get core memory allocation figured out (and a communication protocol). I think it'll be worth it to jump away from the test suite at that point, even if it means a bit more time.
 \par
 
 \xrdef{node25}
@@ -2099,12 +2221,28 @@ So, the input to a buddy find operation would just be a relative index 0-63, whi
 \par
 
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-07}\medskip
-{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:50: another operation: check of k-size is available}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:50: another operation: check if k-size is available}\smallskip
 I realized this while writing out an overview the allocation system bottoms-up. For allocation, the buddy slot allocator needs to find an instance where the power-of-2 k size is available. This should be a pretty quick check.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-09}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:07: added kavail and klen operations}\smallskip
+"klen" is used to determine the size of a particular k-list. "kavail" is used to determine if the k size is available, which works by checking the length of all the k lists that are the supplied k value or higher.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:44: wrapping this test code into my main test suite}\smallskip
+It just seems a shame to throw away this test code entirely.
+\par
+
+It's in. The test passes. The TeX output still wants to build. Merging it into main. I think we're done here.
 \par
 
 \xrdef{node29}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont context}\medskip
+create a base "context" for managing blocks. most likely,
+a combination of a zero page, some bitsets, a free list, and
+a stack. the context will provide a baseline layer of abstraction
+that new subroutines can sit on top of.
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-08}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:45: context}\smallskip
 building off of my "memstack" concept, I tried to return to this idea I had months ago about a core "context" object in charge of allocating memory.
@@ -2114,6 +2252,27 @@ A context is a zero page, and on the first few words of the zero page contain in
 \par
 
 I was thinking it would make sense to have operations that could read contents of the zero page and push them directly to the stack, since in this case we would know the address of the stack on the zero page (it would be fixed).
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-09}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:37: task created}\smallskip
+At this point, I think this is a pretty well defined task and I can start taking a stab at it.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:40: initial coding}\smallskip
+There's a lot of functionality that should have been a C API function, but was instead inline code for my test suite. Sigh.
+\par
+
+I didn't write any API functions. Lots of busywork today.
+\par
+
+kicking up gremlins. memory allocator test fails.
+\par
+
+There is nothing here I can really test. All the addresses are arbitrary, and the underlying components are already being tested.
+\par
+
+I think I'm just going to merge it.
 \par
 
 \bye

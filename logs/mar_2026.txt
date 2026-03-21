@@ -560,7 +560,7 @@ in a buddy system actually is the beginning of a block?
 ---
 For a simple case. When a block is initialized, the only
 available block to use is at position $L = 0$, with a k size
-of 6 (64). What happens when I pass in some value of $L = 10, $k = 1$?
+of 6 (64). What happens when I pass in some value of $L = 10, k = 1$?
 Or something half-correct like $L=0, k=0$ or $L=23, k=6$? The
 mechanisms of this algorithm still allude me.
 ---
@@ -687,3 +687,36 @@ my computer area.
 #! dz bu/ma123/study
 Most likely, it's going to be 3.8 (implicit differentiation)
 and some of 3.9.
+
+@2026-03-21 Day 202
+@15:09 sonilo check-in #timelog:00:14:42
+#! dz thoughts/projects/sonilo/news
+looks like I was last thinking about the command language,
+and the virtual machine behind it.
+---
+the next immediate abstraction that's going to start
+appearing is msgpack.
+---
+the memory allocator might work? I just want to test it
+in the command language for making the initial unit generators.
+---
+it looks like I've outlined a general procedure for making
+a ugen, and some general low-level operations that may be
+helpful for this. I have yet to explicitly write the
+exact command sequence needed to initialize a ugen.
+---
+once I do that, I should be able to work backwards and
+start building out an initial proof of concept.
+
+@15:15 holding off until ugen structure is solidified
+#! dz thoughts/projects/sonilo/tasks/butlp
+
+@15:21 todo: work out the commands needed to create a ugen
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+This will most likely be the hello world.
+---
+it doesn't actually need to be a real unit generator, just
+real enough that the data structure works.
+---
+once I have that reference program, I can start building
+out the underlying components for a command parser.

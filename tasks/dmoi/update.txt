@@ -4,6 +4,8 @@ gr 1
 up dmoi/tasks.txt
 ds 200
 of 30
+# 2026-03-21 bump 2 months
+of 60
 gc
 sr
 w

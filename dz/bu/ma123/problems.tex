@@ -2253,6 +2253,14 @@ $$\
 {d \over dx}
 x^{-14x}
 $$
+
+\solution{3.9.75}
+$$\
+{d \over dx}
+x^{-14x} =
+-14x^{-14x}(\ln x + 1)
+$$
+
 \problem{3.9.76}
 Compute the derivative. Use logarithmic differentiation where
 appropriate.
@@ -2260,6 +2268,13 @@ appropriate.
 $$\
 {d \over dx}
 (4x)^{4x}
+$$
+
+\solution{3.9.76}
+$$\
+{d \over dx}
+(4x)^{4x} =
+4(4x)^{4x}(1 + \ln(4x))
 $$
 
 \problem{3.9.77}
@@ -2272,6 +2287,25 @@ f(x) = {
 (3x - 6)^8
 }
 $$
+
+\solution{3.9.77}
+$$\
+f(x) = {
+(x + 3)^{12}
+\over
+(3x - 6)^8
+} =
+{
+(x + 3)^{12}
+\over
+(3x - 6)^{8}
+}\big(
+{ 12 \over x + 3}
+-
+{8 \over x - 2}
+\big)
+$$
+
 \problem{3.9.79}
 Use logarithmic differentiation to evaluate $f'(x)$.
 
@@ -2280,6 +2314,13 @@ f(x) = (2x)^{\ln 2x}
 $$
 (Use parentheses to clearly denote the argument of each function.)
 \bigskip
+
+\solution{3.9.79}
+
+$$\
+f(x) = (2x)^{\ln 2x}=
+2^{\ln 2x + 1} x^{\ln 2x - 1} \ln 2x
+$$
 
 \problem{3.9.82}
 Use logarithmic differentiation to evaluate $f'(x)$.
@@ -2290,6 +2331,27 @@ x^8\cos^4 x
 \sqrt{3x - 5}
 }
 $$
+
+\solution{3.9.82}
+$$\
+f(x) = {
+x^8\cos^4 x
+\over
+\sqrt{3x - 5}
+}
+=
+{
+x^8\cos^4 x
+\over
+\sqrt{3x - 5}
+}
+\big(
+{8 \over x}
+-4 \tan x
+-{3 \over 2(3x - 5)}
+\big)
+$$
+
 \problem{3.9.83}
 Use logarithmic differentiation to evaluate $f'(x)$.
 
@@ -2299,13 +2361,33 @@ $$
 (Use parentheses to clearly denote the argument of each function.)
 \bigskip
 
+\solution{3.9.83}
+$$\
+f'(x) =
+(\cos 3x)^{\cot 3x}
+\big(
+-3 \csc^2 3x \cdot \ln(\cos 3x) -3
+\big)
+$$
+
 \problem{3.9.85}
 Compute the derivative. Use logarithmic differentiation
 where appropriate.
 $$\
 {d \over dx} \bigg( 1 + {4 \over x} \bigg)^x
 $$
-\bigskip
+
+\solution{3.9.85}
+$$\
+{d \over dx} \bigg( 1 + {4 \over x} \bigg)^x
+=
+\bigg( 1 + {4 \over x} \bigg)^x
+\bigg(
+\ln \bigg( 1 + {4 \over x} \bigg)
+- {4 \over x + 4}
+\bigg)
+$$
+
 \problem{3.9.86}
 Compute the derivative.
 
@@ -2315,22 +2397,44 @@ x^{(x^7)}
 \bigg]
 $$
 
+\solution{3.9.86}
+$$\
+{d \over dx} \bigg[
+x^{(x^7)}
+\bigg] =
+x^{x^7 + 6}(7\ln x + 1)
+$$
+
 \problem{3.10.11}
 Find the slope of the curve $y = cos^{-1} x$ at
 $\big(0, {\pi \over 2}\big)$ without calculating the
 derivative of $cos^{-1}x$.
 \bigskip
+
+\solution{3.10.11} The slope of the curve is $-1$.
+
 \problem{3.10.13}
 Evaluate the derivative of the function.
 
 $$\
 f(x) = \sin^{-1}(6x^4)
 $$
+
+\solution{3.10.13}
+$$\
+f'(x) = {24x^3 \over \sqrt{1 - 36x^8}}
+$$
+
 \problem{3.10.17}
 Evaluate the derivative of the following function.
 
 $$\
 f(x) = \cot^{-1}(e^{4x})
+$$
+
+\solution{3.10.17}
+$$\
+f'(x) = -{4e^{4x} \over {1 + e^{8x}}}
 $$
 
 \problem{3.10.19}
@@ -2339,11 +2443,22 @@ Evaluate the derivative of the follwing function.
 $$\
 f(x) = 4\tan^{-1}6x
 $$
+
+\solution{3.10.19}
+$$\
+f'(x) = {24 \over {1 + 36x^2}}
+$$
+
 \problem{3.10.21}
 Find the derivative of the function
 
 $$\
 f(y) = \tan^{-1}(5y^2 + 8)
+$$
+
+\solution{3.10.21}
+$$\
+f'(y) = {10y \over 25y^4 + 80y^2 + 65}
 $$
 
 \problem{3.10.31}
@@ -2353,31 +2468,171 @@ $$\
 f(u) = \csc^{-1} (3u + 1)
 $$
 
+\solution{3.10.31}
+$$\
+f'(u) = - {3 \over |3u + 1|\sqrt{9u^2 + 6u}}
+$$
+
 \problem{3.10.32}
 Evaluate the derivative of the following function.
 
 $$\
 f(t) = \ln (\tan^{-1} 2t^{2})
 $$
+
+\solution{3.10.32}
+$$\
+f'(t) = {
+4t
+\over
+(1 + 4t^4)(tan^{-1}2t^2)
+}
+$$
+
 \problem{3.10.36}
 Find the derivative of the function.
 
 $$\
 f(x) = 9\tan^{-1}(e^{3x})
 $$
-\problem{3.10.45} 17. \bigskip
-\problem{3.11.11} 18. \bigskip
-\problem{3.11.16} 19. \bigskip
-\problem{3.11.17} 20. \bigskip
-\problem{3.11.19} 21. \bigskip
-\problem{3.11.29} 22. \bigskip
-\problem{3.11.31} 23. \bigskip
-\problem{3.11.36} 24. \bigskip
-\problem{3.11.41} 25. \bigskip
-\problem{3.47} 26.
+
+\solution{3.10.36}
+$$\
+f'(x) = {27e^{3x} \over 1 + e^{6x}}
+$$
+
+\problem{3.10.45}
+A boat sails directly towards a 300-m skyscraper that
+stands on the edge of a harbor. The angular size of the building
+is formed by lines from the top and bottom of the building
+to the observer.
+
+\par {\bf a.}
+Use a trigonometric equation to define an expression
+for the angle, $\theta$, in terms of $x$.
+
+\par {\bf b.}
+What is the rate of change for the angular size ${d\theta \over dx}$,
+when the boat is $x = 450 \hbox{m}$ from the building?
+
+\bigskip
+
+\solution{3.10.45}
+\par {\bf a.}
+$$\theta = tan^{-1}{300 \over x}$$
+
+\par {\bf b.}
+$-0.00103$ rad/m.
+
+\bigskip
+
+\problem{3.11.11}
+The sides of a square increase at a rate of 4 m/sec.
+
+\par {\bf a.}
+At what rate is the area of the square changing
+when the sides are 19m long?
+
+\par {\bf b.}
+At what rate is the area of the square changing
+when the sides are 30m long?
+
+\bigskip
+
+\solution{3.11.11}
+\par {\bf a.} 152 $\hbox{m}^2/s$
+\par {\bf b.} 240 $\hbox{m}^2/s$
+
+\bigskip
+
+\problem{3.11.16}
+The edges of a cube increase at a rate of 4 cm/s. How
+fast is the volume changing when the length of each edge
+is 50cm?
+\bigskip
+
+\solution{3.11.16}
+$30,000 \, \hbox{cm}^3/\hbox{s}$
+
+\problem{3.11.17}
+A circle has an initial radius of 50ft when the radius
+begins decreasing at a rate of 5 ft/min. What is the rate
+of change of area at the instant that the radius is 21 ft?
+
+\bigskip
+
+\solution{3.11.17}
+$-210\pi \, \hbox{ft}^2 / \hbox{min}$
+
+\bigskip
+
+\problem{3.11.19}
+A spherical balloon is inflated an its volume increases
+at a rate of 19 in$^3$/min. What is the rate of change of its
+radius when the radius is 8 in?
+\bigskip
+
+\solution{3.11.19}
+0.024 in/min. \bigskip
+
+\problem{3.11.29}
+An angler hooks his trout and reals in his line at 5 in/s.
+Assume the tip of the fishing rod is 11ft above the water
+and directly above the angler, and the fish is pulled horizontally
+directly towards the angler. Find the horizontal speed of the fish
+when it is 25ft from the angler.
+
+\bigskip
+
+\solution{3.11.29}
+5.46 in/s.
+\bigskip
+
+\problem{3.11.31}
+A water heater has the shape of a right cylindrical tank
+with a radius of 1ft and a height of 6ft is being drained.
+How fast is water draining out of the tank (in ft$^3$/min) if
+the water level is dropping at 12 in/min?
+\bigskip
+
+\solution{3.11.31}
+$\pi$ ft$^3$/min
+\bigskip
+
+\problem{3.11.36}
+An inverted conical water tank with a height of 12ft and
+a radius of 6ft is drained through a hole in the vertex
+at a rate of 2 ft$^3$/s. What is the rate of change of the
+water depth when the depth is at 4ft?
+\bigskip
+
+\solution{3.11.36}
+$-0.16$ ft/s
+\bigskip
+
+\problem{3.11.41}
+A 25-foot ladder is leaning against a vertical wall when someone
+begins pulling the foot of ladder away from the wall at a rate
+of 0.7 ft/s. How fast is the top of the ladder sliding down the wall
+when the foot of the ladder is 24 ft from the wall?
+\bigskip
+
+\solution{3.11.41}
+2.4 ft/s.
+\bigskip
+
+\problem{3.47}
 Find the derivative of the following function.
 $$\
 y = 5^{8x^2 - 5x}
+$$
+
+\solution{3.47}
+$$\
+{dy \over dx} =
+5^{8x^2 - 5x}
+(16x - 5)
+\ln(5)
 $$
 
 \bye

@@ -728,3 +728,6 @@ out the underlying components for a command parser.
 @10:15 punching in answers for HW7 #timelog:00:50:42
 #! dz bu/ma123/hw
 5 problems incorrect, all from 3.11. I am currently 80%.
+
+@15:39 transcribing hw7 problems and solutions #timelog:O00:44:23
+#! dz bu/ma123/study

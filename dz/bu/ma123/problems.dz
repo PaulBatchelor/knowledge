@@ -21,6 +21,13 @@ ln {\par \bf f.} On what intervals is the speed increasing?
 nn 3_2_11
 ln Use limits to find $f'(x)$ if $f(x) = 4x$.
 
+nn 3_11_29
+ln An angler hooks his trout and reals in his line at 5 in/s.
+ln Assume the tip of the fishing rod is 11ft above the water
+ln and directly above the angler, and the fish is pulled horizontally
+ln directly towards the angler. Find the horizontal speed of the fish
+ln when it is 25ft from the angler.
+
 nn 3_10_21
 ln Find the derivative of the function
 ln $$\
@@ -247,6 +254,12 @@ ln $$\
 ln y = \sin(6x^2 + 6x + 3)
 ln $$
 
+nn 3_11_31
+ln A water heater has the shape of a right cylindrical tank
+ln with a radius of 1ft and a height of 6ft is being drained.
+ln How fast is water draining out of the tank (in ft$^3$/min) if
+ln the water level is dropping at 12 in/min?
+
 nn PM_1_9
 ln Calculate an equation of a line tangent to graph of $y = f(x)$
 ln at $x = 1$. Write answer in point-intercept form or slope-intercept form.
@@ -267,6 +280,12 @@ ln for all non-zero values of $x$. Evaluate
 ln $$\lim_{x \to \infty}{g(x)}$$
 ln and
 ln $$\lim_{x \to -\infty}{g(x)}$$
+
+nn 3_11_36
+ln An inverted conical water tank with a height of 12ft and
+ln a radius of 6ft is drained through a hole in the vertex
+ln at a rate of 2 ft$^3$/s. What is the rate of change of the
+ln water depth when the depth is at 4ft?
 
 nn 3_9_43
 ln Find the derivative of:
@@ -425,6 +444,12 @@ ln $$\
 ln f(x) = 2x^4 + 5x
 ln $$
 
+nn 3_11_41
+ln A 25-foot ladder is leaning against a vertical wall when someone
+ln begins pulling the foot of ladder away from the wall at a rate
+ln of 0.7 ft/s. How fast is the top of the ladder sliding down the wall
+ln when the foot of the ladder is 24 ft from the wall?
+
 nn 2_5_25
 ln Determine the following limit:
 ln $$\
@@ -500,6 +525,18 @@ ln graph of $f$ at $(a, f(a))$ for the given value of $a$.
 ln $$\
 ln f(x) = 2x^2 - 9x + 10; a = 1
 ln $$
+
+nn 3_10_45
+ln A boat sails directly towards a 300-m skyscraper that
+ln stands on the edge of a harbor. The angular size of the building
+ln is formed by lines from the top and bottom of the building
+ln to the observer.
+ln \par {\bf a.}
+ln Use a trigonometric equation to define an expression
+ln for the angle, $\theta$, in terms of $x$.
+ln \par {\bf b.}
+ln What is the rate of change for the angular size ${d\theta \over dx}$,
+ln when the boat is $x = 450 \hbox{m}$ from the building?
 
 nn 3_2_37
 ln \par {\bf a.} Find the derivative function $f'$ for the
@@ -626,7 +663,6 @@ ln Find the derivative of the following function.
 ln $$\
 ln y = 5^{8x^2 - 5x}
 ln $$
-ln \bye
 
 nn QZ_2_1
 ln Find the following limit or state that it does not exist:
@@ -1053,6 +1089,15 @@ ln $$\
 ln y = \sin^{11}x
 ln $$
 
+nn 3_11_11
+ln The sides of a square increase at a rate of 4 m/sec.
+ln \par {\bf a.}
+ln At what rate is the area of the square changing
+ln when the sides are 19m long?
+ln \par {\bf b.}
+ln At what rate is the area of the square changing
+ln when the sides are 30m long?
+
 nn 3_5_76
 ln {\par \bf a.} For what values of $x$ does
 ln $f(x) = 8x + 16\sin(x)$ have a horizontal tangent line?
@@ -1069,11 +1114,21 @@ ln h
 ln }
 ln $$
 
+nn 3_11_16
+ln The edges of a cube increase at a rate of 4 cm/s. How
+ln fast is the volume changing when the length of each edge
+ln is 50cm?
+
 nn 3_4_70
 ln Find $f'(x)$, $f''(x)$, and $f'''(x)$.
 ln $$\
 ln f(x) = {1 \over x^6}
 ln $$
+
+nn 3_11_17
+ln A circle has an initial radius of 50ft when the radius
+ln begins decreasing at a rate of 5 ft/min. What is the rate
+ln of change of area at the instant that the radius is 21 ft?
 
 nn 2_6_61
 ln Determine the interval(s) on which the function
@@ -1086,6 +1141,11 @@ ln and
 ln $$\
 ln \lim_{x \to -{2\pi}^{-}}{f(x)}
 ln $$
+
+nn 3_11_19
+ln A spherical balloon is inflated an its volume increases
+ln at a rate of 19 in$^3$/min. What is the rate of change of its
+ln radius when the radius is 8 in?
 
 nn 3_9_23
 ln Find the derivative:
@@ -1272,6 +1332,18 @@ ln $f'(x) = 4$.
 
 co $ ../../problems/3_2_11
 
+nn 3_11_29
+ln 5.46 in/s.
+
+co $ ../../problems/3_11_29
+
+nn 3_10_21
+ln $$\
+ln f'(y) = {10y \over 25y^4 + 80y^2 + 65}
+ln $$
+
+co $ ../../problems/3_10_21
+
 nn 2_3_68
 ln The limit does not exist.
 
@@ -1412,6 +1484,11 @@ ln $$
 
 co $ ../../problems/3_7_37
 
+nn 3_11_31
+ln $\pi$ ft$^3$/min
+
+co $ ../../problems/3_11_31
+
 nn PM_1_9
 ln $$\
 ln y = {3 \over 2}x - {1 \over 2}
@@ -1424,12 +1501,35 @@ ln $({x \to \infty}){ g(x)} = ({x \to -\infty}) g(x) = 30$
 
 co $ ../../problems/2_5_15
 
+nn 3_11_36
+ln $-0.16$ ft/s
+
+co $ ../../problems/3_11_36
+
 nn 3_9_43
 ln $$\
 ln {dy \over dx} = x^2 9^x (3 + x \ln 9)
 ln $$
 
 co $ ../../problems/3_9_43
+
+nn 3_10_31
+ln $$\
+ln f'(u) = - {3 \over |3u + 1|\sqrt{9u^2 + 6u}}
+ln $$
+
+co $ ../../problems/3_10_31
+
+nn 3_10_32
+ln $$\
+ln f'(t) = {
+ln 4t
+ln \over
+ln (1 + 4t^4)(tan^{-1}2t^2)
+ln }
+ln $$
+
+co $ ../../problems/3_10_32
 
 nn 3_2_24
 ln \par {\bf a.} $f'(x) = 6x + 5$
@@ -1461,6 +1561,13 @@ ln \par {\bf b.} $f'(0) = {1 \over 5}$
 ln \par {\bf c.} $f'(1) = {5 \over 81}$
 
 co $ ../../problems/3_2_26
+
+nn 3_10_36
+ln $$\
+ln f'(x) = {27e^{3x} \over 1 + e^{6x}}
+ln $$
+
+co $ ../../problems/3_10_36
 
 nn 3_2_28
 ln \par $f'(w) = {12 \over \sqrt{24w + 1}}$,
@@ -1534,6 +1641,11 @@ ln $f'(x) = 8x^3 + 5$
 
 co $ ../../problems/3_3_31
 
+nn 3_11_41
+ln 2.4 ft/s.
+
+co $ ../../problems/3_11_41
+
 nn 2_5_25
 ln ${5 \over 7}$
 
@@ -1574,6 +1686,14 @@ ln \par {\bf a.} $f'(x) = 4x - 9$
 ln \par {\bf b.} $y = -5x + 8$
 
 co $ ../../problems/3_2_35
+
+nn 3_10_45
+ln \par {\bf a.}
+ln $$\theta = tan^{-1}{300 \over x}$$
+ln \par {\bf b.}
+ln $-0.00103$ rad/m.
+
+co $ ../../problems/3_10_45
 
 nn 3_2_37
 ln \par {\bf a.} $f'(x) = {5 \over 2\sqrt{5x + 6}}$
@@ -1673,6 +1793,17 @@ ln } = -2
 ln $$
 
 co $ ../../problems/DS_2_3
+
+nn 3_47
+ln $$\
+ln {dy \over dx} =
+ln 5^{8x^2 - 5x}
+ln (16x - 5)
+ln \ln(5)
+ln $$
+ln \bye
+
+co $ ../../problems/3_47
 
 nn 3_5_57
 ln $$\
@@ -1823,12 +1954,50 @@ ln $\infty$
 
 co $ ../../problems/2_4_42
 
+nn 3_9_75
+ln $$\
+ln {d \over dx}
+ln x^{-14x} =
+ln -14x^{-14x}(\ln x + 1)
+ln $$
+
+co $ ../../problems/3_9_75
+
+nn 3_9_76
+ln $$\
+ln {d \over dx}
+ln (4x)^{4x} =
+ln 4(4x)^{4x}(1 + \ln(4x))
+ln $$
+
+co $ ../../problems/3_9_76
+
 nn 3_5_61
 ln $$\
 ln y'' = 10 \csc^2 x \cot x
 ln $$
 
 co $ ../../problems/3_5_61
+
+nn 3_9_77
+ln $$\
+ln f(x) = {
+ln (x + 3)^{12}
+ln \over
+ln (3x - 6)^8
+ln } =
+ln {
+ln (x + 3)^{12}
+ln \over
+ln (3x - 6)^{8}
+ln }\big(
+ln { 12 \over x + 3}
+ln -
+ln {8 \over x - 2}
+ln \big)
+ln $$
+
+co $ ../../problems/3_9_77
 
 nn 2_4_47
 ln The vertical symptote is $x = 4$. The limits at this symptote
@@ -1843,6 +2012,14 @@ ln y'' = -4 \sin x \cos x
 ln $$
 
 co $ ../../problems/3_5_63
+
+nn 3_9_79
+ln $$\
+ln f(x) = (2x)^{\ln 2x}=
+ln 2^{\ln 2x + 1} x^{\ln 2x - 1} \ln 2x
+ln $$
+
+co $ ../../problems/3_9_79
 
 nn 2_3_40
 ln Solution: $-1 \over 4$.
@@ -1930,6 +2107,28 @@ ln {\par \bf b.} Slope of curve at $(0, {\pi \over 8})$ is $-{1 \over 4}$.
 
 co $ ../../problems/3_8_19
 
+nn 3_9_82
+ln $$\
+ln f(x) = {
+ln x^8\cos^4 x
+ln \over
+ln \sqrt{3x - 5}
+ln }
+ln =
+ln {
+ln x^8\cos^4 x
+ln \over
+ln \sqrt{3x - 5}
+ln }
+ln \big(
+ln {8 \over x}
+ln -4 \tan x
+ln -{3 \over 2(3x - 5)}
+ln \big)
+ln $$
+
+co $ ../../problems/3_9_82
+
 nn PM_1_8_3
 ln $$\
 ln {dy \over dx} =
@@ -1937,6 +2136,17 @@ ln (\sec^2(e^{1 \over x})(- {1 \over x^2} e^{1 \over x})
 ln $$
 
 co $ ../../problems/PM_1_8_3
+
+nn 3_9_83
+ln $$\
+ln f'(x) =
+ln (\cos 3x)^{\cot 3x}
+ln \big(
+ln -3 \csc^2 3x \cdot \ln(\cos 3x) -3
+ln \big)
+ln $$
+
+co $ ../../problems/3_9_83
 
 nn PM_1_8_4
 ln $$\
@@ -1947,6 +2157,29 @@ ln \big(2x\sin x + x^2 \cos x \big)
 ln $$
 
 co $ ../../problems/PM_1_8_4
+
+nn 3_9_85
+ln $$\
+ln {d \over dx} \bigg( 1 + {4 \over x} \bigg)^x
+ln =
+ln \bigg( 1 + {4 \over x} \bigg)^x
+ln \bigg(
+ln \ln \bigg( 1 + {4 \over x} \bigg)
+ln - {4 \over x + 4}
+ln \bigg)
+ln $$
+
+co $ ../../problems/3_9_85
+
+nn 3_9_86
+ln $$\
+ln {d \over dx} \bigg[
+ln x^{(x^7)}
+ln \bigg] =
+ln x^{x^7 + 6}(7\ln x + 1)
+ln $$
+
+co $ ../../problems/3_9_86
 
 nn 3_7_15
 ln $u = g(x) = 2x + 7, y = f(u) = u^8$
@@ -1964,6 +2197,12 @@ ln $$
 
 co $ ../../problems/3_7_17
 
+nn 3_11_11
+ln \par {\bf a.} 152 $\hbox{m}^2/s$
+ln \par {\bf b.} 240 $\hbox{m}^2/s$
+
+co $ ../../problems/3_11_11
+
 nn 3_5_76
 ln {\par \bf a.}
 ln $x = {2\pi \over 3} + 2k\pi$ and
@@ -1978,11 +2217,21 @@ ln Solution: $6$.
 
 co $ ../../problems/2_3_53
 
+nn 3_11_16
+ln $30,000 \, \hbox{cm}^3/\hbox{s}$
+
+co $ ../../problems/3_11_16
+
 nn 3_4_70
 ln $f'(x) = - {6 \over x^7}$, $f''(x) = {42 \over x^8}$,
 ln $f'''(x) = -{336 \over x^9}$
 
 co $ ../../problems/3_4_70
+
+nn 3_11_17
+ln $-210\pi \, \hbox{ft}^2 / \hbox{min}$
+
+co $ ../../problems/3_11_17
 
 nn 3_9_23
 ln $$\
@@ -2002,6 +2251,13 @@ ln \par $\lim (x \to 0^{-}) \, f(x) = \infty$
 ln \par ${\lim (x \to 0^{+}) \, f(x) = -\infty}$
 
 co $ ../../problems/2_6_65
+
+nn 3_10_13
+ln $$\
+ln f'(x) = {24x^3 \over \sqrt{1 - 36x^8}}
+ln $$
+
+co $ ../../problems/3_10_13
 
 nn 3_9_27
 ln $$\
@@ -2024,12 +2280,26 @@ ln $$
 
 co $ ../../problems/3_5_13
 
+nn 3_10_17
+ln $$\
+ln f'(x) = -{4e^{4x} \over {1 + e^{8x}}}
+ln $$
+
+co $ ../../problems/3_10_17
+
 nn 3_5_16
 ln $$\
 ln \lim_{\theta \to 0}{\cos^2\theta - 1 \over \theta} = 0
 ln $$
 
 co $ ../../problems/3_5_16
+
+nn 3_10_19
+ln $$\
+ln f'(x) = {24 \over {1 + 36x^2}}
+ln $$
+
+co $ ../../problems/3_10_19
 
 nn 3_8_24
 ln {\par \bf a.} ${dy \over dx} = -\big({y \over x}\big)^{1 \over 4}$

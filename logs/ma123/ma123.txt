@@ -1081,3 +1081,150 @@ I am very tired of all these sign mistakes. I wish I new how I could be better a
 
 @11:23 practice midterm and discussion review comments #timelog:00:25:51
 #! dz bu/ma123/study
+@2026-03-01#ma123
+@10:19 roots, powers, and fractions are mixed notation #scratch:02s
+#! dz bu/ma123/problems/3_4_56
+I put this problem on my curated problem set list because of the work I had to do to obtain an answer the "long way" (using the quotient rule instead of simplifying). It turns out, this problem became a lot simpler once I replaced all the roots with powers. This leads me to an insight: using expressions with both roots and powers are mixed notation, which makes it more difficult to solve the problem because you are working with two different systems.
+---
+The advantage of writing something like $\sqrt(x)$ as $x^{1/2}$ is that there is more stuff you can do in this form. You have laws of exponents in your toolkit, AND you have laws of fractions.
+---
+In an alternate timeline, we could be living in a world where root notation was more popular.
+You could write ${y \over x}$ as
+$y x^{-1} = y {\root -1 \of x}$, or even
+${\root 1 \of y}{\root -1 \of x}$. We are used to seeing things like $x^{1/2} = \sqrt{x}$, but certainly this would imply $x^2 = {\root (1/2) \of x}$? Still haven't thought this through, but you could probably rewrite fractions to be in terms of root, and derive all the conventional power laws to be in terms of roots (call them "root laws").
+
+@14:07 missing term #scratch:02u
+#! dz bu/ma123/problems/PM_1_8_3
+In calculating the derivative of an exponential, I left out a term. I just forgot to copy it. I was pressed for space, so maybe the sloppyness got me distracted. I think I need better spacing between equal signs.
+
+@14:09 missing term #scratch:02u
+#! dz bu/ma123/problems/PM_1_8_1
+Very similar to PM.1.8.3. I just forgot a term when taking a derivative of a component of the equation. Both involved exponentials.
+
+@14:15 Technically correct answer, differen't form #scratch:02u
+#! dz bu/ma123/problems/PM_1_8_4
+I combined the terms in one of the derivative, because $-3\cos x \sin x$ just made more sense than $(-3 \cos x)(\sin x)$. I doubt they would have docked points for that. But, who knows.
+
+@20:54 found a new way to mess this up #scratch:02v
+#! dz bu/ma123/problems/3_2_26
+I usually get this one right, but I messed up this time. When computing the derivative function, I screwed up one of the terms in the denominator, and turned a $5$ into an $h$. Then, I forgot to foil completely.
+
+@2026-03-22#ma123
+@15:48 how to round this number? #scratch:03N
+#! dz bu/ma123/problems/3_10_45
+They say to round to the nearest 5 places, and my result has come up to a value of $-0.0010256$, where $5$ determines if the $2$ becomes a $3$ or not. I've looked it up, and I think it should be $-0.00103$, assuming everything up to this point has been correct.
+
+@15:50 forgot a value
+#! dz bu/ma123/problems/3_11_29
+This is a right triangle problem. I diverged from the approach in the sample problem, opting to differentiate $x^2 + y^2 = z^2$ before solving for $z$ first. I ended up dropping the $z$ term somewhere along the way, which caused units to cancel wrong.
+---
+The length of the reel $z$ is not explicitely given, but it can be defined in terms of $x$ and $y$. doing that and then plugging it in gets a reasonable looking answer (haven't checked yet).
+
+@15:54 keeping track of units is hard #scratch:03m
+#! dz bu/ma123/problems/3_11_31
+I was determined to leave the units in the variables, because I wanted to work with them algebraically to derive the final unit. I couldn't quite get it working right when taking the dervative. Taking the derivative of $\hbox{ft}^3$, do you use the power rule? The math doesn't seem to think so, it seems to work when it is $\hbox{ft}^2$, not $3\hbox{ft}^2$, but I can't justify why.
+
+@15:59 how did they simplify the root in the example? #scratch:03L
+#! dz bu/ma123/problems/3_11_29
+I couldn't figure out a way to do that on my calculator. I left it in root form, since it was going into a calculator anyways.
+
+@16:02 I keep forgetting to include the differentiated component #scratch:03L
+#! dz bu/ma123/problems/3_11_19
+In both the sample problem an the actual problem,
+I forgot about the second differential component when taking the derivative. I just treated it as the power rule on a variable, not the chain rule.
+
+@16:04 how to compute ranges? #scratch:03E
+#! dz bu/ma123/problems/3_10_13
+One of the parts of this problem seems to want
+to ask about the range of $x$ values for the derivative. It wasn't clear to me the steps they took to figure this out. I ended up doing some sort of algebra on the bounds of $x$ defined used inequalties.
+
+@16:06 don't forget negation #scratch:03e
+#! dz bu/ma123/problems/3_10_17
+This problem had a negative exponent, that's an easy thing to drop when taking the derivative.
+
+@16:07 messed up exponent rules #scratch:03d
+#! dz bu/ma123/problems/3_9_86
+I messed up taking the derivative of $x^7$ and wrote $7x$ instead of $7x^6$. screwed up some simplification.
+
+@16:09 non-intuitive simplification #scratch:03d
+#! dz bu/ma123/problems/3_10_11
+Different ways of thinking about $\sqrt{2} \over 2$. It's typically written $\sqrt{2} \over 2$, which is equal to $1 \over \sqrt{2}$, but it's never defined that way. This problem essentially had a sequence that was ${1 \over {\sqrt{2} / 2}} = {2 \over {\sqrt{2}} = {(\sqrt{2})^2 \over \sqrt{2}} = \sqrt{2}}$. Took me a while to figure that out answer (this was in the sample problem, not the HW problem).
+
+@16:14 truly evil simplification #scratch:03a
+#! dz bu/ma123/problems/3_9_77
+
+@16:15 watch for parentheses #scratch:039
+#! dz bu/ma123/problems/3_8_76
+In the example problem, I had trouble grokking the solution until I realized that $3x^{10x} \ne (3x)^{10}$. The latter requires distributing the exponent to both terms.
+
+@16:18 fogotten chain rule, misplaced differential term #scratch:03k
+#! dz bu/ma123/problems/3_11_16
+
+@16:19 dropped a pi while copying #scratch:03k
+#! dz bu/ma123/problems/3_11_17
+
+@16:20 careful with negation when bringing things to the other side #scratch:03h
+#! dz bu/ma123/problems/3_8_31
+
+@16:21 be mindful of distribution #scratch:03i
+#! dz bu/ma123/problems/3_9_47
+When distributing the stuff in parentheses, I forgot a term, and the canceling broke.
+
+@16:22 sample problem prematurely optimized #scratch:03m
+#! dz bu/ma123/problems/3_11_31
+The process they took was to take the volume equation, and remove a term because it was 1. Down the line, it greatly simplified things. But, doing so made it harder to determine the units algebraically. So, I went back and redid the problem without this initial simplification to see the units.
+
+@15:47 reviewing hw7 problems up to this point #timelog:00:36:09
+#! dz bu/ma123/study
+Nothing at this point has been verified as correct, though I think it's mostly going to be correct because I did the sample problems first.8tuu
+
+@16:27 don't lose track of what the inner function is #scratch:03g
+#! dz bu/ma123/problems/3_10_36
+Chain rule confusion.
+
+@16:28 power rule mishap #scratch:03g
+#! dz bu/ma123/problems/3_47
+This keeps happening when there's a constant involved. I forget to multiply those 2 values.
+
+@18:09 I don't fully grok the setup #scratch:03N
+#! dz bu/ma123/problems/3_11_36
+The problem involves a conical tank, and finding the rate of change in volume when the water is at a particular height. The trick is to think in terms of ratios, and use that to rework the problem so radius is defined in terms of height.
+---
+Right, okay. So when the cone is draining, it shrinks in a way that the height is a known quantity, but the radius is not explicitely known. The new height forms a new cone, and the volume can be derived using the cylindrical volume formula. Taking a slice of the cone creates a right triangle with some radius and a height, which can be expressed as a fixed ratio. Since a radius and height is known, this ratio can be calculated.
+
+@2025-03-23#ma123
+@13:29 problem asks for speed, not velocity #scratch:03p
+#! dz bu/ma123/problems/3_11_29
+Calculations in my previous solutions were correct, I just needed to apply absolute value.
+
+@13:31 solution wanted an absolute value #scratch:03p
+#! dz bu/ma123/problems/3_11_31
+Once again, I got all the calculations right, except for the last step, which was to just make the thing positive.
+
+@13:32 why is this solution negative? #scratch:03p
+#! dz bu/ma123/problems/3_11_36
+Similar problems wanted the absolute value, but this one did not. Something in the wording. I'll have to double check what the problem was asking for.
+
+@13:33 speed, not velocity, otherwise correct #scratch:03m
+#! dz bu/ma123/problems/3_11_29
+Postive value desired, not negative.
+
+@13:35 incorrect arithmetic #scratch:03k
+#! dz bu/ma123/problems/3_11_11
+silly mistake, $2\cdot 120=240$, not $140$. Otherwise, it was a pretty simple problem.
+
+@13:37 incorrect arithmetic #scratch:03k
+#! dz bu/ma123/problems/3_11_16
+I think I was doing mental math here, and ended up adding on an extra 0. oops.
+
+@13:38 wrong depth provided #scratch:03n
+#! dz bu/ma123/problems/3_11_36
+The problem was asking for a value at a different depth than the one I gave. Very silly mistake. Otherwise, my math looked correct here.
+
+@13:40 answer they wanted was absolute value #scratch:03o
+#! dz bu/ma123/problems/3_11_41
+Otherwise, this was done correctly.
+
+@13:27 problem reflections post submission hw7 #timelog:00:11:07
+#! dz bu/ma123/study
+The problems in 3.11 I got wrong on the first try. Most of them had to do with the wrong units (absolute value). So, that was annoying.

@@ -126,6 +126,7 @@
 {\noindent \bf 2026-03-14:} sonilo command language, ugens\smallskip
 {\noindent \bf 2026-03-15:} sonilo command language, ugens\smallskip
 {\noindent \bf 2026-03-17:} sonilo command language\smallskip
+{\noindent \bf 2026-03-21:} news, butlp, sonilo command language\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -677,6 +678,17 @@ Some operations I jotted down: block and temporary block allocation, loading/sto
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-17}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 22:23: word machine initial outlining}\smallskip
 The "command language" in Sonilo controls some kind of virtual computer. My test suite has been a relaxed form of this, but now I want to solidify some things.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-21}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:21: todo: work out the commands needed to create a ugen}\smallskip
+This will most likely be the hello world.
+\par
+
+it doesn't actually need to be a real unit generator, just real enough that the data structure works.
+\par
+
+once I have that reference program, I can start building out the underlying components for a command parser.
 \par
 
 \xrdef{node8}
@@ -1525,6 +1537,8 @@ Implement buttwerworth DSP algorithm
 It'll mostly be copy-paste work from sndkit.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-21}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:15: holding off until ugen structure is solidified}\smallskip
 \xrdef{node19}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont fix block navigation}\medskip
 early tools for converting block addresses to word addresses
@@ -1617,6 +1631,23 @@ I think the last Big Thought I had here was about the behavior of this "buddy sl
 \par
 
 The addition of base address paints a clearer picture for what the responsibilities of this so-called "buddy-slot" system. This allocator needs to be provide a interface similar to malloc/free. To do this, the buddy slot system will need to handle allocating and freeing, blocks from the global block pool, as well as manage the state for some number of buddy system allocators. In addition to the memory that it allocates for other things to use, it will also allocate temporary memory. There should be a nice way to return this memory back to the global block pool when the allocator is done being used (allocated segments will be unable to be recycled until the entire block is freed).
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-21}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:09: sonilo check-in}\smallskip
+looks like I was last thinking about the command language, and the virtual machine behind it.
+\par
+
+the next immediate abstraction that's going to start appearing is msgpack.
+\par
+
+the memory allocator might work? I just want to test it in the command language for making the initial unit generators.
+\par
+
+it looks like I've outlined a general procedure for making a ugen, and some general low-level operations that may be helpful for this. I have yet to explicitly write the exact command sequence needed to initialize a ugen.
+\par
+
+once I do that, I should be able to work backwards and start building out an initial proof of concept.
 \par
 
 \xrdef{node21}

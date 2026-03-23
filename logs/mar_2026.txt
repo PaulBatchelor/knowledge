@@ -731,3 +731,5 @@ out the underlying components for a command parser.
 
 @15:39 transcribing hw7 problems and solutions #timelog:O00:44:23
 #! dz bu/ma123/study
+
+@16:33 lots of scanning #archiving #timelog:11:38

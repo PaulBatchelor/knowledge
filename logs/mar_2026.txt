@@ -720,3 +720,11 @@ real enough that the data structure works.
 ---
 once I have that reference program, I can start building
 out the underlying components for a command parser.
+
+@2026-03-22 Day 203
+
+@2026-03-23 Day 204
+
+@10:15 punching in answers for HW7 #timelog:00:50:42
+#! dz bu/ma123/hw
+5 problems incorrect, all from 3.11. I am currently 80%.

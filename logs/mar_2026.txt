@@ -741,3 +741,8 @@ out the underlying components for a command parser.
 @17:34 more scanning. more papers found. #archiving #timelog:00:03:00
 
 @17:37 cropping ma123 scratch #archiving #timelog:00:18:26
+
+@19:26 transcribing defs/theorems #timelog:00:29:28
+#! dz calculus/pearson/toc/04_applications_of_the_derivative/01_maxima_and_minima
+#! dz calculus/pearson/toc/04_applications_of_the_derivative/02_mean_value_theorem
+#! dz calculus/pearson/toc/04_applications_of_the_derivative/03_what_derivatives_tell_us

@@ -1191,3 +1191,169 @@ fb (f^{-1})'(y_0) = {1 \over f'(x_0)},
 fb \, \hbox{where} \, y_0 = f(x_0).
 fb \)
 
+nn 4_1_extreme_value_theorem
+ln Extreme Value Theorem.
+ln A function that is continuous on a cl,soed interval $[a, b]$
+ln has an absolute maximum value and an absolute minimum value on
+ln that interval.
+ff Extreme Value Theorem
+fb A function that is continuous on a cl,soed interval \([a, b]\)
+fb has an absolute maximum value and an absolute minimum value on
+fb that interval.
+
+nn 4_2_local_extreme_value_theorem
+ln Local Extreme Value Theorem.
+ln If $f$ has a local maximum or minimum value at $c$ and
+ln $f'(c)$ exists, then $f'(c) = 0$.
+ff Local Extreme Value Theorem
+fb If \(f\) has a local maximum or minimum value at \(c\) and
+fb \(f'(c)\) exists, then \(f'(c) = 0\).
+
+nn 4_3_rolles_theorem
+ln Rolle's Theorem.
+ln Let $f$ be continuous on a clsoed interval $[a,b]$ and differentiable on $(a, b)$
+ln with $f(a) = f(b)$. There is at least one point $c$ in $(a, b)$ such that
+ln $f'(c) = 0$.
+ff Rolle's Theorem
+fb Let \(f\) be continuous on a clsoed interval \([a,b]\) and differentiable on \((a, b)\)
+fb with \(f(a) = f(b)\). There is at least one point \(c\) in \((a, b)\) such that
+fb \(f'(c) = 0\).
+
+nn 4_4_mean_value_theorem
+ln Mean Value Theorem.
+ln If $f$ is continuous on the closed interval $[a,b]$ and differentiable
+ln on $(a, b)$, then there is at least one point $c$ in $(a, b)$
+ln such that
+ln $$\
+ln {f(b) - f(a) \over b - a} = f'(c)
+ln $$
+ff Mean Value Theorem
+fb If \(f\) is continuous on the closed interval \([a,b]\) and differentiable
+fb on \((a, b)\), then there is at least one point \(c\) in \((a, b)\)
+fb such that
+fb \(
+fb {f(b) - f(a) \over b - a} = f'(c)
+fb \)
+
+nn 4_5_zero_derivative_implies_constant
+ln Zero Derivative Implies Constant Function.
+ln If $f$ is differentiable and $f'(x) = 0$ at all points of an
+ln open interval $I$, then $f$ is a constant function on $I$.
+ff Zero Derivative Implies Constant Function
+fb If \(f\) is differentiable and \(f'(x) = 0\) at all points of an
+fb open interval \(I\), then \(f\) is a constant function on \(I\).
+
+nn 4_6_functions_with_equal_derivatives
+ln Functions with Equal Derivatives Differ by a Constant.
+ln If two functinos of the property that $f'(x) = g'(x)$, for
+ln all $x$ of an open interval $I$, then $f(x) - g(x) = C$ on $I$,
+ln where $C$ is a constant; that is, $f$ and $g$ differ by a constant.
+ff Functions with Equal Derivatives Differ by a Constant
+fb If two functinos of the property that \(f'(x) = g'(x)\), for
+fb all \(x\) of an open interval \(I\), then \(f(x) - g(x) = C\) on \(I\),
+fb where \(C\) is a constant; that is, \(f\) and \(g\) differ by a constant.
+
+nn 4_7_test_for_intervals_of_increase
+ln Test for Intervals of Increase and Decrease.
+ln Suppose $f$ is continuous on an interval $I$ and differentiable
+ln at all interior points of $I$. If $f'(x) > 0$ at all interior
+ln points of $I$, then $f$ is increasing on $I$. If $f'(x) < 0$
+ln at all interior points of $I$, then $f$ is decreasing on $I$.
+ff Test for Intervals of Increase and Decrease
+fb Suppose \(f\) is continuous on an interval \(I\) and differentiable
+fb at all interior points of \(I\). If \(f'(x) > 0\) at all interior
+fb points of \(I\), then \(f\) is increasing on \(I\). If \(f'(x) < 0\)
+fb at all interior points of \(I\), then \(f\) is decreasing on \(I\).
+
+nn 4_8_first_derivative_test
+ln First Derivative Test.
+ln Assume $f$ is continuous on an interval that contains a critical
+ln point $c$, and assume $f$ is differentiable on an interval containing
+ln $c$, except perhaps at $c$ itself.
+ln \par
+ln If $f'$ changes sign from positive to negative as $x$ increases
+ln through $c$, then $f$ has a {\bf local maximum} at $c$.
+ln \par
+ln If $f'$ changes sign from netagive to positive as $x$ increases
+ln through $c$, then $f$ has a {\bf local minimum} at $c$.
+ln \par
+ln If $f'$ is positive on both sides near $c$ or negative on boths
+ln sides near $c$, then $f$ has no local extreme value at $c$.
+ff First Derivative Test
+fb Assume \(f\) is continuous on an interval that contains a critical
+fb point \(c\), and assume \(f\) is differentiable on an interval containing
+fb \(c\), except perhaps at \(c\) itself.
+fb <br><br>
+fb If \(f'\) changes sign from positive to negative as \(x\) increases
+fb through \(c\), then \(f\) has a {\bf local maximum} at \(c\).
+fb <br><br>
+fb If \(f'\) changes sign from netagive to positive as \(x\) increases
+fb through \(c\), then \(f\) has a {\bf local minimum} at \(c\).
+fb <br><br>
+fb If \(f'\) is positive on both sides near \(c\) or negative on boths
+fb sides near \(c\), then \(f\) has no local extreme value at \(c\).
+
+nn 4_9_one_local_extremum_implies_absolute
+ln One Local Extremum Implies Absolute Extremum.
+ln Suppose $f$ is continuous on an interval $I$ that contains
+ln exactly one local extremum at $c$.
+ln \par
+ln If a local maximum occurs at $c$, then $f(c)$ is the absolute
+ln maximum of $f$ on $I$.
+ln \par
+ln If a local minimum occurs at $c$, then $f(c)$ is the absolute
+ln minimum of $f$ on $I$.
+ff One Local Extremum Implies Absolute Extremum
+fb Suppose \(f\) is continuous on an interval \(I\) that contains
+fb exactly one local extremum at \(c\).
+fb <br><br>
+fb If a local maximum occurs at \(c\), then \(f(c)\) is the absolute
+fb maximum of \(f\) on \(I\).
+fb <br><br>
+fb If a local minimum occurs at \(c\), then \(f(c)\) is the absolute
+fb minimum of \(f\) on \(I\).
+
+nn 4_10_test_for_concavity
+ln Test for Concavity.
+ln Suppose $f''$ exists on an open interval $I$.
+ln \par
+ln If $f'' > 0$ on $I$, then $f$ is concave up on $I$.
+ln \par
+ln If $f'' < 0$ on $I$, then $f$ is concave down on $I$.
+ln \par
+ln If c is a point of $I$ at which $f''$ changes sign at $c$
+ln (from positive to negative, or vice versa), then $f$ has an
+ln inflection point at $c$.
+ff Test for Concavity
+fb Suppose \(f''\) exists on an open interval \(I\).
+fb <br><br>
+fb If \(f'' > 0\) on \(I\), then \(f\) is concave up on \(I\).
+fb <br><br>
+fb If \(f'' < 0\) on \(I\), then \(f\) is concave down on \(I\).
+fb <br><br>
+fb If c is a point of \(I\) at which \(f''\) changes sign at \(c\)
+fb (from positive to negative, or vice versa), then \(f\) has an
+fb inflection point at \(c\).
+
+nn 4_11_second_derivative_test_for_local
+ln Second Derivative Test for Local Extrema.
+ln Suppose $f''$ is continuous on an open interval containing $c$
+ln with $f'(c) = 0$.
+ln \par
+ln If $f''(c) > 0$, then $f$ has a local minimum at $c$.
+ln \par
+ln If $f''(c) < 0$, then $f$ has a local maximum at $c$.
+ln \par
+ln If $f''(c) = 0$, then the test is nonconclusives; $f$
+ln may have a local maximum, a local minimum, or neither at $c$.
+ff Second Derivative Test for Local Extrema
+fb Suppose \(f''\) is continuous on an open interval containing \(c\)
+fb with \(f'(c) = 0\).
+fb <br><br>
+fb If \(f''(c) > 0\), then \(f\) has a local minimum at \(c\).
+fb <br><br>
+fb If \(f''(c) < 0\), then \(f\) has a local maximum at \(c\).
+fb <br><br>
+fb If \(f''(c) = 0\), then the test is nonconclusives; \(f\)
+fb may have a local maximum, a local minimum, or neither at \(c\).
+

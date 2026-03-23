@@ -24,6 +24,12 @@ nn 07_chain_rule
 nn 08_implicit_differentiation
 nn 09_derivatives_of_logarithmic_and_exponential_functions
 nn 10_derivatives_of_inverse_trig_functions
+ns ..
+nn 04_applications_of_the_derivative
+ns +04_applications_of_the_derivative
+nn 01_maxima_and_minima
+nn 02_mean_value_theorem
+nn 03_what_derivatives_tell_us
 
 ns ../..
 

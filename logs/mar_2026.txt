@@ -737,3 +737,7 @@ out the underlying components for a command parser.
 @16:46 timelogging #timelog:00:30:29
 
 @17:25 more timelogging. more papers found #timelog:00:06:32
+
+@17:34 more scanning. more papers found. #archiving #timelog:00:03:00
+
+@17:37 cropping ma123 scratch #archiving #timelog:00:18:26

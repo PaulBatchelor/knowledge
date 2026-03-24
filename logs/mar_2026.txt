@@ -746,3 +746,12 @@ out the underlying components for a command parser.
 #! dz calculus/pearson/toc/04_applications_of_the_derivative/01_maxima_and_minima
 #! dz calculus/pearson/toc/04_applications_of_the_derivative/02_mean_value_theorem
 #! dz calculus/pearson/toc/04_applications_of_the_derivative/03_what_derivatives_tell_us
+
+@20:09 recently discovered schaums outline of calculus
+#! dz bu/ma123/news
+It has the sort of thing I've been looking for: a ton of problem
+sets with step-by-step solutions. Going to try looking at some
+of this for this weeks material.
+---
+It seems I inevitably go out of my way to seek external resources for
+classes. This Pearson textbook is turning out to be absolutely dreadful.

@@ -756,7 +756,7 @@ of this for this weeks material.
 It seems I inevitably go out of my way to seek external resources for
 classes. This Pearson textbook is turning out to be absolutely dreadful.
 
-@2026-03-24
+@2026-03-24 Day 205
 @09:27 examining hw8, printing examples and hw #timelog:00:17:38
 #! dz bu/ma123/hw
 28 problems. could be worse. could be better.
@@ -768,3 +768,14 @@ maybe the problems aren't so bad?
 @22:12 hw8 is a tough batch. oof.
 #! dz bu/ma123/hw
 My algebra is failing me. I can barely keep up with the examples.
+
+@2026-03-25 Day 206
+@2026-03-26 Day 207
+@2026-03-27 Day 208
+@2026-03-28 Day 209
+@2026-03-29 Day 210
+@2026-03-30 Day 211
+@2026-03-31 Day 212
+@11:09 finally finished with HW8, typing up problems and solutions #timelog:00:17:05
+#! dz bu/ma123/study
+Got up to problem 9 (4.2.20). 19 more to go...

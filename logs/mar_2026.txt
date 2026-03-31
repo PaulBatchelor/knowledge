@@ -784,5 +784,5 @@ Got up to problem 9 (4.2.20). 19 more to go...
 #! dz $
 Got up to problem 23. 5 more to go...
 
-@16:43 moar
+@16:43 moar hw8 transcription #timelog:00:08:00
 #! dz $

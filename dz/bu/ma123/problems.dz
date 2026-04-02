@@ -309,10 +309,22 @@ ln a radius of 6ft is drained through a hole in the vertex
 ln at a rate of 2 ft$^3$/s. What is the rate of change of the
 ln water depth when the depth is at 4ft?
 
+nn QZ_6_1a
+ln Compute $dy \over dx$:
+ln $$\
+ln y = 2^{3x}
+ln $$
+
 nn 4_1_39
 ln Find the critical points of $f$. Assume $a$ is a constant.
 ln $$\
 ln f(x) = x \sqrt(x - a)
+ln $$
+
+nn QZ_6_1b
+ln Compute $dy \over dx$:
+ln $$\
+ln y^2 \cos(2x) = 3 \ln(x)
 ln $$
 
 nn 3_9_43
@@ -1476,6 +1488,20 @@ ln {\par \bf b.} $({f \over g})'(3)$
 ln {\par \bf c.} $(f(g(x)))'(2)$
 ln {\par \bf d.} $(g(f(x)))'(4)$
 
+nn QZ_5_1
+ln Compute $f'(x)$ for the following function and state the
+ln rule that you use. (hint for one method: $\sin(2\theta) = 2\sin\theta\cos\theta$)
+ln $$\
+ln f(x) = 3sin(2x)
+ln $$
+
+nn QZ_5_2
+ln Compute $g'(t)$ for the following and state the rule that
+ln you use.
+ln $$\
+ln g(t) = {e^t \over {t^2 + 4}}
+ln $$
+
 nn 3_4_15
 ln Given that $f(4) = -5$, $f'(4) = 6$, $g(4)=-2$, and $g'(4) = -1$,
 ln find ${d \over dx}(f(x)g(x))\big|_{x = 4}$ and
@@ -1712,11 +1738,30 @@ ln $-0.16$ ft/s
 
 co $ ../../problems/3_11_36
 
+nn QZ_6_1a
+ln $$\
+ln {dy \over dx} =
+ln \ln(2) 2^{3x} \cdot 3
+ln $$
+
+co $ ../../problems/QZ_6_1a
+
 nn 4_1_39
 ln If $a < 0$, the critical endpoints are $x = {2a \over 3}$.
 ln If $a >= 0$, there is no critical point.
 
 co $ ../../problems/4_1_39
+
+nn QZ_6_1b
+ln $$
+ln {dy \over dx} = {
+ln {3 \over x} + 2y^2 (3x)
+ln \over
+ln 2y cos(2x)
+ln }
+ln $$
+
+co $ ../../problems/QZ_6_1b
 
 nn 3_9_43
 ln $$\
@@ -2523,7 +2568,6 @@ nn 4_3_85
 ln The critical points of $f$ are $x = 0, 2$.
 ln \par The local maxima is at $x = 0$. The local minima is
 ln at $x = 2$.
-ln \bye
 
 co $ ../../problems/4_3_85
 
@@ -2673,6 +2717,23 @@ ln {\par \bf c.} $(f(g(x)))'(2) = -100$
 ln {\par \bf d.} $(g(f(x)))'(4) = -16$
 
 co $ ../../problems/PM_1_10
+
+nn QZ_5_1
+ln Can be done using chain rule or product rule.
+ln $$\
+ln f'(x) = 6\cos(2x)
+ln $$
+
+co $ ../../problems/QZ_5_1
+
+nn QZ_5_2
+ln Quotient rule.
+ln $$\
+ln g'(t) = e^t {t^2 - 2t + 4 \over (t^2 + 4)^2}
+ln $$
+ln \bye
+
+co $ ../../problems/QZ_5_2
 
 nn 3_4_15
 ln ${d \over dx}(f(x)g(x))\big|_{x = 4} = -7$,

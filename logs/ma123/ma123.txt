@@ -1228,3 +1228,100 @@ Otherwise, this was done correctly.
 @13:27 problem reflections post submission hw7 #timelog:00:11:07
 #! dz bu/ma123/study
 The problems in 3.11 I got wrong on the first try. Most of them had to do with the wrong units (absolute value). So, that was annoying.
+@2026-04-01#ma123
+@17:55 dropped x, negative answer equivalents #scratch:04h
+I managed to drop an x again somewhere, which I recall doing before with this one. Also similar pattern, the answer I supplied used a negative, meanwhile the textbook answer distributed the negative in one of the steps. It would have been equivalent though.
+
+@17:56 wrote term incorrectly #scratch:04h
+#! dz bu/ma123/problems/3_8_34
+I was reading the wrong step, and what should have been $3{dy \over dx}$ was written as $3y$. Caught this one.
+
+@17:57 factored out a negative constant incorrectly #scratch:04i
+#! dz bu/ma123/problems/3_9_75
+The expression was $-14\ln x - 14$. What should have been $-14(\ln x + 1)$ was written as $-14 (\ln x - 1)$. oops.
+
+@17:58 watch the distribution #scratch:04i
+#! dz bu/ma123/problems/3_9_76
+Blew it at the last mile. This one is tricky. The initial expression was written $(4x)^{4x}$, which is not $4x^{4x}$. Tricky little bugger. I messed this one up before as well I think.
+
+@17:54 writing notes on problems I messed up on #scratch:04i #scratch:04h #timelog:00:06:31
+#! dz bu/ma123/study
+Overall, things are good. But there are still little issues with some of the arithmetic.
+
+@2026-04-04#ma123
+@13:45 wrong derivative rule used #scratch:04o
+#! dz bu/ma123/problems/3_10_17
+$cos^{-1}$ was used, when it should have been $cot^{-1}$.
+
+@14:49 copy error #scratch:04o
+#! dz bu/ma123/problems/3_10_32
+In copying an iteration of the equation, a $tan^{-1}$ turned into $tan$. Otherwise this was fine.
+
+@14:52 I combined fractions in solution #scratch:04j
+#! dz bu/ma123/problems/3_9_82
+Textbook did not
+
+@14:53 I factored out -3 in solution #scratch:04j
+#! dz bu/ma123/problems/3_9_83
+The textbook did not
+
+@14:54 wanted exact answers #scratch:04k
+#! dz bu/ma123/problems/4_1_66
+I used a calculator, but the calculations were correct.
+
+@14:55 trig mishap #scratch:04m
+#! dz bu/ma123/problems/4_3_31
+$\sin(\pi / 2) = 1$, $\sin(\pi / 2) \ne 0$.
+
+@13:42 some problem logging #timelog:00:10:24
+#! dz bu/ma123/study
+
+@2026-04-05#ma123
+@17:31 dropped a pi in the answer #scratch:04p
+#! dz bu/ma123/problems/3_11_17
+
+@17:32 turned + into - during copy #scratch:04p
+#! dz bu/ma123/problems/3_11_29
+
+@17:33 fraction mishap #scratch:04p
+#! dz bu/ma123/problems/3_11_36
+${1 \over 2} \pi \ne {1 \over 2\pi}$, even though they look similar
+
+@17:34 swapped x and y #scratch:04p
+#! dz bu/ma123/problems/3_11_41
+24ft away is x, the foot of the latter. Not the top of the ladder.
+
+@17:35 forgot that I natural logged both sides #scratch:04q
+#! dz bu/ma123/problems/3_9_86
+In the final step in computing the derivative, I forgot to bring in the function.
+
+@17:36 group the intervals together as all decreasing #scratch:04q
+#! dz bu/ma123/problems/4_3_22
+3 intervals were all decreasing, these can be
+grouped together to be the interval $(-\infty, \infty)$.
+
+@17:38 incorrectly factored a fraction #scratch:04q
+#! dz bu/ma123/problems/4_3_43
+$({1 \over 81} - {1 \over 81}x) = {1 \over 81} (81 - x)$, which is what I should have done. $({1 \over 81} - {1 \over 81}x) \ne {1 \over 81}(1 - x)$. I did not flip the fraction and multiply.
+
+@17:41 no calculator used! #scratch:04q
+#! dz bu/ma123/problems/4_3_50
+Pretty pleased with the math tricks I used to compute what I needed without needing to pull out the calculator (which is what I originally did when I first completed this problem).
+
+@17:42 concave up/down, not 2nd deriv test #scratch:04r
+#! dz bu/ma123/problems/4_3_65
+
+@17:43 concave up/down, not 2nd deriv test #scratch:04r
+
+@17:44 dropped x when computing 2nd derivative #scratch:04s
+I think I correctly identified concave up/down? but the intervals were incorrect. Very frustratingly small error.
+
+@17:30 taking notes on troublesome problems #timelog:00:13:37
+#! dz bu/ma123/study
+I either misread the problem, or I made a small mistake in the derivative calculation. The process is feeling smooth, but I'm still frustrated by the little mistakes.
+
+@18:28 amazingly, these answers can be computed by hand. But I did flub the exponent division #scratch:04s
+#! dz bu/ma123/problems/4_1_72
+The final answer wanted a rounded solution, but computing the exact values symbolically turned out to be less work than expected, and the numbers worked out well. The trick does involve exponent rules and breaking the numbers up into smaller values.
+---
+While I got it mostly correct, I did, however, flub one part due to incorrect exponent division. I had a fraction, and wanted to move a term from the denominator to the numerator, but I flipped the exponent instead of negating it.

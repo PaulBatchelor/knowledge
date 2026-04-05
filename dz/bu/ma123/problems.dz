@@ -45,7 +45,7 @@ ln }
 ln $$
 
 nn 4_3_31
-ln Find the intervals on which $f$ is icreasing and $f$ is decreasing.
+ln Find the intervals on which $f$ is increasing and $f$ is decreasing.
 ln $$\
 ln f(x) = -2 \cos (x) - \sqrt{3} x \, \hbox{on} \, [0, \pi]
 ln $$
@@ -61,7 +61,7 @@ ln \par {\bf b.} Deteremine an equation of the line tangent
 ln to the graph of $h$ at the point on the graph where $x = 3$.
 
 nn 4_3_33
-ln Find the intervals on which $f$ is icreasing and $f$ is decreasing.
+ln Find the intervals on which $f$ is increasing and $f$ is decreasing.
 ln $$\
 ln f(x) = 2 \cos (4x)  \, \hbox{on} \, \big[ -{3\pi \over 4}, {3 \pi \over 4} \big]
 ln $$
@@ -83,7 +83,7 @@ ln 3 \sin xy = 3x + 8y
 ln $$
 
 nn 4_3_36
-ln Find the intervals on which $f$ is icreasing and $f$ is decreasing.
+ln Find the intervals on which $f$ is increasing and $f$ is decreasing.
 ln $$\
 ln f(x) = -x^2\sqrt{9 - x^2} \, \hbox{on} \, (-3, 3)
 ln $$
@@ -143,6 +143,9 @@ ln $$
 nn 4_2_30
 ln Find or approximate the points that are guaranteed to exist
 ln by the Mean Value Theorem for the following equation:
+ln $$\
+ln f(x) = x + {1 \over x} \, \hbox{on} \, [-4, -2]
+ln $$
 
 nn 2_5_75
 ln Consider
@@ -318,7 +321,7 @@ ln $$
 nn 4_1_39
 ln Find the critical points of $f$. Assume $a$ is a constant.
 ln $$\
-ln f(x) = x \sqrt(x - a)
+ln f(x) = x \sqrt{x - a}
 ln $$
 
 nn QZ_6_1b
@@ -1350,7 +1353,7 @@ ln f(x) = \sin^{-1}(6x^4)
 ln $$
 
 nn 4_3_22
-ln Find the intervals on which $f$ is icreasing and $f$ is decreasing.
+ln Find the intervals on which $f$ is increasing and $f$ is decreasing.
 ln $$\
 ln f(x) = -x^3 - 4x
 ln $$
@@ -1420,7 +1423,7 @@ ln \lim_{\theta \to 0}{\cos^2\theta - 1 \over \theta}
 ln $$
 
 nn 4_3_27
-ln Find the intervals on which $f$ is icreasing and $f$ is decreasing.
+ln Find the intervals on which $f$ is increasing and $f$ is decreasing.
 ln $$\
 ln f(x) = {x^4 \over 4} + x^3 + x^2
 ln $$
@@ -1439,7 +1442,7 @@ ln x^{3/4} + y^{3/4} = 2; (1, 1)
 ln $$
 
 nn 4_3_29
-ln Find the intervals on which $f$ is icreasing and $f$ is decreasing.
+ln Find the intervals on which $f$ is increasing and $f$ is decreasing.
 ln $$\
 ln f(x) = 4x^2\ln x^2 + 4
 ln $$

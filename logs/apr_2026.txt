@@ -17,3 +17,10 @@ not getting homework on it. hurm.
 
 @18:32 applying corrections to problems from hw8 #timelog:00:04:40
 #! dz bu/ma123/study
+
+@18:38 import pset logs #timelog:00:03:08
+#! dz bu/ma123/study
+
+@18:43 curating recent problems #timelog:00:20:52
+#! dz bu/ma123/study
+Looks like it is maybe more 3.8, but mostly 3.9 onwards.

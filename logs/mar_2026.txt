@@ -786,7 +786,3 @@ Got up to problem 23. 5 more to go...
 
 @16:43 moar hw8 transcription #timelog:00:08:00
 #! dz $
-
-@2026-04-01 Day 213
-@11:28 typing up some quiz problems #timelog:00:09:35
-#! dz bu/ma123/study

@@ -24,3 +24,10 @@ not getting homework on it. hurm.
 @18:43 curating recent problems #timelog:00:20:52
 #! dz bu/ma123/study
 Looks like it is maybe more 3.8, but mostly 3.9 onwards.
+
+@2026-04-06 Day 218
+@10:24 transcribing defs and theorems for chapters 4.4-4.6 #timelog:00:26:03
+#! dz bu/ma123/study
+4.4 is kinda fluff?
+---
+no theorems for these chapters. only definitions and "summaries"

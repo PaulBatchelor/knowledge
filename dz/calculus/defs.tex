@@ -312,5 +312,128 @@ $f$ is {\bf decreasing} on $I$ if $f(x_2) < f(x_1)$ whenever
 $x_1$ and $x_2$ are in $I$ and $x_2 > x_1$.
 \enddef
 
+\begdef{Graphing Guidelines for $y = f(x)$}
+{\par \bf 1. Identify the domain or interval of interest.}
+On what interval(s) whould the funciton be graphed? It may
+be the domain of the function or some subset of the domain.
+
+{\par \bf 2. Exploit symmetry} 
+Take advantage of symmetry. For example is the function even?
+($f(-x) = f(x)$), odd ($f(-x) = -f(x)$, or neither?
+
+{\par \bf 3. Find the first and second derivatives} 
+They are needed to determine extrme avlues,
+concavity, inflection points, and the intervals on whch $f$ is
+increasing or decreasing. Computing derivatives, particularly
+second derivatives, may not be practical, so some funciton may need
+to be graphed without complete derivative information.
+
+{\par \bf 4. Find critical points and possible inflection points}
+Determine points wat which $f'(x) = 0$ or $f'$ is undefined.
+Determine points at which $f''(x) = 0$ or $f''$ is undefined.
+
+{\par \bf 5. Find intervals on which the function is increasing/decreasing
+and concave up/down.}
+The first derivate determines the intervals on which $f$ is
+increasing or decreasing. The second derivative
+determines the intervals on which the
+function is concave up or concave down.
+
+{\par \bf 6. Identify extreme values and inflection points.} 
+Use either the first or second derivative test to classxify
+the critcal points. Both x and y coordinates of maxima,
+minima, and inflection points are needed for graphing.
+
+{\par \bf 7. Locate all asymptotes and determine end behavior.} 
+Vertical symptotse often occur at zeros of denominators.
+Horizontal asyjmptotes require examining limits as $x \to \pm \infty$;
+these limits determine end behavior. Slant asymptotes occur
+with rational functions in which the degree of the numerator
+is one more than the degree of the denominator.
+
+{\par \bf 8. Find the intercepts.} 
+The y-intercept of the graph is found by setting $x = 0$.
+The x-intercepts are found by solving $f(x)$ = 0. They are the real zeros
+(or roots) of $f$.
+
+{\par \bf 9. Choose an appropriate graphing window and plot a graph.} 
+Use the results opf the previous steps to graph the function.
+If you use grpahing software, check for consistency with your
+analytical work. Is your graph {\it complete}? That is,
+does it show all th eessential details of the function?
+\enddef
+
+\begdef{Guidelines for Optimziation Problems}
+{\par \bf 1.} Read the problem carefully, identify the
+variables, and organize the given information with a picture.
+
+{\par \bf 2.} Identify the objective function (the function to be
+optimized). Write it in terms of the variables of the problem.
+
+{\par \bf 3.} Identify the constraint(s). Write them in
+terms of the variables of the problem.
+
+{\par \bf 4.} Use the constraint(s) to eliminate all but one
+independent variable of the objective function.
+
+{\par \bf 5.} With the objective function expressed in terms
+of a single variable, find the interval of interest for that
+variable.
+
+{\par \bf 6.} Use methods of calculus to find the absolute
+maximum or minimum value of the objective function on
+the interval of interest. If necessary, check the endpoints.
+
+\enddef
+
+\begdef{Linear Approximation of $f$ at $a$}
+Suppose $f$ is differentiable on an interval $I$ containing
+the point $a$. The {\bf linear approximation} to $f$ at
+$a$ is the linear function
+
+$$\
+L(x) = f(a) + f'(a)(x -a), \, \hbox{for $x$ in $I$.}
+$$
+\enddef
+
+\begdef{Relationship between $\Delta x$ and $\Delta y$}
+Suppose $f$ is deifferntiable on an interval $I$ containing
+the point $a$. The change in the value of $f$ between two points
+$a$ and $a + \Delta x$ is approximately
+
+$$\
+\Delta y \approx f'(a) \Delta x
+$$
+
+where $a + \Delta x$ is in $I$.
+\enddef
+
+\begdef{Uses of Linear Approxmation}
+To approximate $f$ near $x = a$, use
+
+$$\
+f(x) \approx L(x) = f(a) + f'(a)(x - a) \hbox{.}
+$$
+
+To approximate the change $\Delta y$ in the dependent variable
+when the independent variable $x$ changes from $a$ to $a + \Delta x$,
+use
+$$\
+\Delta y \approx f'(a)\Delta x
+$$
+
+\enddef
+
+\begdef{Differentials}
+Let $f$ be differentiable on an interval containing $x$.
+A small change in $x$ is denoted by the {\bf differential} $dx$.
+The corresponding change in $f$ is approximated by the
+{\bf differential} $dy = f'(x) dx$; that is,
+
+$$\
+\Delta y = f(x + dx) - f(x) \approx dy = f'(x) dx
+$$
+\enddef
+
 \bye
 

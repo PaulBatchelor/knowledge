@@ -31,3 +31,47 @@ Looks like it is maybe more 3.8, but mostly 3.9 onwards.
 4.4 is kinda fluff?
 ---
 no theorems for these chapters. only definitions and "summaries"
+
+@2026-04-07 Day 219
+@2026-04-08 Day 220
+@2026-04-09 Day 221
+@2026-04-10 Day 222
+@2026-04-11 Day 223
+@12:09 where was I? #timelog:00:16:16
+#! dz thoughts/projects/sonilo/news
+It's been several weeks since I last did anything. Life has
+gotten in the way. I haven't had many opportunities to type
+anything out.
+---
+Looks like I've been thinking about the sonilo command language.
+Or at least, an initial subset. Memory allocation needs
+to be taken for a test drive to build up the initial ugen
+framework.
+---
+It might be time to start thinking about a prototyping
+language like Lua as a way to metaprogram the initial
+command language experiments. I will want to eventually get
+things working in Konilo forth, but that's probably too much
+to think about at once. I still don't actually know Konilo.
+---
+During a roadtrip, I've had some time to think about composing abstractions
+for Gesture. "Composition" can be thought of as the act of
+building up something through careful arrangement of a smaller
+unit of "thing". One composes music with notes,
+one composes a novel with words, one can compose a function
+out of smaller functions. For creative purposes, it is helpful
+to think of the smaller thing as atomic and indivisible; if
+one is composing a flower arrangement, one doesn't strip the
+pedals of a flower and to try and tape together a new flower.
+---
+A single gesture is an ordered set of line segments, and there
+seems to be compatible systems for expressing these kinds of
+structures. I'm hoping linear algebra and array-based languages
+might be helpful.
+---
+Meanwhile, Sonilo itself is mostly concerned about composing
+with unit generators. The underlying unit generator components
+used to synthesize gesture signals will require reading from
+some kind of structure in memory, analogous to a musical "score"
+or sequence. How sequences and scores will be generated and
+packaged for Sonilo ugens remains an unsolved problem.

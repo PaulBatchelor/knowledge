@@ -96,3 +96,7 @@ two weeks worth.
 ---
 scratch done. cards are not cropped yet. I think I have 3
 weeks of cards to crop now oh well.
+
+@18:44 typing out a rough C API #timelog:00:32:55
+#! dz thoughts/projects/sonilo/tasks/ugens
+Should be a similar abstraction layer to what I did for sndkit.

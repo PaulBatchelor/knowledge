@@ -85,3 +85,5 @@ Starting with the timelogs.
 
 @15:01 update the timelog parser #timelog:00:18:00
 #! dz $
+
+@15:22 lots of scanning #archiving #timelog:00:07:38

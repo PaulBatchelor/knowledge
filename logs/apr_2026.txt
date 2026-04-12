@@ -82,3 +82,6 @@ packaged for Sonilo ugens remains an unsolved problem.
 Because of the second midterm,
 I've got two weeks of stuff to enter in and scan.
 Starting with the timelogs.
+
+@15:01 update the timelog parser #timelog:00:18:00
+#! dz $

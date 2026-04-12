@@ -75,3 +75,10 @@ used to synthesize gesture signals will require reading from
 some kind of structure in memory, analogous to a musical "score"
 or sequence. How sequences and scores will be generated and
 packaged for Sonilo ugens remains an unsolved problem.
+
+@2026-04-12 Day 224
+@13:57 lots of timelogs for ma123 #timelog:01:01:55
+#! dz bu/ma123/news
+Because of the second midterm,
+I've got two weeks of stuff to enter in and scan.
+Starting with the timelogs.

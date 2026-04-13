@@ -35,7 +35,15 @@ no theorems for these chapters. only definitions and "summaries"
 @2026-04-07 Day 219
 @2026-04-08 Day 220
 @2026-04-09 Day 221
+@10:08 long shot, eggs, got 4 of them. didn't go depths. will #lozmm #timelog:01:39:20
+have to repeat
 @2026-04-10 Day 222
+@09:17 new wave bossa (eggs) #lozmm #timelog:01:01:21
+
+@15:46 great bay temple, intiial eyeball boss #timelog:00:45:30 #lozmm
+
+@17:42 beat eyeball boss, ice arrows, initial frog boss #timelog:00:37:58 #lozmm
+
 @2026-04-11 Day 223
 @12:09 where was I? #timelog:00:16:16
 #! dz thoughts/projects/sonilo/news
@@ -76,6 +84,8 @@ some kind of structure in memory, analogous to a musical "score"
 or sequence. How sequences and scores will be generated and
 packaged for Sonilo ugens remains an unsolved problem.
 
+@15:50 beat frog boss, boss key, figured out how to reverse flow #timelog:01:06:59 #lozmm
+
 @2026-04-12 Day 224
 @13:57 lots of timelogs for ma123 #timelog:01:01:55
 #! dz bu/ma123/news
@@ -100,3 +110,24 @@ weeks of cards to crop now oh well.
 @18:44 typing out a rough C API #timelog:00:32:55
 #! dz thoughts/projects/sonilo/tasks/ugens
 Should be a similar abstraction layer to what I did for sndkit.
+
+@2026-04-13 Day 225
+@14:44 cropping cards #archiving #timelog:00:15:00
+#! dz bu/ma123/news
+I am now caught up with the cards.
+
+@09:36 port operations #timelog:00:33:36 #ink:09v
+#! dz thoughts/projects/sonilo/tasks/ugens
+#! dz thoughts/projects/sonilo/tasks/ugen_ports
+Trying to articulate some of the missing pieces for this
+C API I'm trying to imagine. There's this so-called "parameter"
+stack which I half remember making, and it needs to interact
+with the "ports" in a unit generator. I'm thinking stack
+operations should be implicit. The API operations should handle
+both pushing/popping off the stack and setting the ports.
+
+@15:09 adding in some new API calls related to ports #timelog:00:09:23
+#! dz thoughts/projects/sonilo/tasks/ugens
+these will be iport (set an input port), oport (set an output port),
+clean (GC sweep on buffers), and constant (push a constant
+to stack as parameter).

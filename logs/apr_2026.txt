@@ -132,7 +132,7 @@ these will be iport (set an input port), oport (set an output port),
 clean (GC sweep on buffers), and constant (push a constant
 to stack as parameter).
 
-@19:52 filling more TODOs in the API
+@19:52 filling more TODOs in the API #timelog:01:00:46
 #! dz thoughts/projects/sonilo/tasks/ugens
 There are a lot of TODO slots. There are definitely bits
 that fall into and out of my head. I may need to draw a map

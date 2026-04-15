@@ -145,3 +145,24 @@ are still quite a few things that need to be connected.
 I also need a refresher on the data layout for many components.
 Many TODOs have been written in {\tt sonilo.c}.
 I'll need to do another pass.
+
+@2026-04-14 Day 226
+@09:27 hw10 initial thoughts #timelog:00:11:32
+#! dz bu/ma123/hw
+Only two sections: 4.6 (linear approximation) and
+4.7 (l'Hopital's rule). 26 problems. Only 7 linear approximation
+problems, the rest relate to l'Hoptial.
+---
+Most of 4.6 come with examples.
+---
+15 examples total.
+
+@2026-04-15 Day 227
+@15:12 transcribing hw9 #timelog:00:23:20
+#! dz bu/ma123/study
+Typos in the problemsets (4.5.28) "assume that is costs" should
+be "assume that it costs"
+---
+since I'm ranting here, I should also mention that the example
+problem for 4.5.21 had the wrong answer in the end. 72 divided
+by 16 is not 5. they were thinking the value was 80 I think.

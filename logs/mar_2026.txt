@@ -756,6 +756,13 @@ of this for this weeks material.
 It seems I inevitably go out of my way to seek external resources for
 classes. This Pearson textbook is turning out to be absolutely dreadful.
 
+@20:50 Pearson vs schaum #ink:09R #timelog:00:15:31
+#! dz bu/ma123/study
+examining some of the pearson chapters for this week, comparing
+it to some of the chapters in the schaum book.
+
+@21:38 pearson vs schaum (continued) #ink:09$ #timelog:00:29:08
+
 @2026-03-24 Day 205
 @09:27 examining hw8, printing examples and hw #timelog:00:17:38
 #! dz bu/ma123/hw
@@ -770,6 +777,11 @@ maybe the problems aren't so bad?
 My algebra is failing me. I can barely keep up with the examples.
 
 @2026-03-25 Day 206
+@10:35 outlining hw8 problems #timelog:00:37:46 #ink:09S
+#! dz bu/ma123/hw
+Just wanted to break down the problem sets into categories.
+This was a very time sensitive week, so I wanted to be strategic.
+
 @2026-03-26 Day 207
 @2026-03-27 Day 208
 @2026-03-28 Day 209

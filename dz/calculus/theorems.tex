@@ -745,4 +745,47 @@ If $f''(c) = 0$, then the test is nonconclusives; $f$
 may have a local maximum, a local minimum, or neither at $c$.
 \endthm
 
+\begthm{4.12}{L'Hopital's Rule}
+Suppsoe $f$ and $g$ are differentiable on an open interval $I$
+containing $a$ with $g'(x) \ne 0$ when $x \ne a$.
+If $
+\lim\limits_{x \to a}f(x) =
+\lim\limits_{x \to a}g(x) = 0
+$ then
+$$\
+\lim_{x \to a} {f(x) \over g(x)} =
+\lim_{x \to a} {f'(x) \over g'(x)},
+$$
+provided the limit on the right exists (or is $\pm \infty$).
+The rule also applies if $x \to a$ is replaced with $x \to \pm \infty$,
+$x \to a^+$, or $x \to a^-$.
+\endthm
+
+\begthm{4.13}{L'Hopitals Rule ($\infty / \infty$)}
+Suppsoe $f$ and $g$ are differentiable on an open interval $I$
+containing $a$, with $g'(x) \ne 0$ on $I$ when $x \ne a$. If
+$\lim\limits_{x \to a} f(x) = \pm \infty$ and
+$\lim\limits_{x \to a} g(x) = \pm infty$, then
+
+$$\
+\lim_{x \to a} {f(x) \over g(x)} =
+\lim_{x \to a} {f'(x) \over g'(x)},
+$$
+
+provided the limit on the right exists (or is $\pm \infty$).
+The rule also applies if $x \to a$ is replaced with $x \to \pm \infty$,
+$x \to a^+$, or $x \to a^-$.
+\endthm
+
+\begthm{4.14}{Ranking Growth Rates as $x \to \infty$}
+Let $f << g$ indicate that $g$ grows faster than $f$ as
+$x \to \infty$. With positive real numbers $p$, $q$, $r$, and $s$
+with $b > 1$,
+
+$$
+\ln^q << x^p << x^p\ln^r x << x^{p + s} << b^x << x^x
+$$
+
+\endthm
+
 \bye

@@ -435,5 +435,46 @@ $$\
 $$
 \enddef
 
+\begdef{Indeterminate forms $1^\infty$, $0^0$, and $\infty^0$}
+Assume $\lim\limits_{x \to a}f(x)^{g(x)}$ has the indeterminate form
+$1^{\infty}$, $0^0$, or $\infty^0$.
+
+{\par \bf 1.}
+Analyze $L = \lim\limits_{x \to a} g(x) \ln f(x)$.
+This limit can be put into the form $0/0$ or $\infty / \infty$,
+both of which are handled by l'Hopital's Rule.
+
+{\par \bf 2.}
+When $L$ is finite, $\lim\limits_{x \to a} f(x)^{g(x)} = e^L$.
+If $L = \infty$ or $-\infty$, then
+$\lim\limits_{x \to a} f(x)^{g(x)} = \infty$
+or
+$\lim\limits_{x \to a} f(x)^{g(x)} = 0$, respectively.
+\enddef
+
+\begdef{Growth Rates of Functions (as $x \to \infty$)}
+Suppose $f$ and $g$ are functions with
+$\lim\limits_{x \to \infty} f(x) =
+\lim\limits_{x \to \infty} g(x) = \infty$.
+Then
+{\bf $f$ grows faster than $g$} as $x \to \infty$ if
+
+$$\
+\lim_{x \to \infty} {g(x) \over f(x)} = 0 \,
+\hbox{or, equivalently, if}
+\lim_{x \to \infty} {g(x) \over f(x)} = \infty
+$$
+
+The functions $f$ and $g$ have {\bf comparable growth rates}
+if
+
+$$\
+\lim_{x \to infty} {f(x) \over g(x)} = M,
+$$
+
+where $0 < M < \infty$ ($M$ is positive and finite).
+
+\enddef
+
 \bye
 

@@ -187,3 +187,6 @@ theorem", which is a precursor to the mean value theorem (theorem
 @09:13 transcribing chapter 4.7 #timelog:00:23:25
 #! dz calculus/pearson/toc/04_applications_of_the_derivative/07_lhopitals_rule
 #! dz bu/ma123/study
+
+@09:40 transcribing 4.7 example problems #timelog:00:06:05
+#! dz bu/ma123/study

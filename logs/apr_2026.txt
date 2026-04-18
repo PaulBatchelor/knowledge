@@ -219,3 +219,25 @@ going to require building out a library and linking, and
 that would benefit from setting up a real build system (ninja).
 If that builds, I can start filling in the function stubs,
 and troubleshoot from there.
+
+@17:49 get example to build, ninja, libsonilo.a #timelog:00:32:30
+#! dz $
+I think I am ready to start filling stuff in.
+---
+Actually, no. I don't like my ugen port abstraction. I had
+to pull a lot of stuff out of the port file into sonilo.
+I wonder if there's a more abstract way to do things.
+---
+Ugh. Not really.
+---
+Things build using a modified shell script. Although, I think
+now would be a good time to get a small ninja file up and running.
+
+@18:22 setting up ugen getter #timelog:00:21:26
+#! dz $
+There are still some blank TODOs to fill out.
+---
+I'm populating a ugen struct. I don't think I've formally
+described the memory layout of a ugen yet. It's going to be
+two words I think. first two words will be ports, then data (LSB,
+MSB). Next word will store the function index pointer to the command.

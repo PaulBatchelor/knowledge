@@ -201,3 +201,21 @@ the extra-thinky problems. 4.6.48 is a weird graphing one
 with an interactive graphing tool (blech). 4.6.50 I believe
 is a multi-step graph matching tool. 4.7.85 is a compound
 interest problem.
+
+@14:07 more TODOs in sonilo C API and hello ugen example #timelog:01:20:34
+#! dz thoughts/projects/sonilo/tasks/ugens
+For some reason, I decided to have {\tt instr\_ex} do
+a key lookup on every call, instead of skipping that step
+and just storing the location of that function (which shouldn't change
+during runtime).
+---
+The ugen example is looking pretty complete at this point.
+I have code that sets up a sonilo context and sets up a single
+unit generator with I/O via ports. It probably won't build yet,
+which is fine for now.
+---
+Next step will be to get this built, but not run. That's
+going to require building out a library and linking, and
+that would benefit from setting up a real build system (ninja).
+If that builds, I can start filling in the function stubs,
+and troubleshoot from there.

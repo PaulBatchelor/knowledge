@@ -190,3 +190,14 @@ theorem", which is a precursor to the mean value theorem (theorem
 
 @09:40 transcribing 4.7 example problems #timelog:00:06:05
 #! dz bu/ma123/study
+
+@2026-04-18 Day 230
+@09:50 submitting hw10 problems #timelog:00:40:01
+#! dz bu/ma123/hw
+still an anxiety-inducing ordeal
+---
+89.01 percent done. not too bad. the remaining ones are
+the extra-thinky problems. 4.6.48 is a weird graphing one
+with an interactive graphing tool (blech). 4.6.50 I believe
+is a multi-step graph matching tool. 4.7.85 is a compound
+interest problem.

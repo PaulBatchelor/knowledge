@@ -241,3 +241,21 @@ I'm populating a ugen struct. I don't think I've formally
 described the memory layout of a ugen yet. It's going to be
 two words I think. first two words will be ports, then data (LSB,
 MSB). Next word will store the function index pointer to the command.
+
+@19:53 lots of TODO filling in sonilo C API #timelog:01:42:00
+#! dz $
+Most of the sonilo API seems to be fleshed out. However,
+there are gaps in the memory allocator, which lie just below
+the sonilo C API abstraction. Those will need to be tackled next.
+---
+I think the memory stuff is mostly implemented? It just needs
+to be glued together.
+---
+At that point, it might be possible to write a bunch of
+zeros to disk. Then 1s (to make sure DSP can actually
+write stuff), then finally a sine wave.
+---
+At that point, a single ugen will have been implemented,
+and thoughts will start going to writing real ugens, and
+making structures to control a list of them. That's when
+the Sonilo C API will start resembling the sndkit C API.

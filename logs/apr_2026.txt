@@ -259,3 +259,66 @@ At that point, a single ugen will have been implemented,
 and thoughts will start going to writing real ugens, and
 making structures to control a list of them. That's when
 the Sonilo C API will start resembling the sndkit C API.
+
+@2026-04-20 Day 231
+@10:42 put context into a separate file #timelog:00:10:57
+#! dz thoughts/projects/sonilo/tasks/ugens
+
+@10:54 context: pstack and allocator setup #timelog:00:19:36
+#! dz $
+Breaking off context from mem wasn't entirely clean. The allocator
+still uses bits from both mem and context. It should be abstracted
+better at some point in the future.
+
+@11:15 try to get example program to run without segfaulting #timelog:00:10:20
+#! dz $
+Doesn't matter what it does, as long as it doesn't segfault.
+---
+Things do not segfault now. I've added in error handling,
+and it returns an error after initializing the ugen. I did
+not hook up the allocator yet.
+
+@11:25 trying to make other things not error #timelog:00:38:58
+#! dz $
+hooking up allocator
+---
+it moves past the allocator. the instrument map index is failing.
+I think I have to build that out.
+---
+sonilo_iport is causing a fuss now. pstack pop is unhappy.
+It might be an empty stack.
+---
+Empty stack indeed. But, it turns out sonilo constant
+is failing for some reason.
+---
+parameter push has two points of failure: a stack overflow,
+or the reference counter doesn't have an address for the block.
+For some reason, the reference counter error is being triggered,
+even though this is a constant.
+---
+Serializing the port C struct to a word was done incorrectly.
+I wasn't placing the data in the correct bits.
+---
+The part that isn't work now is retrieving the block.
+---
+The program runs and writes zeros to disk as expected. Good!
+
+@12:19 attempting to write constants to disk, some troubleshooting #timelog:00:17:39
+#! dz $
+Got wav generation using sox, waveform printing using
+mnolth wavdraw.
+---
+setting the output to be 0.5 returns a black rectangle that's
+at the 0.5 mark, not a line. Must not be setting the block
+correctly after the first one.
+---
+zoomed in audacity. it's actually setting every one to 0.5
+except 1.
+---
+negative -0.5 has a similar result. I rendered two blocks.
+There's always a 0 in the 8 sample.
+---
+The state data is the thing setting the off bit! When I set
+the state to be -1, the rogue value turns into -1.
+---
+I'm going to have to track this down later.

@@ -420,3 +420,83 @@ appear to show up. cool cool.
 
 @12:36 creating a tone #timelog:00:15:47
 #! dz $
+
+@14:48 setting up ugen interface: initial thoughts #timelog:00:14:49
+#! dz $
+It's now time to build out the standard means for creating
+re-usable unit generators.
+---
+Each ugen will be associated with a 1-3 character string called
+a symbol (A-Z letters only). 'SIN' could be the symbol for
+a sine oscillator. A symbol is converted to a 16-bit key,
+and this key is used to find an associated function (via
+an index). This function is the ugen's initialization function.
+The 16-bit key has an extra bit. When flipped, turns into a key
+holding the ugen's compute function.
+---
+Here's how I think it should work in practice. The API pushes
+a symbol to the system stack (not the parameter stack), which
+internally turns the symbol into a 16-bit key. Then the API
+calls some kind of "create ugen" function, passing
+along a pointer to the current context. This function
+pops the key off the stack, and uses that to retrieve the
+init function for that particular ugen. The key is pushed
+back onto the stack, and this init function is called. Inside
+this init function, memory is allocated for ports and state.
+The key is popped off again, the extra-bit is flipped to
+get the index of the compute function, which is stored inside
+the ugen data. The ugen address is then pushed onto the system
+stack. Most likely, that value would get put onto a list somewhere.
+
+@15:02 setting up some sample code #timelog:00:44:12
+#! dz $
+For now, this will look like the first tone example, but
+I will eventually extended it to be a patch made up of
+sine waves.
+---
+The idea here is to get a top-down view of what this API
+will look like, and build out from there.
+
+
+@15:54 write out some stubs to get this "sines" example to build #timelog:00:32:00
+#! dz $
+
+@16:45 filling out some of the stubs for sines #timelog:00:48:48
+#! dz $
+stubs filled out. however, it's not returning an error anywhere.
+It runs. I haven't built out the ugen loading structure, so
+something somewhere shouldn't be running so smoothly.
+---
+ah, this is important: I forgot to add the "ugen create" function.
+this should ruffle a few feathers.
+---
+I'm realizing that my "subroutine" or "instruction" logic code
+had some pre-existing things in there. An instruction call at
+the moment expects a key, not a function index. It performs
+the lookup on the spot. For DSP callbacks, I want that index
+to be pre-resolved. So, I'm going to call this pre-resolved
+call a "direct" subroutine instruction call.
+---
+The "call" function is failing, which is to be expected,
+as the ugen opcodes have yet to be made. Two need to be
+created at this point: SNK (sink point for a signal),
+and SIN (sine generator).
+
+@17:38 setting up ugen loader infrastructure #timelog:00:51:00
+#! dz $
+#! ADD 34
+Got some boilerplate loading happening, now the thing is
+failing when a ugen attempts to be created. Looks like I
+forgot to change the lookup from SNK to SIN. Still, I want
+it to crash when it attempts to initialize because I haven't
+initialized that yet.
+---
+It's erroring where I want it to error (at the SIN init function).
+Time to build that one up.
+---
+Because the ugen init function is so level, I really have
+no choice but to push the function index of the ugen render 
+callback. I was on the fence about doing that or pushing
+the key value and letting the init function resolve it.
+But, the init function only has access to the memory not
+the sonilo VM. I like it this way.

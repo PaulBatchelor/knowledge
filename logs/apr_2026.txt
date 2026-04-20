@@ -260,7 +260,7 @@ and thoughts will start going to writing real ugens, and
 making structures to control a list of them. That's when
 the Sonilo C API will start resembling the sndkit C API.
 
-@2026-04-20 Day 231
+@2026-04-19 Day 231
 @10:42 put context into a separate file #timelog:00:10:57
 #! dz thoughts/projects/sonilo/tasks/ugens
 
@@ -322,3 +322,101 @@ The state data is the thing setting the off bit! When I set
 the state to be -1, the rogue value turns into -1.
 ---
 I'm going to have to track this down later.
+
+@2026-04-20 Day 232
+@10:08 tracking down a memory-related bug #timelog:01:00:03
+#! dz thoughts/projects/sonilo/tasks/ugens
+Yesterday, I found a weird bug where my output signal of
+a constant value would occasionally introduce a sample of
+another value periodically (in a 64-sample buffer, it
+would occur at the 8th sample). I traced that value to be
+the state of the ugen. So, this means that a memory location
+is being used twice: once in the buffer, and again in the
+ugen state.
+---
+Let me first check the ugen initializer.
+---
+"state" is at address 4. That doesn't seem right. The block
+stack would in that address space. I wonder if I'm not
+converting block addresses to word addresses.
+---
+Context is converting block addresses to word addresses,
+but I don't fully believe my "block to word" converters.
+It's supposed to add a bias that skips the blocklist space (4 words).
+---
+fussing with the memory blocks breaks things, so I'm going
+to leave that alone for now until I have more facts.
+---
+So, state is at address 4, which feels wrong because that is
+in the global blockstack. The output port block address being
+allocated is at address.
+---
+Look at that, I forgot to allocate a block.
+---
+Block is allocated at location 576, which is block 9 (multiple of 64).
+All good signs that this might be correct. But now the output
+is wrong. A bunch of zeros, followed by random small floating
+point numbers.
+---
+My ugen is writing any values to this block for some reason.
+The block created is definitely at 576 and stored/retrieved
+properly. Before calling ugen compute, I set the block with
+some of my own values, and the ugen did not overwrite these
+values.
+---
+lots of wrong-looking values in the renderer callback. The ugen
+data for all the ports is all wrong. The ugen itself is wrong
+because the pointer is wrong (set to be 0). What is passing
+0 to the render callback?
+---
+top-level data address in ugen struct is 0, and it very
+much shouldn't be zero.
+---
+the top-level struct is the first thing the allocator
+grabs, and it returns zero. Other values seem to be relatively
+correct. It really shouldn't be zero.
+---
+Yup. Allocator is returning zero when it shouldn't. I can
+confirm that the contents of the ugen top memory location change between
+ugen initialization and retrieval of the the block. If it were
+working properly, those would be the same.
+---
+My best guess is that this is an offset calculation issue.
+
+@11:09 investigating allocator issues #timelog:00:33:22
+#! dz $
+"bud" instance address can't be correct, it returns address 4.
+"allocator" address looks plausible at address 576, but I should
+note that this also seems to be address of the output block,
+so what's going on there?
+---
+It looks like the buddy allocator memory address isn't being
+computed correctly when it is being initialized. The local
+offset is computed, but I forgot to add the base address of
+the allocator itself.
+---
+base block was getting zeroed out because I was masking
+wrong in the expression.
+---
+okay. looks like we are writing stuff to the write places.
+new problem now is that my unit generator constants don't
+seem to show up.
+
+@11:47 constants aren't showing up in ugen #timelog:00:31:08
+#! dz $
+parameter stack isn't popping correct values. is it pushing
+correct values?
+---
+it is not. ftoq/qtof seem to be broken.
+---
+ftoq is backwards. From low to high bits, I wanted the
+order to be: fractional, integer, sign. ftoq encodes
+sign, integer, fractional. Also, I had an incorrect
+casting in the ftoq function which may have been truncating
+things.
+---
+freq/amp slots are swapped. but other than that, things
+appear to show up. cool cool.
+
+@12:36 creating a tone #timelog:00:15:47
+#! dz $

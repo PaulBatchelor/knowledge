@@ -517,3 +517,8 @@ I think the sine init function is completed. Or, it passes
 through all the error checks I gave it. The sink init function
 comes next. Then, the render functions. But, this is a good
 stopping point for tonight.
+
+@21:23 hw11 initial impressions
+#! dz bu/ma123/hw
+27 problems. 20 of those are 4.9. the remaining 7 are
+5.1. 24 problems have examples. This feels doable.

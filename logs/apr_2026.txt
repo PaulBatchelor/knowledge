@@ -484,7 +484,6 @@ and SIN (sine generator).
 
 @17:38 setting up ugen loader infrastructure #timelog:00:51:00
 #! dz $
-#! ADD 34
 Got some boilerplate loading happening, now the thing is
 failing when a ugen attempts to be created. Looks like I
 forgot to change the lookup from SNK to SIN. Still, I want
@@ -500,3 +499,21 @@ callback. I was on the fence about doing that or pushing
 the key value and letting the init function resolve it.
 But, the init function only has access to the memory not
 the sonilo VM. I like it this way.
+
+@19:33 more ugen infrastructure #timelog:01:06:00
+#! dz $
+I think I found where I left off: the init function
+for sine.
+---
+The init function would need to create a unit generator
+from a single memory location. Right now my implementation
+uses a bunch of C structs.
+---
+I've created a bunch of low level ugen function stubs that
+resemble some of the higher-levelo sonilo functions I
+created yesterday.
+---
+I think the sine init function is completed. Or, it passes
+through all the error checks I gave it. The sink init function
+comes next. Then, the render functions. But, this is a good
+stopping point for tonight.

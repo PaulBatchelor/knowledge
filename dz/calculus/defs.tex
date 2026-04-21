@@ -476,5 +476,76 @@ where $0 < M < \infty$ ($M$ is positive and finite).
 
 \enddef
 
+\begdef{Antiderivative}
+A function $F$ is an {\bf antiderivative} of $f$ on an interval
+$I$ provided $F'(x) = f(x)$, for all $x$ in $I$.
+\enddef
+
+\begdef{Initial Value Problems for Velocity and Position}
+Suppose an object moves along al ine with a (known) velocity $v(t)$,
+for $t \ge 0$, then its position is found by solving the initial
+value problem
+
+$$\
+s'(t) = v(t), s(0) = s_0,
+$$
+
+where $s_0$ is the (known) initial position.
+
+\par If the (known) acceleration fo the object $a(t)$ is
+given, then its velocity is found
+but solving the initial value problem.
+
+$$\
+v'(t) = a(t), v(0) = v_0,
+$$
+
+where $v_0$ is the (known) initial velocity.
+\enddef
+
+\begdef{Riemann Sum}
+Suppose $f$ is defined on a closed interval $[a, b]$, which
+is divded into $n$ subintervals of length $\Delta x$,
+if $x^{*}_{k}$ is any point on the $k$th subinterval
+$[x_{k - 1}, x_k]$, for $k = 1, 2, \dots ,n$, then
+
+$$\
+f(x^{*}_1)\Delta x + f(x^{*}_2)\Delta x + \cdots + f(x^{*}_n)\Delta x
+$$
+
+is called a {\bf Riemann sum} for $f$ on $[a, b]$. The sum is called,
+a {\bf left Riemann sum} if
+$x^{*}_k$ is the left endpoint of $[x_{k - 1}, x_k]$,
+a {\bf right Riemann sum} if
+$x^{*}_k$ is the right endpoint of $[x_{k - 1}, x_k]$,
+a {\bf midpoint Riemann sum} if
+$x^{*}_k$ is the midpoint of $[x_{k - 1}, x_k]$,
+for $k = 1, 2, \dots ,n$.
+\enddef
+
+\begdef{Left, Right, and Midpoint Riemann Sums in Sigma Notation}
+Suppose $f$ is defined on a closed interval $[a, b]$, which is
+divded into n subintervals of equal length $\Delta x$. if $x^{*}_k$
+is a point in the $k$th subinterval $[x_{k - 1}, x_k]$, for
+$k = 1, 2, \dots, n$, then the {\bf Riemann sum} for $f$ on $[a, b]$
+is
+$\sum\limits^{n}_{k = 1} f(x^{*}_k)\Delta x$.
+Three
+cases arise in practice.
+
+\par
+$\sum\limits^{n}_{k = 1} f(x^{*}_k)\Delta x$
+is a {\bf left Riemann sum} if $x^{*}_k = a + (k - 1)\Delta x$.
+
+\par
+$\sum\limits^{n}_{k = 1} f(x^{*}_k)\Delta x$
+is a {\bf right Riemann sum} if $x^{*}_k = a + k\Delta x$.
+
+\par
+$\sum\limits^{n}_{k = 1} f(x^{*}_k)\Delta x$
+is a {\bf midpoint Riemann sum} if $x^{*}_k = a + (k - {1 \over 2})\Delta x$.
+
+\enddef
+
 \bye
 

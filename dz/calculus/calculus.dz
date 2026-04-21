@@ -31,8 +31,15 @@ nn 01_maxima_and_minima
 nn 02_mean_value_theorem
 nn 03_what_derivatives_tell_us
 nn 07_lhopitals_rule
+nn 08_newtons_method
+nn 09_antiderivatives
+ns ..
+nn 05_integration
+ns +05_integration
+nn 01_approximating_area_under_curves
 
 ns ../..
+
 
 nn examples/2_4_01
 co $ ?04_infinite_limits

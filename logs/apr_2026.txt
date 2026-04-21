@@ -522,3 +522,10 @@ stopping point for tonight.
 #! dz bu/ma123/hw
 27 problems. 20 of those are 4.9. the remaining 7 are
 5.1. 24 problems have examples. This feels doable.
+
+@2026-04-21 Day 233
+@09:54 transcribing 4.9 defs and theorems #timelog:00:12:45
+#! dz calculus/pearson/toc/04_applications_of_the_derivative/09_antiderivatives
+
+@10:10 transcribing 5.1 #timelog:00:19:26
+#! dz calculus/pearson/toc/05_integration/01_approximating_area_under_curves

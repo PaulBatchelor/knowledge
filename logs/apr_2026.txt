@@ -529,3 +529,72 @@ stopping point for tonight.
 
 @10:10 transcribing 5.1 #timelog:00:19:26
 #! dz calculus/pearson/toc/05_integration/01_approximating_area_under_curves
+
+@19:28 sink init function #timelog:00:08:09
+#! dz thoughts/projects/sonilo/tasks/ugens
+
+@20:08 work out sine compute function and sink #timelog:00:50:02
+#! dz $
+the render functions are not being called.
+---
+the ugen address returned by ugen create is 0, which
+is wrong.
+---
+ugen is definitely not zero in ugen create.
+---
+sine init is being called inside the render block instead
+of the render.
+that's the first mistake. The second mistake is that the address
+of the ugen isn't being passed.
+---
+alt key bit is actually the first bit, not the last bit.
+sine render function is being called now.
+---
+I see what I was trying to do in this render callback in
+the example. Use only primitive sonilo commands to load
+and render. The rw register needs to be prepped to store
+two 16 bit ints: the function index, and the pointer to the ugen.
+---
+I'm just going to do the loading in C. I don't really need
+nifty low-level API calls for this yet.
+---
+Something that looks like a plausible memory address is showing up now.
+---
+The sink callback is being hit now. Might as well bang that
+one out.
+---
+looks like a sine wave in the waveform viewer.
+---
+Sounds like one too.
+---
+Can confirm that I am able to change the frequency of the
+sine at compile-time.
+---
+I declare the initial unit generator components completed.
+
+@21:05 ugen "bytecode" might not be needed, but a ugen address list would be useful
+#! dz thoughts/projects/sonilo/tasks/ugen_bytecode
+I haven't reviewed my logs for this in a while. But, a generic
+16-bit array that fits on a block would be a good start.
+64 words yields 128 shorts max. first short used for size yields
+127 shorts, which yields 127 ugens max. Good enough for a demo.
+
+@21:07 time to start thinking about a demo
+#! dz thoughts/projects/sonilo/tasks/dsp_demo
+I think there should be two. The "sines" example should
+be updated to be a real patch with many sine modulations. It
+should showcase how to use hold/unhold (not yet implemented).
+---
+A monophonic step sequencer demo would be pretty cool. The
+interesting challenge here would be creating enough of a system
+to support allocating basic sequences (I could get carried
+away here, but 8, 4, 2, 1 bit array data structures would
+be nice to play around with.) The DSP bits would be things
+like blsaw, butlp, smoother, metro, midi-to-freq,
+and maybe some kind of phasor or ramp for modulation.
+---
+No reverb yet. The memory complications for that are of scope
+for this project.
+---
+All in C using the API. No Konilo yet, but hopefully it'll
+be a few steps away from that.

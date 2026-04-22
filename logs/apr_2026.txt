@@ -285,7 +285,7 @@ hooking up allocator
 it moves past the allocator. the instrument map index is failing.
 I think I have to build that out.
 ---
-sonilo_iport is causing a fuss now. pstack pop is unhappy.
+sonilo iport is causing a fuss now. pstack pop is unhappy.
 It might be an empty stack.
 ---
 Empty stack indeed. But, it turns out sonilo constant
@@ -598,3 +598,92 @@ for this project.
 ---
 All in C using the API. No Konilo yet, but hopefully it'll
 be a few steps away from that.
+
+@2026-04-22 Day 234
+@14:44 an array of addresses is all that is needed now
+#! dz thoughts/projects/sonilo/tasks/ugen_bytecode
+As I suspected, this task has gone through some evolutions.
+Initially, I wanted more integration with ILO, but that
+gradually shifted towards desiring something that resembled
+data.
+---
+The spirit of some of the bytecode is the same. At one point,
+I was imagining an instruction containing an encoded ugen
+label with an address to the data. The labelling system exists
+as 16-bit symbol 3-letter symbol system, and the data is
+a unit generator struct.
+---
+So instead of a bytecode format, it's just data now: a list
+of unit generators with memory addresses and callback DSP
+pointers.
+---
+What's lost here is a low-level intermediate format. Something
+simple that could built up this list of unit generators.
+I might not need it. Or, it might not be ready yet. My thinking
+is that the logic used for constructing these unit generators
+would be done using Konilo. Konilo would send serial commands
+to Sonilo to generate the ugen list. This (yet to be determined)
+would be the re-usable part.
+
+@15:00 Making GSG components should be bumped up, possibly for "initial DSP"
+#! dz thoughts/projects/sonilo/tasks/initial_dsp
+#! dz thoughts/projects/sonilo/tasks/GSG
+Since making the GSG task many months ago, I've reimagined
+the GSG has a collection of smaller unit generator components
+glued together in slightly different variations.
+---
+Components for this include the clock generator (a truncated
+phasor), a clock divider (AKA rephasor), an impulse generator
+(using clock source), a curve generator (clock goes in, curve comes out),
+and linear interpolator (lerp).
+---
+These could all be implemented as simple DSP ugen generator components
+with limited usefulness. More useful would be to have some concept
+of an iterable to do sequencing. I have a very limited namespace
+for ugens, so it might be best just to jump to the iterable types.
+---
+Iterables would be needed for the divider (a scaling value, for durations),
+curve generators (which curve to select), and the lerp-er (sequencing values).
+The clock divider would produce the divided clock signal and an
+impulse signal representing the start of every period. This would
+get fed into the iterator to trigger logic to produce the
+next value.
+
+@15:18 initial DSP demo would be a good chance to explore basic iterables
+#! dz thoughts/projects/sonilo/tasks/dsp_demo
+More thinking about this DSP generator. I wanted to make a monophonic
+step sequenced line with things like portamento.
+---
+A sequencer would just be a linear or looping iterable. Iteratables
+would be something needed down the line for gesture signal generator
+(GSG) related things, so it wouldn't be a waste of time to
+put some effort into this now.
+
+@15:28 initial task created
+#! dz thoughts/projects/sonilo/tasks/iterables
+An "iterable" is a thing that is an iterator. Generally speaking,
+it is a thing that when called upon, will tell you what
+the next value will be. How it determines that should be as
+general purpose as possible.
+---
+Part of this is also going to involve some data structures.
+Arrays of various types and sizes, mainly, and ways to
+keep track of state.
+---
+Also, what's the API going to look like for this? Eventually
+it will be serialized.
+
+@15:37 concept: what would a minimal subset of msgpack look like?
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+Basically, generate msgpack using only fixmaps, fixints,
+fixarrays, fixstrs, etc. Smaller structures and objects, but
+probably simpler. The limits would be baked into it.
+---
+Trying to make a protocol that has an awareness for those
+bare minimum limits would be useful.
+---
+As a test, probably would be good to write a C program that
+serializes data by hand. deserialization could use the
+industrial msgpack C parser. If I can't figure out
+how to serialize things in C, I'm not going to be able
+to do it Konilo.

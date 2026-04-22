@@ -5,6 +5,7 @@ thoughts/projects/sonilo/tasks/context
 thoughts/projects/sonilo/tasks/docgen
 thoughts/projects/sonilo/tasks/fix_block_navigation
 thoughts/projects/sonilo/tasks/instruction_primitive
+thoughts/projects/sonilo/tasks/iterables
 thoughts/projects/sonilo/tasks/ugen_refcount
 thoughts/projects/sonilo/tasks/zero_page
 thoughts/projects/sonilo/tasks/bulk_instructions
@@ -14,8 +15,8 @@ thoughts/projects/sonilo/tasks/ugen_ports
 thoughts/projects/sonilo/tasks/allocator
 thoughts/projects/sonilo/tasks/mem
 thoughts/projects/sonilo/tasks/phasor
-thoughts/projects/sonilo/tasks/butlp
 thoughts/projects/sonilo/tasks/blsaw
+thoughts/projects/sonilo/tasks/butlp
 thoughts/projects/sonilo/tasks/ugen_bytecode
 thoughts/projects/sonilo/tasks/initial_dsp
 thoughts/projects/sonilo/tasks/dsp_demo

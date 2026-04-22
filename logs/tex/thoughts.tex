@@ -58,6 +58,8 @@
 \smallskip
 \noindent docgen \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node13}
 \smallskip
+\noindent dsp demo \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node40}
+\smallskip
 \noindent fix block navigation \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node28}
 \smallskip
 \noindent ilo interpreter \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node4}
@@ -153,6 +155,13 @@
 {\noindent \bf 2026-03-15:} sonilo command language, ugens\smallskip
 {\noindent \bf 2026-03-17:} sonilo command language\smallskip
 {\noindent \bf 2026-03-21:} news, butlp, sonilo command language\smallskip
+{\noindent \bf 2026-04-11:} news\smallskip
+{\noindent \bf 2026-04-12:} ugens\smallskip
+{\noindent \bf 2026-04-13:} ugen ports, ugens\smallskip
+{\noindent \bf 2026-04-18:} ugens\smallskip
+{\noindent \bf 2026-04-19:} ugens\smallskip
+{\noindent \bf 2026-04-20:} ugens\smallskip
+{\noindent \bf 2026-04-21:} dsp demo, ugen bytecode, ugens\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -895,6 +904,11 @@ Things like ugen structure, offline rendering, etc, are already well defined tas
 \par
 
 When the single instruction primitive is created, bulk instruction execution needs to happen. I'm thinking about executing an array of instructions. That data structure is already built.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-21}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:05: ugen "bytecode" might not be needed, but a ugen address list would be useful}\smallskip
+I haven't reviewed my logs for this in a while. But, a generic 16-bit array that fits on a block would be a good start. 64 words yields 128 shorts max. first short used for size yields 127 shorts, which yields 127 ugens max. Good enough for a demo.
 \par
 
 \xrdef{node12}
@@ -2016,6 +2030,26 @@ it looks like I've outlined a general procedure for making a ugen, and some gene
 once I do that, I should be able to work backwards and start building out an initial proof of concept.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-11}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:09: where was I?}\smallskip
+It's been several weeks since I last did anything. Life has gotten in the way. I haven't had many opportunities to type anything out.
+\par
+
+Looks like I've been thinking about the sonilo command language. Or at least, an initial subset. Memory allocation needs to be taken for a test drive to build up the initial ugen framework.
+\par
+
+It might be time to start thinking about a prototyping language like Lua as a way to metaprogram the initial command language experiments. I will want to eventually get things working in Konilo forth, but that's probably too much to think about at once. I still don't actually know Konilo.
+\par
+
+During a roadtrip, I've had some time to think about composing abstractions for Gesture. "Composition" can be thought of as the act of building up something through careful arrangement of a smaller unit of "thing". One composes music with notes, one composes a novel with words, one can compose a function out of smaller functions. For creative purposes, it is helpful to think of the smaller thing as atomic and indivisible; if one is composing a flower arrangement, one doesn't strip the pedals of a flower and to try and tape together a new flower.
+\par
+
+A single gesture is an ordered set of line segments, and there seems to be compatible systems for expressing these kinds of structures. I'm hoping linear algebra and array-based languages might be helpful.
+\par
+
+Meanwhile, Sonilo itself is mostly concerned about composing with unit generators. The underlying unit generator components used to synthesize gesture signals will require reading from some kind of structure in memory, analogous to a musical "score" or sequence. How sequences and scores will be generated and packaged for Sonilo ugens remains an unsolved problem.
+\par
+
 \xrdef{node30}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
 
@@ -2200,6 +2234,295 @@ As I begin designing this command language, I start thinking about one of the fi
 The balance between what to expose and what to abstract away is still unclear to me. With unit generators
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-12}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:44: typing out a rough C API}\smallskip
+Should be a similar abstraction layer to what I did for sndkit.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:36: port operations}\smallskip
+Trying to articulate some of the missing pieces for this C API I'm trying to imagine. There's this so-called "parameter" stack which I half remember making, and it needs to interact with the "ports" in a unit generator. I'm thinking stack operations should be implicit. The API operations should handle both pushing/popping off the stack and setting the ports.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:09: adding in some new API calls related to ports}\smallskip
+these will be iport (set an input port), oport (set an output port), clean (GC sweep on buffers), and constant (push a constant to stack as parameter).
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:52: filling more TODOs in the API}\smallskip
+There are a lot of TODO slots. There are definitely bits that fall into and out of my head. I may need to draw a map for myself. It's hard to keep track of what needs to be built and what works.
+\par
+
+Well, the good news is I think I have the map of how I want things to look from the top-level. The bad news is that there are still quite a few things that need to be connected. I also need a refresher on the data layout for many components. Many TODOs have been written in {\tt sonilo.c}. I'll need to do another pass.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-18}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:07: more TODOs in sonilo C API and hello ugen example}\smallskip
+For some reason, I decided to have {\tt instr\_ex} do a key lookup on every call, instead of skipping that step and just storing the location of that function (which shouldn't change during runtime).
+\par
+
+The ugen example is looking pretty complete at this point. I have code that sets up a sonilo context and sets up a single unit generator with I/O via ports. It probably won't build yet, which is fine for now.
+\par
+
+Next step will be to get this built, but not run. That's going to require building out a library and linking, and that would benefit from setting up a real build system (ninja). If that builds, I can start filling in the function stubs, and troubleshoot from there.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:49: get example to build, ninja, libsonilo.a}\smallskip
+I think I am ready to start filling stuff in.
+\par
+
+Actually, no. I don't like my ugen port abstraction. I had to pull a lot of stuff out of the port file into sonilo. I wonder if there's a more abstract way to do things.
+\par
+
+Ugh. Not really.
+\par
+
+Things build using a modified shell script. Although, I think now would be a good time to get a small ninja file up and running.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:22: setting up ugen getter}\smallskip
+There are still some blank TODOs to fill out.
+\par
+
+I'm populating a ugen struct. I don't think I've formally described the memory layout of a ugen yet. It's going to be two words I think. first two words will be ports, then data (LSB, MSB). Next word will store the function index pointer to the command.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:53: lots of TODO filling in sonilo C API}\smallskip
+Most of the sonilo API seems to be fleshed out. However, there are gaps in the memory allocator, which lie just below the sonilo C API abstraction. Those will need to be tackled next.
+\par
+
+I think the memory stuff is mostly implemented? It just needs to be glued together.
+\par
+
+At that point, it might be possible to write a bunch of zeros to disk. Then 1s (to make sure DSP can actually write stuff), then finally a sine wave.
+\par
+
+At that point, a single ugen will have been implemented, and thoughts will start going to writing real ugens, and making structures to control a list of them. That's when the Sonilo C API will start resembling the sndkit C API.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:42: put context into a separate file}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:54: context: pstack and allocator setup}\smallskip
+Breaking off context from mem wasn't entirely clean. The allocator still uses bits from both mem and context. It should be abstracted better at some point in the future.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:15: try to get example program to run without segfaulting}\smallskip
+Doesn't matter what it does, as long as it doesn't segfault.
+\par
+
+Things do not segfault now. I've added in error handling, and it returns an error after initializing the ugen. I did not hook up the allocator yet.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:25: trying to make other things not error}\smallskip
+hooking up allocator
+\par
+
+it moves past the allocator. the instrument map index is failing. I think I have to build that out.
+\par
+
+sonilo iport is causing a fuss now. pstack pop is unhappy. It might be an empty stack.
+\par
+
+Empty stack indeed. But, it turns out sonilo constant is failing for some reason.
+\par
+
+parameter push has two points of failure: a stack overflow, or the reference counter doesn't have an address for the block. For some reason, the reference counter error is being triggered, even though this is a constant.
+\par
+
+Serializing the port C struct to a word was done incorrectly. I wasn't placing the data in the correct bits.
+\par
+
+The part that isn't work now is retrieving the block.
+\par
+
+The program runs and writes zeros to disk as expected. Good!
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:19: attempting to write constants to disk, some troubleshooting}\smallskip
+Got wav generation using sox, waveform printing using mnolth wavdraw.
+\par
+
+setting the output to be 0.5 returns a black rectangle that's at the 0.5 mark, not a line. Must not be setting the block correctly after the first one.
+\par
+
+zoomed in audacity. it's actually setting every one to 0.5 except 1.
+\par
+
+negative -0.5 has a similar result. I rendered two blocks. There's always a 0 in the 8 sample.
+\par
+
+The state data is the thing setting the off bit! When I set the state to be -1, the rogue value turns into -1.
+\par
+
+I'm going to have to track this down later.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-20}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:08: tracking down a memory-related bug}\smallskip
+Yesterday, I found a weird bug where my output signal of a constant value would occasionally introduce a sample of another value periodically (in a 64-sample buffer, it would occur at the 8th sample). I traced that value to be the state of the ugen. So, this means that a memory location is being used twice: once in the buffer, and again in the ugen state.
+\par
+
+Let me first check the ugen initializer.
+\par
+
+"state" is at address 4. That doesn't seem right. The block stack would in that address space. I wonder if I'm not converting block addresses to word addresses.
+\par
+
+Context is converting block addresses to word addresses, but I don't fully believe my "block to word" converters. It's supposed to add a bias that skips the blocklist space (4 words).
+\par
+
+fussing with the memory blocks breaks things, so I'm going to leave that alone for now until I have more facts.
+\par
+
+So, state is at address 4, which feels wrong because that is in the global blockstack. The output port block address being allocated is at address.
+\par
+
+Look at that, I forgot to allocate a block.
+\par
+
+Block is allocated at location 576, which is block 9 (multiple of 64). All good signs that this might be correct. But now the output is wrong. A bunch of zeros, followed by random small floating point numbers.
+\par
+
+My ugen is writing any values to this block for some reason. The block created is definitely at 576 and stored/retrieved properly. Before calling ugen compute, I set the block with some of my own values, and the ugen did not overwrite these values.
+\par
+
+lots of wrong-looking values in the renderer callback. The ugen data for all the ports is all wrong. The ugen itself is wrong because the pointer is wrong (set to be 0). What is passing 0 to the render callback?
+\par
+
+top-level data address in ugen struct is 0, and it very much shouldn't be zero.
+\par
+
+the top-level struct is the first thing the allocator grabs, and it returns zero. Other values seem to be relatively correct. It really shouldn't be zero.
+\par
+
+Yup. Allocator is returning zero when it shouldn't. I can confirm that the contents of the ugen top memory location change between ugen initialization and retrieval of the the block. If it were working properly, those would be the same.
+\par
+
+My best guess is that this is an offset calculation issue.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:09: investigating allocator issues}\smallskip
+"bud" instance address can't be correct, it returns address 4. "allocator" address looks plausible at address 576, but I should note that this also seems to be address of the output block, so what's going on there?
+\par
+
+It looks like the buddy allocator memory address isn't being computed correctly when it is being initialized. The local offset is computed, but I forgot to add the base address of the allocator itself.
+\par
+
+base block was getting zeroed out because I was masking wrong in the expression.
+\par
+
+okay. looks like we are writing stuff to the write places. new problem now is that my unit generator constants don't seem to show up.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:47: constants aren't showing up in ugen}\smallskip
+parameter stack isn't popping correct values. is it pushing correct values?
+\par
+
+it is not. ftoq/qtof seem to be broken.
+\par
+
+ftoq is backwards. From low to high bits, I wanted the order to be: fractional, integer, sign. ftoq encodes sign, integer, fractional. Also, I had an incorrect casting in the ftoq function which may have been truncating things.
+\par
+
+freq/amp slots are swapped. but other than that, things appear to show up. cool cool.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:36: creating a tone}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:48: setting up ugen interface: initial thoughts}\smallskip
+It's now time to build out the standard means for creating re-usable unit generators.
+\par
+
+Each ugen will be associated with a 1-3 character string called a symbol (A-Z letters only). 'SIN' could be the symbol for a sine oscillator. A symbol is converted to a 16-bit key, and this key is used to find an associated function (via an index). This function is the ugen's initialization function. The 16-bit key has an extra bit. When flipped, turns into a key holding the ugen's compute function.
+\par
+
+Here's how I think it should work in practice. The API pushes a symbol to the system stack (not the parameter stack), which internally turns the symbol into a 16-bit key. Then the API calls some kind of "create ugen" function, passing along a pointer to the current context. This function pops the key off the stack, and uses that to retrieve the init function for that particular ugen. The key is pushed back onto the stack, and this init function is called. Inside this init function, memory is allocated for ports and state. The key is popped off again, the extra-bit is flipped to get the index of the compute function, which is stored inside the ugen data. The ugen address is then pushed onto the system stack. Most likely, that value would get put onto a list somewhere.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:02: setting up some sample code}\smallskip
+For now, this will look like the first tone example, but I will eventually extended it to be a patch made up of sine waves.
+\par
+
+The idea here is to get a top-down view of what this API will look like, and build out from there.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:54: write out some stubs to get this "sines" example to build}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:45: filling out some of the stubs for sines}\smallskip
+stubs filled out. however, it's not returning an error anywhere. It runs. I haven't built out the ugen loading structure, so something somewhere shouldn't be running so smoothly.
+\par
+
+ah, this is important: I forgot to add the "ugen create" function. this should ruffle a few feathers.
+\par
+
+I'm realizing that my "subroutine" or "instruction" logic code had some pre-existing things in there. An instruction call at the moment expects a key, not a function index. It performs the lookup on the spot. For DSP callbacks, I want that index to be pre-resolved. So, I'm going to call this pre-resolved call a "direct" subroutine instruction call.
+\par
+
+The "call" function is failing, which is to be expected, as the ugen opcodes have yet to be made. Two need to be created at this point: SNK (sink point for a signal), and SIN (sine generator).
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:38: setting up ugen loader infrastructure}\smallskip
+Got some boilerplate loading happening, now the thing is failing when a ugen attempts to be created. Looks like I forgot to change the lookup from SNK to SIN. Still, I want it to crash when it attempts to initialize because I haven't initialized that yet.
+\par
+
+It's erroring where I want it to error (at the SIN init function). Time to build that one up.
+\par
+
+Because the ugen init function is so level, I really have no choice but to push the function index of the ugen render  callback. I was on the fence about doing that or pushing the key value and letting the init function resolve it. But, the init function only has access to the memory not the sonilo VM. I like it this way.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:33: more ugen infrastructure}\smallskip
+I think I found where I left off: the init function for sine.
+\par
+
+The init function would need to create a unit generator from a single memory location. Right now my implementation uses a bunch of C structs.
+\par
+
+I've created a bunch of low level ugen function stubs that resemble some of the higher-levelo sonilo functions I created yesterday.
+\par
+
+I think the sine init function is completed. Or, it passes through all the error checks I gave it. The sink init function comes next. Then, the render functions. But, this is a good stopping point for tonight.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-21}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:28: sink init function}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:08: work out sine compute function and sink}\smallskip
+the render functions are not being called.
+\par
+
+the ugen address returned by ugen create is 0, which is wrong.
+\par
+
+ugen is definitely not zero in ugen create.
+\par
+
+sine init is being called inside the render block instead of the render. that's the first mistake. The second mistake is that the address of the ugen isn't being passed.
+\par
+
+alt key bit is actually the first bit, not the last bit. sine render function is being called now.
+\par
+
+I see what I was trying to do in this render callback in the example. Use only primitive sonilo commands to load and render. The rw register needs to be prepped to store two 16 bit ints: the function index, and the pointer to the ugen.
+\par
+
+I'm just going to do the loading in C. I don't really need nifty low-level API calls for this yet.
+\par
+
+Something that looks like a plausible memory address is showing up now.
+\par
+
+The sink callback is being hit now. Might as well bang that one out.
+\par
+
+looks like a sine wave in the waveform viewer.
+\par
+
+Sounds like one too.
+\par
+
+Can confirm that I am able to change the frequency of the sine at compile-time.
+\par
+
+I declare the initial unit generator components completed.
+\par
+
 \xrdef{node33}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont ugen ports}\medskip
 implement ugen ports.
@@ -2285,6 +2608,11 @@ I was thinking about adding a way to input constants in the test suite, but hone
 \par
 
 In fact, I can imagine unit generators being one of the first abstractions being built in Konilo, after I get core memory allocation figured out (and a communication protocol). I think it'll be worth it to jump away from the test suite at that point, even if it means a bit more time.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:36: port operations}\smallskip
+Trying to articulate some of the missing pieces for this C API I'm trying to imagine. There's this so-called "parameter" stack which I half remember making, and it needs to interact with the "ports" in a unit generator. I'm thinking stack operations should be implicit. The API operations should handle both pushing/popping off the stack and setting the ports.
 \par
 
 \xrdef{node34}
@@ -2713,6 +3041,24 @@ There is nothing here I can really test. All the addresses are arbitrary, and th
 \par
 
 I think I'm just going to merge it.
+\par
+
+\xrdef{node40}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont dsp demo}\medskip
+DSP Demo: create a small program that will perform DSP algorithms
+using the memory allocation system
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-21}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:07: time to start thinking about a demo}\smallskip
+I think there should be two. The "sines" example should be updated to be a real patch with many sine modulations. It should showcase how to use hold/unhold (not yet implemented).
+\par
+
+A monophonic step sequencer demo would be pretty cool. The interesting challenge here would be creating enough of a system to support allocating basic sequences (I could get carried away here, but 8, 4, 2, 1 bit array data structures would be nice to play around with.) The DSP bits would be things like blsaw, butlp, smoother, metro, midi-to-freq, and maybe some kind of phasor or ramp for modulation.
+\par
+
+No reverb yet. The memory complications for that are of scope for this project.
+\par
+
+All in C using the API. No Konilo yet, but hopefully it'll be a few steps away from that.
 \par
 
 \bye

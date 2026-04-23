@@ -752,3 +752,6 @@ an error.
 @2026-04-23 Day 235
 @10:44 typing up MA-123 times for hw10 and some of hw11 #timelog:00:18:16
 #! dz bu/ma123/news
+
+@11:06 scanning cards and papers circa hw10 and most of hw11 #archiving #timelog:00:06:35
+#! dz bu/ma123/news

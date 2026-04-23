@@ -2,6 +2,7 @@ import sys
 from pprint import pprint
 
 def ts_to_sec(ts):
+    if ts[0] == "-": return 0
     ts = ts.split(':')
     ts = [ int(x) for x in ts ]
     if len(ts) == 2:

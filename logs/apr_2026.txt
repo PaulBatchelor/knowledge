@@ -1,4 +1,5 @@
-@2026-04-01 Day 213@11:28 typing up some quiz problems #timelog:00:09:35
+@2026-04-01 Day 213
+@11:28 typing up some quiz problems #timelog:00:09:35
 #! dz bu/ma123/study
 
 @2026-04-02 Day 214
@@ -704,3 +705,50 @@ leaving it be for tonight. I think I need to
 consolidate {\tt PORT\_BLOCK} and {\tt PARAM_BLOCK} and
 fix the unit tests. unit tests need a table of contents. Too
 tired to do that right now.
+
+@20:56 starting the TOC for tests #timelog:00:20:09
+#! dz thoughts/projects/sonilo/tasks/initial_dsp
+A slight detour from the problem at hand with hold/unhold.
+Tests need to be easier to navigate, and I need to do this
+at somepoint.
+---
+only 20 minutes of my life lost for this great
+
+@21:17 back to merging some enums #timelog:00:12:33
+#! dz $
+tests fixed. For the 'pu' command for pushing words
+onto the stack, I was hard coding the type. A block used
+to be coded as 0, it's now coded as 1.
+
+@21:30 back to sines example #timelog:01:07:01
+#! dz $
+ugen oport is borked I think. at least my sine ugen seems
+to be breaking around there.
+---
+pstack push is returning an error inside oport.
+---
+ah. I believe it's erroring because the reference counter
+is not working. It tries to increment the refcount in the refcounter,
+but the address hasn't been set up yet.
+----
+great now erroring at biscale, that is to be expected.
+---
+biscale works. error happens at unhold.
+---
+I was calling "hold" instead of "unhold" nice.
+---
+unhold is causing issues with an "iport" call with one
+of the sines (the modulated sine). I'm also hearing step
+noise in the frequency modulated sine
+where there really shouldn't be step noise.
+---
+The step noise is... I don't know. something might not
+be reading block-rate samples properly.
+---
+I have a feeling the pstack might not be gracefully
+ignoring held blocks, and it's treating it as an
+an error.
+
+@2026-04-23 Day 235
+@10:44 typing up MA-123 times for hw10 and some of hw11 #timelog:00:18:16
+#! dz bu/ma123/news

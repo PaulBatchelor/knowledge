@@ -1,5 +1,4 @@
-@2026-04-01 Day 213
-@11:28 typing up some quiz problems #timelog:00:09:35
+@2026-04-01 Day 213@11:28 typing up some quiz problems #timelog:00:09:35
 #! dz bu/ma123/study
 
 @2026-04-02 Day 214
@@ -687,3 +686,21 @@ serializes data by hand. deserialization could use the
 industrial msgpack C parser. If I can't figure out
 how to serialize things in C, I'm not going to be able
 to do it Konilo.
+
+@19:08 adding ADD and MUL #timelog:00:24:40
+#! dz thoughts/projects/sonilo/tasks/initial_dsp
+
+@19:36 working out a "hold/unhold" interface in sines example #timelog:00:38:26
+#! dz thoughts/projects/sonilo/tasks/initial_dsp
+scaffolding in place, an error at the hold
+---
+uh oh. I have two enums: one has {\tt PARAM\_BLOCK}, and the
+other has {\tt PORT\_BLOCK}.
+---
+Changing things to be {\tt PORT\_BLOCK} breaks my pstack
+unit tests. headache.
+---
+leaving it be for tonight. I think I need to
+consolidate {\tt PORT\_BLOCK} and {\tt PARAM_BLOCK} and
+fix the unit tests. unit tests need a table of contents. Too
+tired to do that right now.

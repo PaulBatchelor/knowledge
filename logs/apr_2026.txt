@@ -765,3 +765,99 @@ with pencil and paper.
 They changed the equations for some of the problems. Now, they've
 done this before, but it was a l ot this time. Problems 8,
 10, 11, 20, 24, and 26 were changed.
+
+@20:21 getting back to unhold #timelog:00:31:35
+#! dz thoughts/projects/sonilo/tasks/initial_dsp
+As a refresher: an error happens somewhere in the second
+sine init function. an iport call. inside the iport call,
+pstack pop returns an error code of 2. error code of 2 is
+generated in rc decr, which returns 2 because the rc count
+is zero.
+---
+In other words, something getting popped off the stack
+(have not figured out what that is yet) is in the reference
+counter, and it has a zero count prior to popping, which means it was
+already set up to be freed (unless it is held?).
+---
+I think I found part of my issue. the unhold function is
+pushing the value to the stack, but not popping it off again
+like I expected it too. I'm guessing that will make this
+particular iport error go away.
+---
+However, the fact that it was erroring when the refcount
+was 0 is a problem that isn't going to go away. Held blocks
+aren't being explicitely checked for in the push/pop operations.
+It doesn't matter what their counts are, they can go to zero
+it won't (shouldn't?) matter.
+---
+I should have expected this: popping off the stack triggers
+the same error I was getting when I was popping off the stack
+in iport. I really do need to bake in some logic that
+only does refcounting if the block in question if the block
+isn't being held. Or, maybe it returns ok if the block is
+being held inside the RC operations.
+---
+This is cheeky. I'm getting the same zero count error
+on pop in unhold. Why? because I unhold and leave it off
+the stack, so when it comes down to popping it is both
+unheld and has a zero count.
+---
+okay, unhold works now. now to address the stepping.
+
+@20:57 stepping noise troubleshooting #timelog:00:10:00
+#! dz $
+My guess is that the zippering is happening because
+something is setting the frequency of the oscillator
+at control rate when it should be audio rate. The most
+direct way to check this is to examine the render callback
+of the sine. There's only two active right now.
+---
+sine is definitely being modulated by a block signal, not
+a constant.
+---
+I forgot to wrap the phasor in the sine ugen. I think that
+fixed it. I don't think I hear it anymore.
+
+@2026-04-24 Day 236
+@10:09 might be able to start reading after may 5th
+#! dz coad/toc/03_arithmetic_for_computers/01_introduction
+Calculus will be officially over.
+
+@10:10 might be able to glance at this after may 5th
+#! dz dmoi/toc/02_graph_theory/04_euler_trails_circuits
+It'll be interesting to see what I am able to grok after
+time away working on calculus. I definitely have more math
+in my bloodstream now, but all my discrete math has some
+distance now.
+
+@10:12 iterables thoughts #timelog:00:07:00
+#! dz thoughts/projects/sonilo/tasks/iterables
+At the moment, I'm thinking about how generalizable iterables
+should be. Many things will want to iterate throught slightly
+different things, and I'll want to be able to extend iterating
+behavior over time.
+---
+Everything I have planned to iterate over will be iterating
+through some kind of array. Arrays will be collections of
+numbers of various sizes: 1 bit arrays, 2 bit arrays, 3 bit
+arrays, etc, all the way up to 32 bit arrays.
+---
+Iterators will therefore most likely always be functions
+that return an index (they will always return a 32-bit word
+of some type).
+---
+It will be up to the thing using the iterator to take that
+index and look up that usuable value.
+---
+The first iterator will be a looping iterator, and it will
+be coded as a C command.
+---
+The data will need 2 words, or 3 shorts. one short to store
+the address of the command, one address to store the address
+of the array, and another address to store the current
+array position. The next value will be determined from
+the current position.
+---
+The iterator data has 16 bits unaccounted for at the moment.
+I think that will eventually be a place to add behavior 
+(random, forwards, backwards, one-shot, etc)

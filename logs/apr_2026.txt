@@ -861,3 +861,34 @@ the current position.
 The iterator data has 16 bits unaccounted for at the moment.
 I think that will eventually be a place to add behavior 
 (random, forwards, backwards, one-shot, etc)
+
+@21:05 arrays: precursor to iterables #timelog:00:31:55
+#! dz thoughts/projects/sonilo/tasks/arrays
+An iterator is primarily going to iterate over arrays.
+So, an array will need to be built.
+---
+Arrays should be variable length, obviously. What they
+hold should be variable lenght as well. 8-bit numbers, 32-bit,
+etc. At first I was thinking that I could have the array be
+variable size 1-32 bits, but it's a lot of complexity for very
+little gains. Arrays will stil be allocated across word boundaries.
+I think having sizes 1, 2, 4, 8, 16, or 32 bits for numbers
+should suffice.
+---
+I want to add the array to my small test harness language. Looks
+like "ac", "ar", and "aw" are available, which can be used
+for array create, read, and write.
+---
+I also want to set something up to build a context for me.
+That would enable me to test more complex things (such as this array).
+"ci" looks to be available for "context init".
+---
+A call to an array read would only need 16 bits of input
+data (the index). Write would need 48 bits (index plus value
+to write), which is larger than the rw register.
+I'll have to use the context stack.
+---
+Note to self, looking at 'ma': the convention would be
+to push the array address first onto the stack (as opposed
+to the cursor), then the
+arguments, before calling the array operation.

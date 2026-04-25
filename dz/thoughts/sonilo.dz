@@ -173,3 +173,6 @@ nn tasks/iterables
 ln create initial iterable component, useful for iterating through
 ln a collection of things in various ways
 co tasks/iterables tasks/dsp_demo
+nn tasks/arrays
+ln create an array data type. variable length, data size, etc.
+co tasks/arrays tasks/iterables

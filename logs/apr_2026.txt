@@ -935,5 +935,13 @@ Got up to problem 16.
 #! dz $
 left off at problem 12
 
-@12:00 continued hw11 transcription #timelog:00:13:06
+@12:00 finished hw11 transcription #timelog:00:13:06
 #! dz $
+
+@12:15 scanning ink, scratch, cards #archiving #timelog:00:18:28
+It has been over 2 months since I last scanned ink, dang.
+---
+There's only 2 scratch papers that I need to scan, I'm going
+to enter their times, and then scan them.
+
+@12:36 cropping and tagging the ink #archiving #timelog:00:09:12

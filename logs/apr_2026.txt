@@ -157,6 +157,8 @@ Most of 4.6 come with examples.
 ---
 15 examples total.
 
+@16:33 figured out flow, got to boss door, no key, last day #timelog:00:54:05 #lozmm
+
 @2026-04-15 Day 227
 @15:12 transcribing hw9 #timelog:00:23:20
 #! dz bu/ma123/study
@@ -172,6 +174,8 @@ by 16 is not 5. they were thinking the value was 80 I think.
 I took some time to outline the theorem and proof of L'Hopital's
 rule in the Rudin. The proof is not something I fully understand,
 but at least I have a map of it now.
+
+@15:44 accidentally reset dungeon to get a fairy. boss time tomorrow? #timelog:00:39:17
 
 @2026-04-16 Day 228
 @10:05 generalized mean value theorem (theorem 5.9, Rudin, pg 107) #timelog:00:33:42
@@ -190,6 +194,8 @@ theorem", which is a precursor to the mean value theorem (theorem
 
 @09:40 transcribing 4.7 example problems #timelog:00:06:05
 #! dz bu/ma123/study
+
+@17:00 initial boss encounter #timelog:00:42:19
 
 @2026-04-18 Day 230
 @09:50 submitting hw10 problems #timelog:00:40:01
@@ -259,6 +265,8 @@ At that point, a single ugen will have been implemented,
 and thoughts will start going to writing real ugens, and
 making structures to control a list of them. That's when
 the Sonilo C API will start resembling the sndkit C API.
+
+@16:29 bottle from beaver challenge (~26 min), boss attempt part 2 #timelog:01:20:32 #lozmm
 
 @2026-04-19 Day 231
 @10:42 put context into a separate file #timelog:00:10:57
@@ -892,3 +900,27 @@ Note to self, looking at 'ma': the convention would be
 to push the array address first onto the stack (as opposed
 to the cursor), then the
 arguments, before calling the array operation.
+
+@15:57 another fail with boss #lozmm #timelog:00:45:00
+
+@2026-04-25 Day 237
+@19:17 iterator outlining #ink:09Y #timelog:00:22:43
+#! dz thoughts/projects/sonilo/tasks/iterables
+organizing my thoughts around the structure of an iterator
+in Sonilo. Array iterators, first order and second order,
+arrays, word slices.
+
+@21:00 things to test #ink:09Z
+#! dz $
+jotting down things to make tests for. word slices, then
+arrays, then iterators.
+
+@2026-04-26 Day 238
+@09:58 logging #timelog:00:07:55
+
+@10:08 punching up somwe HW10 problems and solutions #timelog:00:27:04
+#! dz bu/ma123/study
+fortunately, I can print out the problems with the answers
+on them, so I can just type these up on my linux machine.
+---
+Got up to problem 16.

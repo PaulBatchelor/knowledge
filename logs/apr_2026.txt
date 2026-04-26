@@ -924,3 +924,6 @@ fortunately, I can print out the problems with the answers
 on them, so I can just type these up on my linux machine.
 ---
 Got up to problem 16.
+
+@10:45 continued hw10 transcription #timelog:00:16:59
+#! dz $

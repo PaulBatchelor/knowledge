@@ -934,3 +934,6 @@ Got up to problem 16.
 @11:10 continued hw11 transcription #timelog:00:15:53
 #! dz $
 left off at problem 12
+
+@12:00 continued hw11 transcription #timelog:00:13:06
+#! dz $

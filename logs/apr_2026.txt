@@ -950,3 +950,20 @@ to enter their times, and then scan them.
 #! dz thoughts/projects/sonilo/tasks/arrays
 bottoms-up, this is the most fundamental thing for arrays,
 so it'll be good to start with this.
+
+@2026-04-27 Day 239
+@09:36 They are squeezing one more problem set in damn #timelog:00:17:27
+#! dz bu/ma123/hw
+Due by friday night. 23 questions. Printing things out.
+The problemsets were released last sunday, but I waited
+until today to print stuff out in case they wanted
+to change the problems on me.
+---
+Actually, since today I'm only planning on doing examples,
+I'm only going to print out the examples.
+---
+21 problems have examples. that's very nice.
+---
+examples printed, transferred to remarkable. I've also
+annotated a key linking problem numbers to problem IDs (something
+I've done for the last few problem sets)

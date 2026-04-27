@@ -945,3 +945,8 @@ There's only 2 scratch papers that I need to scan, I'm going
 to enter their times, and then scan them.
 
 @12:36 cropping and tagging the ink #archiving #timelog:00:09:12
+
+@21:15 Working out word slices #timelog:00:58:55
+#! dz thoughts/projects/sonilo/tasks/arrays
+bottoms-up, this is the most fundamental thing for arrays,
+so it'll be good to start with this.

@@ -967,3 +967,14 @@ I'm only going to print out the examples.
 examples printed, transferred to remarkable. I've also
 annotated a key linking problem numbers to problem IDs (something
 I've done for the last few problem sets)
+
+@19:29 write initial unit tests for array #timleog:01:07:17
+#! dz thoughts/projects/sonilo/tasks/arrays
+I actually have to use this stack now for these tests.
+---
+"swap cursor" is too confusing. I think I need another
+version that selects a cursor.
+---
+I wrote up some test code. It doesn't work, but I added
+some extra bounds checking in array pop to make sure
+the program doesn't crash at least.

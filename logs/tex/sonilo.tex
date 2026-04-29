@@ -16,7 +16,11 @@
 \smallskip
 \noindent tasks \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node1}
 \smallskip
+\noindent GSG \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node31}
+\smallskip
 \noindent allocator \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node12}
+\smallskip
+\noindent arrays \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node33}
 \smallskip
 \noindent block pool \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node27}
 \smallskip
@@ -47,6 +51,8 @@
 \noindent initial dsp \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node9}
 \smallskip
 \noindent instruction primitive \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node21}
+\smallskip
+\noindent iterables \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node32}
 \smallskip
 \noindent konilo sonilo communication \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node5}
 \smallskip
@@ -136,6 +142,13 @@
 {\noindent \bf 2026-04-19:} ugens\smallskip
 {\noindent \bf 2026-04-20:} ugens\smallskip
 {\noindent \bf 2026-04-21:} dsp demo, ugen bytecode, ugens\smallskip
+{\noindent \bf 2026-04-22:} GSG, dsp demo, initial dsp, iterables, sonilo command language, ugen bytecode\smallskip
+{\noindent \bf 2026-04-23:} initial dsp\smallskip
+{\noindent \bf 2026-04-24:} arrays, iterables\smallskip
+{\noindent \bf 2026-04-25:} iterables\smallskip
+{\noindent \bf 2026-04-26:} arrays\smallskip
+{\noindent \bf 2026-04-27:} arrays\smallskip
+{\noindent \bf 2026-04-28:} arrays\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -700,6 +713,17 @@ it doesn't actually need to be a real unit generator, just real enough that the 
 once I have that reference program, I can start building out the underlying components for a command parser.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:37: concept: what would a minimal subset of msgpack look like?}\smallskip
+Basically, generate msgpack using only fixmaps, fixints, fixarrays, fixstrs, etc. Smaller structures and objects, but probably simpler. The limits would be baked into it.
+\par
+
+Trying to make a protocol that has an awareness for those bare minimum limits would be useful.
+\par
+
+As a test, probably would be good to write a C program that serializes data by hand. deserialization could use the industrial msgpack C parser. If I can't figure out how to serialize things in C, I'm not going to be able to do it Konilo.
+\par
+
 \xrdef{node8}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont phasor}\medskip
 Implement phasor DSP algorithm
@@ -802,6 +826,106 @@ What does this phasor program do? It opens a file for writing, runs a loop writi
 Okay, this is clearly more work than I expected.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:00: Making GSG components should be bumped up, possibly for "initial DSP"}\smallskip
+Since making the GSG task many months ago, I've reimagined the GSG has a collection of smaller unit generator components glued together in slightly different variations.
+\par
+
+Components for this include the clock generator (a truncated phasor), a clock divider (AKA rephasor), an impulse generator (using clock source), a curve generator (clock goes in, curve comes out), and linear interpolator (lerp).
+\par
+
+These could all be implemented as simple DSP ugen generator components with limited usefulness. More useful would be to have some concept of an iterable to do sequencing. I have a very limited namespace for ugens, so it might be best just to jump to the iterable types.
+\par
+
+Iterables would be needed for the divider (a scaling value, for durations), curve generators (which curve to select), and the lerp-er (sequencing values). The clock divider would produce the divided clock signal and an impulse signal representing the start of every period. This would get fed into the iterator to trigger logic to produce the next value.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:08: adding ADD and MUL}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:36: working out a "hold/unhold" interface in sines example}\smallskip
+scaffolding in place, an error at the hold
+\par
+
+uh oh. I have two enums: one has {\tt PARAM\_BLOCK}, and the other has {\tt PORT\_BLOCK}.
+\par
+
+Changing things to be {\tt PORT\_BLOCK} breaks my pstack unit tests. headache.
+\par
+
+leaving it be for tonight. I think I need to consolidate {\tt PORT\_BLOCK} and {\tt PARAM\_BLOCK} and fix the unit tests. unit tests need a table of contents. Too tired to do that right now.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:56: starting the TOC for tests}\smallskip
+A slight detour from the problem at hand with hold/unhold. Tests need to be easier to navigate, and I need to do this at somepoint.
+\par
+
+only 20 minutes of my life lost for this great
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:17: back to merging some enums}\smallskip
+tests fixed. For the 'pu' command for pushing words onto the stack, I was hard coding the type. A block used to be coded as 0, it's now coded as 1.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:30: back to sines example}\smallskip
+ugen oport is borked I think. at least my sine ugen seems to be breaking around there.
+\par
+
+pstack push is returning an error inside oport.
+\par
+
+ah. I believe it's erroring because the reference counter is not working. It tries to increment the refcount in the refcounter, but the address hasn't been set up yet.
+\par
+
+great now erroring at biscale, that is to be expected.
+\par
+
+biscale works. error happens at unhold.
+\par
+
+I was calling "hold" instead of "unhold" nice.
+\par
+
+unhold is causing issues with an "iport" call with one of the sines (the modulated sine). I'm also hearing step noise in the frequency modulated sine where there really shouldn't be step noise.
+\par
+
+The step noise is... I don't know. something might not be reading block-rate samples properly.
+\par
+
+I have a feeling the pstack might not be gracefully ignoring held blocks, and it's treating it as an an error.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-23}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:21: getting back to unhold}\smallskip
+As a refresher: an error happens somewhere in the second sine init function. an iport call. inside the iport call, pstack pop returns an error code of 2. error code of 2 is generated in rc decr, which returns 2 because the rc count is zero.
+\par
+
+In other words, something getting popped off the stack (have not figured out what that is yet) is in the reference counter, and it has a zero count prior to popping, which means it was already set up to be freed (unless it is held?).
+\par
+
+I think I found part of my issue. the unhold function is pushing the value to the stack, but not popping it off again like I expected it too. I'm guessing that will make this particular iport error go away.
+\par
+
+However, the fact that it was erroring when the refcount was 0 is a problem that isn't going to go away. Held blocks aren't being explicitely checked for in the push/pop operations. It doesn't matter what their counts are, they can go to zero it won't (shouldn't?) matter.
+\par
+
+I should have expected this: popping off the stack triggers the same error I was getting when I was popping off the stack in iport. I really do need to bake in some logic that only does refcounting if the block in question if the block isn't being held. Or, maybe it returns ok if the block is being held inside the RC operations.
+\par
+
+This is cheeky. I'm getting the same zero count error on pop in unhold. Why? because I unhold and leave it off the stack, so when it comes down to popping it is both unheld and has a zero count.
+\par
+
+okay, unhold works now. now to address the stepping.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:57: stepping noise troubleshooting}\smallskip
+My guess is that the zippering is happening because something is setting the frequency of the oscillator at control rate when it should be audio rate. The most direct way to check this is to examine the render callback of the sine. There's only two active right now.
+\par
+
+sine is definitely being modulated by a block signal, not a constant.
+\par
+
+I forgot to wrap the phasor in the sine ugen. I think that fixed it. I don't think I hear it anymore.
+\par
+
 \xrdef{node10}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blsaw}\medskip
 Implement blsaw DSP algorithm
@@ -883,6 +1007,20 @@ When the single instruction primitive is created, bulk instruction execution nee
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-21}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:05: ugen "bytecode" might not be needed, but a ugen address list would be useful}\smallskip
 I haven't reviewed my logs for this in a while. But, a generic 16-bit array that fits on a block would be a good start. 64 words yields 128 shorts max. first short used for size yields 127 shorts, which yields 127 ugens max. Good enough for a demo.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:44: an array of addresses is all that is needed now}\smallskip
+As I suspected, this task has gone through some evolutions. Initially, I wanted more integration with ILO, but that gradually shifted towards desiring something that resembled data.
+\par
+
+The spirit of some of the bytecode is the same. At one point, I was imagining an instruction containing an encoded ugen label with an address to the data. The labelling system exists as 16-bit symbol 3-letter symbol system, and the data is a unit generator struct.
+\par
+
+So instead of a bytecode format, it's just data now: a list of unit generators with memory addresses and callback DSP pointers.
+\par
+
+What's lost here is a low-level intermediate format. Something simple that could built up this list of unit generators. I might not need it. Or, it might not be ready yet. My thinking is that the logic used for constructing these unit generators would be done using Konilo. Konilo would send serial commands to Sonilo to generate the ugen list. This (yet to be determined) would be the re-usable part.
 \par
 
 \xrdef{node12}
@@ -2650,6 +2788,145 @@ No reverb yet. The memory complications for that are of scope for this project.
 \par
 
 All in C using the API. No Konilo yet, but hopefully it'll be a few steps away from that.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:18: initial DSP demo would be a good chance to explore basic iterables}\smallskip
+More thinking about this DSP generator. I wanted to make a monophonic step sequenced line with things like portamento.
+\par
+
+A sequencer would just be a linear or looping iterable. Iteratables would be something needed down the line for gesture signal generator (GSG) related things, so it wouldn't be a waste of time to put some effort into this now.
+\par
+
+\xrdef{node31}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont GSG}\medskip
+Create Gesture Signal Generator ugen
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:00: Making GSG components should be bumped up, possibly for "initial DSP"}\smallskip
+Since making the GSG task many months ago, I've reimagined the GSG has a collection of smaller unit generator components glued together in slightly different variations.
+\par
+
+Components for this include the clock generator (a truncated phasor), a clock divider (AKA rephasor), an impulse generator (using clock source), a curve generator (clock goes in, curve comes out), and linear interpolator (lerp).
+\par
+
+These could all be implemented as simple DSP ugen generator components with limited usefulness. More useful would be to have some concept of an iterable to do sequencing. I have a very limited namespace for ugens, so it might be best just to jump to the iterable types.
+\par
+
+Iterables would be needed for the divider (a scaling value, for durations), curve generators (which curve to select), and the lerp-er (sequencing values). The clock divider would produce the divided clock signal and an impulse signal representing the start of every period. This would get fed into the iterator to trigger logic to produce the next value.
+\par
+
+\xrdef{node32}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont iterables}\medskip
+create initial iterable component, useful for iterating through
+a collection of things in various ways
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:28: initial task created}\smallskip
+An "iterable" is a thing that is an iterator. Generally speaking, it is a thing that when called upon, will tell you what the next value will be. How it determines that should be as general purpose as possible.
+\par
+
+Part of this is also going to involve some data structures. Arrays of various types and sizes, mainly, and ways to keep track of state.
+\par
+
+Also, what's the API going to look like for this? Eventually it will be serialized.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:12: iterables thoughts}\smallskip
+At the moment, I'm thinking about how generalizable iterables should be. Many things will want to iterate throught slightly different things, and I'll want to be able to extend iterating behavior over time.
+\par
+
+Everything I have planned to iterate over will be iterating through some kind of array. Arrays will be collections of numbers of various sizes: 1 bit arrays, 2 bit arrays, 3 bit arrays, etc, all the way up to 32 bit arrays.
+\par
+
+Iterators will therefore most likely always be functions that return an index (they will always return a 32-bit word of some type).
+\par
+
+It will be up to the thing using the iterator to take that index and look up that usuable value.
+\par
+
+The first iterator will be a looping iterator, and it will be coded as a C command.
+\par
+
+The data will need 2 words, or 3 shorts. one short to store the address of the command, one address to store the address of the array, and another address to store the current array position. The next value will be determined from the current position.
+\par
+
+The iterator data has 16 bits unaccounted for at the moment. I think that will eventually be a place to add behavior  (random, forwards, backwards, one-shot, etc)
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-25}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:17: iterator outlining}\smallskip
+organizing my thoughts around the structure of an iterator in Sonilo. Array iterators, first order and second order, arrays, word slices.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:00: things to test}\smallskip
+jotting down things to make tests for. word slices, then arrays, then iterators.
+\par
+
+\xrdef{node33}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont arrays}\medskip
+create an array data type. variable length, data size, etc.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-24}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:05: arrays: precursor to iterables}\smallskip
+An iterator is primarily going to iterate over arrays. So, an array will need to be built.
+\par
+
+Arrays should be variable length, obviously. What they hold should be variable lenght as well. 8-bit numbers, 32-bit, etc. At first I was thinking that I could have the array be variable size 1-32 bits, but it's a lot of complexity for very little gains. Arrays will stil be allocated across word boundaries. I think having sizes 1, 2, 4, 8, 16, or 32 bits for numbers should suffice.
+\par
+
+I want to add the array to my small test harness language. Looks like "ac", "ar", and "aw" are available, which can be used for array create, read, and write.
+\par
+
+I also want to set something up to build a context for me. That would enable me to test more complex things (such as this array). "ci" looks to be available for "context init".
+\par
+
+A call to an array read would only need 16 bits of input data (the index). Write would need 48 bits (index plus value to write), which is larger than the rw register. I'll have to use the context stack.
+\par
+
+Note to self, looking at 'ma': the convention would be to push the array address first onto the stack (as opposed to the cursor), then the arguments, before calling the array operation.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:15: Working out word slices}\smallskip
+bottoms-up, this is the most fundamental thing for arrays, so it'll be good to start with this.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-27}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:29: write initial unit tests for array}\smallskip
+I actually have to use this stack now for these tests.
+\par
+
+"swap cursor" is too confusing. I think I need another version that selects a cursor.
+\par
+
+I wrote up some test code. It doesn't work, but I added some extra bounds checking in array pop to make sure the program doesn't crash at least.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-28}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:30: some initial code}\smallskip
+I have broken {\tt test\_pop}, {\tt test\_pop\_error}, and {\tt test\_stack}. I think I did this sometime yesterday when I was adding some of the array unit tests.
+\par
+
+Found it. I did not update the variables correctly in the array pop function. Back on track now.
+\par
+
+stack swap implemented, drop on the way
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:41: continued work on drop, context init}\smallskip
+I'm going to update the "drop" test to use the stack initialized from the context, in order to implement context.
+\par
+
+well, that didn't help me. going to implement contex init blind. The way I typed it out for the drop test was {\tt \#0 go bi ci go}, which I think works pretty well. The context initializer would get the blocklist from the cursor, and then set rw to be the address of the created context.
+\par
+
+heading onto the array commands
+\par
+
+array create implemented.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:41: more array commands}\smallskip
+Some off array write, TODOs for read.
 \par
 
 \bye

@@ -710,7 +710,7 @@ Changing things to be {\tt PORT\_BLOCK} breaks my pstack
 unit tests. headache.
 ---
 leaving it be for tonight. I think I need to
-consolidate {\tt PORT\_BLOCK} and {\tt PARAM_BLOCK} and
+consolidate {\tt PORT\_BLOCK} and {\tt PARAM\_BLOCK} and
 fix the unit tests. unit tests need a table of contents. Too
 tired to do that right now.
 
@@ -998,7 +998,7 @@ from the context, in order to implement context.
 ---
 well, that didn't help me. going to implement contex init
 blind. The way I typed it out for the drop test was
-{\tt #0 go bi ci go}, which I think works pretty well.
+{\tt \#0 go bi ci go}, which I think works pretty well.
 The context initializer would get the blocklist from the cursor,
 and then set rw to be the address of the created context.
 ---
@@ -1009,3 +1009,7 @@ array create implemented.
 @20:41 more array commands #timelog:00:31:06
 #! dz $
 Some off array write, TODOs for read.
+
+@2026-04-29 Day 241
+@10:17 curating problems from hw9, hw10, hw11, generating pset study sheet, and logs #timelog:00:30:02
+#! dz bu/ma123/study

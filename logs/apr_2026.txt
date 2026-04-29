@@ -1017,3 +1017,48 @@ Some off array write, TODOs for read.
 @11:28 array: calculate offets #timelog:00:17:14 #ink:0A0
 #! dz thoughts/projects/sonilo/tasks/arrays
 Had to work it out on paper before coding up the logic.
+
+@12:37 continued array work #timelog:02:22:31
+#! dz $
+array create is failing at the allocator, return code
+of the allocator is 2.
+---
+tracing things, it looks like it's erroring inside of
+context mkblock when it tries to get a block off the
+blocklist. context looks garbled.
+---
+I was masking incorrectly to get the context address in
+array create. array create seems to pass without any errors now.
+The read/write operations seem to be broken. Not sure which one though,
+as they are sort of dependent on eachother in the test.
+---
+array address is zero when the array read function is called.
+---
+more issues in the initial array creation as I'm stepping through.
+nwords ends up being 3. it should definitely only be 1.
+---
+right. the nwords converted to bits should be 32 bits per word,
+not 8 bits per word.
+---
+Addresses don't look right. I'm going to step through
+the debug probram write down some known addresses as they come.
+---
+Blocklist is address 0. Context is address 180. Stack is
+confirmed at address 200. When I pop the array address, 
+write to zero page, and then read the value, the array appears
+to be at address 300.
+---
+I was able to successfully read/write an 8-bit value. The
+{\tt ws} command doesn't work directly with results
+from {\tt ar} (array read), so I wrote a new
+command {\tt av} (array-value) which converts an actual
+wordslice to a value. I also forgot to push the address
+to the stack in the array-write command. I should probably
+also push the address in array-read too, now that I'm thinking
+of it.
+---
+And the the test passes! I have to call it quits for now,
+I've been going at it for a few hours and there are other
+things I need to do today.
+---
+What's left: work out 32, 16, and 1 bit arrays. Test out OOBs.

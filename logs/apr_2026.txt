@@ -978,3 +978,34 @@ version that selects a cursor.
 I wrote up some test code. It doesn't work, but I added
 some extra bounds checking in array pop to make sure
 the program doesn't crash at least.
+
+@2026-04-28 Day 240
+@17:30 some initial code #timelog:01:17:18
+#! dz thoughts/projects/sonilo/tasks/arrays
+I have broken {\tt test\_pop}, {\tt test\_pop\_error},
+and {\tt test\_stack}. I think I did this sometime yesterday
+when I was adding some of the array unit tests.
+---
+Found it. I did not update the variables correctly in the
+array pop function. Back on track now.
+---
+stack swap implemented, drop on the way
+
+@19:41 continued work on drop, context init #timelog:00:48:25
+#! dz $
+I'm going to update the "drop" test to use the stack initialized
+from the context, in order to implement context.
+---
+well, that didn't help me. going to implement contex init
+blind. The way I typed it out for the drop test was
+{\tt #0 go bi ci go}, which I think works pretty well.
+The context initializer would get the blocklist from the cursor,
+and then set rw to be the address of the created context.
+---
+heading onto the array commands
+---
+array create implemented.
+
+@20:41 more array commands #timelog:00:31:06
+#! dz $
+Some off array write, TODOs for read.

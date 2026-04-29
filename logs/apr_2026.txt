@@ -1013,3 +1013,7 @@ Some off array write, TODOs for read.
 @2026-04-29 Day 241
 @10:17 curating problems from hw9, hw10, hw11, generating pset study sheet, and logs #timelog:00:30:02
 #! dz bu/ma123/study
+
+@11:28 array: calculate offets #timelog:00:17:14 #ink:0A0
+#! dz thoughts/projects/sonilo/tasks/arrays
+Had to work it out on paper before coding up the logic.

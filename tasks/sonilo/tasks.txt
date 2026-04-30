@@ -1,3 +1,4 @@
+thoughts/projects/sonilo/tasks/arrays
 thoughts/projects/sonilo/tasks/blockstack_improvements
 thoughts/projects/sonilo/tasks/buddy_find
 thoughts/projects/sonilo/tasks/buddy_system
@@ -5,8 +6,8 @@ thoughts/projects/sonilo/tasks/context
 thoughts/projects/sonilo/tasks/docgen
 thoughts/projects/sonilo/tasks/fix_block_navigation
 thoughts/projects/sonilo/tasks/instruction_primitive
-thoughts/projects/sonilo/tasks/iterables
 thoughts/projects/sonilo/tasks/ugen_refcount
+thoughts/projects/sonilo/tasks/iterables
 thoughts/projects/sonilo/tasks/zero_page
 thoughts/projects/sonilo/tasks/bulk_instructions
 thoughts/projects/sonilo/tasks/ugen_stack

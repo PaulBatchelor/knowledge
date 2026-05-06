@@ -19,6 +19,11 @@ BEGIN {
     printf("#! dz calculus/pearson/toc/%s\n", chapters[section])
     next
 }
+/^#! t/ {
+    /* filter out this timestamp shorthand. decent idea, but not implemented */
+    next
+}
+
 {
     print $0
 }

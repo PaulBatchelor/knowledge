@@ -1325,3 +1325,203 @@ I either misread the problem, or I made a small mistake in the derivative calcul
 The final answer wanted a rounded solution, but computing the exact values symbolically turned out to be less work than expected, and the numbers worked out well. The trick does involve exponent rules and breaking the numbers up into smaller values.
 ---
 While I got it mostly correct, I did, however, flub one part due to incorrect exponent division. I had a fraction, and wanted to move a term from the denominator to the numerator, but I flipped the exponent instead of negating it.
+@2026-04-09#ma123
+@16:01 midterm in 2 hours, doing a word dump #timelog:00:51:19
+#! dz bu/ma123/study
+new sections since previous midterm are 3.8-3.11, and 4.1-4.5. I will attempt to write some words on them.
+---
+3.8: implicit differentiation. "implicit" refers to equations. Up to this point, explicit equations were things we dealt with: on one side there's a single variable, and on the other there's an expression. With implicit equations, there are variables defined, but they are nested inside of expressions, and algebra is required to figure out what those values are. Implicit differentiation applies derivatibe techniques to both side of an equation, with the y variable being differentiated as well. Then, you use algebra to find the value. So, differentiation and algebra.
+---
+3.8 pitfalls mainly involve remembering to differentiate y, and not dropping that term.
+---
+3.9 involves derivatives of log and exponentials. logs in general are helpful because they help out with expressions that have expressions in the exponent. apply log, and use log rules. there's also that relationship between log an exponentials.
+---
+pitfalls with the log stuff: forgetting to bring over $f(x)$ at the end of differentiating an expression. exp and log relationships sometimes take me a moment to remember. I often forget about the chain rule with fractions.
+---
+3.10: inverse trig derivatives. This is mostly plug and chug. You just need to remember the set of sin, tan, and sec, and their varations. secant is reciprocol cosine. one over cos. Deriving these invovled a theorem about derivatives of inverse functions. that and triangles will eventually get things worked out. The denominators of all the derivatives come from the pythagorean theorem and SOHCAHTOA.
+---
+3.11 related rates. word problems. these are hard for me. these problems will use prose to describe some kind of system or model that can usually be represented with some geometric equation that is changing over time somehow. The main idea is that you massage these equations so that there is a single variable and use implicit differentation to get two different "rates" that change relative to another. You can use algebra to fill in the gaps. Steps for these problems: identify the geometry and the equation, determine the knowns and the unknown (what they are asking for), plug in the explicit variables, define the implicit variables in terms of the explicits, use differentiation and alegebra to find the unknown.
+---
+The setup is the hardest part here. When that's all set up, the rest should be just calculation. A small trick that came up as a bonus on one of the quizes involved some unit tricks. rates have units expressed as fractions like miles per hour. these units can be manipulated like fractions. If you want to get a particular value from a rate, you need to make sure the fraction is set up so things cancel. For the quiz, it wanted to know the time when the pool filled up. we knew, inches per seconds and the number of inches required for it to be full. flipping inches per second to be seconds per inch and multiplying by inches made inches cancel and you were left with seconds. highschool physics class 15 years ago.
+---
+4.1 is extrema: maxima and minima. you can an interval, a closed interval, and there's going to be a largest and smallest value which are maxima and minima, or extrema. specifically, absolute extrema.
+---
+how do you find absolute extrema? functions have hills and valleys. and at those peaks are were potential extrema lie. also, the endpoints could be the location of absolute extrema. the hills and valleys are location of a certain kind of extrema called local extrema or relative extrema. it turns out that the slopes there are horizontal and flat, which means the derivative is 0. The points where the derivative is 0 are known as critical points, and they are candidates for local extrema. so, the algorithm for finding absolute extrema involves getting the derivative function, finding the critical points by solving for 0, plugging in those points and the endpoints into the function, and determining the min/max.
+---
+but what if you wanted to determine if a critical point was a local min or max? if you climb a hill, there is no more uphill, and downhill before you; the slope is positive and then negative around you. if a nearby points go from postive to negative around a critical point, that's a local maximum. likewise, a local minimum goes from postive to negative. this loosely describes the first derivative test. you take a function on an interval, find the critical points, and use that to split up the interval. check the sign of each interval, and changes in sign indicate a local extrema.
+---
+hills and valleys indicate concepts of concavity. the second derivative can be used to detect this. an interval that is a hill is concave down and will have a negative seond derivative. concave up is a valley. thus, you can determine if something is a local minima or maxima by plugging in a critcal point into a the second derivative and checking the sign. this is the second derivative test.
+---
+concavity goes on a bit more. similar to finding critical points, you can find zeros on the second derivative and break those up into intervals, positive intervals are concave up, negative are down. if there's a sign change between the intervals, we call that zero point an inflection point which changes concavity.
+---
+pitfalls with extrema: forgetting the endpoints, 0 is ambiguous, knowing when the problem is asking for concavity intervals vs change in sign. there's just a lot of bookkeeping with these, so be organized.
+---
+4.2 is mean value theorem. it was broached in the homework, but conversationally we can somtimes say that given an interval of values, there's going to be a point whose derivative is the mean value: that is to say, the change in the difference in y over x. it looks a lot like the algebraic definition of a limit. the problems we did related to this were pretty limited. the setup is usually finding a point c.
+---
+pitfall here: when finding a point using the MVT, make sure to find the derivative and then solve for c. don't just compute the RHS.
+---
+informally, rolles theorem can be expressed geometrically. if you have some function whose line starts and ends in the same place, there's going to be a point whose tangent is parallel to the tangent to the line connecting the endpoints, which is horizontal, so the slope is zero, so it implies an extrema.
+---
+4.3 is "what derivatives tell us". I forget what derivatives tell us, but I'm assuming it's about properties of functions like increasing/decreasing/concavity and the like.
+---
+4.4 graphing functions was fluff. the interesting thing to me was the various combinations of concave up and down. I spent a day working this out, and don't have time to write all my findings down today. but, as a cheat, note how a "hill" and "valley" can be split into two parts. For a hill, there's a line that's generally going up, and one that's generally going down. both are considered concave down, despite the underlying line direction (slope). vice versa can be applied to the valley.
+---
+4.5 is optimization, the final section covered in the midterm. very similar to related rates problems in that prose are given, you need to turn that into a series of equations, and use differentiation and algebra to get to a solution. the added trick is you're applying extrema to find it. the problem setup usually involves some kind of geometry, and you're trying to find the "optimum" of some property, given some constraints. the most of something, the least of something, the fasest, the cheapest. this relationship can be descriped using an equation called the "objective" function, which uses extrema to get the answer. To get this objective function, you need to take the original geometry for the equation, and apply a so-called constraint function to it. you should be able to reduce the geometry to a single variable, which you can then differentiate to find absolute extrema. like related rates, the setup is crucial. know the geometry, know what's being asked, articulate the constraints, and define variables in terms of other variables (say, this is also what you do in related rates).
+---
+and that should be most of the concepts that will be mainly covered. the rest will just be calculation.
+
+@2026-04-20#ma123
+@21:42 reflections
+#! dz bu/ma123/problems/4_6_23
+wasn't sure at first what format the system would like for the result.
+
+@21:43 relfections
+#! dz bu/ma123/problems/4_6_29
+The fact that the linear approximation ended up being just 1 pysched me out a little bit. But once you plugged in the numbers, it actually made a great deal of sense.
+
+@21:44 reflections
+#! dz bu/ma123/problems/4_6_33
+Got it wrong because I miswrote the equation in one part and screwed up the algebra. Otherwise, fine.
+
+@21:45 reflections
+#! dz bu/ma123/problems/4_6_39
+non-issue. write answer as combined fraction.
+
+@21:46 reflections
+#! dz bu/ma123/problems/4_7_23
+This one pysched me out because in the example you could just use the end behavior properties. I still use LH for this for the exercise, even though it was quite tedious.
+
+@21:49 reflections #scratch:057
+#! dz bu/ma123/problems/4_7_45
+the two logs made me want to be more explicit about division. Even the LH wants a quotient, it's more convenient to notate it here as two multiplied fractions, with the second one inverted.
+
+@21:51 reflections #scratch:057
+#! dz bu/ma123/problems/4_7_55
+Choose your reciprocal well. Cosecant derivatives include a cosecant, so if cosecants are causing indeterminant forms, that's going to be a problem.
+
+@21:53 reflections #scratch:058
+#! dz bu/ma123/problems/4_7_59
+I did the example problem for this over and over again because I kept screwing up the algebra. Parentheses were very crucial for this. Distributing negatives properly is still a problem I struggle with, so this would be a good one to come back to later.
+
+@21:56 reflections #scratch:059
+#! dz bu/ma123/problems/4_7_77
+this one was so frustrating. trig functions are the worst. the "trick" for this one involved putting all those reciprocal trig functions into their reciprocal form and watching things cancel out. I've been developing a notation technique for writing out derivatives that allows me to keep less in my head. It was helpful here right up to the fancy bits for cancellation, but it definitely made the work more accurate.
+
+@21:59 reflections
+#! dz bu/ma123/problems/4_7_80
+This one was a freebie because it's a common equation in finance, and the answer is always going to be $e^a$ for some constant $a$. 4.7.82 was the same way.
+
+@21:39 reflections on hw10 #timelog:00:19:29
+#! dz bu/ma123/study
+overall not too bad. The worst problem was the graphing problem that made you graph stuff with their terribly clunky graphing tool. The second worst problem was that weird compound interest word problem that made you type in every step. Good grief.
+
+@2026-05-03#ma123
+@12:27 took a while to remember "trick", powers are easier than roots #scratch:05r
+#! dz bu/ma123/problems/2_5_49
+The "trick" here involves dividing by the highest power on all terms and taking the limit, and knowing how to divide "under" the root. It's much easier to work out what to do "under" the root by turning it into a fractional power. The power rules are much more, well, powerful.
+
+@12:30 small mistakes, also computed by hand #scratch:05r
+#! dz bu/ma123/problems/2_5_73
+I didn't manage the square root properly at the end.
+$(x^2-4) \ne (x -4)(x+4)$. Pretty pleased with my hand calculations and breaking up the square root into smaller parts.
+
+@12:35 no square roots, units preserved, re-arrange equation and then solve #scratch:05s
+#! dz bu/ma123/problems/3_11_29
+that is to say, I had a new problem solving approach to this one. First, I converted all square roots to fractional powers. Second, I set up the equation (differentiated geometry) with all the variables, then used algebra to re-arrange the equation so it was solving for the variable we were looking for. Then, I plugged in values. I also kept the units and manipulated them with algebra as well. I felt like I understood the problem better this way.
+
+@12:38 units preserved, re-arrange equation, substitute, then eval #scratch:05s
+#! dz bu/ma123/problems/3_11_31
+Similar to the 3.11.29 problem I did previously: I went about this problem thinking about the big picture. We're solving a problem related to geometric equations that are changing in time. Differentiation gives rates of change for the parts. Algebra re-arranges things in terms of what needs to be solved. Then substitution and algebra solves the remaining bits.
+
+@12:40 I always get the double negative wrong #scratch:05t
+Fumbled at the goal line. ${1 \over 6}x - {1 \over 3} - 6 = {1 \over 6}x - {{1 - 18} \over 3} = {1 \over 6}x - \left(-{17 \over 3}\right). This always throws me off.
+
+@12:26 transcribing my study notes while reviewing problems #timelog:00:17:42
+#! dz bu/ma123/study
+
+@13:31 tried to work the equation to avoid quotient rule #scratch:05u #scratch:05v
+#! dz bu/ma123/problems/5_3_34
+I tried to use the trig identity $1-\cos^2x = \sin^2 x$, which can turn the equation into a product of a cosecant and cotangent. It still was tedious to solve. But, I think it was less tedious?
+Big fractions ("quotients"?) are tough.
+
+@13:35 dividing by exponent mistake #scratch:05w
+#! dz bu/ma123/problems/3_7_41
+Generally, if you have a two powers with a common base, and they are being divided, you can combine them by subtracting the powers. But, order matters. The convention is that in in a fraction, you'd be subtracting numerator minus denominator. I flipped it around because I was trying to move it to the denominator. But, you can do the equivalent by first doing numerator minus denominator, then negating that to move the result to the denominator of the fraction.
+
+@13:40 I simplified the equation before differentiation and got a completely different answer #scratch:05x
+#! dz bu/ma123/problems/3_8_34
+I wanted to see what would happen if I did this move, which seemed completely "legal" algebraically speaking. However, the result I got was different. It was a simpler answer. I'm not sure if they are equivalent.
+
+@13:41 cancelled incorrectly, moved too quickly #scratch:05x
+#! dz bu/ma123/problems/3_9_73
+
+@13:42 forgot term when taking product rule #scratch:05x
+#! dz bu/ma123/problems/3_9_76
+
+@13:43 squaring can cause positive or negatives, make sure to check bounds #scratch:05z
+#! dz bu/ma123/problems/4_2_30
+
+@13:44 wrong points plugged in #scratch:060
+#! dz bu/ma123/problems/4_3_67
+critical points were used instead of candidate inflection points (second derivative is 0).
+
+@13:45 tried a new way of solving (good!), but messed up arithmetic (bad!) #scratch:060
+#! dz bu/ma123/problems/4_5_16
+I was interested in trying to solve things without a calculator, and was breaking up large numbers into prime factors and powers. I made a few mistakes in that process, but I thought it was a pretty solid strategy.
+
+@13:46 "hand cubing" (via power laws) makes things cancel nicely. hand factoring too. #scratch:061
+#! dz bu/ma123/problems/4_5_21
+
+@13:47 "hand factoring" #scratch:061
+#! dz bu/ma123/problems/4_5_22
+
+@13:48 wrong radical #scratch:062
+#! dz bu/ma123/problems/4_5_26
+$8 \ne 2\sqrt{3}$. There were a lot of $\sqrt{3}$s in the problem, and $\sqrt{3}$ looks an awful lot like $2^3 = 8$.
+
+@13:49 it's 1, but I wrote the solution wrong #scratch:063
+#! dz bu/ma123/problems/4_7_75
+
+@13:30 finishing up my notes up to this point #timelog:00:18:37
+#! dz bu/ma123/study
+
+@2026-05-05#ma123 Final exam day
+@11:01 concluding remarks
+#! dz bu/ma123/news
+In a few hours, I will be taking a bus to get to my final. I thought I'd use this time to write down a reflection of what I've learned this semester.
+---
+The curriculum, as it stands, was broken up into 3 major components: limits, differentiation, integration. Limits were used to describe differentiation. Differentiation was used to describe integration. The fundamental theorem of calculus was used to tie it all together.
+---
+It was decided that limits were a suitable introduction to calculus, as a ramp up into derivatives. This seems to be the common path, though Apostol teaches integration first. Do they teach limits to integration there? We learned the way limits can be used to analyze the behavior of functions. Limits are used a tool to precisely define the idea of continuity, an important characteristic in calculus. The rules of continuity are what allow direct substitution to work for limits. Limits and "limit notation" are also used to define the derivative: you have some kind of quotient, which compares the difference between two points of a function and the difference between their values. Limits help us say as this difference between points approach zero, this relationship converges on a value we call the derivative.
+---
+Excercises in limits often surround the idea of evaluating a limit and getting some concrete value. This mostly obeys the laws of highschool algebra. There are many small rules and tricks that can be used. Most equations we come across can be evaluated with direct substitution because of rules proven to be true. Sometimes a quotient returns 0 over 0, which is a special form which is an indeterminant results. Factoring can sometimes cancel out the zero, but there is also L'Hopitals rule. Absolute value is a tricky one for me because you can't directly take the limit of it using direct substitution; the absolute value is actually one of two functions that need to be looked at. Oftentimes a limit will go to a value where the absolute value is 0, at which point, you'd need to look at both sides of the limit and see if the value adds up.
+---
+Asymptotes are another thing expressed with limits. Vertical and horizontal. Like left and right, these are hard for my brain to get right. One sided limits are called left and right sided limits, so maybe this is why limits are so challenging to me? Asymptote problems are almost always quotients because those require you to do more stuff usually.
+---
+Derivatives. I don't have much to say on taking derivatives. For this class, we learn a handful of theorems and taking the derivative turns into a mechanical process. Sum rule, product rule, quotient rule starts things off. Polynomials and simple compound expressions using arithmetic can be evaluated this way.  Expressions that are made up of composed simple functions can be evaluated using the chain rule. When that all feels comfortable, they introduce implicit differentiation, which is taking the derivative plus some algebra. With that, they can introduce applied problems, aka related rates.
+---
+Related rates are an application of implicit differentation. These problems are usually based on simple geometry. Because it's calculus, this geometry needs to change over time. Geometry can be expressed using an equation, and this equation shows a relationship between two aspects of the geometry. For example, the relationship between the area of a circle and its radius can be expressed as $A=\pi r^2$. When you differentiate this expression, it usually means these variables can change over time. These relationships change at different rates, hence the name related rates.
+---
+The recipe for solving a related rates problem typically has involved identifying the geometry in question, using implicit differentiation on it, re-arranging the equation with alegebra to solve for a particular value, then plugging in supplied values using direct subsitution or algebra to solve.
+---
+Derivatives can be used to find extrema in a given function, and we spent some time on this. Local extrema, global extrema. Critical points are points where the derivative is zero. Critical points segment function into intervals, and these intervals can be used to check where a function is increasing and decreasing. Positive to negative change around a point is a local max, and vice versa is a local min. Visualizing a parabola helps here. Checking the sign of value of the critical point at the second derivative is another way to do it: negative is concave down, so local max, positive is concave up, so local min. Visualize the parabola for this.
+---
+Okay, lunchtime. TODO: concavity, optimization problems, linear approximation, FTC, etc. I may have to write this down after the final. So concluding concluding thoughts.
+
+@12:17 concluding concluding thoughts
+#! dz $
+Concavity. Informally, it describes the way a function curves. It either goes concave up or down. The sign of the first derivative tells if a function is increasing or decreasing, the sign of the second derivative tells if it is concave up or down (useful for extrema). A function can be any combination of increasing/decreasing and concave up/down. To build up intuition for this: take a parabola and split it down the middle. Draw two lines towards the middle, one slopes down, one slopes up. For something like $x^2$, both sides are concave up, but one decays quickly and slows down (negative slope, concave up), and the other increases slowly at but gets faster (positive slope, concave up). Repeat for $-x^2$.
+---
+Extrema can be used for optimization problems, which spiritually feel like related rates problems. Both are word problems where you need to describe the problem using equations, and fill in some blanks, use a calculus tool with some algebra to solve. An optimization problem has two parts: a optimization equation, and constraints. You start with an equation describing what you want to optimize, and then usually there's an equation describing the constraints. Usually some algebra with the constraint function can allow you to define the optimization function in terms of a single variable. At that point, it becomes an extrema problem.
+---
+Anti-derivatives are a precursor to integrals. Similar to derivative calculations, it's a pretty mechanical process. Lots of substitution.
+---
+Anti-derivatives are used to compute indefinite integrals. More or less equivalent, it's mostly just different notation. That notation change yields the canonical expression of definite integrals. Riemann sums are in there too. It's all a little bit jumbled.
+---
+The way it was presented, we learned the fundamental theorem of calculus was basically presented backwards so we could compute definite integrals. They just tell you that the diffrerence of two anti-derivatives at the endpoints gives you the integral, and that can be used right away since we knew the rest of it.
+---
+The first part of the fundamental theorem of calculus states that the derivative of the definite integral is the function being integrated on. We briefly covered the way you can use substitution rules with the chain rule to compute derivatives when the end points are functions. There's an equation. I went to the wiki page, and they used leibnitz notation for the chain rule bits, and it clicked a little better because it used things like multiplication and cancelling. The trick I had here was to be very careful identifying what each expression was actually doing. The definite integral and the derivative of the definite integral differ by only a variable, it's easy to miss that.
+---
+We really rushed integration by substitution, so I don't have a lot of intuition for this one. The problem usually goes like this: you are given a definite integral, and you are supposed to identify an inner function and and outer function, and rework the equation so that it's a definite integral of the product of: composition of the inner/outer function, and the derivative of the inner function. Usually this just "works out", but sometimes you need to bring out a constant using the constant multiple rule.
+---
+Final words to myself before the final: you put in the work already, this is just a formality. Time shouldn't be an issue, and I don't think there will be any real surprises. In general, the things that get me are little mistakes. Negation woes, forgetting a term, flipping things around, etc. When we say "write legibly", we mostly mean be mindful of your spacing and alignment. Erase liberally. Write times as you go, and check your work. Use all the time given. There is no rush. Good luck.

@@ -1072,3 +1072,5 @@ I got some masking bugs so it's good I'm testing things.
 ---
 2 and 4-bit arrays will probably be fine? I'm skipping them.
 This is good enough.
+
+@2026-04-30 Day 242

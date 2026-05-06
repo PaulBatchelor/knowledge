@@ -28,6 +28,7 @@ cursec = None
 ptimes = {}
 rtimes = {}
 sections = set()
+gtimes = {}
 
 for line in sys.stdin:
     if line[0] == "s":
@@ -37,6 +38,8 @@ for line in sys.stdin:
             ptimes[cursec] = 0
         if cursec not in rtimes:
             rtimes[cursec] = 0
+        if cursec not in gtimes:
+            gtimes[cursec] = 0
         if cursec not in sections:
             sections.add(cursec)
 
@@ -49,6 +52,11 @@ for line in sys.stdin:
             review_time += ts_to_sec(args[4])
             rtimes[cursec] += ts_to_sec(args[4])
 
+    if line[0] == "g" and line[1] == "t":
+        print(line)
+        args = line.split(" ")
+        gtimes[cursec] += ts_to_sec(args[4])
+
 # print(f"pset time: {sec_to_ts(pset_time)}")
 # print(f"pset review time: {sec_to_ts(review_time)}")
 # print(f"total pset times: {sec_to_ts(review_time + pset_time)}")
@@ -56,8 +64,10 @@ for line in sys.stdin:
 for sec in sorted(sections):
     pset_time = ptimes[sec]
     review_time = rtimes[sec]
-    print(sec)
+    grind_time = gtimes[sec]
+    print(pset_time)
     print(f"pset time: {sec_to_ts(pset_time)}")
     print(f"pset review time: {sec_to_ts(review_time)}")
     print(f"total pset times: {sec_to_ts(review_time + pset_time)}")
+    print(f"grind time: {sec_to_ts(grind_time)}")
     print()

@@ -527,6 +527,11 @@ ln \right)
 ln dx
 ln $$
 
+nn 5_3_33
+ln $$\
+ln \int_1^4 (x + \sqrt{x}) dx
+ln $$
+
 nn PM_1_10
 ln Use the following table to compute the derivatives below:
 ln \def\tablerule{}
@@ -552,11 +557,25 @@ ln {\par \bf b.} $({f \over g})'(3)$
 ln {\par \bf c.} $(f(g(x)))'(2)$
 ln {\par \bf d.} $(g(f(x)))'(4)$
 
+nn 5_3_36
+ln Evaulate the following integral using the funadmental theorem
+ln of calclus.
+ln $$\
+ln \int_{25}^{49} {{1 + 6\sqrt{t}} \over  \sqrt{t}} dt
+ln $$
+
 nn 4_7_9
 ln The limit $\lim\limits_{x \to 0} (9 \tan^{-1}x)({1 \over 2x}$
 ln has the indeterminate form $0 \cdot \infty$. Convert
 ln the limit to the indeterminate form $0 \over 0$ and then
 ln evaluate the limit.
+
+nn 5_3_50
+ln Evalulate the following definite integral using the
+ln Fundamental Theorem of Calclus.
+ln $$\
+ln {1 \over 9} \int_0^{\ln 3} e^x dx
+ln $$
 
 nn 3_7_37
 ln Calculate the derivative of the following function
@@ -642,11 +661,15 @@ ln The edges of a cube increase at a rate of 4 cm/s. How
 ln fast is the volume changing when the length of each edge
 ln is 50cm?
 
+nn 5_3_71
+ln the graph of $f(x) = \sin{x}$ and the x-axis on the interval
+ln $[-\pi / 3, 5 \pi / 6]$.
+
 nn 4_9_69
 ln For the function $f$, given below, find the antiderivative
 ln $F$ that satisifies $F(1) = 1$.
 ln $$\
-ln f(x) = x^3 - 3x^4 - 3
+ln f(x) = x^3 - 3x^{-4} - 3
 ln $$
 
 nn 3_11_17
@@ -686,6 +709,35 @@ nn PM_1_8_2
 ln Calculate ${dy \over dx}$:
 ln $$\
 ln y = \pi^5
+ln $$
+
+nn 5_2_35
+ln Consider the following limit of Riemann sums of a function $f$
+ln on $[a, b]$. Identify $f$ and express the limit as a definite
+ln integral.
+ln $$\
+ln \lim_{\Delta \to 0} \sum_{k = 1}^{n} \left(x_k^*\right)^3\Delta x_k; [7,9]
+ln $$
+ln Suppose
+ln $\int_2^4 f(x)dx = 2$,
+ln $\int_4^6 f(x)dx = -6$, and
+ln $\int_4^6 g(x)dx = 5$.
+ln Evaluate the following:
+ln {\par \bf a.}
+ln $$\
+ln \int_2^4 4f(x) dx
+ln $$
+ln {\par \bf b.}
+ln $$\
+ln \int_4^6 -3g(x) dx
+ln $$
+ln {\par \bf c.}
+ln $$\
+ln \int_4^6 [3f(x) - g(x)] dx
+ln $$
+ln {\par \bf d.}
+ln $$\
+ln \int_6^4 [f(x) + 8g(x)] dx
 ln $$
 
 nn QZ_2_1
@@ -749,6 +801,15 @@ ln for the function $f$.
 ln \par {\bf b.} Evaluate $f'$ for the given values of $a$.
 ln $$\
 ln f(x) = {7 \over x + 5}; a = -{1 \over 2}, 5
+ln $$
+
+nn 5_2_37
+ln Consider the following limit of Riemann sums of a function $f$
+ln on $[a, b]$. Identify $f$ and express the limit as a definite
+ln integral.
+ln $$\
+ln \lim_{\Delta \to 0} \sum_{k = 1}^{n} 
+ln x^*_k \tan x^*_k \Delta x_k; [2,3]
 ln $$
 
 nn 4_1_65
@@ -841,6 +902,38 @@ ln $(5, 1)$ is $y = 4x - 19$.
 ln \par {\bf a.} Calculate $h(3)$ and $h'(3)$.
 ln \par {\bf b.} Deteremine an equation of the line tangent
 ln to the graph of $h$ at the point on the graph where $x = 3$.
+
+nn 5_2_55
+ln Consider two functions $f$ and $g$ on $[3,8]$ such that
+ln $\int_3^8 f(x) dx = 9$,
+ln $\int_3^8 g(x) dx = 7$,
+ln $\int_6^8 f(x) dx = 4$,
+ln $\int_3^6 g(x) dx = 4$.
+ln Evaluate the following integrals:
+ln {\par \bf a.}
+ln $$\
+ln \int_3^6 5 f(x) dx
+ln $$
+ln {\par \bf b.}
+ln $$\
+ln \int_3^8 (f(x) - g(x)) dx
+ln $$
+ln {\par \bf c.}
+ln $$\
+ln \int_3^6 (f(x) - g(x)) dx
+ln $$
+ln {\par \bf d.}
+ln $$\
+ln \int_6^8 (g(x) - f(x)) dx
+ln $$
+ln {\par \bf e.}
+ln $$\
+ln \int_6^8 3g(x) dx
+ln $$
+ln {\par \bf f.}
+ln $$\
+ln \int_6^3 8f(x) dx
+ln $$
 
 nn 3_9_27
 ln Find the derivative of the following function:
@@ -1032,6 +1125,10 @@ ln \over
 ln {x - 169}
 ln }
 ln $$
+
+nn 5_2_79
+ln Use the definition of the definite integral to evalulate
+ln $\int_0^5(3x + 1) dx$. Use right Riemann sums and theorems.
 
 nn 4_7_22
 ln Evaluate the following limit. Use l'Hopitals Rule when it is convenient
@@ -1331,7 +1428,7 @@ ln Use a linear approximation to estimate the following quantity.
 ln Choose a value of $a$ that produces a small error and does
 ln not require the use of a calculator.
 ln $$\
-ln \sqrt{68}
+ln \ln{1.07}
 ln $$
 
 nn QZ_6_1b
@@ -1395,9 +1492,6 @@ ln 1 + {5 \over x^2}
 ln \bigg)^{x^2}
 ln }
 ln $$
-
-nn 5_1_72
-ln \bye
 
 nn 4_9_17
 ln $$\
@@ -1474,6 +1568,12 @@ ln $$\
 ln y = {x - 10 \over \sqrt{x} - \sqrt{10}}
 ln $$
 
+nn 5_3_23
+ln using the fundamental theorem of calculus.
+ln $$\
+ln \int_0^1 (x^2 - 2x + 3)
+ln $$
+
 nn 4_5_23
 ln What point on the parabola $y = 6 - x^2$ closest to the point $(6, 6)$?
 
@@ -1502,6 +1602,13 @@ ln y = {x - a \over \sqrt{x} - \sqrt{a}}
 ln $$
 ln where $a$ is a positive constant.
 
+nn 5_3_40
+ln Evaluate the following integral using the Fundamental
+ln Theorem of Calclus.
+ln $$\
+ln \int_0^8 t(t - 7)(t - 8)dt
+ln $$
+
 nn 4_9_51
 ln Determine the following integral.
 ln $$\
@@ -1529,6 +1636,12 @@ ln Find the derivative of the following function by first
 ln simplifying the expression.
 ln $$\
 ln r(t) = {e^{2t} + 3e^{t} + 2 \over e^t + 1}
+ln $$
+
+nn 5_3_28
+ln integral using the fundamental theorem of calculus.
+ln $$\
+ln \int_{1 \over 4}^2 \left(3 - {3 \over x^3}\right) dx
 ln $$
 
 nn 4_9_52
@@ -1595,6 +1708,13 @@ ln $$\lim_{x \to -\infty}{f(x)}$$, and then identify the horizontal
 ln asymptotes.
 ln \par b. Find the vertical asymptotes. For each asymptote $x = a$,
 ln evalulate $$\lim_{x \to a^{-}}{f(x)}$$ and $$\lim_{x \to a^{+}}{f(x)}$$
+
+nn 5_3_45
+ln Evaluate the integral.
+ln $$\
+ln \int_0^{\pi \over 6}
+ln 3 \sec^2{x} dx
+ln $$
 
 nn 4_9_56
 ln Determine the following integral.
@@ -1734,6 +1854,14 @@ ln x + 1
 ln }
 ln $$
 
+nn 5_3_69
+ln Find the net area of the region bounded by the graph of $f$
+ln adn the x-axis on the given
+ln interval.
+ln $$\
+ln f(x) = {9 \over x} \hbox{ on } [-7, -1]
+ln $$
+
 nn 3_11_41
 ln A 25-foot ladder is leaning against a vertical wall when someone
 ln begins pulling the foot of ladder away from the wall at a rate
@@ -1821,6 +1949,9 @@ ln Find the derivative of the following function:
 ln $$\
 ln y = 7\sin x + 2\cos x
 ln $$
+
+nn 5_3_89
+ln \bye
 
 nn 3_1_13
 ln A projectile is fired vertically upward into the air; its
@@ -2260,7 +2391,7 @@ nn 4_7_75
 ln $$\
 ln \lim_{x \to 0^+}
 ln {
-ln x^{17x} = 0
+ln x^{17x} = 1
 ln }
 ln $$
 
@@ -2419,6 +2550,13 @@ ln $$
 
 co $ ../../problems/4_9_43
 
+nn 5_3_33
+ln $$\
+ln \int_1^4 (x + \sqrt{x}) dx = {73 \over 6}
+ln $$
+
+co $ ../../problems/5_3_33
+
 nn PM_1_10
 ln {\par \bf a.} $(fg)'(2) = 40$
 ln {\par \bf b.} $({f \over g})'(3) = -105$
@@ -2427,6 +2565,13 @@ ln {\par \bf d.} $(g(f(x)))'(4) = -16$
 
 co $ ../../problems/PM_1_10
 
+nn 5_3_36
+ln $$\
+ln \int_{25}^{49} {{1 + 6\sqrt{t}} \over  \sqrt{t}} dt = 148
+ln $$
+
+co $ ../../problems/5_3_36
+
 nn 4_7_9
 ln $$\
 ln \lim\limits_{x \to 0}
@@ -2434,6 +2579,13 @@ ln (9 \tan^{-1}x)({1 \over 2x}) = {9 \over 2}
 ln $$
 
 co $ ../../problems/4_7_9
+
+nn 5_3_50
+ln $$\
+ln {1 \over 9} \int_0^{\ln 3} e^x dx = {2 \over 9}
+ln $$
+
+co $ ../../problems/5_3_50
 
 nn 3_7_37
 ln $$\
@@ -2504,6 +2656,11 @@ ln $30,000 \, \hbox{cm}^3/\hbox{s}$
 
 co $ ../../problems/3_11_16
 
+nn 5_3_71
+ln The area is ${\sqrt{3} + 3 \over 2}$
+
+co $ ../../problems/5_3_71
+
 nn 4_9_69
 ln $$\
 ln F(x) = {1 \over 4}x^4 + x^{-3} - 3x + {11 \over 4}
@@ -2545,6 +2702,29 @@ ln $$
 
 co $ ../../problems/PM_1_8_2
 
+nn 5_2_35
+ln $$\
+ln \int_7^9 x^3 dx
+ln $$
+ln {\par \bf a.}
+ln $$\
+ln \int_2^4 4f(x) dx = 8
+ln $$
+ln {\par \bf b.}
+ln $$\
+ln \int_4^6 -3g(x) dx = -15
+ln $$
+ln {\par \bf c.}
+ln $$\
+ln \int_4^6 [3f(x) - g(x)] dx = -23
+ln $$
+ln {\par \bf d.}
+ln $$\
+ln \int_6^4 [f(x) + 8g(x)] dx = -34
+ln $$
+
+co $ ../../problems/5_2_35
+
 nn PM_1_8_3
 ln $$\
 ln {dy \over dx} =
@@ -2575,6 +2755,13 @@ ln \par {\bf b.} $f'(-{1 \over 2}) = - {28 \over 81}$
 ln \par {\bf c.} $f'(5) = - {7 \over 100}$
 
 co $ ../../problems/3_2_25
+
+nn 5_2_37
+ln $$\
+ln \int_3^7 x \tan(x) dx
+ln $$
+
+co $ ../../problems/5_2_37
 
 nn 4_1_65
 ln The absolute maximum is $135e^{-3}$ at $x=3$ and the absolute
@@ -2643,6 +2830,34 @@ ln {\par \bf a.} $h(3) = 1, h'(3) = 12$
 ln {\par \bf b.} $y = 12x - 35$
 
 co $ ../../problems/3_7_93
+
+nn 5_2_55
+ln {\par \bf a.}
+ln $$\
+ln \int_3^6 5 f(x) dx = 25
+ln $$
+ln {\par \bf b.}
+ln $$\
+ln \int_3^8 (f(x) - g(x)) dx = 2
+ln $$
+ln {\par \bf c.}
+ln $$\
+ln \int_3^6 (f(x) - g(x)) dx = 1
+ln $$
+ln {\par \bf d.}
+ln $$\
+ln \int_6^8 (g(x) - f(x)) dx = -1
+ln $$
+ln {\par \bf e.}
+ln $$\
+ln \int_6^8 3g(x) dx = 9
+ln $$
+ln {\par \bf f.}
+ln $$\
+ln \int_6^3 8f(x) dx = -40
+ln $$
+
+co $ ../../problems/5_2_55
 
 nn 3_9_27
 ln $$\
@@ -2852,6 +3067,13 @@ nn 2_3_41
 ln Solution: ${1 \over 26}$
 
 co $ ../../problems/2_3_41
+
+nn 5_2_79
+ln $$\
+ln \int_0^5(3x + 1)dx = {85 \over 2}
+ln $$
+
+co $ ../../problems/5_2_79
 
 nn 4_7_22
 ln $$\
@@ -3118,7 +3340,7 @@ co $ ../../problems/QZ_6_1a
 
 nn 4_9_13
 ln $$\
-ln F(x) = -\cos x -x + C
+ln F(x) = -6\cos x -x + C
 ln $$
 
 co $ ../../problems/4_9_13
@@ -3144,7 +3366,7 @@ ln $$
 co $ ../../problems/4_7_80
 
 nn 4_6_41
-ln The linear approximation of $\sqrt{68}$ is $0.07$.
+ln The linear approximation of $\ln{1.07}$ is $0.07$.
 
 co $ ../../problems/4_6_41
 
@@ -3258,6 +3480,13 @@ ln differentiable.
 
 co $ ../../problems/3_3_53
 
+nn 5_3_23
+ln $$\
+ln \int_0^1 (x^2 - 2x + 3) = {7 \over 3}
+ln $$
+
+co $ ../../problems/5_3_23
+
 nn 4_5_23
 ln The point on the parabola $y = 6 - x^2$ that is closest to the point
 ln $(6,6)$ is $(1.33, 4.24)$.
@@ -3288,6 +3517,13 @@ ln \par The derivative is $y' = {1 \over 2 \sqrt{x}}$
 
 co $ ../../problems/3_3_55
 
+nn 5_3_40
+ln $$\
+ln \int_0^8 t(t - 7)(t - 8)dt = 256
+ln $$
+
+co $ ../../problems/5_3_40
+
 nn 4_9_51
 ln $$\
 ln \int \left(
@@ -3312,6 +3548,13 @@ ln \par The simplified expression is $e^t + 2$.
 ln \par The derivative is $r'(t) = e^t$.
 
 co $ ../../problems/3_3_58
+
+nn 5_3_28
+ln $$\
+ln \int_{1 \over 4}^2 \left(3 - {3 \over x^3}\right) dx = -{21 \over 4}
+ln $$
+
+co $ ../../problems/5_3_28
 
 nn 4_9_52
 ln $$\
@@ -3375,6 +3618,14 @@ ln limits at the asymptote are $(x \to a^{-})\, f(x) = -\infty$ and
 ln $x \to a^{+} \, f(x) = \infty$.
 
 co $ ../../problems/2_5_75
+
+nn 5_3_45
+ln $$\
+ln \int_0^{\pi \over 6}
+ln 3 \sec^2{x} dx = \sqrt{3}
+ln $$
+
+co $ ../../problems/5_3_45
 
 nn 4_9_56
 ln $$\
@@ -3473,6 +3724,11 @@ ln y = {3 \over 2}x - {1 \over 2}
 ln $$
 
 co $ ../../problems/PM_1_9
+
+nn 5_3_69
+ln The area of the region is $9\ln 7$.
+
+co $ ../../problems/5_3_69
 
 nn 3_11_41
 ln 2.4 ft/s.

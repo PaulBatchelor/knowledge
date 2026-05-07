@@ -3,6 +3,7 @@
 @2026-05-03 Day 245
 @2026-05-04 Day 246
 @2026-05-05 Day 247
+@2026-05-06 Day 248
 @09:10 Importing final MA-123 logs #timelog:00:06:56
 #! dz bu/ma123/news
 
@@ -29,3 +30,46 @@ april 23rd, april 26th, may 5th
 Okay they are in. To celebrate this, I added a script
 to generate a montage of all the first pages of every lecture,
 which is the mapping system I used.
+
+@2026-05-07 Day 249
+@09:04 problem set errata #timelog:00:08:29
+#! dz bu/ma123/news
+
+@09:18 transcribing HW12 problems and solutions #timelog:00:33:25
+#! dz bu/ma123/study
+
+@09:52 final checks to make sure MA-123 logs compile okay, no missing nodes, etc #timelog:00:06:21
+#! dz bu/ma123/news
+
+@09:59 and we're done
+#! dz bu/ma123/news
+I think I've done all the work I wanted to get done for
+this class. The pearson calculus outline is incomplete,
+but it's not worth my time. I could have transcribed some
+of the practice midterm/final question. But, I already have
+a pretty good set of practice problems.
+---
+The final was a bit of a gut punch. It was a little more
+challenging than was initial implied. I did not like that much of
+the content on the exam was hastily covered in the last two
+lectures of class, without any assigned problem sets or discussion
+to practice the concepts. It leaves a bitter taste. I also don't
+know how I would have learned this stuff covered on the exam
+with the supplied Pearson curriculum. It was very much an exam
+designed by the instructor with their views on the subject,
+with little regard for how the content was explained in
+the textbook.
+---
+I will say this was a much, much, better class experience than
+my previous semester. Was it worth the cost, though? It's
+hard to say right now. I paid more than twice the cost of last semester,
+for half the credits. That's a lot of money.
+I got more value, but how much more value?
+---
+I think my lasting impression of this class is: when you're
+in a math class that's 100+ students, you're on your own.
+Seek out the good textbooks and teachers. You might as well
+learn it the right way.
+---
+Okay. Signing off now. Linear algebra (possibly) awaits me
+in a little over a week.

@@ -1154,7 +1154,7 @@ Different ways of thinking about $\sqrt{2} \over 2$. It's typically written $\sq
 #! dz bu/ma123/problems/3_9_77
 
 @16:15 watch for parentheses #scratch:039
-#! dz bu/ma123/problems/3_8_76
+#! dz bu/ma123/problems/3_9_76
 In the example problem, I had trouble grokking the solution until I realized that $3x^{10x} \ne (3x)^{10}$. The latter requires distributing the exponent to both terms.
 
 @16:18 fogotten chain rule, misplaced differential term #scratch:03k
@@ -1440,7 +1440,7 @@ Fumbled at the goal line. ${1 \over 6}x - {1 \over 3} - 6 = {1 \over 6}x - {{1 -
 #! dz bu/ma123/study
 
 @13:31 tried to work the equation to avoid quotient rule #scratch:05u #scratch:05v
-#! dz bu/ma123/problems/5_3_34
+#! dz bu/ma123/problems/3_5_34
 I tried to use the trig identity $1-\cos^2x = \sin^2 x$, which can turn the equation into a product of a cosecant and cotangent. It still was tedious to solve. But, I think it was less tedious?
 Big fractions ("quotients"?) are tough.
 
@@ -1476,7 +1476,7 @@ I was interested in trying to solve things without a calculator, and was breakin
 #! dz bu/ma123/problems/4_5_22
 
 @13:48 wrong radical #scratch:062
-#! dz bu/ma123/problems/4_5_26
+#! dz bu/ma123/problems/4_7_26
 $8 \ne 2\sqrt{3}$. There were a lot of $\sqrt{3}$s in the problem, and $\sqrt{3}$ looks an awful lot like $2^3 = 8$.
 
 @13:49 it's 1, but I wrote the solution wrong #scratch:063

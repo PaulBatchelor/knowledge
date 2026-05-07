@@ -149,6 +149,7 @@
 {\noindent \bf 2026-04-26:} arrays\smallskip
 {\noindent \bf 2026-04-27:} arrays\smallskip
 {\noindent \bf 2026-04-28:} arrays\smallskip
+{\noindent \bf 2026-04-29:} arrays\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -2927,6 +2928,55 @@ array create implemented.
 
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:41: more array commands}\smallskip
 Some off array write, TODOs for read.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-04-29}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:28: array: calculate offets}\smallskip
+Had to work it out on paper before coding up the logic.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:37: continued array work}\smallskip
+array create is failing at the allocator, return code of the allocator is 2.
+\par
+
+tracing things, it looks like it's erroring inside of context mkblock when it tries to get a block off the blocklist. context looks garbled.
+\par
+
+I was masking incorrectly to get the context address in array create. array create seems to pass without any errors now. The read/write operations seem to be broken. Not sure which one though, as they are sort of dependent on eachother in the test.
+\par
+
+array address is zero when the array read function is called.
+\par
+
+more issues in the initial array creation as I'm stepping through. nwords ends up being 3. it should definitely only be 1.
+\par
+
+right. the nwords converted to bits should be 32 bits per word, not 8 bits per word.
+\par
+
+Addresses don't look right. I'm going to step through the debug probram write down some known addresses as they come.
+\par
+
+Blocklist is address 0. Context is address 180. Stack is confirmed at address 200. When I pop the array address,  write to zero page, and then read the value, the array appears to be at address 300.
+\par
+
+I was able to successfully read/write an 8-bit value. The {\tt ws} command doesn't work directly with results from {\tt ar} (array read), so I wrote a new command {\tt av} (array-value) which converts an actual wordslice to a value. I also forgot to push the address to the stack in the array-write command. I should probably also push the address in array-read too, now that I'm thinking of it.
+\par
+
+And the the test passes! I have to call it quits for now, I've been going at it for a few hours and there are other things I need to do today.
+\par
+
+What's left: work out 32, 16, and 1 bit arrays. Test out OOBs.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:38: arrays}\smallskip
+OOB seems to work
+\par
+
+tests for 16, 32, and 1-bit arrays work. With 32-bit arrays, I got some masking bugs so it's good I'm testing things.
+\par
+
+2 and 4-bit arrays will probably be fine? I'm skipping them. This is good enough.
 \par
 
 \bye

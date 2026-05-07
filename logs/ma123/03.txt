@@ -71,7 +71,7 @@ Different ways of thinking about $\sqrt{2} \over 2$. It's typically written $\sq
 #! p 3.9.77
 
 @16:15 watch for parentheses #scratch:039
-#! p 3.8.76
+#! p 3.9.76
 In the example problem, I had trouble grokking the solution until I realized that $3x^{10x} \ne (3x)^{10}$. The latter requires distributing the exponent to both terms.
 
 @16:18 fogotten chain rule, misplaced differential term #scratch:03k

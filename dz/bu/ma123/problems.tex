@@ -3251,11 +3251,11 @@ Choose a value of $a$ that produces a small error and does
 not require the use of a calculator.
 
 $$\
-\sqrt{68}
+\ln{1.07}
 $$
 
 \solution{4.6.41}
-The linear approximation of $\sqrt{68}$ is $0.07$.
+The linear approximation of $\ln{1.07}$ is $0.07$.
 
 \problem{4.6.48} \bigskip
 \problem{4.6.50} \bigskip
@@ -3500,7 +3500,7 @@ $$
 $$\
 \lim_{x \to 0^+}
 {
-x^{17x} = 0
+x^{17x} = 1
 }
 $$
 
@@ -3604,7 +3604,7 @@ $$
 
 \solution{4.9.13}
 $$\
-F(x) = -\cos x -x + C
+F(x) = -6\cos x -x + C
 $$
 
 \problem{4.9.15}
@@ -3847,7 +3847,7 @@ For the function $f$, given below, find the antiderivative
 $F$ that satisifies $F(1) = 1$.
 
 $$\
-f(x) = x^3 - 3x^4 - 3
+f(x) = x^3 - 3x^{-4} - 3
 $$
 
 \solution{4.9.69}
@@ -3898,5 +3898,272 @@ $$
 \problem{5.1.69} \bigskip
 \problem{5.1.71} \bigskip
 \problem{5.1.72} \bigskip
+
+\problem{5.2.35}
+Consider the following limit of Riemann sums of a function $f$
+on $[a, b]$. Identify $f$ and express the limit as a definite
+integral.
+$$\
+\lim_{\Delta \to 0} \sum_{k = 1}^{n} \left(x_k^*\right)^3\Delta x_k; [7,9]
+$$
+
+\solution{5.2.35}
+$$\
+\int_7^9 x^3 dx
+$$
+
+\problem{5.2.37}
+Consider the following limit of Riemann sums of a function $f$
+on $[a, b]$. Identify $f$ and express the limit as a definite
+integral.
+$$\
+\lim_{\Delta \to 0} \sum_{k = 1}^{n} 
+x^*_k \tan x^*_k \Delta x_k; [2,3]
+$$
+
+\solution{5.2.37}
+$$\
+\int_3^7 x \tan(x) dx
+$$
+
+\problem{5.2.41} \bigskip
+\problem{5.2.45} \bigskip
+\problem{5.2.49} \bigskip
+\problem{5.2.35}
+Suppose
+$\int_2^4 f(x)dx = 2$,
+$\int_4^6 f(x)dx = -6$, and
+$\int_4^6 g(x)dx = 5$.
+
+Evaluate the following:
+
+{\par \bf a.}
+$$\
+\int_2^4 4f(x) dx
+$$
+
+{\par \bf b.}
+$$\
+\int_4^6 -3g(x) dx
+$$
+
+{\par \bf c.}
+$$\
+\int_4^6 [3f(x) - g(x)] dx
+$$
+
+{\par \bf d.}
+$$\
+\int_6^4 [f(x) + 8g(x)] dx
+$$
+\solution{5.2.35}
+
+{\par \bf a.}
+$$\
+\int_2^4 4f(x) dx = 8
+$$
+
+{\par \bf b.}
+$$\
+\int_4^6 -3g(x) dx = -15
+$$
+
+{\par \bf c.}
+$$\
+\int_4^6 [3f(x) - g(x)] dx = -23
+$$
+
+{\par \bf d.}
+$$\
+\int_6^4 [f(x) + 8g(x)] dx = -34
+$$
+
+\problem{5.2.55}
+Consider two functions $f$ and $g$ on $[3,8]$ such that
+$\int_3^8 f(x) dx = 9$,
+$\int_3^8 g(x) dx = 7$,
+$\int_6^8 f(x) dx = 4$,
+$\int_3^6 g(x) dx = 4$.
+
+Evaluate the following integrals:
+
+{\par \bf a.}
+$$\
+\int_3^6 5 f(x) dx
+$$
+
+{\par \bf b.}
+$$\
+\int_3^8 (f(x) - g(x)) dx
+$$
+
+{\par \bf c.}
+$$\
+\int_3^6 (f(x) - g(x)) dx
+$$
+
+{\par \bf d.}
+$$\
+\int_6^8 (g(x) - f(x)) dx
+$$
+
+{\par \bf e.}
+$$\
+\int_6^8 3g(x) dx
+$$
+
+{\par \bf f.}
+$$\
+\int_6^3 8f(x) dx
+$$
+
+\solution{5.2.55}
+{\par \bf a.}
+$$\
+\int_3^6 5 f(x) dx = 25
+$$
+
+{\par \bf b.}
+$$\
+\int_3^8 (f(x) - g(x)) dx = 2
+$$
+
+{\par \bf c.}
+$$\
+\int_3^6 (f(x) - g(x)) dx = 1
+$$
+
+{\par \bf d.}
+$$\
+\int_6^8 (g(x) - f(x)) dx = -1
+$$
+
+{\par \bf e.}
+$$\
+\int_6^8 3g(x) dx = 9
+$$
+
+{\par \bf f.}
+$$\
+\int_6^3 8f(x) dx = -40
+$$
+
+\problem{5.2.61} \bigskip
+\problem{5.2.65} \bigskip
+\problem{5.2.79} \bigskip
+Use the definition of the definite integral to evalulate
+$\int_0^5(3x + 1) dx$. Use right Riemann sums and theorems.
+\solution{5.2.79}
+$$\
+\int_0^5(3x + 1)dx = {85 \over 2}
+$$
+
+\problem{5.3.23} Evaluate the following integral
+using the fundamental theorem of calculus.
+$$\
+\int_0^1 (x^2 - 2x + 3)
+$$
+\solution{5.3.23}
+$$\
+\int_0^1 (x^2 - 2x + 3) = {7 \over 3}
+$$
+
+\problem{5.3.24} \bigskip
+\problem{5.3.28} Evaluate the following
+integral using the fundamental theorem of calculus.
+
+$$\
+\int_{1 \over 4}^2 \left(3 - {3 \over x^3}\right) dx
+$$
+
+\solution{5.3.28}
+$$\
+\int_{1 \over 4}^2 \left(3 - {3 \over x^3}\right) dx = -{21 \over 4}
+$$
+
+\problem{5.3.33} Evaluate the following integral.
+$$\
+\int_1^4 (x + \sqrt{x}) dx
+$$
+
+\solution{5.3.33}
+$$\
+\int_1^4 (x + \sqrt{x}) dx = {73 \over 6}
+$$
+
+\problem{5.3.36}
+Evaulate the following integral using the funadmental theorem
+of calclus.
+
+$$\
+\int_{25}^{49} {{1 + 6\sqrt{t}} \over  \sqrt{t}} dt
+$$
+
+\solution{5.3.36}
+$$\
+\int_{25}^{49} {{1 + 6\sqrt{t}} \over  \sqrt{t}} dt = 148
+$$
+
+\problem{5.3.40}
+Evaluate the following integral using the Fundamental
+Theorem of Calclus.
+
+$$\
+\int_0^8 t(t - 7)(t - 8)dt
+$$
+
+\solution{5.3.40}
+$$\
+\int_0^8 t(t - 7)(t - 8)dt = 256
+$$
+
+\problem{5.3.45}
+Evaluate the integral.
+
+$$\
+\int_0^{\pi \over 6}
+3 \sec^2{x} dx
+$$
+
+\solution{5.3.45}
+$$\
+\int_0^{\pi \over 6}
+3 \sec^2{x} dx = \sqrt{3}
+$$
+
+\problem{5.3.50}
+Evalulate the following definite integral using the
+Fundamental Theorem of Calclus.
+
+$$\
+{1 \over 9} \int_0^{\ln 3} e^x dx
+$$
+
+\solution{5.3.50}
+$$\
+{1 \over 9} \int_0^{\ln 3} e^x dx = {2 \over 9}
+$$
+
+\problem{5.3.64} \bigskip
+\problem{5.3.69}
+Find the net area of the region bounded by the graph of $f$
+adn the x-axis on the given
+interval.
+
+$$\
+f(x) = {9 \over x} \hbox{ on } [-7, -1]
+$$
+\solution{5.3.69}
+The area of the region is $9\ln 7$.
+\bigskip
+\problem{5.3.71} Find the are of the region bounded by
+the graph of $f(x) = \sin{x}$ and the x-axis on the interval
+$[-\pi / 3, 5 \pi / 6]$.
+\bigskip
+\solution{5.3.71}
+The area is ${\sqrt{3} + 3 \over 2}$
+\bigskip
+\problem{5.3.87} \bigskip
+\problem{5.3.89} \bigskip
 
 \bye

@@ -225,3 +225,44 @@ going to split things up into two passes. I'm going to
 write a program that converts grep output to an intermediate
 markup output, and then that gets converted to TeX. Grep
 would be the source of truth for line numbers, not awk.
+
+@16:15 let's try to TeX the outline #timelog:00:22:24
+#! dz $
+I think I came up with an approach that would allow me
+to use grep and awk via modifying the existing TeX generator
+written in Awk.
+---
+Grep uses "123:line" to indicate records, so use ":" as
+field separator in awk.
+---
+Awk should be able to regex match on fields, so match on
+field 2 (the content after the line number).
+---
+Parsing should go mostly as normal. There's apparently
+a trick where you can empty field 1, and it truncates the
+0 field accordingly. If that works, then I can modify this
+awk script.
+---
+Let's give it a shot...
+---
+Works! This looks good.
+
+@16:38 time to add in some TODOs based on what I wrote this morning #timelog:00:44:19
+#! dz $
+
+@17:31 working on the counter #timelog:00:41:50
+#! dz $
+The clock seems rather fast. The multi-threaded stuff is hard
+to test.
+---
+Starting JACK first helps tremendously. I think it may have
+been spawning a 48kHz instance of JACK rather than a 44.1kHz
+instance of jack. Since I'm hardcoding things at 44.1, it
+was probably just converting the timestamp wrong. It did
+seem about 8-10 percent faster.
+---
+It looks like the counter works?
+
+@18:23 sound file loading and buffering #timelog:00:27:54
+#! dz $
+To be continued...

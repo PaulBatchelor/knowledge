@@ -153,3 +153,5 @@ ln The computer is performing (verb).
 nn projects/sonilo/ink
 nn projects/bttyp
 ln bttyp: a 1-bit typesetter inspired by macintosh aesthetics
+nn projects/scrubant
+ln An audio scrubber, aimed to help with annotating tracks

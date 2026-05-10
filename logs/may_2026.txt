@@ -266,3 +266,30 @@ It looks like the counter works?
 @18:23 sound file loading and buffering #timelog:00:27:54
 #! dz $
 To be continued...
+
+@19:52 more sound file loading and buffering #timelog:01:57:50
+#! dz $
+it doesn't seem to crash (anymore). but, it's not making
+sound. I think I need to write code to auto-connect to
+sound. I have boilerplate code for this.
+---
+Some sound. but it is pitched too low.
+---
+Sound is pitched accurately. But it crashes after I load
+the first buffer.
+---
+Still exploading after first buffer loaded. It's not the
+interpolation (disabled). It's not FLAC (converted to WAV).
+---
+It's out of bounds errors. It looks like I
+was forgetting to subtract the start position when
+calculating the index.
+---
+Good news! We got sound. Bad news! Clicks on load.
+Maybe it's off-by-one?
+---
+Off-by-one. End sample was compute incorrectly.
+---
+Interpolation is turned back on, and it sounds lovely.
+Stepping noise on the knob, that's to be expected. And
+it's only the left channel at the moment.

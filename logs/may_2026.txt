@@ -327,6 +327,15 @@ away.
 now that I know that it's not my problem,
 let's see if I can get right channel working now.
 
+@10:58 Sonilo Word Machine #ink:0A4 #timelog:00:20:43
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+Fleshing out a so-called "word machine", a virtual machine
+used to parse out commands sent to sonilo.
+
+@12:12 sonilo word machine (continued) #ink:0A4 #timelog:00:18:06
+#! dz $
+I wrote out some system commands
+
 @2026-05-13 Day 255
 @11:51 right channel please get it working #timelog:00:23:35
 #! dz thoughts/projects/scrubant
@@ -348,3 +357,47 @@ listening.
 ---
 I think I'm going to force myself to use this, in order to
 get a more precise sense of what could be better.
+
+@15:03 now, where was I #timelog:00:21:40
+#! dz thoughts/projects/sonilo/news
+Arrays are out of the way. The next thing on the list are
+iterables.
+---
+I've written a few thoughts on this. Somewhere, I it looks
+like I've scribbled some design outlines. Currently refreshing
+my memory. This will put me on the path towards a somewhat
+meaningful demo.
+---
+I've written a few things thinking about a "Sonilo Word Machine",
+the thing that parses the sonilo command language. It's
+tempting to move forward with this, but I should wait until
+I have a demo using the C API that I can translate to the
+command language.
+
+@15:27 iterables: initial scaffolding #timelog:00:37:03
+#! dz thoughts/projects/sonilo/tasks/iterables
+init, array, next.
+---
+"init" will set up the initial iterator data. It will zero
+things out. This should make it do nothing (return 0).
+I do not want to store a virtual function pointer to the
+iterator function. I have a use for those bits: 4 16-bit
+shorts. 2 shorts to store two array addresses (for 2nd-order
+array iterators), 2 shorts to store state and information.
+---
+"array" will configure the iterator to be an array iterator.
+I have 16-bits slotted for iterator metadata. I'm thinking
+that 8-bits can be enough to indicate the type of iterator,
+with the remaining 8-bits being utilized for subtype. An array
+iterator could be a type, with the various behaviors being
+used for the subtype.
+---
+"next" is a general purpose iterator function that will return
+the next value of the iterator. It will examine the metadata
+bits and determine what to do from there. It will return
+an array slice (value returned from an array), or it will
+return 0 if is initialized but not set to be anything.
+---
+To keep things simple, just set the behavior in the array
+iterator to be looping. Don't worry about writing API functions
+to set this iterator.

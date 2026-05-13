@@ -28,6 +28,8 @@
 \smallskip
 \noindent path drawing \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node26}
 \smallskip
+\noindent scrubant \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node44}
+\smallskip
 \noindent sonilo \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node0}
 \smallskip
 \noindent ink \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node17}
@@ -176,6 +178,10 @@
 {\noindent \bf 2026-04-27:} arrays\smallskip
 {\noindent \bf 2026-04-28:} arrays\smallskip
 {\noindent \bf 2026-04-29:} arrays\smallskip
+{\noindent \bf 2026-05-08:} scrubant\smallskip
+{\noindent \bf 2026-05-09:} scrubant\smallskip
+{\noindent \bf 2026-05-12:} scrubant\smallskip
+{\noindent \bf 2026-05-13:} scrubant\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -3386,6 +3392,181 @@ tests for 16, 32, and 1-bit arrays work. With 32-bit arrays, I got some masking 
 \par
 
 2 and 4-bit arrays will probably be fine? I'm skipping them. This is good enough.
+\par
+
+\xrdef{node44}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont scrubant}\medskip
+An audio scrubber, aimed to help with annotating tracks
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-08}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:22: scrubant playback methods}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:37: scrubant playback methods}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-09}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:24: scrubant: a cursory write-up of what has happened so far}\smallskip
+As I write this, I am making a new dz entry for this thing called "scrubant", an audio scrubber annotater. Really, it's mostly a scrubbing tool. I want to integrate my neoknob to emulate the scrubbing tools you'd find at a AV workstation.
+\par
+
+I came up with the idea back in April (april 3rd, see ink {\tt \#09u}). But, only in the last few days have I been able to code some things up. It's turning out to be a bit more than a one-off weekend project, so I thought I'd write a few words down.
+\par
+
+First, since I don't get much time to do experiments, I decided to throw in an extra wrench into this project. I wanted to try doing most of the coding using ed (not vim). C code doesn't fit well in a line-oriented editor. So, I'm using antirez's TCL-like language picol as a preprocessing language. There has been of set-up around this. I've created an adhoc set of C primitives as picol procedures. I created a partially working TeX renderer (escaping characters is hard, I also have to un-escape characters I escaped for Picol). There's also a shell script I made that generates an outline of the code using grep (everything as a line is super helpful).
+\par
+
+I'm getting the hang of ed. Debugging is probably going to be difficult. I don't have any convenient way to translate lines that the C compiler complains about to lines that I have written. I still need to open up the generated C code in vim and look around for line numbers. But, that's probably okay for this small project.
+\par
+
+Things I've got working up to this point are graphics and knob input. It draws a timestamp and I can scrub through the timestamp as if it is actually playing something. I did some tuning with the parameters, and things feel pretty good. What's left is audio and making a precision counter.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:51: precision counters}\smallskip
+I've decided it's worth the energy to think about high precision counters. A counter is used to store the current playback position of audio, in units of samples. Every time a sample of audio is computed, this counter is incremented by some amount. The tricky part is that the counter can be fractional, not just an integer value. For sound file playback, these numbers can get rather large, and I'm hesistant to represent this as a floating point value. As numbers get larger, the number of steps between integers gets smaller. That means that as an audio file progresses through a file, the scrubbing will start to degrade.
+\par
+
+Instead of using a float or double for the counter, use a combination of an integer and a fractional component. The fractional component is some value between 0 and 1. And the integer component is some non-negative value. The idea is that incrementing the counter (positive or negative direction) will carefully process the fractional and integer parts individually such that the floating point arithmetic is always bounded to reasonably small values.
+\par
+
+This precision counter data depends on the ability to reliably extract fractional/integer components from a floating point value. This can be done with the {\tt modf} function in C.
+\par
+
+A precision counter $P$ is updated by incrementing it by some real value $R$ (a double value), which can be positive or negative. This value is added to the current fractional value $P_a$, and the integer/fractional components are extracted: $(R_i, R_f) = M(R + P_a)$, and these values are then used to update the integer/fractional components of $P$ $P_i$ and $P_a$. $R_f$ can be negative, so that edge case needs to be handled.
+\par
+
+When applying $(R_i, R_f)$ to $(P_i, P_a)$, one of three edge cases needs to be addressed. The first two edge cases look at the sign of $R_f$. In the simplest case, $P_i \leftarrow P_i + R_i$ and $P_a \leftarrow R_f$ when $R_f$ is non-negative. When $R_f$ is negative, it gets converted to a positive value by subtracting 1 from the integer component and adding it to the fractional component, making $P_i \leftarrow P_i + R_i - 1$ and $P_a \leftarrow R_f + 1$. $P$ needs to be non-negative, so a final condition sets $P = 0$ if the result ends up being non-negative.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:28: audio interpolation and playback}\smallskip
+It's turning out to be a thinky late morning. So, I'm writing down my thoughts on audio playback, which is the extent of what I have in mind for the initial work for scrubant.
+\par
+
+Audio playback loads a single audio file (via libsndfile), and reads through the file at some playback rate, reprented by an increment amount. Normal playback has an increment of one sample at a time. This can go up or down to change speed. When it is negative, reading goes backwards.
+\par
+
+Linear interpolation will be used to determine the sample. The counter will be set up in such a way so that the fractional component can be used as an interpolation coefficient for the $n + 1$th sample. (For going backwards, the math should work out. Interpolating backwards would normally mean interpolating between the $n$th sample and the $(n - 1)$ sample. But, the counter does some math to keep the fractional bit between 0 and 1, so the relationship is still preserved).
+\par
+
+The inner loop will call a function that gets two contiguous samples, and interpolates them. That getter function will determine when to do a disk read. Then, the read playhead will be increased. Some other function will handle the math for that.
+\par
+
+My solution for buffering is to choose a big buffer, and to always read buffers in such a way that a target sample is the midpoint. This allows the playhead to read before and after the sample. I'm choosing a big buffer size, about 5 seconds of 44.1kHz audio, rounded up to the nearest power of 2. When this value gets used for stereo audio, and is halved for forward/backward playback, you get about 1.49 seconds or so of audio? At 8x speed, it'll probably reading once every 180ms. I'm hoping that'll be fast enough? I can revisit.
+\par
+
+To actually get things into JACK, the interleaved samples need to be written to separate left and right buffers.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:54: updating TeX output}\smallskip
+I actually think this could be worth my time if I can figure this out. The idea is to generate an outline of the program without seeing to get a sense of what the underlying components are, and what needs to be done still. This would be a document that I could put on a tablet and read away from the code, without feeling the urge to type things out.
+\par
+
+The TeX output looks better. But now I want to create TeX output of the outline. But, since AWK is computing the lines of code, I can't do anything. So, I think I'm going to split things up into two passes. I'm going to write a program that converts grep output to an intermediate markup output, and then that gets converted to TeX. Grep would be the source of truth for line numbers, not awk.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:15: let's try to TeX the outline}\smallskip
+I think I came up with an approach that would allow me to use grep and awk via modifying the existing TeX generator written in Awk.
+\par
+
+Grep uses "123:line" to indicate records, so use ":" as field separator in awk.
+\par
+
+Awk should be able to regex match on fields, so match on field 2 (the content after the line number).
+\par
+
+Parsing should go mostly as normal. There's apparently a trick where you can empty field 1, and it truncates the 0 field accordingly. If that works, then I can modify this awk script.
+\par
+
+Let's give it a shot...
+\par
+
+Works! This looks good.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:38: time to add in some TODOs based on what I wrote this morning}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:31: working on the counter}\smallskip
+The clock seems rather fast. The multi-threaded stuff is hard to test.
+\par
+
+Starting JACK first helps tremendously. I think it may have been spawning a 48kHz instance of JACK rather than a 44.1kHz instance of jack. Since I'm hardcoding things at 44.1, it was probably just converting the timestamp wrong. It did seem about 8-10 percent faster.
+\par
+
+It looks like the counter works?
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:23: sound file loading and buffering}\smallskip
+To be continued...
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:52: more sound file loading and buffering}\smallskip
+it doesn't seem to crash (anymore). but, it's not making sound. I think I need to write code to auto-connect to sound. I have boilerplate code for this.
+\par
+
+Some sound. but it is pitched too low.
+\par
+
+Sound is pitched accurately. But it crashes after I load the first buffer.
+\par
+
+Still exploading after first buffer loaded. It's not the interpolation (disabled). It's not FLAC (converted to WAV).
+\par
+
+It's out of bounds errors. It looks like I was forgetting to subtract the start position when calculating the index.
+\par
+
+Good news! We got sound. Bad news! Clicks on load. Maybe it's off-by-one?
+\par
+
+Off-by-one. End sample was compute incorrectly.
+\par
+
+Interpolation is turned back on, and it sounds lovely. Stepping noise on the knob, that's to be expected. And it's only the left channel at the moment.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-12}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:48: random scrubant work}\smallskip
+I'm on a couch at the hub. not a great deal of time, and it's also not the most ideal working position.
+\par
+
+Add some delay in order to keep JACK from complaining.
+\par
+
+The left channel works. Now do the right channel.
+\par
+
+Okay, interesting. I'm getting some crazy distortion. And this is without anything added. Not sure what is going  here.
+\par
+
+Going to have to look at it later. Got to go.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:02: more debugging}\smallskip
+Minipops is a bad track to use as a test track. It's already a pretty distorted track.
+\par
+
+Oh okay this is interesting. The noise is happening with audacity as well in a completely unrelated thing. This might not be my fault then.
+\par
+
+upped the buffer size in jackd from 256 to 512, the noise goes away.
+\par
+
+now that I know that it's not my problem, let's see if I can get right channel working now.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-13}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:51: right channel please get it working}\smallskip
+I keep getting distracted with this.
+\par
+
+Lots of hook ups. There's one in process audio, then the function for reading samples, and also in the jack init function.
+\par
+
+not sure why it's working already? I didn't fill out everything?
+\par
+
+it was mostly everything actually. I was only missing a single sample loading.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:19: done with bare minimum functionality}\smallskip
+As-is, this should be good enough for initial critical listening.
+\par
+
+I think I'm going to force myself to use this, in order to get a more precise sense of what could be better.
 \par
 
 \bye

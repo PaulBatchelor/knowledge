@@ -293,3 +293,58 @@ Off-by-one. End sample was compute incorrectly.
 Interpolation is turned back on, and it sounds lovely.
 Stepping noise on the knob, that's to be expected. And
 it's only the left channel at the moment.
+
+@2026-05-10 Day 252
+@2026-05-11 Day 253
+@2026-05-12 Day 254
+@17:48 random scrubant work #timelog:00:20:39
+#! dz thoughts/projects/scrubant
+I'm on a couch at the hub. not a great deal of time, and
+it's also not the most ideal working position.
+---
+Add some delay in order to keep JACK from complaining.
+---
+The left channel works. Now do the right channel.
+---
+Okay, interesting. I'm getting some crazy distortion. And
+this is without anything added. Not sure what is going 
+here.
+---
+Going to have to look at it later. Got to go.
+
+@21:02 more debugging
+#! dz $
+Minipops is a bad track to use as a test track. It's already
+a pretty distorted track.
+---
+Oh okay this is interesting. The noise is happening with audacity
+as well in a completely unrelated thing. This might not be my
+fault then.
+---
+upped the buffer size in jackd from 256 to 512, the noise goes
+away.
+---
+now that I know that it's not my problem,
+let's see if I can get right channel working now.
+
+@2026-05-13 Day 255
+@11:51 right channel please get it working #timelog:00:23:35
+#! dz thoughts/projects/scrubant
+I keep getting distracted with this.
+---
+Lots of hook ups. There's one in process audio, then the
+function for reading samples, and also in the jack init
+function.
+---
+not sure why it's working already? I didn't fill out everything?
+---
+it was mostly everything actually. I was only missing a
+single sample loading.
+
+@12:19 done with bare minimum functionality
+#! dz thoughts/projects/scrubant
+As-is, this should be good enough for initial critical
+listening.
+---
+I think I'm going to force myself to use this, in order to
+get a more precise sense of what could be better.

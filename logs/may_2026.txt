@@ -401,3 +401,24 @@ return 0 if is initialized but not set to be anything.
 To keep things simple, just set the behavior in the array
 iterator to be looping. Don't worry about writing API functions
 to set this iterator.
+
+@18:04 writing some initial iterator tests #timelog:00:48:45
+#! dz thoughts/projects/sonilo/tasks/iterables
+Some prewriting thoughts first...
+---
+Things to do: intialize an array with known values,
+set up an array iterator, call next a few times, and
+confirm that the values are in the correct order and loop
+back.
+---
+What are the commands needed for this? Array commands
+include create (ac), array read (ar), array write (aw),
+and array value (av). To make an array will require a context,
+so context init (ci) and blockstack init (bi) required.
+---
+I will need new commands for iterators. I need to create
+an array iterator (ia?) and call "next" on it (in?).
+---
+Wrote some initial boilerplate code. I need to think through
+how I want to set up "in", and then I'll have the test
+made.

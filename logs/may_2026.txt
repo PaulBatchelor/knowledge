@@ -422,3 +422,54 @@ an array iterator (ia?) and call "next" on it (in?).
 Wrote some initial boilerplate code. I need to think through
 how I want to set up "in", and then I'll have the test
 made.
+
+@2026-05-14 Day 256
+@12:58 complete the unit test #timelog:00:26:08
+#! dz thoughts/projects/sonilo/tasks/iterables
+
+@13:24 write the functions (and the commands for the functions) #timelog:01:17:29
+#! dz $
+I think the code is now in place. Now it's debugging time.
+The tests are not working. They haven't actually changed at
+all since I implemented the things.
+
+@14:44 debugging #timelog:00:20:45
+#! dz $
+The output is alternative 1 and 0 instead of the expected values.
+These are obtained from slices, so maybe the slices are being
+returned incorrectly.
+---
+It's not making it to iter next. I'm going to rework the
+tests to print out error codes next to the values to see
+where it is getting stuck.
+---
+error code 1. we're not popping. I think I see the issue,
+we're not pushing the initial iterator address to the stack.
+---
+The iterator address in the call to iter next is 0. I am
+going to have to look into that later.
+
+@17:27 adhoc debuggin on a couch #timelog:00:38:00
+#! dz $
+Let's see if the iterator allocator command (ia) is passing
+okay.
+---
+The allocator is failing (error code 6). The context
+address is zero?
+---
+huh. what's going on here. my cursors are pointing to
+addresses (392, 504), but the data in these things aren't
+working.
+---
+created a debug file with just the test (I should be always
+be doing this by default before appending it?) 
+---
+context is being allocated okay. address 180.
+---
+By the time it comes to array create, the cursor addresses
+become 1f8 and 188. what?
+---
+In array create, the cursors are 180 and 200. These look
+correct. (The memory looks correct here as well).
+---
+Will continuing sleuthing later.

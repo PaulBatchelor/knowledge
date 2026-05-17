@@ -449,7 +449,7 @@ we're not pushing the initial iterator address to the stack.
 The iterator address in the call to iter next is 0. I am
 going to have to look into that later.
 
-@17:27 adhoc debuggin on a couch #timelog:00:38:00
+@17:27 adhoc debugging on a couch at the hub #timelog:00:38:00
 #! dz $
 Let's see if the iterator allocator command (ia) is passing
 okay.
@@ -466,10 +466,61 @@ be doing this by default before appending it?)
 ---
 context is being allocated okay. address 180.
 ---
-By the time it comes to array create, the cursor addresses
+By the time it comes to iterator create, the cursor addresses
 become 1f8 and 188. what?
 ---
 In array create, the cursors are 180 and 200. These look
 correct. (The memory looks correct here as well).
 ---
-Will continuing sleuthing later.
+Will continue sleuthing later.
+
+@2026-05-15 Day 257
+
+@2026-05-16 Day 258. I am on a train
+@14:59 sleuthing continued #timelog:01:18:38
+#! dz thoughts/projects/sonilo/tasks/iterables
+The first time the command hits array write, the cursors
+are wrong (1f8 and 188 instead of 200 and 188).
+---
+Those two cursors are off by 8. The only thing that can
+change the cursor are the cursor jump commands. Am doing
+that wrong?
+---
+cursors are correct now. however, we're still zero on
+the context.
+---
+Because the context is actually the address in cursor 0,
+not the contents of the address in cursor 0 (which would be
+0).
+---
+Still not doing what I want though. Interestingly, both
+context and array are still zero when it comes to "ia".
+---
+I screwed up another pair of cursor jumps and swaps. I have
+non-zero context and array addresses. However, the context
+address is wrong now (300 instead of 200). The cursors are fine.
+---
+nevermind, just popping in the wrong order.
+---
+We've moved from error code 4 to error code 6. Error code
+4 is an error from iter array. Easy fix. I just didn't
+return 0 again.
+---
+No more errors here. However, the iterator is only popping
+0 or 1 values.
+---
+looking at "iter next" command. slice value is 0 (wrong),
+and the iter address is also zero.
+---
+The context doesn't seem to have any addresses written?
+No array, no iterator.
+---
+The addresses do get written to the context, at some point.
+---
+Okay, for some reason, I am getting an iterator address.
+No slice still.
+---
+Uninitialized rc.
+---
+Okay. Weirdly enough, we got the first value iterated
+through.

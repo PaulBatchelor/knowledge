@@ -524,3 +524,47 @@ Uninitialized rc.
 ---
 Okay. Weirdly enough, we got the first value iterated
 through.
+
+@2026-05-17 Day 259
+@10:20 some more last minute scrubant features
+#! dz thoughts/projects/scrubant
+First thing: hide the cursor. That should be a one-line
+fix. I think SDL has a way to do it.
+---
+Second thing: markers. This will be scoped down two just three
+markers at a time, and they should be considered ad-hoc and temporary.
+Keyboard behavior: use 'm' to make a new marker. 'x', 'y', 'z' to
+jump to the markers. When a new marker is added, it is appended
+to the end of the marker list, replacing the oldest marker in the list.
+---
+Maybe the keys should be 'z', 'x', and 'c', which correspond to the
+bottom-left three keys on a QWERTY keyboard.
+---
+Implentation-wise, this could be done with an array of size 3 containing
+the playhead positions, and an index pointer that is wrapped around 3.
+Logic should be set up so that the three marker keys correspond to index
+pointer plus offset (wrapped). playhead A is index + 0, playhead B is index + 1,
+etc.
+---
+How to get this playhead logic right? If the index tracks the newest playhead,
+the second newest playhead would be index - 1. So maybe playhead A is index - 1,
+not index + 1. Size will always be fixed to 3. So, if the result is a negative index,
+add 3.
+@10:58 disable the cursor, initial markers scaffolding #timelog:01:43:39
+#! dz $
+I am shooting myself in the foot today with Picol. There
+is a syntax error somewhere. I can't tell if I made it,
+or if I triggered a bug.
+---
+this looks like a picol bug. It looks like there's a command
+dictionary somewhere, and for some reason, a 'var' command
+gets truncated towards the end of the file.
+---
+oooh I see what is going on. the internal picol parser has a max
+size of 16384 bytes. The memory block is pre-allocated to be a fixed size.
+This looks like a simple enough fix. I think I'll just malloc it instead
+of relying on heap.
+---
+okay, picol has been patched. back on track.
+---
+all set. okay, now this set of functions feels pretty usable.

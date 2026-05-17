@@ -568,3 +568,12 @@ of relying on heap.
 okay, picol has been patched. back on track.
 ---
 all set. okay, now this set of functions feels pretty usable.
+@15:35 iterables debugging continued #timelog:00:38:52
+#! dz thoughts/projects/sonilo/tasks/iterables
+I was not updating the index properly. This also uncovered a namespace collision.
+I have two kinds of arrays now, and need a way to distinguish them.
+---
+My old arrays were built around blocks, so I will call them "block arrays",
+with the namespace "barray".
+---
+Iterables complete. Merging into main.

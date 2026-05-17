@@ -6,6 +6,8 @@ ds 180
 of 30
 # 2026-02-15 bump 2 months, calculus is my life right now
 of 60
+# 2026-05-17 bump 3 months. linear algebra (may be come) my life in a few days
+of 90
 gc
 sr
 w

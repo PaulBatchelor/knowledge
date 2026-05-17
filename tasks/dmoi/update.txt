@@ -6,6 +6,8 @@ ds 200
 of 30
 # 2026-03-21 bump 2 months
 of 60
+# 2026-05-17 bump 2 months. Linear algebra may consume my life for a while.
+of 60
 gc
 sr
 w

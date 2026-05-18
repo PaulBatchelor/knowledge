@@ -606,3 +606,64 @@ it also sounds like a saw. good. this works. I can move on.
 @21:57 butlp to filter the saw #timelog:00:34:29
 #! dz $
 #! dz thoughts/projects/sonilo/tasks/butlp
+@2026-05-18 Day 260
+@10:42 build the clock #timelog:00:34:19
+#! dz thoughts/projects/sonilo/tasks/initial_dsp
+This shouldn't be too difficult. It's basically just
+phasor, but with a truncation at 0 instead of wraparound,
+and with units in BPM instead of HZ.
+---
+Also tempted to make a metro object that takes in a clock
+and returns an impulse. The sequencer is going to need to do this,
+and this will save a word of state if this is managed as an external
+process.
+---
+Gotta rework clock and phasor to be a ugen. Right. Should have
+known that. I don't need phasor right now, so that will have
+to be done at another time.
+@11:18 now to make a metronome signal from the clock #timelog:00:06:42
+#! dz $
+This utility will examine a clock signal, and return a 1 when
+it resets to 0, and will also return when it starts (assumes the
+clock will start immediately as well)
+@11:53 some initial thoughts on an sequencer #timelog:00:21:05
+#! dz $
+A basic sequencer would take in an array iterator and a
+trigger signal. Everytime a trigger happens, it calls the next
+function in the iterator. This updates a signal that sort of
+acts like a sample and hold?
+---
+Thinking slightly ahead: I think this iterator could be made to take
+any kind of iterator that will be made in the future. A second order
+iterator, for example, would use two arrays, with the iterated sequence
+containing indices for values in the other array. Eventually the returned
+value turns into some kind of data, which could be interpretted in different
+ways. The simplest case would be integer values. But, eventually they could
+also be ratio values, or a tuple of values packed into a word used for a just
+intonation system, or pointer addresses for more larger and more complex data
+structures like wavetables, vocal tract shapes, or like some kind of serialized
+message.
+---
+Got to draw a line in the sand. This sequencer should be designed to work
+with any iterator whose return time can be resolved to a real (floating point)
+value. Maybe I could make a special iter next function that will attempt to
+handle converting output of an iterator to a floating point value, depending
+on the return type (TBD how that will work, but I have metadata bits to spare).
+For the time being, only integers will work so this functionality will only
+need to extract a value from the slice and recast it as a float.
+@12:35 an ad-hoc imagining of an "iter real" function #timelog:00:03:00
+#! dz $
+@12:51 set up scaffolding for seq, mtof #timelog:01:04:05
+#! dz $
+It's occuring to me that if I do a midi-to-frequency converter
+first, I'll be able to hear the sequencer. So, I'm going to
+quickly wire up a mtof module.
+---
+okay, mtof was a straightforward ordeal. back the sequencer.
+this is more experimental territory. how am I going to build an
+array iterator with the C API?
+---
+some sounds. but something is wrong with the iterator. I am only getting
+some of the pitches, but otherwise towards the end it seems to return 0 or 15.
+---
+saving the troubleshooting for later.

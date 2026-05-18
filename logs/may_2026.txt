@@ -577,3 +577,32 @@ My old arrays were built around blocks, so I will call them "block arrays",
 with the namespace "barray".
 ---
 Iterables complete. Merging into main.
+@20:47 back to initial DSP: what do build out
+#! dz thoughts/projects/sonilo/tasks/initial_dsp
+The initial DSP components will culminate into a single
+DSP demo: arpegiated monophonic step sequencer.
+---
+To build this will require: a lowpass filter, a saw,
+a clock, a smoother, a mtof, and that's it I think.
+---
+These are all pretty trivial. They just need to be hooked
+up using the established interface.
+---
+The gesture components can wait. These initial DSP components
+are plenty.
+@21:00 getting blsaw wrapped into a ugen #timelog:00:55:14
+#! dz $
+I'll also take this time to set up a new example as well called
+{\tt seq.c}. This will be the home of the initial DSP.
+---
+No way. It looks like I already set up blsaw.
+---
+actually, nope. I did this back in november. I had a vague
+notion of what I was looking for.
+---
+generated waveform for saw looks very saw-like.
+---
+it also sounds like a saw. good. this works. I can move on.
+@21:57 butlp to filter the saw #timelog:00:34:29
+#! dz $
+#! dz thoughts/projects/sonilo/tasks/butlp

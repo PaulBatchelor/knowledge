@@ -731,3 +731,38 @@ The sequence example has been reworked to utilize an unimplemented API.
 Things build, but error checking prevents it from actually working.
 I have enough TODOs in place that I think I can come back to this
 and fill it in later.
+@14:38 filling some things in #timelog:00:17:42
+#! dz $
+added placeholder context functions. mkugen structure filled out.
+@15:34 more filling things out #timelog:01:55:36
+#! dz $
+It seems like everything top-level is filled out. Now to open this up
+in GDB and step through the sequence example to see where things
+error first.
+---
+gotta set up the ublock in the context. I think slot 2 should do it?
+---
+actually, slot 2 is already used (making macros now) for pstack/allocator pair.
+slot 3 then.
+---
+I have moved pass the context initialization. Onto sonilo ugen create.
+---
+I forgot to update mkseq in the seq example.
+---
+Up to "last ugen" command, used to get the output sink.
+---
+up to rendering now. this should be the final before the whole program is able to run.
+---
+the ugen block structure actually can't process anything without the
+higher level sonilo data structure because it needs access to
+the stored procedures.
+---
+I'm getting an error with one of the ugen render callbacks. I don't
+know which one.
+---
+I forgot to stop going through the list when it reaches the end of the list.
+---
+somewhat expected: the program runs without error, but the generated
+output is silence.
+---
+Looks like some debugging is in my future.

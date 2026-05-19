@@ -19,7 +19,7 @@ thoughts/projects/sonilo/tasks/phasor:139:DONE:1
 thoughts/projects/sonilo/tasks/blsaw:143:DONE:1
 thoughts/projects/sonilo/tasks/butlp:147:DONE:1
 thoughts/projects/sonilo/tasks/ugen_bytecode:151:TODO:1
-thoughts/projects/sonilo/tasks/initial_dsp:155:TODO:1
+thoughts/projects/sonilo/tasks/initial_dsp:155:DONE:1
 thoughts/projects/sonilo/tasks/dsp_demo:160:TODO:1
 thoughts/projects/sonilo/tasks/ugens:164:DONE:1
 thoughts/projects/sonilo/tasks/ilo_interpreter:168:TODO:1

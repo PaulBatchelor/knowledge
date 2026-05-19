@@ -667,3 +667,34 @@ some sounds. but something is wrong with the iterator. I am only getting
 some of the pitches, but otherwise towards the end it seems to return 0 or 15.
 ---
 saving the troubleshooting for later.
+@14:54 troubleshooting the sequencer #timelog:00:15:04
+#! dz $
+There seems to be something wrong with the iterator,
+or the array in the iterator. Going to inspect with
+GDB. The flat memory space should make some of this pretty
+easy.
+---
+It looks like I might not be allocating enough words. My wordsize
+is expressed as an exponent, and I forgot to convert to bits when
+calculating the number of words required. It was allocating 3 words
+instead of 16 words. Now, it is allocating 5 words, which is what I
+expected.
+---
+it works! or at least, it definitely sounds like it is working!
+All that is left is to add a smoother on the signal, and then
+the initial DSP demo will be completed.
+@21:00 add a smoother #timelog:00:26:18
+#! dz $
+"tsmoother" is the best option, because it'll be helpful to have
+a trigger to reset the smoother. I'll also want to add a tick
+ugen that triggers at start time. This will prevent the sequence
+from starting at zero.
+---
+Is there ever a world where I'd want it do that thing where it starts
+from zero? It's more work and more memory to add the tick, and only
+one word to have a flag in the smoother that sets the initial value
+to be the first sample. I'm going to do that instead. If I need a retriggerable
+smoother, I'll revisit this then.
+---
+We now have a halfway decent proof of concept that showcases some DSP being
+strung together. Exciting. Only took me 9 months.

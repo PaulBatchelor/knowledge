@@ -698,3 +698,36 @@ smoother, I'll revisit this then.
 ---
 We now have a halfway decent proof of concept that showcases some DSP being
 strung together. Exciting. Only took me 9 months.
+@2026-05-19 Day 261
+@08:52 examining konilo/pali #timelog:00:46:17
+#! dz thoughts/projects/sonilo/news
+Putting this under the category of "news" since I don't really
+have any task for this.
+---
+I modified the ilo interpreter and the pali assembler so it could
+work on smaller files. Could be a good way to get sonilo working
+with the ilo VM for initial tests. Ilo does diskio IO using simple
+block storage via a flat file. I'm not sure yet how I'm going to
+work with this. I'm tempted to create a SQLite backend for the blocks.
+That would make it easier to manipulate things from the host
+computer.
+@12:45 scaffolding for ugen list #timelog:00:45:55
+#! dz thoughts/projects/sonilo/tasks/ugen_bytecode
+What I previously called an "address list" is pretty close
+to what I am after. Allocate a block and use it as a 16-bit
+array. Use the first word to keep track of the number of items
+in the list, and also hold an address to the next block of
+ugens.
+---
+I am already scheming a low-level and high-level C API. The main difference
+would be that with the high-levle API, the address of the actual block list
+would be abstracted away, stored in the context zero-page (slot 2 is available).
+The word could hold the head and tail of the list.
+---
+In fact, the example has most of this in place, from an abstraction point of view.
+The "ugen" command has the right behavior.
+---
+The sequence example has been reworked to utilize an unimplemented API.
+Things build, but error checking prevents it from actually working.
+I have enough TODOs in place that I think I can come back to this
+and fill it in later.

@@ -701,9 +701,12 @@ strung together. Exciting. Only took me 9 months.
 @2026-05-19 Day 261
 @08:52 examining konilo/pali #timelog:00:46:17
 #! dz thoughts/projects/sonilo/news
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
 Putting this under the category of "news" since I don't really
 have any task for this.
 ---
+(Update: this is actually belonging to the ilo interpreter task I
+made a while back)
 I modified the ilo interpreter and the pali assembler so it could
 work on smaller files. Could be a good way to get sonilo working
 with the ilo VM for initial tests. Ilo does diskio IO using simple
@@ -766,3 +769,70 @@ somewhat expected: the program runs without error, but the generated
 output is silence.
 ---
 Looks like some debugging is in my future.
+@20:12 debugging #timelog:00:39:08
+#! dz $
+Initial hunch: the only difference between the working version
+and the non-working version should be this new data structure
+I introduced, which in theory should be equivalent. Print
+the contents of both and compare the results. They should be
+identical, but I'm willing to bet they are going to be different.
+---
+Well shoot. Of course the addresses would be different. Because
+there is new memory being allocated.
+---
+fortunately, the old program works with the new changes in place.
+What are things that they'd have in common?
+---
+For starters, I'm going to look through rendering the first block. Compare
+signals. Are there any signals anywhere?
+---
+I'm wielding two gdbs at once and I feel very cool. The multiplier signal
+on the first sample is correct. I'm going to be optimistic and say that
+this is correct. Since this is the one before sink, I'm going to guess
+that maybe my logic for getting sink is incorrect.
+---
+It might be that the sink function isn't being called, so no output is being
+written.
+---
+That's interesting. The multiplier renderer gets called twice in a row before
+sink. That shouldn't be happening.
+---
+I was right-shifting by 2 when I mean to right shift by 1. This was in the logic
+in charge of retrieving the item from the array.
+---
+And it works. Nice.
+@20:53 Declaring the DSP demo done
+#! dz thoughts/projects/sonilo/tasks/dsp_demo
+I'm checking the logs. And everything I said I'd do for this
+has been done when I was implementing the "initial DSP". It just
+slowly turned into a the DSP demo of a monophonic looping sequencer.
+@20:58 I think I've made my ilo interpreter
+#! dz thoughts/projects/sonilo/tasks/ilo_interpreter
+My work this morning actually knocked out what I was
+trying to work on. For some reason, it was much easier
+to approach modifying ilo and pali and there wasn't too much
+work required.
+@21:17 a few words #timelog:00:08:10
+#! dz thoughts/projects/sonilo/tasks/offline_patch
+Technically, the DSP demo I wrote is an offline patch.
+But, I think what this task was about was using Konilo
+to assemble a patch.
+---
+By the time I'll get around to this patch, I'll already
+have the test patch made (probably just this monophonic
+sequence I've written). The work involved here will be
+creating the initial set of abstractions. The patch should
+look a lot like a Sporth code by the time I'm done.
+---
+It would be cool if it were possible to render the patch
+from inside Konilo. I'm imagining for offline rendering, I'll
+have some kind of tape interface, where I'll be able to dump
+streams of buffered data into WAV files.
+@21:25 convolution is going to need more contiguous memory
+#! dz thoughts/projects/sonilo/tasks/convolution_reverb
+FFT libraries require large chunks of contiguous memory.
+I'm going to need to work out how to do that. There's no task
+yet for this, but I'm building out the concept of a memory "universe"
+that sonilo lies inside of, made out of larger blocks called megablocks
+of size 1024 words. If each block has a 16-bit address, that's 67 megabytes
+of memory.

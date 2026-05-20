@@ -40,6 +40,8 @@
 \smallskip
 \noindent context \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node29}
 \smallskip
+\noindent convolution reverb \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node35}
+\smallskip
 \noindent docgen \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node13}
 \smallskip
 \noindent dsp demo \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node30}
@@ -59,6 +61,8 @@
 \noindent meaningful sounds \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node2}
 \smallskip
 \noindent mem \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node6}
+\smallskip
+\noindent offline patch \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node34}
 \smallskip
 \noindent phasor \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node8}
 \smallskip
@@ -154,7 +158,9 @@
 {\noindent \bf 2026-05-13:} news, iterables\smallskip
 {\noindent \bf 2026-05-14:} iterables\smallskip
 {\noindent \bf 2026-05-16:} iterables\smallskip
-{\noindent \bf 2026-05-17:} iterables\smallskip
+{\noindent \bf 2026-05-17:} butlp, initial dsp, iterables\smallskip
+{\noindent \bf 2026-05-18:} initial dsp\smallskip
+{\noindent \bf 2026-05-19:} news, convolution reverb, dsp demo, ilo interpreter, offline patch, ugen bytecode\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -554,6 +560,18 @@ ilo interpreter stuff needs to at least happen after ugen stuff. And it's a prer
 By the time unit generators are finished, I think thinking about using a higher-level abstraction like Konilo may be warranted. At that point, it'll start to feel possible to build demos.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:52: examining konilo/pali}\smallskip
+Putting this under the category of "news" since I don't really have any task for this.
+\par
+
+(Update: this is actually belonging to the ilo interpreter task I made a while back) I modified the ilo interpreter and the pali assembler so it could work on smaller files. Could be a good way to get sonilo working with the ilo VM for initial tests. Ilo does diskio IO using simple block storage via a flat file. I'm not sure yet how I'm going to work with this. I'm tempted to create a SQLite backend for the blocks. That would make it easier to manipulate things from the host computer.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:58: I think I've made my ilo interpreter}\smallskip
+My work this morning actually knocked out what I was trying to work on. For some reason, it was much easier to approach modifying ilo and pali and there wasn't too much work required.
+\par
+
 \xrdef{node5}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont konilo sonilo communication}\medskip
 Establish communication protocol for Konilo and Sonilo
@@ -941,6 +959,96 @@ sine is definitely being modulated by a block signal, not a constant.
 I forgot to wrap the phasor in the sine ugen. I think that fixed it. I don't think I hear it anymore.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-17}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:47: back to initial DSP: what do build out}\smallskip
+The initial DSP components will culminate into a single DSP demo: arpegiated monophonic step sequencer.
+\par
+
+To build this will require: a lowpass filter, a saw, a clock, a smoother, a mtof, and that's it I think.
+\par
+
+These are all pretty trivial. They just need to be hooked up using the established interface.
+\par
+
+The gesture components can wait. These initial DSP components are plenty.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:00: getting blsaw wrapped into a ugen}\smallskip
+I'll also take this time to set up a new example as well called {\tt seq.c}. This will be the home of the initial DSP.
+\par
+
+No way. It looks like I already set up blsaw.
+\par
+
+actually, nope. I did this back in november. I had a vague notion of what I was looking for.
+\par
+
+generated waveform for saw looks very saw-like.
+\par
+
+it also sounds like a saw. good. this works. I can move on.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:57: butlp to filter the saw}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-18}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:42: build the clock}\smallskip
+This shouldn't be too difficult. It's basically just phasor, but with a truncation at 0 instead of wraparound, and with units in BPM instead of HZ.
+\par
+
+Also tempted to make a metro object that takes in a clock and returns an impulse. The sequencer is going to need to do this, and this will save a word of state if this is managed as an external process.
+\par
+
+Gotta rework clock and phasor to be a ugen. Right. Should have known that. I don't need phasor right now, so that will have to be done at another time.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:18: now to make a metronome signal from the clock}\smallskip
+This utility will examine a clock signal, and return a 1 when it resets to 0, and will also return when it starts (assumes the clock will start immediately as well)
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:53: some initial thoughts on an sequencer}\smallskip
+A basic sequencer would take in an array iterator and a trigger signal. Everytime a trigger happens, it calls the next function in the iterator. This updates a signal that sort of acts like a sample and hold?
+\par
+
+Thinking slightly ahead: I think this iterator could be made to take any kind of iterator that will be made in the future. A second order iterator, for example, would use two arrays, with the iterated sequence containing indices for values in the other array. Eventually the returned value turns into some kind of data, which could be interpretted in different ways. The simplest case would be integer values. But, eventually they could also be ratio values, or a tuple of values packed into a word used for a just intonation system, or pointer addresses for more larger and more complex data structures like wavetables, vocal tract shapes, or like some kind of serialized message.
+\par
+
+Got to draw a line in the sand. This sequencer should be designed to work with any iterator whose return time can be resolved to a real (floating point) value. Maybe I could make a special iter next function that will attempt to handle converting output of an iterator to a floating point value, depending on the return type (TBD how that will work, but I have metadata bits to spare). For the time being, only integers will work so this functionality will only need to extract a value from the slice and recast it as a float.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:35: an ad-hoc imagining of an "iter real" function}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:51: set up scaffolding for seq, mtof}\smallskip
+It's occuring to me that if I do a midi-to-frequency converter first, I'll be able to hear the sequencer. So, I'm going to quickly wire up a mtof module.
+\par
+
+okay, mtof was a straightforward ordeal. back the sequencer. this is more experimental territory. how am I going to build an array iterator with the C API?
+\par
+
+some sounds. but something is wrong with the iterator. I am only getting some of the pitches, but otherwise towards the end it seems to return 0 or 15.
+\par
+
+saving the troubleshooting for later.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:54: troubleshooting the sequencer}\smallskip
+There seems to be something wrong with the iterator, or the array in the iterator. Going to inspect with GDB. The flat memory space should make some of this pretty easy.
+\par
+
+It looks like I might not be allocating enough words. My wordsize is expressed as an exponent, and I forgot to convert to bits when calculating the number of words required. It was allocating 3 words instead of 16 words. Now, it is allocating 5 words, which is what I expected.
+\par
+
+it works! or at least, it definitely sounds like it is working! All that is left is to add a smoother on the signal, and then the initial DSP demo will be completed.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:00: add a smoother}\smallskip
+"tsmoother" is the best option, because it'll be helpful to have a trigger to reset the smoother. I'll also want to add a tick ugen that triggers at start time. This will prevent the sequence from starting at zero.
+\par
+
+Is there ever a world where I'd want it do that thing where it starts from zero? It's more work and more memory to add the tick, and only one word to have a flag in the smoother that sets the initial value to be the first sample. I'm going to do that instead. If I need a retriggerable smoother, I'll revisit this then.
+\par
+
+We now have a halfway decent proof of concept that showcases some DSP being strung together. Exciting. Only took me 9 months.
+\par
+
 \xrdef{node10}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont blsaw}\medskip
 Implement blsaw DSP algorithm
@@ -1036,6 +1144,89 @@ So instead of a bytecode format, it's just data now: a list of unit generators w
 \par
 
 What's lost here is a low-level intermediate format. Something simple that could built up this list of unit generators. I might not need it. Or, it might not be ready yet. My thinking is that the logic used for constructing these unit generators would be done using Konilo. Konilo would send serial commands to Sonilo to generate the ugen list. This (yet to be determined) would be the re-usable part.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:45: scaffolding for ugen list}\smallskip
+What I previously called an "address list" is pretty close to what I am after. Allocate a block and use it as a 16-bit array. Use the first word to keep track of the number of items in the list, and also hold an address to the next block of ugens.
+\par
+
+I am already scheming a low-level and high-level C API. The main difference would be that with the high-levle API, the address of the actual block list would be abstracted away, stored in the context zero-page (slot 2 is available). The word could hold the head and tail of the list.
+\par
+
+In fact, the example has most of this in place, from an abstraction point of view. The "ugen" command has the right behavior.
+\par
+
+The sequence example has been reworked to utilize an unimplemented API. Things build, but error checking prevents it from actually working. I have enough TODOs in place that I think I can come back to this and fill it in later.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:38: filling some things in}\smallskip
+added placeholder context functions. mkugen structure filled out.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:34: more filling things out}\smallskip
+It seems like everything top-level is filled out. Now to open this up in GDB and step through the sequence example to see where things error first.
+\par
+
+gotta set up the ublock in the context. I think slot 2 should do it?
+\par
+
+actually, slot 2 is already used (making macros now) for pstack/allocator pair. slot 3 then.
+\par
+
+I have moved pass the context initialization. Onto sonilo ugen create.
+\par
+
+I forgot to update mkseq in the seq example.
+\par
+
+Up to "last ugen" command, used to get the output sink.
+\par
+
+up to rendering now. this should be the final before the whole program is able to run.
+\par
+
+the ugen block structure actually can't process anything without the higher level sonilo data structure because it needs access to the stored procedures.
+\par
+
+I'm getting an error with one of the ugen render callbacks. I don't know which one.
+\par
+
+I forgot to stop going through the list when it reaches the end of the list.
+\par
+
+somewhat expected: the program runs without error, but the generated output is silence.
+\par
+
+Looks like some debugging is in my future.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:12: debugging}\smallskip
+Initial hunch: the only difference between the working version and the non-working version should be this new data structure I introduced, which in theory should be equivalent. Print the contents of both and compare the results. They should be identical, but I'm willing to bet they are going to be different.
+\par
+
+Well shoot. Of course the addresses would be different. Because there is new memory being allocated.
+\par
+
+fortunately, the old program works with the new changes in place. What are things that they'd have in common?
+\par
+
+For starters, I'm going to look through rendering the first block. Compare signals. Are there any signals anywhere?
+\par
+
+I'm wielding two gdbs at once and I feel very cool. The multiplier signal on the first sample is correct. I'm going to be optimistic and say that this is correct. Since this is the one before sink, I'm going to guess that maybe my logic for getting sink is incorrect.
+\par
+
+It might be that the sink function isn't being called, so no output is being written.
+\par
+
+That's interesting. The multiplier renderer gets called twice in a row before sink. That shouldn't be happening.
+\par
+
+I was right-shifting by 2 when I mean to right shift by 1. This was in the logic in charge of retrieving the item from the array.
+\par
+
+And it works. Nice.
 \par
 
 \xrdef{node12}
@@ -1706,6 +1897,8 @@ It'll mostly be copy-paste work from sndkit.
 
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-03-21}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:15: holding off until ugen structure is solidified}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-17}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:57: butlp to filter the saw}\smallskip
 \xrdef{node19}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont fix block navigation}\medskip
 early tools for converting block addresses to word addresses
@@ -1846,6 +2039,14 @@ I've written a few thoughts on this. Somewhere, I it looks like I've scribbled s
 \par
 
 I've written a few things thinking about a "Sonilo Word Machine", the thing that parses the sonilo command language. It's tempting to move forward with this, but I should wait until I have a demo using the C API that I can translate to the command language.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:52: examining konilo/pali}\smallskip
+Putting this under the category of "news" since I don't really have any task for this.
+\par
+
+(Update: this is actually belonging to the ilo interpreter task I made a while back) I modified the ilo interpreter and the pali assembler so it could work on smaller files. Could be a good way to get sonilo working with the ilo VM for initial tests. Ilo does diskio IO using simple block storage via a flat file. I'm not sure yet how I'm going to work with this. I'm tempted to create a SQLite backend for the blocks. That would make it easier to manipulate things from the host computer.
 \par
 
 \xrdef{node21}
@@ -2824,6 +3025,11 @@ More thinking about this DSP generator. I wanted to make a monophonic step seque
 A sequencer would just be a linear or looping iterable. Iteratables would be something needed down the line for gesture signal generator (GSG) related things, so it wouldn't be a waste of time to put some effort into this now.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:53: Declaring the DSP demo done}\smallskip
+I'm checking the logs. And everything I said I'd do for this has been done when I was implementing the "initial DSP". It just slowly turned into a the DSP demo of a monophonic looping sequencer.
+\par
+
 \xrdef{node31}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont GSG}\medskip
 Create Gesture Signal Generator ugen
@@ -3137,6 +3343,28 @@ tests for 16, 32, and 1-bit arrays work. With 32-bit arrays, I got some masking 
 \par
 
 2 and 4-bit arrays will probably be fine? I'm skipping them. This is good enough.
+\par
+
+\xrdef{node34}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont offline patch}\medskip
+Offline patch demo: Create an offline rendered patch
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:17: a few words}\smallskip
+Technically, the DSP demo I wrote is an offline patch. But, I think what this task was about was using Konilo to assemble a patch.
+\par
+
+By the time I'll get around to this patch, I'll already have the test patch made (probably just this monophonic sequence I've written). The work involved here will be creating the initial set of abstractions. The patch should look a lot like a Sporth code by the time I'm done.
+\par
+
+It would be cool if it were possible to render the patch from inside Konilo. I'm imagining for offline rendering, I'll have some kind of tape interface, where I'll be able to dump streams of buffered data into WAV files.
+\par
+
+\xrdef{node35}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont convolution reverb}\medskip
+Implement convolution reverb
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-19}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:25: convolution is going to need more contiguous memory}\smallskip
+FFT libraries require large chunks of contiguous memory. I'm going to need to work out how to do that. There's no task yet for this, but I'm building out the concept of a memory "universe" that sonilo lies inside of, made out of larger blocks called megablocks of size 1024 words. If each block has a 16-bit address, that's 67 megabytes of memory.
 \par
 
 \bye

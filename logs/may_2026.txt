@@ -836,3 +836,22 @@ yet for this, but I'm building out the concept of a memory "universe"
 that sonilo lies inside of, made out of larger blocks called megablocks
 of size 1024 words. If each block has a 16-bit address, that's 67 megabytes
 of memory.
+@2026-05-20 Day 262
+@15:38 strang initial reading of chapter 1 #timelog:00:22:48 #ink:0A6
+#! dz linear_algebra/strang/toc/1_matrices_and_gaussian_elimination
+@16:05 chapter 1 reading #ink:0A6 #timelog:00:31:31
+#! dz $
+@2026-05-21 Day 263
+@09:11 finished reading 1.1, initial 1.2 #timelog:00:45:26 #ink:0A7
+#! dz linear_algebra/strang/toc/1_matrices_and_gaussian_elimination
+@14:25 universe #ink:0AB #timelog:00:19:59
+@2026-05-22 Day 264
+@12:25 timelogging #timelog:00:22:40
+@12:33 dagzet created
+#! dz linear_algebra/strang/news
+#! dz thoughts/projects/sonilo/tasks/universe
+outlining the concept of the Universe.
+@19:53 universe brainstorm wrap-up #timelog:00:29:16 #ink:0AB
+#! dz $
+@12:49 new tasks created for word machine and universe
+#! dz thoughts/projects/sonilo/news

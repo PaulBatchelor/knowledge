@@ -176,3 +176,11 @@ co tasks/iterables tasks/dsp_demo
 nn tasks/arrays
 ln create an array data type. variable length, data size, etc.
 co tasks/arrays tasks/iterables
+nn tasks/universe
+ln Create the memory "universe", the extended memory for
+ln the sonilo VM.
+nn tasks/word_machine
+ln build out word machine for command parser
+co tasks/word_machine tasks/sonilo_command_language
+co tasks/universe tasks/word_machine
+cr word machine will be built inside of universe megablock

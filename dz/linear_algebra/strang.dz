@@ -1,0 +1,17 @@
+ns linear_algebra
+nn strang
+ln Linear Algebra and its applications, by Gilbert Strang
+ns +strang
+nn news
+nn toc
+ns +toc
+nn 1_matrices_and_gaussian_elimination
+ln Matrices and Gaussian Eliminatinos
+nn 2_vector_spaces
+ln Vector Spaces
+nn 3_orthogonality
+ln Orthogonality
+nn 4_determinants
+ln Determinants
+nn 5_eigenvalues_eigenvectors
+ln Eigenvalues and eigenvectors

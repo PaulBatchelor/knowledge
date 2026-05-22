@@ -85,4 +85,5 @@ dz/MIT_course_6_3.dz
 dz/calculus
 dz/bu
 dz/ink
+dz/linear_algebra
 dz/zzz

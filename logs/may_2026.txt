@@ -856,3 +856,39 @@ outlining the concept of the Universe.
 @12:49 new tasks created for word machine and universe
 #! dz thoughts/projects/sonilo/news
 @12:52 scanning #timelog:00:05:49 #archiving
+@20:10 outlining universe code #timelog:00:34:16
+#! dz thoughts/projects/sonilo/tasks/universe
+Data-wise, the universe is fairly structureless. It's just
+an array of words. The API would probably want to at least
+abstract away the size of the universe for allocators, and
+also produce the instance to sonilo.
+---
+The data for the sonilo VM should be contained inside of
+the universe. This could get interesting. I'd want a way to
+make sure all the VM bits are contained in one word.
+---
+The sonilo C struct should be the memory representation of
+what it looks like in the VM. That would be nice.
+---
+The only pointer in the sonilo struct is the cursor, which
+is better than I thought it would be.
+---
+For copying/memory between sonilo and the universe, I've
+gone with the "push/pull" metaphor. "universe pull" means
+copying from the universe to sonilo. "universe push" means
+copying something from sonilo to the universe.
+---
+At some point there needs to be host level data to control
+the VM. Function pointers for C, any kind of file I/O, etc.
+There are also plenty of bits that could (and probably should)
+be included in the universe megablocks. Most of the VM state,
+and possibly the portion of the instruction map that doesn't
+include the C pointer list (essentially an array of 32-bit ints).
+The sonilo VM has no distinction between host and VM, the current
+implementation just has a struct. Part of the work with the
+universe should involve refactoring things so that the host
+and VM bits are stratified.
+@2026-05-23 Day 265
+@09:49 cropping and binning #archiving #timelog:00:25:14
+Turns out I need to do this because it has some spivak notes
+on it from march, and I'd like to get back into Spivak.

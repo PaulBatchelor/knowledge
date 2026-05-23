@@ -892,3 +892,10 @@ and VM bits are stratified.
 @09:49 cropping and binning #archiving #timelog:00:25:14
 Turns out I need to do this because it has some spivak notes
 on it from march, and I'd like to get back into Spivak.
+@10:16 importing the "backlog" of sketches #archiving #timelog:00:10:46
+There's a big gap of missing files in my ink, and that chunk
+belongs to the doodles I made in December.
+---
+Technically, they should be in the 2025 folder, not the 2026 folder.
+---
+well, 090 is january 1st, 2026.

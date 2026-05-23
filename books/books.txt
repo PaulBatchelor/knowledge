@@ -2,9 +2,10 @@
 thoughts:thoughts/ink%
 # cs342:csmet/cs342%
 # cy100:csmet/cy100%
-dmoi:dmoi%
-coad:coad%
+# dmoi:dmoi%
+# coad:coad%
 sonilo:thoughts/projects/sonilo%
-ma123:bu/ma123/ink%
+# ma123:bu/ma123/ink%
 calc:calculus/pearson/ink%
 spivak:calculus/spivak/ink%
+strang:linear_algebra/strang/ink%

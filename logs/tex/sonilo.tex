@@ -78,6 +78,8 @@
 \smallskip
 \noindent ugens \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node23}
 \smallskip
+\noindent universe \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node36}
+\smallskip
 \noindent zero page \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node15}
 \smallskip
 \vfill \break
@@ -161,6 +163,7 @@
 {\noindent \bf 2026-05-17:} butlp, initial dsp, iterables\smallskip
 {\noindent \bf 2026-05-18:} initial dsp\smallskip
 {\noindent \bf 2026-05-19:} news, convolution reverb, dsp demo, ilo interpreter, offline patch, ugen bytecode\smallskip
+{\noindent \bf 2026-05-22:} news, universe\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -2049,6 +2052,8 @@ Putting this under the category of "news" since I don't really have any task for
 (Update: this is actually belonging to the ilo interpreter task I made a while back) I modified the ilo interpreter and the pali assembler so it could work on smaller files. Could be a good way to get sonilo working with the ilo VM for initial tests. Ilo does diskio IO using simple block storage via a flat file. I'm not sure yet how I'm going to work with this. I'm tempted to create a SQLite backend for the blocks. That would make it easier to manipulate things from the host computer.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:49: new tasks created for word machine and universe}\smallskip
 \xrdef{node21}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
 
@@ -3365,6 +3370,35 @@ Implement convolution reverb
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-19}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:25: convolution is going to need more contiguous memory}\smallskip
 FFT libraries require large chunks of contiguous memory. I'm going to need to work out how to do that. There's no task yet for this, but I'm building out the concept of a memory "universe" that sonilo lies inside of, made out of larger blocks called megablocks of size 1024 words. If each block has a 16-bit address, that's 67 megabytes of memory.
+\par
+
+\xrdef{node36}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont universe}\medskip
+Create the memory "universe", the extended memory for
+the sonilo VM.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-22}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:33: dagzet created}\smallskip
+outlining the concept of the Universe.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:53: universe brainstorm wrap-up}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:10: outlining universe code}\smallskip
+Data-wise, the universe is fairly structureless. It's just an array of words. The API would probably want to at least abstract away the size of the universe for allocators, and also produce the instance to sonilo.
+\par
+
+The data for the sonilo VM should be contained inside of the universe. This could get interesting. I'd want a way to make sure all the VM bits are contained in one word.
+\par
+
+The sonilo C struct should be the memory representation of what it looks like in the VM. That would be nice.
+\par
+
+The only pointer in the sonilo struct is the cursor, which is better than I thought it would be.
+\par
+
+For copying/memory between sonilo and the universe, I've gone with the "push/pull" metaphor. "universe pull" means copying from the universe to sonilo. "universe push" means copying something from sonilo to the universe.
+\par
+
+At some point there needs to be host level data to control the VM. Function pointers for C, any kind of file I/O, etc. There are also plenty of bits that could (and probably should) be included in the universe megablocks. Most of the VM state, and possibly the portion of the instruction map that doesn't include the C pointer list (essentially an array of 32-bit ints). The sonilo VM has no distinction between host and VM, the current implementation just has a struct. Part of the work with the universe should involve refactoring things so that the host and VM bits are stratified.
 \par
 
 \bye

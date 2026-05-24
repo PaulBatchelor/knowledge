@@ -899,3 +899,32 @@ belongs to the doodles I made in December.
 Technically, they should be in the 2025 folder, not the 2026 folder.
 ---
 well, 090 is january 1st, 2026.
+@17:36 continuing the implementation #timelog:01:01:04
+#! dz thoughts/projects/sonilo/tasks/universe
+Stopping for now. I want to think a little more on
+refactoring.
+@19:48 continued #timelog:00:02:48
+#! dz $
+@20:48 refactoring sonilo to have more of a vm/host split #timelog:00:58:34
+#! dz $
+I think the refactor should happen in my test suite actually.
+If that passes, then there's a better chance the refactor
+will work.
+---
+It also turns out that I figured out the cursor swap in the
+test VM. I really need to consolidate this stuff at this point.
+---
+In order to replace the memwrite ad-hoc sonilo VM implementation with
+the "official" C interface, I'm going to need to replace a bunch
+of operations setting C struct variables with indirect C setters/getters.
+Instead of diving right in, I'm going to see what the compiler can do for
+me here. I will rip out the variables temporarily, and take note where
+the errors are, placing TODOs. From there, I'll write up the API, and
+hook it up one piece at a time.
+---
+I've TODO'd out everything, and have a little script to extract everything.
+It's not a perfect system, but I can infer an API from this.
+---
+API: SET/GET rw, err, mem, cursor. GET rw pointer. Possibly a GET mem at cursor.
+GET instr pointer. A select cursor operation. A swap cursor operation.
+An append character operation. READ/WRITE word operations.

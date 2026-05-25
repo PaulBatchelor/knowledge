@@ -164,6 +164,7 @@
 {\noindent \bf 2026-05-18:} initial dsp\smallskip
 {\noindent \bf 2026-05-19:} news, convolution reverb, dsp demo, ilo interpreter, offline patch, ugen bytecode\smallskip
 {\noindent \bf 2026-05-22:} news, universe\smallskip
+{\noindent \bf 2026-05-23:} universe\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -3399,6 +3400,28 @@ For copying/memory between sonilo and the universe, I've gone with the "push/pul
 \par
 
 At some point there needs to be host level data to control the VM. Function pointers for C, any kind of file I/O, etc. There are also plenty of bits that could (and probably should) be included in the universe megablocks. Most of the VM state, and possibly the portion of the instruction map that doesn't include the C pointer list (essentially an array of 32-bit ints). The sonilo VM has no distinction between host and VM, the current implementation just has a struct. Part of the work with the universe should involve refactoring things so that the host and VM bits are stratified.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-23}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:36: continuing the implementation}\smallskip
+Stopping for now. I want to think a little more on refactoring.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:48: continued}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:48: refactoring sonilo to have more of a vm/host split}\smallskip
+I think the refactor should happen in my test suite actually. If that passes, then there's a better chance the refactor will work.
+\par
+
+It also turns out that I figured out the cursor swap in the test VM. I really need to consolidate this stuff at this point.
+\par
+
+In order to replace the memwrite ad-hoc sonilo VM implementation with the "official" C interface, I'm going to need to replace a bunch of operations setting C struct variables with indirect C setters/getters. Instead of diving right in, I'm going to see what the compiler can do for me here. I will rip out the variables temporarily, and take note where the errors are, placing TODOs. From there, I'll write up the API, and hook it up one piece at a time.
+\par
+
+I've TODO'd out everything, and have a little script to extract everything. It's not a perfect system, but I can infer an API from this.
+\par
+
+API: SET/GET rw, err, mem, cursor. GET rw pointer. Possibly a GET mem at cursor. GET instr pointer. A select cursor operation. A swap cursor operation. An append character operation. READ/WRITE word operations.
 \par
 
 \bye

@@ -928,3 +928,10 @@ It's not a perfect system, but I can infer an API from this.
 API: SET/GET rw, err, mem, cursor. GET rw pointer. Possibly a GET mem at cursor.
 GET instr pointer. A select cursor operation. A swap cursor operation.
 An append character operation. READ/WRITE word operations.
+@2026-05-24 Day 266
+@2026-05-25 Day 267
+@11:17 outlining out VM API based on TODOs #timelog:00:14:29
+#! dz thoughts/projects/sonilo/tasks/universe
+Trying to incrementally move things over to the
+sonilo VM struct. Easiest thing would probably be
+either RW or memory. That comes next.

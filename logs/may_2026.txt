@@ -935,3 +935,16 @@ An append character operation. READ/WRITE word operations.
 Trying to incrementally move things over to the
 sonilo VM struct. Easiest thing would probably be
 either RW or memory. That comes next.
+@16:52 abstracting away RW #timelog:00:40:00
+#! dz $
+I am going to try and make the compiler work for me.
+I will begin by converting rw to a pointer (pointing
+to some internal RW value). The compiler will emit
+warnings or errors, and I'll be able to plug everything
+up. After it compiles, the tests should pass. From there,
+I can change the pointer to point to the rw inside the
+sonilo VM. At that point, I can slowly introduce sonilo rw
+set/get commands incrementally.
+---
+rw has been reworked to be a pointer. Now to slowly re-introduce
+rw set/get commands. This will happen later.

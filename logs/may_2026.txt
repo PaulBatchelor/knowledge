@@ -948,3 +948,16 @@ set/get commands incrementally.
 ---
 rw has been reworked to be a pointer. Now to slowly re-introduce
 rw set/get commands. This will happen later.
+@19:28 rw set/get commands #timelog:01:07:46
+#! dz $
+uh oh. something is locking up.
+---
+oh we're good. had to do a full clean.
+---
+nope it's freezing when I make the change interesting.
+I'm going to pick a less volatile place to get the ball
+rolling.
+---
+rw is coded out.
+@20:38 coding out mem #timelog:00:24:00
+#! dz $

@@ -961,3 +961,18 @@ rolling.
 rw is coded out.
 @20:38 coding out mem #timelog:00:24:00
 #! dz $
+@2026-05-26 Day 268
+@19:42 cursor #timelog:00:43:37
+#! dz thoughts/projects/sonilo/tasks/universe
+@20:33 err #timelog:00:17:33
+#! dz $
+@20:57 instr refactoring #timelog:01:27:27
+#! dz
+This one gets a little bit interesting because it gets into
+the sonilo host struct, which I haven't done anything with yet.
+---
+chased a weird bug because I was accidentally initializing things
+out of order. That took a while. I had to start over again.
+---
+I manged to replace the old instruction map with the new one.
+The tests seem to pass okay?

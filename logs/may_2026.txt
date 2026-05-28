@@ -967,7 +967,6 @@ rw is coded out.
 @20:33 err #timelog:00:17:33
 #! dz $
 @20:57 instr refactoring #timelog:01:27:27
-#! dz
 This one gets a little bit interesting because it gets into
 the sonilo host struct, which I haven't done anything with yet.
 ---
@@ -976,3 +975,27 @@ out of order. That took a while. I had to start over again.
 ---
 I manged to replace the old instruction map with the new one.
 The tests seem to pass okay?
+@2026-05-27 Day 269
+@20:14 introduce vm and host components to top-level sonilo struct #timelog:00:57:14
+#! dz thoughts/projects/sonilo/tasks/universe
+Test clean-up code clean-up. Then, I have to actually
+refactor the main sonilo struct to have the VM and host
+components. The instrument map also needs to be reworked
+so that the old version is removed.
+---
+Attempting to insert sonilo vm struct into sonilo struct.
+---
+I think I've got it whittled down enough. The sonilo struct
+holds a lot of "convenience" pointers like to memory,
+the universe, etc. But that's okay. That's why the C struct
+is being used. I've got a script that compares the output
+of seq to a reference batch and so far it seems to be okay.
+---
+Moving to replace the old instruction map with the new instruction
+map. It seems like there's only one point of contact here,
+so hopefully this should be pretty painless.
+---
+A few more places needed to be changed than I expected,
+and I think I'm sunsetting some of the lower level UGEN
+C APIs I initially built (they are too far behind at this point).
+But, my seq sample still builds and runs so that's all that matters.

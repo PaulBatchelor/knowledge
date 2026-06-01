@@ -7,7 +7,7 @@ thoughts/projects/sonilo/tasks/docgen:89:DONE:1
 thoughts/projects/sonilo/tasks/fix_block_navigation:93:TODO:1
 thoughts/projects/sonilo/tasks/instruction_primitive:97:DONE:1
 thoughts/projects/sonilo/tasks/ugen_refcount:101:DONE:1
-thoughts/projects/sonilo/tasks/universe:105:TODO:1
+thoughts/projects/sonilo/tasks/universe:105:DONE:1
 thoughts/projects/sonilo/tasks/iterables:109:DONE:1
 thoughts/projects/sonilo/tasks/zero_page:113:DONE:1
 thoughts/projects/sonilo/tasks/bulk_instructions:116:DONE:1

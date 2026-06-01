@@ -195,6 +195,10 @@
 {\noindent \bf 2026-05-19:} news, convolution reverb, dsp demo, ilo interpreter, offline patch, ugen bytecode\smallskip
 {\noindent \bf 2026-05-22:} news, universe\smallskip
 {\noindent \bf 2026-05-23:} universe\smallskip
+{\noindent \bf 2026-05-25:} universe\smallskip
+{\noindent \bf 2026-05-26:} universe\smallskip
+{\noindent \bf 2026-05-27:} universe\smallskip
+{\noindent \bf 2026-06-01:} universe\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -4045,4 +4049,52 @@ I've TODO'd out everything, and have a little script to extract everything. It's
 API: SET/GET rw, err, mem, cursor. GET rw pointer. Possibly a GET mem at cursor. GET instr pointer. A select cursor operation. A swap cursor operation. An append character operation. READ/WRITE word operations.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-25}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:17: outlining out VM API based on TODOs}\smallskip
+Trying to incrementally move things over to the sonilo VM struct. Easiest thing would probably be either RW or memory. That comes next.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:52: abstracting away RW}\smallskip
+I am going to try and make the compiler work for me. I will begin by converting rw to a pointer (pointing to some internal RW value). The compiler will emit warnings or errors, and I'll be able to plug everything up. After it compiles, the tests should pass. From there, I can change the pointer to point to the rw inside the sonilo VM. At that point, I can slowly introduce sonilo rw set/get commands incrementally.
+\par
+
+rw has been reworked to be a pointer. Now to slowly re-introduce rw set/get commands. This will happen later.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:28: rw set/get commands}\smallskip
+uh oh. something is locking up.
+\par
+
+oh we're good. had to do a full clean.
+\par
+
+nope it's freezing when I make the change interesting. I'm going to pick a less volatile place to get the ball rolling.
+\par
+
+rw is coded out.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:38: coding out mem}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:42: cursor}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:33: err}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-27}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:14: introduce vm and host components to top-level sonilo struct}\smallskip
+Test clean-up code clean-up. Then, I have to actually refactor the main sonilo struct to have the VM and host components. The instrument map also needs to be reworked so that the old version is removed.
+\par
+
+Attempting to insert sonilo vm struct into sonilo struct.
+\par
+
+I think I've got it whittled down enough. The sonilo struct holds a lot of "convenience" pointers like to memory, the universe, etc. But that's okay. That's why the C struct is being used. I've got a script that compares the output of seq to a reference batch and so far it seems to be okay.
+\par
+
+Moving to replace the old instruction map with the new instruction map. It seems like there's only one point of contact here, so hopefully this should be pretty painless.
+\par
+
+A few more places needed to be changed than I expected, and I think I'm sunsetting some of the lower level UGEN C APIs I initially built (they are too far behind at this point). But, my seq sample still builds and runs so that's all that matters.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-01}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:00: something something universe}\smallskip
 \bye

@@ -999,3 +999,23 @@ A few more places needed to be changed than I expected,
 and I think I'm sunsetting some of the lower level UGEN
 C APIs I initially built (they are too far behind at this point).
 But, my seq sample still builds and runs so that's all that matters.
+@2026-05-28 Day 270
+@2026-05-29 Day 271
+@2026-05-30 Day 272
+@2026-06-01 Day 273
+@09:00 cleanup #timelog:00:21:08
+#! dz thoughts/projects/sonilo/tasks/universe
+trying to figure out what is left to do
+---
+going to try and pluck out the old instruction map.
+As far as I can tell, this is the last thing
+for the universe.
+---
+Well, the universe API functions haven't been
+implemented yet. They aren't terribly complex functions,
+so I could probably write out an initial implementation.
+Soon I'll be working on the word machine, and that will
+make use of the universe API.
+---
+No wait, actually I already implemented the universe API.
+Cleaning up, then I'm done.

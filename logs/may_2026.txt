@@ -1019,3 +1019,12 @@ make use of the universe API.
 ---
 No wait, actually I already implemented the universe API.
 Cleaning up, then I'm done.
+@2026-06-02 Day 274
+@18:16 word maching scaffolding #timelog:00:04:21
+#! dz thoughts/projects/sonilo/tasks/word_machine
+I worked out some of this yesterday on paper. There's
+a set of API functions that I'm hoping to write the
+skeleton structure for.
+---
+now it's dinner time. just enough time to drag the cmp
+library to the folder.

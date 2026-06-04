@@ -1,0 +1,137 @@
+@2026-06-01 Day 273
+@09:00 cleanup #timelog:00:21:08
+#! dz thoughts/projects/sonilo/tasks/universe
+trying to figure out what is left to do
+---
+going to try and pluck out the old instruction map.
+As far as I can tell, this is the last thing
+for the universe.
+---
+Well, the universe API functions haven't been
+implemented yet. They aren't terribly complex functions,
+so I could probably write out an initial implementation.
+Soon I'll be working on the word machine, and that will
+make use of the universe API.
+---
+No wait, actually I already implemented the universe API.
+Cleaning up, then I'm done.
+@2026-06-02 Day 274
+@18:16 word maching scaffolding #timelog:00:04:21
+#! dz thoughts/projects/sonilo/tasks/word_machine
+I worked out some of this yesterday on paper. There's
+a set of API functions that I'm hoping to write the
+skeleton structure for.
+---
+now it's dinner time. just enough time to drag the cmp
+library to the folder.
+@19:30 continued scaffolding #timelog:00:04:42
+#! dz $
+interrupted again.
+@19:46 resumed. #timelog:00:24:53
+#! dz $
+scaffolding in place. I think I might be able
+to pull off some small unit tests for the
+word machine.
+---
+actually just kidding, adding top-level sonilo functions
+that exist as public C API calls.
+@20:13 initial words for unit test #timelog:01:10:11
+#! dz $
+I'm going to use this time to write tests out for
+universe push/pull, just as a sanity check.
+---
+With the word machine, the first tests can parse system
+commands, or just the structure. Say a system command
+is represented by the function $s(k,v)$ where $k$ is the
+key and $v$ is the value associated with that key.
+There could be a test system command $s(0, 0)$ which could
+write a magic number somewhere, and this could then be transferred
+to the sonilo VM somewhere and read. Actually, the word machine
+does have access to the VM, it could set the RW register directly.
+---
+I would be writing this before hooking up the msgpack parser
+the system commands aren't really going through it, that's what
+makes them system commands.
+---
+What would $s(0,0)$ look like as a system command? 4 bytes, a
+fixmap of size 1, with a fixint of 0 and a uint8 of 0.
+The fixmap would be {\tt 0x81}. The fixint key would be {0x00},
+and the uint8 value would be {\tt 0xCC00}. Putting it together
+yields a values {\tt 0x8100CC00}. Left to right makes it the
+most readable, which makes is big-endian? I guess I'll leave it
+that way until it's a bad idea to do it that way.
+---
+I'm still setting up the universe push/pull tests. It would
+be nice to not have to initialize an entire context just
+to use the stack. However, in practice, I'm probably going to
+use this interface for doing just that.
+---
+Eventually, the test may benefit from a macro that does
+the incantation to set up the context and cursors the
+way I like it.
+---
+I got enough unit test code for universe that I'm ready
+to start implementing stuff to make it work. I have not
+done anyhting for the word machine yet.
+@2026-06-03 Day 275
+@17:54 fleshing out word machine #timelog:00:50:04
+#! dz thoughts/projects/sonilo/tasks/word_machine
+My test harness does not have a universe. I'm going
+to need to do another refactor to get the sonilo
+struct inside of the memwrite test harness.
+---
+well that wasn't too bad.
+---
+sonilo upull/upush wrappers are proving to be more difficult
+than I thought. I'm not sure of the best way to get the stack.
+I sort of assumed that the stack created with the context
+would just sort of show up somehow in the sonilo struct,
+but I don't set up a context in sonilo (and that's how
+it should work as it turns out).
+---
+The stack address is in the RW register, so this API call
+could read the stack from the cursor. No C function
+has done this before, and it would set a precedent about
+the VM implementation. It would seem that my test harness
+has indeed turned into the system. Oops. I think it might
+be good enough.
+---
+it's all built out, and it doesn't work. time to debug now.
+@19:48 debugging the test #timelog:00:06:06
+#! dz $
+it's all implemented. so why doesn't it work.
+@20:37 debugging continued #timelog:00:34:37
+#! dz $
+so far, I've been able to confirm that the arguments
+to the universe push are correct. Now to verify
+that data is copied in the expected places via
+examining memory directly in gdb.
+---
+The arguments are flipped in universe push. And they
+are flipped because I coded it that way. Am I thinking
+about argument ordering correctly here?
+---
+in the C API, the convention is to order things
+where destination is first, the source is second. Data
+flow is right to left, a left arrow. I have innocently
+used "from" and "to" as my variables (rust inspiration),
+but they are flipped, which I'm realizing is confusing.
+---
+"from" and "to" are terrible choices. In rust, from/to is used
+in the context of type conversions, not data transfer.
+I am going to use source and destination to keep things
+straight.
+---
+push/pull is hopefully clear enough. "pushing" and "universe"
+imply "pushing to the universe". "pulling" and "universe" imply
+"pulling from the universe". In both cases, there's a flow of data
+with a source and a destination. In "pull", the destination is
+a sonilo word address, and the source is the universe. In "push", the
+destination is the universe, and the source is sonilo.
+---
+Using this intuition, I am going to rewrite these functions.
+---
+Functions rewritten. Tests rewritten. Somewhere I was pushing where
+I should have been pulling (or maybe the other way around?).
+The tests seem to work. Going to append my small test to the big
+test suite.

@@ -102,6 +102,8 @@
 \smallskip
 \noindent universe \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node47}
 \smallskip
+\noindent word machine \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node48}
+\smallskip
 \noindent zero page \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node15}
 \smallskip
 \vfill \break
@@ -199,6 +201,7 @@
 {\noindent \bf 2026-05-26:} universe\smallskip
 {\noindent \bf 2026-05-27:} universe\smallskip
 {\noindent \bf 2026-06-01:} universe\smallskip
+{\noindent \bf 2026-06-02:} word machine\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -4096,5 +4099,61 @@ A few more places needed to be changed than I expected, and I think I'm sunsetti
 \par
 
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-01}\medskip
-{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:00: something something universe}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:00: cleanup}\smallskip
+trying to figure out what is left to do
+\par
+
+going to try and pluck out the old instruction map. As far as I can tell, this is the last thing for the universe.
+\par
+
+Well, the universe API functions haven't been implemented yet. They aren't terribly complex functions, so I could probably write out an initial implementation. Soon I'll be working on the word machine, and that will make use of the universe API.
+\par
+
+No wait, actually I already implemented the universe API. Cleaning up, then I'm done.
+\par
+
+\xrdef{node48}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont word machine}\medskip
+build out word machine for command parser
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-02}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:16: word maching scaffolding}\smallskip
+I worked out some of this yesterday on paper. There's a set of API functions that I'm hoping to write the skeleton structure for.
+\par
+
+now it's dinner time. just enough time to drag the cmp library to the folder.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:30: continued scaffolding}\smallskip
+interrupted again.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:46: resumed.}\smallskip
+scaffolding in place. I think I might be able to pull off some small unit tests for the word machine.
+\par
+
+actually just kidding, adding top-level sonilo functions that exist as public C API calls.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:13: initial words for unit test}\smallskip
+I'm going to use this time to write tests out for universe push/pull, just as a sanity check.
+\par
+
+With the word machine, the first tests can parse system commands, or just the structure. Say a system command is represented by the function $s(k,v)$ where $k$ is the key and $v$ is the value associated with that key. There could be a test system command $s(0, 0)$ which could write a magic number somewhere, and this could then be transferred to the sonilo VM somewhere and read. Actually, the word machine does have access to the VM, it could set the RW register directly.
+\par
+
+I would be writing this before hooking up the msgpack parser the system commands aren't really going through it, that's what makes them system commands.
+\par
+
+What would $s(0,0)$ look like as a system command? 4 bytes, a fixmap of size 1, with a fixint of 0 and a uint8 of 0. The fixmap would be {\tt 0x81}. The fixint key would be {0x00}, and the uint8 value would be {\tt 0xCC00}. Putting it together yields a values {\tt 0x8100CC00}. Left to right makes it the most readable, which makes is big-endian? I guess I'll leave it that way until it's a bad idea to do it that way.
+\par
+
+I'm still setting up the universe push/pull tests. It would be nice to not have to initialize an entire context just to use the stack. However, in practice, I'm probably going to use this interface for doing just that.
+\par
+
+Eventually, the test may benefit from a macro that does the incantation to set up the context and cursors the way I like it.
+\par
+
+I got enough unit test code for universe that I'm ready to start implementing stuff to make it work. I have not done anyhting for the word machine yet.
+\par
+
 \bye

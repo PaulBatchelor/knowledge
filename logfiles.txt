@@ -185,3 +185,4 @@ logs/ma123/ma123.txt
 logs/mar_2026.txt
 logs/apr_2026.txt
 logs/may_2026.txt
+logs/jun_2026.txt

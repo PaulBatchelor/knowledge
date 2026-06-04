@@ -152,3 +152,6 @@ bytes to determine if it is a system command. The system
 command components are then extracted, and those bits
 are processed. The only edge case implemented will be $(0, 0)$,
 which will set the sonilo VM rw register to be a magick number.
+---
+drilling down sonilo send. got some pretty good placeholders up.
+next round of filling in shouldn't be too bad.

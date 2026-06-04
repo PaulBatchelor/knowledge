@@ -135,3 +135,20 @@ Functions rewritten. Tests rewritten. Somewhere I was pushing where
 I should have been pulling (or maybe the other way around?).
 The tests seem to work. Going to append my small test to the big
 test suite.
+@21:52 initial words for word machine unit tests #timelog:00:58:20
+#! dz $
+The abstraction layers for the word machine are delicate
+because I've decided I want the msgpack parser to be
+part of the "host" layer. When a byte is sent to the
+word machine, it sort of oscillates between the host
+and word machine abstraction boundaries.
+Once the word is sent into the machine, it jumps back "up"
+into the layer that has the host. There, the host checks
+if the word has been filled, and extracts and processes it.
+The word buffer also will need to be cleared.
+---
+Processing the word is only a matter of checking the first
+bytes to determine if it is a system command. The system
+command components are then extracted, and those bits
+are processed. The only edge case implemented will be $(0, 0)$,
+which will set the sonilo VM rw register to be a magick number.

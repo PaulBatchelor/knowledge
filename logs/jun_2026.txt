@@ -155,3 +155,22 @@ which will set the sonilo VM rw register to be a magick number.
 ---
 drilling down sonilo send. got some pretty good placeholders up.
 next round of filling in shouldn't be too bad.
+@2026-06-04 Day 276
+@2026-06-05 Day 277
+@2026-06-06 Day 278
+@2026-06-07 Day 279
+@20:19 flesh out sonilo send scaffolding #timleog:01:00:12
+#! dz thoughts/projects/sonilo/tasks/word_machine
+Just so I keep my head on straight: my machine is little
+endian. If I'm reading the rw as {\tt 0x12345678}, and my
+brain reads the ordering left to right. Then that {\tt 0x12},
+deemed to be the first byte in the sequence, should be
+the LSB in the word it is writing to. in other words, the MSB
+of the rw becomes the LSB of the internal word byte.
+If I do it this way, I can cast the internal word buffer to
+bytes and pass it right into the msgpack parser. I think.
+---
+System words are working as expected. I had to re-initialize
+the word machine because the universe test I wrote before
+it was corrupting bits. Not a big deal. Cool that my tests
+caught it.

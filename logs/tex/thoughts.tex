@@ -202,6 +202,7 @@
 {\noindent \bf 2026-05-27:} universe\smallskip
 {\noindent \bf 2026-06-01:} universe\smallskip
 {\noindent \bf 2026-06-02:} word machine\smallskip
+{\noindent \bf 2026-06-03:} word machine\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -4154,6 +4155,59 @@ Eventually, the test may benefit from a macro that does the incantation to set u
 \par
 
 I got enough unit test code for universe that I'm ready to start implementing stuff to make it work. I have not done anyhting for the word machine yet.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-03}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:54: fleshing out word machine}\smallskip
+My test harness does not have a universe. I'm going to need to do another refactor to get the sonilo struct inside of the memwrite test harness.
+\par
+
+well that wasn't too bad.
+\par
+
+sonilo upull/upush wrappers are proving to be more difficult than I thought. I'm not sure of the best way to get the stack. I sort of assumed that the stack created with the context would just sort of show up somehow in the sonilo struct, but I don't set up a context in sonilo (and that's how it should work as it turns out).
+\par
+
+The stack address is in the RW register, so this API call could read the stack from the cursor. No C function has done this before, and it would set a precedent about the VM implementation. It would seem that my test harness has indeed turned into the system. Oops. I think it might be good enough.
+\par
+
+it's all built out, and it doesn't work. time to debug now.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:48: debugging the test}\smallskip
+it's all implemented. so why doesn't it work.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:37: debugging continued}\smallskip
+so far, I've been able to confirm that the arguments to the universe push are correct. Now to verify that data is copied in the expected places via examining memory directly in gdb.
+\par
+
+The arguments are flipped in universe push. And they are flipped because I coded it that way. Am I thinking about argument ordering correctly here?
+\par
+
+in the C API, the convention is to order things where destination is first, the source is second. Data flow is right to left, a left arrow. I have innocently used "from" and "to" as my variables (rust inspiration), but they are flipped, which I'm realizing is confusing.
+\par
+
+"from" and "to" are terrible choices. In rust, from/to is used in the context of type conversions, not data transfer. I am going to use source and destination to keep things straight.
+\par
+
+push/pull is hopefully clear enough. "pushing" and "universe" imply "pushing to the universe". "pulling" and "universe" imply "pulling from the universe". In both cases, there's a flow of data with a source and a destination. In "pull", the destination is a sonilo word address, and the source is the universe. In "push", the destination is the universe, and the source is sonilo.
+\par
+
+Using this intuition, I am going to rewrite these functions.
+\par
+
+Functions rewritten. Tests rewritten. Somewhere I was pushing where I should have been pulling (or maybe the other way around?). The tests seem to work. Going to append my small test to the big test suite.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:52: initial words for word machine unit tests}\smallskip
+The abstraction layers for the word machine are delicate because I've decided I want the msgpack parser to be part of the "host" layer. When a byte is sent to the word machine, it sort of oscillates between the host and word machine abstraction boundaries. Once the word is sent into the machine, it jumps back "up" into the layer that has the host. There, the host checks if the word has been filled, and extracts and processes it. The word buffer also will need to be cleared.
+\par
+
+Processing the word is only a matter of checking the first bytes to determine if it is a system command. The system command components are then extracted, and those bits are processed. The only edge case implemented will be $(0, 0)$, which will set the sonilo VM rw register to be a magick number.
+\par
+
+drilling down sonilo send. got some pretty good placeholders up. next round of filling in shouldn't be too bad.
 \par
 
 \bye

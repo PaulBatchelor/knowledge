@@ -888,6 +888,12 @@ The sonilo VM has no distinction between host and VM, the current
 implementation just has a struct. Part of the work with the
 universe should involve refactoring things so that the host
 and VM bits are stratified.
+@07:48 strang reading #timelog:00:35:05 #ink:0A9
+#! dz linear_algebra/strang/toc/01_introduction_to_vectors
+@10:33 strang reading #timelog:00:23:59 #ink:0A9
+#! dz $
+@14:48 strang reading #timelog:01:09:47 #ink:0A9
+#! dz $
 @2026-05-23 Day 265
 @09:49 cropping and binning #archiving #timelog:00:25:14
 Turns out I need to do this because it has some spivak notes
@@ -928,7 +934,17 @@ It's not a perfect system, but I can infer an API from this.
 API: SET/GET rw, err, mem, cursor. GET rw pointer. Possibly a GET mem at cursor.
 GET instr pointer. A select cursor operation. A swap cursor operation.
 An append character operation. READ/WRITE word operations.
+@10:57 spivak reading #timelog:00:42:14 #ink:0AC
+#! dz calculus/spivak/toc/05_limits
+@14:42 strang reading #timelog:00:44:24 #ink:0AD
+#! dz linear_algebra/strang/toc/01_introduction_to_vectors
 @2026-05-24 Day 266
+@11:36 spivak reading #timelog:00:10:30 #ink:0AE
+#! dz calculus/spivak/toc/05_limits
+@11:55 spivak reading #timelog:00:12:29 #ink:0AE
+#! dz $
+@15:59 spivak reading #timelog:00:10:22 #ink:0AE
+#! dz $
 @2026-05-25 Day 267
 @11:17 outlining out VM API based on TODOs #timelog:00:14:29
 #! dz thoughts/projects/sonilo/tasks/universe
@@ -961,6 +977,8 @@ rolling.
 rw is coded out.
 @20:38 coding out mem #timelog:00:24:00
 #! dz $
+@14:17 strang reading (beginning chapter 1 of new book) #timelog:00:58:49 #ink:0AF
+#! dz linear_algebra/strang/toc/01_introduction_to_vectors
 @2026-05-26 Day 268
 @19:42 cursor #timelog:00:43:37
 #! dz thoughts/projects/sonilo/tasks/universe
@@ -975,6 +993,14 @@ out of order. That took a while. I had to start over again.
 ---
 I manged to replace the old instruction map with the new one.
 The tests seem to pass okay?
+@09:44 spivak reading... starting from the beginning now #imelog:00:59:38 #ink:0AH
+#! dz calculus/spivak/toc/01_basic_props_numbers
+@12:42 strang reading #timelog:00:24:39 #ink:0AI
+#! dz linear_algebra/strang/toc/01_introduction_to_vectors
+@14:20 strang reading #timelog:00:38:36 #ink:0AI
+#! dz $
+@17:45 strang reading #timelog:00:10:29 #ink:0AJ
+#! dz $
 @2026-05-27 Day 269
 @20:14 introduce vm and host components to top-level sonilo struct #timelog:00:57:14
 #! dz thoughts/projects/sonilo/tasks/universe
@@ -999,6 +1025,18 @@ A few more places needed to be changed than I expected,
 and I think I'm sunsetting some of the lower level UGEN
 C APIs I initially built (they are too far behind at this point).
 But, my seq sample still builds and runs so that's all that matters.
+@08:31 strang reading #timelog:00:47:45 #ink:0AJ
+#! dz linear_algebra/strang/toc/01_introduction_to_vectors
+@10:31 spivak reading #timelog:00:30:28 #ink:0AK
+#! dz calculus/spivak/toc/01_basic_props_numbers
+@12:14 spivak reading #timelog:01:01:43 #ink:0AK
+#! dz $
+@15:46 strang reading #timelog:00:58:49 #ink:0AL
+#! dz linear_algebra/strang/toc/01_introduction_to_vectors
 @2026-05-28 Day 270
+@08:53 spivak reading #timelog:01:02:51 #ink:0AM
+#! dz calculus/spivak/toc/01_basic_props_numbers
 @2026-05-29 Day 271
+@11:09 strang reading. beginning 1.3. #timelog:00:12:17 #ink:0AO
+#! dz linear_algebra/strang/toc/01_introduction_to_vectors
 @2026-05-30 Day 272

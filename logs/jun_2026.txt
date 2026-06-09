@@ -174,3 +174,14 @@ System words are working as expected. I had to re-initialize
 the word machine because the universe test I wrote before
 it was corrupting bits. Not a big deal. Cool that my tests
 caught it.
+@2026-06-08 Day 280
+@11:05 strang reading #timelog:00:21:45 #ink:0AV
+#! dz linear_algebra/strang/toc/02_solving_linear_equations
+@11:35 strang reading #timelog:00:18:57 #ink:0AV
+#! dz $
+@13:56 strang reading #timelog:00:04:13 #ink:0AV
+#! dz $
+@14:32 strang reading #timelog:00:44:33 #ink:0AW
+#! dz $
+@2026-06-09 Day 281
+@15:05 timelogging #timelog:00:37:41

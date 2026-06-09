@@ -185,3 +185,6 @@ caught it.
 #! dz $
 @2026-06-09 Day 281
 @15:05 timelogging #timelog:00:37:41
+@15:46 scanning #archiving #timelog:00:05:48
+@15:54 cropping #archiving #timelog:00:08:40
+@16:06 binning #archiving #timelog:00:07:11

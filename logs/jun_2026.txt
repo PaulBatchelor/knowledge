@@ -188,3 +188,30 @@ caught it.
 @15:46 scanning #archiving #timelog:00:05:48
 @15:54 cropping #archiving #timelog:00:08:40
 @16:06 binning #archiving #timelog:00:07:11
+@17:24 word machine next steps #timelog:00:22:50
+#! dz thoughts/projects/sonilo/tasks/word_machine
+I need to evaluate blocks of instructions now. So, a word command to begin the block,
+append words, a word command to end the block.
+---
+What happens when the word being appeneded happens to be a system command?
+This should only be the case when the word is arbitrary data.
+---
+Best idea I can think of at the moment: have a special system word
+for appending bytes or shorts. If it's a short, the command won't
+technically be msgpack. Parsing shorts shouldn't be a problem,
+since the system prefix will parse it before the msgpack parser.
+---
+For testing purposes, I'm going to want commands that set the RW
+register and then print the RW register. Between setting and printing,
+that should cover the two instruction forms I intend to implement:
+32-bit (2 words) and 7-bit (1 word).
+---
+I'm now suddenly aware of the limits of the instruction set. 1-character
+keys means there's like about 64 core instructions I can implement,
+and I'm wasting one on a test command. This is not today's problem though.
+---
+I think I will use {\tt !} to for the "set RW" when the value is a 32-bit
+int, and I will print it when it is a 7-bit number and that number is 0.
+That way, there's room for 127 other things that don't need functions.
+Not sure how the msgpack parser works, but I'm optimistic I can find
+a way to make that work somehow.

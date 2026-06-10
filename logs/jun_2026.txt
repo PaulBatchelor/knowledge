@@ -266,3 +266,5 @@ To be enormously explicit, the hex words to produce $12345678$ in the word
 register would look like {\tt 0x81011234} and {\tt 0x81015678}.
 To encode the END command into the RW register, you'd write it as {\tt 0x81018100}
 and {\tt 8101CC02}.
+@21:28 attempts to write an outline of a test #timelog:00:38:02
+#! dz $

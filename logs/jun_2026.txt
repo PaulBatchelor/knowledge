@@ -268,3 +268,31 @@ To encode the END command into the RW register, you'd write it as {\tt 0x8101810
 and {\tt 8101CC02}.
 @21:28 attempts to write an outline of a test #timelog:00:38:02
 #! dz $
+@2026-06-10 Day 282
+@20:56 add some scaffolding for word machine block parsing #timelog:00:36:38
+#! dz thoughts/projects/sonilo/tasks/word_machine
+uh oh. how is my half-word idea actually going to work?
+I've found a flaw that's pretty obvious in hindsight.
+There's only one intermediate word. When the command
+runs, where does it put the half-word? In that intermediate word!
+When you enter another system command to add another halfword,
+it overwrites the whole intermediate word (staging word? I don't
+have good terminology for this yet).
+---
+My thinking at this point is that I'll need two comands for
+setting the LSB/MSB parts of an entire word. I suppose that
+would involve the prefix {\tt 0x8102} in addition to {\tt 0x8101}.
+---
+Tests and code has been updated to use the LSB/MSB prefixes.
+Scaffolding is in place, the actual logic hasn't been implemented yet.
+I still need to write out a bit more scaffolding for the bit
+that actually parses the word buffer. Right now, the abstraction
+is at the wrong scope. When a block {\tt BEGIN}s, it only needs
+to zero things out inside the word machine. When a block {\tt END}s,
+the block needs to be evaluated/parsed before it is cleared.
+The stuff handling the parsing (cmp) is inside of the sonilo host
+struct, so the code logic needs to go up another level of
+encapsulation.
+---
+Good enough stopping point. I wasn't planning on spending much time
+on this tonight.

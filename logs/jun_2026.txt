@@ -296,3 +296,31 @@ encapsulation.
 ---
 Good enough stopping point. I wasn't planning on spending much time
 on this tonight.
+@2026-06-11 Day 283
+@20:19 build out components to make wm block test work #timelog:01:08:25
+#! dz thoughts/projects/sonilo/tasks/word_machine
+New problem: half words and buffer pointers. When a full word
+is appended, the buffer pointer advances. Half words set a full
+word in two commands to the current buffer pointer. How to advance
+after both are set? My solution: Setting the LSB advances the
+buffer pointer. This enforces an ordering: set the MSB, followed
+by the LSB (which then advances the pointer).
+---
+I'm afraid something is zeroing out the word buffer pointer prematurely.
+It is zero by the time it reaches this new parser function I wrote.
+It is also gets zero'd between calls to sendw. Immediately after appending
+a word to the buffer, the word buffer pointer is incremented from 0 to 1.
+Something between that moment and the next call to sendw is causing it
+to go back to zero.
+---
+going to make a quick debug program to catch the observable bug in gdb,
+and will leave troubleshooting to another day.
+---
+My halfword logic is wrong, due to endian issues. I'm going to
+want to try to build something that handles that okay. It's
+not actually reaching any halfwords.
+---
+My small debug program is indeed appending a single word (not including
+the data word which isn't working right now). The buffer position is indeed
+reset to 0 for some reason. This should be enough for me to go on for
+future investigations.

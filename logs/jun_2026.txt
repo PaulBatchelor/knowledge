@@ -324,3 +324,54 @@ My small debug program is indeed appending a single word (not including
 the data word which isn't working right now). The buffer position is indeed
 reset to 0 for some reason. This should be enough for me to go on for
 future investigations.
+@2026-06-12 Day 284
+@2026-06-23 Day 285
+@2026-06-14 Day 286
+@2026-06-15 Day 287
+@20:28 debugging #timelog:01:10:57
+#! dz thoughts/projects/sonilo/tasks/word_machine
+it has been a few days, I got to get this problem
+back into my head. My notes say something about a buffer
+position being reset to 0. I need to see this run again.
+---
+I'm noticing some unimplemented functions. I don't think
+that should be getting in the way of anything, but hmmm.
+---
+The latest this bug is seen happens when the word buffer
+is parsed. By the time it is sent here, the expectation is
+that the buffer size should be 2 words long. But it is zero.
+---
+Before parse is called, there is a single call to the word-append
+function. Here it is observed that the buffer position starts
+at 0, and then is incremented to 1. this is all correct.
+---
+So, what happens between word-append and parse to make it set to be 0?
+---
+I've narrowed down the window. I've placed a breakpoint that occurs immediately
+after the "send word" command. It can be observed that the 1 gets set to 0.
+---
+The error flag is overwriting buffer position it seems.
+---
+I commented out the error flag setter, and by the time it got to parse,
+it was set to be 1 instead of 0. It's still wrong, but less wrong.
+I hope this isn't an incomplete build issue.
+---
+Did a full clean. The issue persists. My new guess is that there's something
+wrong with my struct packing.
+---
+word alignment is working as expected. my compiler does seem to do packing at 4-byte
+intervals (double checked this). The word machine struct is 67 words long.
+That's a buffer plus 3 words overhead.
+---
+I think I know the problem. The word machine is supposed to be right after the "sonilo VM",
+but I only placed it after the memory, not the VM bits.
+---
+halfword append isn't being called. Endian issues I bet.
+---
+the debug program... works now? There's some pretty cursed endian number handling
+that I have to revisit at some point. At the moment, things are hard coded
+assuming things are running on a LE system. Which, is probably going to be
+true for the lifetime of this program, if I'm being honest with myself.
+---
+Now that it works, I now need to get back to filling out the parser and
+having it do stuff when it receives certain data.

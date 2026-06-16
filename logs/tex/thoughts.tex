@@ -204,6 +204,9 @@
 {\noindent \bf 2026-06-02:} word machine\smallskip
 {\noindent \bf 2026-06-03:} word machine\smallskip
 {\noindent \bf 2026-06-07:} word machine\smallskip
+{\noindent \bf 2026-06-09:} word machine\smallskip
+{\noindent \bf 2026-06-10:} word machine\smallskip
+{\noindent \bf 2026-06-11:} word machine\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -4217,6 +4220,95 @@ Just so I keep my head on straight: my machine is little endian. If I'm reading 
 \par
 
 System words are working as expected. I had to re-initialize the word machine because the universe test I wrote before it was corrupting bits. Not a big deal. Cool that my tests caught it.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-09}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:24: word machine next steps}\smallskip
+I need to evaluate blocks of instructions now. So, a word command to begin the block, append words, a word command to end the block.
+\par
+
+What happens when the word being appeneded happens to be a system command? This should only be the case when the word is arbitrary data.
+\par
+
+Best idea I can think of at the moment: have a special system word for appending bytes or shorts. If it's a short, the command won't technically be msgpack. Parsing shorts shouldn't be a problem, since the system prefix will parse it before the msgpack parser.
+\par
+
+For testing purposes, I'm going to want commands that set the RW register and then print the RW register. Between setting and printing, that should cover the two instruction forms I intend to implement: 32-bit (2 words) and 7-bit (1 word).
+\par
+
+I'm now suddenly aware of the limits of the instruction set. 1-character keys means there's like about 64 core instructions I can implement, and I'm wasting one on a test command. This is not today's problem though.
+\par
+
+I think I will use {\tt !} to for the "set RW" when the value is a 32-bit int, and I will print it when it is a 7-bit number and that number is 0. That way, there's room for 127 other things that don't need functions. Not sure how the msgpack parser works, but I'm optimistic I can find a way to make that work somehow.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 19:51: working out the msgpack bytes}\smallskip
+I want to write a program that will write {\tt 12344321} and {\tt 88888888} to the terminal. Begin a new message. Set the word, then print it. Do it again. End the message.
+\par
+
+Possibly set another magick word like {\tt 22222222} and have the test harness print word program print that word, just to double check and make sure it is the same register being set.
+\par
+
+System commands $s(0, 1)$ and $s(0, 2)$ can be used for starting and ending the message.
+\par
+
+Might be a good idea to print the bytes for $s(0, 2)$ just to show it is possible to append any word to the word buffer.
+\par
+
+Define {\tt BEGIN} as $s(0,1)$, which would be the msgpack payload {\tt 0x8100cc01}. Similarly, {\tt END} would be $s(0,2)$, or {\tt 0x8100cc02}.
+\par
+
+32-bit data instruction is composed of two words, the header word and the data word. The header word describes a 1-sized fix map, but with a 1-sized fixstr for the key, and a leading for the 32-bit int.
+\par
+
+Fixmap is {\tt 0x81}. The key to be used is '!', which is {\tt 0x21} in ASCII. A single-character fixstr is {\tt 0xA1}, making the key {\tt 0xA121}. Finally, the 32-bit unsigned integer has the byte {\tt 0xCE}. Putting it all together, the word is {\tt 0x81A121CE}. The next word that follows is an arbitrary 32-bit word.
+\par
+
+confirmed that this works. wrote the hex bytes to a file, converted to actual bytes using xxd, then parsed with the msgpack parser I shipped with mnolth. It is indeed valid msgpack.
+\par
+
+The final missing piece are the system commands used split up the 32-bit word into two shorts. The prefix of this message is going to be a fixmap with the key of '1'. The remaining two bytes will be interpretted as as a u16 in big-endian encoding like how msgpack does it.
+\par
+
+So that first half of the word is {\tt 8101}, then the last two bytes are read and appended to the word register.
+\par
+
+So, if I had two half-word (short) instructions $hw(1234)$ and $hw(5678)$, I would expect the RW register to be $12345678$. If I had another instruction following that went $hw(9999)$, I would expect the RW register to be $56789999$.
+\par
+
+To be enormously explicit, the hex words to produce $12345678$ in the word register would look like {\tt 0x81011234} and {\tt 0x81015678}. To encode the END command into the RW register, you'd write it as {\tt 0x81018100} and {\tt 8101CC02}.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:28: attempts to write an outline of a test}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-10}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:56: add some scaffolding for word machine block parsing}\smallskip
+uh oh. how is my half-word idea actually going to work? I've found a flaw that's pretty obvious in hindsight. There's only one intermediate word. When the command runs, where does it put the half-word? In that intermediate word! When you enter another system command to add another halfword, it overwrites the whole intermediate word (staging word? I don't have good terminology for this yet).
+\par
+
+My thinking at this point is that I'll need two comands for setting the LSB/MSB parts of an entire word. I suppose that would involve the prefix {\tt 0x8102} in addition to {\tt 0x8101}.
+\par
+
+Tests and code has been updated to use the LSB/MSB prefixes. Scaffolding is in place, the actual logic hasn't been implemented yet. I still need to write out a bit more scaffolding for the bit that actually parses the word buffer. Right now, the abstraction is at the wrong scope. When a block {\tt BEGIN}s, it only needs to zero things out inside the word machine. When a block {\tt END}s, the block needs to be evaluated/parsed before it is cleared. The stuff handling the parsing (cmp) is inside of the sonilo host struct, so the code logic needs to go up another level of encapsulation.
+\par
+
+Good enough stopping point. I wasn't planning on spending much time on this tonight.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-11}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:19: build out components to make wm block test work}\smallskip
+New problem: half words and buffer pointers. When a full word is appended, the buffer pointer advances. Half words set a full word in two commands to the current buffer pointer. How to advance after both are set? My solution: Setting the LSB advances the buffer pointer. This enforces an ordering: set the MSB, followed by the LSB (which then advances the pointer).
+\par
+
+I'm afraid something is zeroing out the word buffer pointer prematurely. It is zero by the time it reaches this new parser function I wrote. It is also gets zero'd between calls to sendw. Immediately after appending a word to the buffer, the word buffer pointer is incremented from 0 to 1. Something between that moment and the next call to sendw is causing it to go back to zero.
+\par
+
+going to make a quick debug program to catch the observable bug in gdb, and will leave troubleshooting to another day.
+\par
+
+My halfword logic is wrong, due to endian issues. I'm going to want to try to build something that handles that okay. It's not actually reaching any halfwords.
+\par
+
+My small debug program is indeed appending a single word (not including the data word which isn't working right now). The buffer position is indeed reset to 0 for some reason. This should be enough for me to go on for future investigations.
 \par
 
 \bye

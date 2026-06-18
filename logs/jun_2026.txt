@@ -375,3 +375,62 @@ true for the lifetime of this program, if I'm being honest with myself.
 ---
 Now that it works, I now need to get back to filling out the parser and
 having it do stuff when it receives certain data.
+@2026-06-16 Day 288
+@2026-06-17 Day 289
+@11:15 scanning #archiving #timelog:00:02:27
+@11:18 cropping #archiving #timelog:00:06:56
+@11:26 binning #archiving #timelog:00:08:44
+@21:05 planning next steps #timelog:00:57:43
+#! dz thoughts/projects/sonilo/tasks/word_machine
+The msgpack is getting clumped together and parsed
+as expected. I think my halfwords are being applied
+in the wrong direction. Quick fix I think for that.
+---
+The next thing is going to be jumping from this tokenizer
+to some kind of emergent grammar. I'm hoping it'll be simple
+enough that I can code this up by hand.
+---
+I'll probably want some off-screen pen and paper time for this.
+---
+High-level: these single-element fixmaps need to turn into key value
+pairs, which get turned into commands. The existing code structure
+is your pretty typical tokenizer code in a case switch. How to keep
+track of state? That is what I want to sit down and think about more
+deeply.
+---
+In the meantime, since I'm at this screen. Let's see if I can fix
+the endian issues for these halfwords. When I mean to set MSB,
+I seem to be setting the LSB, and vice versa. It does appear to be
+half-words in the wrong place, and not anything smaller than that.
+---
+I reallllly need to handle endianness better here because it's starting
+to confuse me and my code is confusing.
+---
+The halfword data to be appended is already encoded as a big-endian
+number inside inside of the host integer. When I want to set a halfword
+to be {\tt 0x1234}, and I print the variable {\tt hw}, the variable
+prints {\tt 0x3412} with the bytes swapped. On my little-endian system,
+if I were to print the actual bytes as they appear in memory, they would
+be {\tt 0x12, 0x34}, which is the big endian representation.
+---
+I am writing this for my future self: in the halfword setter, things are
+flipped in the halfword setter. When it says set MSB, the code sets the LSB,
+and vice versa. It's a mess. Know that the incoming halfword is already encoded
+with the bytes flipped as if it were BE on a LE system.
+---
+I am fully aware that this is going to be a problem given enough time.
+I am vaguely aware of functions that handle this sort of thing for you,
+networking deals with this all the time. In a more sane world, integers
+wouldn't care about encoding. the MSB/LSB could be obtained using arithmetic.
+---
+The point where it absolutely needs to be encoded is when it gets written to
+the word buffer. Truthfully, the word buffer is really a byte buffer that gets
+appended to one word at a time.
+---
+Big endian is the encoding for all integer types. How does that work
+for byte groupings of 4 bytes? Consider the LSB of an integer. For an
+integer, that becomes byte 4 of 4 in big-endian order. The LSB of a 4
+byte message encoded as an integer feels like it should correspond to
+the first byte to be parsed. But, in a big endian system, that gets
+treated as the fourth byte parsed. Here lies some semantic trickiness.
+I don't have it fully thought through. It's in a good enough place for now.

@@ -12,7 +12,7 @@ thoughts/projects/sonilo/tasks/iterables:109:DONE:1
 thoughts/projects/sonilo/tasks/zero_page:113:DONE:1
 thoughts/projects/sonilo/tasks/bulk_instructions:116:DONE:1
 thoughts/projects/sonilo/tasks/ugen_stack:120:DONE:1
-thoughts/projects/sonilo/tasks/word_machine:124:TODO:1
+thoughts/projects/sonilo/tasks/word_machine:124:DONE:1
 thoughts/projects/sonilo/tasks/buddy_slots:128:DONE:1
 thoughts/projects/sonilo/tasks/ugen_ports:132:DONE:1
 thoughts/projects/sonilo/tasks/allocator:136:DONE:1

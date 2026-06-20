@@ -434,3 +434,79 @@ byte message encoded as an integer feels like it should correspond to
 the first byte to be parsed. But, in a big endian system, that gets
 treated as the fourth byte parsed. Here lies some semantic trickiness.
 I don't have it fully thought through. It's in a good enough place for now.
+@2026-06-18 Day 290
+@2026-06-19 Day 291
+@10:00 instruction parsing outlining and brainstorm #timelog:00:33:49 #ink:0BK
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+#! dz thoughts/projects/sonilo/tasks/word_machine
+@2026-06-20 Day 292
+@15:04 building out command parser for word machine #timelog:01:48:34
+#! dz thoughts/projects/sonilo/tasks/word_machine
+I outlined a state machine for this yesterday. I should
+have enough to work out 2 basic instruction forms and
+that should be enough for most of my needs.
+---
+There are really 3 instruction forms: system, A, and B.
+The system form gets parsed before getting placed into the
+buffer. There shouldn't be any system form instructions
+to parse. Both A and B forms have a subtype denoted by
+a single character. The A form has a 7-bit data slot,
+and the B form has a 32-bit data slot.
+---
+In this test, both A and B forms are used with the
+same subtype, '!'. The A form prints the word from the word
+machine. The B form sets the word.
+---
+I've turned my state machine into nested case switches.
+It's not hitting the terminals as I expected.
+Let's see if it hits anything.
+---
+State 1 gets hit 2 times in a row consecutively. That's
+the one that reads the data component. That shouldn't be
+happening.
+---
+Now we're just hitting the first B-form word. It's
+not detecting the A-form.
+---
+I think the issue is with the terminal nodes. Every time
+the case switch loops it reads forward a token. However,
+this causes an issue when it reaches the terminal nodes.
+No values should be read in this iteration of the loop,
+the next data is the start of the next instruction.
+---
+My solution here is going to be to use a flag to turn
+on/off reading token data. It's the simplest fix to
+keeping the structure how I like it: each case switch
+indicates a state having been reached.
+---
+State machines are awkward. I don't have the words to fully
+articulate why. But now things are hitting the terminal nodes
+so let's move on.
+---
+When an opcode is parsed inside the word machine, it needs to
+do stuff to the entire sonilo virtual machine, which is larger
+than the word machine (the word machine lives inside the virtual
+machine memory space). Up to this point, the control flow has been
+set up such that deeper call stacks yields smaller scope. But
+now, this parse command, nested deep inside the confines of
+the word machine, needs to do something that can change all
+of sonilo.
+---
+How to solve this David beats Goliath data flow? For now, I'm
+going to limit sonilo to just an alias, and then write functions
+in sonilo that handle the opcode commands.
+---
+Tests pass. This is enough functionality for this task.
+The next area of concern will be building out the actual
+commands with the given structure to build up simple patches.
+The last-minute idea to have sonilo API commands that call
+opcodes directly might actually make things easier since
+I won't have to build an intermediate layer for the word
+machine using the serial protocol.
+@16:55 for this task: focus on just the commands not syntax
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+The word machine has been implemented far enough that I can
+pretty much guarantee commands of the A form and B form will work.
+There's already a sonilo function in place for handling these opcode
+types. I should just focus on getting the commands working there,
+and not thinking about the syntax of the command language.

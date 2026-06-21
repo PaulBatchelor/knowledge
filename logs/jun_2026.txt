@@ -514,3 +514,6 @@ and not thinking about the syntax of the command language.
 @21:19 cropping #archiving #timelog:00:08:50
 leaving the tagging for tomorrow. slightly involved because
 now I have "how to prove it" to put somewhere.
+@2026-06-21 Day 293
+@11:08 tagging, plus adding HTPI #archiving #timelog:00:16:06
+also need to add the palestrina book too

@@ -510,3 +510,7 @@ pretty much guarantee commands of the A form and B form will work.
 There's already a sonilo function in place for handling these opcode
 types. I should just focus on getting the commands working there,
 and not thinking about the syntax of the command language.
+@21:16 scanning #archiving #timelog:00:02:34
+@21:19 cropping #archiving #timelog:00:08:50
+leaving the tagging for tomorrow. slightly involved because
+now I have "how to prove it" to put somewhere.

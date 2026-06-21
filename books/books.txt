@@ -6,6 +6,6 @@ thoughts:thoughts/ink%
 # coad:coad%
 sonilo:thoughts/projects/sonilo%
 # ma123:bu/ma123/ink%
-calc:calculus/pearson/ink%
+# calc:calculus/pearson/ink%
 spivak:calculus/spivak/ink%
 strang:linear_algebra/strang/ink%

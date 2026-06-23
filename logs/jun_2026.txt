@@ -517,3 +517,15 @@ now I have "how to prove it" to put somewhere.
 @2026-06-21 Day 293
 @11:08 tagging, plus adding HTPI #archiving #timelog:00:16:06
 also need to add the palestrina book too
+@2026-06-22 Day 294
+@19:50 scoping initial command set needed for seq example #timelog:00:18:00
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+I have jotted down an outline on the commands I'll need. I went
+line by line, so I think it's fairly comprehensive.
+---
+There are going to be at least 9 commands implemented, which
+belong to one of four categories I've identified: ugens, push operations,
+arrays, and some system-level commands.
+---
+As far as abbreviations go: 'u' for create ugen (B form). 'a' for array
+commands (A form, these will use stack). 'i' for iterator. system stuff TBD.

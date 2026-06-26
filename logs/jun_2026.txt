@@ -529,3 +529,71 @@ arrays, and some system-level commands.
 ---
 As far as abbreviations go: 'u' for create ugen (B form). 'a' for array
 commands (A form, these will use stack). 'i' for iterator. system stuff TBD.
+@2026-06-23 Day 295
+@2026-06-24 Day 296
+@20:08 scaffolding for initial command set #timelog:00:31:45
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+now's a good time to split the command/opcode logic into
+their own file.
+---
+in general, {\tt sonilo.c} is too large and probably should
+be broken up a little bit.
+---
+I've got little stubs for every command and subcommand (I think).
+Now would probably be a good time to try to modify seq
+to use these calls.
+@20:46 creating initial opseq #timelog:00:28:15
+#! dz $
+I have created and deleted the initial opseq. Sometimes my fingers
+move faster than my brain. It wasn't too much work to do
+the 1:1 translation. But, a better approach will be to verify
+at every stuff. I'm looking to see if there's a way to use
+a hybrid of the API and the opcodes.
+---
+right. the main thing is this context setup. The API is
+actually doing a fair bit of heavy lifting for this. In
+addition to setting up the context, it's also setting up
+allocators, parameter stacks, and ugen blocks. These
+additional components are stored in a C struct, and would
+need to be stored in the zero page. For now, it would be
+better if the context was initialized from C, and then
+the cursor was set up to point to the context (yes, I'll
+also need cursor commands).
+---
+Some day, I'll have the "create context" command do what
+the API function does, and I'll want to do the reverse:
+take an initialize context, and populate a C struct. Maybe
+I'll never need to do that because I'll be using Konilo
+at this point who knows.
+@2026-06-25 Day 297
+@2026-06-26 Day 298
+@11:38 re-attempting opsec example, but with incremental changes #timelog:00:45:48
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+to begin, copy the seq example to opseq. the context created by the API
+creates an address in sonilo memory, and that should be the cursor.
+---
+First: attempt to get "constant" working.
+---
+I'm wondering at what abstraction these operations should exist at.
+The {\tt sonilo_constant} API function takes in a float, not a fixed
+point encoded value, and I'd need to do a fair amount of refactoring
+to get it to work that way. Alternatively, I could use the lower-level
+functions and interact with the word machine more directly. More
+code in the {\tt op.c} file. Hmmm.
+---
+Going with the low-level version. That's going to be more foundational
+and written in stone. Possibly, easier to translate down the line?
+---
+constants work. code doesn't look too bad here. I will continue.
+next up is the ugen creator.
+---
+Realizing that I'm breaking apart my C API abstractions. This ugen
+command is functionally equivalent to {\tt sonilo\_mkugen.c}, but
+it uses lower-level abstractions instead of the C API functions
+I made. I don't love that there two functionally equivalent things
+existing at the same time. Obviously the bytecode is more important
+than the C API. Maybe the C API just gets turned into wrappers
+around the opcode calls?
+---
+to be continued. it's looking like this ugen call might be a little bit simpler
+than the API function, since I'm consolidating a bunch of things.

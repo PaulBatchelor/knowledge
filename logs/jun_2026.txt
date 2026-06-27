@@ -617,3 +617,56 @@ into the opcode. The code paths that rely on this context struct are the stack
 operations (should be simple to rewrite), and the {\tt create\_ugen} operation,
 which is where it needs access to host data. It would be super nice to remove
 the dep on the context struct, so that's what I'll try to do next.
+@2026-06-27 Day 299
+@09:13 create a code path for ugen command that doesn't use context struct #timelog:00:35:02
+#! dz thoughts/projects/sonilo/tasks/sonilo_command_language
+uh oh. my unit test is segfaulting.
+---
+ah, I didn't finish refactoring. More functions need to take in
+sonilo, not just the VM component.
+I gotta fix this before I can continue with the ugen stuff.
+---
+Okay and we're back. moving onwards with this codepath fix. The
+goal at the end of this is to remove dependency on the context
+struct.
+---
+stack operations are the easiest to replace with the underlying
+barray calls.
+---
+onto pulling apart the ugen create functionality. I'm starting with
+a copy of this function, and will pull it apart from the inside out.
+@09:54 work on push word #timelog:00:06:46
+#! dz $
+@10:04 context init word might be possible now. attempting #timelog:00:07:35
+#! dz $
+Now that I've made the data scope larger (sonilo struct instead
+of sonilo vm struct), I can just call the existing C API function.
+I built the instruction. But I forgot that there are still
+bits that rely on the context struct I made, so I can't use
+it yet.
+@10:15 array commands #timelog:00:16:41
+#! dz $
+---
+array commands made. seeing if it's possible to remove dependency
+on context struct in mkseq now.
+---
+now I think I can get the context command working.
+---
+haha I'm still forgetting parts that use context. moving on now.
+@10:33 last ugen command #timelog:00:08:13
+#! dz $
+@10:43 attempt to refactor render function to remove context struct #timelog:00:10:17
+#! dz $
+@10:54 context destroy command, then remove context struct dep from opseq #timelog:00:08:02
+#! dz $
+@11:03 array iterator command #timelog:00:16:59
+#! dz $
+@11:20 add pop command #timelog:00:04:59
+#! dz $
+@11:37 I think this is completed
+#! dz $
+I think this is a good enough dent.
+---
+There's probably still a gap between the commands implemented
+the commands required to create a patch purely from serial IO.
+That will be addressed elsewhere.

@@ -670,3 +670,12 @@ I think this is a good enough dent.
 There's probably still a gap between the commands implemented
 the commands required to create a patch purely from serial IO.
 That will be addressed elsewhere.
+@2026-06-28 Day 300
+@07:22 integration scoping and planning #timelog:00:05:00
+#! dz thoughts/projects/sonilo/tasks/konilo_sonilo_communication
+IO commands have entries, starting at 8.
+ints in Konilo are signed, hoping that's
+just a matter of recasting and the bits
+will still be there.
+---
+Global variables, so sonilo will have a global pointer.

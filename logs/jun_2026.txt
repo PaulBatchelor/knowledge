@@ -701,3 +701,36 @@ The good news is that sendw is working. The bad news is that this endian
 chaos is catching up to me now.
 ---
 I am going to have to address the endian stuff now.
+@11:11 plans to address endian issues. (nevermind, won't fix right now) #timelog:00:12:28
+#! dz $
+General rule of thumb: endianness should be transparent until
+it is explicitely required. That means the only place where
+endianness comes into play is when a word is being written
+to the msgpack buffer.
+---
+you know what, it turns out it's actually working. I forgot
+that the magic word command writes to the RW register.
+It doesn't actually print anything.
+---
+I'm putting off this issue.
+@11:24 initial test I/O program written in Konilo #timelog:01:27:18
+#! dz $
+10 can be used to set the RW register. Cool cool cool.
+---
+I am now going to encode some initial test commands to
+see if the word machine can indeed be controlled from konilo.
+---
+I've built up an initial vocabulary of words inside Konilo. I can
+encode instructions as, system, A, or B instructions, and send
+them to the word machine to be evaluated. With this core set,
+I can begin porting the rest of my instruction set. If I can
+build some way to write samples to disk from Konilo (a tape interface?),
+I might be able to port my entire sequencer patch to Konilo.
+Wouldn't that be fun.
+@12:58 are we done here? I think we are done here
+#! dz $
+The approach for interacting with Konilo for now is to just
+pipe it through standard input. Later, I'll figure out
+a way to use the block interface (in the spirit of Konilo,
+I'm thinking I might enter this in by hand, and then write
+some kind of utility for converting blocks to/from ascii text).

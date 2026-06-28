@@ -28,7 +28,7 @@ thoughts/projects/sonilo/tasks/ilo_interpreter:171:DONE:1
 thoughts/projects/sonilo/tasks/sonilo_command_language:175:DONE:1
 thoughts/projects/sonilo/tasks/block_pool:179:TODO:1
 thoughts/projects/sonilo/tasks/convolution_reverb:183:TODO:1
-thoughts/projects/sonilo/tasks/konilo_sonilo_communication:187:TODO:1
+thoughts/projects/sonilo/tasks/konilo_sonilo_communication:187:DONE:1
 thoughts/projects/sonilo/tasks/offline_patch:191:TODO:1
 thoughts/projects/sonilo/tasks/grid_demo:195:TODO:1
 thoughts/projects/sonilo/tasks/realtime_audio:199:TODO:1

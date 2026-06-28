@@ -6,6 +6,7 @@ thoughts/projects/sonilo/tasks/context
 thoughts/projects/sonilo/tasks/docgen
 thoughts/projects/sonilo/tasks/fix_block_navigation
 thoughts/projects/sonilo/tasks/instruction_primitive
+thoughts/projects/sonilo/tasks/tape
 thoughts/projects/sonilo/tasks/ugen_refcount
 thoughts/projects/sonilo/tasks/universe
 thoughts/projects/sonilo/tasks/iterables

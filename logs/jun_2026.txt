@@ -737,3 +737,13 @@ some kind of utility for converting blocks to/from ascii text).
 @16:22 task created, initial work #timelog:00:28:40
 #! dz thoughts/projects/sonilo/tasks/tape
 @14:25 outlining tape concepts #ink:0BT #timelog:00:34:36
+#! dz $
+@17:12 initial implementation #timelog:00:25:50
+#! dz $
+@17:39 creating corresponding opcode instructions #timelog:00:19:30
+#! dz $
+---
+I am going to try out a slightly different convention
+for the track instructions, and make more use of the
+RW register. That way, I can use the 't' namespace
+for all the tape operations.

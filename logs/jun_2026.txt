@@ -679,3 +679,25 @@ just a matter of recasting and the bits
 will still be there.
 ---
 Global variables, so sonilo will have a global pointer.
+@10:21 bare bones ilo IO integration #timelog:00:42:30
+#! dz $
+I've actually made a "sonilo" binary for the first time.
+Progress?
+---
+Okay interesting news. Konilo constants are encoded in base 10, not
+base 16. Serial commands encoded in Konilo are going to be quite
+obfuscated. Not today's problem though.
+---
+The {\tt io} word runs io commands from inside Konilo. I'm hoping
+that I can use this to trigger new IO commands (slot 8).
+---
+Cool. numbers in konilo are signed, but encoded instructions do indeed
+return the expected bits when the signed numbers are in place.
+---
+I will need to make some kind of code generator for konilo. Ugens are
+going to have weird constants as well.
+---
+The good news is that sendw is working. The bad news is that this endian
+chaos is catching up to me now.
+---
+I am going to have to address the endian stuff now.

@@ -734,3 +734,6 @@ pipe it through standard input. Later, I'll figure out
 a way to use the block interface (in the spirit of Konilo,
 I'm thinking I might enter this in by hand, and then write
 some kind of utility for converting blocks to/from ascii text).
+@16:22 task created, initial work #timelog:00:28:40
+#! dz thoughts/projects/sonilo/tasks/tape
+@14:25 outlining tape concepts #ink:0BT #timelog:00:34:36

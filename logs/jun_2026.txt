@@ -747,3 +747,16 @@ I am going to try out a slightly different convention
 for the track instructions, and make more use of the
 RW register. That way, I can use the 't' namespace
 for all the tape operations.
+@18:05 the tape and konilo interface are complete, time to jump into this #timelog:00:07:44
+#! dz thoughts/projects/sonilo/tasks/offline_patch
+The task here will be to port opseq to Konilo, and to create
+all the words necessary for that.
+@20:07 initial patch created. #timelog:01:17:00
+#! dz $
+I got a ugen word working. I've been looking into the best approach to
+get constants working. There does seem to be some limited fixed point
+support in Konilo, but no great way to enter in decimals.
+---
+I got a patch transcribed, but it doesn't work. Probably has
+to do with me forgetting to initialize the context. I don't
+have commands to handle the cursors, so that will come next.

@@ -760,3 +760,12 @@ support in Konilo, but no great way to enter in decimals.
 I got a patch transcribed, but it doesn't work. Probably has
 to do with me forgetting to initialize the context. I don't
 have commands to handle the cursors, so that will come next.
+@2026-06-29 Day 301
+@12:20 adding in missing commands to get context initialized and set #timelog:00:16:41
+#! dz thoughts/projects/sonilo/tasks/offline_patch
+@12:39 spruce up the forth patch #timelog:00:07:09
+#! dz $
+@13:39 The sequencer is the tricky bit
+#! dz $
+Specifically, the way to get the data from Konilo into Sonilo.
+There is an array type. So, maybe that's a possibility.

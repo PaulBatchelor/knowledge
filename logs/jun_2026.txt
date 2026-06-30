@@ -769,3 +769,59 @@ have commands to handle the cursors, so that will come next.
 #! dz $
 Specifically, the way to get the data from Konilo into Sonilo.
 There is an array type. So, maybe that's a possibility.
+@17:52 exploring how to construct a sequence in Konilo #timelog:00:35:20
+#! dz $
+I've been fiddling around with Konilo for the past hour,
+and I've learned some tricks. Now I'm going to see if I
+can commit any of those ideas to my test patch.
+---
+I've created an 8-step sequence, which is probably good
+enough for this demo. Now, I need to work up how to set
+up the logic for transfering this array to sonilo.
+@2026-06-30 Day 302
+@08:54 building up the sequencer components #timelog:01:12:51
+#! dz thoughts/projects/sonilo/tasks/offline_patch
+Moving things to unu. Comment support in Konilo is lacking,
+and I need to explain what I'm doing for my future self.
+---
+running into a weird segfault with my konilo code. It's
+somehow related to the way I am managing arrays I think.
+---
+Sigil issues. {\tt Free} was used instead of {\tt @Free}.
+---
+oof that was a lot more work than I expected.
+@10:35 copy array to sonilo, initial sequencer setup #timelog:01:10:18
+#! dz $
+It does not make any sense to push the context address to the
+stack.
+This array create command should take in a context, and then
+it should be able to retrieve the stack from the context.
+Not the other way around.
+---
+Going to deprecate the current array create command, and will call
+it "old". The new array create command will take in the context.
+@11:58 code is punched in. now what is wrong with it #timelog:00:35:30
+#! dz $
+so far it's been various typos and forgetting words. Now
+I'm trying to confirm that the values I want are being
+written to the sonilo array.
+---
+yup. looks about right.
+---
+the signal is still outputing a saw that's too low.
+looking at the iterator construction to see if that
+is what is messed up.
+---
+array address is correctly getting passed into the iterator.
+---
+'seq' was an overloaded word. the signal looks better, but
+there is still a region of low frequency saw. huh.
+@16:07 what are the sequencer values being read in the node? #timelog:00:25:07
+#! dz $
+It looks like I just set the length wrong. The C example
+is 32 values, but this needs to be 8 values.
+@16:34 rework the const function #timelog:00:41:53
+#! dz $
+I was going down a mad path trying to process decimal and integer
+parts separately. What I really need is to have it be one number
+with a decimal point that gets automatically converted to a Q16.13 bit number.

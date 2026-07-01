@@ -34,3 +34,11 @@ which is very close to 4096, or 64 blocks. It is 16 megablocks.
 ---
 I am thinking the winning combo might be 12khz/14-bit audio, which would
 be 2978 samples, with packed 14-bit audio that's about 12 megablocks.
+@16:52 hacking bigverb in sndkit to be 12 bit for a second
+#! dz $
+Bit packing to 12-bits requires 145 blocks, which is about 14 percent of memory.
+That's somewhat tolerable if the sound isn't too bad.
+---
+okay so yeah it sounds like crap. I get the sense that there's going to need to be
+more work for 12-bit reverb to not sound like crap. It might not even be conceivable
+for long reverb tails because of the noise floor (dithering?). Oh well.

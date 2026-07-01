@@ -1,0 +1,14 @@
+@2026-07-01 Day 303
+@09:19 attempts to make sequencer syntax more in-line #timelog:01:28:14
+#! dz thoughts/projects/sonilo/tasks/offline_patch
+There's a fair bit of song and dance required to get
+this simple sequence to Sonilo. There's some song and
+dance to make the array in Konilo, which then gets
+copied over to Sonilo. It very much discourages the use of
+sequences.
+---
+The ideal syntax would look something like $[x y z] \to s$.
+The sequence gets defined in-place, and a sequence immediately
+follows.
+@11:11 building up an initial TeX generator for unu documents #timelog:00:18:54
+#! dz thoughts/projects/sonilo/news

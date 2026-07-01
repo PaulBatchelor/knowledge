@@ -12,3 +12,25 @@ The sequence gets defined in-place, and a sequence immediately
 follows.
 @11:11 building up an initial TeX generator for unu documents #timelog:00:18:54
 #! dz thoughts/projects/sonilo/news
+@13:00 scoping out a fixed-memory version of BV #timelog:00:47:30
+#! dz thoughts/projects/sonilo/tasks/bigverb
+I'm looking into memory requirements for bigverb.
+---
+The extra memory allocated is 24684 samples. That's 24k words!
+---
+napkin math: 24.6k words is approximately 386 blocks, or 37 percent
+of the total sonilo memory space. In extended space, it would take up
+about 97 blocks.
+---
+Interesting thought: when the samplerate is 16khz, there are 9036 samples
+required. Perhaps there could be a way to resample to the host sample
+rate (this would be nice to know how to do).
+---
+Lowering the bit depth: 9036 14-bit samples comes out to about 3953 words,
+which is very close to 4096, or 64 blocks. It is 16 megablocks.
+---
+12khz is 6807 samples, which is just under 3k words with 14-bit audio.
+10khz is 5695 samples, which is just under 2.5k words with 14-bit audio.
+---
+I am thinking the winning combo might be 12khz/14-bit audio, which would
+be 2978 samples, with packed 14-bit audio that's about 12 megablocks.

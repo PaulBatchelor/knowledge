@@ -188,3 +188,5 @@ nn tasks/tape
 ln Create a virtual tape interface as a means to
 ln conveniently bounce audio to disk.
 co tasks/tape tasks/offline_patch
+nn tasks/bigverb
+co tasks/bigverb tasks/offline_gesture

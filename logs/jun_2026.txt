@@ -825,3 +825,7 @@ is 32 values, but this needs to be 8 values.
 I was going down a mad path trying to process decimal and integer
 parts separately. What I really need is to have it be one number
 with a decimal point that gets automatically converted to a Q16.13 bit number.
+@21:26 bootstrap ilo.rom, import code into blocks and load on runtime #timelog:01:03:09
+#! dz $
+---
+Okay. This feels pretty cleaned up and done.

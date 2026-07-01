@@ -30,7 +30,7 @@ thoughts/projects/sonilo/tasks/sonilo_command_language:177:DONE:1
 thoughts/projects/sonilo/tasks/block_pool:181:TODO:1
 thoughts/projects/sonilo/tasks/convolution_reverb:184:TODO:1
 thoughts/projects/sonilo/tasks/konilo_sonilo_communication:188:DONE:1
-thoughts/projects/sonilo/tasks/offline_patch:192:TODO:1
+thoughts/projects/sonilo/tasks/offline_patch:192:DONE:1
 thoughts/projects/sonilo/tasks/grid_demo:196:TODO:1
 thoughts/projects/sonilo/tasks/realtime_audio:200:TODO:1
 thoughts/projects/sonilo/tasks/GSG:204:TODO:1

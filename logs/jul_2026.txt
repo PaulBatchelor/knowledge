@@ -122,3 +122,50 @@ at 0, and that avail list is right after the block in memory.
 ---
 I get the distinct sense that I'm going to need to draw a picture
 to better what is going on.
+@12:33 re-examining buddy system, drawing pictures, etc #timelog:00:23:45
+#! dz $
+@13:39 more troubleshooting #timelog:01:33:32
+#! dz $
+Known: {\tt mem\_klen} is getting stuck in an infinite loop.
+The value $L$, representing a linked list entry. ends up
+linking to itself for both the front and back. This should
+never happen.
+---
+I am going to start making some routines that can dump
+state into JSON files. This is possible since it appears
+I have the ability to call C functions from GDB.
+---
+I think I found something. The block is completely zeroed out.
+Is this a new block allocated by the buddy allocator?
+Is it getting initialized?
+---
+This is probably getting initialized. There are 3 slots allocated,
+and the init function is getting called 3 times before it freezes.
+I also can see how the block would be mostly zeros. There is nothing
+new here.
+---
+Forward/backward pointers in the AVAIL list are zeroed for 2 and 3.
+That doesn't look right.
+---
+On the first block, the tags section of memory overwrites the front
+entry in the AVAIL list.
+---
+The avail list address is at {0x248} and tags is at {0x24e}. That's
+a difference of 6 words. The AVAIL list needs to be 7 words long
+right? Is this an off by one error?
+---
+It was an off-by-one error in the buddy slot allocator. And it
+fixes that issue. But I'm still running into issues with the hang.
+---
+I have initialized the block of links with special null values.
+When I dump the avail list, there aren't any of these null values.
+The zero value is being propagated some other way.
+---
+I'm looking into where availb gets set, and I'm once again
+stumped by the notation of the double arrow assignment
+in the textbook, $A \gets B \gets C$. This expression
+is used in two places, and they are quire near eachother.
+Currently, I chose to interpret it is $A \gets C, B \gets C$.
+I'm less sure of that, and am thinking it might be $A \gets B, B \gets C$.
+These are linked list operations, so if I draw a picture and rework
+the syntax, I might be able to get a clearer idea.

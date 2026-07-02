@@ -169,3 +169,12 @@ Currently, I chose to interpret it is $A \gets C, B \gets C$.
 I'm less sure of that, and am thinking it might be $A \gets B, B \gets C$.
 These are linked list operations, so if I draw a picture and rework
 the syntax, I might be able to get a clearer idea.
+@17:12 re-checking my buddy system algorithm #timelog:01:46:59
+#! dz $
+I am feeling more confident that the allocation algorithms
+have been transcribed correctly. The sequential arrows
+do make sense if it is interpretted as double assignment.
+In the first case in R4, the operation "unlinks" a node
+from the list. In the second case in R4, the operation
+appends a value to a list that guaranteed to be empty, so
+the head/tail of the list is identical.

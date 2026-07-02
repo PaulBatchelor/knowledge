@@ -42,3 +42,83 @@ That's somewhat tolerable if the sound isn't too bad.
 okay so yeah it sounds like crap. I get the sense that there's going to need to be
 more work for 12-bit reverb to not sound like crap. It might not even be conceivable
 for long reverb tails because of the noise floor (dithering?). Oh well.
+@18:09 doing it the expensive way #timelog:00:53:11
+#! dz $
+Going to tap into the universe memory and allocate contiguous
+blocks. I will build a new interface for this. Inspired by
+the design in Konilo, I am going to add a universe free pointer
+that points to the next available bit of free memory. Allocating
+is a matter of incrementing this value and returning the previous
+value.
+---
+24684 samples is 97 megablocks.
+---
+nuts. the struct is 480 bytes, or 120 words. tack on another
+megablock. I'll optimize it later.
+---
+In the spirit of reckless coding, I'm going to build out the
+new universe allocation stuff in the bigverb code.
+---
+something is coded up. I now need to make steps to check if it works.
+Are bdup/bdrop implemented yet?
+---
+Everything appears to be implemented, but now things
+are freezing up.
+The freezing happens in the buddy allocator (ruh-roh).
+---
+I've disabled all processing and universe allocation in bigverb.
+Maybe one of the param stacks are throwing an error?
+I don't have any error handling in place.
+---
+Huh. Looks like there is something happening when I try to
+add values at the end.
+---
+The error checking is not working as expected.
+@2026-07-02 Day 304
+@10:16 bigverb troubleshooting (success), but freezes still happening (memory issue?) #timelog:01:29:41
+#! dz thoughts/projects/sonilo/tasks/bigverb
+huh. yesterday I thought things would freeze without
+bigverb. Now nothing is freezing up, but I have disabled
+the weird memory bits. Putting those back in now.
+---
+oh! I need more ports that's right. 4 inputs total, including
+the parameters. Not just the audio ins.
+---
+Okay progress. Bigverb works. However, something seems to happen
+when I add the logic that drops a reverb channel, attenuates, and
+adds with the original dry signal.
+---
+yeah, it's that last add that causes things to freeze.
+---
+I got errors showing up now good I think.
+---
+Note to self, I need a more unique error code system. I've been imagining
+a 16-bit system that splits the word into two 8-bit components.
+---
+I forgot to implement scaffodling for the begin command, it was returning
+an error code.
+---
+without the last 'add' statement, there is one error happening.
+---
+I was not setting the error flags correctly for context destroy.
+False alarm.
+---
+The allocator seems to be the one that is freezing up. Is
+it a bug there? Gah.
+---
+My klen function in the allocator is going into an infinite loop.
+L gets set to be 0, and I'm not sure if that is supposed to happen?
+Memory tests break when I try to fix anything. I need more visibility.
+@11:51 what the heck is {\tt LOC\_AVAIL}? #timelog:00:27:05
+#! dz $
+The macro just adds an offset of 64 to a K value. That doesn't make any sense
+because that would make it an out of bounds address. So, I must be using it
+to indicate a sentinel for a list.
+---
+Okay. {\tt LOC\_AVAIL} is also a memory mapping trick. In {\tt get\_word},
+it will return a value from the memory block or the {\tt AVAIL} list depending
+on what the address is. It seems we are pretending that the address space starts
+at 0, and that avail list is right after the block in memory.
+---
+I get the distinct sense that I'm going to need to draw a picture
+to better what is going on.

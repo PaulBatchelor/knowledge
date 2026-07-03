@@ -178,3 +178,101 @@ In the first case in R4, the operation "unlinks" a node
 from the list. In the second case in R4, the operation
 appends a value to a list that guaranteed to be empty, so
 the head/tail of the list is identical.
+@20:32 another debugging approach: just call the allocator #timelog:01:32:09
+#! dz $
+I'm working on a hunch that this is a bug completely isolated
+to the allocator. If I record all the allocator calls, and play
+them back without anything else, I should be able to trigger
+the same bug. If not, it means I'm missing something.
+---
+My plan is to printf the arguments for the allocator calls, then
+attempt to reproduce those using my test suite language. If I can
+get those printfs to be identical and it still freezes, then I can
+start troubleshooting with a smaller surface area. If not, I have
+two things to compare against.
+---
+YES! My debug allocator program freezes in just the same way with
+only the allocator running.
+---
+Figuring out a way (hack) to dump the memory state of the allocator
+from the buddy slot system.
+---
+At this point I feel it's important to mention if I haven't already
+that the AVAIL list state looks wrong in a few ways when I dump
+the state from GDB during its hang. 0 as a tail/head for one entry
+is okay, but it shows up in two entries. The other red flag is that
+I see {\tt LOC(AVAIL[k])} addresses in the wrong places. For example,
+{\tt LOC(AVAIL[1])} is 65, which should only appear in $k=1$ slot, but it shows up in the $k=5$ slot.
+---
+I got a snapshot right before the allocator call that freezes.
+The entire block is out of memory. The tags column is completely
+zeroed out. And the AVAIL list correctly shows {\tt LOC(AVAIL[k])}
+for every slot, indicating there that there are no available slots.
+---
+budcnt looks wrong. it is always 4. how did it get to be 4. budcnt
+is used to compute the address of the block used for the buddy allocator.
+At the very least, I think budcnt needs to be incremented when a new
+buddy is added. But it should also start out as 0.
+---
+oh sorry my bad. budcnt is indeed 0, I was printing the "budtop"
+before a global offset was applied. Still, budcnt needs to be
+incremented and updated.
+---
+All I needed to do was increment budcnt and store it and
+things worked. phew.
+@22:04 wrap-up. just kidding I found another bug. #timelog:00:18:00
+#! dz $
+---
+crap. the moment I added a second drone to the mix, the thing hangs again.
+Same place.
+@2026-07-03 Day 305
+@09:15 troubleshooting yet another memory crash #timelog:01:56:40
+#! dz thoughts/projects/sonilo/tasks/bigverb
+Same place and everything. Luckily, I know how to troubleshoot
+this stuff a little bit better.
+---
+Confirmed memory allocator problem. Able to reproduce with just a program doing the allocations.
+---
+The output state of the crash seems to be nearly identical to what I saw previously. 0's in more
+than one place in the avail list, as well as out of order terminal nodes.
+---
+interestingly, the thing freezes up right after a third new block is created. The freeze
+happens with the block at slot 0. So was slot 0 corrupted before this point?
+---
+I've got the test to call klen directly instead of alloc, and I managed to remove
+a few allocation calls and still trigger the bug. It's not that much of an improvment,
+but at least some layers are gone.
+---
+I have two allocation calls A and B, and my debug code that calls klen directly.
+Lets call that one X. AB with no X works fine. ABX will hang on X. strangely,
+AXB will hang on B. X should be transparent. It's not supposed to be writing
+anything.
+---
+XAB freezes on A.
+---
+Nevermind. I forgot to switch back to the correct cursor we're good.
+---
+Got the program set up so that slot 0 is completely untouched by
+the time the new block is created. the allocator selects all 0s,
+then all 1s, then the new block, then crash.
+---
+With this program, one can hypthesize that the memory block in slot 0
+gets corrupted somehow when the new block in slot 2 gets made.
+---
+Part of the problem here is I do not remember the memory layout
+of the buddy allocator.
+There's a header size of 4? 4 words? what is that for?
+And how did I compute the slot size? What goes into that?
+---
+I think it's an off-by-one error. The {\tt AVAIL} list is not
+6 words long, it's 7 words long, because of zero indexing.
+I guess 4 words are being used for the top struct? tags uses 2 words.
+Add them all together, and you get 4 + 7 + 2 = 13. slot size says 12.
+I thinking I was banking on 12 because you can get 5 slots with 4 words
+leftover.
+---
+I adjusted the sizes so they in theory should fit into 12 words (top is
+almost definitely just 2 words not 4 and it changing it to 2 or 3 didn't
+break any tests). The freeze still happens. I'd like to more closely
+examine states and see how things change. But I've been at it for a few
+hours now and need to stop.

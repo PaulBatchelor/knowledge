@@ -349,3 +349,39 @@ does not change.
 ---
 I've committed my findings to the test program in a hopefully clear and obvious way.
 I will resume my debugging at another point in time.
+@13:42 some zeroing in on point of corruption. I found it, but I'm still stumped. #timelog:00:28:46
+#! dz $
+---
+the first word of slot 0 changes somewhere inside of the sonilo
+alloc function. My hunch is it might be happening inside of
+{\tt mem\_init}. I will step through it.
+---
+oh wait, {allocator\_alloc} is where it happens, not {\tt sonilo\_alloc}.
+stepping through that now.
+---
+oh, I think I found it. The {\tt SLOT} macro was computing the offset wrong.
+---
+Touching SLOT breaks things even more. I'm not sure what is going on.
+This allocator has zero documentation and the memory layout is very
+ambiguous to me. Time to refactor this.
+@14:13 tightening up buddy slot code because the memory structure I had for it is lost to time #timelog:00:41:50
+#! dz thoughts/projects/sonilo/tasks/buddy_slots
+#! dz thoughts/projects/sonilo/tasks/bigverb
+I think I may have found the bug. When I was
+calculating the memory offset for the buddy top address,
+I was using the address of the allocator, not the buddy
+data block where the buddy bits were supposed to be.
+The allocator, on the other hand, only maintains records
+of each of the buddy instances.
+@15:15 while I'm at it, make sure sequencer can take negative values? #timelog:00:19:32
+#! dz thoughts/projects/sonilo/tasks/bigverb
+I think it might be a sonilo problem not a konilo one? Arrays were only
+designed to take positive integers. Signed integers didn't occur to me.
+Not a big deal.
+@16:16 another weird bug #timelog:00:47:59
+#! dz thoughts/projects/sonilo/bugs
+There's an edgecase where rendering triggers an error. I believe
+it is caused because there's a ugen with an invalid callback
+that happens.
+---
+memory corruption is my guess. I've reduced the patch as best I can for now.

@@ -22,6 +22,8 @@
 \smallskip
 \noindent arrays \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node33}
 \smallskip
+\noindent bigverb \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node39}
+\smallskip
 \noindent block pool \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node27}
 \smallskip
 \noindent blockstack improvements \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node16}
@@ -67,6 +69,8 @@
 \noindent phasor \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node8}
 \smallskip
 \noindent sonilo command language \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node7}
+\smallskip
+\noindent tape \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node38}
 \smallskip
 \noindent ugen bytecode \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node11}
 \smallskip
@@ -183,6 +187,14 @@
 {\noindent \bf 2026-06-20:} sonilo command language, word machine\smallskip
 {\noindent \bf 2026-06-22:} sonilo command language\smallskip
 {\noindent \bf 2026-06-24:} sonilo command language\smallskip
+{\noindent \bf 2026-06-26:} sonilo command language\smallskip
+{\noindent \bf 2026-06-27:} sonilo command language\smallskip
+{\noindent \bf 2026-06-28:} konilo sonilo communication, offline patch, tape\smallskip
+{\noindent \bf 2026-06-29:} offline patch\smallskip
+{\noindent \bf 2026-06-30:} offline patch\smallskip
+{\noindent \bf 2026-07-01:} news, bigverb, offline patch\smallskip
+{\noindent \bf 2026-07-02:} bigverb\smallskip
+{\noindent \bf 2026-07-03:} bigverb\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -639,6 +651,60 @@ It looks like ultimately I'll be building programs to generate basic msgpack str
 Ilo probably won't be used for constructing ugen chains, due to the memory overhead. But, Konilo is going to be important for building abstractions. There's not much more to say that hasn't been said already. Ilo has the ability to do I/O commands, and getting it to work with sonilo would mean making a virtual serial device, and then calling those commands from Konilo.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-28}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 07:22: integration scoping and planning}\smallskip
+IO commands have entries, starting at 8. ints in Konilo are signed, hoping that's just a matter of recasting and the bits will still be there.
+\par
+
+Global variables, so sonilo will have a global pointer.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:21: bare bones ilo IO integration}\smallskip
+I've actually made a "sonilo" binary for the first time. Progress?
+\par
+
+Okay interesting news. Konilo constants are encoded in base 10, not base 16. Serial commands encoded in Konilo are going to be quite obfuscated. Not today's problem though.
+\par
+
+The {\tt io} word runs io commands from inside Konilo. I'm hoping that I can use this to trigger new IO commands (slot 8).
+\par
+
+Cool. numbers in konilo are signed, but encoded instructions do indeed return the expected bits when the signed numbers are in place.
+\par
+
+I will need to make some kind of code generator for konilo. Ugens are going to have weird constants as well.
+\par
+
+The good news is that sendw is working. The bad news is that this endian chaos is catching up to me now.
+\par
+
+I am going to have to address the endian stuff now.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:11: plans to address endian issues. (nevermind, won't fix right now)}\smallskip
+General rule of thumb: endianness should be transparent until it is explicitely required. That means the only place where endianness comes into play is when a word is being written to the msgpack buffer.
+\par
+
+you know what, it turns out it's actually working. I forgot that the magic word command writes to the RW register. It doesn't actually print anything.
+\par
+
+I'm putting off this issue.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:24: initial test I/O program written in Konilo}\smallskip
+10 can be used to set the RW register. Cool cool cool.
+\par
+
+I am now going to encode some initial test commands to see if the word machine can indeed be controlled from konilo.
+\par
+
+I've built up an initial vocabulary of words inside Konilo. I can encode instructions as, system, A, or B instructions, and send them to the word machine to be evaluated. With this core set, I can begin porting the rest of my instruction set. If I can build some way to write samples to disk from Konilo (a tape interface?), I might be able to port my entire sequencer patch to Konilo. Wouldn't that be fun.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:58: are we done here? I think we are done here}\smallskip
+The approach for interacting with Konilo for now is to just pipe it through standard input. Later, I'll figure out a way to use the block interface (in the spirit of Konilo, I'm thinking I might enter this in by hand, and then write some kind of utility for converting blocks to/from ascii text).
+\par
+
 \xrdef{node6}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont mem}\medskip
 Memory Allocation
@@ -816,6 +882,86 @@ right. the main thing is this context setup. The API is actually doing a fair bi
 \par
 
 Some day, I'll have the "create context" command do what the API function does, and I'll want to do the reverse: take an initialize context, and populate a C struct. Maybe I'll never need to do that because I'll be using Konilo at this point who knows.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-26}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:38: re-attempting opsec example, but with incremental changes}\smallskip
+to begin, copy the seq example to opseq. the context created by the API creates an address in sonilo memory, and that should be the cursor.
+\par
+
+First: attempt to get "constant" working.
+\par
+
+I'm wondering at what abstraction these operations should exist at. The {\tt sonilo\_constant} API function takes in a float, not a fixed point encoded value, and I'd need to do a fair amount of refactoring to get it to work that way. Alternatively, I could use the lower-level functions and interact with the word machine more directly. More code in the {\tt op.c} file. Hmmm.
+\par
+
+Going with the low-level version. That's going to be more foundational and written in stone. Possibly, easier to translate down the line?
+\par
+
+constants work. code doesn't look too bad here. I will continue. next up is the ugen creator.
+\par
+
+Realizing that I'm breaking apart my C API abstractions. This ugen command is functionally equivalent to {\tt sonilo\_mkugen.c}, but it uses lower-level abstractions instead of the C API functions I made. I don't love that there two functionally equivalent things existing at the same time. Obviously the bytecode is more important than the C API. Maybe the C API just gets turned into wrappers around the opcode calls?
+\par
+
+to be continued. it's looking like this ugen call might be a little bit simpler than the API function, since I'm consolidating a bunch of things.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 22:10: continuing opseq port}\smallskip
+crap. {tt ugen\_create} is a pain point, scope-wise. It needs to access the host components, and those are further up the abstraction chain at the very top-level {\tt sonilo} struct.
+\par
+
+well, it would have been nice to restrict the scope. But, something needs to touch those DSP functions implemented in C. Rewriting the appropriate functions to take the top-level sonilo struct.
+\par
+
+This still sucks. The happy path of the C API still requires the context struct, meanwhile all that's given is the context address. Looking into the feasability of hydrating a context struct given an address.
+\par
+
+I've got ugen working in a kind of ugly way. I'm hydrating a context struct on the spot, which ended up being easier than I expected. I copied code from mkugen into the opcode. The code paths that rely on this context struct are the stack operations (should be simple to rewrite), and the {\tt create\_ugen} operation, which is where it needs access to host data. It would be super nice to remove the dep on the context struct, so that's what I'll try to do next.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-27}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:13: create a code path for ugen command that doesn't use context struct}\smallskip
+uh oh. my unit test is segfaulting.
+\par
+
+ah, I didn't finish refactoring. More functions need to take in sonilo, not just the VM component. I gotta fix this before I can continue with the ugen stuff.
+\par
+
+Okay and we're back. moving onwards with this codepath fix. The goal at the end of this is to remove dependency on the context struct.
+\par
+
+stack operations are the easiest to replace with the underlying barray calls.
+\par
+
+onto pulling apart the ugen create functionality. I'm starting with a copy of this function, and will pull it apart from the inside out.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:54: work on push word}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:04: context init word might be possible now. attempting}\smallskip
+Now that I've made the data scope larger (sonilo struct instead of sonilo vm struct), I can just call the existing C API function. I built the instruction. But I forgot that there are still bits that rely on the context struct I made, so I can't use it yet.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:15: array commands}\smallskip
+array commands made. seeing if it's possible to remove dependency on context struct in mkseq now.
+\par
+
+now I think I can get the context command working.
+\par
+
+haha I'm still forgetting parts that use context. moving on now.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:33: last ugen command}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:43: attempt to refactor render function to remove context struct}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:54: context destroy command, then remove context struct dep from opseq}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:03: array iterator command}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:20: add pop command}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:37: I think this is completed}\smallskip
+I think this is a good enough dent.
+\par
+
+There's probably still a gap between the commands implemented the commands required to create a patch purely from serial IO. That will be addressed elsewhere.
 \par
 
 \xrdef{node8}
@@ -2112,6 +2258,8 @@ Putting this under the category of "news" since I don't really have any task for
 
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-05-22}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:49: new tasks created for word machine and universe}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-01}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:11: building up an initial TeX generator for unu documents}\smallskip
 \xrdef{node21}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
 
@@ -3422,6 +3570,89 @@ By the time I'll get around to this patch, I'll already have the test patch made
 It would be cool if it were possible to render the patch from inside Konilo. I'm imagining for offline rendering, I'll have some kind of tape interface, where I'll be able to dump streams of buffered data into WAV files.
 \par
 
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-28}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:05: the tape and konilo interface are complete, time to jump into this}\smallskip
+The task here will be to port opseq to Konilo, and to create all the words necessary for that.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:07: initial patch created.}\smallskip
+I got a ugen word working. I've been looking into the best approach to get constants working. There does seem to be some limited fixed point support in Konilo, but no great way to enter in decimals.
+\par
+
+I got a patch transcribed, but it doesn't work. Probably has to do with me forgetting to initialize the context. I don't have commands to handle the cursors, so that will come next.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-29}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:20: adding in missing commands to get context initialized and set}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:39: spruce up the forth patch}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:39: The sequencer is the tricky bit}\smallskip
+Specifically, the way to get the data from Konilo into Sonilo. There is an array type. So, maybe that's a possibility.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:52: exploring how to construct a sequence in Konilo}\smallskip
+I've been fiddling around with Konilo for the past hour, and I've learned some tricks. Now I'm going to see if I can commit any of those ideas to my test patch.
+\par
+
+I've created an 8-step sequence, which is probably good enough for this demo. Now, I need to work up how to set up the logic for transfering this array to sonilo.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-30}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 08:54: building up the sequencer components}\smallskip
+Moving things to unu. Comment support in Konilo is lacking, and I need to explain what I'm doing for my future self.
+\par
+
+running into a weird segfault with my konilo code. It's somehow related to the way I am managing arrays I think.
+\par
+
+Sigil issues. {\tt Free} was used instead of {\tt @Free}.
+\par
+
+oof that was a lot more work than I expected.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:35: copy array to sonilo, initial sequencer setup}\smallskip
+It does not make any sense to push the context address to the stack. This array create command should take in a context, and then it should be able to retrieve the stack from the context. Not the other way around.
+\par
+
+Going to deprecate the current array create command, and will call it "old". The new array create command will take in the context.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:58: code is punched in. now what is wrong with it}\smallskip
+so far it's been various typos and forgetting words. Now I'm trying to confirm that the values I want are being written to the sonilo array.
+\par
+
+yup. looks about right.
+\par
+
+the signal is still outputing a saw that's too low. looking at the iterator construction to see if that is what is messed up.
+\par
+
+array address is correctly getting passed into the iterator.
+\par
+
+'seq' was an overloaded word. the signal looks better, but there is still a region of low frequency saw. huh.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:07: what are the sequencer values being read in the node?}\smallskip
+It looks like I just set the length wrong. The C example is 32 values, but this needs to be 8 values.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:34: rework the const function}\smallskip
+I was going down a mad path trying to process decimal and integer parts separately. What I really need is to have it be one number with a decimal point that gets automatically converted to a Q16.13 bit number.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 21:26: bootstrap ilo.rom, import code into blocks and load on runtime}\smallskip
+Okay. This feels pretty cleaned up and done.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-01}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:19: attempts to make sequencer syntax more in-line}\smallskip
+There's a fair bit of song and dance required to get this simple sequence to Sonilo. There's some song and dance to make the array in Konilo, which then gets copied over to Sonilo. It very much discourages the use of sequences.
+\par
+
+The ideal syntax would look something like $[x y z] \to s$. The sequence gets defined in-place, and a sequence immediately follows.
+\par
+
 \xrdef{node35}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont convolution reverb}\medskip
 Implement convolution reverb
@@ -3852,6 +4083,233 @@ How to solve this David beats Goliath data flow? For now, I'm going to limit son
 \par
 
 Tests pass. This is enough functionality for this task. The next area of concern will be building out the actual commands with the given structure to build up simple patches. The last-minute idea to have sonilo API commands that call opcodes directly might actually make things easier since I won't have to build an intermediate layer for the word machine using the serial protocol.
+\par
+
+\xrdef{node38}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont tape}\medskip
+Create a virtual tape interface as a means to
+conveniently bounce audio to disk.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-06-28}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:25: outlining tape concepts}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:22: task created, initial work}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:12: initial implementation}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:39: creating corresponding opcode instructions}\smallskip
+I am going to try out a slightly different convention for the track instructions, and make more use of the RW register. That way, I can use the 't' namespace for all the tape operations.
+\par
+
+\xrdef{node39}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont bigverb}\medskip
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-01}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:00: scoping out a fixed-memory version of BV}\smallskip
+I'm looking into memory requirements for bigverb.
+\par
+
+The extra memory allocated is 24684 samples. That's 24k words!
+\par
+
+napkin math: 24.6k words is approximately 386 blocks, or 37 percent of the total sonilo memory space. In extended space, it would take up about 97 blocks.
+\par
+
+Interesting thought: when the samplerate is 16khz, there are 9036 samples required. Perhaps there could be a way to resample to the host sample rate (this would be nice to know how to do).
+\par
+
+Lowering the bit depth: 9036 14-bit samples comes out to about 3953 words, which is very close to 4096, or 64 blocks. It is 16 megablocks.
+\par
+
+12khz is 6807 samples, which is just under 3k words with 14-bit audio. 10khz is 5695 samples, which is just under 2.5k words with 14-bit audio.
+\par
+
+I am thinking the winning combo might be 12khz/14-bit audio, which would be 2978 samples, with packed 14-bit audio that's about 12 megablocks.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:52: hacking bigverb in sndkit to be 12 bit for a second}\smallskip
+Bit packing to 12-bits requires 145 blocks, which is about 14 percent of memory. That's somewhat tolerable if the sound isn't too bad.
+\par
+
+okay so yeah it sounds like crap. I get the sense that there's going to need to be more work for 12-bit reverb to not sound like crap. It might not even be conceivable for long reverb tails because of the noise floor (dithering?). Oh well.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 18:09: doing it the expensive way}\smallskip
+Going to tap into the universe memory and allocate contiguous blocks. I will build a new interface for this. Inspired by the design in Konilo, I am going to add a universe free pointer that points to the next available bit of free memory. Allocating is a matter of incrementing this value and returning the previous value.
+\par
+
+24684 samples is 97 megablocks.
+\par
+
+nuts. the struct is 480 bytes, or 120 words. tack on another megablock. I'll optimize it later.
+\par
+
+In the spirit of reckless coding, I'm going to build out the new universe allocation stuff in the bigverb code.
+\par
+
+something is coded up. I now need to make steps to check if it works. Are bdup/bdrop implemented yet?
+\par
+
+Everything appears to be implemented, but now things are freezing up. The freezing happens in the buddy allocator (ruh-roh).
+\par
+
+I've disabled all processing and universe allocation in bigverb. Maybe one of the param stacks are throwing an error? I don't have any error handling in place.
+\par
+
+Huh. Looks like there is something happening when I try to add values at the end.
+\par
+
+The error checking is not working as expected.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-02}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:16: bigverb troubleshooting (success), but freezes still happening (memory issue?)}\smallskip
+huh. yesterday I thought things would freeze without bigverb. Now nothing is freezing up, but I have disabled the weird memory bits. Putting those back in now.
+\par
+
+oh! I need more ports that's right. 4 inputs total, including the parameters. Not just the audio ins.
+\par
+
+Okay progress. Bigverb works. However, something seems to happen when I add the logic that drops a reverb channel, attenuates, and adds with the original dry signal.
+\par
+
+yeah, it's that last add that causes things to freeze.
+\par
+
+I got errors showing up now good I think.
+\par
+
+Note to self, I need a more unique error code system. I've been imagining a 16-bit system that splits the word into two 8-bit components.
+\par
+
+I forgot to implement scaffodling for the begin command, it was returning an error code.
+\par
+
+without the last 'add' statement, there is one error happening.
+\par
+
+I was not setting the error flags correctly for context destroy. False alarm.
+\par
+
+The allocator seems to be the one that is freezing up. Is it a bug there? Gah.
+\par
+
+My klen function in the allocator is going into an infinite loop. L gets set to be 0, and I'm not sure if that is supposed to happen? Memory tests break when I try to fix anything. I need more visibility.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:51: what the heck is {\tt LOC\_AVAIL}?}\smallskip
+The macro just adds an offset of 64 to a K value. That doesn't make any sense because that would make it an out of bounds address. So, I must be using it to indicate a sentinel for a list.
+\par
+
+Okay. {\tt LOC\_AVAIL} is also a memory mapping trick. In {\tt get\_word}, it will return a value from the memory block or the {\tt AVAIL} list depending on what the address is. It seems we are pretending that the address space starts at 0, and that avail list is right after the block in memory.
+\par
+
+I get the distinct sense that I'm going to need to draw a picture to better what is going on.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:33: re-examining buddy system, drawing pictures, etc}\smallskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:39: more troubleshooting}\smallskip
+Known: {\tt mem\_klen} is getting stuck in an infinite loop. The value $L$, representing a linked list entry. ends up linking to itself for both the front and back. This should never happen.
+\par
+
+I am going to start making some routines that can dump state into JSON files. This is possible since it appears I have the ability to call C functions from GDB.
+\par
+
+I think I found something. The block is completely zeroed out. Is this a new block allocated by the buddy allocator? Is it getting initialized?
+\par
+
+This is probably getting initialized. There are 3 slots allocated, and the init function is getting called 3 times before it freezes. I also can see how the block would be mostly zeros. There is nothing new here.
+\par
+
+Forward/backward pointers in the AVAIL list are zeroed for 2 and 3. That doesn't look right.
+\par
+
+On the first block, the tags section of memory overwrites the front entry in the AVAIL list.
+\par
+
+The avail list address is at {0x248} and tags is at {0x24e}. That's a difference of 6 words. The AVAIL list needs to be 7 words long right? Is this an off by one error?
+\par
+
+It was an off-by-one error in the buddy slot allocator. And it fixes that issue. But I'm still running into issues with the hang.
+\par
+
+I have initialized the block of links with special null values. When I dump the avail list, there aren't any of these null values. The zero value is being propagated some other way.
+\par
+
+I'm looking into where availb gets set, and I'm once again stumped by the notation of the double arrow assignment in the textbook, $A \gets B \gets C$. This expression is used in two places, and they are quire near eachother. Currently, I chose to interpret it is $A \gets C, B \gets C$. I'm less sure of that, and am thinking it might be $A \gets B, B \gets C$. These are linked list operations, so if I draw a picture and rework the syntax, I might be able to get a clearer idea.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 17:12: re-checking my buddy system algorithm}\smallskip
+I am feeling more confident that the allocation algorithms have been transcribed correctly. The sequential arrows do make sense if it is interpretted as double assignment. In the first case in R4, the operation "unlinks" a node from the list. In the second case in R4, the operation appends a value to a list that guaranteed to be empty, so the head/tail of the list is identical.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 20:32: another debugging approach: just call the allocator}\smallskip
+I'm working on a hunch that this is a bug completely isolated to the allocator. If I record all the allocator calls, and play them back without anything else, I should be able to trigger the same bug. If not, it means I'm missing something.
+\par
+
+My plan is to printf the arguments for the allocator calls, then attempt to reproduce those using my test suite language. If I can get those printfs to be identical and it still freezes, then I can start troubleshooting with a smaller surface area. If not, I have two things to compare against.
+\par
+
+YES! My debug allocator program freezes in just the same way with only the allocator running.
+\par
+
+Figuring out a way (hack) to dump the memory state of the allocator from the buddy slot system.
+\par
+
+At this point I feel it's important to mention if I haven't already that the AVAIL list state looks wrong in a few ways when I dump the state from GDB during its hang. 0 as a tail/head for one entry is okay, but it shows up in two entries. The other red flag is that I see {\tt LOC(AVAIL[k])} addresses in the wrong places. For example, {\tt LOC(AVAIL[1])} is 65, which should only appear in $k=1$ slot, but it shows up in the $k=5$ slot.
+\par
+
+I got a snapshot right before the allocator call that freezes. The entire block is out of memory. The tags column is completely zeroed out. And the AVAIL list correctly shows {\tt LOC(AVAIL[k])} for every slot, indicating there that there are no available slots.
+\par
+
+budcnt looks wrong. it is always 4. how did it get to be 4. budcnt is used to compute the address of the block used for the buddy allocator. At the very least, I think budcnt needs to be incremented when a new buddy is added. But it should also start out as 0.
+\par
+
+oh sorry my bad. budcnt is indeed 0, I was printing the "budtop" before a global offset was applied. Still, budcnt needs to be incremented and updated.
+\par
+
+All I needed to do was increment budcnt and store it and things worked. phew.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 22:04: wrap-up. just kidding I found another bug.}\smallskip
+crap. the moment I added a second drone to the mix, the thing hangs again. Same place.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-03}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 09:15: troubleshooting yet another memory crash}\smallskip
+Same place and everything. Luckily, I know how to troubleshoot this stuff a little bit better.
+\par
+
+Confirmed memory allocator problem. Able to reproduce with just a program doing the allocations.
+\par
+
+The output state of the crash seems to be nearly identical to what I saw previously. 0's in more than one place in the avail list, as well as out of order terminal nodes.
+\par
+
+interestingly, the thing freezes up right after a third new block is created. The freeze happens with the block at slot 0. So was slot 0 corrupted before this point?
+\par
+
+I've got the test to call klen directly instead of alloc, and I managed to remove a few allocation calls and still trigger the bug. It's not that much of an improvment, but at least some layers are gone.
+\par
+
+I have two allocation calls A and B, and my debug code that calls klen directly. Lets call that one X. AB with no X works fine. ABX will hang on X. strangely, AXB will hang on B. X should be transparent. It's not supposed to be writing anything.
+\par
+
+XAB freezes on A.
+\par
+
+Nevermind. I forgot to switch back to the correct cursor we're good.
+\par
+
+Got the program set up so that slot 0 is completely untouched by the time the new block is created. the allocator selects all 0s, then all 1s, then the new block, then crash.
+\par
+
+With this program, one can hypthesize that the memory block in slot 0 gets corrupted somehow when the new block in slot 2 gets made.
+\par
+
+Part of the problem here is I do not remember the memory layout of the buddy allocator. There's a header size of 4? 4 words? what is that for? And how did I compute the slot size? What goes into that?
+\par
+
+I think it's an off-by-one error. The {\tt AVAIL} list is not 6 words long, it's 7 words long, because of zero indexing. I guess 4 words are being used for the top struct? tags uses 2 words. Add them all together, and you get 4 + 7 + 2 = 13. slot size says 12. I thinking I was banking on 12 because you can get 5 slots with 4 words leftover.
+\par
+
+I adjusted the sizes so they in theory should fit into 12 words (top is almost definitely just 2 words not 4 and it changing it to 2 or 3 didn't break any tests). The freeze still happens. I'd like to more closely examine states and see how things change. But I've been at it for a few hours now and need to stop.
 \par
 
 \bye

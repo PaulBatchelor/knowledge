@@ -276,3 +276,76 @@ almost definitely just 2 words not 4 and it changing it to 2 or 3 didn't
 break any tests). The freeze still happens. I'd like to more closely
 examine states and see how things change. But I've been at it for a few
 hours now and need to stop.
+@2026-07-04 Day 306
+@10:03 debugging continued
+@10:03 debugging continued. possibly found the existence of an off-by-one memory corruption bug? #timelog:01:50:54
+#! dz thoughts/projects/sonilo/tasks/bigverb
+reviewing the logs.
+---
+It looks like the next steps involve more closely examining
+states. Specifically, the state of slot 0. What causes it to become
+corrupt? Corrupt as in: the state causes the program to freeze
+when klen is called.
+---
+It seems to happen around when the new (third) block is created.
+---
+I'm going to try some basic checksumming. Apparently you can do
+a checksum by XOR-ing words, so I'll make a function that does
+that for blocks and use that in gdb to detect changes in the
+memory addresses associated with slot 0.
+---
+checksums are predictably 0 for blocks that are all 0s. memblocks
+(the blocks that actually store data to be written to) should always
+be 0 for this program because they aren't being used anywhere.
+---
+Oh dear. I'm performing checksums before/after calls to {\tt mem\_init}.
+There are 3 such calls in that program, one for each buddy allocator
+instance. In the call that initializes the second slot (slot index 1), the first
+slot (slot index 0) has its bookkeeping block changed after the call. That shouldn't
+be happening.
+---
+The data block associated with slot 0 is untouched though.
+---
+Now to see what the third {\tt mem\_init} call does to the previous instances.
+---
+slot 0 is changed. slot 1 is changed. All data blocks are left untouched (0).
+---
+I'd never thought I'd be saying this, but I miss segfaults. At least when you
+attempted to reach something out of bounds it would crash, or valgrind would
+tell you about it. Instead, with my own memory management, I get this weird
+behavior.
+---
+Time to step through the second call to mem init, and run checksums on slot 0
+to see where in this function that checksum changes.
+---
+lol that was fast. the first line of code in {\tt mem\_init} changes
+the checksum of the first slot.
+---
+Wait. Of course the checksum is going to change. because they are all part of
+the same block. I need a smaller checksum that only looks at the slot.
+---
+Redoing my checksum checks, this time only looking at 12-word chunks. 12 words
+should be the size of a slot.
+---
+slot 0 checksum is actually behaving itself when slot 2 is initialized. However,
+the checksum for slot 0 does change by the time the program crashes. I wonder
+if I can catch this in my test program?
+---
+I think I may have found a point of corruption. There's an allocation
+being made of size 8 towards the end of the test program. When I print
+checksums before and after, there is an observed change.
+---
+I also printed the checksum before the previous alloc call. No change either.
+---
+confirming this in gdb to make sure this isn't just a bug in my test harness.
+fortunately, this allocation of size 8 is unique.
+---
+Yup. Confirmed checksum change. Let me try to narrow the memory range to determine
+which address gets changed.
+---
+off by one error somehow. {\tt 1.244} (checksum at address {\tt 0x244} with size 1) changes.
+{\tt B.245} (11 words starting at {\tt 0x245}, equivalent to the rest of the slot minus the first word)
+does not change.
+---
+I've committed my findings to the test program in a hopefully clear and obvious way.
+I will resume my debugging at another point in time.

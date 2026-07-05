@@ -385,3 +385,33 @@ it is caused because there's a ugen with an invalid callback
 that happens.
 ---
 memory corruption is my guess. I've reduced the patch as best I can for now.
+@2026-07-05 Day 307
+@14:14 weird ugen block related bug tracking, continued #timelog:01:01:52
+#! dz thoughts/projects/sonilo/news
+To recap: I managed to trigger a bug inside the code responsible
+for processing a list of ugens, which is a weird place for
+something to go wrong.
+---
+The place where it goes wrong is inside a direct native function call
+via {\tt sonilo\_call\_direct}.
+---
+The direct call tries to find a callback located in slot 0, but slot 0
+is empty.
+---
+Whichever ugen this is, it's at position 14.
+---
+the ugen, if I counted correctly, is a mul ugen (no suprises there,
+I reduced the patch to be all muls basically).
+I am going to add some cksumming opcodes to check for any corruption
+to the ugen list.
+---
+As I began performing checksums, I saw that the block reserved for
+storing ugen addresses remained zero, except for the count.
+The ugen block was still retrieving non-zero content, so I looked
+at the underlying code. It looks like I forgot to apply an offset.
+I was only calculating the relative word position, and forgot
+to add the base. This would have put the memory spot in the place
+of the global block stack. I think I must have consumed just enough
+words such that the data corruption was noticeable.
+---
+I think that fixes it.

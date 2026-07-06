@@ -415,3 +415,75 @@ of the global block stack. I think I must have consumed just enough
 words such that the data corruption was noticeable.
 ---
 I think that fixes it.
+@2026-07-06 Day 308
+@10:35 revisiting tasks and planning next steps #timelog:01:09:26
+#! dz thoughts/projects/sonilo/news
+For the first time, I feel like I have something resembling
+a reasonably functional system for making sounds. But, I
+don't have many unit generators yet. I'd like to start working
+towards my future goals in a meaningful way.
+---
+meaningful: each task takes time, so choose ones that will act as force
+multipliers for later tasks. Make sure I make sounds. Gesture is also
+quite important. It's the most unique idea I have here.
+@10:42 GSG components update
+#! dz thoughts/projects/sonilo/tasks/GSG
+The core clock ugen is in place, as well as a metro ugen to convert
+that to trigger signals. An iterator interface has been made that can
+be used for general sequencing purposes.
+---
+rephasor, curve, and interpolator components still need to be built out.
+---
+The iterator "flow" is still in flux because I'm still figuring out
+how data will be structured. When I initially sat down to write this task,
+I think I was imagining that each component would have their own
+self contained iterator. While this should still be doable, I'm thinking
+less will go wrong if all the components read from a single iterator
+instance. The iterator would be an array of "gesture vertices", or a tuple of
+3 values constisting of value, duration, and curve type. Each of the components would parse the different values and react differently.
+@11:15 task created
+#! dz thoughts/projects/sonilo/tasks/iterator_block
+@11:18 initial task created
+#! dz thoughts/projects/sonilo/tasks/rephasor
+The DSP code is already implemented, it just needs to
+get ported. A good demo for this would be something involving
+polyrhythms. An envelope generator ugen would be required
+for percussive sounds.
+@11:23 envelope to be used with rephasor demo
+#! dz thoughts/projects/sonilo/tasks/env
+The sndkit envelope should work just fine.
+@11:32 rephasor should polymorphically allow for an iterator
+#! dz thoughts/projects/sonilo/tasks/rephasor
+#! dz thoughts/projects/sonilo/tasks/rephasor_iterable
+In the GSG signal chain, the iterator needs to be embedded inside
+because the rephasor needs to be able to check its own signal to
+get the next value from the iterator.
+---
+The iterator should be designed with some polymorphism in mind. That
+is to say: when the input argument is a port parameter, it should
+behave like a typical ugen, but when the input argument is a pointer
+to an iterator, the behavior should change to use the iterator instead.
+---
+I do not have a clear picture how I'm going to implement the things
+needed for this polymorphism like type checking. There's also this
+notion of a gesture vertex iterator that I need to figure out. Should
+this be an explicit type? Or should it just be the rule that a 32-bit
+word array iterator passed to a rephasor should henceforce be treated
+as a gesture vertex iterator?
+@11:55 a triangle phasor operator would be useful for a curve demo
+#! dz thoughts/projects/sonilo/tasks/curve
+#! dz thoughts/projects/sonilo/tasks/tri
+#! dz thoughts/projects/sonilo/tasks/phasor
+Tri would come in two forms: one would take a phasor and break it up
+into a rise/fall pair of ramps, for use in control signals. The other
+would turn it into a bipolar triangle wave audio signal. For the former,
+these could be further shaped using the curve unit generator.
+@12:07 Experimental idea, but if it works could be very expressive
+#! dz thoughts/projects/sonilo/tasks/bez
+I think I need to take small steps before getting into control vocal
+synthesizers, as those can be rather complex. This bezier controller
+would be unique in that it could do parametric wavetable synthesis without
+needing a bunch of memory. Instead, it could be shaped using 3 parameters,
+which I could figure out how to control with gesture. Plus, Bez would be
+incredibly simple to implement compared to all the work I'd need to
+get the vocal synth working.

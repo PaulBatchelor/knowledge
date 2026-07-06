@@ -190,3 +190,38 @@ ln conveniently bounce audio to disk.
 co tasks/tape tasks/offline_patch
 nn tasks/bigverb
 co tasks/bigverb tasks/offline_gesture
+nn tasks/iterator_block
+ln Create an "iterator block" construct, allowing
+ln an iterator to be called onced, and the results
+ln re-used in the patch. A block contains two buffers:
+ln a slice buffer consisting of results from the iterator,
+ln and a bit buffer, consisting of bits indicating when the
+ln iterator was called.
+co tasks/iterator_block tasks/GSG
+nn tasks/rephasor
+ln Create initial rephasor DSP algorithm.
+co tasks/rephasor tasks/GSG
+nn tasks/env
+ln Create envelope generator
+co tasks/env tasks/rephasor
+nn tasks/rephasor_iterable
+ln Refactor the rephasor so that it can become an iterable
+ln over a gesture path, producing a iterator block.
+co tasks/iterator_block tasks/rephasor_iterable
+nn tasks/curve
+ln Create a general-purpose curve generator. This should
+ln take in a ramp signal, and a value indicating the type
+ln of curve algorithm to apply. linear, step, gliss, smoothstep,
+ln and exponential curves would be good starts.
+co tasks/curve tasks/GSG
+nn tasks/tri
+ln create triangle wave genenerator(s) from ramp signals/phasors.
+nn tasks/bez
+ln Create bezier wavetable signal generator. phasor goes in, some kind
+ln of waveform comes out. 3 parameters control the shape (0 1), with all
+ln 1s being a sine wave.
+co tasks/bez tasks/GSG_demo
+nn tasks/powerwave
+ln Similar to what I was doing with bez and tri, but constructed
+ln by piecing together power functions.
+co tasks/powerwave tasks/GSG_demo

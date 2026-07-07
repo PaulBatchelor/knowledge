@@ -517,3 +517,59 @@ It's late. Signing off.
 ---
 The good news, however, is that rephasor does work! It just
 happened to uproot another bug.
+@2026-07-07 Day Day 309
+@09:51 debugging RC (fixes), more weirdness #timelog:01:51:07
+#! dz thoughts/projects/sonilo/tasks/rephasor
+Not actually related to rephasor, that one is done.
+But, it was a bug triggered from a demo made with rephasor.
+---
+Last night I traced an error back to the ref counting system.
+It was having trouble finding an available slot. I figured out
+that {\tt rc\_add} was called 45 times, nearly filling up
+the RC slot, and things weren't getting cleared. That's
+when I saw there was a "used" flag, which meant I may have
+been trying to turn this into a cache. It doesn't look like
+I hooked it up though.
+---
+Using this time to document RC functions in header.
+---
+Using some of the RC functions, I have indeed confimed that
+the RC list filled up with 48 blocks because I kept allocating
+blocks of the stack. Now I feel ready to make the fix.
+---
+Fix causes buddy allocator to freeze. Ugh.
+---
+{\tt rc\_get} is returning a weird address. Uninitialized/corrupted memory?
+---
+Somewhere between the initialization of the recount list and the first
+call to {\tt new\_block\_port}, the results of {\tt rc\_get} go from
+0 (correct), to {\tt 0xe0000} (incorrect).
+---
+Oh, this is strange. If I call {\tt rc\_get} twice in a row in GDB,
+it returns {\tt 0xe000} followed by 0. This should be a read-only operation.
+---
+Ah, {\tt rc\_get} actually does update state. Writing a temporary function to just
+do the read-only bits.
+---
+Ah yes, the sonilo allocator. Corrupting memory once again.
+I can observe things change between calls to the sonilo allocator
+in the first call to {\tt ugen\_create}. Of course, now I realize
+that that initial value wasn't correct either. I must go back to
+the first time this function goes from something correct to
+something incorrect.
+---
+Found a typo in {context\_mkblock}. I was masking the wrong number of bits.
+---
+Bitmask fixes now make the RC behavior look plausible. Things are being added
+before they can be reused. The allocator is freezing up still. It might be
+an independent bug. But before I check for that, I'm going to make sure blocks
+are being marked as unused before they are being reclaimed.
+---
+The allocator by itself is not the problem, it would appear. I tried making
+an allocator program just doing the allocations, and it behaved just fine.
+---
+I have found the point of corruption in the debug forth patch. It it
+happening somewhere when creating the last metro unit generator.
+I will have to go hunting around and figure out a way to detect corruption.
+The fixed memory space is very helpful. I can deterministically probe
+for changes because the memory addresses are always the same.

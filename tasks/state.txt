@@ -7,7 +7,7 @@ thoughts/projects/sonilo/tasks/buddy_system:86:DONE:1
 thoughts/projects/sonilo/tasks/context:90:DONE:1
 thoughts/projects/sonilo/tasks/curve:93:TODO:1
 thoughts/projects/sonilo/tasks/docgen:96:DONE:1
-thoughts/projects/sonilo/tasks/env:100:TODO:1
+thoughts/projects/sonilo/tasks/env:100:DONE:1
 thoughts/projects/sonilo/tasks/fix_block_navigation:103:TODO:1
 thoughts/projects/sonilo/tasks/instruction_primitive:106:DONE:1
 thoughts/projects/sonilo/tasks/iterator_block:110:TODO:1
@@ -17,7 +17,7 @@ thoughts/projects/sonilo/tasks/ugen_refcount:120:DONE:1
 thoughts/projects/sonilo/tasks/universe:123:DONE:1
 thoughts/projects/sonilo/tasks/iterables:126:DONE:1
 thoughts/projects/sonilo/tasks/zero_page:130:DONE:1
-thoughts/projects/sonilo/tasks/rephasor:133:TODO:1
+thoughts/projects/sonilo/tasks/rephasor:133:DONE:1
 thoughts/projects/sonilo/tasks/bulk_instructions:136:DONE:1
 thoughts/projects/sonilo/tasks/ugen_stack:140:DONE:1
 thoughts/projects/sonilo/tasks/word_machine:143:DONE:1

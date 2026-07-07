@@ -573,3 +573,33 @@ happening somewhere when creating the last metro unit generator.
 I will have to go hunting around and figure out a way to detect corruption.
 The fixed memory space is very helpful. I can deterministically probe
 for changes because the memory addresses are always the same.
+@12:36 debugging: tracking the checksum of death
+#! dz $
+The crash is in a predictable place, and it freezes
+because of the configuration of memory at that time.
+With any luck, I'll be able to use that checksum to track
+when things get corrupted.
+---
+AVAIL list doesn't change between the last metro and
+the crash.
+---
+I can't dump the memory here in GDB. crash?
+---
+the search will have to continue later.
+@13:11 debugging continued #timelog:00:15:00
+#! dz $
+This is a patch that creates a new buddy data block for the
+first time. I think I'm seeing bugs related to that.
+I've already caught an instance where the new address wasn't being
+updated correctly (I forgot to clear the upper bits before setting
+new bits). The memory allocator doesn't crash anymore. But now
+there are sonilo error codes (I really need to crash the program
+after the first error).
+---
+I'm getting an error at bswap. There aren't enough args on the stack
+apparently? Weird.
+@13:49 investigating bswap issue #timelog:00:08:51
+#! dz $
+fixed. I think I just screwed up some stack logic somewhere during
+the debugging process when I was breaking apart words. Restoring
+things to the original patch made it work again.

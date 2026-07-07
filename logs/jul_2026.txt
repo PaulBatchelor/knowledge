@@ -487,3 +487,33 @@ needing a bunch of memory. Instead, it could be shaped using 3 parameters,
 which I could figure out how to control with gesture. Plus, Bez would be
 incredibly simple to implement compared to all the work I'd need to
 get the vocal synth working.
+@18:07 importing env #timelog:00:57:04
+#! dz thoughts/projects/sonilo/tasks/env
+@20:35 initial import of rephasor #timelog:01:27:01
+#! dz thoughts/projects/sonilo/tasks/rephasor
+My lovely little demo has uncovered a bug. debugging now.
+---
+My error handling SUCKS right now I need to fix this.
+---
+The error somehow pops up in the reference counter. We
+have somehow used up all the slots. But that doesn't make
+sense to me. Pushing and popping should be freeing up the
+list quite a bit. 48 slots is a lot. I can however believe
+there are 48 blocks that have been allocated, so maybe things
+aren't being freed properly?
+---
+huh. I am trying to remember how my refcounter works. I'm noticing
+that while there are 45 calls to {rc\_add}, there are no calls
+to {rc\_del}.
+---
+I'm a little confused about the logic for finding available slots
+in {\tt rc\_add}. It only checks for zeroed out addresses. yet, for
+some reason, in {\tt rc\_sweep}. The function that allegedly frees
+up slots, it only marks the {\tt used} flag. Why? Is it possible that
+I wanted to keep the addresses so that they could be quickly re-used
+as a cache? I wonder if I wrote anything in the logs.
+---
+It's late. Signing off.
+---
+The good news, however, is that rephasor does work! It just
+happened to uproot another bug.

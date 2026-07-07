@@ -32,6 +32,8 @@
 \smallskip
 \noindent sonilo \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node0}
 \smallskip
+\noindent bugs \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node51}
+\smallskip
 \noindent ink \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node17}
 \smallskip
 \noindent news \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node29}
@@ -43,6 +45,8 @@
 \noindent allocator \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node12}
 \smallskip
 \noindent arrays \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node43}
+\smallskip
+\noindent bez \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node58}
 \smallskip
 \noindent bigverb \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node50}
 \smallskip
@@ -66,9 +70,13 @@
 \smallskip
 \noindent convolution reverb \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node46}
 \smallskip
+\noindent curve \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node56}
+\smallskip
 \noindent docgen \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node13}
 \smallskip
 \noindent dsp demo \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node40}
+\smallskip
+\noindent env \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node54}
 \smallskip
 \noindent fix block navigation \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node28}
 \smallskip
@@ -80,6 +88,8 @@
 \smallskip
 \noindent iterables \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node42}
 \smallskip
+\noindent iterator block \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node52}
+\smallskip
 \noindent konilo sonilo communication \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node5}
 \smallskip
 \noindent meaningful sounds \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node2}
@@ -90,9 +100,15 @@
 \smallskip
 \noindent phasor \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node8}
 \smallskip
+\noindent rephasor \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node53}
+\smallskip
+\noindent rephasor iterable \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node55}
+\smallskip
 \noindent sonilo command language \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node7}
 \smallskip
 \noindent tape \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node49}
+\smallskip
+\noindent tri \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node57}
 \smallskip
 \noindent ugen bytecode \leaders\hbox to 10pt {\hss.\hss}  \hfill \xref{node11}
 \smallskip
@@ -225,6 +241,9 @@
 {\noindent \bf 2026-07-01:} news, bigverb, offline patch\smallskip
 {\noindent \bf 2026-07-02:} bigverb\smallskip
 {\noindent \bf 2026-07-03:} bigverb\smallskip
+{\noindent \bf 2026-07-04:} bugs, bigverb, buddy slots\smallskip
+{\noindent \bf 2026-07-05:} news\smallskip
+{\noindent \bf 2026-07-06:} news, GSG, bez, curve, env, iterator block, phasor, rephasor, rephasor iterable, tri\smallskip
 \vfill \break
 \xrdef{node0}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont sonilo}\medskip
@@ -1067,6 +1086,11 @@ I'm not going to try and over-categorize. I'm throwing everything into a "util" 
 \par
 
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:38: phasor, officially done}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:55: a triangle phasor operator would be useful for a curve demo}\smallskip
+Tri would come in two forms: one would take a phasor and break it up into a rise/fall pair of ramps, for use in control signals. The other would turn it into a bipolar triangle wave audio signal. For the former, these could be further shaped using the curve unit generator.
+\par
+
 \xrdef{node9}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont initial dsp}\medskip
 Implement some intial DSP algorithms
@@ -1736,6 +1760,11 @@ For a simple case. When a block is initialized, the only available block to use 
 \par
 
 In theory, I think this is done? I don't think I'll be able to test it will until I start actually using it. That's when the bugs will float up to the top.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-04}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:13: tightening up buddy slot code because the memory structure I had for it is lost to time}\smallskip
+I think I may have found the bug. When I was calculating the memory offset for the buddy top address, I was using the address of the allocator, not the buddy data block where the buddy bits were supposed to be. The allocator, on the other hand, only maintains records of each of the buddy instances.
 \par
 
 \xrdef{node15}
@@ -2630,6 +2659,37 @@ Putting this under the category of "news" since I don't really have any task for
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:49: new tasks created for word machine and universe}\smallskip
 {\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-01}\medskip
 {\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:11: building up an initial TeX generator for unu documents}\smallskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-05}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:14: weird ugen block related bug tracking, continued}\smallskip
+To recap: I managed to trigger a bug inside the code responsible for processing a list of ugens, which is a weird place for something to go wrong.
+\par
+
+The place where it goes wrong is inside a direct native function call via {\tt sonilo\_call\_direct}.
+\par
+
+The direct call tries to find a callback located in slot 0, but slot 0 is empty.
+\par
+
+Whichever ugen this is, it's at position 14.
+\par
+
+the ugen, if I counted correctly, is a mul ugen (no suprises there, I reduced the patch to be all muls basically). I am going to add some cksumming opcodes to check for any corruption to the ugen list.
+\par
+
+As I began performing checksums, I saw that the block reserved for storing ugen addresses remained zero, except for the count. The ugen block was still retrieving non-zero content, so I looked at the underlying code. It looks like I forgot to apply an offset. I was only calculating the relative word position, and forgot to add the base. This would have put the memory spot in the place of the global block stack. I think I must have consumed just enough words such that the data corruption was noticeable.
+\par
+
+I think that fixes it.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:35: revisiting tasks and planning next steps}\smallskip
+For the first time, I feel like I have something resembling a reasonably functional system for making sounds. But, I don't have many unit generators yet. I'd like to start working towards my future goals in a meaningful way.
+\par
+
+meaningful: each task takes time, so choose ones that will act as force multipliers for later tasks. Make sure I make sounds. Gesture is also quite important. It's the most unique idea I have here.
+\par
+
 \xrdef{node30}
 {\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont instruction primitive}\medskip
 
@@ -3669,6 +3729,17 @@ These could all be implemented as simple DSP ugen generator components with limi
 \par
 
 Iterables would be needed for the divider (a scaling value, for durations), curve generators (which curve to select), and the lerp-er (sequencing values). The clock divider would produce the divided clock signal and an impulse signal representing the start of every period. This would get fed into the iterator to trigger logic to produce the next value.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:42: GSG components update}\smallskip
+The core clock ugen is in place, as well as a metro ugen to convert that to trigger signals. An iterator interface has been made that can be used for general sequencing purposes.
+\par
+
+rephasor, curve, and interpolator components still need to be built out.
+\par
+
+The iterator "flow" is still in flux because I'm still figuring out how data will be structured. When I initially sat down to write this task, I think I was imagining that each component would have their own self contained iterator. While this should still be doable, I'm thinking less will go wrong if all the components read from a single iterator instance. The iterator would be an array of "gesture vertices", or a tuple of 3 values constisting of value, duration, and curve type. Each of the components would parse the different values and react differently.
 \par
 
 \xrdef{node42}
@@ -4931,6 +5002,182 @@ I think it's an off-by-one error. The {\tt AVAIL} list is not 6 words long, it's
 \par
 
 I adjusted the sizes so they in theory should fit into 12 words (top is almost definitely just 2 words not 4 and it changing it to 2 or 3 didn't break any tests). The freeze still happens. I'd like to more closely examine states and see how things change. But I've been at it for a few hours now and need to stop.
+\par
+
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-04}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 10:03: debugging continued. possibly found the existence of an off-by-one memory corruption bug?}\smallskip
+reviewing the logs.
+\par
+
+It looks like the next steps involve more closely examining states. Specifically, the state of slot 0. What causes it to become corrupt? Corrupt as in: the state causes the program to freeze when klen is called.
+\par
+
+It seems to happen around when the new (third) block is created.
+\par
+
+I'm going to try some basic checksumming. Apparently you can do a checksum by XOR-ing words, so I'll make a function that does that for blocks and use that in gdb to detect changes in the memory addresses associated with slot 0.
+\par
+
+checksums are predictably 0 for blocks that are all 0s. memblocks (the blocks that actually store data to be written to) should always be 0 for this program because they aren't being used anywhere.
+\par
+
+Oh dear. I'm performing checksums before/after calls to {\tt mem\_init}. There are 3 such calls in that program, one for each buddy allocator instance. In the call that initializes the second slot (slot index 1), the first slot (slot index 0) has its bookkeeping block changed after the call. That shouldn't be happening.
+\par
+
+The data block associated with slot 0 is untouched though.
+\par
+
+Now to see what the third {\tt mem\_init} call does to the previous instances.
+\par
+
+slot 0 is changed. slot 1 is changed. All data blocks are left untouched (0).
+\par
+
+I'd never thought I'd be saying this, but I miss segfaults. At least when you attempted to reach something out of bounds it would crash, or valgrind would tell you about it. Instead, with my own memory management, I get this weird behavior.
+\par
+
+Time to step through the second call to mem init, and run checksums on slot 0 to see where in this function that checksum changes.
+\par
+
+lol that was fast. the first line of code in {\tt mem\_init} changes the checksum of the first slot.
+\par
+
+Wait. Of course the checksum is going to change. because they are all part of the same block. I need a smaller checksum that only looks at the slot.
+\par
+
+Redoing my checksum checks, this time only looking at 12-word chunks. 12 words should be the size of a slot.
+\par
+
+slot 0 checksum is actually behaving itself when slot 2 is initialized. However, the checksum for slot 0 does change by the time the program crashes. I wonder if I can catch this in my test program?
+\par
+
+I think I may have found a point of corruption. There's an allocation being made of size 8 towards the end of the test program. When I print checksums before and after, there is an observed change.
+\par
+
+I also printed the checksum before the previous alloc call. No change either.
+\par
+
+confirming this in gdb to make sure this isn't just a bug in my test harness. fortunately, this allocation of size 8 is unique.
+\par
+
+Yup. Confirmed checksum change. Let me try to narrow the memory range to determine which address gets changed.
+\par
+
+off by one error somehow. {\tt 1.244} (checksum at address {\tt 0x244} with size 1) changes. {\tt B.245} (11 words starting at {\tt 0x245}, equivalent to the rest of the slot minus the first word) does not change.
+\par
+
+I've committed my findings to the test program in a hopefully clear and obvious way. I will resume my debugging at another point in time.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 13:42: some zeroing in on point of corruption. I found it, but I'm still stumped.}\smallskip
+the first word of slot 0 changes somewhere inside of the sonilo alloc function. My hunch is it might be happening inside of {\tt mem\_init}. I will step through it.
+\par
+
+oh wait, {allocator\_alloc} is where it happens, not {\tt sonilo\_alloc}. stepping through that now.
+\par
+
+oh, I think I found it. The {\tt SLOT} macro was computing the offset wrong.
+\par
+
+Touching SLOT breaks things even more. I'm not sure what is going on. This allocator has zero documentation and the memory layout is very ambiguous to me. Time to refactor this.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 14:13: tightening up buddy slot code because the memory structure I had for it is lost to time}\smallskip
+I think I may have found the bug. When I was calculating the memory offset for the buddy top address, I was using the address of the allocator, not the buddy data block where the buddy bits were supposed to be. The allocator, on the other hand, only maintains records of each of the buddy instances.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 15:15: while I'm at it, make sure sequencer can take negative values?}\smallskip
+I think it might be a sonilo problem not a konilo one? Arrays were only designed to take positive integers. Signed integers didn't occur to me. Not a big deal.
+\par
+
+\xrdef{node51}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont bugs}\medskip
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-04}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 16:16: another weird bug}\smallskip
+There's an edgecase where rendering triggers an error. I believe it is caused because there's a ugen with an invalid callback that happens.
+\par
+
+memory corruption is my guess. I've reduced the patch as best I can for now.
+\par
+
+\xrdef{node52}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont iterator block}\medskip
+Create an "iterator block" construct, allowing
+an iterator to be called onced, and the results
+re-used in the patch. A block contains two buffers:
+a slice buffer consisting of results from the iterator,
+and a bit buffer, consisting of bits indicating when the
+iterator was called.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:15: task created}\smallskip
+\xrdef{node53}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont rephasor}\medskip
+Create initial rephasor DSP algorithm.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:18: initial task created}\smallskip
+The DSP code is already implemented, it just needs to get ported. A good demo for this would be something involving polyrhythms. An envelope generator ugen would be required for percussive sounds.
+\par
+
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:32: rephasor should polymorphically allow for an iterator}\smallskip
+In the GSG signal chain, the iterator needs to be embedded inside because the rephasor needs to be able to check its own signal to get the next value from the iterator.
+\par
+
+The iterator should be designed with some polymorphism in mind. That is to say: when the input argument is a port parameter, it should behave like a typical ugen, but when the input argument is a pointer to an iterator, the behavior should change to use the iterator instead.
+\par
+
+I do not have a clear picture how I'm going to implement the things needed for this polymorphism like type checking. There's also this notion of a gesture vertex iterator that I need to figure out. Should this be an explicit type? Or should it just be the rule that a 32-bit word array iterator passed to a rephasor should henceforce be treated as a gesture vertex iterator?
+\par
+
+\xrdef{node54}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont env}\medskip
+Create envelope generator
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:23: envelope to be used with rephasor demo}\smallskip
+The sndkit envelope should work just fine.
+\par
+
+\xrdef{node55}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont rephasor iterable}\medskip
+Refactor the rephasor so that it can become an iterable
+over a gesture path, producing a iterator block.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:32: rephasor should polymorphically allow for an iterator}\smallskip
+In the GSG signal chain, the iterator needs to be embedded inside because the rephasor needs to be able to check its own signal to get the next value from the iterator.
+\par
+
+The iterator should be designed with some polymorphism in mind. That is to say: when the input argument is a port parameter, it should behave like a typical ugen, but when the input argument is a pointer to an iterator, the behavior should change to use the iterator instead.
+\par
+
+I do not have a clear picture how I'm going to implement the things needed for this polymorphism like type checking. There's also this notion of a gesture vertex iterator that I need to figure out. Should this be an explicit type? Or should it just be the rule that a 32-bit word array iterator passed to a rephasor should henceforce be treated as a gesture vertex iterator?
+\par
+
+\xrdef{node56}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont curve}\medskip
+Create a general-purpose curve generator. This should
+take in a ramp signal, and a value indicating the type
+of curve algorithm to apply. linear, step, gliss, smoothstep,
+and exponential curves would be good starts.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:55: a triangle phasor operator would be useful for a curve demo}\smallskip
+Tri would come in two forms: one would take a phasor and break it up into a rise/fall pair of ramps, for use in control signals. The other would turn it into a bipolar triangle wave audio signal. For the former, these could be further shaped using the curve unit generator.
+\par
+
+\xrdef{node57}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont tri}\medskip
+create triangle wave genenerator(s) from ramp signals/phasors.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 11:55: a triangle phasor operator would be useful for a curve demo}\smallskip
+Tri would come in two forms: one would take a phasor and break it up into a rise/fall pair of ramps, for use in control signals. The other would turn it into a bipolar triangle wave audio signal. For the former, these could be further shaped using the curve unit generator.
+\par
+
+\xrdef{node58}
+{\medskip\noindent\bf\font\titlefont=cmss17 at 20pt\titlefont bez}\medskip
+Create bezier wavetable signal generator. phasor goes in, some kind
+of waveform comes out. 3 parameters control the shape (0 1), with all
+1s being a sine wave.
+{\medskip\noindent\bf\font\titlefont=cmitt12 at 17pt\titlefont 2026-07-06}\medskip
+{\smallskip\noindent\bf\font\titlefont=cmr12 at 13pt\titlefont $\bullet$ 12:07: Experimental idea, but if it works could be very expressive}\smallskip
+I think I need to take small steps before getting into control vocal synthesizers, as those can be rather complex. This bezier controller would be unique in that it could do parametric wavetable synthesis without needing a bunch of memory. Instead, it could be shaped using 3 parameters, which I could figure out how to control with gesture. Plus, Bez would be incredibly simple to implement compared to all the work I'd need to get the vocal synth working.
 \par
 
 \bye

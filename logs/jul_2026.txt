@@ -517,7 +517,7 @@ It's late. Signing off.
 ---
 The good news, however, is that rephasor does work! It just
 happened to uproot another bug.
-@2026-07-07 Day Day 309
+@2026-07-07 Day 309
 @09:51 debugging RC (fixes), more weirdness #timelog:01:51:07
 #! dz thoughts/projects/sonilo/tasks/rephasor
 Not actually related to rephasor, that one is done.
@@ -603,3 +603,45 @@ apparently? Weird.
 fixed. I think I just screwed up some stack logic somewhere during
 the debugging process when I was breaking apart words. Restoring
 things to the original patch made it work again.
+@2026-07-08 Day 310
+@2026-07-09 Day 311
+@11:33 iterator block initial scaffolding #timelog:01:12:00
+#! dz thoughts/projects/sonilo/tasks/iterator_block
+Added some boilerplate functions, and some words describing
+how to generally test this. I also took the time to document
+the memory layout of an iterator block. I have learned my lesson,
+if I don't document it, things get screwed up.
+---
+Writing words for the unit test revealed new considerations.
+Eventually, it will be the rephasor that will compute the iterator
+block. How will I get the iterator and iterator block address into
+rephasor? There will need to be some adjustments to the port interface,
+and probably the parameter stack as well. My goal is to preserve the
+arity of the current rephasor word. It takes 3 inputs, and one output.
+When the inputs are 3 signals (block/consant), it works like a processor,
+producing a ramped output. 2 of those signals (numerator/denominator scaling
+factor) can be replaced with addresses for an iterator and an iterator block.
+Somehow, I need to set up the logic so the internal behavior can change based
+on the type.
+---
+My initial idea for passing in a port into the iterator block compute function
+may not work as well as I expected. There would be no explicit trigger signal
+block created for the rephasor. It would simply compute rephasor using the
+existing input values, and then update the values when it detected a phase
+reset.
+---
+In other words, the most intuitive approach for the rephasor would be to build
+up the rephasor block as it is rendering the output block. This would imply
+a tick function, not a compute function. However, for testing functions,
+a block-level compute function would be very useful.
+---
+It's difficult to think about just the iterator block in isolation without
+thinking about the rephasor. So, I need to talk through the rephasor computation
+a little bit.
+Order of operations: rephasor must compute a rephasor signal, and then use that
+to produce a trigger signal (trigger on phase reset). This signal gets passed into
+the routine used to tick an iterator block. The values of the iterator are retrieved
+from the block, which contain scaling params for the rephasor.
+---
+I think there's a subtle off-by-one single sample delay to think through here.
+But that's beyond the scope of this task.

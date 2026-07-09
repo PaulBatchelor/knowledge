@@ -155,3 +155,4 @@ nn projects/bttyp
 ln bttyp: a 1-bit typesetter inspired by macintosh aesthetics
 nn projects/scrubant
 ln An audio scrubber, aimed to help with annotating tracks
+nn projects/bttype/news

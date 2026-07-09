@@ -645,3 +645,37 @@ from the block, which contain scaling params for the rephasor.
 ---
 I think there's a subtle off-by-one single sample delay to think through here.
 But that's beyond the scope of this task.
+@12:57 careful consideration for the initial values #timelog:00:13:56
+#! dz thoughts/projects/sonilo/tasks/rephasor_iterable
+Order of operations: compute the rephasor, then compute the iterator using
+the rephasor signal. A trigger signal is produced by analyzing the result
+of the previous sample. When the patch starts, there is no previous sample.
+---
+The rephasor must have scaling value, and these need to come from the iterator.
+But, because of the order of operations, these values one exist for that
+initial sample. Somehow, there must be a solution which involves computing
+the iterator on startup, and setting the initial values.
+---
+Cleanest way I can think to handle this init behavior is with a flag.
+---
+Extra data is going to be needed for the flag. If a whole word is required,
+some of those bits could also be used to store the results of the iterator
+used for the rephasor, num/den totalling 16 bits. The word could be shared.
+---
+Iterator flag only needs one bit, so there's 15 bits leftover. This would
+be a good place to break out different render callbacks based on input
+argument types. The type signature will be known at init-time, so it will
+be possible to determine which render callback to use at that point.
+@13:21 thinking about bttyp again
+#! dz thoughts/projects/sonilo/news
+#! dz thoughts/projects/bttyp/news
+I think it could be really useful for sonilo. Possibly necessary.
+There are a lot of things I want to do with symbols,
+plus the aesthetic of 1-bit typesetting is pretty awesome.
+---
+According to my logs, I guess I started work on this back in
+febuary. Since then, I've developed an instruction language for
+sonilo that is built on top of a subset of msgpack. I think it would
+be useful to bring some of those ideas into bttyp. sonilo uses
+a full-blown msgpack parser. I want avoid that for bttyp for now,
+instead building my own parser using only the subset.

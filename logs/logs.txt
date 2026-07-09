@@ -7,3 +7,4 @@ ma123:bu/ma123/%
 calc:calculus/pearson/%
 spivak:calculus/spivak/%
 ma123_psets:bu/ma123/problems/%
+bttyp:thoughts/projects/bttyp%

@@ -679,3 +679,39 @@ sonilo that is built on top of a subset of msgpack. I think it would
 be useful to bring some of those ideas into bttyp. sonilo uses
 a full-blown msgpack parser. I want avoid that for bttyp for now,
 instead building my own parser using only the subset.
+@14:59 filling stuff in #timelog:00:57:01
+#! dz thoughts/projects/sonilo/tasks/iterator_block
+figuring out new commands that will be needed for this
+test.
+---
+An iterator block will need to be created. Perhaps {\tt ib}
+could be used for that? No arguments required, only the
+context.
+---
+The order of operations for this test is: make context,
+make trigger signal, make iterator, make iterator block,
+compute iterator block, then check contents.
+---
+To make a trigger signal, there needs to be some utility
+that can produce a test trigger signal (maybe something like
+{\tt sx} for signal utility?). This needs a to be a port,
+a block port, which also needs to be created.
+---
+The array iterator stuff I think is already in place for
+the most part. Just got to make sure it's all glued up
+correctly.
+---
+Making an iterator block is going to be needed (I mentioned
+this already), as well as computing. {\tt ib} could have
+modes to do computation and creation.
+---
+Values from the iterator block will need to be retrieved. More
+modes for {\tt ib}.
+---
+Unit test filled out. Now to implement the commands.
+@15:58 implement new test commands #timelog:00:43:43
+#! dz $
+I got far enough to the point where a trigger signal
+is being successfully created and passed into the iterator
+block tick command. Next steps involve creating the
+bones for the iterator block.
